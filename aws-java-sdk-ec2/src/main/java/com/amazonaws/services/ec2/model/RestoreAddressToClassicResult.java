@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceResult;
 
@@ -91,6 +92,7 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      * @see Status
      */
 
+    @JsonIgnore
     public void setStatus(Status status) {
         this.status = status.toString();
     }

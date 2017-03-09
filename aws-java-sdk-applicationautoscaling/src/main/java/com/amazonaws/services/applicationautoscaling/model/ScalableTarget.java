@@ -14,6 +14,7 @@ package com.amazonaws.services.applicationautoscaling.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -181,6 +182,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * @see ServiceNamespace
      */
 
+    @JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         this.serviceNamespace = serviceNamespace.toString();
     }
@@ -562,6 +564,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * @see ScalableDimension
      */
 
+    @JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         this.scalableDimension = scalableDimension.toString();
     }

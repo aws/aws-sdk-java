@@ -14,6 +14,7 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -320,6 +321,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountStatus
      */
 
+    @JsonIgnore
     public void setStatus(AccountStatus status) {
         this.status = status.toString();
     }
@@ -393,6 +395,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountJoinedMethod
      */
 
+    @JsonIgnore
     public void setJoinedMethod(AccountJoinedMethod joinedMethod) {
         this.joinedMethod = joinedMethod.toString();
     }

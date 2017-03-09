@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -373,6 +374,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * @see SpotInstanceType
      */
 
+    @JsonIgnore
     public void setType(SpotInstanceType type) {
         this.type = type.toString();
     }

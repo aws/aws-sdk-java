@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteRegistrationCodeRequestProtocolMarshaller implements Marshaller<Request<DeleteRegistrationCodeRequest>, DeleteRegistrationCodeRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/registrationcode")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

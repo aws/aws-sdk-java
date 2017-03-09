@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -107,6 +108,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      * @see ResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

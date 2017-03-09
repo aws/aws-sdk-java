@@ -15,6 +15,7 @@ package com.amazonaws.services.kms.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -273,6 +274,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see AlgorithmSpec
      */
 
+    @JsonIgnore
     public void setWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
         this.wrappingAlgorithm = wrappingAlgorithm.toString();
     }
@@ -356,6 +358,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see WrappingKeySpec
      */
 
+    @JsonIgnore
     public void setWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
         this.wrappingKeySpec = wrappingKeySpec.toString();
     }

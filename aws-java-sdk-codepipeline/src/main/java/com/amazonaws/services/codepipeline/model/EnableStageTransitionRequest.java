@@ -15,6 +15,7 @@ package com.amazonaws.services.codepipeline.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -200,6 +201,7 @@ public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebService
      * @see StageTransitionType
      */
 
+    @JsonIgnore
     public void setTransitionType(StageTransitionType transitionType) {
         this.transitionType = transitionType.toString();
     }

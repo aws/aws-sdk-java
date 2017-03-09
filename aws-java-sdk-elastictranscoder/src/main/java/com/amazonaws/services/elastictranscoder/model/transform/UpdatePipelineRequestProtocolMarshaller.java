@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdatePipelineRequestProtocolMarshaller implements Marshaller<Request<UpdatePipelineRequest>, UpdatePipelineRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2012-09-25/pipelines/{Id}")
-            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonElasticTranscoder").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

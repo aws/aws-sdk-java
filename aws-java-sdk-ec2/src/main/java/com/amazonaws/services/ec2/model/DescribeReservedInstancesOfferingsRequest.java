@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -336,6 +337,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see InstanceType
      */
 
+    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -461,6 +463,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see RIProductDescription
      */
 
+    @JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -1105,6 +1108,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see Tenancy
      */
 
+    @JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -1195,6 +1199,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingTypeValues
      */
 
+    @JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -1594,6 +1599,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingClassType
      */
 
+    @JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         this.offeringClass = offeringClass.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -348,6 +349,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceAttribute
      */
 
+    @JsonIgnore
     public void setAttribute(DeviceAttribute attribute) {
         this.attribute = attribute.toString();
     }
@@ -682,6 +684,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleOperator
      */
 
+    @JsonIgnore
     public void setOperator(RuleOperator operator) {
         this.operator = operator.toString();
     }

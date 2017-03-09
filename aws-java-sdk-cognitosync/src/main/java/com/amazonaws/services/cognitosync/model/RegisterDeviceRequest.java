@@ -15,6 +15,7 @@ package com.amazonaws.services.cognitosync.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -193,6 +194,7 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Platform
      */
 
+    @JsonIgnore
     public void setPlatform(Platform platform) {
         this.platform = platform.toString();
     }

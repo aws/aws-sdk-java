@@ -15,6 +15,7 @@ package com.amazonaws.services.mturk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -150,6 +151,7 @@ public class ListReviewableHITsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ReviewableHITStatus
      */
 
+    @JsonIgnore
     public void setStatus(ReviewableHITStatus status) {
         this.status = status.toString();
     }

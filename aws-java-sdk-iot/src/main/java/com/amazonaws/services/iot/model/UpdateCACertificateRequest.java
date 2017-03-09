@@ -15,6 +15,7 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -160,6 +161,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CACertificateStatus
      */
 
+    @JsonIgnore
     public void setNewStatus(CACertificateStatus newStatus) {
         this.newStatus = newStatus.toString();
     }
@@ -238,6 +240,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see AutoRegistrationStatus
      */
 
+    @JsonIgnore
     public void setNewAutoRegistrationStatus(AutoRegistrationStatus newAutoRegistrationStatus) {
         this.newAutoRegistrationStatus = newAutoRegistrationStatus.toString();
     }

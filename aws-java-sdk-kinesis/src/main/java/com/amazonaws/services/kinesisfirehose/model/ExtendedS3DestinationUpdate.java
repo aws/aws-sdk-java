@@ -14,6 +14,7 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -330,6 +331,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see CompressionFormat
      */
 
+    @JsonIgnore
     public void setCompressionFormat(CompressionFormat compressionFormat) {
         this.compressionFormat = compressionFormat.toString();
     }
@@ -523,6 +525,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see S3BackupMode
      */
 
+    @JsonIgnore
     public void setS3BackupMode(S3BackupMode s3BackupMode) {
         this.s3BackupMode = s3BackupMode.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -407,6 +408,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactsType
      */
 
+    @JsonIgnore
     public void setType(ArtifactsType type) {
         this.type = type.toString();
     }
@@ -1157,6 +1159,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactNamespace
      */
 
+    @JsonIgnore
     public void setNamespaceType(ArtifactNamespace namespaceType) {
         this.namespaceType = namespaceType.toString();
     }
@@ -1744,6 +1747,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactPackaging
      */
 
+    @JsonIgnore
     public void setPackaging(ArtifactPackaging packaging) {
         this.packaging = packaging.toString();
     }

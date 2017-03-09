@@ -14,6 +14,7 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -683,6 +684,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
+    @JsonIgnore
     public void setBuildStatus(StatusType buildStatus) {
         this.buildStatus = buildStatus.toString();
     }

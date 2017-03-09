@@ -33,7 +33,7 @@ public class GetDeploymentsRequestProtocolMarshaller implements Marshaller<Reque
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/restapis/{restapi_id}/deployments").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .build();
+            .serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

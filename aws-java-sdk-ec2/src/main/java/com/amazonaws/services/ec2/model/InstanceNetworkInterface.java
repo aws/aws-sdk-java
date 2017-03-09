@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -370,6 +371,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @JsonIgnore
     public void setStatus(NetworkInterfaceStatus status) {
         this.status = status.toString();
     }

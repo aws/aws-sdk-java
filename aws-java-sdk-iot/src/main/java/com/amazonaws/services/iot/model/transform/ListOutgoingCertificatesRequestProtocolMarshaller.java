@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListOutgoingCertificatesRequestProtocolMarshaller implements Marshaller<Request<ListOutgoingCertificatesRequest>, ListOutgoingCertificatesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/certificates-out-going")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

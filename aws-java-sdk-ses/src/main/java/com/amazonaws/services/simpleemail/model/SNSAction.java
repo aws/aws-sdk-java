@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -186,6 +187,7 @@ public class SNSAction implements Serializable, Cloneable {
      * @see SNSActionEncoding
      */
 
+    @JsonIgnore
     public void setEncoding(SNSActionEncoding encoding) {
         this.encoding = encoding.toString();
     }

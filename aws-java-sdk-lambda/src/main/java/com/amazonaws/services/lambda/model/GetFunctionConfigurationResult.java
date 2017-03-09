@@ -14,6 +14,7 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -291,6 +292,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * @see Runtime
      */
 
+    @JsonIgnore
     public void setRuntime(Runtime runtime) {
         this.runtime = runtime.toString();
     }

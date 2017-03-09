@@ -15,6 +15,7 @@ package com.amazonaws.services.dynamodbv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -517,6 +518,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see ReturnConsumedCapacity
      */
 
+    @JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }

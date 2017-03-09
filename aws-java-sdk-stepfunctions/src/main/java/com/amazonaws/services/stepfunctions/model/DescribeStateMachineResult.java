@@ -14,6 +14,7 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -193,6 +194,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * @see StateMachineStatus
      */
 
+    @JsonIgnore
     public void setStatus(StateMachineStatus status) {
         this.status = status.toString();
     }

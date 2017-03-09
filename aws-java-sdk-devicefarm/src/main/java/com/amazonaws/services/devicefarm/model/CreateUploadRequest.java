@@ -15,6 +15,7 @@ package com.amazonaws.services.devicefarm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -1004,6 +1005,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see UploadType
      */
 
+    @JsonIgnore
     public void setType(UploadType type) {
         this.type = type.toString();
     }

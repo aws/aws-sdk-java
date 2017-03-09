@@ -14,6 +14,7 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -150,6 +151,7 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * @see InterconnectState
      */
 
+    @JsonIgnore
     public void setInterconnectState(InterconnectState interconnectState) {
         this.interconnectState = interconnectState.toString();
     }

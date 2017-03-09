@@ -14,6 +14,7 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -382,6 +383,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see ResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -455,6 +457,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see InstanceSnapshotState
      */
 
+    @JsonIgnore
     public void setState(InstanceSnapshotState state) {
         this.state = state.toString();
     }

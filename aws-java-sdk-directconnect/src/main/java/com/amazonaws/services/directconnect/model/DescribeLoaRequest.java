@@ -15,6 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -279,6 +280,7 @@ public class DescribeLoaRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see LoaContentType
      */
 
+    @JsonIgnore
     public void setLoaContentType(LoaContentType loaContentType) {
         this.loaContentType = loaContentType.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -175,6 +176,7 @@ public class UpdateConstraintResult extends com.amazonaws.AmazonWebServiceResult
      * @see Status
      */
 
+    @JsonIgnore
     public void setStatus(Status status) {
         this.status = status.toString();
     }

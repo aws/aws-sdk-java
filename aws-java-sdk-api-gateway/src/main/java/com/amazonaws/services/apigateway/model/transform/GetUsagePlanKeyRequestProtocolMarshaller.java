@@ -33,7 +33,7 @@ public class GetUsagePlanKeyRequestProtocolMarshaller implements Marshaller<Requ
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/usageplans/{usageplanId}/keys/{keyId}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .build();
+            .serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -14,6 +14,7 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -354,6 +355,7 @@ public class StreamSpecification implements Serializable, Cloneable, StructuredP
      * @see StreamViewType
      */
 
+    @JsonIgnore
     public void setStreamViewType(StreamViewType streamViewType) {
         this.streamViewType = streamViewType.toString();
     }

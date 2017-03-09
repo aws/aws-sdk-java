@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetAccountSettingsRequestProtocolMarshaller implements Marshaller<Request<GetAccountSettingsRequest>, GetAccountSettingsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2016-08-19/account-settings/")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSLambda").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

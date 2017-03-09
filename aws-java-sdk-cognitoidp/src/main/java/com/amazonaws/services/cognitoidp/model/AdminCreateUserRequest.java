@@ -15,6 +15,7 @@ package com.amazonaws.services.cognitoidp.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -997,6 +998,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @see MessageActionType
      */
 
+    @JsonIgnore
     public void setMessageAction(MessageActionType messageAction) {
         this.messageAction = messageAction.toString();
     }

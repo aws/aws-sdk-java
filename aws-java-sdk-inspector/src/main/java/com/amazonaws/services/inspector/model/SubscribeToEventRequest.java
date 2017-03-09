@@ -15,6 +15,7 @@ package com.amazonaws.services.inspector.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -140,6 +141,7 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
      * @see InspectorEvent
      */
 
+    @JsonIgnore
     public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }

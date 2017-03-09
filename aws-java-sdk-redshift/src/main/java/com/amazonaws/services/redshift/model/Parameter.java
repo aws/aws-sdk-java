@@ -14,6 +14,7 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -411,6 +412,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ParameterApplyType
      */
 
+    @JsonIgnore
     public void setApplyType(ParameterApplyType applyType) {
         this.applyType = applyType.toString();
     }

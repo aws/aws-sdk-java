@@ -15,6 +15,7 @@ package com.amazonaws.services.devicefarm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -272,6 +273,7 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DevicePoolType
      */
 
+    @JsonIgnore
     public void setType(DevicePoolType type) {
         this.type = type.toString();
     }

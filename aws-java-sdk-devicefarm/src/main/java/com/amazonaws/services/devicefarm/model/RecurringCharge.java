@@ -14,6 +14,7 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -134,6 +135,7 @@ public class RecurringCharge implements Serializable, Cloneable, StructuredPojo 
      * @see RecurringChargeFrequency
      */
 
+    @JsonIgnore
     public void setFrequency(RecurringChargeFrequency frequency) {
         this.frequency = frequency.toString();
     }

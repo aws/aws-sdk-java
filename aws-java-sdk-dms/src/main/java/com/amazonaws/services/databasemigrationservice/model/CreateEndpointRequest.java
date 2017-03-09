@@ -15,6 +15,7 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -214,6 +215,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReplicationEndpointTypeValue
      */
 
+    @JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         this.endpointType = endpointType.toString();
     }
@@ -782,6 +784,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DmsSslModeValue
      */
 
+    @JsonIgnore
     public void setSslMode(DmsSslModeValue sslMode) {
         this.sslMode = sslMode.toString();
     }

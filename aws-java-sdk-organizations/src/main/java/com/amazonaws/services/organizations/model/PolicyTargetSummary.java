@@ -14,6 +14,7 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -441,6 +442,7 @@ public class PolicyTargetSummary implements Serializable, Cloneable, StructuredP
      * @see TargetType
      */
 
+    @JsonIgnore
     public void setType(TargetType type) {
         this.type = type.toString();
     }

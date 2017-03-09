@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -279,6 +280,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceType
      */
 
+    @JsonIgnore
     public void setType(SpotInstanceType type) {
         this.type = type.toString();
     }
@@ -376,6 +378,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceState
      */
 
+    @JsonIgnore
     public void setState(SpotInstanceState state) {
         this.state = state.toString();
     }
@@ -857,6 +860,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
+    @JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }

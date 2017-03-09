@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -154,6 +155,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
      * @see EventType
      */
 
+    @JsonIgnore
     public void setEventType(EventType eventType) {
         this.eventType = eventType.toString();
     }

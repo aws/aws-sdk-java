@@ -15,6 +15,7 @@ package com.amazonaws.services.batch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -154,6 +155,7 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEState
      */
 
+    @JsonIgnore
     public void setState(CEState state) {
         this.state = state.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.codedeploy.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -379,6 +380,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ApplicationRevisionSortBy
      */
 
+    @JsonIgnore
     public void setSortBy(ApplicationRevisionSortBy sortBy) {
         this.sortBy = sortBy.toString();
     }
@@ -631,6 +633,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
+    @JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -967,6 +970,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ListStateFilterAction
      */
 
+    @JsonIgnore
     public void setDeployed(ListStateFilterAction deployed) {
         this.deployed = deployed.toString();
     }

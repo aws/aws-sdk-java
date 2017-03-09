@@ -33,7 +33,7 @@ public class DeleteFileSystemRequestProtocolMarshaller implements Marshaller<Req
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2015-02-01/file-systems/{FileSystemId}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonElasticFileSystem").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

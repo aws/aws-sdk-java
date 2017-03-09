@@ -33,7 +33,7 @@ public class DetachThingPrincipalRequestProtocolMarshaller implements Marshaller
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/things/{thingName}/principals").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .build();
+            .serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -14,6 +14,7 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -215,6 +216,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
      * @see ChannelType
      */
 
+    @JsonIgnore
     public void setChannelType(ChannelType channelType) {
         this.channelType = channelType.toString();
     }

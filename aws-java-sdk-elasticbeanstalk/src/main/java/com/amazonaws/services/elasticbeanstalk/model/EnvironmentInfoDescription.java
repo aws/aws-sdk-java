@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -104,6 +105,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @see EnvironmentInfoType
      */
 
+    @JsonIgnore
     public void setInfoType(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }

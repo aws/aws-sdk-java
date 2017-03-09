@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteCertificateRequestProtocolMarshaller implements Marshaller<Request<DeleteCertificateRequest>, DeleteCertificateRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/certificates/{certificateId}")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

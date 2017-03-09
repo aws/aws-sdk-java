@@ -15,6 +15,7 @@ package com.amazonaws.services.mturk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -143,6 +144,7 @@ public class ListWorkersWithQualificationTypeRequest extends com.amazonaws.Amazo
      * @see QualificationStatus
      */
 
+    @JsonIgnore
     public void setStatus(QualificationStatus status) {
         this.status = status.toString();
     }

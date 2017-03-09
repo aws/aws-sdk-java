@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -215,6 +216,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see FlowLogsResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(FlowLogsResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -288,6 +290,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see TrafficType
      */
 
+    @JsonIgnore
     public void setTrafficType(TrafficType trafficType) {
         this.trafficType = trafficType.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -603,6 +604,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see UserStatusType
      */
 
+    @JsonIgnore
     public void setUserStatus(UserStatusType userStatus) {
         this.userStatus = userStatus.toString();
     }

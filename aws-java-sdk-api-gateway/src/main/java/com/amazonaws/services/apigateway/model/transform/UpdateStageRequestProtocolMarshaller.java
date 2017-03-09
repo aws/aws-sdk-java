@@ -33,7 +33,7 @@ public class UpdateStageRequestProtocolMarshaller implements Marshaller<Request<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/restapis/{restapi_id}/stages/{stage_name}").httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

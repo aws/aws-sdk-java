@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetTraceSummariesRequestProtocolMarshaller implements Marshaller<Request<GetTraceSummariesRequest>, GetTraceSummariesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/TraceSummaries")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSXRay").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

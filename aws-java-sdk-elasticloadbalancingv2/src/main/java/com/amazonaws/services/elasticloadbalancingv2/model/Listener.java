@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -243,6 +244,7 @@ public class Listener implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
+    @JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol.toString();
     }

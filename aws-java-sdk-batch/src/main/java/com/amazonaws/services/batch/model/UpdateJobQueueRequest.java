@@ -15,6 +15,7 @@ package com.amazonaws.services.batch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -147,6 +148,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see JQState
      */
 
+    @JsonIgnore
     public void setState(JQState state) {
         this.state = state.toString();
     }

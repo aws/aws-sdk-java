@@ -15,6 +15,7 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -261,6 +262,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RoutingStrategyType
      */
 
+    @JsonIgnore
     public void setRoutingStrategyType(RoutingStrategyType routingStrategyType) {
         this.routingStrategyType = routingStrategyType.toString();
     }

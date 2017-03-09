@@ -14,6 +14,7 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -350,6 +351,7 @@ public class AttributeDefinition implements Serializable, Cloneable, StructuredP
      * @see ScalarAttributeType
      */
 
+    @JsonIgnore
     public void setAttributeType(ScalarAttributeType attributeType) {
         this.attributeType = attributeType.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -605,6 +606,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
+    @JsonIgnore
     public void setUserStatus(UserStatusType userStatus) {
         this.userStatus = userStatus.toString();
     }

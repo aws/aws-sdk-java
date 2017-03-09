@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -231,6 +232,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * @see RequestCancelExternalWorkflowExecutionFailedCause
      */
 
+    @JsonIgnore
     public void setCause(RequestCancelExternalWorkflowExecutionFailedCause cause) {
         this.cause = cause.toString();
     }

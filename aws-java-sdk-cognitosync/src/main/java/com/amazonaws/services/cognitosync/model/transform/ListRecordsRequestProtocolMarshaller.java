@@ -33,7 +33,7 @@ public class ListRecordsRequestProtocolMarshaller implements Marshaller<Request<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records").httpMethodName(HttpMethodName.GET)
-            .hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonCognitoSync").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -15,6 +15,7 @@ package com.amazonaws.services.codedeploy.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -206,6 +207,7 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * @see RegistrationStatus
      */
 
+    @JsonIgnore
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
         this.registrationStatus = registrationStatus.toString();
     }

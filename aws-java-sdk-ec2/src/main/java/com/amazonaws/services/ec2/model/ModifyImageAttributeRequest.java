@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -239,6 +240,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @see OperationType
      */
 
+    @JsonIgnore
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }

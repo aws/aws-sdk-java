@@ -14,6 +14,7 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -102,6 +103,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunState
      */
 
+    @JsonIgnore
     public void setState(ReplicationRunState state) {
         this.state = state.toString();
     }
@@ -151,6 +153,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunType
      */
 
+    @JsonIgnore
     public void setType(ReplicationRunType type) {
         this.type = type.toString();
     }

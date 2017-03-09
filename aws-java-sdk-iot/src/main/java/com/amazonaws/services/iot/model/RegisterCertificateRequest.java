@@ -15,6 +15,7 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -213,6 +214,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CertificateStatus
      */
 
+    @JsonIgnore
     public void setStatus(CertificateStatus status) {
         this.status = status.toString();
     }

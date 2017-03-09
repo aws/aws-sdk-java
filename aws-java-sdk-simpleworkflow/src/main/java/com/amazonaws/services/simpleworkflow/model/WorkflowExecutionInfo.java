@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -305,6 +306,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see ExecutionStatus
      */
 
+    @JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         this.executionStatus = executionStatus.toString();
     }
@@ -458,6 +460,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see CloseStatus
      */
 
+    @JsonIgnore
     public void setCloseStatus(CloseStatus closeStatus) {
         this.closeStatus = closeStatus.toString();
     }

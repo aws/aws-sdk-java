@@ -15,6 +15,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -532,6 +533,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see DocumentHashType
      */
 
+    @JsonIgnore
     public void setDocumentHashType(DocumentHashType documentHashType) {
         this.documentHashType = documentHashType.toString();
     }

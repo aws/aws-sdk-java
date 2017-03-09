@@ -15,6 +15,7 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -147,6 +148,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ExportTaskStatusCode
      */
 
+    @JsonIgnore
     public void setStatusCode(ExportTaskStatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }

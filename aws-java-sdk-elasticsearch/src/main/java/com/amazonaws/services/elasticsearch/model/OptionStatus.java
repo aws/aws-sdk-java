@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -229,6 +230,7 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
      * @see OptionState
      */
 
+    @JsonIgnore
     public void setState(OptionState state) {
         this.state = state.toString();
     }

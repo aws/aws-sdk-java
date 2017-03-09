@@ -14,6 +14,7 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -83,6 +84,7 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
      * @see ChangeTokenStatus
      */
 
+    @JsonIgnore
     public void setChangeTokenStatus(ChangeTokenStatus changeTokenStatus) {
         this.changeTokenStatus = changeTokenStatus.toString();
     }

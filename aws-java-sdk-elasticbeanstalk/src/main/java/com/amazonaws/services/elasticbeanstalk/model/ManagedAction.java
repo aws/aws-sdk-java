@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -191,6 +192,7 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionType
      */
 
+    @JsonIgnore
     public void setActionType(ActionType actionType) {
         this.actionType = actionType.toString();
     }
@@ -272,6 +274,7 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionStatus
      */
 
+    @JsonIgnore
     public void setStatus(ActionStatus status) {
         this.status = status.toString();
     }

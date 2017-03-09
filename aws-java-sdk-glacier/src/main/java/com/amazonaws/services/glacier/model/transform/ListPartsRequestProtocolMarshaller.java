@@ -33,7 +33,7 @@ public class ListPartsRequestProtocolMarshaller implements Marshaller<Request<Li
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

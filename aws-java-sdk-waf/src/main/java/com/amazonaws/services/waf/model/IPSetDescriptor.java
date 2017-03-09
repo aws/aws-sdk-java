@@ -14,6 +14,7 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -131,6 +132,7 @@ public class IPSetDescriptor implements Serializable, Cloneable, StructuredPojo 
      * @see IPSetDescriptorType
      */
 
+    @JsonIgnore
     public void setType(IPSetDescriptorType type) {
         this.type = type.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -403,6 +404,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      * @see AddressFamily
      */
 
+    @JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         this.addressFamily = addressFamily.toString();
     }
@@ -452,6 +454,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      * @see VirtualInterfaceState
      */
 
+    @JsonIgnore
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState.toString();
     }

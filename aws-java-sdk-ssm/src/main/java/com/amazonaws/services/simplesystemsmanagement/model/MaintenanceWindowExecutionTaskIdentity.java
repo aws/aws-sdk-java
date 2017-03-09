@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -210,6 +211,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         this.status = status.toString();
     }
@@ -443,6 +445,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowTaskType
      */
 
+    @JsonIgnore
     public void setTaskType(MaintenanceWindowTaskType taskType) {
         this.taskType = taskType.toString();
     }

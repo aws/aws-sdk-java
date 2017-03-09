@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -520,6 +521,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see CloudHsmObjectState
      */
 
+    @JsonIgnore
     public void setState(CloudHsmObjectState state) {
         this.state = state.toString();
     }

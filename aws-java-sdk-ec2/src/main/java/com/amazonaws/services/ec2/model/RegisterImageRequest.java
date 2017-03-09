@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -364,6 +365,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * @see ArchitectureValues
      */
 
+    @JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }

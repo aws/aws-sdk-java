@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CreateModelRequestProtocolMarshaller implements Marshaller<Request<CreateModelRequest>, CreateModelRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/restapis/{restapi_id}/models")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

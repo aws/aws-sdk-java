@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -106,6 +107,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see DiskImageFormat
      */
 
+    @JsonIgnore
     public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
         this.diskImageFormat = diskImageFormat.toString();
     }
@@ -187,6 +189,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see ContainerFormat
      */
 
+    @JsonIgnore
     public void setContainerFormat(ContainerFormat containerFormat) {
         this.containerFormat = containerFormat.toString();
     }

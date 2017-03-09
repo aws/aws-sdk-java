@@ -15,6 +15,7 @@ package com.amazonaws.services.batch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -146,6 +147,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @see JobDefinitionType
      */
 
+    @JsonIgnore
     public void setType(JobDefinitionType type) {
         this.type = type.toString();
     }

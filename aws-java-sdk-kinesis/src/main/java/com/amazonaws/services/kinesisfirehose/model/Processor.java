@@ -14,6 +14,7 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class Processor implements Serializable, Cloneable, StructuredPojo {
      * @see ProcessorType
      */
 
+    @JsonIgnore
     public void setType(ProcessorType type) {
         this.type = type.toString();
     }

@@ -13,6 +13,7 @@
 package com.amazonaws.services.inspector.model;
 
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -155,6 +156,7 @@ public class NoSuchEntityException extends com.amazonaws.services.inspector.mode
      * @see NoSuchEntityErrorCode
      */
 
+    @JsonIgnore
     public void setInspectorErrorCode(NoSuchEntityErrorCode inspectorErrorCode) {
         this.inspectorErrorCode = inspectorErrorCode.toString();
     }

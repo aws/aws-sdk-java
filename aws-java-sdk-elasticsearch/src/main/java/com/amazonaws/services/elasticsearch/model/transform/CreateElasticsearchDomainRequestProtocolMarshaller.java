@@ -33,7 +33,7 @@ public class CreateElasticsearchDomainRequestProtocolMarshaller implements
         Marshaller<Request<CreateElasticsearchDomainRequest>, CreateElasticsearchDomainRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2015-01-01/es/domain")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSElasticsearch").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

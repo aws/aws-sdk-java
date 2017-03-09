@@ -33,7 +33,7 @@ public class UpdateBasePathMappingRequestProtocolMarshaller implements Marshalle
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/domainnames/{domain_name}/basepathmappings/{base_path}").httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

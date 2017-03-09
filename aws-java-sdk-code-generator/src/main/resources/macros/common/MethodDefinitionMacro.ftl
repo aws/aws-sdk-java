@@ -188,6 +188,7 @@
     <#if member.enumType?has_content>
     ${setterDoc}
     ${deprecated}
+    @JsonIgnore
     public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName}.toString();
     }

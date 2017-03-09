@@ -15,6 +15,7 @@ package com.amazonaws.services.organizations.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -312,6 +313,7 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
      * @see PolicyType
      */
 
+    @JsonIgnore
     public void setFilter(PolicyType filter) {
         this.filter = filter.toString();
     }

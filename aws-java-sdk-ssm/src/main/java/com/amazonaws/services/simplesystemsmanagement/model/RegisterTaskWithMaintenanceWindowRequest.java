@@ -15,6 +15,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -357,6 +358,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * @see MaintenanceWindowTaskType
      */
 
+    @JsonIgnore
     public void setTaskType(MaintenanceWindowTaskType taskType) {
         this.taskType = taskType.toString();
     }

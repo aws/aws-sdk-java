@@ -15,6 +15,7 @@ package com.amazonaws.services.mturk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -156,6 +157,7 @@ public class SendTestEventNotificationRequest extends com.amazonaws.AmazonWebSer
      * @see EventType
      */
 
+    @JsonIgnore
     public void setTestEventType(EventType testEventType) {
         this.testEventType = testEventType.toString();
     }

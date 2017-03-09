@@ -14,6 +14,7 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -88,6 +89,7 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
      * @see CampaignStatus
      */
 
+    @JsonIgnore
     public void setCampaignStatus(CampaignStatus campaignStatus) {
         this.campaignStatus = campaignStatus.toString();
     }

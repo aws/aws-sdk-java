@@ -44,8 +44,8 @@ public class ${className} implements Marshaller<Request<${shapeName}>, ${shapeNa
         .hasPayloadMembers(${shape.hasPayloadMembers()?c})
         <#if shape.marshaller.target??>
         .operationIdentifier("${shape.marshaller.target}")
-        .serviceName("${serviceNameForRequest}")
         </#if>
+        .serviceName("${serviceNameForRequest}")
         .build();
 
     private final ${metadata.protocolFactory} protocolFactory;

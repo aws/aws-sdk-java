@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetSdkTypeRequestProtocolMarshaller implements Marshaller<Request<GetSdkTypeRequest>, GetSdkTypeRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/sdktypes/{sdktype_id}")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

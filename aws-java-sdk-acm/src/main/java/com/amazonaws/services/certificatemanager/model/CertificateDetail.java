@@ -14,6 +14,7 @@ package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -763,6 +764,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateStatus
      */
 
+    @JsonIgnore
     public void setStatus(CertificateStatus status) {
         this.status = status.toString();
     }
@@ -890,6 +892,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see RevocationReason
      */
 
+    @JsonIgnore
     public void setRevocationReason(RevocationReason revocationReason) {
         this.revocationReason = revocationReason.toString();
     }
@@ -1045,6 +1048,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see KeyAlgorithm
      */
 
+    @JsonIgnore
     public void setKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
         this.keyAlgorithm = keyAlgorithm.toString();
     }
@@ -1260,6 +1264,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see FailureReason
      */
 
+    @JsonIgnore
     public void setFailureReason(FailureReason failureReason) {
         this.failureReason = failureReason.toString();
     }
@@ -1387,6 +1392,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateType
      */
 
+    @JsonIgnore
     public void setType(CertificateType type) {
         this.type = type.toString();
     }

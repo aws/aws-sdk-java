@@ -32,7 +32,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class AttachPrincipalPolicyRequestProtocolMarshaller implements Marshaller<Request<AttachPrincipalPolicyRequest>, AttachPrincipalPolicyRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/principal-policies/{policyName}").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .requestUri("/principal-policies/{policyName}").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

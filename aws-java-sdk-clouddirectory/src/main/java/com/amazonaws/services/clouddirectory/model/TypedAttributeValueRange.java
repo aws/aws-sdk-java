@@ -14,6 +14,7 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -106,6 +107,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
+    @JsonIgnore
     public void setStartMode(RangeMode startMode) {
         this.startMode = startMode.toString();
     }
@@ -219,6 +221,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
+    @JsonIgnore
     public void setEndMode(RangeMode endMode) {
         this.endMode = endMode.toString();
     }

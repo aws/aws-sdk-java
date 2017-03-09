@@ -13,6 +13,7 @@
 package com.amazonaws.services.clouddirectory.model;
 
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -101,6 +102,7 @@ public class BatchWriteException extends com.amazonaws.services.clouddirectory.m
      * @see BatchWriteExceptionType
      */
 
+    @JsonIgnore
     public void setType(BatchWriteExceptionType type) {
         this.type = type.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -158,6 +159,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * @see NotificationType
      */
 
+    @JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         this.notificationType = notificationType.toString();
     }

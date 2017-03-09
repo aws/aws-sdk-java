@@ -15,6 +15,7 @@ package com.amazonaws.services.opsworks.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -261,6 +262,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see LayerType
      */
 
+    @JsonIgnore
     public void setType(LayerType type) {
         this.type = type.toString();
     }

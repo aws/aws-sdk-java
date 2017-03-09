@@ -14,6 +14,7 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -197,6 +198,7 @@ public class Instance implements Serializable, Cloneable {
      * @see LifecycleState
      */
 
+    @JsonIgnore
     public void setLifecycleState(LifecycleState lifecycleState) {
         this.lifecycleState = lifecycleState.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -177,6 +178,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DocumentType
      */
 
+    @JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         this.documentType = documentType.toString();
     }

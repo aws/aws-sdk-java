@@ -15,6 +15,7 @@ package com.amazonaws.services.servicecatalog.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -553,6 +554,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ProductType
      */
 
+    @JsonIgnore
     public void setProductType(ProductType productType) {
         this.productType = productType.toString();
     }

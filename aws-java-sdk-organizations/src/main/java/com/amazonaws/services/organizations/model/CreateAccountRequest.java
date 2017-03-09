@@ -15,6 +15,7 @@ package com.amazonaws.services.organizations.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -418,6 +419,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see IAMUserAccessToBilling
      */
 
+    @JsonIgnore
     public void setIamUserAccessToBilling(IAMUserAccessToBilling iamUserAccessToBilling) {
         this.iamUserAccessToBilling = iamUserAccessToBilling.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -267,6 +268,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * @see WafActionType
      */
 
+    @JsonIgnore
     public void setType(WafActionType type) {
         this.type = type.toString();
     }

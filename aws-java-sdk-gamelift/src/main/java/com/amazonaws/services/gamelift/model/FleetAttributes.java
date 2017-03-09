@@ -14,6 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -763,6 +764,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see FleetStatus
      */
 
+    @JsonIgnore
     public void setStatus(FleetStatus status) {
         this.status = status.toString();
     }
@@ -1267,6 +1269,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see ProtectionPolicy
      */
 
+    @JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
     }
@@ -1373,6 +1376,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see OperatingSystem
      */
 
+    @JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -99,6 +100,7 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
      * @see UlimitName
      */
 
+    @JsonIgnore
     public void setName(UlimitName name) {
         this.name = name.toString();
     }

@@ -4,6 +4,7 @@ package ${metadata.packageName}.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 <#if shape.requestSignerAware>
 import com.amazonaws.auth.RequestSigner;

@@ -15,6 +15,7 @@ package com.amazonaws.services.identitymanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -243,6 +244,7 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
      * @see EntityType
      */
 
+    @JsonIgnore
     public void setEntityFilter(EntityType entityFilter) {
         this.entityFilter = entityFilter.toString();
     }

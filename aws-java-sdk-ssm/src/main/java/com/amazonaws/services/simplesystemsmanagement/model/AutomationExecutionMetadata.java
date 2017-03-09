@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -256,6 +257,7 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      * @see AutomationExecutionStatus
      */
 
+    @JsonIgnore
     public void setAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
         this.automationExecutionStatus = automationExecutionStatus.toString();
     }

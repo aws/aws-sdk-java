@@ -33,7 +33,7 @@ public class AddPermissionRequestProtocolMarshaller implements Marshaller<Reques
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2015-03-31/functions/{FunctionName}/policy").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AWSLambda").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

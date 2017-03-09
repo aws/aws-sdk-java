@@ -13,6 +13,7 @@
 package com.amazonaws.services.inspector.model;
 
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -155,6 +156,7 @@ public class InvalidInputException extends com.amazonaws.services.inspector.mode
      * @see InvalidInputErrorCode
      */
 
+    @JsonIgnore
     public void setInspectorErrorCode(InvalidInputErrorCode inspectorErrorCode) {
         this.inspectorErrorCode = inspectorErrorCode.toString();
     }

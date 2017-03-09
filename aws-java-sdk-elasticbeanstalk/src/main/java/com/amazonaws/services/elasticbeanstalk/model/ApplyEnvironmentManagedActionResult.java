@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -185,6 +186,7 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
      * @see ActionType
      */
 
+    @JsonIgnore
     public void setActionType(ActionType actionType) {
         this.actionType = actionType.toString();
     }

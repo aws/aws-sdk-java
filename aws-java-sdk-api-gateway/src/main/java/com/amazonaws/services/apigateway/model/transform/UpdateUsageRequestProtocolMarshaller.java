@@ -33,7 +33,7 @@ public class UpdateUsageRequestProtocolMarshaller implements Marshaller<Request<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/usageplans/{usageplanId}/keys/{keyId}/usage").httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

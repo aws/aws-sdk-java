@@ -14,6 +14,7 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,6 +96,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentType
      */
 
+    @JsonIgnore
     public void setDeploymentType(DeploymentType deploymentType) {
         this.deploymentType = deploymentType.toString();
     }
@@ -168,6 +170,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentOption
      */
 
+    @JsonIgnore
     public void setDeploymentOption(DeploymentOption deploymentOption) {
         this.deploymentOption = deploymentOption.toString();
     }

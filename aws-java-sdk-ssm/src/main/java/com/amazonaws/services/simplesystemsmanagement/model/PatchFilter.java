@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * @see PatchFilterKey
      */
 
+    @JsonIgnore
     public void setKey(PatchFilterKey key) {
         this.key = key.toString();
     }

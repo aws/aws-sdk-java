@@ -14,6 +14,7 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -272,6 +273,7 @@ public class EventTopic implements Serializable, Cloneable, StructuredPojo {
      * @see TopicStatus
      */
 
+    @JsonIgnore
     public void setStatus(TopicStatus status) {
         this.status = status.toString();
     }

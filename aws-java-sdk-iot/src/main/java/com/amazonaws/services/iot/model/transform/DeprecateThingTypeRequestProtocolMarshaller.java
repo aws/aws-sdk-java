@@ -33,7 +33,7 @@ public class DeprecateThingTypeRequestProtocolMarshaller implements Marshaller<R
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/thing-types/{thingTypeName}/deprecate").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
-            .build();
+            .serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -34,7 +34,7 @@ public class AcceptCertificateTransferRequestProtocolMarshaller implements
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/accept-certificate-transfer/{certificateId}").httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

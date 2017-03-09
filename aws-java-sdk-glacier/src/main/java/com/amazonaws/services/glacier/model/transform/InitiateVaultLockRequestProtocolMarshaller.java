@@ -33,7 +33,7 @@ public class InitiateVaultLockRequestProtocolMarshaller implements Marshaller<Re
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/{accountId}/vaults/{vaultName}/lock-policy").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

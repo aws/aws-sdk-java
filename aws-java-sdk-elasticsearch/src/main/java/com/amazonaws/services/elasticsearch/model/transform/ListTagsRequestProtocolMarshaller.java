@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListTagsRequestProtocolMarshaller implements Marshaller<Request<ListTagsRequest>, ListTagsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2015-01-01/tags/")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSElasticsearch").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

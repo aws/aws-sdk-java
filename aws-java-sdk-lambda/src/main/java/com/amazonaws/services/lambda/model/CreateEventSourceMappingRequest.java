@@ -15,6 +15,7 @@ package com.amazonaws.services.lambda.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -478,6 +479,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * @see EventSourcePosition
      */
 
+    @JsonIgnore
     public void setStartingPosition(EventSourcePosition startingPosition) {
         this.startingPosition = startingPosition.toString();
     }

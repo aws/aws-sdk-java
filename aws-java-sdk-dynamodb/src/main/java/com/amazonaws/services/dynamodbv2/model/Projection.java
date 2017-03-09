@@ -14,6 +14,7 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -258,6 +259,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * @see ProjectionType
      */
 
+    @JsonIgnore
     public void setProjectionType(ProjectionType projectionType) {
         this.projectionType = projectionType.toString();
     }

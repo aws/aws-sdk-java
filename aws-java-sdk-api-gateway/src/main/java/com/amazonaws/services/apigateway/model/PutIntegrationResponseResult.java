@@ -14,6 +14,7 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -567,6 +568,7 @@ public class PutIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * @see ContentHandlingStrategy
      */
 
+    @JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         this.contentHandling = contentHandling.toString();
     }

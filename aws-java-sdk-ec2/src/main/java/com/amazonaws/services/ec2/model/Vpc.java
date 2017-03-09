@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -168,6 +169,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see VpcState
      */
 
+    @JsonIgnore
     public void setState(VpcState state) {
         this.state = state.toString();
     }
@@ -400,6 +402,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see Tenancy
      */
 
+    @JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }

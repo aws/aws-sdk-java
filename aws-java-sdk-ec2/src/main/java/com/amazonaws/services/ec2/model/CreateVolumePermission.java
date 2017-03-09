@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -135,6 +136,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      * @see PermissionGroup
      */
 
+    @JsonIgnore
     public void setGroup(PermissionGroup group) {
         this.group = group.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -228,6 +229,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @JsonIgnore
     public void setSourceType(SourceType sourceType) {
         this.sourceType = sourceType.toString();
     }
@@ -416,6 +418,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceRepository
      */
 
+    @JsonIgnore
     public void setSourceRepository(SourceRepository sourceRepository) {
         this.sourceRepository = sourceRepository.toString();
     }

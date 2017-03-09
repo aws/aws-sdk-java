@@ -15,6 +15,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -276,6 +277,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * @see BehaviorOnMXFailure
      */
 
+    @JsonIgnore
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
         this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
     }

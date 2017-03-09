@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -119,6 +120,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
+    @JsonIgnore
     public void setInstanceType(ESPartitionInstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -368,6 +370,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
+    @JsonIgnore
     public void setDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
         this.dedicatedMasterType = dedicatedMasterType.toString();
     }

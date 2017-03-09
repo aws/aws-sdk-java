@@ -15,6 +15,7 @@ package com.amazonaws.services.cognitoidp.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -715,6 +716,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see UserPoolMfaType
      */
 
+    @JsonIgnore
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
         this.mfaConfiguration = mfaConfiguration.toString();
     }

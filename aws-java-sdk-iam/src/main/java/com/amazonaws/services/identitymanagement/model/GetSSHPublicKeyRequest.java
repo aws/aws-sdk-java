@@ -15,6 +15,7 @@ package com.amazonaws.services.identitymanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -243,6 +244,7 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * @see EncodingType
      */
 
+    @JsonIgnore
     public void setEncoding(EncodingType encoding) {
         this.encoding = encoding.toString();
     }

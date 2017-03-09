@@ -15,6 +15,7 @@ package com.amazonaws.services.lambda.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -267,6 +268,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see InvocationType
      */
 
+    @JsonIgnore
     public void setInvocationType(InvocationType invocationType) {
         this.invocationType = invocationType.toString();
     }
@@ -375,6 +377,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see LogType
      */
 
+    @JsonIgnore
     public void setLogType(LogType logType) {
         this.logType = logType.toString();
     }

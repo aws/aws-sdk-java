@@ -15,6 +15,7 @@ package com.amazonaws.services.kinesis.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -177,6 +178,7 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingType
      */
 
+    @JsonIgnore
     public void setScalingType(ScalingType scalingType) {
         this.scalingType = scalingType.toString();
     }

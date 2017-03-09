@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -324,6 +325,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ConfigurationItemStatus
      */
 
+    @JsonIgnore
     public void setConfigurationItemStatus(ConfigurationItemStatus configurationItemStatus) {
         this.configurationItemStatus = configurationItemStatus.toString();
     }
@@ -538,6 +540,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

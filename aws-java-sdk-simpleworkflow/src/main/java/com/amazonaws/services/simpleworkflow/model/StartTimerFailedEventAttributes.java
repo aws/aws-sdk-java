@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -175,6 +176,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable,
      * @see StartTimerFailedCause
      */
 
+    @JsonIgnore
     public void setCause(StartTimerFailedCause cause) {
         this.cause = cause.toString();
     }

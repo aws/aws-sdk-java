@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -151,6 +152,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ArchitectureValues
      */
 
+    @JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -478,6 +480,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see InstanceType
      */
 
+    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -695,6 +698,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ShutdownBehavior
      */
 
+    @JsonIgnore
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
     }

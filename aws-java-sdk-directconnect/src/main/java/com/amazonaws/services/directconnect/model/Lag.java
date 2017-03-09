@@ -14,6 +14,7 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -334,6 +335,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * @see LagState
      */
 
+    @JsonIgnore
     public void setLagState(LagState lagState) {
         this.lagState = lagState.toString();
     }

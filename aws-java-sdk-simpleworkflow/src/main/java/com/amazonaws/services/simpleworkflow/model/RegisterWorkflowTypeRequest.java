@@ -15,6 +15,7 @@ package com.amazonaws.services.simpleworkflow.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -801,6 +802,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      * @see ChildPolicy
      */
 
+    @JsonIgnore
     public void setDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
         this.defaultChildPolicy = defaultChildPolicy.toString();
     }

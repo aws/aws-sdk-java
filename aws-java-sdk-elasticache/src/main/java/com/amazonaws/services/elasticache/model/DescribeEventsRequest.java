@@ -15,6 +15,7 @@ package com.amazonaws.services.elasticache.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -181,6 +182,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see SourceType
      */
 
+    @JsonIgnore
     public void setSourceType(SourceType sourceType) {
         this.sourceType = sourceType.toString();
     }

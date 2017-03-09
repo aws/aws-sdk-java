@@ -33,7 +33,7 @@ public class GetSchemaAsJsonRequestProtocolMarshaller implements Marshaller<Requ
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/amazonclouddirectory/2017-01-11/schema/json").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonCloudDirectory").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

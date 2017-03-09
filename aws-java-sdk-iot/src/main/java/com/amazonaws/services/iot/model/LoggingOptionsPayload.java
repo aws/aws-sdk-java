@@ -14,6 +14,7 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -131,6 +132,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
      * @see LogLevel
      */
 
+    @JsonIgnore
     public void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -2314,6 +2315,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ScaleDownBehavior
      */
 
+    @JsonIgnore
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
         this.scaleDownBehavior = scaleDownBehavior.toString();
     }

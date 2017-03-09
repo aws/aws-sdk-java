@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -92,6 +93,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @see CancelBatchErrorCode
      */
 
+    @JsonIgnore
     public void setCode(CancelBatchErrorCode code) {
         this.code = code.toString();
     }

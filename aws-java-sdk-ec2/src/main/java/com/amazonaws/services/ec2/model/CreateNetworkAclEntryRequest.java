@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -309,6 +310,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      * @see RuleAction
      */
 
+    @JsonIgnore
     public void setRuleAction(RuleAction ruleAction) {
         this.ruleAction = ruleAction.toString();
     }

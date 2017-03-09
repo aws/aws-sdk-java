@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -166,6 +167,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * @see AutoPlacement
      */
 
+    @JsonIgnore
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }

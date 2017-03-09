@@ -15,6 +15,7 @@ package com.amazonaws.services.dynamodbv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -1125,6 +1126,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * @see Select
      */
 
+    @JsonIgnore
     public void setSelect(Select select) {
         this.select = select.toString();
     }
@@ -1393,6 +1395,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * @see ConditionalOperator
      */
 
+    @JsonIgnore
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -1563,6 +1566,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * @see ReturnConsumedCapacity
      */
 
+    @JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }

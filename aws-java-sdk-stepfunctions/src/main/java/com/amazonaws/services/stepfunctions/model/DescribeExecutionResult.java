@@ -14,6 +14,7 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -245,6 +246,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
+    @JsonIgnore
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }

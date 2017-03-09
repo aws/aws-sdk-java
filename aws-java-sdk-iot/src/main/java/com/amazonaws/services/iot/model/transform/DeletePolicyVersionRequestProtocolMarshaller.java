@@ -33,7 +33,7 @@ public class DeletePolicyVersionRequestProtocolMarshaller implements Marshaller<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/policies/{policyName}/version/{policyVersionId}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

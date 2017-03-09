@@ -14,6 +14,7 @@ package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -526,6 +527,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ApplyMethod
      */
 
+    @JsonIgnore
     public void setApplyMethod(ApplyMethod applyMethod) {
         this.applyMethod = applyMethod.toString();
     }

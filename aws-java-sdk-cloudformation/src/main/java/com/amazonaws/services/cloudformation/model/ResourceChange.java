@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -145,6 +146,7 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see ChangeAction
      */
 
+    @JsonIgnore
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -430,6 +432,7 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see Replacement
      */
 
+    @JsonIgnore
     public void setReplacement(Replacement replacement) {
         this.replacement = replacement.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -155,6 +156,7 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      * @see HistoryItemType
      */
 
+    @JsonIgnore
     public void setHistoryItemType(HistoryItemType historyItemType) {
         this.historyItemType = historyItemType.toString();
     }

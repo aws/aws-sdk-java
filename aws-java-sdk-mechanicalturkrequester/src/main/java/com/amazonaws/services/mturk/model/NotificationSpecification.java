@@ -14,6 +14,7 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -163,6 +164,7 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
      * @see NotificationTransport
      */
 
+    @JsonIgnore
     public void setTransport(NotificationTransport transport) {
         this.transport = transport.toString();
     }

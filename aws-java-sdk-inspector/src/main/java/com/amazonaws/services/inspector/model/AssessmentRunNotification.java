@@ -14,6 +14,7 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -154,6 +155,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see InspectorEvent
      */
 
+    @JsonIgnore
     public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }
@@ -345,6 +347,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
+    @JsonIgnore
     public void setSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
         this.snsPublishStatusCode = snsPublishStatusCode.toString();
     }

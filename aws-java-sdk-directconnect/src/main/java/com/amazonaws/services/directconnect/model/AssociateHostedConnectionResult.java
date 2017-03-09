@@ -14,6 +14,7 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -203,6 +204,7 @@ public class AssociateHostedConnectionResult extends com.amazonaws.AmazonWebServ
      * @see ConnectionState
      */
 
+    @JsonIgnore
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }

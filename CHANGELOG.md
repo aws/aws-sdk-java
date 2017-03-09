@@ -1,4 +1,17 @@
-# __1.11.100__ __2017-03-08__
+# __1.11.101__ __2017-03-08__
+## __AWS SDK for Java__
+  - <h3>Features</h3>
+    - The service models are no longer included with individual SDK client modules. This reduces the overall size of the SDK JARs as they can be quite large. For users wishing to inspect them, the model files may still be found in the [aws-java-sdk-models](./aws-java-sdk-models) module.
+
+## __AWS Step Functions__
+  - <h3>Bugfixes</h3>
+    - Fixed an issue where a ChoiceState with no Default transition was throwing a NPE during validation.
+
+## __Amazon WorkDocs__
+  - <h3>Features</h3>
+    - **(New Service)** The Administrative SDKs for Amazon WorkDocs provides full administrator level access to WorkDocs site resources, allowing developers to integrate their applications to manage WorkDocs users, content and permissions programmatically
+
+# __1.11.100__ __2017-03-07__
 ## __Amazon RDS__
   - <h3>Features</h3>
     - Add support to using encrypted clusters as cross-region replication masters.

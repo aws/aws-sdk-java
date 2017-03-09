@@ -14,6 +14,7 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -235,6 +236,7 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * @see DeploymentReadyAction
      */
 
+    @JsonIgnore
     public void setActionOnTimeout(DeploymentReadyAction actionOnTimeout) {
         this.actionOnTimeout = actionOnTimeout.toString();
     }

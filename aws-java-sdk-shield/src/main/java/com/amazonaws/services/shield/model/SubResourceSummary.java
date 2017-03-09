@@ -14,6 +14,7 @@ package com.amazonaws.services.shield.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -106,6 +107,7 @@ public class SubResourceSummary implements Serializable, Cloneable, StructuredPo
      * @see SubResourceType
      */
 
+    @JsonIgnore
     public void setType(SubResourceType type) {
         this.type = type.toString();
     }

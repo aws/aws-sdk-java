@@ -14,6 +14,7 @@ package com.amazonaws.services.polly.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -113,6 +114,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see Gender
      */
 
+    @JsonIgnore
     public void setGender(Gender gender) {
         this.gender = gender.toString();
     }
@@ -194,6 +196,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see VoiceId
      */
 
+    @JsonIgnore
     public void setId(VoiceId id) {
         this.id = id.toString();
     }
@@ -269,6 +272,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see LanguageCode
      */
 
+    @JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         this.languageCode = languageCode.toString();
     }

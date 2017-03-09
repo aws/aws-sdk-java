@@ -14,6 +14,7 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -286,6 +287,7 @@ public class Assignment implements Serializable, Cloneable, StructuredPojo {
      * @see AssignmentStatus
      */
 
+    @JsonIgnore
     public void setAssignmentStatus(AssignmentStatus assignmentStatus) {
         this.assignmentStatus = assignmentStatus.toString();
     }

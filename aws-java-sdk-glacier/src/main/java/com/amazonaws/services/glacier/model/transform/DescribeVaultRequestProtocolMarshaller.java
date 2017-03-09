@@ -32,7 +32,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeVaultRequestProtocolMarshaller implements Marshaller<Request<DescribeVaultRequest>, DescribeVaultRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/{accountId}/vaults/{vaultName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .requestUri("/{accountId}/vaults/{vaultName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

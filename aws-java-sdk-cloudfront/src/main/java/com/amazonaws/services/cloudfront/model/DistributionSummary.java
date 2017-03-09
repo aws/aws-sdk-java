@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -640,6 +641,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @see PriceClass
      */
 
+    @JsonIgnore
     public void setPriceClass(PriceClass priceClass) {
         this.priceClass = priceClass.toString();
     }
@@ -868,6 +870,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @see HttpVersion
      */
 
+    @JsonIgnore
     public void setHttpVersion(HttpVersion httpVersion) {
         this.httpVersion = httpVersion.toString();
     }

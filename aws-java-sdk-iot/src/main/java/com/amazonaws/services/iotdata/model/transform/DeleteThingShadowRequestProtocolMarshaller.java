@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteThingShadowRequestProtocolMarshaller implements Marshaller<Request<DeleteThingShadowRequest>, DeleteThingShadowRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/things/{thingName}/shadow")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSIotData").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

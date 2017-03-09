@@ -14,6 +14,7 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -695,6 +696,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
+    @JsonIgnore
     public void setUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
         this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy.toString();
     }

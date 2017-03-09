@@ -15,6 +15,7 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -252,6 +253,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustDirection
      */
 
+    @JsonIgnore
     public void setTrustDirection(TrustDirection trustDirection) {
         this.trustDirection = trustDirection.toString();
     }
@@ -325,6 +327,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustType
      */
 
+    @JsonIgnore
     public void setTrustType(TrustType trustType) {
         this.trustType = trustType.toString();
     }

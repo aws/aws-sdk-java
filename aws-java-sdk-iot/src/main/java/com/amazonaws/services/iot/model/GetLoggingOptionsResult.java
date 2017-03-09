@@ -14,6 +14,7 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -129,6 +130,7 @@ public class GetLoggingOptionsResult extends com.amazonaws.AmazonWebServiceResul
      * @see LogLevel
      */
 
+    @JsonIgnore
     public void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel.toString();
     }

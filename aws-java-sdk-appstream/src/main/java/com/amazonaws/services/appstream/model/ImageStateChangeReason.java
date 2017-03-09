@@ -14,6 +14,7 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
      * @see ImageStateChangeReasonCode
      */
 
+    @JsonIgnore
     public void setCode(ImageStateChangeReasonCode code) {
         this.code = code.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -302,6 +303,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
      * @see RecorderStatus
      */
 
+    @JsonIgnore
     public void setLastStatus(RecorderStatus lastStatus) {
         this.lastStatus = lastStatus.toString();
     }

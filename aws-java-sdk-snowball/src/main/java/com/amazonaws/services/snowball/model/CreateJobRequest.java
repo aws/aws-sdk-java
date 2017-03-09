@@ -15,6 +15,7 @@ package com.amazonaws.services.snowball.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -189,6 +190,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
+    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -554,6 +556,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballCapacity
      */
 
+    @JsonIgnore
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
         this.snowballCapacityPreference = snowballCapacityPreference.toString();
     }
@@ -841,6 +844,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ShippingOption
      */
 
+    @JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         this.shippingOption = shippingOption.toString();
     }
@@ -1061,6 +1065,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballType
      */
 
+    @JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         this.snowballType = snowballType.toString();
     }

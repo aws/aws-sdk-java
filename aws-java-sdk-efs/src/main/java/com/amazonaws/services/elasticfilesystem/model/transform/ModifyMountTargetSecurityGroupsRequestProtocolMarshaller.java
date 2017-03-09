@@ -34,7 +34,7 @@ public class ModifyMountTargetSecurityGroupsRequestProtocolMarshaller implements
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2015-02-01/mount-targets/{MountTargetId}/security-groups").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonElasticFileSystem").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -33,7 +33,7 @@ public class InvokeAsyncRequestProtocolMarshaller implements Marshaller<Request<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2014-11-13/functions/{FunctionName}/invoke-async/").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AWSLambda").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

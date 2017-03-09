@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -243,6 +244,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleState
      */
 
+    @JsonIgnore
     public void setState(RuleState state) {
         this.state = state.toString();
     }

@@ -33,7 +33,7 @@ public class UpdateCampaignRequestProtocolMarshaller implements Marshaller<Reque
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/apps/{application-id}/campaigns/{campaign-id}").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(true)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -14,11 +14,6 @@
  */
 package com.amazonaws.services.stepfunctions.builder.internal.validation;
 
-import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
-import com.amazonaws.services.stepfunctions.builder.conditions.NotCondition;
-
-import org.junit.Test;
-
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
@@ -39,6 +34,10 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.t
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.timestamp;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.timestampPath;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.waitState;
+
+import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
+import com.amazonaws.services.stepfunctions.builder.conditions.NotCondition;
+import org.junit.Test;
 
 public class StateMachineValidatorTest {
 
@@ -561,6 +560,18 @@ public class StateMachineValidatorTest {
                                         .condition(eq("$.foo", "bar"))
                                         .transition(next("NoSuchState")))
                         .defaultStateName("Terminal"))
+                .state("Terminal", succeedState())
+                .build();
+    }
+
+    @Test
+    public void choiceStateWithNoDefaultTransition_IsValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", choiceState()
+                        .choice(choice()
+                                        .condition(eq("$.foo", "bar"))
+                                        .transition(next("Terminal"))))
                 .state("Terminal", succeedState())
                 .build();
     }

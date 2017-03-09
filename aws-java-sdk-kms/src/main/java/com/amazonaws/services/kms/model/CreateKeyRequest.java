@@ -15,6 +15,7 @@ package com.amazonaws.services.kms.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -499,6 +500,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see KeyUsageType
      */
 
+    @JsonIgnore
     public void setKeyUsage(KeyUsageType keyUsage) {
         this.keyUsage = keyUsage.toString();
     }
@@ -657,6 +659,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see OriginType
      */
 
+    @JsonIgnore
     public void setOrigin(OriginType origin) {
         this.origin = origin.toString();
     }

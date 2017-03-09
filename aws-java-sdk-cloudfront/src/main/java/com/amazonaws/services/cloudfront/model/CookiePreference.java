@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -148,6 +149,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * @see ItemSelection
      */
 
+    @JsonIgnore
     public void setForward(ItemSelection forward) {
         this.forward = forward.toString();
     }

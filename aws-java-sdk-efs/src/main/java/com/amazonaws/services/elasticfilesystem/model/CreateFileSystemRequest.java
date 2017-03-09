@@ -15,6 +15,7 @@ package com.amazonaws.services.elasticfilesystem.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -158,6 +159,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PerformanceMode
      */
 
+    @JsonIgnore
     public void setPerformanceMode(PerformanceMode performanceMode) {
         this.performanceMode = performanceMode.toString();
     }

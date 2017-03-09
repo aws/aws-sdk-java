@@ -15,6 +15,7 @@ package com.amazonaws.services.organizations.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -323,6 +324,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyType
      */
 
+    @JsonIgnore
     public void setType(PolicyType type) {
         this.type = type.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -146,6 +147,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
      * @see ConnectionState
      */
 
+    @JsonIgnore
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }

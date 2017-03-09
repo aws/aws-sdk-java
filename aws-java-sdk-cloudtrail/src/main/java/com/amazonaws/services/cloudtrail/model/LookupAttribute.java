@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class LookupAttribute implements Serializable, Cloneable, StructuredPojo 
      * @see LookupAttributeKey
      */
 
+    @JsonIgnore
     public void setAttributeKey(LookupAttributeKey attributeKey) {
         this.attributeKey = attributeKey.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.machinelearning.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -270,6 +271,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see DataSourceFilterVariable
      */
 
+    @JsonIgnore
     public void setFilterVariable(DataSourceFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -870,6 +872,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }

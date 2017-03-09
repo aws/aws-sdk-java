@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -461,6 +462,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @see ApplicationVersionStatus
      */
 
+    @JsonIgnore
     public void setStatus(ApplicationVersionStatus status) {
         this.status = status.toString();
     }

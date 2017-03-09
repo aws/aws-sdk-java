@@ -15,6 +15,7 @@ package com.amazonaws.services.machinelearning.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -303,6 +304,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see BatchPredictionFilterVariable
      */
 
+    @JsonIgnore
     public void setFilterVariable(BatchPredictionFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -913,6 +915,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
+    @JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }

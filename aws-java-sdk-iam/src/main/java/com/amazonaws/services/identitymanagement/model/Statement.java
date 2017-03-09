@@ -14,6 +14,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -149,6 +150,7 @@ public class Statement implements Serializable, Cloneable {
      * @see PolicySourceType
      */
 
+    @JsonIgnore
     public void setSourcePolicyType(PolicySourceType sourcePolicyType) {
         this.sourcePolicyType = sourcePolicyType.toString();
     }

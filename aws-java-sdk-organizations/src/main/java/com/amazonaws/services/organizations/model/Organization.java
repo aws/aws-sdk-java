@@ -14,6 +14,7 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -313,6 +314,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * @see OrganizationMode
      */
 
+    @JsonIgnore
     public void setMode(OrganizationMode mode) {
         this.mode = mode.toString();
     }

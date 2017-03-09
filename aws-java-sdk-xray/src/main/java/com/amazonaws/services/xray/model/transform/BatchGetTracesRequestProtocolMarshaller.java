@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class BatchGetTracesRequestProtocolMarshaller implements Marshaller<Request<BatchGetTracesRequest>, BatchGetTracesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/Traces")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSXRay").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -15,6 +15,7 @@ package com.amazonaws.services.dynamodbv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -420,6 +421,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ShardIteratorType
      */
 
+    @JsonIgnore
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
         this.shardIteratorType = shardIteratorType.toString();
     }

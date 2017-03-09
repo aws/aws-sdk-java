@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -230,6 +231,7 @@ public class IamInstanceProfileAssociation implements Serializable, Cloneable {
      * @see IamInstanceProfileAssociationState
      */
 
+    @JsonIgnore
     public void setState(IamInstanceProfileAssociationState state) {
         this.state = state.toString();
     }

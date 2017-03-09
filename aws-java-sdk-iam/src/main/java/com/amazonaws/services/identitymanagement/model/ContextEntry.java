@@ -14,6 +14,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -233,6 +234,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @see ContextKeyTypeEnum
      */
 
+    @JsonIgnore
     public void setContextKeyType(ContextKeyTypeEnum contextKeyType) {
         this.contextKeyType = contextKeyType.toString();
     }

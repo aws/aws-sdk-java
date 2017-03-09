@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -172,6 +173,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
+    @JsonIgnore
     public void setDkimVerificationStatus(VerificationStatus dkimVerificationStatus) {
         this.dkimVerificationStatus = dkimVerificationStatus.toString();
     }

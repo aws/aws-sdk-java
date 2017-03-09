@@ -33,7 +33,7 @@ public class UpdateAuthorizerRequestProtocolMarshaller implements Marshaller<Req
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/restapis/{restapi_id}/authorizers/{authorizer_id}").httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

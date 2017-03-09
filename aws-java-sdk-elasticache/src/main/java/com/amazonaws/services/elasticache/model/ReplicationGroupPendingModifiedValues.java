@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -311,6 +312,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * @see PendingAutomaticFailoverStatus
      */
 
+    @JsonIgnore
     public void setAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
         this.automaticFailoverStatus = automaticFailoverStatus.toString();
     }

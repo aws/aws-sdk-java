@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -157,6 +158,7 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
      * @see VolumeType
      */
 
+    @JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }

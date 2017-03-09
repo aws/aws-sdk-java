@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetDomainNamesRequestProtocolMarshaller implements Marshaller<Request<GetDomainNamesRequest>, GetDomainNamesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/domainnames")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

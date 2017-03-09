@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -98,6 +99,7 @@ public class Change implements Serializable, Cloneable {
      * @see ChangeType
      */
 
+    @JsonIgnore
     public void setType(ChangeType type) {
         this.type = type.toString();
     }

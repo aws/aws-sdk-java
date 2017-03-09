@@ -14,6 +14,7 @@ package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -462,6 +463,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyUsageType
      */
 
+    @JsonIgnore
     public void setKeyUsage(KeyUsageType keyUsage) {
         this.keyUsage = keyUsage.toString();
     }
@@ -575,6 +577,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyState
      */
 
+    @JsonIgnore
     public void setKeyState(KeyState keyState) {
         this.keyState = keyState.toString();
     }
@@ -777,6 +780,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see OriginType
      */
 
+    @JsonIgnore
     public void setOrigin(OriginType origin) {
         this.origin = origin.toString();
     }
@@ -862,6 +866,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see ExpirationModelType
      */
 
+    @JsonIgnore
     public void setExpirationModel(ExpirationModelType expirationModel) {
         this.expirationModel = expirationModel.toString();
     }

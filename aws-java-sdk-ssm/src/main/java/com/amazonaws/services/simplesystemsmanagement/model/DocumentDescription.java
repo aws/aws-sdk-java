@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -318,6 +319,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentHashType
      */
 
+    @JsonIgnore
     public void setHashType(DocumentHashType hashType) {
         this.hashType = hashType.toString();
     }
@@ -519,6 +521,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentStatus
      */
 
+    @JsonIgnore
     public void setStatus(DocumentStatus status) {
         this.status = status.toString();
     }
@@ -846,6 +849,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentType
      */
 
+    @JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         this.documentType = documentType.toString();
     }

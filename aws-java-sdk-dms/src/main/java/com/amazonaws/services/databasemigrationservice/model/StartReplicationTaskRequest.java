@@ -15,6 +15,7 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -138,6 +139,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * @see StartReplicationTaskTypeValue
      */
 
+    @JsonIgnore
     public void setStartReplicationTaskType(StartReplicationTaskTypeValue startReplicationTaskType) {
         this.startReplicationTaskType = startReplicationTaskType.toString();
     }

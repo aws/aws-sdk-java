@@ -33,7 +33,7 @@ public class SetDataRetrievalPolicyRequestProtocolMarshaller implements Marshall
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/{accountId}/policies/data-retrieval").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
-            .build();
+            .serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

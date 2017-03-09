@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -149,6 +150,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see ComparisonOperator
      */
 
+    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -396,6 +398,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Statistic
      */
 
+    @JsonIgnore
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -517,6 +520,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Unit
      */
 
+    @JsonIgnore
     public void setUnit(Unit unit) {
         this.unit = unit.toString();
     }

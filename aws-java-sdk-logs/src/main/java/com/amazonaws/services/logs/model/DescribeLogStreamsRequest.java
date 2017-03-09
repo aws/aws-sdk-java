@@ -15,6 +15,7 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -274,6 +275,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrderBy
      */
 
+    @JsonIgnore
     public void setOrderBy(OrderBy orderBy) {
         this.orderBy = orderBy.toString();
     }

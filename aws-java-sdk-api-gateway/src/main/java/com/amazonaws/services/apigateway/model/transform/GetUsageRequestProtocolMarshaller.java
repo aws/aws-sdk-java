@@ -32,7 +32,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetUsageRequestProtocolMarshaller implements Marshaller<Request<GetUsageRequest>, GetUsageRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/usageplans/{usageplanId}/usage").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .requestUri("/usageplans/{usageplanId}/usage").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

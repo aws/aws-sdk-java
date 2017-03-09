@@ -14,6 +14,7 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -261,6 +262,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * @see RequiredAttributeBehavior
      */
 
+    @JsonIgnore
     public void setRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
         this.requiredBehavior = requiredBehavior.toString();
     }

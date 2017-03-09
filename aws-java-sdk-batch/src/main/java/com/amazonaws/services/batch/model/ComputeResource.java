@@ -14,6 +14,7 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -157,6 +158,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * @see CRType
      */
 
+    @JsonIgnore
     public void setType(CRType type) {
         this.type = type.toString();
     }

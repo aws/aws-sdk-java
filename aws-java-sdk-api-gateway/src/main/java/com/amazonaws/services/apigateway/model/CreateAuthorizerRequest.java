@@ -15,6 +15,7 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -219,6 +220,7 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * @see AuthorizerType
      */
 
+    @JsonIgnore
     public void setType(AuthorizerType type) {
         this.type = type.toString();
     }

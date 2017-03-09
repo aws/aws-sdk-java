@@ -15,6 +15,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -235,6 +236,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ParameterType
      */
 
+    @JsonIgnore
     public void setType(ParameterType type) {
         this.type = type.toString();
     }

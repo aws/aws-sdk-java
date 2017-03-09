@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class RegisterCACertificateRequestProtocolMarshaller implements Marshaller<Request<RegisterCACertificateRequest>, RegisterCACertificateRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/cacertificate")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

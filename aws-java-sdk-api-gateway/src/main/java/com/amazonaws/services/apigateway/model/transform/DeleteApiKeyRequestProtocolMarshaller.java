@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeleteApiKeyRequestProtocolMarshaller implements Marshaller<Request<DeleteApiKeyRequest>, DeleteApiKeyRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/apikeys/{api_Key}")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

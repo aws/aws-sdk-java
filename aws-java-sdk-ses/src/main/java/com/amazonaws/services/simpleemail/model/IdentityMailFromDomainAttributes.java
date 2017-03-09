@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -173,6 +174,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see CustomMailFromStatus
      */
 
+    @JsonIgnore
     public void setMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
         this.mailFromDomainStatus = mailFromDomainStatus.toString();
     }
@@ -312,6 +314,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see BehaviorOnMXFailure
      */
 
+    @JsonIgnore
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
         this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
     }

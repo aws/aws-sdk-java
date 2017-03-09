@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -92,6 +93,7 @@ public class Action implements Serializable, Cloneable {
      * @see ActionTypeEnum
      */
 
+    @JsonIgnore
     public void setType(ActionTypeEnum type) {
         this.type = type.toString();
     }

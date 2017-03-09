@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -356,6 +357,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @see TlsPolicy
      */
 
+    @JsonIgnore
     public void setTlsPolicy(TlsPolicy tlsPolicy) {
         this.tlsPolicy = tlsPolicy.toString();
     }

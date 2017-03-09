@@ -14,6 +14,7 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -320,6 +321,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
      * @see RRType
      */
 
+    @JsonIgnore
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
     }

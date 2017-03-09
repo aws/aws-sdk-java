@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -225,6 +226,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      * @see EnvironmentHealth
      */
 
+    @JsonIgnore
     public void setStatus(EnvironmentHealth status) {
         this.status = status.toString();
     }

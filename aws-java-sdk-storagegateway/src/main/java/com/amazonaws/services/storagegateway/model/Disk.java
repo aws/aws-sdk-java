@@ -14,6 +14,7 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 

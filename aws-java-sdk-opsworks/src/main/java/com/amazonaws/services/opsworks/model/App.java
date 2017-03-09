@@ -14,6 +14,7 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -451,6 +452,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      * @see AppType
      */
 
+    @JsonIgnore
     public void setType(AppType type) {
         this.type = type.toString();
     }

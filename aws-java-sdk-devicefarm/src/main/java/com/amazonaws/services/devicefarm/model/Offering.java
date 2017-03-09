@@ -14,6 +14,7 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -192,6 +193,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see OfferingType
      */
 
+    @JsonIgnore
     public void setType(OfferingType type) {
         this.type = type.toString();
     }
@@ -265,6 +267,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
+    @JsonIgnore
     public void setPlatform(DevicePlatform platform) {
         this.platform = platform.toString();
     }

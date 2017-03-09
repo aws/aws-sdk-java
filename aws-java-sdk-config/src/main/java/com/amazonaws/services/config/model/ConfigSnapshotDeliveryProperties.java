@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -150,6 +151,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      * @see MaximumExecutionFrequency
      */
 
+    @JsonIgnore
     public void setDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
         this.deliveryFrequency = deliveryFrequency.toString();
     }

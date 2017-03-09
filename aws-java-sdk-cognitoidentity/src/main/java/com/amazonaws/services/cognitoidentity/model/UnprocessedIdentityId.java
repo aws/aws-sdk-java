@@ -14,6 +14,7 @@ package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -134,6 +135,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable, Structure
      * @see ErrorCode
      */
 
+    @JsonIgnore
     public void setErrorCode(ErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }

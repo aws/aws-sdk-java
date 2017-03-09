@@ -15,6 +15,7 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -328,6 +329,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IntegrationType
      */
 
+    @JsonIgnore
     public void setType(IntegrationType type) {
         this.type = type.toString();
     }
@@ -1135,6 +1137,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ContentHandlingStrategy
      */
 
+    @JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         this.contentHandling = contentHandling.toString();
     }

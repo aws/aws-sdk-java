@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -823,6 +824,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see SSLSupportMethod
      */
 
+    @JsonIgnore
     public void setSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
         this.sSLSupportMethod = sSLSupportMethod.toString();
     }
@@ -1148,6 +1150,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see MinimumProtocolVersion
      */
 
+    @JsonIgnore
     public void setMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
         this.minimumProtocolVersion = minimumProtocolVersion.toString();
     }
@@ -2115,6 +2118,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see CertificateSource
      */
     @Deprecated
+    @JsonIgnore
     public void setCertificateSource(CertificateSource certificateSource) {
         this.certificateSource = certificateSource.toString();
     }

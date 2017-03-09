@@ -14,6 +14,7 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -824,6 +825,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * @see UserImportJobStatusType
      */
 
+    @JsonIgnore
     public void setStatus(UserImportJobStatusType status) {
         this.status = status.toString();
     }

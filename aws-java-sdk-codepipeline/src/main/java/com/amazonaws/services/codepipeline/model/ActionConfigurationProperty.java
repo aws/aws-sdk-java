@@ -14,6 +14,7 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -511,6 +512,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable, Str
      * @see ActionConfigurationPropertyType
      */
 
+    @JsonIgnore
     public void setType(ActionConfigurationPropertyType type) {
         this.type = type.toString();
     }

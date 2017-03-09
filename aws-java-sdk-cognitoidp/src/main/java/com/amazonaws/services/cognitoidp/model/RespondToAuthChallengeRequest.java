@@ -15,6 +15,7 @@ package com.amazonaws.services.cognitoidp.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -146,6 +147,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * @see ChallengeNameType
      */
 
+    @JsonIgnore
     public void setChallengeName(ChallengeNameType challengeName) {
         this.challengeName = challengeName.toString();
     }

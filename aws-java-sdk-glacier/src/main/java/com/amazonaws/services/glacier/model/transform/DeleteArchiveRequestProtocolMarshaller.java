@@ -33,7 +33,7 @@ public class DeleteArchiveRequestProtocolMarshaller implements Marshaller<Reques
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/{accountId}/vaults/{vaultName}/archives/{archiveId}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

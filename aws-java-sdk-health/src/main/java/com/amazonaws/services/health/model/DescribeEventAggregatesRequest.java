@@ -15,6 +15,7 @@ package com.amazonaws.services.health.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -146,6 +147,7 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
      * @see EventAggregateField
      */
 
+    @JsonIgnore
     public void setAggregateField(EventAggregateField aggregateField) {
         this.aggregateField = aggregateField.toString();
     }

@@ -33,7 +33,8 @@ public class DescribeComputeEnvironmentsRequestProtocolMarshaller implements
         Marshaller<Request<DescribeComputeEnvironmentsRequest>, DescribeComputeEnvironmentsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/v1/describecomputeenvironments").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .requestUri("/v1/describecomputeenvironments").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .serviceName("AWSBatch").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

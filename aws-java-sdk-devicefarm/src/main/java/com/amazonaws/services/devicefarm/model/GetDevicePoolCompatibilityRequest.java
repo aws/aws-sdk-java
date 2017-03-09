@@ -15,6 +15,7 @@ package com.amazonaws.services.devicefarm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -860,6 +861,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * @see TestType
      */
 
+    @JsonIgnore
     public void setTestType(TestType testType) {
         this.testType = testType.toString();
     }

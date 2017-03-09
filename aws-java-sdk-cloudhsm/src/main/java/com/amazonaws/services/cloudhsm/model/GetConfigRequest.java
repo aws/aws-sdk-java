@@ -15,6 +15,7 @@ package com.amazonaws.services.cloudhsm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -137,6 +138,7 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ClientVersion
      */
 
+    @JsonIgnore
     public void setClientVersion(ClientVersion clientVersion) {
         this.clientVersion = clientVersion.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -799,6 +800,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see ContactType
      */
 
+    @JsonIgnore
     public void setContactType(ContactType contactType) {
         this.contactType = contactType.toString();
     }
@@ -1663,6 +1665,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see CountryCode
      */
 
+    @JsonIgnore
     public void setCountryCode(CountryCode countryCode) {
         this.countryCode = countryCode.toString();
     }

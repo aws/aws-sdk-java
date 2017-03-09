@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -176,6 +177,7 @@ public class Host implements Serializable, Cloneable {
      * @see AutoPlacement
      */
 
+    @JsonIgnore
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }
@@ -387,6 +389,7 @@ public class Host implements Serializable, Cloneable {
      * @see AllocationState
      */
 
+    @JsonIgnore
     public void setState(AllocationState state) {
         this.state = state.toString();
     }

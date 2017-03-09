@@ -14,6 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -169,6 +170,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
+    @JsonIgnore
     public void setInstanceType(EC2InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }

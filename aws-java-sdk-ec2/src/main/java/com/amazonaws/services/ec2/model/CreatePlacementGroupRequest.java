@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -191,6 +192,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * @see PlacementStrategy
      */
 
+    @JsonIgnore
     public void setStrategy(PlacementStrategy strategy) {
         this.strategy = strategy.toString();
     }

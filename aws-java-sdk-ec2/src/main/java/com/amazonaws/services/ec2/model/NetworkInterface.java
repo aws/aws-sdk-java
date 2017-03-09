@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -539,6 +540,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @JsonIgnore
     public void setStatus(NetworkInterfaceStatus status) {
         this.status = status.toString();
     }
@@ -1156,6 +1158,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceType
      */
 
+    @JsonIgnore
     public void setInterfaceType(NetworkInterfaceType interfaceType) {
         this.interfaceType = interfaceType.toString();
     }

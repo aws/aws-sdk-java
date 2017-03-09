@@ -15,6 +15,7 @@ package com.amazonaws.services.inspector.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -161,6 +162,7 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
      * @see Locale
      */
 
+    @JsonIgnore
     public void setLocale(Locale locale) {
         this.locale = locale.toString();
     }

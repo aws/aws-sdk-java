@@ -15,6 +15,7 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -357,6 +358,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @see NetworkMode
      */
 
+    @JsonIgnore
     public void setNetworkMode(NetworkMode networkMode) {
         this.networkMode = networkMode.toString();
     }

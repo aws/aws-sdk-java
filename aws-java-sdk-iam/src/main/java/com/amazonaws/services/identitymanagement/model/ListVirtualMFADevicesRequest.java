@@ -15,6 +15,7 @@ package com.amazonaws.services.identitymanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -125,6 +126,7 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
      * @see AssignmentStatusType
      */
 
+    @JsonIgnore
     public void setAssignmentStatus(AssignmentStatusType assignmentStatus) {
         this.assignmentStatus = assignmentStatus.toString();
     }

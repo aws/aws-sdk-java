@@ -15,6 +15,7 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -285,6 +286,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DirectorySize
      */
 
+    @JsonIgnore
     public void setSize(DirectorySize size) {
         this.size = size.toString();
     }

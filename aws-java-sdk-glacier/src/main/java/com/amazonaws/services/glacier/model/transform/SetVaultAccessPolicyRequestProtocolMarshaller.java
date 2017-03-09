@@ -33,7 +33,7 @@ public class SetVaultAccessPolicyRequestProtocolMarshaller implements Marshaller
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/{accountId}/vaults/{vaultName}/access-policy").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(true)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonGlacier").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

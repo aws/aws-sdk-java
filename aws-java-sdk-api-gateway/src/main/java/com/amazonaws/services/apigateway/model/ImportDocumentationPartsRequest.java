@@ -15,6 +15,7 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -163,6 +164,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * @see PutMode
      */
 
+    @JsonIgnore
     public void setMode(PutMode mode) {
         this.mode = mode.toString();
     }

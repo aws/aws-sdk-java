@@ -14,6 +14,7 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -240,6 +241,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * @see RecordStatus
      */
 
+    @JsonIgnore
     public void setStatus(RecordStatus status) {
         this.status = status.toString();
     }

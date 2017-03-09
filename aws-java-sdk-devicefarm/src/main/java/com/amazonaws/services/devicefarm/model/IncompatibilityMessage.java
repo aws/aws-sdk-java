@@ -14,6 +14,7 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -355,6 +356,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * @see DeviceAttribute
      */
 
+    @JsonIgnore
     public void setType(DeviceAttribute type) {
         this.type = type.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -221,6 +222,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see DocumentType
      */
 
+    @JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         this.documentType = documentType.toString();
     }

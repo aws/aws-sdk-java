@@ -14,6 +14,7 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -435,6 +436,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @see PipelineExecutionStatus
      */
 
+    @JsonIgnore
     public void setStatus(PipelineExecutionStatus status) {
         this.status = status.toString();
     }

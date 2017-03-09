@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -375,6 +376,7 @@ public class BuildConfiguration implements Serializable, Cloneable {
      * @see ComputeType
      */
 
+    @JsonIgnore
     public void setComputeType(ComputeType computeType) {
         this.computeType = computeType.toString();
     }

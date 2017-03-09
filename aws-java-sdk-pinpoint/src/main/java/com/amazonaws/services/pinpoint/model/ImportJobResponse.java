@@ -14,6 +14,7 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -424,6 +425,7 @@ public class ImportJobResponse implements Serializable, Cloneable, StructuredPoj
      * @see JobStatus
      */
 
+    @JsonIgnore
     public void setJobStatus(JobStatus jobStatus) {
         this.jobStatus = jobStatus.toString();
     }

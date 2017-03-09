@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -612,6 +613,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
+    @JsonIgnore
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
         this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
     }
@@ -825,6 +827,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see ConfigRuleState
      */
 
+    @JsonIgnore
     public void setConfigRuleState(ConfigRuleState configRuleState) {
         this.configRuleState = configRuleState.toString();
     }

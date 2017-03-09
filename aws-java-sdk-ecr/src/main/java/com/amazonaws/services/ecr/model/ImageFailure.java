@@ -14,6 +14,7 @@ package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -140,6 +141,7 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
      * @see ImageFailureCode
      */
 
+    @JsonIgnore
     public void setFailureCode(ImageFailureCode failureCode) {
         this.failureCode = failureCode.toString();
     }

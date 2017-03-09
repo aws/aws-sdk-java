@@ -15,6 +15,7 @@ package com.amazonaws.services.machinelearning.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -333,6 +334,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see MLModelType
      */
 
+    @JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         this.mLModelType = mLModelType.toString();
     }

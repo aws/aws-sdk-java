@@ -15,6 +15,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -180,6 +181,7 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
      * @see ActionStatus
      */
 
+    @JsonIgnore
     public void setStatus(ActionStatus status) {
         this.status = status.toString();
     }

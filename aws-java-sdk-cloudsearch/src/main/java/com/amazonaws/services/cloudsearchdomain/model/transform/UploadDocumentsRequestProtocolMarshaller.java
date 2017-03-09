@@ -33,7 +33,7 @@ public class UploadDocumentsRequestProtocolMarshaller implements Marshaller<Requ
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2013-01-01/documents/batch?format=sdk").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true).hasPayloadMembers(true)
-            .build();
+            .serviceName("AmazonCloudSearchDomain").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

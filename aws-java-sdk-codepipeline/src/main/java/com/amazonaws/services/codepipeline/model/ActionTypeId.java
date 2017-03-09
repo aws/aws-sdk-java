@@ -14,6 +14,7 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -117,6 +118,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionCategory
      */
 
+    @JsonIgnore
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }
@@ -192,6 +194,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOwner
      */
 
+    @JsonIgnore
     public void setOwner(ActionOwner owner) {
         this.owner = owner.toString();
     }

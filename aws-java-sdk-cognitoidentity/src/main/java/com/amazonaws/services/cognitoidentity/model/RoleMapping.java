@@ -14,6 +14,7 @@ package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -126,6 +127,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see RoleMappingType
      */
 
+    @JsonIgnore
     public void setType(RoleMappingType type) {
         this.type = type.toString();
     }
@@ -243,6 +245,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see AmbiguousRoleResolutionType
      */
 
+    @JsonIgnore
     public void setAmbiguousRoleResolution(AmbiguousRoleResolutionType ambiguousRoleResolution) {
         this.ambiguousRoleResolution = ambiguousRoleResolution.toString();
     }

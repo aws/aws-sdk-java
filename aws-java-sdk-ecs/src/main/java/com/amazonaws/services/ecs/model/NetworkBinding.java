@@ -14,6 +14,7 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -228,6 +229,7 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * @see TransportProtocol
      */
 
+    @JsonIgnore
     public void setProtocol(TransportProtocol protocol) {
         this.protocol = protocol.toString();
     }

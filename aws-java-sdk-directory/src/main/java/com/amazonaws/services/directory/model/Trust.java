@@ -14,6 +14,7 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -261,6 +262,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustType
      */
 
+    @JsonIgnore
     public void setTrustType(TrustType trustType) {
         this.trustType = trustType.toString();
     }
@@ -334,6 +336,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustDirection
      */
 
+    @JsonIgnore
     public void setTrustDirection(TrustDirection trustDirection) {
         this.trustDirection = trustDirection.toString();
     }
@@ -407,6 +410,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustState
      */
 
+    @JsonIgnore
     public void setTrustState(TrustState trustState) {
         this.trustState = trustState.toString();
     }

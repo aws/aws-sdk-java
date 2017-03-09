@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -99,6 +100,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusName
      */
 
+    @JsonIgnore
     public void setName(StatusName name) {
         this.name = name.toString();
     }
@@ -172,6 +174,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusType
      */
 
+    @JsonIgnore
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }

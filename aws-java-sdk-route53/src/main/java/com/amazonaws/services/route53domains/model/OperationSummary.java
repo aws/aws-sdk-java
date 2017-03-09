@@ -14,6 +14,7 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -195,6 +196,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * @see OperationStatus
      */
 
+    @JsonIgnore
     public void setStatus(OperationStatus status) {
         this.status = status.toString();
     }
@@ -333,6 +335,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * @see OperationType
      */
 
+    @JsonIgnore
     public void setType(OperationType type) {
         this.type = type.toString();
     }

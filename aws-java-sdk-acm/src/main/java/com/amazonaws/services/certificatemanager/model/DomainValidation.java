@@ -14,6 +14,7 @@ package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -263,6 +264,7 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
      * @see DomainStatus
      */
 
+    @JsonIgnore
     public void setValidationStatus(DomainStatus validationStatus) {
         this.validationStatus = validationStatus.toString();
     }

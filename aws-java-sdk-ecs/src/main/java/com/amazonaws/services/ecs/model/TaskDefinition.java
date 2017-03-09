@@ -14,6 +14,7 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -470,6 +471,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkMode
      */
 
+    @JsonIgnore
     public void setNetworkMode(NetworkMode networkMode) {
         this.networkMode = networkMode.toString();
     }
@@ -711,6 +713,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see TaskDefinitionStatus
      */
 
+    @JsonIgnore
     public void setStatus(TaskDefinitionStatus status) {
         this.status = status.toString();
     }

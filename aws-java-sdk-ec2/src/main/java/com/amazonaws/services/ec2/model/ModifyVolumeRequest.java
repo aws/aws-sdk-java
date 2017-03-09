@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -271,6 +272,7 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @see VolumeType
      */
 
+    @JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }

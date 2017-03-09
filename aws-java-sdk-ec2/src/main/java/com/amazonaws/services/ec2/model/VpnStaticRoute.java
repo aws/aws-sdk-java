@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -138,6 +139,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnStaticRouteSource
      */
 
+    @JsonIgnore
     public void setSource(VpnStaticRouteSource source) {
         this.source = source.toString();
     }
@@ -211,6 +213,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnState
      */
 
+    @JsonIgnore
     public void setState(VpnState state) {
         this.state = state.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -108,6 +109,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * @see Owner
      */
 
+    @JsonIgnore
     public void setOwner(Owner owner) {
         this.owner = owner.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -129,6 +130,7 @@ public class CancelWorkflowExecutionFailedEventAttributes implements Serializabl
      * @see CancelWorkflowExecutionFailedCause
      */
 
+    @JsonIgnore
     public void setCause(CancelWorkflowExecutionFailedCause cause) {
         this.cause = cause.toString();
     }

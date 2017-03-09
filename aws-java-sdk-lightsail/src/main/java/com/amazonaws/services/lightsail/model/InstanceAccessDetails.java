@@ -14,6 +14,7 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -344,6 +345,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      * @see InstanceAccessProtocol
      */
 
+    @JsonIgnore
     public void setProtocol(InstanceAccessProtocol protocol) {
         this.protocol = protocol.toString();
     }

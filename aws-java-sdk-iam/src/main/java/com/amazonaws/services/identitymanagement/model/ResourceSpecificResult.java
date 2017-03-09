@@ -14,6 +14,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -173,6 +174,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
+    @JsonIgnore
     public void setEvalResourceDecision(PolicyEvaluationDecisionType evalResourceDecision) {
         this.evalResourceDecision = evalResourceDecision.toString();
     }

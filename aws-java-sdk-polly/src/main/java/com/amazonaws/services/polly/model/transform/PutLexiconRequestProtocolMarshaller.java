@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class PutLexiconRequestProtocolMarshaller implements Marshaller<Request<PutLexiconRequest>, PutLexiconRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/lexicons/{LexiconName}")
-            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonPolly").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

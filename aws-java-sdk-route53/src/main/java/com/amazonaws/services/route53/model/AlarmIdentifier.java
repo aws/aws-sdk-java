@@ -14,6 +14,7 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -144,6 +145,7 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      * @see CloudWatchRegion
      */
 
+    @JsonIgnore
     public void setRegion(CloudWatchRegion region) {
         this.region = region.toString();
     }

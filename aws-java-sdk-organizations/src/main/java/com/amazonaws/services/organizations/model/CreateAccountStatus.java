@@ -14,6 +14,7 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -240,6 +241,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountState
      */
 
+    @JsonIgnore
     public void setState(CreateAccountState state) {
         this.state = state.toString();
     }
@@ -454,6 +456,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountFailureReason
      */
 
+    @JsonIgnore
     public void setFailureReason(CreateAccountFailureReason failureReason) {
         this.failureReason = failureReason.toString();
     }

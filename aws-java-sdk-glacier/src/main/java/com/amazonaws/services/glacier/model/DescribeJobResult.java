@@ -14,6 +14,7 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -305,6 +306,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see ActionCode
      */
 
+    @JsonIgnore
     public void setAction(ActionCode action) {
         this.action = action.toString();
     }
@@ -557,6 +559,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see StatusCode
      */
 
+    @JsonIgnore
     public void setStatusCode(StatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }

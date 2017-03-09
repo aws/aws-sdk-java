@@ -15,6 +15,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -152,6 +153,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * @see MaintenanceWindowResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(MaintenanceWindowResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

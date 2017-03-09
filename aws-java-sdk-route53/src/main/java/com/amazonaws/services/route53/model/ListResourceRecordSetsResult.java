@@ -14,6 +14,7 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -333,6 +334,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * @see RRType
      */
 
+    @JsonIgnore
     public void setNextRecordType(RRType nextRecordType) {
         this.nextRecordType = nextRecordType.toString();
     }

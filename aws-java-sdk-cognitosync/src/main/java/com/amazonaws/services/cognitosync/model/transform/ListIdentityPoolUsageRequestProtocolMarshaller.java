@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListIdentityPoolUsageRequestProtocolMarshaller implements Marshaller<Request<ListIdentityPoolUsageRequest>, ListIdentityPoolUsageRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/identitypools")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonCognitoSync").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

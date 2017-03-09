@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListPolicyPrincipalsRequestProtocolMarshaller implements Marshaller<Request<ListPolicyPrincipalsRequest>, ListPolicyPrincipalsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/policy-principals")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

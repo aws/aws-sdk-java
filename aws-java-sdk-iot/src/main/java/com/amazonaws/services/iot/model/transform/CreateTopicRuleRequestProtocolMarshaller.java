@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CreateTopicRuleRequestProtocolMarshaller implements Marshaller<Request<CreateTopicRuleRequest>, CreateTopicRuleRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/rules/{ruleName}")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true).hasPayloadMembers(true).serviceName("AWSIot").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

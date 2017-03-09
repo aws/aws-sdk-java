@@ -14,6 +14,7 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -222,6 +223,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see OrientationCorrection
      */
 
+    @JsonIgnore
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
         this.orientationCorrection = orientationCorrection.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -471,6 +472,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingAdjustmentType
      */
 
+    @JsonIgnore
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
         this.scalingAdjustmentType = scalingAdjustmentType.toString();
     }
@@ -623,6 +625,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ComparisonOperatorType
      */
 
+    @JsonIgnore
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -1039,6 +1042,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see MetricName
      */
 
+    @JsonIgnore
     public void setMetricName(MetricName metricName) {
         this.metricName = metricName.toString();
     }

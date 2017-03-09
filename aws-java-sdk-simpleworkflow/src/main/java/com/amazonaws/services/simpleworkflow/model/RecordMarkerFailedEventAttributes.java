@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -175,6 +176,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
      * @see RecordMarkerFailedCause
      */
 
+    @JsonIgnore
     public void setCause(RecordMarkerFailedCause cause) {
         this.cause = cause.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -150,6 +151,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @see TelemetryStatus
      */
 
+    @JsonIgnore
     public void setStatus(TelemetryStatus status) {
         this.status = status.toString();
     }

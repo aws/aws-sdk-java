@@ -14,6 +14,7 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -474,6 +475,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see GameSessionStatus
      */
 
+    @JsonIgnore
     public void setStatus(GameSessionStatus status) {
         this.status = status.toString();
     }
@@ -719,6 +721,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionCreationPolicy
      */
 
+    @JsonIgnore
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
     }

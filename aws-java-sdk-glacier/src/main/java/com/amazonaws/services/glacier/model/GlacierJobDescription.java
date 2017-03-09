@@ -14,6 +14,7 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -307,6 +308,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      * @see ActionCode
      */
 
+    @JsonIgnore
     public void setAction(ActionCode action) {
         this.action = action.toString();
     }
@@ -559,6 +561,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      * @see StatusCode
      */
 
+    @JsonIgnore
     public void setStatusCode(StatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }

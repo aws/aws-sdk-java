@@ -34,7 +34,7 @@ public class UpdateFunctionConfigurationRequestProtocolMarshaller implements
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2015-03-31/functions/{FunctionName}/configuration").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AWSLambda").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

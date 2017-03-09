@@ -15,6 +15,7 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -217,6 +218,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see TaskDefinitionStatus
      */
 
+    @JsonIgnore
     public void setStatus(TaskDefinitionStatus status) {
         this.status = status.toString();
     }
@@ -330,6 +332,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @JsonIgnore
     public void setSort(SortOrder sort) {
         this.sort = sort.toString();
     }

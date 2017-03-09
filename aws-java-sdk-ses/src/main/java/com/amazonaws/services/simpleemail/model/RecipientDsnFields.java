@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -249,6 +250,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @see DsnAction
      */
 
+    @JsonIgnore
     public void setAction(DsnAction action) {
         this.action = action.toString();
     }

@@ -33,7 +33,7 @@ public class ListObjectPoliciesRequestProtocolMarshaller implements Marshaller<R
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/amazonclouddirectory/2017-01-11/object/policy").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).build();
+            .hasPayloadMembers(true).serviceName("AmazonCloudDirectory").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

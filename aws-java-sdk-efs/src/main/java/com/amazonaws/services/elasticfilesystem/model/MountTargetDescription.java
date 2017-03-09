@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -284,6 +285,7 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      * @see LifeCycleState
      */
 
+    @JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         this.lifeCycleState = lifeCycleState.toString();
     }

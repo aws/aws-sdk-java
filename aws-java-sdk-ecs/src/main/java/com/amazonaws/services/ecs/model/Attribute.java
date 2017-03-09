@@ -14,6 +14,7 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -212,6 +213,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * @see TargetType
      */
 
+    @JsonIgnore
     public void setTargetType(TargetType targetType) {
         this.targetType = targetType.toString();
     }

@@ -33,7 +33,7 @@ public class SuggestRequestProtocolMarshaller implements Marshaller<Request<Sugg
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2013-01-01/suggest?format=sdk&pretty=true").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonCloudSearchDomain").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

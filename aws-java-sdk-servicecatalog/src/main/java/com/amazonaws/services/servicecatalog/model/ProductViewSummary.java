@@ -14,6 +14,7 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -351,6 +352,7 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
      * @see ProductType
      */
 
+    @JsonIgnore
     public void setType(ProductType type) {
         this.type = type.toString();
     }

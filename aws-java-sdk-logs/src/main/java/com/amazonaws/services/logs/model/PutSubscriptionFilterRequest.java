@@ -15,6 +15,7 @@ package com.amazonaws.services.logs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -512,6 +513,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * @see Distribution
      */
 
+    @JsonIgnore
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution.toString();
     }

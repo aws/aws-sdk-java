@@ -33,7 +33,7 @@ public class GetBulkPublishDetailsRequestProtocolMarshaller implements Marshalle
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/identitypools/{IdentityPoolId}/getBulkPublishDetails").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonCognitoSync").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

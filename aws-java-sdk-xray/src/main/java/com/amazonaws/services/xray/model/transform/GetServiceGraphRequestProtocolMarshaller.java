@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetServiceGraphRequestProtocolMarshaller implements Marshaller<Request<GetServiceGraphRequest>, GetServiceGraphRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/ServiceGraph")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSXRay").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

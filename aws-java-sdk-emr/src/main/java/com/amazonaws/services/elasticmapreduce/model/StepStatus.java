@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -107,6 +108,7 @@ public class StepStatus implements Serializable, Cloneable, StructuredPojo {
      * @see StepState
      */
 
+    @JsonIgnore
     public void setState(StepState state) {
         this.state = state.toString();
     }

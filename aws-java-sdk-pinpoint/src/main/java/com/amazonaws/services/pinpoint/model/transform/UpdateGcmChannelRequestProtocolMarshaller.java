@@ -33,7 +33,7 @@ public class UpdateGcmChannelRequestProtocolMarshaller implements Marshaller<Req
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/apps/{application-id}/channels/gcm").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(true).hasPayloadMembers(true)
-            .build();
+            .serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

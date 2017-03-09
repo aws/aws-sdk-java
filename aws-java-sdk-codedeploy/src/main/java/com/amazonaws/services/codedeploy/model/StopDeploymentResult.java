@@ -14,6 +14,7 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -196,6 +197,7 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see StopStatus
      */
 
+    @JsonIgnore
     public void setStatus(StopStatus status) {
         this.status = status.toString();
     }

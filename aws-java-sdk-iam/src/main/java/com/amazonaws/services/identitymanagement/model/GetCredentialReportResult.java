@@ -14,6 +14,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -156,6 +157,7 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
      * @see ReportFormatType
      */
 
+    @JsonIgnore
     public void setReportFormat(ReportFormatType reportFormat) {
         this.reportFormat = reportFormat.toString();
     }

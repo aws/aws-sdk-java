@@ -15,6 +15,7 @@ package com.amazonaws.services.servicecatalog.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -304,6 +305,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * @see PrincipalType
      */
 
+    @JsonIgnore
     public void setPrincipalType(PrincipalType principalType) {
         this.principalType = principalType.toString();
     }

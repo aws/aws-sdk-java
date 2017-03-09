@@ -14,6 +14,7 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -124,6 +125,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * @see ActionType
      */
 
+    @JsonIgnore
     public void setActionType(ActionType actionType) {
         this.actionType = actionType.toString();
     }

@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdateApiKeyRequestProtocolMarshaller implements Marshaller<Request<UpdateApiKeyRequest>, UpdateApiKeyRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/apikeys/{api_Key}")
-            .httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.PATCH).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

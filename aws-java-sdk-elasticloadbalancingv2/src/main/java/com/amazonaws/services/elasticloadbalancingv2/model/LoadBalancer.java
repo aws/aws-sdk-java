@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -412,6 +413,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerSchemeEnum
      */
 
+    @JsonIgnore
     public void setScheme(LoadBalancerSchemeEnum scheme) {
         this.scheme = scheme.toString();
     }
@@ -578,6 +580,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerTypeEnum
      */
 
+    @JsonIgnore
     public void setType(LoadBalancerTypeEnum type) {
         this.type = type.toString();
     }
@@ -799,6 +802,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see IpAddressType
      */
 
+    @JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
     }

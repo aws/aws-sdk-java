@@ -15,6 +15,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -110,6 +111,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IdentityType
      */
 
+    @JsonIgnore
     public void setIdentityType(IdentityType identityType) {
         this.identityType = identityType.toString();
     }

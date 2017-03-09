@@ -40,6 +40,7 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -330,6 +331,8 @@ import org.apache.http.client.methods.HttpRequestBase;
  * http://aws.amazon.com/s3</a>
  * </p>
  */
+
+@ThreadSafe
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     public static final String S3_SERVICE_NAME = "s3";

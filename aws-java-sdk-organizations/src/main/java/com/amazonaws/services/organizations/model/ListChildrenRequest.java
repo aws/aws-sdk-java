@@ -15,6 +15,7 @@ package com.amazonaws.services.organizations.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -274,6 +275,7 @@ public class ListChildrenRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ChildType
      */
 
+    @JsonIgnore
     public void setChildType(ChildType childType) {
         this.childType = childType.toString();
     }

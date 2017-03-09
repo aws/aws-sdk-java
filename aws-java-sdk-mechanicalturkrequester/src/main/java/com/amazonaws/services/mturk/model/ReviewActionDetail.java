@@ -14,6 +14,7 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -298,6 +299,7 @@ public class ReviewActionDetail implements Serializable, Cloneable, StructuredPo
      * @see ReviewActionStatus
      */
 
+    @JsonIgnore
     public void setStatus(ReviewActionStatus status) {
         this.status = status.toString();
     }

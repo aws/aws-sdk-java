@@ -15,6 +15,7 @@ package com.amazonaws.services.config.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -121,6 +122,7 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
      * @see ResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

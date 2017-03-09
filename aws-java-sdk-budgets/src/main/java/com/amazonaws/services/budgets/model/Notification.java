@@ -14,6 +14,7 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -63,6 +64,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see NotificationType
      */
 
+    @JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         this.notificationType = notificationType.toString();
     }
@@ -112,6 +114,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -601,6 +602,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * @see ConfigurationDeploymentStatus
      */
 
+    @JsonIgnore
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
         this.deploymentStatus = deploymentStatus.toString();
     }

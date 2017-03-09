@@ -33,7 +33,8 @@ public class UpdateApplicationSettingsRequestProtocolMarshaller implements
         Marshaller<Request<UpdateApplicationSettingsRequest>, UpdateApplicationSettingsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/v1/apps/{application-id}/settings").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(true).hasPayloadMembers(true).build();
+            .requestUri("/v1/apps/{application-id}/settings").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(true).hasPayloadMembers(true)
+            .serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -14,6 +14,7 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -230,6 +231,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
+    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -440,6 +442,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see Statistic
      */
 
+    @JsonIgnore
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }

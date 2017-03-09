@@ -15,6 +15,7 @@ package com.amazonaws.services.applicationdiscovery.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -117,6 +118,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ConfigurationItemType
      */
 
+    @JsonIgnore
     public void setConfigurationType(ConfigurationItemType configurationType) {
         this.configurationType = configurationType.toString();
     }

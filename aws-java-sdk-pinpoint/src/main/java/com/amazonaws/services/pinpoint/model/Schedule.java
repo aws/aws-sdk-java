@@ -14,6 +14,7 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -138,6 +139,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * @see Frequency
      */
 
+    @JsonIgnore
     public void setFrequency(Frequency frequency) {
         this.frequency = frequency.toString();
     }

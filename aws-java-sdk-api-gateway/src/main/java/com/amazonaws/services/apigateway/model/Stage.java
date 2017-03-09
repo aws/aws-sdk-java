@@ -14,6 +14,7 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -417,6 +418,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
      * @see CacheClusterStatus
      */
 
+    @JsonIgnore
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus.toString();
     }

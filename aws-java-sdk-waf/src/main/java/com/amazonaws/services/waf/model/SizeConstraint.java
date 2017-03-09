@@ -14,6 +14,7 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1447,6 +1448,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
+    @JsonIgnore
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -1994,6 +1996,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }

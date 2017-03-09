@@ -14,6 +14,7 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -404,6 +405,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * @see MinimumHealthyHostsType
      */
 
+    @JsonIgnore
     public void setType(MinimumHealthyHostsType type) {
         this.type = type.toString();
     }

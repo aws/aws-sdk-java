@@ -15,6 +15,7 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -632,6 +633,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see DesiredStatus
      */
 
+    @JsonIgnore
     public void setDesiredStatus(DesiredStatus desiredStatus) {
         this.desiredStatus = desiredStatus.toString();
     }

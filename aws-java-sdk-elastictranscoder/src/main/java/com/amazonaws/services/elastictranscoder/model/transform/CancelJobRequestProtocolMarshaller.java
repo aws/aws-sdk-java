@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CancelJobRequestProtocolMarshaller implements Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2012-09-25/jobs/{Id}")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).build();
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonElasticTranscoder").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

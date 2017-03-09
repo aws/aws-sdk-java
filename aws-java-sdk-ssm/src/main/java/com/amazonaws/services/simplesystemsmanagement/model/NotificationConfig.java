@@ -14,6 +14,7 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -290,6 +291,7 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      * @see NotificationType
      */
 
+    @JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         this.notificationType = notificationType.toString();
     }

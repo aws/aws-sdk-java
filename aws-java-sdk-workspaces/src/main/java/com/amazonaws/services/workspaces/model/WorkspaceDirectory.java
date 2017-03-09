@@ -14,6 +14,7 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -554,6 +555,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryType
      */
 
+    @JsonIgnore
     public void setDirectoryType(WorkspaceDirectoryType directoryType) {
         this.directoryType = directoryType.toString();
     }
@@ -667,6 +669,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryState
      */
 
+    @JsonIgnore
     public void setState(WorkspaceDirectoryState state) {
         this.state = state.toString();
     }

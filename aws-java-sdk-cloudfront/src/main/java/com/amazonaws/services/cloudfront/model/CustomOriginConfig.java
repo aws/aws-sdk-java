@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -184,6 +185,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @see OriginProtocolPolicy
      */
 
+    @JsonIgnore
     public void setOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
         this.originProtocolPolicy = originProtocolPolicy.toString();
     }

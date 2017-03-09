@@ -14,6 +14,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -386,6 +387,7 @@ public class MetricDatum implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
+    @JsonIgnore
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }

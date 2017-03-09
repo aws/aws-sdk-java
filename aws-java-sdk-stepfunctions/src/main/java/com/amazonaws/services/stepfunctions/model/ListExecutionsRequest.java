@@ -15,6 +15,7 @@ package com.amazonaws.services.stepfunctions.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -153,6 +154,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ExecutionStatus
      */
 
+    @JsonIgnore
     public void setStatusFilter(ExecutionStatus statusFilter) {
         this.statusFilter = statusFilter.toString();
     }

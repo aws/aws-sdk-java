@@ -14,6 +14,7 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -218,6 +219,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @see BounceType
      */
 
+    @JsonIgnore
     public void setBounceType(BounceType bounceType) {
         this.bounceType = bounceType.toString();
     }

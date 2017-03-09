@@ -15,6 +15,7 @@ package com.amazonaws.services.cloudhsm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -330,6 +331,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SubscriptionType
      */
 
+    @JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }

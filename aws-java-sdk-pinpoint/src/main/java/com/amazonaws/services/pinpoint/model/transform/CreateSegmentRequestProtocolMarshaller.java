@@ -33,7 +33,7 @@ public class CreateSegmentRequestProtocolMarshaller implements Marshaller<Reques
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/apps/{application-id}/segments").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(true).hasPayloadMembers(true)
-            .build();
+            .serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

@@ -15,6 +15,7 @@ package com.amazonaws.services.codebuild.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -198,6 +199,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see SortOrderType
      */
 
+    @JsonIgnore
     public void setSortOrder(SortOrderType sortOrder) {
         this.sortOrder = sortOrder.toString();
     }

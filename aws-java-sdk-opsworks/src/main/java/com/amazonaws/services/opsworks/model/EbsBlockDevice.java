@@ -14,6 +14,7 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -256,6 +257,7 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
      * @see VolumeType
      */
 
+    @JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }

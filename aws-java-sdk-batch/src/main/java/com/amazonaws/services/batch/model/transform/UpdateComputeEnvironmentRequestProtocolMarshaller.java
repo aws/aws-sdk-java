@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class UpdateComputeEnvironmentRequestProtocolMarshaller implements Marshaller<Request<UpdateComputeEnvironmentRequest>, UpdateComputeEnvironmentRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/updatecomputeenvironment")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSBatch").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

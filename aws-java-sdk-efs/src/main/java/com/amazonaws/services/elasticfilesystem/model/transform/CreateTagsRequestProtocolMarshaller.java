@@ -33,7 +33,7 @@ public class CreateTagsRequestProtocolMarshaller implements Marshaller<Request<C
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/2015-02-01/create-tags/{FileSystemId}").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
-            .build();
+            .serviceName("AmazonElasticFileSystem").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

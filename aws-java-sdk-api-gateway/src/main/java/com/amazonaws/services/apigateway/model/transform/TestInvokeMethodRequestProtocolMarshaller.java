@@ -33,7 +33,7 @@ public class TestInvokeMethodRequestProtocolMarshaller implements Marshaller<Req
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}").httpMethodName(HttpMethodName.POST)
-            .hasExplicitPayloadMember(false).hasPayloadMembers(true).build();
+            .hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonApiGateway").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

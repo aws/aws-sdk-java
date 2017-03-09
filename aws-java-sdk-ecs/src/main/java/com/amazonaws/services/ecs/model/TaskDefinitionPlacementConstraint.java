@@ -14,6 +14,7 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -116,6 +117,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * @see TaskDefinitionPlacementConstraintType
      */
 
+    @JsonIgnore
     public void setType(TaskDefinitionPlacementConstraintType type) {
         this.type = type.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -152,6 +153,7 @@ public class Event implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @JsonIgnore
     public void setSourceType(SourceType sourceType) {
         this.sourceType = sourceType.toString();
     }

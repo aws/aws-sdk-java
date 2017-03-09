@@ -14,6 +14,7 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -85,6 +86,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see Duration
      */
 
+    @JsonIgnore
     public void setDuration(Duration duration) {
         this.duration = duration.toString();
     }
@@ -166,6 +168,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see RecencyType
      */
 
+    @JsonIgnore
     public void setRecencyType(RecencyType recencyType) {
         this.recencyType = recencyType.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1935,6 +1936,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
+    @JsonIgnore
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -2768,6 +2770,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see PositionalConstraint
      */
 
+    @JsonIgnore
     public void setPositionalConstraint(PositionalConstraint positionalConstraint) {
         this.positionalConstraint = positionalConstraint.toString();
     }

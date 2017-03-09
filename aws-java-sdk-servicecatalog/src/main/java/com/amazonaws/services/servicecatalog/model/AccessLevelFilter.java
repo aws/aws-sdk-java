@@ -14,6 +14,7 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -171,6 +172,7 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
      * @see AccessLevelFilterKey
      */
 
+    @JsonIgnore
     public void setKey(AccessLevelFilterKey key) {
         this.key = key.toString();
     }

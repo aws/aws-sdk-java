@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -241,6 +242,7 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOnFailure
      */
 
+    @JsonIgnore
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
         this.actionOnFailure = actionOnFailure.toString();
     }

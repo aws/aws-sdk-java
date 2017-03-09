@@ -33,7 +33,7 @@ public class GetApplicationSettingsRequestProtocolMarshaller implements Marshall
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/apps/{application-id}/settings").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .build();
+            .serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

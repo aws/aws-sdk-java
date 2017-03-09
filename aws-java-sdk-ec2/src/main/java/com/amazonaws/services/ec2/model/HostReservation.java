@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -363,6 +364,7 @@ public class HostReservation implements Serializable, Cloneable {
      * @see PaymentOption
      */
 
+    @JsonIgnore
     public void setPaymentOption(PaymentOption paymentOption) {
         this.paymentOption = paymentOption.toString();
     }
@@ -524,6 +526,7 @@ public class HostReservation implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }
@@ -765,6 +768,7 @@ public class HostReservation implements Serializable, Cloneable {
      * @see ReservationState
      */
 
+    @JsonIgnore
     public void setState(ReservationState state) {
         this.state = state.toString();
     }

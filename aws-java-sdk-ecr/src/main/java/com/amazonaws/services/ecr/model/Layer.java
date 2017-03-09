@@ -14,6 +14,7 @@ package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -146,6 +147,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * @see LayerAvailability
      */
 
+    @JsonIgnore
     public void setLayerAvailability(LayerAvailability layerAvailability) {
         this.layerAvailability = layerAvailability.toString();
     }

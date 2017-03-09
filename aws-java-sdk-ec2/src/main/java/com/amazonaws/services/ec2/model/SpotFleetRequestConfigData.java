@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -608,6 +609,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see ExcessCapacityTerminationPolicy
      */
 
+    @JsonIgnore
     public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
     }
@@ -691,6 +693,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see AllocationStrategy
      */
 
+    @JsonIgnore
     public void setAllocationStrategy(AllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
     }
@@ -847,6 +850,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see FleetType
      */
 
+    @JsonIgnore
     public void setType(FleetType type) {
         this.type = type.toString();
     }

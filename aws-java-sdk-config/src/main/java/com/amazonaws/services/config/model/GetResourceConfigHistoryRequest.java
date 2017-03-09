@@ -15,6 +15,7 @@ package com.amazonaws.services.config.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -128,6 +129,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ResourceType
      */
 
+    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -335,6 +337,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ChronologicalOrder
      */
 
+    @JsonIgnore
     public void setChronologicalOrder(ChronologicalOrder chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable, StructuredP
      * @see LanguageType
      */
 
+    @JsonIgnore
     public void setLanguage(LanguageType language) {
         this.language = language.toString();
     }

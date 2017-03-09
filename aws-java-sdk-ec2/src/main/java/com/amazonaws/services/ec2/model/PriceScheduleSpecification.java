@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -194,6 +195,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }

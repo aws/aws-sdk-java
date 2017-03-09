@@ -14,6 +14,7 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -260,6 +261,7 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      * @see NodeAssociationStatus
      */
 
+    @JsonIgnore
     public void setNodeAssociationStatus(NodeAssociationStatus nodeAssociationStatus) {
         this.nodeAssociationStatus = nodeAssociationStatus.toString();
     }

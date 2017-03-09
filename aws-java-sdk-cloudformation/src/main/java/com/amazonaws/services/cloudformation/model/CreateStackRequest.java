@@ -15,6 +15,7 @@ package com.amazonaws.services.cloudformation.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -1509,6 +1510,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see OnFailure
      */
 
+    @JsonIgnore
     public void setOnFailure(OnFailure onFailure) {
         this.onFailure = onFailure.toString();
     }

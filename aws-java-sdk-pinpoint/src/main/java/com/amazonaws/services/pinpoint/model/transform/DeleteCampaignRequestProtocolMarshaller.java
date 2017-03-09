@@ -33,7 +33,7 @@ public class DeleteCampaignRequestProtocolMarshaller implements Marshaller<Reque
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/apps/{application-id}/campaigns/{campaign-id}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(false).build();
+            .hasPayloadMembers(false).serviceName("AmazonPinpoint").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

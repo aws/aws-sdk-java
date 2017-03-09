@@ -14,6 +14,7 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -94,6 +95,7 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
      * @see TimeToLiveStatus
      */
 
+    @JsonIgnore
     public void setTimeToLiveStatus(TimeToLiveStatus timeToLiveStatus) {
         this.timeToLiveStatus = timeToLiveStatus.toString();
     }

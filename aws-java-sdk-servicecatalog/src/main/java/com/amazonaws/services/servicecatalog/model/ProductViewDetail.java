@@ -14,6 +14,7 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -146,6 +147,7 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * @see Status
      */
 
+    @JsonIgnore
     public void setStatus(Status status) {
         this.status = status.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -972,6 +973,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * @see EnvironmentStatus
      */
 
+    @JsonIgnore
     public void setStatus(EnvironmentStatus status) {
         this.status = status.toString();
     }
@@ -1441,6 +1443,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * @see EnvironmentHealth
      */
 
+    @JsonIgnore
     public void setHealth(EnvironmentHealth health) {
         this.health = health.toString();
     }
@@ -1589,6 +1592,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * @see EnvironmentHealthStatus
      */
 
+    @JsonIgnore
     public void setHealthStatus(EnvironmentHealthStatus healthStatus) {
         this.healthStatus = healthStatus.toString();
     }

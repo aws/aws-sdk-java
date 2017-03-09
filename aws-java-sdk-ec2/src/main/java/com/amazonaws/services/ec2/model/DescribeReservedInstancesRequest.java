@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -1093,6 +1094,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingTypeValues
      */
 
+    @JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -1168,6 +1170,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingClassType
      */
 
+    @JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         this.offeringClass = offeringClass.toString();
     }

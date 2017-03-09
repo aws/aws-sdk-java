@@ -15,6 +15,7 @@ package com.amazonaws.services.servermigration.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -149,6 +150,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * @see LicenseType
      */
 
+    @JsonIgnore
     public void setLicenseType(LicenseType licenseType) {
         this.licenseType = licenseType.toString();
     }

@@ -14,6 +14,7 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -140,6 +141,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ServerType
      */
 
+    @JsonIgnore
     public void setServerType(ServerType serverType) {
         this.serverType = serverType.toString();
     }
@@ -293,6 +295,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see LicenseType
      */
 
+    @JsonIgnore
     public void setLicenseType(LicenseType licenseType) {
         this.licenseType = licenseType.toString();
     }
@@ -394,6 +397,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationJobState
      */
 
+    @JsonIgnore
     public void setState(ReplicationJobState state) {
         this.state = state.toString();
     }

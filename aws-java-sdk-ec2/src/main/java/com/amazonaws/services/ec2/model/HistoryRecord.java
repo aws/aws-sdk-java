@@ -14,6 +14,7 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -298,6 +299,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @see EventType
      */
 
+    @JsonIgnore
     public void setEventType(EventType eventType) {
         this.eventType = eventType.toString();
     }

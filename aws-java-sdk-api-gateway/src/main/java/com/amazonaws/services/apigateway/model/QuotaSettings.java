@@ -14,6 +14,7 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -177,6 +178,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
      * @see QuotaPeriodType
      */
 
+    @JsonIgnore
     public void setPeriod(QuotaPeriodType period) {
         this.period = period.toString();
     }

@@ -15,6 +15,7 @@ package com.amazonaws.services.identitymanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -196,6 +197,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyScopeType
      */
 
+    @JsonIgnore
     public void setScope(PolicyScopeType scope) {
         this.scope = scope.toString();
     }

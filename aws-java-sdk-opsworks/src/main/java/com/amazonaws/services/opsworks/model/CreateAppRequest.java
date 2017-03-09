@@ -15,6 +15,7 @@ package com.amazonaws.services.opsworks.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -428,6 +429,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see AppType
      */
 
+    @JsonIgnore
     public void setType(AppType type) {
         this.type = type.toString();
     }
