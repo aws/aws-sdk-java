@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -227,7 +226,6 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * @see InventoryQueryOperatorType
      */
 
-    @JsonIgnore
     public void setType(InventoryQueryOperatorType type) {
         this.type = type.toString();
     }

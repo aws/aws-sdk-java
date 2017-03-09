@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -250,7 +249,6 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
      * @see IpProtocol
      */
 
-    @JsonIgnore
     public void setProtocol(IpProtocol protocol) {
         this.protocol = protocol.toString();
     }

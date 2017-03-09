@@ -14,7 +14,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -225,7 +224,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
-    @JsonIgnore
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
         this.evalDecision = evalDecision.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -1628,7 +1627,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see RRType
      */
 
-    @JsonIgnore
     public void setType(RRType type) {
         this.type = type.toString();
     }
@@ -2496,7 +2494,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetRegion
      */
 
-    @JsonIgnore
     public void setRegion(ResourceRecordSetRegion region) {
         this.region = region.toString();
     }
@@ -3433,7 +3430,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetFailover
      */
 
-    @JsonIgnore
     public void setFailover(ResourceRecordSetFailover failover) {
         this.failover = failover.toString();
     }

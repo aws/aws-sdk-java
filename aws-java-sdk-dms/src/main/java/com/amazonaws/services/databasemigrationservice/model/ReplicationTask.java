@@ -14,7 +14,6 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -462,7 +461,6 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * @see MigrationTypeValue
      */
 
-    @JsonIgnore
     public void setMigrationType(MigrationTypeValue migrationType) {
         this.migrationType = migrationType.toString();
     }

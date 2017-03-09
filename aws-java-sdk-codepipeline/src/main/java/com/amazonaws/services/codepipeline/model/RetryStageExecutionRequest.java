@@ -15,7 +15,6 @@ package com.amazonaws.services.codepipeline.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -234,7 +233,6 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * @see StageRetryMode
      */
 
-    @JsonIgnore
     public void setRetryMode(StageRetryMode retryMode) {
         this.retryMode = retryMode.toString();
     }

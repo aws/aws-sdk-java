@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -105,7 +104,6 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * @see ChallengeNameType
      */
 
-    @JsonIgnore
     public void setChallengeName(ChallengeNameType challengeName) {
         this.challengeName = challengeName.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -487,7 +486,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceFormFactor
      */
 
-    @JsonIgnore
     public void setFormFactor(DeviceFormFactor formFactor) {
         this.formFactor = formFactor.toString();
     }
@@ -706,7 +704,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
-    @JsonIgnore
     public void setPlatform(DevicePlatform platform) {
         this.platform = platform.toString();
     }

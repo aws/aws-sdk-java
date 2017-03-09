@@ -14,7 +14,6 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -181,7 +180,6 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkProtocol
      */
 
-    @JsonIgnore
     public void setProtocol(NetworkProtocol protocol) {
         this.protocol = protocol.toString();
     }

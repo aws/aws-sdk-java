@@ -14,7 +14,6 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -245,7 +244,6 @@ public class SchemaExtensionInfo implements Serializable, Cloneable, StructuredP
      * @see SchemaExtensionStatus
      */
 
-    @JsonIgnore
     public void setSchemaExtensionStatus(SchemaExtensionStatus schemaExtensionStatus) {
         this.schemaExtensionStatus = schemaExtensionStatus.toString();
     }

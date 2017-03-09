@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class ClusterStateChangeReason implements Serializable, Cloneable, Struct
      * @see ClusterStateChangeReasonCode
      */
 
-    @JsonIgnore
     public void setCode(ClusterStateChangeReasonCode code) {
         this.code = code.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -571,7 +570,6 @@ public class BatchPrediction implements Serializable, Cloneable, StructuredPojo 
      * @see EntityStatus
      */
 
-    @JsonIgnore
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }

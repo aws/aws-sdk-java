@@ -15,7 +15,6 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -360,7 +359,6 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * @see MigrationTypeValue
      */
 
-    @JsonIgnore
     public void setMigrationType(MigrationTypeValue migrationType) {
         this.migrationType = migrationType.toString();
     }

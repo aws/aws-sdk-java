@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -212,7 +211,6 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see Statistic
      */
 
-    @JsonIgnore
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -449,7 +447,6 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see StandardUnit
      */
 
-    @JsonIgnore
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }

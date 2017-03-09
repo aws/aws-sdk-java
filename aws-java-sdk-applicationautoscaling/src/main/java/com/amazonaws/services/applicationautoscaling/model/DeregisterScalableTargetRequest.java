@@ -15,7 +15,6 @@ package com.amazonaws.services.applicationautoscaling.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -155,7 +154,6 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * @see ServiceNamespace
      */
 
-    @JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         this.serviceNamespace = serviceNamespace.toString();
     }
@@ -537,7 +535,6 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      * @see ScalableDimension
      */
 
-    @JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         this.scalableDimension = scalableDimension.toString();
     }

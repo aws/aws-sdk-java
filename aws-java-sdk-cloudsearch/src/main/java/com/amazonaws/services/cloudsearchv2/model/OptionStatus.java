@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -300,7 +299,6 @@ public class OptionStatus implements Serializable, Cloneable {
      * @see OptionState
      */
 
-    @JsonIgnore
     public void setState(OptionState state) {
         this.state = state.toString();
     }

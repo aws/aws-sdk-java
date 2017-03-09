@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -111,7 +110,6 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @see LoadBalancerStateEnum
      */
 
-    @JsonIgnore
     public void setCode(LoadBalancerStateEnum code) {
         this.code = code.toString();
     }

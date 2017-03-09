@@ -15,7 +15,6 @@ package com.amazonaws.services.snowball.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -353,7 +352,6 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
-    @JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         this.shippingOption = shippingOption.toString();
     }

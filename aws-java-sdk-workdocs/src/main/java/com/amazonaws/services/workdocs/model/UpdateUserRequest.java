@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -242,7 +241,6 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see UserType
      */
 
-    @JsonIgnore
     public void setType(UserType type) {
         this.type = type.toString();
     }
@@ -396,7 +394,6 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see LocaleType
      */
 
-    @JsonIgnore
     public void setLocale(LocaleType locale) {
         this.locale = locale.toString();
     }

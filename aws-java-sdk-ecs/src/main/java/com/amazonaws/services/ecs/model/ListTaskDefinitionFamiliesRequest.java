@@ -15,7 +15,6 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -222,7 +221,6 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * @see TaskDefinitionFamilyStatus
      */
 
-    @JsonIgnore
     public void setStatus(TaskDefinitionFamilyStatus status) {
         this.status = status.toString();
     }

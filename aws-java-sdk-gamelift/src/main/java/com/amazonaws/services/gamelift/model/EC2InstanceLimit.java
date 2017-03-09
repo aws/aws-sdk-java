@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -129,7 +128,6 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
      * @see EC2InstanceType
      */
 
-    @JsonIgnore
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType.toString();
     }

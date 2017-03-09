@@ -15,7 +15,6 @@ package com.amazonaws.services.kms.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -493,7 +492,6 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DataKeySpec
      */
 
-    @JsonIgnore
     public void setKeySpec(DataKeySpec keySpec) {
         this.keySpec = keySpec.toString();
     }

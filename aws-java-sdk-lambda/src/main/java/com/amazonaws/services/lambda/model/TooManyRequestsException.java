@@ -13,7 +13,6 @@
 package com.amazonaws.services.lambda.model;
 
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p/>
@@ -149,7 +148,6 @@ public class TooManyRequestsException extends com.amazonaws.services.lambda.mode
      * @see ThrottleReason
      */
 
-    @JsonIgnore
     public void setReason(ThrottleReason reason) {
         this.reason = reason.toString();
     }

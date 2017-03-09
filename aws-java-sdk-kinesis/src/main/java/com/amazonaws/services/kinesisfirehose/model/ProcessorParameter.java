@@ -14,7 +14,6 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
      * @see ProcessorParameterName
      */
 
-    @JsonIgnore
     public void setParameterName(ProcessorParameterName parameterName) {
         this.parameterName = parameterName.toString();
     }

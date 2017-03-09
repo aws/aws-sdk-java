@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -165,7 +164,6 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * @see ParameterType
      */
 
-    @JsonIgnore
     public void setType(ParameterType type) {
         this.type = type.toString();
     }

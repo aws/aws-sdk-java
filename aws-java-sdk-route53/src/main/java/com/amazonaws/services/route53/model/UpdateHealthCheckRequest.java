@@ -15,7 +15,6 @@ package com.amazonaws.services.route53.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -2573,7 +2572,6 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see InsufficientDataHealthStatus
      */
 
-    @JsonIgnore
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
         this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
     }

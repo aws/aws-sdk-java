@@ -15,7 +15,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -147,7 +146,6 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      * @see DocumentPermissionType
      */
 
-    @JsonIgnore
     public void setPermissionType(DocumentPermissionType permissionType) {
         this.permissionType = permissionType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -330,7 +329,6 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * @see TagFilterType
      */
 
-    @JsonIgnore
     public void setType(TagFilterType type) {
         this.type = type.toString();
     }

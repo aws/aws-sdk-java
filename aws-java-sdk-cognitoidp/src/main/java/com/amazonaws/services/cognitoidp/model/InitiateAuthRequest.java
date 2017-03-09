@@ -15,7 +15,6 @@ package com.amazonaws.services.cognitoidp.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -107,7 +106,6 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see AuthFlowType
      */
 
-    @JsonIgnore
     public void setAuthFlow(AuthFlowType authFlow) {
         this.authFlow = authFlow.toString();
     }

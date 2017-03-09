@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -149,7 +148,6 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
      * @see DocumentParameterType
      */
 
-    @JsonIgnore
     public void setType(DocumentParameterType type) {
         this.type = type.toString();
     }

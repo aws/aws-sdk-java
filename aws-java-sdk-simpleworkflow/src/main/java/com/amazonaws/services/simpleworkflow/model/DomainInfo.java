@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -188,7 +187,6 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RegistrationStatus
      */
 
-    @JsonIgnore
     public void setStatus(RegistrationStatus status) {
         this.status = status.toString();
     }

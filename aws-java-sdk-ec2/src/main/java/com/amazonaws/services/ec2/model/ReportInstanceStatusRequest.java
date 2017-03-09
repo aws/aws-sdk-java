@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -242,7 +241,6 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      * @see ReportStatusType
      */
 
-    @JsonIgnore
     public void setStatus(ReportStatusType status) {
         this.status = status.toString();
     }

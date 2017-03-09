@@ -14,7 +14,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1289,7 +1288,6 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * @see AttributeAction
      */
 
-    @JsonIgnore
     public void setAction(AttributeAction action) {
         this.action = action.toString();
     }

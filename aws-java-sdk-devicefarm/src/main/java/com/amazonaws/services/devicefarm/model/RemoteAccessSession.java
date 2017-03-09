@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -726,7 +725,6 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionStatus
      */
 
-    @JsonIgnore
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -1185,7 +1183,6 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionResult
      */
 
-    @JsonIgnore
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -1502,7 +1499,6 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see BillingMethod
      */
 
-    @JsonIgnore
     public void setBillingMethod(BillingMethod billingMethod) {
         this.billingMethod = billingMethod.toString();
     }

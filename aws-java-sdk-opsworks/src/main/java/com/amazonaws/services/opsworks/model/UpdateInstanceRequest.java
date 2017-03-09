@@ -15,7 +15,6 @@ package com.amazonaws.services.opsworks.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -425,7 +424,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see AutoScalingType
      */
 
-    @JsonIgnore
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         this.autoScalingType = autoScalingType.toString();
     }
@@ -1006,7 +1004,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Architecture
      */
 
-    @JsonIgnore
     public void setArchitecture(Architecture architecture) {
         this.architecture = architecture.toString();
     }

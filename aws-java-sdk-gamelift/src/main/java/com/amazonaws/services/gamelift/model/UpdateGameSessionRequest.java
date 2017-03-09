@@ -15,7 +15,6 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -246,7 +245,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see PlayerSessionCreationPolicy
      */
 
-    @JsonIgnore
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
     }
@@ -420,7 +418,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtectionPolicy
      */
 
-    @JsonIgnore
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
         this.protectionPolicy = protectionPolicy.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -283,7 +282,6 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see RuleState
      */
 
-    @JsonIgnore
     public void setState(RuleState state) {
         this.state = state.toString();
     }

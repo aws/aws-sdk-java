@@ -14,7 +14,6 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -596,7 +595,6 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITStatus
      */
 
-    @JsonIgnore
     public void setHITStatus(HITStatus hITStatus) {
         this.hITStatus = hITStatus.toString();
     }
@@ -1010,7 +1008,6 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITReviewStatus
      */
 
-    @JsonIgnore
     public void setHITReviewStatus(HITReviewStatus hITReviewStatus) {
         this.hITReviewStatus = hITReviewStatus.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -101,7 +100,6 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
      * @see DecisionTaskTimeoutType
      */
 
-    @JsonIgnore
     public void setTimeoutType(DecisionTaskTimeoutType timeoutType) {
         this.timeoutType = timeoutType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -154,7 +153,6 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see BatchState
      */
 
-    @JsonIgnore
     public void setSpotFleetRequestState(BatchState spotFleetRequestState) {
         this.spotFleetRequestState = spotFleetRequestState.toString();
     }
@@ -332,7 +330,6 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see ActivityStatus
      */
 
-    @JsonIgnore
     public void setActivityStatus(ActivityStatus activityStatus) {
         this.activityStatus = activityStatus.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.route53.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -253,7 +252,6 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see RRType
      */
 
-    @JsonIgnore
     public void setRecordType(RRType recordType) {
         this.recordType = recordType.toString();
     }

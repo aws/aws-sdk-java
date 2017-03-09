@@ -14,7 +14,6 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -342,7 +341,6 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * @see ShippingOption
      */
 
-    @JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         this.shippingOption = shippingOption.toString();
     }

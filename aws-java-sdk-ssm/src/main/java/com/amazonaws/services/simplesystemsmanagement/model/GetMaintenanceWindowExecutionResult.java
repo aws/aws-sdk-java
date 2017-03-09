@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -228,7 +227,6 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
      * @see MaintenanceWindowExecutionStatus
      */
 
-    @JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         this.status = status.toString();
     }

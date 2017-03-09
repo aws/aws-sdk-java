@@ -14,7 +14,6 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -146,7 +145,6 @@ public class PlacementStrategy implements Serializable, Cloneable, StructuredPoj
      * @see PlacementStrategyType
      */
 
-    @JsonIgnore
     public void setType(PlacementStrategyType type) {
         this.type = type.toString();
     }

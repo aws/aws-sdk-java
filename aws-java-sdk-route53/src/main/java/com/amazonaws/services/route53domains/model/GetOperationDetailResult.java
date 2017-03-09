@@ -14,7 +14,6 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -207,7 +206,6 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationStatus
      */
 
-    @JsonIgnore
     public void setStatus(OperationStatus status) {
         this.status = status.toString();
     }
@@ -416,7 +414,6 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationType
      */
 
-    @JsonIgnore
     public void setType(OperationType type) {
         this.type = type.toString();
     }

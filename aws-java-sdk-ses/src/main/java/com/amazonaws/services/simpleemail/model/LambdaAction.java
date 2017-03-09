@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -324,7 +323,6 @@ public class LambdaAction implements Serializable, Cloneable {
      * @see InvocationType
      */
 
-    @JsonIgnore
     public void setInvocationType(InvocationType invocationType) {
         this.invocationType = invocationType.toString();
     }

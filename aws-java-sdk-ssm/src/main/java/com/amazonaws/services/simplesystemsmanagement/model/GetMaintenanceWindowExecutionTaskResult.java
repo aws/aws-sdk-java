@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -324,7 +323,6 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowTaskType
      */
 
-    @JsonIgnore
     public void setType(MaintenanceWindowTaskType type) {
         this.type = type.toString();
     }
@@ -643,7 +641,6 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowExecutionStatus
      */
 
-    @JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         this.status = status.toString();
     }

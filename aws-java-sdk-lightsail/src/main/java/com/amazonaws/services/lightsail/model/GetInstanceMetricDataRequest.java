@@ -15,7 +15,6 @@ package com.amazonaws.services.lightsail.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -162,7 +161,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see InstanceMetricName
      */
 
-    @JsonIgnore
     public void setMetricName(InstanceMetricName metricName) {
         this.metricName = metricName.toString();
     }
@@ -356,7 +354,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see MetricUnit
      */
 
-    @JsonIgnore
     public void setUnit(MetricUnit unit) {
         this.unit = unit.toString();
     }

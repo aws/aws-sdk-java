@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -93,7 +92,6 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
-    @JsonIgnore
     public void setVerificationStatus(VerificationStatus verificationStatus) {
         this.verificationStatus = verificationStatus.toString();
     }

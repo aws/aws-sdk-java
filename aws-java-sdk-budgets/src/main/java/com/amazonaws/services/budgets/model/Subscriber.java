@@ -14,7 +14,6 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -62,7 +61,6 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * @see SubscriptionType
      */
 
-    @JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -209,7 +208,6 @@ public class BundleTask implements Serializable, Cloneable {
      * @see BundleTaskState
      */
 
-    @JsonIgnore
     public void setState(BundleTaskState state) {
         this.state = state.toString();
     }

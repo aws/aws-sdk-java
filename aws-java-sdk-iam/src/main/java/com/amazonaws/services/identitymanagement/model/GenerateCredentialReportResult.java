@@ -14,7 +14,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -93,7 +92,6 @@ public class GenerateCredentialReportResult extends com.amazonaws.AmazonWebServi
      * @see ReportStateType
      */
 
-    @JsonIgnore
     public void setState(ReportStateType state) {
         this.state = state.toString();
     }

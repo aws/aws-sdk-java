@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1308,7 +1307,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see ScaleDownBehavior
      */
 
-    @JsonIgnore
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
         this.scaleDownBehavior = scaleDownBehavior.toString();
     }

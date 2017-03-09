@@ -14,7 +14,6 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -235,7 +234,6 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
-    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -481,7 +479,6 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
-    @JsonIgnore
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }
@@ -555,7 +552,6 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationStatus
      */
 
-    @JsonIgnore
     public void setStatus(OperationStatus status) {
         this.status = status.toString();
     }

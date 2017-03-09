@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -234,7 +233,6 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem.toString();
     }

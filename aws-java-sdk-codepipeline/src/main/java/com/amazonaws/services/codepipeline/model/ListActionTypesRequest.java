@@ -15,7 +15,6 @@ package com.amazonaws.services.codepipeline.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -96,7 +95,6 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ActionOwner
      */
 
-    @JsonIgnore
     public void setActionOwnerFilter(ActionOwner actionOwnerFilter) {
         this.actionOwnerFilter = actionOwnerFilter.toString();
     }

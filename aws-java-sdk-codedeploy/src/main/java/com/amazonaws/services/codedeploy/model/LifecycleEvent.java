@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -564,7 +563,6 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleEventStatus
      */
 
-    @JsonIgnore
     public void setStatus(LifecycleEventStatus status) {
         this.status = status.toString();
     }

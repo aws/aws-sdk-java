@@ -14,7 +14,6 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * @see InspectorEvent
      */
 
-    @JsonIgnore
     public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }

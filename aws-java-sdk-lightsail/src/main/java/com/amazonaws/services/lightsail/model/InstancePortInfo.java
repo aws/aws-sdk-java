@@ -14,7 +14,6 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -205,7 +204,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see NetworkProtocol
      */
 
-    @JsonIgnore
     public void setProtocol(NetworkProtocol protocol) {
         this.protocol = protocol.toString();
     }
@@ -319,7 +317,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see PortAccessType
      */
 
-    @JsonIgnore
     public void setAccessType(PortAccessType accessType) {
         this.accessType = accessType.toString();
     }
@@ -433,7 +430,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see AccessDirection
      */
 
-    @JsonIgnore
     public void setAccessDirection(AccessDirection accessDirection) {
         this.accessDirection = accessDirection.toString();
     }

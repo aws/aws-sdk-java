@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -243,7 +242,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see SnapshotAttributeName
      */
 
-    @JsonIgnore
     public void setAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -325,7 +323,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see OperationType
      */
 
-    @JsonIgnore
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }

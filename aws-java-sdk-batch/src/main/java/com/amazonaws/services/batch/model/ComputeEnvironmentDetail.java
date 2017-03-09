@@ -14,7 +14,6 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -260,7 +259,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEType
      */
 
-    @JsonIgnore
     public void setType(CEType type) {
         this.type = type.toString();
     }
@@ -350,7 +348,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEState
      */
 
-    @JsonIgnore
     public void setState(CEState state) {
         this.state = state.toString();
     }
@@ -428,7 +425,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEStatus
      */
 
-    @JsonIgnore
     public void setStatus(CEStatus status) {
         this.status = status.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.polly.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -218,7 +217,6 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OutputFormat
      */
 
-    @JsonIgnore
     public void setOutputFormat(OutputFormat outputFormat) {
         this.outputFormat = outputFormat.toString();
     }
@@ -425,7 +423,6 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see TextType
      */
 
-    @JsonIgnore
     public void setTextType(TextType textType) {
         this.textType = textType.toString();
     }
@@ -509,7 +506,6 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see VoiceId
      */
 
-    @JsonIgnore
     public void setVoiceId(VoiceId voiceId) {
         this.voiceId = voiceId.toString();
     }

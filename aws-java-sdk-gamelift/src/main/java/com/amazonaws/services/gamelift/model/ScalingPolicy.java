@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -608,7 +607,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingStatusType
      */
 
-    @JsonIgnore
     public void setStatus(ScalingStatusType status) {
         this.status = status.toString();
     }
@@ -944,7 +942,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingAdjustmentType
      */
 
-    @JsonIgnore
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
         this.scalingAdjustmentType = scalingAdjustmentType.toString();
     }
@@ -1055,7 +1052,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperatorType
      */
 
-    @JsonIgnore
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -1512,7 +1508,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see MetricName
      */
 
-    @JsonIgnore
     public void setMetricName(MetricName metricName) {
         this.metricName = metricName.toString();
     }

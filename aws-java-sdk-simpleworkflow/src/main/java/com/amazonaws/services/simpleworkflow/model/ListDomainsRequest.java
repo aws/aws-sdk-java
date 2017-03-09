@@ -15,7 +15,6 @@ package com.amazonaws.services.simpleworkflow.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -178,7 +177,6 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RegistrationStatus
      */
 
-    @JsonIgnore
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
         this.registrationStatus = registrationStatus.toString();
     }

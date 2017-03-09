@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -111,7 +110,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * @see DomainType
      */
 
-    @JsonIgnore
     public void setDomain(DomainType domain) {
         this.domain = domain.toString();
     }

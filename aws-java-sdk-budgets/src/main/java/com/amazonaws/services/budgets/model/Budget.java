@@ -14,7 +14,6 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -199,7 +198,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see TimeUnit
      */
 
-    @JsonIgnore
     public void setTimeUnit(TimeUnit timeUnit) {
         this.timeUnit = timeUnit.toString();
     }
@@ -301,7 +299,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see BudgetType
      */
 
-    @JsonIgnore
     public void setBudgetType(BudgetType budgetType) {
         this.budgetType = budgetType.toString();
     }

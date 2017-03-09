@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -221,7 +220,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see InstanceType
      */
 
-    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -455,7 +453,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
-    @JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -529,7 +526,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Tenancy
      */
 
-    @JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -611,7 +607,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
-    @JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }
@@ -687,7 +682,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingTypeValues
      */
 
-    @JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -976,7 +970,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingClassType
      */
 
-    @JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         this.offeringClass = offeringClass.toString();
     }
@@ -1052,7 +1045,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Scope
      */
 
-    @JsonIgnore
     public void setScope(Scope scope) {
         this.scope = scope.toString();
     }

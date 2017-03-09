@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -96,7 +95,6 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
      * @see AutomationExecutionFilterKey
      */
 
-    @JsonIgnore
     public void setKey(AutomationExecutionFilterKey key) {
         this.key = key.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -350,7 +349,6 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * @see SourceType
      */
 
-    @JsonIgnore
     public void setType(SourceType type) {
         this.type = type.toString();
     }

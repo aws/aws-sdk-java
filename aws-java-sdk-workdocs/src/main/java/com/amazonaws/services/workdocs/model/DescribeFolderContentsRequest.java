@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -162,7 +161,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see ResourceSortType
      */
 
-    @JsonIgnore
     public void setSort(ResourceSortType sort) {
         this.sort = sort.toString();
     }
@@ -236,7 +234,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see OrderType
      */
 
-    @JsonIgnore
     public void setOrder(OrderType order) {
         this.order = order.toString();
     }
@@ -390,7 +387,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see FolderContentType
      */
 
-    @JsonIgnore
     public void setType(FolderContentType type) {
         this.type = type.toString();
     }

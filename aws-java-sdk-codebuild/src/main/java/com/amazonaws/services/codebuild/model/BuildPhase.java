@@ -14,7 +14,6 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -615,7 +614,6 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see BuildPhaseType
      */
 
-    @JsonIgnore
     public void setPhaseType(BuildPhaseType phaseType) {
         this.phaseType = phaseType.toString();
     }
@@ -1044,7 +1042,6 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @JsonIgnore
     public void setPhaseStatus(StatusType phaseStatus) {
         this.phaseStatus = phaseStatus.toString();
     }

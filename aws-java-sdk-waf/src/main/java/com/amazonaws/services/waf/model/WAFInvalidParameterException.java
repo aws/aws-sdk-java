@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -124,7 +123,6 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      * @see ParameterExceptionField
      */
 
-    @JsonIgnore
     public void setField(ParameterExceptionField field) {
         this.field = field.toString();
     }
@@ -204,7 +202,6 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      * @see ParameterExceptionReason
      */
 
-    @JsonIgnore
     public void setReason(ParameterExceptionReason reason) {
         this.reason = reason.toString();
     }

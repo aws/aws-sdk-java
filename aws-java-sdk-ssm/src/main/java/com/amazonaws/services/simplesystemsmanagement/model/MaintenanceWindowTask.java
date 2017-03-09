@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -272,7 +271,6 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * @see MaintenanceWindowTaskType
      */
 
-    @JsonIgnore
     public void setType(MaintenanceWindowTaskType type) {
         this.type = type.toString();
     }

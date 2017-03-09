@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -184,7 +183,6 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see VpnState
      */
 
-    @JsonIgnore
     public void setState(VpnState state) {
         this.state = state.toString();
     }
@@ -316,7 +314,6 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see GatewayType
      */
 
-    @JsonIgnore
     public void setType(GatewayType type) {
         this.type = type.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.polly.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -106,7 +105,6 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see LanguageCode
      */
 
-    @JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         this.languageCode = languageCode.toString();
     }

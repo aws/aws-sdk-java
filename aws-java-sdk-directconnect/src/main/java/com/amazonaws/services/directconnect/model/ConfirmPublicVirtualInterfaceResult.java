@@ -14,7 +14,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -64,7 +63,6 @@ public class ConfirmPublicVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * @see VirtualInterfaceState
      */
 
-    @JsonIgnore
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState.toString();
     }

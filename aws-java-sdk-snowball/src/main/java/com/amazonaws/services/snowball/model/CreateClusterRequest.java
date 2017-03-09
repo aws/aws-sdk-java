@@ -15,7 +15,6 @@ package com.amazonaws.services.snowball.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -172,7 +171,6 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see JobType
      */
 
-    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -494,7 +492,6 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see SnowballType
      */
 
-    @JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         this.snowballType = snowballType.toString();
     }
@@ -782,7 +779,6 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
-    @JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         this.shippingOption = shippingOption.toString();
     }

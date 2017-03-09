@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1044,7 +1043,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadType
      */
 
-    @JsonIgnore
     public void setType(UploadType type) {
         this.type = type.toString();
     }
@@ -1483,7 +1481,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadStatus
      */
 
-    @JsonIgnore
     public void setStatus(UploadStatus status) {
         this.status = status.toString();
     }

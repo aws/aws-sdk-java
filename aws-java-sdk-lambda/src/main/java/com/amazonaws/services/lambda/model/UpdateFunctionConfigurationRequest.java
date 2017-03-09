@@ -15,7 +15,6 @@ package com.amazonaws.services.lambda.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -631,7 +630,6 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * @see Runtime
      */
 
-    @JsonIgnore
     public void setRuntime(Runtime runtime) {
         this.runtime = runtime.toString();
     }

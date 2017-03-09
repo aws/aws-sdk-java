@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -93,7 +92,6 @@ public class AnalysisScheme implements Serializable, Cloneable {
      * @see AnalysisSchemeLanguage
      */
 
-    @JsonIgnore
     public void setAnalysisSchemeLanguage(AnalysisSchemeLanguage analysisSchemeLanguage) {
         this.analysisSchemeLanguage = analysisSchemeLanguage.toString();
     }

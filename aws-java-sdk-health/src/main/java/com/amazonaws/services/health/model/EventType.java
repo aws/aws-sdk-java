@@ -14,7 +14,6 @@ package com.amazonaws.services.health.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -202,7 +201,6 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      * @see EventTypeCategory
      */
 
-    @JsonIgnore
     public void setCategory(EventTypeCategory category) {
         this.category = category.toString();
     }

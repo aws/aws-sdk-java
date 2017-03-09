@@ -14,7 +14,6 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -570,7 +569,6 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @see ContentHandlingStrategy
      */
 
-    @JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         this.contentHandling = contentHandling.toString();
     }

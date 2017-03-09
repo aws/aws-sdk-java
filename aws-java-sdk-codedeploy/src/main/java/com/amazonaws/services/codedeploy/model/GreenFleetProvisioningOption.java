@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -202,7 +201,6 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * @see GreenFleetProvisioningAction
      */
 
-    @JsonIgnore
     public void setAction(GreenFleetProvisioningAction action) {
         this.action = action.toString();
     }

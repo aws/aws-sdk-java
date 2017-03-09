@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -93,7 +92,6 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @see SummaryStatus
      */
 
-    @JsonIgnore
     public void setStatus(SummaryStatus status) {
         this.status = status.toString();
     }

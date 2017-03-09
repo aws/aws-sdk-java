@@ -14,7 +14,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -333,7 +332,6 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see LagState
      */
 
-    @JsonIgnore
     public void setLagState(LagState lagState) {
         this.lagState = lagState.toString();
     }

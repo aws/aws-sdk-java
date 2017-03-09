@@ -14,7 +14,6 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -318,7 +317,6 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see ImageState
      */
 
-    @JsonIgnore
     public void setState(ImageState state) {
         this.state = state.toString();
     }
@@ -394,7 +392,6 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see VisibilityType
      */
 
-    @JsonIgnore
     public void setVisibility(VisibilityType visibility) {
         this.visibility = visibility.toString();
     }
@@ -468,7 +465,6 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see PlatformType
      */
 
-    @JsonIgnore
     public void setPlatform(PlatformType platform) {
         this.platform = platform.toString();
     }

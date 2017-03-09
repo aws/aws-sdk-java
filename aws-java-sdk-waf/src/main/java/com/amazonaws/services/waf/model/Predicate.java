@@ -14,7 +14,6 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -242,7 +241,6 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      * @see PredicateType
      */
 
-    @JsonIgnore
     public void setType(PredicateType type) {
         this.type = type.toString();
     }

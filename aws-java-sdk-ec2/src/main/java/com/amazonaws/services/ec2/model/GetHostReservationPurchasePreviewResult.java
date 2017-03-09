@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceResult;
 
@@ -265,7 +264,6 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
      * @see CurrencyCodeValues
      */
 
-    @JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }

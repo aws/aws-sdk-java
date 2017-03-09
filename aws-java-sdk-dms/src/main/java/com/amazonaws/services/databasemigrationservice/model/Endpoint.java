@@ -14,7 +14,6 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -214,7 +213,6 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationEndpointTypeValue
      */
 
-    @JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         this.endpointType = endpointType.toString();
     }
@@ -753,7 +751,6 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see DmsSslModeValue
      */
 
-    @JsonIgnore
     public void setSslMode(DmsSslModeValue sslMode) {
         this.sslMode = sslMode.toString();
     }

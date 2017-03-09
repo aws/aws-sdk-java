@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -357,7 +356,6 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @see GeoRestrictionType
      */
 
-    @JsonIgnore
     public void setRestrictionType(GeoRestrictionType restrictionType) {
         this.restrictionType = restrictionType.toString();
     }

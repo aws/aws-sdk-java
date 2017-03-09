@@ -15,7 +15,6 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -294,7 +293,6 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see OperatingSystem
      */
 
-    @JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem.toString();
     }

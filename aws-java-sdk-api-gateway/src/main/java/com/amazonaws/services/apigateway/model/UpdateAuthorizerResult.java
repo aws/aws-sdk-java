@@ -14,7 +14,6 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -249,7 +248,6 @@ public class UpdateAuthorizerResult extends com.amazonaws.AmazonWebServiceResult
      * @see AuthorizerType
      */
 
-    @JsonIgnore
     public void setType(AuthorizerType type) {
         this.type = type.toString();
     }

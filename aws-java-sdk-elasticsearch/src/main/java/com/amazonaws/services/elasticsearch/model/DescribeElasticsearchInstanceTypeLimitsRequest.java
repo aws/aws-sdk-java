@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticsearch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -149,7 +148,6 @@ public class DescribeElasticsearchInstanceTypeLimitsRequest extends com.amazonaw
      * @see ESPartitionInstanceType
      */
 
-    @JsonIgnore
     public void setInstanceType(ESPartitionInstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }

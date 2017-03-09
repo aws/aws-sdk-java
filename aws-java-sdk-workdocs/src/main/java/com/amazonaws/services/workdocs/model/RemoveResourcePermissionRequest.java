@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -178,7 +177,6 @@ public class RemoveResourcePermissionRequest extends com.amazonaws.AmazonWebServ
      * @see PrincipalType
      */
 
-    @JsonIgnore
     public void setPrincipalType(PrincipalType principalType) {
         this.principalType = principalType.toString();
     }

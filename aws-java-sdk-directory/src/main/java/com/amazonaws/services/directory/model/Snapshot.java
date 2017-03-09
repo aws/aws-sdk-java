@@ -14,7 +14,6 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -198,7 +197,6 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotType
      */
 
-    @JsonIgnore
     public void setType(SnapshotType type) {
         this.type = type.toString();
     }
@@ -312,7 +310,6 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotStatus
      */
 
-    @JsonIgnore
     public void setStatus(SnapshotStatus status) {
         this.status = status.toString();
     }

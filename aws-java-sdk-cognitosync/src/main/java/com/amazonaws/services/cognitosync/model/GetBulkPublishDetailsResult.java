@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * The output for the GetBulkPublishDetails operation.
@@ -302,7 +301,6 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
      * @see BulkPublishStatus
      */
 
-    @JsonIgnore
     public void setBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
         this.bulkPublishStatus = bulkPublishStatus.toString();
     }

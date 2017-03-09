@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -394,7 +393,6 @@ public class Diagnostics implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleErrorCode
      */
 
-    @JsonIgnore
     public void setErrorCode(LifecycleErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }

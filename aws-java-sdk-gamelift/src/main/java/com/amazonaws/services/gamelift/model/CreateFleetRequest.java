@@ -15,7 +15,6 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -550,7 +549,6 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see EC2InstanceType
      */
 
-    @JsonIgnore
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType.toString();
     }
@@ -844,7 +842,6 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ProtectionPolicy
      */
 
-    @JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
     }

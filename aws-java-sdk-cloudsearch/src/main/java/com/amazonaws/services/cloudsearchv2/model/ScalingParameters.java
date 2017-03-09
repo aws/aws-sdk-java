@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -101,7 +100,6 @@ public class ScalingParameters implements Serializable, Cloneable {
      * @see PartitionInstanceType
      */
 
-    @JsonIgnore
     public void setDesiredInstanceType(PartitionInstanceType desiredInstanceType) {
         this.desiredInstanceType = desiredInstanceType.toString();
     }

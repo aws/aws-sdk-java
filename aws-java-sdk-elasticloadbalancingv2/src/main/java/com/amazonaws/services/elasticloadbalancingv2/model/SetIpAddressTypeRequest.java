@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -141,7 +140,6 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @see IpAddressType
      */
 
-    @JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
     }

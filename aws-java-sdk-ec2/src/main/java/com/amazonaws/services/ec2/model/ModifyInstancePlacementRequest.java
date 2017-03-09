@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -147,7 +146,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see HostTenancy
      */
 
-    @JsonIgnore
     public void setTenancy(HostTenancy tenancy) {
         this.tenancy = tenancy.toString();
     }
@@ -221,7 +219,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see Affinity
      */
 
-    @JsonIgnore
     public void setAffinity(Affinity affinity) {
         this.affinity = affinity.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -148,7 +147,6 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
      * @see VmManagerType
      */
 
-    @JsonIgnore
     public void setVmManagerType(VmManagerType vmManagerType) {
         this.vmManagerType = vmManagerType.toString();
     }

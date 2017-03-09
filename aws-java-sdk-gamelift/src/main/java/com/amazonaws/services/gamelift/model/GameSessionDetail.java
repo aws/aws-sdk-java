@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -248,7 +247,6 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
      * @see ProtectionPolicy
      */
 
-    @JsonIgnore
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
         this.protectionPolicy = protectionPolicy.toString();
     }

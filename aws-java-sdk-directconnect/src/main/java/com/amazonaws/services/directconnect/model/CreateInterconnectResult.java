@@ -14,7 +14,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -149,7 +148,6 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      * @see InterconnectState
      */
 
-    @JsonIgnore
     public void setInterconnectState(InterconnectState interconnectState) {
         this.interconnectState = interconnectState.toString();
     }

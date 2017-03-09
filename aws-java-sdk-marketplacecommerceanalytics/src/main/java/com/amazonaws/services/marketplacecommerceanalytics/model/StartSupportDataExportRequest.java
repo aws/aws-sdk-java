@@ -15,7 +15,6 @@ package com.amazonaws.services.marketplacecommerceanalytics.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -230,7 +229,6 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * @see SupportDataSetType
      */
 
-    @JsonIgnore
     public void setDataSetType(SupportDataSetType dataSetType) {
         this.dataSetType = dataSetType.toString();
     }

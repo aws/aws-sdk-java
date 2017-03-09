@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 

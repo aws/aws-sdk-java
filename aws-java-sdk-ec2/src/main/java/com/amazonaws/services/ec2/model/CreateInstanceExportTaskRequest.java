@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -187,7 +186,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * @see ExportEnvironment
      */
 
-    @JsonIgnore
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
         this.targetEnvironment = targetEnvironment.toString();
     }

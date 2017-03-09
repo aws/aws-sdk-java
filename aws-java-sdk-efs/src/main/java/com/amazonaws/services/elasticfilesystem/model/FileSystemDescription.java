@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -311,7 +310,6 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      * @see LifeCycleState
      */
 
-    @JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         this.lifeCycleState = lifeCycleState.toString();
     }
@@ -553,7 +551,6 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      * @see PerformanceMode
      */
 
-    @JsonIgnore
     public void setPerformanceMode(PerformanceMode performanceMode) {
         this.performanceMode = performanceMode.toString();
     }

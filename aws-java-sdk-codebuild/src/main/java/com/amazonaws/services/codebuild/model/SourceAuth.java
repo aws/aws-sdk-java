@@ -14,7 +14,6 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -108,7 +107,6 @@ public class SourceAuth implements Serializable, Cloneable, StructuredPojo {
      * @see SourceAuthType
      */
 
-    @JsonIgnore
     public void setType(SourceAuthType type) {
         this.type = type.toString();
     }

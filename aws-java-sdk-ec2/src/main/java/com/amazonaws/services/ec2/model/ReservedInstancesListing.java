@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -304,7 +303,6 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @see ListingStatus
      */
 
-    @JsonIgnore
     public void setStatus(ListingStatus status) {
         this.status = status.toString();
     }

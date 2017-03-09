@@ -14,7 +14,6 @@ package com.amazonaws.services.polly.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -169,7 +168,6 @@ public class LexiconAttributes implements Serializable, Cloneable, StructuredPoj
      * @see LanguageCode
      */
 
-    @JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         this.languageCode = languageCode.toString();
     }

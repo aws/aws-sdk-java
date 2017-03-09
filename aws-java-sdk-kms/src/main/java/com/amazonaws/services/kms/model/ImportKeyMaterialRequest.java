@@ -15,7 +15,6 @@ package com.amazonaws.services.kms.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -470,7 +469,6 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ExpirationModelType
      */
 
-    @JsonIgnore
     public void setExpirationModel(ExpirationModelType expirationModel) {
         this.expirationModel = expirationModel.toString();
     }

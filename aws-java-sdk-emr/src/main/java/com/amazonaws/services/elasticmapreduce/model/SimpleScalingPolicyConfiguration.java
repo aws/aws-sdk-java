@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -183,7 +182,6 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * @see AdjustmentType
      */
 
-    @JsonIgnore
     public void setAdjustmentType(AdjustmentType adjustmentType) {
         this.adjustmentType = adjustmentType.toString();
     }

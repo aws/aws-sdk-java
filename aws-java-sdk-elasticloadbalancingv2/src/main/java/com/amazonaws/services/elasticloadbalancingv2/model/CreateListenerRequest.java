@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -157,7 +156,6 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ProtocolEnum
      */
 
-    @JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol.toString();
     }

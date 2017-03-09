@@ -15,7 +15,6 @@ package com.amazonaws.services.clouddirectory.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -515,7 +514,6 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ObjectType
      */
 
-    @JsonIgnore
     public void setObjectType(ObjectType objectType) {
         this.objectType = objectType.toString();
     }

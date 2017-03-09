@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -197,7 +196,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         this.protocol = protocol.toString();
     }
@@ -361,7 +359,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @JsonIgnore
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
         this.healthCheckProtocol = healthCheckProtocol.toString();
     }

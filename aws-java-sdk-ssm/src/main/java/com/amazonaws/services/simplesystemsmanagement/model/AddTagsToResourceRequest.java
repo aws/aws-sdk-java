@@ -15,7 +15,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -99,7 +98,6 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ResourceTypeForTagging
      */
 
-    @JsonIgnore
     public void setResourceType(ResourceTypeForTagging resourceType) {
         this.resourceType = resourceType.toString();
     }

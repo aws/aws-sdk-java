@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -308,7 +307,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see MarketType
      */
 
-    @JsonIgnore
     public void setMarket(MarketType market) {
         this.market = market.toString();
     }
@@ -382,7 +380,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceRoleType
      */
 
-    @JsonIgnore
     public void setInstanceRole(InstanceRoleType instanceRole) {
         this.instanceRole = instanceRole.toString();
     }
@@ -616,7 +613,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceGroupState
      */
 
-    @JsonIgnore
     public void setState(InstanceGroupState state) {
         this.state = state.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -237,7 +236,6 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @see VolumeAttachmentState
      */
 
-    @JsonIgnore
     public void setState(VolumeAttachmentState state) {
         this.state = state.toString();
     }

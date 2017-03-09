@@ -14,7 +14,6 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      * @see ObjectType
      */
 
-    @JsonIgnore
     public void setObjectType(ObjectType objectType) {
         this.objectType = objectType.toString();
     }

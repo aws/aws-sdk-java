@@ -14,7 +14,6 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -89,7 +88,6 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
      * @see Compute
      */
 
-    @JsonIgnore
     public void setName(Compute name) {
         this.name = name.toString();
     }

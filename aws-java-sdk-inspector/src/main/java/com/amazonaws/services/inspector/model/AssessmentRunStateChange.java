@@ -14,7 +14,6 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class AssessmentRunStateChange implements Serializable, Cloneable, Struct
      * @see AssessmentRunState
      */
 
-    @JsonIgnore
     public void setState(AssessmentRunState state) {
         this.state = state.toString();
     }

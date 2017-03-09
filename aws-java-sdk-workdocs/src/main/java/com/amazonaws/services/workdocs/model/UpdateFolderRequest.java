@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -224,7 +223,6 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ResourceStateType
      */
 
-    @JsonIgnore
     public void setResourceState(ResourceStateType resourceState) {
         this.resourceState = resourceState.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -361,7 +360,6 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @see VolumeType
      */
 
-    @JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }

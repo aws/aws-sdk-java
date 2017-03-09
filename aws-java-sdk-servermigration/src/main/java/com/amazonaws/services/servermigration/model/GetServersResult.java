@@ -14,7 +14,6 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -92,7 +91,6 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see ServerCatalogStatus
      */
 
-    @JsonIgnore
     public void setServerCatalogStatus(ServerCatalogStatus serverCatalogStatus) {
         this.serverCatalogStatus = serverCatalogStatus.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -251,7 +250,6 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * @see InputStartingPosition
      */
 
-    @JsonIgnore
     public void setInputStartingPosition(InputStartingPosition inputStartingPosition) {
         this.inputStartingPosition = inputStartingPosition.toString();
     }

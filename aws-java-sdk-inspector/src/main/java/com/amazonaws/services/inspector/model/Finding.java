@@ -14,7 +14,6 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -334,7 +333,6 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see AssetType
      */
 
-    @JsonIgnore
     public void setAssetType(AssetType assetType) {
         this.assetType = assetType.toString();
     }
@@ -608,7 +606,6 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see Severity
      */
 
-    @JsonIgnore
     public void setSeverity(Severity severity) {
         this.severity = severity.toString();
     }

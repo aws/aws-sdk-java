@@ -1,3 +1,8 @@
+# __1.11.102__ __2017-03-08__
+## __Core__
+  - <h3>Bugfixes</h3>
+    - Removing @JsonIgnore annotation introduced in 1.11.101 from Enum helper setters on models (eg https://github.com/aws/aws-sdk-java/blob/master/aws-java-sdk-ecs/src/main/java/com/amazonaws/services/ecs/model/PortMapping.java#L351) as this caused a regression that affected some waiters.
+
 # __1.11.101__ __2017-03-08__
 ## __AWS SDK for Java__
   - <h3>Features</h3>

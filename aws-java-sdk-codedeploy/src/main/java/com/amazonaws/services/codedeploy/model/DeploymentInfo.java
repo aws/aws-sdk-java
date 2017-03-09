@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -456,7 +455,6 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentStatus
      */
 
-    @JsonIgnore
     public void setStatus(DeploymentStatus status) {
         this.status = status.toString();
     }
@@ -923,7 +921,6 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentCreator
      */
 
-    @JsonIgnore
     public void setCreator(DeploymentCreator creator) {
         this.creator = creator.toString();
     }

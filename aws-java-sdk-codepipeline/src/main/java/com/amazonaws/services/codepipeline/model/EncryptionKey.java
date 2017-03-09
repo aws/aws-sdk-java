@@ -14,7 +14,6 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -145,7 +144,6 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
      * @see EncryptionKeyType
      */
 
-    @JsonIgnore
     public void setType(EncryptionKeyType type) {
         this.type = type.toString();
     }

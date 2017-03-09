@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -647,7 +646,6 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * @see CommandInvocationStatus
      */
 
-    @JsonIgnore
     public void setStatus(CommandInvocationStatus status) {
         this.status = status.toString();
     }

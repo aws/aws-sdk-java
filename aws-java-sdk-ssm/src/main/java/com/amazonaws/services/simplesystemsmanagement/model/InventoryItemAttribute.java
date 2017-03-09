@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class InventoryItemAttribute implements Serializable, Cloneable, Structur
      * @see InventoryAttributeDataType
      */
 
-    @JsonIgnore
     public void setDataType(InventoryAttributeDataType dataType) {
         this.dataType = dataType.toString();
     }

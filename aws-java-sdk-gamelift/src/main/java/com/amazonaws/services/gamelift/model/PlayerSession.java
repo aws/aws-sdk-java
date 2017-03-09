@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -660,7 +659,6 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionStatus
      */
 
-    @JsonIgnore
     public void setStatus(PlayerSessionStatus status) {
         this.status = status.toString();
     }

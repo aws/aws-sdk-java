@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
      * @see CurrencyCode
      */
 
-    @JsonIgnore
     public void setCurrencyCode(CurrencyCode currencyCode) {
         this.currencyCode = currencyCode.toString();
     }

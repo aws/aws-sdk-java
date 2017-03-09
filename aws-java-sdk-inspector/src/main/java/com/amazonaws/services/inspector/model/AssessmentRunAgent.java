@@ -14,7 +14,6 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -206,7 +205,6 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealth
      */
 
-    @JsonIgnore
     public void setAgentHealth(AgentHealth agentHealth) {
         this.agentHealth = agentHealth.toString();
     }
@@ -280,7 +278,6 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealthCode
      */
 
-    @JsonIgnore
     public void setAgentHealthCode(AgentHealthCode agentHealthCode) {
         this.agentHealthCode = agentHealthCode.toString();
     }

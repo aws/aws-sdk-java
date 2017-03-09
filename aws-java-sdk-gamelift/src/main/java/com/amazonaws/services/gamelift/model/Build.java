@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -485,7 +484,6 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see BuildStatus
      */
 
-    @JsonIgnore
     public void setStatus(BuildStatus status) {
         this.status = status.toString();
     }
@@ -656,7 +654,6 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem.toString();
     }

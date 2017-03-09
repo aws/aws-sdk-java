@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -510,7 +509,6 @@ public class Stack implements Serializable, Cloneable {
      * @see StackStatus
      */
 
-    @JsonIgnore
     public void setStackStatus(StackStatus stackStatus) {
         this.stackStatus = stackStatus.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -787,7 +786,6 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * @see TestType
      */
 
-    @JsonIgnore
     public void setType(TestType type) {
         this.type = type.toString();
     }

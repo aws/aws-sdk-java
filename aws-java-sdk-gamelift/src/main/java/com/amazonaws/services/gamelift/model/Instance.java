@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -268,7 +267,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem.toString();
     }
@@ -342,7 +340,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
-    @JsonIgnore
     public void setType(EC2InstanceType type) {
         this.type = type.toString();
     }
@@ -580,7 +577,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceStatus
      */
 
-    @JsonIgnore
     public void setStatus(InstanceStatus status) {
         this.status = status.toString();
     }

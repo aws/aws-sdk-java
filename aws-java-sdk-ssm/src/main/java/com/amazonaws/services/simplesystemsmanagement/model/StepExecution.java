@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -326,7 +325,6 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * @see AutomationExecutionStatus
      */
 
-    @JsonIgnore
     public void setStepStatus(AutomationExecutionStatus stepStatus) {
         this.stepStatus = stepStatus.toString();
     }

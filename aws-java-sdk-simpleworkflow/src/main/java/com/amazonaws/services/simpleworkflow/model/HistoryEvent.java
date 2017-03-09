@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -554,7 +553,6 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
      * @see EventType
      */
 
-    @JsonIgnore
     public void setEventType(EventType eventType) {
         this.eventType = eventType.toString();
     }

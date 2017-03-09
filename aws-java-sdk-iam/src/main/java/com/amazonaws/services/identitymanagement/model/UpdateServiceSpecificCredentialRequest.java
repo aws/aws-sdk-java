@@ -15,7 +15,6 @@ package com.amazonaws.services.identitymanagement.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -242,7 +241,6 @@ public class UpdateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * @see StatusType
      */
 
-    @JsonIgnore
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }

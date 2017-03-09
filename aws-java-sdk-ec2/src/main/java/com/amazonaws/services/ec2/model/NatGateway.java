@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -715,7 +714,6 @@ public class NatGateway implements Serializable, Cloneable {
      * @see NatGatewayState
      */
 
-    @JsonIgnore
     public void setState(NatGatewayState state) {
         this.state = state.toString();
     }

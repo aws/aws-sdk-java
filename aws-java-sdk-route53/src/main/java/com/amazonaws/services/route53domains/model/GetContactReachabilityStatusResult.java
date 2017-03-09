@@ -14,7 +14,6 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -207,7 +206,6 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
      * @see ReachabilityStatus
      */
 
-    @JsonIgnore
     public void setStatus(ReachabilityStatus status) {
         this.status = status.toString();
     }

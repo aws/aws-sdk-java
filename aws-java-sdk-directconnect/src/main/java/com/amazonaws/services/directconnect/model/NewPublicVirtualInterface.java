@@ -14,7 +14,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -235,7 +234,6 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable, Struc
      * @see AddressFamily
      */
 
-    @JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         this.addressFamily = addressFamily.toString();
     }

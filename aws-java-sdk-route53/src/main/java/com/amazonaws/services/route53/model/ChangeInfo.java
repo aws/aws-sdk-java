@@ -14,7 +14,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -207,7 +206,6 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @see ChangeStatus
      */
 
-    @JsonIgnore
     public void setStatus(ChangeStatus status) {
         this.status = status.toString();
     }

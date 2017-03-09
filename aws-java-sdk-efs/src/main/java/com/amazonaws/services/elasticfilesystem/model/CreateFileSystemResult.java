@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -309,7 +308,6 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see LifeCycleState
      */
 
-    @JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         this.lifeCycleState = lifeCycleState.toString();
     }
@@ -551,7 +549,6 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see PerformanceMode
      */
 
-    @JsonIgnore
     public void setPerformanceMode(PerformanceMode performanceMode) {
         this.performanceMode = performanceMode.toString();
     }

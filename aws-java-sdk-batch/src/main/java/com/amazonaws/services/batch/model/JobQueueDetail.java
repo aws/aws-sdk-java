@@ -14,7 +14,6 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -206,7 +205,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQState
      */
 
-    @JsonIgnore
     public void setState(JQState state) {
         this.state = state.toString();
     }
@@ -280,7 +278,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQStatus
      */
 
-    @JsonIgnore
     public void setStatus(JQStatus status) {
         this.status = status.toString();
     }

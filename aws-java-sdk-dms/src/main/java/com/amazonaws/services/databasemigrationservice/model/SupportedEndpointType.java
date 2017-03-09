@@ -14,7 +14,6 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -198,7 +197,6 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * @see ReplicationEndpointTypeValue
      */
 
-    @JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         this.endpointType = endpointType.toString();
     }

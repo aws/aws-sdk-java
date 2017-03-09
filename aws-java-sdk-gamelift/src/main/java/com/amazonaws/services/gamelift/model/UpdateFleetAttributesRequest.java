@@ -15,7 +15,6 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -359,7 +358,6 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * @see ProtectionPolicy
      */
 
-    @JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
     }

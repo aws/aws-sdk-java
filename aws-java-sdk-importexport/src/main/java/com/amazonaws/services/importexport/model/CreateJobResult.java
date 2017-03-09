@@ -14,7 +14,6 @@ package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Output structure for the CreateJob operation.
@@ -94,7 +93,6 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see JobType
      */
 
-    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }

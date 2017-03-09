@@ -14,7 +14,6 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -229,7 +228,6 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * @see LogDriver
      */
 
-    @JsonIgnore
     public void setLogDriver(LogDriver logDriver) {
         this.logDriver = logDriver.toString();
     }

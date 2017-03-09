@@ -14,7 +14,6 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -248,7 +247,6 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * @see ProvisioningArtifactType
      */
 
-    @JsonIgnore
     public void setType(ProvisioningArtifactType type) {
         this.type = type.toString();
     }

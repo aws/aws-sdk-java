@@ -14,7 +14,6 @@ package com.amazonaws.services.workdocs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -153,7 +152,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
-    @JsonIgnore
     public void setRole(RoleType role) {
         this.role = role.toString();
     }
@@ -227,7 +225,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see ShareStatusType
      */
 
-    @JsonIgnore
     public void setStatus(ShareStatusType status) {
         this.status = status.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -311,7 +310,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupType
      */
 
-    @JsonIgnore
     public void setBackupType(BackupType backupType) {
         this.backupType = backupType.toString();
     }
@@ -1062,7 +1060,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupStatus
      */
 
-    @JsonIgnore
     public void setStatus(BackupStatus status) {
         this.status = status.toString();
     }

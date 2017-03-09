@@ -14,7 +14,6 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -259,7 +258,6 @@ public class Parent implements Serializable, Cloneable, StructuredPojo {
      * @see ParentType
      */
 
-    @JsonIgnore
     public void setType(ParentType type) {
         this.type = type.toString();
     }

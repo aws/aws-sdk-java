@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -87,7 +86,6 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
      * @see AutoScalingPolicyState
      */
 
-    @JsonIgnore
     public void setState(AutoScalingPolicyState state) {
         this.state = state.toString();
     }

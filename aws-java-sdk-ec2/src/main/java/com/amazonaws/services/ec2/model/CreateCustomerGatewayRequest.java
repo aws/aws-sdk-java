@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -149,7 +148,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @see GatewayType
      */
 
-    @JsonIgnore
     public void setType(GatewayType type) {
         this.type = type.toString();
     }

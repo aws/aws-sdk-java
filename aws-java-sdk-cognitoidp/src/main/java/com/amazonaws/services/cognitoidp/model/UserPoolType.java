@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -401,7 +400,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @JsonIgnore
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -1121,7 +1119,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see UserPoolMfaType
      */
 
-    @JsonIgnore
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
         this.mfaConfiguration = mfaConfiguration.toString();
     }

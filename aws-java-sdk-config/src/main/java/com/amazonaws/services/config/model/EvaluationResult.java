@@ -14,7 +14,6 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -202,7 +201,6 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
      * @see ComplianceType
      */
 
-    @JsonIgnore
     public void setComplianceType(ComplianceType complianceType) {
         this.complianceType = complianceType.toString();
     }

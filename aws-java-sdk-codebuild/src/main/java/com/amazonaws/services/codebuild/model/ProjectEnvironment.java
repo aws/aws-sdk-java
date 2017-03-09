@@ -14,7 +14,6 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -124,7 +123,6 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see EnvironmentType
      */
 
-    @JsonIgnore
     public void setType(EnvironmentType type) {
         this.type = type.toString();
     }
@@ -370,7 +368,6 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see ComputeType
      */
 
-    @JsonIgnore
     public void setComputeType(ComputeType computeType) {
         this.computeType = computeType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class InstanceInformationFilter implements Serializable, Cloneable, Struc
      * @see InstanceInformationFilterKey
      */
 
-    @JsonIgnore
     public void setKey(InstanceInformationFilterKey key) {
         this.key = key.toString();
     }

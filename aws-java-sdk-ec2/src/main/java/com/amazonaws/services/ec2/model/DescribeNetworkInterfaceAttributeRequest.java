@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -135,7 +134,6 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * @see NetworkInterfaceAttribute
      */
 
-    @JsonIgnore
     public void setAttribute(NetworkInterfaceAttribute attribute) {
         this.attribute = attribute.toString();
     }

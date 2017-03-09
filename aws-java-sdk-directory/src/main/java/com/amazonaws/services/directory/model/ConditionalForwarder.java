@@ -14,7 +14,6 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -233,7 +232,6 @@ public class ConditionalForwarder implements Serializable, Cloneable, Structured
      * @see ReplicationScope
      */
 
-    @JsonIgnore
     public void setReplicationScope(ReplicationScope replicationScope) {
         this.replicationScope = replicationScope.toString();
     }

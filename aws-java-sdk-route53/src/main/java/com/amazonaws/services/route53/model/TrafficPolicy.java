@@ -14,7 +14,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -256,7 +255,6 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @see RRType
      */
 
-    @JsonIgnore
     public void setType(RRType type) {
         this.type = type.toString();
     }

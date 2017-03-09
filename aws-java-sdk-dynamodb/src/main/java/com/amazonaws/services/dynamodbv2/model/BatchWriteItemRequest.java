@@ -15,7 +15,6 @@ package com.amazonaws.services.dynamodbv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -475,7 +474,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnConsumedCapacity
      */
 
-    @JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }
@@ -560,7 +558,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnItemCollectionMetrics
      */
 
-    @JsonIgnore
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
     }

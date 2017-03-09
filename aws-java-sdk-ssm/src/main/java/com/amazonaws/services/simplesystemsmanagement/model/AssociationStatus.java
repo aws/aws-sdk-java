@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -147,7 +146,6 @@ public class AssociationStatus implements Serializable, Cloneable, StructuredPoj
      * @see AssociationStatusName
      */
 
-    @JsonIgnore
     public void setName(AssociationStatusName name) {
         this.name = name.toString();
     }

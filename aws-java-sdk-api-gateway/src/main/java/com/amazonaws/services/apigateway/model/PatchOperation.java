@@ -14,7 +14,6 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -137,7 +136,6 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * @see Op
      */
 
-    @JsonIgnore
     public void setOp(Op op) {
         this.op = op.toString();
     }

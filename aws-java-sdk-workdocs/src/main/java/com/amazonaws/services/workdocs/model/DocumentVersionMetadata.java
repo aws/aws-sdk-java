@@ -14,7 +14,6 @@ package com.amazonaws.services.workdocs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -361,7 +360,6 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
      * @see DocumentStatusType
      */
 
-    @JsonIgnore
     public void setStatus(DocumentStatusType status) {
         this.status = status.toString();
     }

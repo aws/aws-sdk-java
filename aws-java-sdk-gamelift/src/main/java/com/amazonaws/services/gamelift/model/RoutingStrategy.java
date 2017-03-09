@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -245,7 +244,6 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * @see RoutingStrategyType
      */
 
-    @JsonIgnore
     public void setType(RoutingStrategyType type) {
         this.type = type.toString();
     }

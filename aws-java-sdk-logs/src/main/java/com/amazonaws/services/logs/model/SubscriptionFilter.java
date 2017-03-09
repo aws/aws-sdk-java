@@ -14,7 +14,6 @@ package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -299,7 +298,6 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      * @see Distribution
      */
 
-    @JsonIgnore
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution.toString();
     }

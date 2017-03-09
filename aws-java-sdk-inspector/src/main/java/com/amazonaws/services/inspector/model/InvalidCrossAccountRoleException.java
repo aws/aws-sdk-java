@@ -13,7 +13,6 @@
 package com.amazonaws.services.inspector.model;
 
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -157,7 +156,6 @@ public class InvalidCrossAccountRoleException extends com.amazonaws.services.ins
      * @see InvalidCrossAccountRoleErrorCode
      */
 
-    @JsonIgnore
     public void setInspectorErrorCode(InvalidCrossAccountRoleErrorCode inspectorErrorCode) {
         this.inspectorErrorCode = inspectorErrorCode.toString();
     }

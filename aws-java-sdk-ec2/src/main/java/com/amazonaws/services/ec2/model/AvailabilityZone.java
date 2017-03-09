@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -145,7 +144,6 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @see AvailabilityZoneState
      */
 
-    @JsonIgnore
     public void setState(AvailabilityZoneState state) {
         this.state = state.toString();
     }

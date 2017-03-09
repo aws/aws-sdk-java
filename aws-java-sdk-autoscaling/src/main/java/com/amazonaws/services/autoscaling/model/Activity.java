@@ -14,7 +14,6 @@ package com.amazonaws.services.autoscaling.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -382,7 +381,6 @@ public class Activity implements Serializable, Cloneable {
      * @see ScalingActivityStatusCode
      */
 
-    @JsonIgnore
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }

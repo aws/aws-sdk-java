@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -214,7 +213,6 @@ public class IndexField implements Serializable, Cloneable {
      * @see IndexFieldType
      */
 
-    @JsonIgnore
     public void setIndexFieldType(IndexFieldType indexFieldType) {
         this.indexFieldType = indexFieldType.toString();
     }

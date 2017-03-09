@@ -14,7 +14,6 @@ package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -594,7 +593,6 @@ public class GetBatchPredictionResult extends com.amazonaws.AmazonWebServiceResu
      * @see EntityStatus
      */
 
-    @JsonIgnore
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }

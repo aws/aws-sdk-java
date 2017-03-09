@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -544,7 +543,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
-    @JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         this.executionStatus = executionStatus.toString();
     }
@@ -632,7 +630,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ChangeSetStatus
      */
 
-    @JsonIgnore
     public void setStatus(ChangeSetStatus status) {
         this.status = status.toString();
     }

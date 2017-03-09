@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -130,7 +129,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes implements Seri
      * @see ContinueAsNewWorkflowExecutionFailedCause
      */
 
-    @JsonIgnore
     public void setCause(ContinueAsNewWorkflowExecutionFailedCause cause) {
         this.cause = cause.toString();
     }

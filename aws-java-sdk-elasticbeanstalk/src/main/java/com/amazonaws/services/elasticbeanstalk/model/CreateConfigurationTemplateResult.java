@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -602,7 +601,6 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      * @see ConfigurationDeploymentStatus
      */
 
-    @JsonIgnore
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
         this.deploymentStatus = deploymentStatus.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudwatch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -147,7 +146,6 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see StateValue
      */
 
-    @JsonIgnore
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -102,7 +101,6 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      * @see ReceiptFilterPolicy
      */
 
-    @JsonIgnore
     public void setPolicy(ReceiptFilterPolicy policy) {
         this.policy = policy.toString();
     }

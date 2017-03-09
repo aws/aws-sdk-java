@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -115,7 +114,6 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see ResourceAttribute
      */
 
-    @JsonIgnore
     public void setAttribute(ResourceAttribute attribute) {
         this.attribute = attribute.toString();
     }
@@ -277,7 +275,6 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see RequiresRecreation
      */
 
-    @JsonIgnore
     public void setRequiresRecreation(RequiresRecreation requiresRecreation) {
         this.requiresRecreation = requiresRecreation.toString();
     }

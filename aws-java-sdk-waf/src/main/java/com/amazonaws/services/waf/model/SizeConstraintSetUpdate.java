@@ -14,7 +14,6 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -112,7 +111,6 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable, Structu
      * @see ChangeAction
      */
 
-    @JsonIgnore
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }

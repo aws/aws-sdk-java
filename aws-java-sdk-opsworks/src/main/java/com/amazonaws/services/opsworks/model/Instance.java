@@ -14,7 +14,6 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -509,7 +508,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see Architecture
      */
 
-    @JsonIgnore
     public void setArchitecture(Architecture architecture) {
         this.architecture = architecture.toString();
     }
@@ -583,7 +581,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see AutoScalingType
      */
 
-    @JsonIgnore
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         this.autoScalingType = autoScalingType.toString();
     }
@@ -1852,7 +1849,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see RootDeviceType
      */
 
-    @JsonIgnore
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
@@ -2782,7 +2778,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see VirtualizationType
      */
 
-    @JsonIgnore
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         this.virtualizationType = virtualizationType.toString();
     }

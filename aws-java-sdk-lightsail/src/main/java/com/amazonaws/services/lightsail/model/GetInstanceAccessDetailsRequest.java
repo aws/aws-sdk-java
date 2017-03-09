@@ -15,7 +15,6 @@ package com.amazonaws.services.lightsail.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -132,7 +131,6 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
      * @see InstanceAccessProtocol
      */
 
-    @JsonIgnore
     public void setProtocol(InstanceAccessProtocol protocol) {
         this.protocol = protocol.toString();
     }

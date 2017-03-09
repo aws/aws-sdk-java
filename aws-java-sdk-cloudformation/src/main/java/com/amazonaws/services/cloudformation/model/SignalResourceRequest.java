@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudformation.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -257,7 +256,6 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ResourceSignalStatus
      */
 
-    @JsonIgnore
     public void setStatus(ResourceSignalStatus status) {
         this.status = status.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.dynamodbv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -629,7 +628,6 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ConditionalOperator
      */
 
-    @JsonIgnore
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -868,7 +866,6 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnValue
      */
 
-    @JsonIgnore
     public void setReturnValues(ReturnValue returnValues) {
         this.returnValues = returnValues.toString();
     }
@@ -963,7 +960,6 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnConsumedCapacity
      */
 
-    @JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }
@@ -1048,7 +1044,6 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnItemCollectionMetrics
      */
 
-    @JsonIgnore
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
     }

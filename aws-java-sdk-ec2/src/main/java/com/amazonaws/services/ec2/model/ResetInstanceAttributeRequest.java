@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -224,7 +223,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      * @see InstanceAttributeName
      */
 
-    @JsonIgnore
     public void setAttribute(InstanceAttributeName attribute) {
         this.attribute = attribute.toString();
     }

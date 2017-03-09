@@ -14,7 +14,6 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -768,7 +767,6 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * @see AgentUpdateStatus
      */
 
-    @JsonIgnore
     public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
         this.agentUpdateStatus = agentUpdateStatus.toString();
     }

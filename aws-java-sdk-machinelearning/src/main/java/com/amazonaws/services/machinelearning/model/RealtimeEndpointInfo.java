@@ -14,7 +14,6 @@ package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -320,7 +319,6 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * @see RealtimeEndpointStatus
      */
 
-    @JsonIgnore
     public void setEndpointStatus(RealtimeEndpointStatus endpointStatus) {
         this.endpointStatus = endpointStatus.toString();
     }

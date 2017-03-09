@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -488,7 +487,6 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see EventSeverity
      */
 
-    @JsonIgnore
     public void setSeverity(EventSeverity severity) {
         this.severity = severity.toString();
     }

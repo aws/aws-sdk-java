@@ -15,7 +15,6 @@ package com.amazonaws.services.machinelearning.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -206,7 +205,6 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see TaggableResourceType
      */
 
-    @JsonIgnore
     public void setResourceType(TaggableResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

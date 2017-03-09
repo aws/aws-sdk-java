@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticache.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -1055,7 +1054,6 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @see AZMode
      */
 
-    @JsonIgnore
     public void setAZMode(AZMode aZMode) {
         this.aZMode = aZMode.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -133,7 +132,6 @@ public class ProductCode implements Serializable, Cloneable {
      * @see ProductCodeValues
      */
 
-    @JsonIgnore
     public void setProductCodeType(ProductCodeValues productCodeType) {
         this.productCodeType = productCodeType.toString();
     }

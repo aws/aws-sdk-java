@@ -15,7 +15,6 @@ package com.amazonaws.services.organizations.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -301,7 +300,6 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrganizationMode
      */
 
-    @JsonIgnore
     public void setMode(OrganizationMode mode) {
         this.mode = mode.toString();
     }

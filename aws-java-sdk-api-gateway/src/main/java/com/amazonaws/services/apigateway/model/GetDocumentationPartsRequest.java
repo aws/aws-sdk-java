@@ -15,7 +15,6 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -157,7 +156,6 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      * @see DocumentationPartType
      */
 
-    @JsonIgnore
     public void setType(DocumentationPartType type) {
         this.type = type.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleemail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -265,7 +264,6 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * @see DimensionValueSource
      */
 
-    @JsonIgnore
     public void setDimensionValueSource(DimensionValueSource dimensionValueSource) {
         this.dimensionValueSource = dimensionValueSource.toString();
     }

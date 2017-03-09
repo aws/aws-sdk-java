@@ -15,7 +15,6 @@ package com.amazonaws.services.codepipeline.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -101,7 +100,6 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * @see ActionCategory
      */
 
-    @JsonIgnore
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }

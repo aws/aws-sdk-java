@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -151,7 +150,6 @@ public class MappingRule implements Serializable, Cloneable, StructuredPojo {
      * @see MappingRuleMatchType
      */
 
-    @JsonIgnore
     public void setMatchType(MappingRuleMatchType matchType) {
         this.matchType = matchType.toString();
     }

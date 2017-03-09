@@ -14,7 +14,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1914,7 +1913,6 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
-    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }

@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudsearchdomain.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -166,7 +165,6 @@ public class UploadDocumentsRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ContentType
      */
 
-    @JsonIgnore
     public void setContentType(ContentType contentType) {
         this.contentType = contentType.toString();
     }

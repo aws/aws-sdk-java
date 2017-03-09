@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -507,7 +506,6 @@ public class Parameter implements Serializable, Cloneable {
      * @see ChangeType
      */
 
-    @JsonIgnore
     public void setChangeType(ChangeType changeType) {
         this.changeType = changeType.toString();
     }

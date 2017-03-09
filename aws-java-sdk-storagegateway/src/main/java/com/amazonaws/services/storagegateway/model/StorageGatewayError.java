@@ -14,7 +14,6 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -96,7 +95,6 @@ public class StorageGatewayError implements Serializable, Cloneable, StructuredP
      * @see ErrorCode
      */
 
-    @JsonIgnore
     public void setErrorCode(ErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }

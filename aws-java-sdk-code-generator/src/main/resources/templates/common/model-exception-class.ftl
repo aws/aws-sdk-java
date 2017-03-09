@@ -2,7 +2,6 @@ ${fileHeader}
 package ${metadata.packageName}.model;
 
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>

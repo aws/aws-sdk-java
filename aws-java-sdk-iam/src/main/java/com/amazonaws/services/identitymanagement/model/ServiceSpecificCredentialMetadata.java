@@ -14,7 +14,6 @@ package com.amazonaws.services.identitymanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -167,7 +166,6 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
      * @see StatusType
      */
 
-    @JsonIgnore
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }

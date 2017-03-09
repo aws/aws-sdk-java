@@ -14,7 +14,6 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -416,7 +415,6 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * @see CacheClusterStatus
      */
 
-    @JsonIgnore
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus.toString();
     }

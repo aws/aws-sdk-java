@@ -14,7 +14,6 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -284,7 +283,6 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
-    @JsonIgnore
     public void setOperation(OperationType operation) {
         this.operation = operation.toString();
     }

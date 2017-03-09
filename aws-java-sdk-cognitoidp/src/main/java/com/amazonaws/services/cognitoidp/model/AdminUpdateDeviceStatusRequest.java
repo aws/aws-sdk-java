@@ -15,7 +15,6 @@ package com.amazonaws.services.cognitoidp.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -227,7 +226,6 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      * @see DeviceRememberedStatusType
      */
 
-    @JsonIgnore
     public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         this.deviceRememberedStatus = deviceRememberedStatus.toString();
     }

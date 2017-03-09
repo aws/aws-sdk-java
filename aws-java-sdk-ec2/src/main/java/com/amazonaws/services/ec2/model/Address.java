@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -297,7 +296,6 @@ public class Address implements Serializable, Cloneable {
      * @see DomainType
      */
 
-    @JsonIgnore
     public void setDomain(DomainType domain) {
         this.domain = domain.toString();
     }

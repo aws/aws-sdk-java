@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -325,7 +324,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ExecutionStatus
      */
 
-    @JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         this.executionStatus = executionStatus.toString();
     }
@@ -413,7 +411,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ChangeSetStatus
      */
 
-    @JsonIgnore
     public void setStatus(ChangeSetStatus status) {
         this.status = status.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -605,7 +604,6 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see EntityStatus
      */
 
-    @JsonIgnore
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -1227,7 +1225,6 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see MLModelType
      */
 
-    @JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         this.mLModelType = mLModelType.toString();
     }

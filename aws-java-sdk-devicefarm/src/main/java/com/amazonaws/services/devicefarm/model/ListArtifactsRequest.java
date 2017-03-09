@@ -15,7 +15,6 @@ package com.amazonaws.services.devicefarm.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -318,7 +317,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ArtifactCategory
      */
 
-    @JsonIgnore
     public void setType(ArtifactCategory type) {
         this.type = type.toString();
     }

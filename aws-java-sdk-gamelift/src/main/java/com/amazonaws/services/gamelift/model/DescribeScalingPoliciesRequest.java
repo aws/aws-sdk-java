@@ -15,7 +15,6 @@ package com.amazonaws.services.gamelift.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -487,7 +486,6 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * @see ScalingStatusType
      */
 
-    @JsonIgnore
     public void setStatusFilter(ScalingStatusType statusFilter) {
         this.statusFilter = statusFilter.toString();
     }

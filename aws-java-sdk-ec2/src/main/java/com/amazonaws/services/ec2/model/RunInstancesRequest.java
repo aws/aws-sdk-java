@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -928,7 +927,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see InstanceType
      */
 
-    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -1552,7 +1550,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see ShutdownBehavior
      */
 
-    @JsonIgnore
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
     }

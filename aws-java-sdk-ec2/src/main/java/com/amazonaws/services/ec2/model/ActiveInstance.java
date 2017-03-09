@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -243,7 +242,6 @@ public class ActiveInstance implements Serializable, Cloneable {
      * @see InstanceHealthStatus
      */
 
-    @JsonIgnore
     public void setInstanceHealth(InstanceHealthStatus instanceHealth) {
         this.instanceHealth = instanceHealth.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -531,7 +530,6 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @see FleetState
      */
 
-    @JsonIgnore
     public void setState(FleetState state) {
         this.state = state.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -110,7 +109,6 @@ public class ConfigurationTag implements Serializable, Cloneable, StructuredPojo
      * @see ConfigurationItemType
      */
 
-    @JsonIgnore
     public void setConfigurationType(ConfigurationItemType configurationType) {
         this.configurationType = configurationType.toString();
     }

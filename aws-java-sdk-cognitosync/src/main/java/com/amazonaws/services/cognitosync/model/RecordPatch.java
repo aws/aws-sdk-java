@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -83,7 +82,6 @@ public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
      * @see Operation
      */
 
-    @JsonIgnore
     public void setOp(Operation op) {
         this.op = op.toString();
     }

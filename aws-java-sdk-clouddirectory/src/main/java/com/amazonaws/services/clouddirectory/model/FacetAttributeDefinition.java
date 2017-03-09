@@ -14,7 +14,6 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -109,7 +108,6 @@ public class FacetAttributeDefinition implements Serializable, Cloneable, Struct
      * @see FacetAttributeType
      */
 
-    @JsonIgnore
     public void setType(FacetAttributeType type) {
         this.type = type.toString();
     }

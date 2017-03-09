@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudformation.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -343,7 +342,6 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TemplateStage
      */
 
-    @JsonIgnore
     public void setTemplateStage(TemplateStage templateStage) {
         this.templateStage = templateStage.toString();
     }

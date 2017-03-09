@@ -14,7 +14,6 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -1039,7 +1038,6 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see MaintenanceStatus
      */
 
-    @JsonIgnore
     public void setMaintenanceStatus(MaintenanceStatus maintenanceStatus) {
         this.maintenanceStatus = maintenanceStatus.toString();
     }
@@ -1319,7 +1317,6 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see ServerStatus
      */
 
-    @JsonIgnore
     public void setStatus(ServerStatus status) {
         this.status = status.toString();
     }

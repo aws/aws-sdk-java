@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -249,7 +248,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * @see Tenancy
      */
 
-    @JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }

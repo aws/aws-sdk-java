@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudwatchevents.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -239,7 +238,6 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see RuleState
      */
 
-    @JsonIgnore
     public void setState(RuleState state) {
         this.state = state.toString();
     }

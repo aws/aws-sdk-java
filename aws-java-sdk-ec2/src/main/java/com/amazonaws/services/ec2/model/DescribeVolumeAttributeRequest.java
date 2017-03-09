@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
@@ -135,7 +134,6 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      * @see VolumeAttributeName
      */
 
-    @JsonIgnore
     public void setAttribute(VolumeAttributeName attribute) {
         this.attribute = attribute.toString();
     }

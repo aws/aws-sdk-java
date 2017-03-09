@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -175,7 +174,6 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthStateEnum
      */
 
-    @JsonIgnore
     public void setState(TargetHealthStateEnum state) {
         this.state = state.toString();
     }
@@ -846,7 +844,6 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthReasonEnum
      */
 
-    @JsonIgnore
     public void setReason(TargetHealthReasonEnum reason) {
         this.reason = reason.toString();
     }

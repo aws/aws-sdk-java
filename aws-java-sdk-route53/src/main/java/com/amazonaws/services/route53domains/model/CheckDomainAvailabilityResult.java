@@ -14,7 +14,6 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -286,7 +285,6 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
      * @see DomainAvailability
      */
 
-    @JsonIgnore
     public void setAvailability(DomainAvailability availability) {
         this.availability = availability.toString();
     }

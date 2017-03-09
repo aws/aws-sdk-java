@@ -14,7 +14,6 @@ package com.amazonaws.services.marketplacemetering.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -356,7 +355,6 @@ public class UsageRecordResult implements Serializable, Cloneable, StructuredPoj
      * @see UsageRecordResultStatus
      */
 
-    @JsonIgnore
     public void setStatus(UsageRecordResultStatus status) {
         this.status = status.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -999,7 +998,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see TestType
      */
 
-    @JsonIgnore
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -1660,7 +1658,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionStatus
      */
 
-    @JsonIgnore
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -2149,7 +2146,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
-    @JsonIgnore
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }

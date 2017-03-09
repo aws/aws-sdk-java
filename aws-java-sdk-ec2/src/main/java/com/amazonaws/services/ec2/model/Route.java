@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -502,7 +501,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteState
      */
 
-    @JsonIgnore
     public void setState(RouteState state) {
         this.state = state.toString();
     }
@@ -711,7 +709,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteOrigin
      */
 
-    @JsonIgnore
     public void setOrigin(RouteOrigin origin) {
         this.origin = origin.toString();
     }

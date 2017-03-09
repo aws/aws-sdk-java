@@ -14,7 +14,6 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -726,7 +725,6 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * @see IndexStatus
      */
 
-    @JsonIgnore
     public void setIndexStatus(IndexStatus indexStatus) {
         this.indexStatus = indexStatus.toString();
     }

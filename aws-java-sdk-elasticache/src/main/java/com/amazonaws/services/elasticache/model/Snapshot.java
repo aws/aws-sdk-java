@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -2267,7 +2266,6 @@ public class Snapshot implements Serializable, Cloneable {
      * @see AutomaticFailoverStatus
      */
 
-    @JsonIgnore
     public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         this.automaticFailover = automaticFailover.toString();
     }

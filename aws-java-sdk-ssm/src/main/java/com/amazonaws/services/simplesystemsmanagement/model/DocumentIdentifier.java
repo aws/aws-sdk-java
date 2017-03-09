@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -340,7 +339,6 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * @see DocumentType
      */
 
-    @JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         this.documentType = documentType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -236,7 +235,6 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * @see ExecutionStatus
      */
 
-    @JsonIgnore
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -375,7 +374,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @JsonIgnore
     public void setHashKeyType(DynamoKeyType hashKeyType) {
         this.hashKeyType = hashKeyType.toString();
     }
@@ -529,7 +527,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @JsonIgnore
     public void setRangeKeyType(DynamoKeyType rangeKeyType) {
         this.rangeKeyType = rangeKeyType.toString();
     }

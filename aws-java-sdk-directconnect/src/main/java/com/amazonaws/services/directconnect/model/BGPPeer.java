@@ -14,7 +14,6 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -129,7 +128,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see AddressFamily
      */
 
-    @JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         this.addressFamily = addressFamily.toString();
     }
@@ -231,7 +229,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPPeerState
      */
 
-    @JsonIgnore
     public void setBgpPeerState(BGPPeerState bgpPeerState) {
         this.bgpPeerState = bgpPeerState.toString();
     }
@@ -281,7 +278,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPStatus
      */
 
-    @JsonIgnore
     public void setBgpStatus(BGPStatus bgpStatus) {
         this.bgpStatus = bgpStatus.toString();
     }

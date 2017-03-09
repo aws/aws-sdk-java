@@ -14,7 +14,6 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -274,7 +273,6 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
      * @see BlueprintType
      */
 
-    @JsonIgnore
     public void setType(BlueprintType type) {
         this.type = type.toString();
     }

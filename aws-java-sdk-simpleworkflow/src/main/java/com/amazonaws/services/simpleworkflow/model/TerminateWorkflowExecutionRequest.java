@@ -15,7 +15,6 @@ package com.amazonaws.services.simpleworkflow.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -446,7 +445,6 @@ public class TerminateWorkflowExecutionRequest extends com.amazonaws.AmazonWebSe
      * @see ChildPolicy
      */
 
-    @JsonIgnore
     public void setChildPolicy(ChildPolicy childPolicy) {
         this.childPolicy = childPolicy.toString();
     }

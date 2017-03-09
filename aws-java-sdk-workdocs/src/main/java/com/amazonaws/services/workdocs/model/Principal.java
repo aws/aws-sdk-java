@@ -14,7 +14,6 @@ package com.amazonaws.services.workdocs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -141,7 +140,6 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      * @see PrincipalType
      */
 
-    @JsonIgnore
     public void setType(PrincipalType type) {
         this.type = type.toString();
     }

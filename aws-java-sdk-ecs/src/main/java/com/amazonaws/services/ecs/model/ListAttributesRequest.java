@@ -15,7 +15,6 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -178,7 +177,6 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see TargetType
      */
 
-    @JsonIgnore
     public void setTargetType(TargetType targetType) {
         this.targetType = targetType.toString();
     }

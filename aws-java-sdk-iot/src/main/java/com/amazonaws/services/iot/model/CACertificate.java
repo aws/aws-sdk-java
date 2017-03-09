@@ -14,7 +14,6 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -207,7 +206,6 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * @see CACertificateStatus
      */
 
-    @JsonIgnore
     public void setStatus(CACertificateStatus status) {
         this.status = status.toString();
     }

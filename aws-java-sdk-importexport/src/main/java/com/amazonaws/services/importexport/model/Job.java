@@ -14,7 +14,6 @@ package com.amazonaws.services.importexport.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Representation of a job returned by the ListJobs operation.
@@ -150,7 +149,6 @@ public class Job implements Serializable, Cloneable {
      * @see JobType
      */
 
-    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }

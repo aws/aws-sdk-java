@@ -14,7 +14,6 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -323,7 +322,6 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * @see WorkspaceState
      */
 
-    @JsonIgnore
     public void setState(WorkspaceState state) {
         this.state = state.toString();
     }

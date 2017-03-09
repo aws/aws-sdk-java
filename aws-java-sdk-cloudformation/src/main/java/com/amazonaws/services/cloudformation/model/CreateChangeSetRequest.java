@@ -15,7 +15,6 @@ package com.amazonaws.services.cloudformation.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -1647,7 +1646,6 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ChangeSetType
      */
 
-    @JsonIgnore
     public void setChangeSetType(ChangeSetType changeSetType) {
         this.changeSetType = changeSetType.toString();
     }

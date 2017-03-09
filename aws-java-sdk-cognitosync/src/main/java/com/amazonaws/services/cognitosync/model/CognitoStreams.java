@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -230,7 +229,6 @@ public class CognitoStreams implements Serializable, Cloneable, StructuredPojo {
      * @see StreamingStatus
      */
 
-    @JsonIgnore
     public void setStreamingStatus(StreamingStatus streamingStatus) {
         this.streamingStatus = streamingStatus.toString();
     }

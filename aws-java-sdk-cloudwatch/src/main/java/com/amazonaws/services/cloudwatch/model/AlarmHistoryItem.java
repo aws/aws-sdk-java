@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -191,7 +190,6 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @see HistoryItemType
      */
 
-    @JsonIgnore
     public void setHistoryItemType(HistoryItemType historyItemType) {
         this.historyItemType = historyItemType.toString();
     }

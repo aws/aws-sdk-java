@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -389,7 +388,6 @@ public class PlatformDescription implements Serializable, Cloneable {
      * @see PlatformStatus
      */
 
-    @JsonIgnore
     public void setPlatformStatus(PlatformStatus platformStatus) {
         this.platformStatus = platformStatus.toString();
     }

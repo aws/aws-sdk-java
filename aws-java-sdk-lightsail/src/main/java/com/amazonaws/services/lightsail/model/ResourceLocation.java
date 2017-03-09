@@ -14,7 +14,6 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
      * @see RegionName
      */
 
-    @JsonIgnore
     public void setRegionName(RegionName regionName) {
         this.regionName = regionName.toString();
     }

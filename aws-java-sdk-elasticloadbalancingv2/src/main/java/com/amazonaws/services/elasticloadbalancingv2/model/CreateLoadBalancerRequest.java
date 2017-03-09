@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticloadbalancingv2.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -418,7 +417,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see LoadBalancerSchemeEnum
      */
 
-    @JsonIgnore
     public void setScheme(LoadBalancerSchemeEnum scheme) {
         this.scheme = scheme.toString();
     }
@@ -597,7 +595,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see IpAddressType
      */
 
-    @JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
     }

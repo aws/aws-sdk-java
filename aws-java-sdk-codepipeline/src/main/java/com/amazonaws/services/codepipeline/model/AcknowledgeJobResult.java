@@ -14,7 +14,6 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -87,7 +86,6 @@ public class AcknowledgeJobResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see JobStatus
      */
 
-    @JsonIgnore
     public void setStatus(JobStatus status) {
         this.status = status.toString();
     }

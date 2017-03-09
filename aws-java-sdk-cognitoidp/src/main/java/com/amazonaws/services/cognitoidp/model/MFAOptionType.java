@@ -14,7 +14,6 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
      * @see DeliveryMediumType
      */
 
-    @JsonIgnore
     public void setDeliveryMedium(DeliveryMediumType deliveryMedium) {
         this.deliveryMedium = deliveryMedium.toString();
     }

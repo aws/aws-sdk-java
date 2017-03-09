@@ -14,7 +14,6 @@ package com.amazonaws.services.applicationautoscaling.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -143,7 +142,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see AdjustmentType
      */
 
-    @JsonIgnore
     public void setAdjustmentType(AdjustmentType adjustmentType) {
         this.adjustmentType = adjustmentType.toString();
     }
@@ -488,7 +486,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see MetricAggregationType
      */
 
-    @JsonIgnore
     public void setMetricAggregationType(MetricAggregationType metricAggregationType) {
         this.metricAggregationType = metricAggregationType.toString();
     }

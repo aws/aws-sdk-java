@@ -14,7 +14,6 @@ package com.amazonaws.services.lexruntime.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -881,7 +880,6 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * @see DialogState
      */
 
-    @JsonIgnore
     public void setDialogState(DialogState dialogState) {
         this.dialogState = dialogState.toString();
     }

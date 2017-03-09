@@ -14,7 +14,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -203,7 +202,6 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @see TagResourceType
      */
 
-    @JsonIgnore
     public void setResourceType(TagResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

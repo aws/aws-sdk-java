@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 

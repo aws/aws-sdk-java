@@ -14,7 +14,6 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -495,7 +494,6 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceStatus
      */
 
-    @JsonIgnore
     public void setStatus(InstanceStatus status) {
         this.status = status.toString();
     }
@@ -837,7 +835,6 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceType
      */
 
-    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }

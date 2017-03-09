@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -95,7 +94,6 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      * @see PatchDeploymentStatus
      */
 
-    @JsonIgnore
     public void setDeploymentStatus(PatchDeploymentStatus deploymentStatus) {
         this.deploymentStatus = deploymentStatus.toString();
     }

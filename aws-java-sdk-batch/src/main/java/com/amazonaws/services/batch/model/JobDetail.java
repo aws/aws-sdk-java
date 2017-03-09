@@ -14,7 +14,6 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -278,7 +277,6 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JobStatus
      */
 
-    @JsonIgnore
     public void setStatus(JobStatus status) {
         this.status = status.toString();
     }

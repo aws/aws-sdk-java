@@ -14,7 +14,6 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -102,7 +101,6 @@ public class NotifyWorkersFailureStatus implements Serializable, Cloneable, Stru
      * @see NotifyWorkersFailureCode
      */
 
-    @JsonIgnore
     public void setNotifyWorkersFailureCode(NotifyWorkersFailureCode notifyWorkersFailureCode) {
         this.notifyWorkersFailureCode = notifyWorkersFailureCode.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -412,7 +411,6 @@ public class QualificationType implements Serializable, Cloneable, StructuredPoj
      * @see QualificationTypeStatus
      */
 
-    @JsonIgnore
     public void setQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
         this.qualificationTypeStatus = qualificationTypeStatus.toString();
     }

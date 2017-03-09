@@ -15,7 +15,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -316,7 +315,6 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
      * @see EnvironmentInfoType
      */
 
-    @JsonIgnore
     public void setInfoType(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }

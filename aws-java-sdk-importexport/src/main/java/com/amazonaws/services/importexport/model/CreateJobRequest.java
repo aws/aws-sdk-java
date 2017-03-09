@@ -15,7 +15,6 @@ package com.amazonaws.services.importexport.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -68,7 +67,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
-    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -404,7 +403,6 @@ public class AnalysisOptions implements Serializable, Cloneable {
      * @see AlgorithmicStemming
      */
 
-    @JsonIgnore
     public void setAlgorithmicStemming(AlgorithmicStemming algorithmicStemming) {
         this.algorithmicStemming = algorithmicStemming.toString();
     }

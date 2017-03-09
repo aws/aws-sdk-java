@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudwatch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -673,7 +672,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StateValue
      */
 
-    @JsonIgnore
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }
@@ -955,7 +953,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see Statistic
      */
 
-    @JsonIgnore
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -1184,7 +1181,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
-    @JsonIgnore
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -1346,7 +1342,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
-    @JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }

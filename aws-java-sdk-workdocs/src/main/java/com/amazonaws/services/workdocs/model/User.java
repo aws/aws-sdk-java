@@ -14,7 +14,6 @@ package com.amazonaws.services.workdocs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -493,7 +492,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
-    @JsonIgnore
     public void setStatus(UserStatusType status) {
         this.status = status.toString();
     }
@@ -567,7 +565,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserType
      */
 
-    @JsonIgnore
     public void setType(UserType type) {
         this.type = type.toString();
     }
@@ -761,7 +758,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see LocaleType
      */
 
-    @JsonIgnore
     public void setLocale(LocaleType locale) {
         this.locale = locale.toString();
     }

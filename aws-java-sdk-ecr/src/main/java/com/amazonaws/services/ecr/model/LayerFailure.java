@@ -14,7 +14,6 @@ package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -141,7 +140,6 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
      * @see LayerFailureCode
      */
 
-    @JsonIgnore
     public void setFailureCode(LayerFailureCode failureCode) {
         this.failureCode = failureCode.toString();
     }

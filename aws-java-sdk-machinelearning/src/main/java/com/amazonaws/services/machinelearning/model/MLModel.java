@@ -14,7 +14,6 @@ package com.amazonaws.services.machinelearning.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -572,7 +571,6 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatus
      */
 
-    @JsonIgnore
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -1179,7 +1177,6 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see Algorithm
      */
 
-    @JsonIgnore
     public void setAlgorithm(Algorithm algorithm) {
         this.algorithm = algorithm.toString();
     }
@@ -1324,7 +1321,6 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see MLModelType
      */
 
-    @JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         this.mLModelType = mLModelType.toString();
     }

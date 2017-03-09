@@ -14,7 +14,6 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -118,7 +117,6 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * @see PlacementConstraintType
      */
 
-    @JsonIgnore
     public void setType(PlacementConstraintType type) {
         this.type = type.toString();
     }

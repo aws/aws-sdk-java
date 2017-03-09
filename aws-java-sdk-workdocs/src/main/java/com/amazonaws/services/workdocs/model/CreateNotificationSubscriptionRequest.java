@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -192,7 +191,6 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionProtocolType
      */
 
-    @JsonIgnore
     public void setProtocol(SubscriptionProtocolType protocol) {
         this.protocol = protocol.toString();
     }
@@ -266,7 +264,6 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionType
      */
 
-    @JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }

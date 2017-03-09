@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -87,7 +86,6 @@ public class Monitoring implements Serializable, Cloneable {
      * @see MonitoringState
      */
 
-    @JsonIgnore
     public void setState(MonitoringState state) {
         this.state = state.toString();
     }

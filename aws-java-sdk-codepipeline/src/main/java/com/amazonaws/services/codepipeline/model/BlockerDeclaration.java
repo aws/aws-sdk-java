@@ -14,7 +14,6 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -135,7 +134,6 @@ public class BlockerDeclaration implements Serializable, Cloneable, StructuredPo
      * @see BlockerType
      */
 
-    @JsonIgnore
     public void setType(BlockerType type) {
         this.type = type.toString();
     }

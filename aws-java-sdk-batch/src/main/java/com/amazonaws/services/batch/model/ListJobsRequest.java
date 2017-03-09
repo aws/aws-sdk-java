@@ -15,7 +15,6 @@ package com.amazonaws.services.batch.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -158,7 +157,6 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * @see JobStatus
      */
 
-    @JsonIgnore
     public void setJobStatus(JobStatus jobStatus) {
         this.jobStatus = jobStatus.toString();
     }

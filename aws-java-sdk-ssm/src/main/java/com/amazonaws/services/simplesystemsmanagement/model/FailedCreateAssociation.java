@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -181,7 +180,6 @@ public class FailedCreateAssociation implements Serializable, Cloneable, Structu
      * @see Fault
      */
 
-    @JsonIgnore
     public void setFault(Fault fault) {
         this.fault = fault.toString();
     }

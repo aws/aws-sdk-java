@@ -14,7 +14,6 @@ package com.amazonaws.services.lexruntime.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -143,7 +142,6 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
      * @see ContentType
      */
 
-    @JsonIgnore
     public void setContentType(ContentType contentType) {
         this.contentType = contentType.toString();
     }

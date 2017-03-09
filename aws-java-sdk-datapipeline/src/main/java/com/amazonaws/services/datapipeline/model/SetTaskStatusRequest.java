@@ -15,7 +15,6 @@ package com.amazonaws.services.datapipeline.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -171,7 +170,6 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see TaskStatus
      */
 
-    @JsonIgnore
     public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus.toString();
     }

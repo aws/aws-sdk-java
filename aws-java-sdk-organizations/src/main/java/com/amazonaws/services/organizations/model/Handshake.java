@@ -14,7 +14,6 @@ package com.amazonaws.services.organizations.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -670,7 +669,6 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see HandshakeState
      */
 
-    @JsonIgnore
     public void setState(HandshakeState state) {
         this.state = state.toString();
     }
@@ -901,7 +899,6 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see ActionType
      */
 
-    @JsonIgnore
     public void setAction(ActionType action) {
         this.action = action.toString();
     }

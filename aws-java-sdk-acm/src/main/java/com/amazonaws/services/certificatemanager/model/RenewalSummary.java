@@ -14,7 +14,6 @@ package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -109,7 +108,6 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      * @see RenewalStatus
      */
 
-    @JsonIgnore
     public void setRenewalStatus(RenewalStatus renewalStatus) {
         this.renewalStatus = renewalStatus.toString();
     }

@@ -14,7 +14,6 @@ package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -195,7 +194,6 @@ public class Difference implements Serializable, Cloneable, StructuredPojo {
      * @see ChangeTypeEnum
      */
 
-    @JsonIgnore
     public void setChangeType(ChangeTypeEnum changeType) {
         this.changeType = changeType.toString();
     }

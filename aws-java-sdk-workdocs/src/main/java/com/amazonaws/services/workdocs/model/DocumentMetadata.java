@@ -14,7 +14,6 @@ package com.amazonaws.services.workdocs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -365,7 +364,6 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      * @see ResourceStateType
      */
 
-    @JsonIgnore
     public void setResourceState(ResourceStateType resourceState) {
         this.resourceState = resourceState.toString();
     }

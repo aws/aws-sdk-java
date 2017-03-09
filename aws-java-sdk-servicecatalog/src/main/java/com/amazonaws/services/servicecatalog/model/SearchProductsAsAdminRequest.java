@@ -15,7 +15,6 @@ package com.amazonaws.services.servicecatalog.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -358,7 +357,6 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductViewSortBy
      */
 
-    @JsonIgnore
     public void setSortBy(ProductViewSortBy sortBy) {
         this.sortBy = sortBy.toString();
     }
@@ -432,7 +430,6 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see SortOrder
      */
 
-    @JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -595,7 +592,6 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductSource
      */
 
-    @JsonIgnore
     public void setProductSource(ProductSource productSource) {
         this.productSource = productSource.toString();
     }

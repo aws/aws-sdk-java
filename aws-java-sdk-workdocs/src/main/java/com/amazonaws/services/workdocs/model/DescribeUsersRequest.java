@@ -15,7 +15,6 @@ package com.amazonaws.services.workdocs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -255,7 +254,6 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserFilterType
      */
 
-    @JsonIgnore
     public void setInclude(UserFilterType include) {
         this.include = include.toString();
     }
@@ -329,7 +327,6 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see OrderType
      */
 
-    @JsonIgnore
     public void setOrder(OrderType order) {
         this.order = order.toString();
     }
@@ -403,7 +400,6 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserSortType
      */
 
-    @JsonIgnore
     public void setSort(UserSortType sort) {
         this.sort = sort.toString();
     }

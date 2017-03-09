@@ -15,7 +15,6 @@ package com.amazonaws.services.ecs.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -218,7 +217,6 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
      * @see ContainerInstanceStatus
      */
 
-    @JsonIgnore
     public void setStatus(ContainerInstanceStatus status) {
         this.status = status.toString();
     }

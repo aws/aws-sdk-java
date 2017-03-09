@@ -14,7 +14,6 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -195,7 +194,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventCode
      */
 
-    @JsonIgnore
     public void setEventCode(EventCode eventCode) {
         this.eventCode = eventCode.toString();
     }

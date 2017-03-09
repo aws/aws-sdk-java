@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudfront.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -956,7 +955,6 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @see ViewerProtocolPolicy
      */
 
-    @JsonIgnore
     public void setViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
         this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
     }

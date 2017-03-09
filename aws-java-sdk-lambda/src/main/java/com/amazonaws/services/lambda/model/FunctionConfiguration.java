@@ -14,7 +14,6 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -294,7 +293,6 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      * @see Runtime
      */
 
-    @JsonIgnore
     public void setRuntime(Runtime runtime) {
         this.runtime = runtime.toString();
     }

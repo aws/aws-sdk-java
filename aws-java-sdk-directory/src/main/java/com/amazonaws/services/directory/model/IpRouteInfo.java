@@ -14,7 +14,6 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -199,7 +198,6 @@ public class IpRouteInfo implements Serializable, Cloneable, StructuredPojo {
      * @see IpRouteStatusMsg
      */
 
-    @JsonIgnore
     public void setIpRouteStatusMsg(IpRouteStatusMsg ipRouteStatusMsg) {
         this.ipRouteStatusMsg = ipRouteStatusMsg.toString();
     }

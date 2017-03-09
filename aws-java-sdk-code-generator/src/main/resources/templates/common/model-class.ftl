@@ -3,7 +3,6 @@ package ${metadata.packageName}.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 <#if shouldEmitStructuredPojoInterface>
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;

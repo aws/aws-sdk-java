@@ -14,7 +14,6 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -364,7 +363,6 @@ public class DevicePool implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePoolType
      */
 
-    @JsonIgnore
     public void setType(DevicePoolType type) {
         this.type = type.toString();
     }

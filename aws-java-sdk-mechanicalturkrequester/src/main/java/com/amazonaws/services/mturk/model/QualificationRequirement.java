@@ -14,7 +14,6 @@ package com.amazonaws.services.mturk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -213,7 +212,6 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
      * @see Comparator
      */
 
-    @JsonIgnore
     public void setComparator(Comparator comparator) {
         this.comparator = comparator.toString();
     }

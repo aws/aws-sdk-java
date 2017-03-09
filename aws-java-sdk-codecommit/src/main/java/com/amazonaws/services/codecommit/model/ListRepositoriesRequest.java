@@ -15,7 +15,6 @@ package com.amazonaws.services.codecommit.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -155,7 +154,6 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see SortByEnum
      */
 
-    @JsonIgnore
     public void setSortBy(SortByEnum sortBy) {
         this.sortBy = sortBy.toString();
     }
@@ -229,7 +227,6 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OrderEnum
      */
 
-    @JsonIgnore
     public void setOrder(OrderEnum order) {
         this.order = order.toString();
     }

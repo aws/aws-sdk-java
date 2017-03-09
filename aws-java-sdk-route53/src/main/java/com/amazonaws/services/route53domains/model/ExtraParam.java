@@ -14,7 +14,6 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -290,7 +289,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * @see ExtraParamName
      */
 
-    @JsonIgnore
     public void setName(ExtraParamName name) {
         this.name = name.toString();
     }

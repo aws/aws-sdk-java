@@ -14,7 +14,6 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -237,7 +236,6 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PingStatus
      */
 
-    @JsonIgnore
     public void setPingStatus(PingStatus pingStatus) {
         this.pingStatus = pingStatus.toString();
     }
@@ -443,7 +441,6 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PlatformType
      */
 
-    @JsonIgnore
     public void setPlatformType(PlatformType platformType) {
         this.platformType = platformType.toString();
     }
@@ -717,7 +714,6 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see ResourceType
      */
 
-    @JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }

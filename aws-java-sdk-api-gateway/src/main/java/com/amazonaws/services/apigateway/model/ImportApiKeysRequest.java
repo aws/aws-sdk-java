@@ -15,7 +15,6 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -179,7 +178,6 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ApiKeysFormat
      */
 
-    @JsonIgnore
     public void setFormat(ApiKeysFormat format) {
         this.format = format.toString();
     }

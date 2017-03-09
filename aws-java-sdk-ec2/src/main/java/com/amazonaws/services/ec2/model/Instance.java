@@ -14,7 +14,6 @@ package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -764,7 +763,6 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceType
      */
 
-    @JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -998,7 +996,6 @@ public class Instance implements Serializable, Cloneable {
      * @see PlatformValues
      */
 
-    @JsonIgnore
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
@@ -1312,7 +1309,6 @@ public class Instance implements Serializable, Cloneable {
      * @see ArchitectureValues
      */
 
-    @JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -1386,7 +1382,6 @@ public class Instance implements Serializable, Cloneable {
      * @see DeviceType
      */
 
-    @JsonIgnore
     public void setRootDeviceType(DeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
@@ -1573,7 +1568,6 @@ public class Instance implements Serializable, Cloneable {
      * @see VirtualizationType
      */
 
-    @JsonIgnore
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         this.virtualizationType = virtualizationType.toString();
     }
@@ -1647,7 +1641,6 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceLifecycleType
      */
 
-    @JsonIgnore
     public void setInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle.toString();
     }
@@ -2039,7 +2032,6 @@ public class Instance implements Serializable, Cloneable {
      * @see HypervisorType
      */
 
-    @JsonIgnore
     public void setHypervisor(HypervisorType hypervisor) {
         this.hypervisor = hypervisor.toString();
     }

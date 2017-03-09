@@ -14,7 +14,6 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
@@ -197,7 +196,6 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
      * @see Status
      */
 
-    @JsonIgnore
     public void setStatus(Status status) {
         this.status = status.toString();
     }

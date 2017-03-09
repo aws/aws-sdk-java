@@ -14,7 +14,6 @@ package com.amazonaws.services.costandusagereport.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -106,7 +105,6 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see TimeUnit
      */
 
-    @JsonIgnore
     public void setTimeUnit(TimeUnit timeUnit) {
         this.timeUnit = timeUnit.toString();
     }
@@ -156,7 +154,6 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see ReportFormat
      */
 
-    @JsonIgnore
     public void setFormat(ReportFormat format) {
         this.format = format.toString();
     }
@@ -206,7 +203,6 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see CompressionFormat
      */
 
-    @JsonIgnore
     public void setCompression(CompressionFormat compression) {
         this.compression = compression.toString();
     }
@@ -383,7 +379,6 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see AWSRegion
      */
 
-    @JsonIgnore
     public void setS3Region(AWSRegion s3Region) {
         this.s3Region = s3Region.toString();
     }

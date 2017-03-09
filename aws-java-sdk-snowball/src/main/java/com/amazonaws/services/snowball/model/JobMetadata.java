@@ -14,7 +14,6 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -233,7 +232,6 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobState
      */
 
-    @JsonIgnore
     public void setJobState(JobState jobState) {
         this.jobState = jobState.toString();
     }
@@ -307,7 +305,6 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobType
      */
 
-    @JsonIgnore
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -381,7 +378,6 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballType
      */
 
-    @JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         this.snowballType = snowballType.toString();
     }
@@ -761,7 +757,6 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballCapacity
      */
 
-    @JsonIgnore
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
         this.snowballCapacityPreference = snowballCapacityPreference.toString();
     }

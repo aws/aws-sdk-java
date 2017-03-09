@@ -14,7 +14,6 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -320,7 +319,6 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectorySize
      */
 
-    @JsonIgnore
     public void setSize(DirectorySize size) {
         this.size = size.toString();
     }
@@ -629,7 +627,6 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryStage
      */
 
-    @JsonIgnore
     public void setStage(DirectoryStage stage) {
         this.stage = stage.toString();
     }
@@ -783,7 +780,6 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryType
      */
 
-    @JsonIgnore
     public void setType(DirectoryType type) {
         this.type = type.toString();
     }
@@ -992,7 +988,6 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see RadiusStatus
      */
 
-    @JsonIgnore
     public void setRadiusStatus(RadiusStatus radiusStatus) {
         this.radiusStatus = radiusStatus.toString();
     }

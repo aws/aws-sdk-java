@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudhsm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -243,7 +242,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see HsmStatus
      */
 
-    @JsonIgnore
     public void setStatus(HsmStatus status) {
         this.status = status.toString();
     }
@@ -458,7 +456,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see SubscriptionType
      */
 
-    @JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }

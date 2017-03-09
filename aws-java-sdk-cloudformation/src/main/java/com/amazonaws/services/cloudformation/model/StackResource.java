@@ -14,7 +14,6 @@ package com.amazonaws.services.cloudformation.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -396,7 +395,6 @@ public class StackResource implements Serializable, Cloneable {
      * @see ResourceStatus
      */
 
-    @JsonIgnore
     public void setResourceStatus(ResourceStatus resourceStatus) {
         this.resourceStatus = resourceStatus.toString();
     }

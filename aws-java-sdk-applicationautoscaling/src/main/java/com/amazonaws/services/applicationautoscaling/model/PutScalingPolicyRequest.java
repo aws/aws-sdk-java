@@ -15,7 +15,6 @@ package com.amazonaws.services.applicationautoscaling.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -215,7 +214,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ServiceNamespace
      */
 
-    @JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         this.serviceNamespace = serviceNamespace.toString();
     }
@@ -593,7 +591,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalableDimension
      */
 
-    @JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         this.scalableDimension = scalableDimension.toString();
     }
@@ -709,7 +706,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PolicyType
      */
 
-    @JsonIgnore
     public void setPolicyType(PolicyType policyType) {
         this.policyType = policyType.toString();
     }

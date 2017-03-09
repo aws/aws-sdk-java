@@ -15,7 +15,6 @@ package com.amazonaws.services.clouddirectory.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
@@ -346,7 +345,6 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ConsistencyLevel
      */
 
-    @JsonIgnore
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
         this.consistencyLevel = consistencyLevel.toString();
     }

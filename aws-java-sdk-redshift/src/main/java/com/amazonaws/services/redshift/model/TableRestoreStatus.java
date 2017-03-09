@@ -14,7 +14,6 @@ package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -238,7 +237,6 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * @see TableRestoreStatusType
      */
 
-    @JsonIgnore
     public void setStatus(TableRestoreStatusType status) {
         this.status = status.toString();
     }

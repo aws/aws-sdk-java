@@ -14,7 +14,6 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -137,7 +136,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see EventSource
      */
 
-    @JsonIgnore
     public void setEventSource(EventSource eventSource) {
         this.eventSource = eventSource.toString();
     }
@@ -467,7 +465,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MessageType
      */
 
-    @JsonIgnore
     public void setMessageType(MessageType messageType) {
         this.messageType = messageType.toString();
     }
@@ -621,7 +618,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
-    @JsonIgnore
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
         this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
     }

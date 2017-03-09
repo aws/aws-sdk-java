@@ -14,7 +14,6 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -309,7 +308,6 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * @see ElasticsearchIndexRotationPeriod
      */
 
-    @JsonIgnore
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
         this.indexRotationPeriod = indexRotationPeriod.toString();
     }
@@ -463,7 +461,6 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * @see ElasticsearchS3BackupMode
      */
 
-    @JsonIgnore
     public void setS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
         this.s3BackupMode = s3BackupMode.toString();
     }

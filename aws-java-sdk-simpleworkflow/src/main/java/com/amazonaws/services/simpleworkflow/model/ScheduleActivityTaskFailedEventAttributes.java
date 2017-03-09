@@ -14,7 +14,6 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
@@ -222,7 +221,6 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
      * @see ScheduleActivityTaskFailedCause
      */
 
-    @JsonIgnore
     public void setCause(ScheduleActivityTaskFailedCause cause) {
         this.cause = cause.toString();
     }

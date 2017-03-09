@@ -14,7 +14,6 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -868,7 +867,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @see ConfigurationOptionValueType
      */
 
-    @JsonIgnore
     public void setValueType(ConfigurationOptionValueType valueType) {
         this.valueType = valueType.toString();
     }

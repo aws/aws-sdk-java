@@ -14,7 +14,6 @@ package com.amazonaws.services.route53.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * <p>
@@ -1433,7 +1432,6 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see HealthCheckType
      */
 
-    @JsonIgnore
     public void setType(HealthCheckType type) {
         this.type = type.toString();
     }
@@ -3406,7 +3404,6 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see InsufficientDataHealthStatus
      */
 
-    @JsonIgnore
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
         this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
     }
