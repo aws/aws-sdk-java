@@ -36,9 +36,9 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<String> jobFlowIds;
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
      * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
      * and manage it.
      * </p>
      */
@@ -119,17 +119,17 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
      * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
      * and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *        proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
-     *        created a job flow can view and manage it.
+     *        Whether the specified clusters are visible to all IAM users of the AWS account associated with the
+     *        cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *        proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
+     *        created a cluster can view and manage it.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -138,16 +138,16 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
      * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
      * and manage it.
      * </p>
      * 
-     * @return Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *         proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
-     *         created a job flow can view and manage it.
+     * @return Whether the specified clusters are visible to all IAM users of the AWS account associated with the
+     *         cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *         proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
+     *         created a cluster can view and manage it.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -156,17 +156,17 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
      * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
      * and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *        proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
-     *        created a job flow can view and manage it.
+     *        Whether the specified clusters are visible to all IAM users of the AWS account associated with the
+     *        cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *        proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
+     *        created a cluster can view and manage it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,16 +177,16 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Whether the specified job flows are visible to all IAM users of the AWS account associated with the job flow. If
+     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
      * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the job flows. If it is set to False, only the IAM user that created a job flow can view
+     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
      * and manage it.
      * </p>
      * 
-     * @return Whether the specified job flows are visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *         proper IAM policy permissions set, manage the job flows. If it is set to False, only the IAM user that
-     *         created a job flow can view and manage it.
+     * @return Whether the specified clusters are visible to all IAM users of the AWS account associated with the
+     *         cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
+     *         proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
+     *         created a cluster can view and manage it.
      */
 
     public Boolean isVisibleToAllUsers() {

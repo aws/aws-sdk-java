@@ -32,7 +32,7 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      */
     private String code;
@@ -47,14 +47,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
@@ -66,13 +65,12 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @return The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *         scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *         change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *         unclean happened.--&gt;
+     *         change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
@@ -84,14 +82,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
@@ -105,14 +102,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
@@ -124,14 +120,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyStateChangeReasonCode
      */

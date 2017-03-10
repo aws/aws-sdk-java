@@ -44,6 +44,12 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
     private static final MarshallingInfo<String> INSTANCEGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupId").build();
+    private static final MarshallingInfo<String> INSTANCEFLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleetId").build();
+    private static final MarshallingInfo<String> MARKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Market").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<List> EBSVOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EbsVolumes").build();
 
@@ -71,6 +77,9 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getPrivateIpAddress(), PRIVATEIPADDRESS_BINDING);
             protocolMarshaller.marshall(instance.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(instance.getInstanceGroupId(), INSTANCEGROUPID_BINDING);
+            protocolMarshaller.marshall(instance.getInstanceFleetId(), INSTANCEFLEETID_BINDING);
+            protocolMarshaller.marshall(instance.getMarket(), MARKET_BINDING);
+            protocolMarshaller.marshall(instance.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(instance.getEbsVolumes(), EBSVOLUMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

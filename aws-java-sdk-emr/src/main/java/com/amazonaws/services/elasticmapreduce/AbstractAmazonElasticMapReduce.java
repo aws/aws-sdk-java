@@ -39,6 +39,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public AddInstanceFleetResult addInstanceFleet(AddInstanceFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -111,6 +116,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public ListInstanceFleetsResult listInstanceFleets(ListInstanceFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInstanceGroupsResult listInstanceGroups(ListInstanceGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -127,6 +137,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public ListStepsResult listSteps(ListStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

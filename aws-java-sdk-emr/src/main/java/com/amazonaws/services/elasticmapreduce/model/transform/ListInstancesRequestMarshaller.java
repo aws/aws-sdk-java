@@ -34,6 +34,10 @@ public class ListInstancesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupId").build();
     private static final MarshallingInfo<List> INSTANCEGROUPTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupTypes").build();
+    private static final MarshallingInfo<String> INSTANCEFLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleetId").build();
+    private static final MarshallingInfo<String> INSTANCEFLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleetType").build();
     private static final MarshallingInfo<List> INSTANCESTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceStates").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +62,8 @@ public class ListInstancesRequestMarshaller {
             protocolMarshaller.marshall(listInstancesRequest.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(listInstancesRequest.getInstanceGroupId(), INSTANCEGROUPID_BINDING);
             protocolMarshaller.marshall(listInstancesRequest.getInstanceGroupTypes(), INSTANCEGROUPTYPES_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceFleetId(), INSTANCEFLEETID_BINDING);
+            protocolMarshaller.marshall(listInstancesRequest.getInstanceFleetType(), INSTANCEFLEETTYPE_BINDING);
             protocolMarshaller.marshall(listInstancesRequest.getInstanceStates(), INSTANCESTATES_BINDING);
             protocolMarshaller.marshall(listInstancesRequest.getMarker(), MARKER_BINDING);
         } catch (Exception e) {

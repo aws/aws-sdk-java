@@ -1,3 +1,17 @@
+# __1.11.104__ __2017-03-10__
+## __Amazon EMR__
+  - <h3>Features</h3>
+    - This release includes support for instance fleets in Amazon EMR.
+
+# __1.11.103__ __2017-03-09__
+## __Amazon API Gateway__
+  - <h3>Features</h3>
+    - API Gateway has added support for ACM certificates on custom domain names. Both Amazon-issued certificates and uploaded third-part certificates are supported.
+
+## __Amazon CloudDirectory__
+  - <h3>Features</h3>
+    - Introduces a new Cloud Directory API that enables you to retrieve all available parent paths for any type of object (a node, leaf node, policy node, and index node) in a hierarchy.
+
 # __1.11.102__ __2017-03-08__
 ## __Core__
   - <h3>Bugfixes</h3>

@@ -65,6 +65,11 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesConfig.setInstanceGroups(new ListUnmarshaller<InstanceGroupConfig>(InstanceGroupConfigJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("InstanceFleets", targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig.setInstanceFleets(new ListUnmarshaller<InstanceFleetConfig>(InstanceFleetConfigJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setEc2KeyName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -88,6 +93,10 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setEc2SubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2SubnetIds", targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig.setEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup", targetDepth)) {
                     context.nextToken();

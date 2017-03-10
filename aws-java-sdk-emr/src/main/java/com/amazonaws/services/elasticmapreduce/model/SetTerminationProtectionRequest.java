@@ -30,14 +30,14 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      * <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> jobFlowIds;
     /**
      * <p>
-     * A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from
+     * A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from
      * shutting down due to API calls, user intervention, or job-flow error.
      * </p>
      */
@@ -45,11 +45,11 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      * <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * </p>
      * 
-     * @return A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * @return A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      *         <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      */
 
@@ -62,12 +62,12 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      * <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     *        A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      *        <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      */
 
@@ -82,7 +82,7 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      * <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * </p>
      * <p>
@@ -92,7 +92,7 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     *        A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      *        <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -109,12 +109,12 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     * A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      * <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of strings that uniquely identify the job flows to protect. This identifier is returned by
+     *        A list of strings that uniquely identify the clusters to protect. This identifier is returned by
      *        <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -126,12 +126,12 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from
+     * A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from
      * shutting down due to API calls, user intervention, or job-flow error.
      * </p>
      * 
      * @param terminationProtected
-     *        A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the
+     *        A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the
      *        cluster from shutting down due to API calls, user intervention, or job-flow error.
      */
 
@@ -141,11 +141,11 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from
+     * A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from
      * shutting down due to API calls, user intervention, or job-flow error.
      * </p>
      * 
-     * @return A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the
+     * @return A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the
      *         cluster from shutting down due to API calls, user intervention, or job-flow error.
      */
 
@@ -155,12 +155,12 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from
+     * A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from
      * shutting down due to API calls, user intervention, or job-flow error.
      * </p>
      * 
      * @param terminationProtected
-     *        A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the
+     *        A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the
      *        cluster from shutting down due to API calls, user intervention, or job-flow error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -172,11 +172,11 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the cluster from
+     * A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from
      * shutting down due to API calls, user intervention, or job-flow error.
      * </p>
      * 
-     * @return A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2 instances in the
+     * @return A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the
      *         cluster from shutting down due to API calls, user intervention, or job-flow error.
      */
 

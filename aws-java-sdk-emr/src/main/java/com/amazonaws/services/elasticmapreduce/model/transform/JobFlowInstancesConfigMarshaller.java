@@ -36,6 +36,8 @@ public class JobFlowInstancesConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCount").build();
     private static final MarshallingInfo<List> INSTANCEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroups").build();
+    private static final MarshallingInfo<List> INSTANCEFLEETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceFleets").build();
     private static final MarshallingInfo<String> EC2KEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2KeyName").build();
     private static final MarshallingInfo<StructuredPojo> PLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,8 @@ public class JobFlowInstancesConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HadoopVersion").build();
     private static final MarshallingInfo<String> EC2SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2SubnetId").build();
+    private static final MarshallingInfo<List> EC2SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Ec2SubnetIds").build();
     private static final MarshallingInfo<String> EMRMANAGEDMASTERSECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmrManagedMasterSecurityGroup").build();
     private static final MarshallingInfo<String> EMRMANAGEDSLAVESECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,12 +83,14 @@ public class JobFlowInstancesConfigMarshaller {
             protocolMarshaller.marshall(jobFlowInstancesConfig.getSlaveInstanceType(), SLAVEINSTANCETYPE_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getInstanceGroups(), INSTANCEGROUPS_BINDING);
+            protocolMarshaller.marshall(jobFlowInstancesConfig.getInstanceFleets(), INSTANCEFLEETS_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEc2KeyName(), EC2KEYNAME_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getPlacement(), PLACEMENT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getKeepJobFlowAliveWhenNoSteps(), KEEPJOBFLOWALIVEWHENNOSTEPS_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getTerminationProtected(), TERMINATIONPROTECTED_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getHadoopVersion(), HADOOPVERSION_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEc2SubnetId(), EC2SUBNETID_BINDING);
+            protocolMarshaller.marshall(jobFlowInstancesConfig.getEc2SubnetIds(), EC2SUBNETIDS_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEmrManagedMasterSecurityGroup(), EMRMANAGEDMASTERSECURITYGROUP_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEmrManagedSlaveSecurityGroup(), EMRMANAGEDSLAVESECURITYGROUP_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getServiceAccessSecurityGroup(), SERVICEACCESSSECURITYGROUP_BINDING);

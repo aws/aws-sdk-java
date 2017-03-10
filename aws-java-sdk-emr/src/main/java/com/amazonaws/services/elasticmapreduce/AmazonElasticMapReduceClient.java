@@ -270,6 +270,57 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Adds an instance fleet to a running cluster.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x.
+     * </p>
+     * </note>
+     * 
+     * @param addInstanceFleetRequest
+     * @return Result of the AddInstanceFleet operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.AddInstanceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddInstanceFleetResult addInstanceFleet(AddInstanceFleetRequest addInstanceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addInstanceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddInstanceFleetRequest> request = null;
+        Response<AddInstanceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddInstanceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addInstanceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddInstanceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddInstanceFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more instance groups to a running cluster.
      * </p>
      * 
@@ -315,20 +366,20 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow.
+     * AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed in each job flow.
      * </p>
      * <p>
-     * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
-     * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
-     * connect to the master node and submitting queries directly to the software running on the master node, such as
-     * Hive and Hadoop. For more information on how to do this, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than
-     * 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's Guide</i>.
+     * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
+     * to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to
+     * the master node and submitting queries directly to the software running on the master node, such as Hive and
+     * Hadoop. For more information on how to do this, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than
+     * 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * <p>
-     * A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3.
-     * Each step is performed by the main function of the main class of the JAR file. The main class can be specified
-     * either in the manifest of the JAR or by using the MainFunction parameter of the step.
+     * A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each
+     * step is performed by the main function of the main class of the JAR file. The main class can be specified either
+     * in the manifest of the JAR or by using the MainFunction parameter of the step.
      * </p>
      * <p>
      * Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must
@@ -336,7 +387,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * successfully.
      * </p>
      * <p>
-     * You can only add steps to a job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
+     * You can only add steps to a cluster that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
      * WAITING.
      * </p>
      * 
@@ -902,6 +953,58 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists all available details about the instance fleets in a cluster.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * 
+     * @param listInstanceFleetsRequest
+     * @return Result of the ListInstanceFleets operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListInstanceFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInstanceFleetsResult listInstanceFleets(ListInstanceFleetsRequest listInstanceFleetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInstanceFleetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstanceFleetsRequest> request = null;
+        Response<ListInstanceFleetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstanceFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstanceFleetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInstanceFleetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInstanceFleetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides all available details about the instance groups in a cluster.
      * </p>
      * 
@@ -1083,6 +1186,59 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListStepsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStepsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified
+     * InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * 
+     * @param modifyInstanceFleetRequest
+     * @return Result of the ModifyInstanceFleet operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ModifyInstanceFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest modifyInstanceFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceFleetRequest> request = null;
+        Response<ModifyInstanceFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyInstanceFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyInstanceFleetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ModifyInstanceFleetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1288,31 +1444,38 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. After the job
-     * flow completes, the cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the
-     * last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
-     * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the job flow will transition to
-     * the WAITING state rather than shutting down after the steps have completed.
+     * RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the
+     * steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last
+     * step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
+     * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the
+     * WAITING state rather than shutting down after the steps have completed.
      * </p>
      * <p>
      * For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
-     * parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated by API call, user
+     * parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user
      * intervention, or in the event of a job flow error.
      * </p>
      * <p>
      * A maximum of 256 steps are allowed in each job flow.
      * </p>
      * <p>
-     * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
+     * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
      * connect to the master node and submitting queries directly to the software running on the master node, such as
      * Hive and Hadoop. For more information on how to do this, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add More than
-     * 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
+     * 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * <p>
-     * For long running job flows, we recommend that you periodically store your results.
+     * For long running clusters, we recommend that you periodically store your results.
      * </p>
+     * <note>
+     * <p>
+     * The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not
+     * both.
+     * </p>
+     * </note>
      * 
      * @param runJobFlowRequest
      *        Input to the <a>RunJobFlow</a> operation.
@@ -1356,24 +1519,25 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * SetTerminationProtection locks a job flow so the EC2 instances in the cluster cannot be terminated by user
-     * intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful
-     * completion of the job flow. Calling SetTerminationProtection on a job flow is analogous to calling the Amazon EC2
-     * DisableAPITermination API on all of the EC2 instances in a cluster.
+     * SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster cannot be terminated by
+     * user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful
+     * completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the
+     * Amazon EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
      * </p>
      * <p>
-     * SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event
-     * of an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.
+     * <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that
+     * in the event of an error, the instances persist so that you can recover any data stored in their ephemeral
+     * instance storage.
      * </p>
      * <p>
-     * To terminate a job flow that has been locked by setting SetTerminationProtection to <code>true</code>, you must
-     * first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to
-     * <code>false</code>.
+     * To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code> to <code>true</code>
+     * , you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code> in which you
+     * set the value to <code>false</code>.
      * </p>
      * <p>
      * For more information, see<a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html"
-     * >Protecting a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i>
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing Cluster
+     * Termination</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param setTerminationProtectionRequest
@@ -1420,10 +1584,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job
-     * flows. This action works on running job flows. You can also set the visibility of a job flow when you launch it
-     * using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be
-     * called only by an IAM user who created the job flow or the AWS account that owns the job flow.
+     * Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified
+     * clusters (job flows). This action works on running clusters. You can also set the visibility of a cluster when
+     * you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers
+     * action can be called only by an IAM user who created the cluster or the AWS account that owns the cluster.
      * </p>
      * 
      * @param setVisibleToAllUsersRequest
@@ -1468,14 +1632,14 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is
-     * canceled and the EC2 instances on which the job flow is running are stopped. Any log files not already saved are
-     * uploaded to Amazon S3 if a LogUri was specified when the job flow was created.
+     * TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet
+     * completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not
+     * already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.
      * </p>
      * <p>
-     * The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous. Depending on the
-     * configuration of the job flow, it may take up to 1-5 minutes for the job flow to completely terminate and release
-     * allocated resources, such as Amazon EC2 instances.
+     * The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous.
+     * Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely
+     * terminate and release allocated resources, such as Amazon EC2 instances.
      * </p>
      * 
      * @param terminateJobFlowsRequest

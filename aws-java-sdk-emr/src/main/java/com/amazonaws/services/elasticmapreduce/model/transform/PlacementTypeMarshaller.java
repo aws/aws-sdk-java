@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class PlacementTypeMarshaller {
 
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
+    private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZones").build();
 
     private static final PlacementTypeMarshaller instance = new PlacementTypeMarshaller();
 
@@ -47,6 +50,7 @@ public class PlacementTypeMarshaller {
 
         try {
             protocolMarshaller.marshall(placementType.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(placementType.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

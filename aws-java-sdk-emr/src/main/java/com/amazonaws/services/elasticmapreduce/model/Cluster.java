@@ -54,6 +54,19 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
     private Ec2InstanceAttributes ec2InstanceAttributes;
     /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     */
+    private String instanceCollectionType;
+    /**
      * <p>
      * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
@@ -93,10 +106,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Boolean terminationProtected;
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -120,7 +133,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String serviceRole;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
@@ -336,6 +349,154 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     public Cluster withEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
         setEc2InstanceAttributes(ec2InstanceAttributes);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @see InstanceCollectionType
+     */
+
+    public void setInstanceCollectionType(String instanceCollectionType) {
+        this.instanceCollectionType = instanceCollectionType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @return <p>
+     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
+     *         5.0.x versions.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *         uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *         configuration.
+     * @see InstanceCollectionType
+     */
+
+    public String getInstanceCollectionType() {
+        return this.instanceCollectionType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceCollectionType
+     */
+
+    public Cluster withInstanceCollectionType(String instanceCollectionType) {
+        setInstanceCollectionType(instanceCollectionType);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @see InstanceCollectionType
+     */
+
+    public void setInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
+        this.instanceCollectionType = instanceCollectionType.toString();
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceCollectionType
+     */
+
+    public Cluster withInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
+        setInstanceCollectionType(instanceCollectionType);
         return this;
     }
 
@@ -619,16 +780,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
      *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      */
@@ -639,16 +800,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
-     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
-     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     * @return Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -658,16 +819,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
      *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -680,16 +841,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
-     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
-     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     * @return Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -885,14 +1046,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -904,14 +1065,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
      *         that is roughly four times more expensive would result in the normalized instance hours being incremented
      *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
@@ -922,14 +1083,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -1363,6 +1524,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getEc2InstanceAttributes() != null)
             sb.append("Ec2InstanceAttributes: ").append(getEc2InstanceAttributes()).append(",");
+        if (getInstanceCollectionType() != null)
+            sb.append("InstanceCollectionType: ").append(getInstanceCollectionType()).append(",");
         if (getLogUri() != null)
             sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getRequestedAmiVersion() != null)
@@ -1424,6 +1587,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getEc2InstanceAttributes() == null ^ this.getEc2InstanceAttributes() == null)
             return false;
         if (other.getEc2InstanceAttributes() != null && other.getEc2InstanceAttributes().equals(this.getEc2InstanceAttributes()) == false)
+            return false;
+        if (other.getInstanceCollectionType() == null ^ this.getInstanceCollectionType() == null)
+            return false;
+        if (other.getInstanceCollectionType() != null && other.getInstanceCollectionType().equals(this.getInstanceCollectionType()) == false)
             return false;
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
@@ -1501,6 +1668,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceAttributes() == null) ? 0 : getEc2InstanceAttributes().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCollectionType() == null) ? 0 : getInstanceCollectionType().hashCode());
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
         hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode());

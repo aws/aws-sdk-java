@@ -247,6 +247,38 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(AddInstanceFleetRequest request) {
+
+        return addInstanceFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(final AddInstanceFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddInstanceFleetRequest, AddInstanceFleetResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AddInstanceFleetResult>() {
+            @Override
+            public AddInstanceFleetResult call() throws Exception {
+                AddInstanceFleetResult result;
+
+                try {
+                    result = addInstanceFleet(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(AddInstanceGroupsRequest request) {
 
         return addInstanceGroupsAsync(request, null);
@@ -679,6 +711,38 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(ListInstanceFleetsRequest request) {
+
+        return listInstanceFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(final ListInstanceFleetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInstanceFleetsRequest, ListInstanceFleetsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInstanceFleetsResult>() {
+            @Override
+            public ListInstanceFleetsResult call() throws Exception {
+                ListInstanceFleetsResult result;
+
+                try {
+                    result = listInstanceFleets(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInstanceGroupsResult> listInstanceGroupsAsync(ListInstanceGroupsRequest request) {
 
         return listInstanceGroupsAsync(request, null);
@@ -791,6 +855,38 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = listSteps(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(ModifyInstanceFleetRequest request) {
+
+        return modifyInstanceFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(final ModifyInstanceFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceFleetRequest, ModifyInstanceFleetResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyInstanceFleetResult>() {
+            @Override
+            public ModifyInstanceFleetResult call() throws Exception {
+                ModifyInstanceFleetResult result;
+
+                try {
+                    result = modifyInstanceFleet(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

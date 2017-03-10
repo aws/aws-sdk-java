@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon EC2 location for the job flow.
+ * The Amazon EC2 Availability Zone configuration of the cluster (job flow).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PlacementType" target="_top">AWS API
@@ -30,10 +30,25 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance
+     * groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      * </p>
      */
     private String availabilityZone;
+    /**
+     * <p>
+     * When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal
+     * Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     * <code>AvailabilityZone</code> (singular) is used for uniform instance groups.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
 
     /**
      * Default constructor for PlacementType object. Callers should use the setter or fluent setter (with...) methods to
@@ -47,7 +62,8 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
      * initialize any additional object members.
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone for the job flow.
+     *        The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform
+     *        instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      */
     public PlacementType(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -55,11 +71,13 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance
+     * groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone for the job flow.
+     *        The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform
+     *        instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -68,10 +86,12 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance
+     * groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      * </p>
      * 
-     * @return The Amazon EC2 Availability Zone for the job flow.
+     * @return The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform
+     *         instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      */
 
     public String getAvailabilityZone() {
@@ -80,16 +100,147 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance
+     * groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone for the job flow.
+     *        The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform
+     *        instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlacementType withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal
+     * Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     * <code>AvailabilityZone</code> (singular) is used for uniform instance groups.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * 
+     * @return When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the
+     *         optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     *         <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
+     *         <p>
+     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
+     *         5.0.x versions.
+     *         </p>
+     */
+
+    public java.util.List<String> getAvailabilityZones() {
+        if (availabilityZones == null) {
+            availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return availabilityZones;
+    }
+
+    /**
+     * <p>
+     * When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal
+     * Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     * <code>AvailabilityZone</code> (singular) is used for uniform instance groups.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * 
+     * @param availabilityZones
+     *        When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the
+     *        optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     *        <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     */
+
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
+        }
+
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(availabilityZones);
+    }
+
+    /**
+     * <p>
+     * When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal
+     * Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     * <code>AvailabilityZone</code> (singular) is used for uniform instance groups.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the
+     *        optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     *        <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementType withAvailabilityZones(String... availabilityZones) {
+        if (this.availabilityZones == null) {
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(availabilityZones.length));
+        }
+        for (String ele : availabilityZones) {
+            this.availabilityZones.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the optimal
+     * Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     * <code>AvailabilityZone</code> (singular) is used for uniform instance groups.
+     * </p>
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * 
+     * @param availabilityZones
+     *        When multiple Availability Zones are specified, Amazon EMR evaluates them and launches instances in the
+     *        optimal Availability Zone. <code>AvailabilityZones</code> is used for instance fleets, while
+     *        <code>AvailabilityZone</code> (singular) is used for uniform instance groups.</p> <note>
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementType withAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        setAvailabilityZones(availabilityZones);
         return this;
     }
 
@@ -105,7 +256,9 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getAvailabilityZones() != null)
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
@@ -124,6 +277,10 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
+            return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
+            return false;
         return true;
     }
 
@@ -133,6 +290,7 @@ public class PlacementType implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         return hashCode;
     }
 

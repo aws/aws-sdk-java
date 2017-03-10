@@ -30,6 +30,7 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      */
     private String state;
@@ -42,9 +43,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -54,9 +57,10 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
-     * @return
+     * @return Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -66,9 +70,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyState
      */
@@ -80,9 +86,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -92,9 +100,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyState
      */

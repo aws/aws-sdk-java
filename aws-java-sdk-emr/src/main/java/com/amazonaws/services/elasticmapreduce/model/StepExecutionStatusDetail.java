@@ -30,7 +30,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      */
     private String state;
@@ -71,7 +71,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      * methods to initialize any additional object members.
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @param creationDateTime
      *        The creation date and time of the step.
      */
@@ -85,7 +85,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      * methods to initialize any additional object members.
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @param creationDateTime
      *        The creation date and time of the step.
      */
@@ -96,11 +96,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @see StepExecutionState
      */
 
@@ -110,10 +110,10 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
-     * @return The state of the job flow step.
+     * @return The state of the step.
      * @see StepExecutionState
      */
 
@@ -123,11 +123,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionState
      */
@@ -139,11 +139,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @see StepExecutionState
      */
 
@@ -153,11 +153,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionState
      */

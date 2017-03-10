@@ -36,6 +36,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
     private static final MarshallingInfo<StructuredPojo> EC2INSTANCEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2InstanceAttributes").build();
+    private static final MarshallingInfo<String> INSTANCECOLLECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCollectionType").build();
     private static final MarshallingInfo<String> LOGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogUri").build();
     private static final MarshallingInfo<String> REQUESTEDAMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -89,6 +91,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getName(), NAME_BINDING);
             protocolMarshaller.marshall(cluster.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(cluster.getEc2InstanceAttributes(), EC2INSTANCEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(cluster.getInstanceCollectionType(), INSTANCECOLLECTIONTYPE_BINDING);
             protocolMarshaller.marshall(cluster.getLogUri(), LOGURI_BINDING);
             protocolMarshaller.marshall(cluster.getRequestedAmiVersion(), REQUESTEDAMIVERSION_BINDING);
             protocolMarshaller.marshall(cluster.getRunningAmiVersion(), RUNNINGAMIVERSION_BINDING);

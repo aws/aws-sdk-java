@@ -32,8 +32,12 @@ public class Ec2InstanceAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2KeyName").build();
     private static final MarshallingInfo<String> EC2SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2SubnetId").build();
+    private static final MarshallingInfo<List> REQUESTEDEC2SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedEc2SubnetIds").build();
     private static final MarshallingInfo<String> EC2AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2AvailabilityZone").build();
+    private static final MarshallingInfo<List> REQUESTEDEC2AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedEc2AvailabilityZones").build();
     private static final MarshallingInfo<String> IAMINSTANCEPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamInstanceProfile").build();
     private static final MarshallingInfo<String> EMRMANAGEDMASTERSECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,7 +69,9 @@ public class Ec2InstanceAttributesMarshaller {
         try {
             protocolMarshaller.marshall(ec2InstanceAttributes.getEc2KeyName(), EC2KEYNAME_BINDING);
             protocolMarshaller.marshall(ec2InstanceAttributes.getEc2SubnetId(), EC2SUBNETID_BINDING);
+            protocolMarshaller.marshall(ec2InstanceAttributes.getRequestedEc2SubnetIds(), REQUESTEDEC2SUBNETIDS_BINDING);
             protocolMarshaller.marshall(ec2InstanceAttributes.getEc2AvailabilityZone(), EC2AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(ec2InstanceAttributes.getRequestedEc2AvailabilityZones(), REQUESTEDEC2AVAILABILITYZONES_BINDING);
             protocolMarshaller.marshall(ec2InstanceAttributes.getIamInstanceProfile(), IAMINSTANCEPROFILE_BINDING);
             protocolMarshaller.marshall(ec2InstanceAttributes.getEmrManagedMasterSecurityGroup(), EMRMANAGEDMASTERSECURITYGROUP_BINDING);
             protocolMarshaller.marshall(ec2InstanceAttributes.getEmrManagedSlaveSecurityGroup(), EMRMANAGEDSLAVESECURITYGROUP_BINDING);
