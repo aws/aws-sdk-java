@@ -25,18 +25,18 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ObjectIdentifier of the index created by this operation.
+     * The <code>ObjectIdentifier</code> of the index created by this operation.
      * </p>
      */
     private String objectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the index created by this operation.
+     * The <code>ObjectIdentifier</code> of the index created by this operation.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the index created by this operation.
+     *        The <code>ObjectIdentifier</code> of the index created by this operation.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -45,10 +45,10 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ObjectIdentifier of the index created by this operation.
+     * The <code>ObjectIdentifier</code> of the index created by this operation.
      * </p>
      * 
-     * @return The ObjectIdentifier of the index created by this operation.
+     * @return The <code>ObjectIdentifier</code> of the index created by this operation.
      */
 
     public String getObjectIdentifier() {
@@ -57,11 +57,11 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ObjectIdentifier of the index created by this operation.
+     * The <code>ObjectIdentifier</code> of the index created by this operation.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the index created by this operation.
+     *        The <code>ObjectIdentifier</code> of the index created by this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

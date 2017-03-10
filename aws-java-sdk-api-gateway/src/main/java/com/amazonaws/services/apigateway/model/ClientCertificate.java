@@ -51,15 +51,13 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
     private String pemEncodedCertificate;
     /**
      * <p>
-     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate will expire.
      * </p>
      */
     private java.util.Date expirationDate;
@@ -192,13 +190,11 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the client certificate was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the client certificate was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -207,12 +203,10 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate was created.
      * </p>
      * 
-     * @return The date when the client certificate was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the client certificate was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -221,13 +215,11 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the client certificate was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the client certificate was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,13 +230,11 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate will expire.
      * </p>
      * 
      * @param expirationDate
-     *        The date when the client certificate will expire, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the client certificate will expire.
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -253,12 +243,10 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate will expire.
      * </p>
      * 
-     * @return The date when the client certificate will expire, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the client certificate will expire.
      */
 
     public java.util.Date getExpirationDate() {
@@ -267,13 +255,11 @@ public class ClientCertificate implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the client certificate will expire.
      * </p>
      * 
      * @param expirationDate
-     *        The date when the client certificate will expire, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the client certificate will expire.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

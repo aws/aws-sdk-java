@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a DetachObject response operation.
+ * Represents the output of a <code>DetachObject</code> response operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachObjectResponse"
@@ -30,18 +30,18 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      */
     private String detachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the detached object.
+     *        The <code>ObjectIdentifier</code> of the detached object.
      */
 
     public void setDetachedObjectIdentifier(String detachedObjectIdentifier) {
@@ -50,10 +50,10 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
-     * @return The ObjectIdentifier of the detached object.
+     * @return The <code>ObjectIdentifier</code> of the detached object.
      */
 
     public String getDetachedObjectIdentifier() {
@@ -62,11 +62,11 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the detached object.
+     *        The <code>ObjectIdentifier</code> of the detached object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

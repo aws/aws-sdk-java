@@ -112,7 +112,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * </li>
      * <li>
      * <p>
-     * Using ObjectIdentifier
+     * Using <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * </ol>
@@ -137,7 +137,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * </li>
      * <li>
      * <p>
-     * Using ObjectIdentifier
+     * Using <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * </ol>
@@ -1186,6 +1186,57 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
+     * objects. For more information about objects, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * Structure</a>.
+     * </p>
+     * <p>
+     * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
+     * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
+     * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
+     * the target object.
+     * </p>
+     * 
+     * @param listObjectParentPathsRequest
+     * @return A Java Future containing the result of the ListObjectParentPaths operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.ListObjectParentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(ListObjectParentPathsRequest listObjectParentPathsRequest);
+
+    /**
+     * <p>
+     * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
+     * objects. For more information about objects, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * Structure</a>.
+     * </p>
+     * <p>
+     * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
+     * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
+     * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
+     * the target object.
+     * </p>
+     * 
+     * @param listObjectParentPathsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListObjectParentPaths operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListObjectParentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(ListObjectParentPathsRequest listObjectParentPathsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListObjectParentPathsRequest, ListObjectParentPathsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists parent objects associated with a given object in pagination fashion.
      * </p>
      * 
@@ -1248,7 +1299,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns all of the ObjectIdentifiers to which a given policy is attached.
+     * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
      * </p>
      * 
      * @param listPolicyAttachmentsRequest
@@ -1261,7 +1312,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns all of the ObjectIdentifiers to which a given policy is attached.
+     * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
      * </p>
      * 
      * @param listPolicyAttachmentsRequest
@@ -1345,8 +1396,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
-     * attached, it returns the objectIdentifier for such objects. If policies are present, it returns objectIdentifier,
-     * policyId, and policyType. Paths that don't lead to the root from the target object are ignored.
+     * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
+     * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
+     * root from the target object are ignored.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1361,8 +1413,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
-     * attached, it returns the objectIdentifier for such objects. If policies are present, it returns objectIdentifier,
-     * policyId, and policyType. Paths that don't lead to the root from the target object are ignored.
+     * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
+     * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
+     * root from the target object are ignored.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1548,17 +1601,17 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <ol>
      * <li>
      * <p>
-     * Adds new Attributes, Rules, or ObjectTypes.
+     * Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Updates existing Attributes, Rules, or ObjectTypes.
+     * Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Deletes existing Attributes, Rules, or ObjectTypes.
+     * Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * </ol>
@@ -1578,17 +1631,17 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * <ol>
      * <li>
      * <p>
-     * Adds new Attributes, Rules, or ObjectTypes.
+     * Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Updates existing Attributes, Rules, or ObjectTypes.
+     * Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Deletes existing Attributes, Rules, or ObjectTypes.
+     * Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * </ol>

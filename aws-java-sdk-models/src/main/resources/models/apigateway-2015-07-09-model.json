@@ -5189,7 +5189,7 @@
       "members" : {
         "createdDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the API Key was created, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the API Key was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5254,7 +5254,7 @@
         },
         "lastUpdatedDate" : {
           "deprecated" : false,
-          "documentation" : "<p>When the API Key was last updated, in ISO 8601 format.</p>",
+          "documentation" : "<p>The timestamp when the API Key was last updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5971,7 +5971,7 @@
         },
         "createdDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the client certificate was created, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the client certificate was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5997,7 +5997,7 @@
         },
         "expirationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the client certificate will expire, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the client certificate will expire.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6737,9 +6737,22 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "certificateArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "certificateBody" : {
           "deprecated" : false,
-          "documentation" : "<p>The body of the server certificate provided by your certificate authority.</p>",
+          "documentation" : "<p>[Deprecated] The body of the server certificate provided by your certificate authority.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6752,7 +6765,7 @@
         },
         "certificateChain" : {
           "deprecated" : false,
-          "documentation" : "<p>The intermediate certificates and optionally the root certificate, one after the other without any blank lines. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>",
+          "documentation" : "<p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6765,7 +6778,7 @@
         },
         "certificateName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the certificate.</p>",
+          "documentation" : "<p>The user-friendly name of the certificate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6778,7 +6791,7 @@
         },
         "certificatePrivateKey" : {
           "deprecated" : false,
-          "documentation" : "<p>Your certificate's private key.</p>",
+          "documentation" : "<p>[Deprecated] Your certificate's private key.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6791,7 +6804,7 @@
         },
         "domainName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the <a>DomainName</a> resource.</p>",
+          "documentation" : "<p>(Required) The name of the <a>DomainName</a> resource.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6806,7 +6819,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "domainName", "certificateName", "certificateBody", "certificatePrivateKey", "certificateChain" ],
+      "required" : [ "domainName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -8495,7 +8508,7 @@
         },
         "type" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of API entity to which the documentation content applies. It is a valid and required field for API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>",
+          "documentation" : "<p>The type of API entity to which the documentation content applies. It is a valid and required field for API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8727,6 +8740,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "certificateArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "certificateName" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the certificate.</p>",
@@ -8742,7 +8768,7 @@
         },
         "certificateUploadDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the certificate was uploaded, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the certificate was uploaded.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -14701,7 +14727,7 @@
         },
         "createdDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the API was created, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the API was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -15222,7 +15248,7 @@
         },
         "createdDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date and time that the stage was created, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the stage was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -15274,7 +15300,7 @@
         },
         "lastUpdatedDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date and time that information about the stage was last updated, in <a href=\"http://www.iso.org/iso/home/standards/iso8601.htm\" target=\"_blank\">ISO 8601 format</a>.</p>",
+          "documentation" : "<p>The timestamp when the stage last updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,

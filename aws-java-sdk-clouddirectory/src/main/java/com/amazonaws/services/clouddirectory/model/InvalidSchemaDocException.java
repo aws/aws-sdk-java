@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the provided SchemaDoc value is not valid.
+ * Indicates that the provided <code>SchemaDoc</code> value is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

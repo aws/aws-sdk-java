@@ -189,7 +189,7 @@ public interface AmazonCloudDirectory {
      * </li>
      * <li>
      * <p>
-     * Using ObjectIdentifier
+     * Using <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * </ol>
@@ -391,7 +391,7 @@ public interface AmazonCloudDirectory {
      * @throws DirectoryNotEnabledException
      *         An operation can only operate on a directory that is not enabled.
      * @throws BatchWriteException
-     *         A BatchWrite exception has occurred.
+     *         A <code>BatchWrite</code> exception has occurred.
      * @sample AmazonCloudDirectory.BatchWrite
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite" target="_top">AWS API
      *      Documentation</a>
@@ -662,6 +662,12 @@ public interface AmazonCloudDirectory {
      * @throws DirectoryDeletedException
      *         A directory that has been deleted has been attempted to be accessed. Note: The requested resource will
      *         eventually cease to exist.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.DeleteDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
@@ -939,6 +945,12 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.DisableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
@@ -971,6 +983,12 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.EnableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
@@ -1159,7 +1177,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListAppliedSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns"
      *      target="_top">AWS API Documentation</a>
@@ -1235,7 +1253,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDevelopmentSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns"
      *      target="_top">AWS API Documentation</a>
@@ -1271,7 +1289,7 @@ public interface AmazonCloudDirectory {
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDirectories
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories" target="_top">AWS
      *      API Documentation</a>
@@ -1311,7 +1329,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1349,7 +1367,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetNames
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames" target="_top">AWS
      *      API Documentation</a>
@@ -1431,7 +1449,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListObjectAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1473,15 +1491,65 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws NotNodeException
      *         Occurs when any invalid operations are performed on an object which is not a node, such as calling
-     *         ListObjectChildren for a leaf node object.
+     *         <code>ListObjectChildren</code> for a leaf node object.
      * @sample AmazonCloudDirectory.ListObjectChildren
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest);
+
+    /**
+     * <p>
+     * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
+     * objects. For more information about objects, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * Structure</a>.
+     * </p>
+     * <p>
+     * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
+     * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
+     * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
+     * the target object.
+     * </p>
+     * 
+     * @param listObjectParentPathsRequest
+     * @return Result of the ListObjectParentPaths operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @sample AmazonCloudDirectory.ListObjectParentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest listObjectParentPathsRequest);
 
     /**
      * <p>
@@ -1518,7 +1586,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws CannotListParentOfRootException
      *         Cannot list the parents of a <a>Directory</a> root.
      * @sample AmazonCloudDirectory.ListObjectParents
@@ -1560,7 +1628,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListObjectPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies"
      *      target="_top">AWS API Documentation</a>
@@ -1569,7 +1637,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns all of the ObjectIdentifiers to which a given policy is attached.
+     * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
      * </p>
      * 
      * @param listPolicyAttachmentsRequest
@@ -1600,7 +1668,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotPolicyException
@@ -1642,7 +1710,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListPublishedSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns"
      *      target="_top">AWS API Documentation</a>
@@ -1693,8 +1761,9 @@ public interface AmazonCloudDirectory {
      * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
-     * attached, it returns the objectIdentifier for such objects. If policies are present, it returns objectIdentifier,
-     * policyId, and policyType. Paths that don't lead to the root from the target object are ignored.
+     * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
+     * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
+     * root from the target object are ignored.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1725,7 +1794,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.LookupPolicy
@@ -1805,7 +1874,7 @@ public interface AmazonCloudDirectory {
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidSchemaDocException
-     *         Indicates that the provided SchemaDoc value is not valid.
+     *         Indicates that the provided <code>SchemaDoc</code> value is not valid.
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
      * @sample AmazonCloudDirectory.PutSchemaFromJson
@@ -1939,17 +2008,17 @@ public interface AmazonCloudDirectory {
      * <ol>
      * <li>
      * <p>
-     * Adds new Attributes, Rules, or ObjectTypes.
+     * Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Updates existing Attributes, Rules, or ObjectTypes.
+     * Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Deletes existing Attributes, Rules, or ObjectTypes.
+     * Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * </ol>

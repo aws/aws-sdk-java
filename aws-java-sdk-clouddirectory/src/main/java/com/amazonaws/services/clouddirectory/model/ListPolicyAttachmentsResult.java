@@ -25,23 +25,23 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of ObjectIdentifiers to which the policy is attached.
+     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      */
     private java.util.List<String> objectIdentifiers;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of ObjectIdentifiers to which the policy is attached.
+     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
-     * @return List of ObjectIdentifiers to which the policy is attached.
+     * @return List of <code>ObjectIdentifiers</code> to which the policy is attached.
      */
 
     public java.util.List<String> getObjectIdentifiers() {
@@ -50,11 +50,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of ObjectIdentifiers to which the policy is attached.
+     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of ObjectIdentifiers to which the policy is attached.
+     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
      */
 
     public void setObjectIdentifiers(java.util.Collection<String> objectIdentifiers) {
@@ -68,7 +68,7 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of ObjectIdentifiers to which the policy is attached.
+     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of ObjectIdentifiers to which the policy is attached.
+     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of ObjectIdentifiers to which the policy is attached.
+     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of ObjectIdentifiers to which the policy is attached.
+     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

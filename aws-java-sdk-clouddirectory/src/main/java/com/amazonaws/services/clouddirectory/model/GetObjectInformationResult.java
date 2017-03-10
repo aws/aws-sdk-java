@@ -31,7 +31,7 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<SchemaFacet> schemaFacets;
     /**
      * <p>
-     * The ObjectIdentifier of the specified object.
+     * The <code>ObjectIdentifier</code> of the specified object.
      * </p>
      */
     private String objectIdentifier;
@@ -108,11 +108,11 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ObjectIdentifier of the specified object.
+     * The <code>ObjectIdentifier</code> of the specified object.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the specified object.
+     *        The <code>ObjectIdentifier</code> of the specified object.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -121,10 +121,10 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ObjectIdentifier of the specified object.
+     * The <code>ObjectIdentifier</code> of the specified object.
      * </p>
      * 
-     * @return The ObjectIdentifier of the specified object.
+     * @return The <code>ObjectIdentifier</code> of the specified object.
      */
 
     public String getObjectIdentifier() {
@@ -133,11 +133,11 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ObjectIdentifier of the specified object.
+     * The <code>ObjectIdentifier</code> of the specified object.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the specified object.
+     *        The <code>ObjectIdentifier</code> of the specified object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

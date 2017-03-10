@@ -36,7 +36,7 @@ public class IndexAttachment implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<AttributeKeyAndValue> indexedAttributes;
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      */
     private String objectIdentifier;
@@ -113,11 +113,11 @@ public class IndexAttachment implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the object attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object attached to the index.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -126,10 +126,10 @@ public class IndexAttachment implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object attached to the index.
+     * @return The <code>ObjectIdentifier</code> of the object attached to the index.
      */
 
     public String getObjectIdentifier() {
@@ -138,11 +138,11 @@ public class IndexAttachment implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the object attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object attached to the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

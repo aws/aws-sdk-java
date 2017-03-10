@@ -31,6 +31,8 @@ public class DomainNameMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<String> CERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateName").build();
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
     private static final MarshallingInfo<java.util.Date> CERTIFICATEUPLOADDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateUploadDate").build();
     private static final MarshallingInfo<String> DISTRIBUTIONDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class DomainNameMarshaller {
         try {
             protocolMarshaller.marshall(domainName.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(domainName.getCertificateName(), CERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(domainName.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(domainName.getCertificateUploadDate(), CERTIFICATEUPLOADDATE_BINDING);
             protocolMarshaller.marshall(domainName.getDistributionDomainName(), DISTRIBUTIONDOMAINNAME_BINDING);
         } catch (Exception e) {

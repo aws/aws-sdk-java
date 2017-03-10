@@ -53,7 +53,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     private FacetAttributeReference attributeReference;
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      */
     private String requiredBehavior;
@@ -210,11 +210,11 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -224,10 +224,10 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
-     * @return The required behavior of the FacetAttribute.
+     * @return The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -237,11 +237,11 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredAttributeBehavior
      */
@@ -253,11 +253,11 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -267,11 +267,11 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredAttributeBehavior
      */

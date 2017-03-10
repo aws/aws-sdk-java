@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a ListObjectAttributes response operation.
+ * Represents the output of a <code>ListObjectAttributes</code> response operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectAttributesResponse"
@@ -30,23 +30,24 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> attributes;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
      * </p>
      * 
-     * @return Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * @return Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
+     *         value.
      */
 
     public java.util.List<AttributeKeyAndValue> getAttributes() {
@@ -55,11 +56,12 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
+     *        value.
      */
 
     public void setAttributes(java.util.Collection<AttributeKeyAndValue> attributes) {
@@ -73,7 +75,7 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +84,8 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +101,12 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key; attribute value is the value.
+     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +117,11 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -126,10 +130,10 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -138,11 +142,11 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -208,6 +208,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListObjectParentsResult listObjectParents(ListObjectParentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

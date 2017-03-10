@@ -30,7 +30,7 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      */
     private String type;
@@ -43,11 +43,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -57,10 +57,10 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
-     * @return Type of exception, such as InvalidArnException.
+     * @return Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -70,11 +70,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */
@@ -86,11 +86,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -100,11 +100,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */

@@ -25,23 +25,23 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of policy ObjectIdentifiers, that are attached to the object.
+     * List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * </p>
      */
     private java.util.List<String> attachedPolicyIds;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of policy ObjectIdentifiers, that are attached to the object.
+     * List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * </p>
      * 
-     * @return List of policy ObjectIdentifiers, that are attached to the object.
+     * @return List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      */
 
     public java.util.List<String> getAttachedPolicyIds() {
@@ -50,11 +50,11 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of policy ObjectIdentifiers, that are attached to the object.
+     * List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * </p>
      * 
      * @param attachedPolicyIds
-     *        List of policy ObjectIdentifiers, that are attached to the object.
+     *        List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      */
 
     public void setAttachedPolicyIds(java.util.Collection<String> attachedPolicyIds) {
@@ -68,7 +68,7 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of policy ObjectIdentifiers, that are attached to the object.
+     * List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param attachedPolicyIds
-     *        List of policy ObjectIdentifiers, that are attached to the object.
+     *        List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of policy ObjectIdentifiers, that are attached to the object.
+     * List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * </p>
      * 
      * @param attachedPolicyIds
-     *        List of policy ObjectIdentifiers, that are attached to the object.
+     *        List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListObjectPoliciesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -93,15 +93,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String documentationVersion;
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -622,13 +620,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -637,12 +633,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
-     * @return The date and time that the stage was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -651,13 +645,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -668,13 +660,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -683,12 +673,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
-     * @return The date and time that information about the stage was last updated, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -697,13 +685,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

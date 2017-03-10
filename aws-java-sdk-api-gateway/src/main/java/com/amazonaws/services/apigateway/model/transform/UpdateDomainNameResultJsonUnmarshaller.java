@@ -56,6 +56,10 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateDomainNameResult.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("certificateArn", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
                     updateDomainNameResult.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

@@ -35,7 +35,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * <li>
@@ -59,7 +59,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * <li>
@@ -79,7 +79,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     *        <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      *        </p>
      *        </li>
      *        <li>
@@ -105,7 +105,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * <li>
@@ -124,7 +124,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     *         <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      *         </p>
      *         </li>
      *         <li>
@@ -150,7 +150,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * <li>
@@ -170,7 +170,7 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+     *        <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
      *        </p>
      *        </li>
      *        <li>

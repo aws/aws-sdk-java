@@ -1340,6 +1340,38 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(ListObjectParentPathsRequest request) {
+
+        return listObjectParentPathsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(final ListObjectParentPathsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListObjectParentPathsRequest, ListObjectParentPathsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListObjectParentPathsResult>() {
+            @Override
+            public ListObjectParentPathsResult call() throws Exception {
+                ListObjectParentPathsResult result;
+
+                try {
+                    result = listObjectParentPaths(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListObjectParentsResult> listObjectParentsAsync(ListObjectParentsRequest request) {
 
         return listObjectParentsAsync(request, null);

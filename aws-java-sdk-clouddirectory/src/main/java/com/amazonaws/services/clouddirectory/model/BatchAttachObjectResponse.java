@@ -30,18 +30,18 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      */
     private String attachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that has been attached.
+     *        The <code>ObjectIdentifier</code> of the object that has been attached.
      */
 
     public void setAttachedObjectIdentifier(String attachedObjectIdentifier) {
@@ -50,10 +50,10 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object that has been attached.
+     * @return The <code>ObjectIdentifier</code> of the object that has been attached.
      */
 
     public String getAttachedObjectIdentifier() {
@@ -62,11 +62,11 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that has been attached.
+     *        The <code>ObjectIdentifier</code> of the object that has been attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,8 @@ public class CreateDomainNameRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificatePrivateKey").build();
     private static final MarshallingInfo<String> CERTIFICATECHAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateChain").build();
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
 
     private static final CreateDomainNameRequestMarshaller instance = new CreateDomainNameRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class CreateDomainNameRequestMarshaller {
             protocolMarshaller.marshall(createDomainNameRequest.getCertificateBody(), CERTIFICATEBODY_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getCertificatePrivateKey(), CERTIFICATEPRIVATEKEY_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getCertificateChain(), CERTIFICATECHAIN_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

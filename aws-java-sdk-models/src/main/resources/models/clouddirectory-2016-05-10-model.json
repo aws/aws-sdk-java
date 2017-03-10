@@ -171,7 +171,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Attaches an existing object to another object. An object can be accessed in two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using ObjectIdentifier</p> </li> </ol>",
+      "documentation" : "<p>Attaches an existing object to another object. An object can be accessed in two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using <code>ObjectIdentifier</code> </p> </li> </ol>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1040,6 +1040,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "DirectoryDeletedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -1575,6 +1581,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -1636,6 +1648,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -2629,6 +2647,85 @@
         "shape" : "ListObjectChildrenResponse"
       }
     },
+    "ListObjectParentPaths" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure\">Directory Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from the target object.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DirectoryNotEnabledException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/object/parentpaths",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListObjectParentPathsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListObjectParentPaths",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListObjectParentPathsResponse"
+      }
+    },
     "ListObjectParents" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2803,7 +2900,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns all of the ObjectIdentifiers to which a given policy is attached.</p>",
+      "documentation" : "<p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3040,7 +3137,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the objectIdentifier for such objects. If policies are present, it returns objectIdentifier, policyId, and policyType. Paths that don't lead to the root from the target object are ignored.</p>",
+      "documentation" : "<p>Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3496,7 +3593,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Does the following:</p> <ol> <li> <p>Adds new Attributes, Rules, or ObjectTypes.</p> </li> <li> <p>Updates existing Attributes, Rules, or ObjectTypes.</p> </li> <li> <p>Deletes existing Attributes, Rules, or ObjectTypes.</p> </li> </ol>",
+      "documentation" : "<p>Does the following:</p> <ol> <li> <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> </ol>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -4096,7 +4193,7 @@
       "members" : {
         "AttachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>Attached ObjectIdentifier, which is the child ObjectIdentifier.</p>",
+          "documentation" : "<p>Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4274,7 +4371,7 @@
       "members" : {
         "AttachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the object that was attached to the index.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4648,7 +4745,7 @@
       "members" : {
         "attachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the object that has been attached.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4758,7 +4855,7 @@
     },
     "BatchCreateObjectResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a CreateObject response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>CreateObject</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4793,7 +4890,7 @@
     },
     "BatchDeleteObject" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a DeleteObject operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>DeleteObject</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4828,7 +4925,7 @@
     },
     "BatchDeleteObjectResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a DeleteObject response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>DeleteObject</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4849,7 +4946,7 @@
     },
     "BatchDetachObject" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a DetachObject operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>DetachObject</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4910,7 +5007,7 @@
     },
     "BatchDetachObjectResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a DetachObject response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>DetachObject</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4922,7 +5019,7 @@
       "members" : {
         "detachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the detached object.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the detached object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4945,7 +5042,7 @@
     },
     "BatchListObjectAttributes" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a ListObjectAttributes operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4970,7 +5067,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5006,7 +5103,7 @@
     },
     "BatchListObjectAttributesResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a ListObjectAttributes response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5018,7 +5115,7 @@
       "members" : {
         "Attributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes map associated with the object. AttributeArn is the key; attribute value is the value.</p>",
+          "documentation" : "<p>Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5031,7 +5128,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5054,7 +5151,7 @@
     },
     "BatchListObjectChildren" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a ListObjectChildren operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>ListObjectChildren</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5079,7 +5176,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5115,7 +5212,7 @@
     },
     "BatchListObjectChildrenResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a ListObjectChildren response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5127,7 +5224,7 @@
       "members" : {
         "Children" : {
           "deprecated" : false,
-          "documentation" : "<p>Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.</p>",
+          "documentation" : "<p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5140,7 +5237,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5209,7 +5306,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>Type of exception, such as InvalidArnException.</p>",
+          "documentation" : "<p>Type of exception, such as <code>InvalidArnException</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5253,7 +5350,7 @@
     },
     "BatchReadOperation" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchRead operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>BatchRead</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5334,7 +5431,7 @@
     },
     "BatchReadOperationResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchRead response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>BatchRead</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5511,7 +5608,7 @@
     },
     "BatchReadSuccessfulResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchRead success response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>BatchRead</code> success response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5649,7 +5746,7 @@
     },
     "BatchUpdateObjectAttributes" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchUpdate operation. </p>",
+      "documentation" : "<p>Represents the output of a <code>BatchUpdate</code> operation. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5697,7 +5794,7 @@
     },
     "BatchUpdateObjectAttributesResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchUpdate response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>BatchUpdate</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5732,7 +5829,7 @@
     },
     "BatchWriteException" : {
       "deprecated" : false,
-      "documentation" : "<p>A BatchWrite exception has occurred.</p>",
+      "documentation" : "<p>A <code>BatchWrite</code> exception has occurred.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -5814,7 +5911,7 @@
     },
     "BatchWriteOperation" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchWrite operation. </p>",
+      "documentation" : "<p>Represents the output of a <code>BatchWrite</code> operation. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5960,7 +6057,7 @@
     },
     "BatchWriteOperationResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a BatchWrite response operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>BatchWrite</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6627,7 +6724,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the index created by this operation.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7235,7 +7332,7 @@
       "members" : {
         "DetachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the object that was detached from the index.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7331,7 +7428,7 @@
       "members" : {
         "DetachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier that was detached from the object.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> that was detached from the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7487,7 +7584,7 @@
         },
         "State" : {
           "deprecated" : false,
-          "documentation" : "<p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>",
+          "documentation" : "<p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7919,7 +8016,7 @@
     },
     "Facet" : {
       "deprecated" : false,
-      "documentation" : "<p>A structure that contains Name, ARN, Attributes, <a>Rule</a>s, and ObjectTypes.</p>",
+      "documentation" : "<p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <a>Rule</a>s, and <code>ObjectTypes</code>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8056,7 +8153,7 @@
         },
         "RequiredBehavior" : {
           "deprecated" : false,
-          "documentation" : "<p>The required behavior of the FacetAttribute.</p>",
+          "documentation" : "<p>The required behavior of the <code>FacetAttribute</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8730,7 +8827,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the specified object.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the specified object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8874,7 +8971,7 @@
         },
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier of the object attached to the index.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9120,7 +9217,7 @@
     },
     "InvalidNextTokenException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates that the NextToken value is not valid.</p>",
+      "documentation" : "<p>Indicates that the <code>NextToken</code> value is not valid.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -9196,7 +9293,7 @@
     },
     "InvalidSchemaDocException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates that the provided SchemaDoc value is not valid.</p>",
+      "documentation" : "<p>Indicates that the provided <code>SchemaDoc</code> value is not valid.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -10293,7 +10390,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10354,7 +10451,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10428,7 +10525,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10476,7 +10573,7 @@
       "members" : {
         "Children" : {
           "deprecated" : false,
-          "documentation" : "<p>Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.</p>",
+          "documentation" : "<p>Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10489,7 +10586,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10497,6 +10594,128 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListObjectParentPathsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DirectoryArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the directory to which the parent path applies.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NumberResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Reference that identifies the object whose parent paths are listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DirectoryArn", "ObjectReference" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListObjectParentPathsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "PathToObjectIdentifiersList" : {
+          "deprecated" : false,
+          "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PathToObjectIdentifiersList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -10563,7 +10782,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10611,7 +10830,7 @@
       "members" : {
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10624,7 +10843,7 @@
         },
         "Parents" : {
           "deprecated" : false,
-          "documentation" : "<p>Parent structure, which is a map with key as the ObjectIdentifier and LinkName as the value.</p>",
+          "documentation" : "<p>Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10698,7 +10917,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10746,7 +10965,7 @@
       "members" : {
         "AttachedPolicyIds" : {
           "deprecated" : false,
-          "documentation" : "<p>List of policy ObjectIdentifiers, that are attached to the object.</p>",
+          "documentation" : "<p>List of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10759,7 +10978,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10833,7 +11052,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10881,7 +11100,7 @@
       "members" : {
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10894,7 +11113,7 @@
         },
         "ObjectIdentifiers" : {
           "deprecated" : false,
-          "documentation" : "<p>List of ObjectIdentifiers to which the policy is attached.</p>",
+          "documentation" : "<p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11038,7 +11257,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.</p>",
+          "documentation" : "<p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11208,7 +11427,7 @@
       "members" : {
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Token used for pagination.</p>",
+          "documentation" : "<p>The pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11221,7 +11440,7 @@
         },
         "PolicyToPathList" : {
           "deprecated" : false,
-          "documentation" : "<p>Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.</p>",
+          "documentation" : "<p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11303,7 +11522,7 @@
     },
     "NotNodeException" : {
       "deprecated" : false,
-      "documentation" : "<p>Occurs when any invalid operations are performed on an object which is not a node, such as calling ListObjectChildren for a leaf node object.</p>",
+      "documentation" : "<p>Occurs when any invalid operations are performed on an object which is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -11410,7 +11629,7 @@
       "max" : 0,
       "member" : null,
       "members" : { },
-      "min" : 0,
+      "min" : 1,
       "pattern" : null,
       "payload" : null,
       "required" : null,
@@ -11818,7 +12037,7 @@
       "members" : {
         "Selector" : {
           "deprecated" : false,
-          "documentation" : "<p>Allows you to specify an object. You can identify an object in one of the following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> </ul>",
+          "documentation" : "<p>Allows you to specify an object. You can identify an object in one of the following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11881,9 +12100,90 @@
       "value" : null,
       "wrapper" : false
     },
+    "PathToObjectIdentifiers" : {
+      "deprecated" : false,
+      "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ObjectIdentifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectIdentifierList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Path" : {
+          "deprecated" : false,
+          "documentation" : "<p>The path used to identify the object starting from directory root.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PathString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PathToObjectIdentifiersList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "PathToObjectIdentifiers",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "PolicyAttachment" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the PolicyType, PolicyId, and the ObjectIdentifier to which it is attached.</p>",
+      "documentation" : "<p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11895,7 +12195,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The ObjectIdentifier associated with PolicyAttachment.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11908,7 +12208,7 @@
         },
         "PolicyId" : {
           "deprecated" : false,
-          "documentation" : "<p>The ID of PolicyAttachment.</p>",
+          "documentation" : "<p>The ID of <code>PolicyAttachment</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11921,7 +12221,7 @@
         },
         "PolicyType" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of policy that can be associated with PolicyAttachment.</p>",
+          "documentation" : "<p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -12865,7 +13165,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 50,
+      "max" : 32,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -13662,7 +13962,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>ObjectIdentifier of the updated object.</p>",
+          "documentation" : "<p> <code>ObjectIdentifier</code> of the updated object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,

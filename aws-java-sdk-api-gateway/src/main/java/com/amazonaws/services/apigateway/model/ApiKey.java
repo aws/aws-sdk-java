@@ -67,14 +67,13 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
     private Boolean enabled;
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -339,13 +338,11 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -354,12 +351,10 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the API Key was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -368,13 +363,11 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,11 +378,11 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -398,10 +391,10 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
-     * @return When the API Key was last updated, in ISO 8601 format.
+     * @return The timestamp when the API Key was last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -410,11 +403,11 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

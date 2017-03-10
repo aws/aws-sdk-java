@@ -42,7 +42,7 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
     private String directoryArn;
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      */
     private String state;
@@ -135,11 +135,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -149,10 +150,11 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
-     * @return The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * @return The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *         <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -162,11 +164,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryState
      */
@@ -178,11 +181,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -192,11 +196,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryState
      */

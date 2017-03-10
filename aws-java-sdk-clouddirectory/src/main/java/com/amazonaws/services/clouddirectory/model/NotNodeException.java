@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Occurs when any invalid operations are performed on an object which is not a node, such as calling ListObjectChildren
- * for a leaf node object.
+ * Occurs when any invalid operations are performed on an object which is not a node, such as calling
+ * <code>ListObjectChildren</code> for a leaf node object.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
