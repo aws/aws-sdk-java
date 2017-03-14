@@ -699,8 +699,8 @@ public class ClientConfiguration {
      * object, or if not provided, checks the value of the Java system
      * property for proxy user name according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
-     * property https.proxyUsername, otherwise returns value of
-     * http.proxyUsername.
+     * property https.proxyUser, otherwise returns value of
+     * http.proxyUser.
      *
      * @return The optional proxy user name the configured client will use if connecting through a
      *         proxy.
