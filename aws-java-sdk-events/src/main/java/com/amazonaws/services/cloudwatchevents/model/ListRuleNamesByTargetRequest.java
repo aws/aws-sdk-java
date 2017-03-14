@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS API
  *      Documentation</a>
@@ -30,13 +27,13 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     * The Amazon Resource Name (ARN) of the target resource.
      * </p>
      */
     private String targetArn;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -49,11 +46,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     * The Amazon Resource Name (ARN) of the target resource.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     *        The Amazon Resource Name (ARN) of the target resource.
      */
 
     public void setTargetArn(String targetArn) {
@@ -62,10 +59,10 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     * The Amazon Resource Name (ARN) of the target resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     * @return The Amazon Resource Name (ARN) of the target resource.
      */
 
     public String getTargetArn() {
@@ -74,11 +71,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     * The Amazon Resource Name (ARN) of the target resource.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.
+     *        The Amazon Resource Name (ARN) of the target resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +86,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is more data available.
+     *        The token returned by a previous call to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -102,10 +99,10 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is more data available.
+     * @return The token returned by a previous call to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -114,11 +111,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is more data available.
+     *        The token returned by a previous call to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

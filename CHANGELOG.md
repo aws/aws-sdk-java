@@ -1,3 +1,12 @@
+# __1.11.105__ __2017-03-13__
+## __AWS Device Farm__
+  - <h3>Features</h3>
+    - Network shaping allows users to simulate network connections and conditions while testing their Android, iOS, and web apps with AWS Device Farm.
+
+## __Amazon CloudWatch Events__
+  - <h3>Features</h3>
+    - This update extends Target Data Type for configuring Target behavior during invocation.
+
 # __1.11.104__ __2017-03-10__
 ## __Amazon EMR__
   - <h3>Features</h3>

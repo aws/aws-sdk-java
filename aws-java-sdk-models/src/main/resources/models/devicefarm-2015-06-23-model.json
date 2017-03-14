@@ -64,6 +64,55 @@
         "shape" : "CreateDevicePoolResult"
       }
     },
+    "CreateNetworkProfile" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Creates a network profile.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceAccountException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateNetworkProfileRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateNetworkProfile",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateNetworkProfileResult"
+      }
+    },
     "CreateProject" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -258,6 +307,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteDevicePoolResult"
+      }
+    },
+    "DeleteNetworkProfile" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a network profile.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceAccountException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteNetworkProfileRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteNetworkProfile",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteNetworkProfileResult"
       }
     },
     "DeleteProject" : {
@@ -699,6 +797,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetJobResult"
+      }
+    },
+    "GetNetworkProfile" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns information about a network profile.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceAccountException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetNetworkProfileRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetNetworkProfile",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetNetworkProfileResult"
       }
     },
     "GetOfferingStatus" : {
@@ -1293,6 +1440,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "ListJobsResult"
+      }
+    },
+    "ListNetworkProfiles" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns the list of available network profiles.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceAccountException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListNetworkProfilesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListNetworkProfiles",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListNetworkProfilesResult"
       }
     },
     "ListOfferingTransactions" : {
@@ -2109,6 +2305,55 @@
         "shape" : "UpdateDevicePoolResult"
       }
     },
+    "UpdateNetworkProfile" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Updates the network profile with specific settings.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceAccountException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateNetworkProfileRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateNetworkProfile",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateNetworkProfileResult"
+      }
+    },
     "UpdateProject" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2203,6 +2448,32 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "AWSAccountNumber",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "defaultJobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default number of minutes (at the account level) a test run will execute before it times out. Default value is 60 minutes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "maxJobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of minutes a test run will execute before it times out.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -2839,6 +3110,219 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreateNetworkProfileRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description of the network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Message",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name you wish to specify for the new network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Name",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "projectArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of network profile you wish to create. Valid values are listed below.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfileType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "projectArn", "name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateNetworkProfileResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "networkProfile" : {
+          "deprecated" : false,
+          "documentation" : "<p>The network profile that is returned by the create network profile request.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfile",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateProjectRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents a request to the create project operation.</p>",
@@ -2851,6 +3335,19 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "defaultJobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified execution timeout value unless overridden when scheduling a run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "name" : {
           "deprecated" : false,
           "documentation" : "<p>The project's name.</p>",
@@ -3242,6 +3739,62 @@
     "DeleteDevicePoolResult" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the result of a delete device pool request.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteNetworkProfileRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the network profile you want to delete.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "arn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteNetworkProfileResult" : {
+      "deprecated" : false,
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3706,7 +4259,7 @@
         },
         "resolution" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The resolution of the device.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3965,7 +4518,7 @@
         },
         "device" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The device (phone or tablet) that you wish to return information about.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4140,6 +4693,41 @@
       "value" : null,
       "wrapper" : false
     },
+    "ExecutionConfiguration" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents configuration information about a test run, such as the execution timeout (in minutes).</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "jobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of minutes a test run will execute before it times out.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ExecutionResult" : {
       "deprecated" : false,
       "documentation" : null,
@@ -4238,7 +4826,7 @@
       "members" : {
         "accountSettings" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The account settings.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4417,7 +5005,7 @@
       "members" : {
         "devicePool" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An object containing information about the requested device pool.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4487,7 +5075,7 @@
       "members" : {
         "device" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An object containing information about the requested device.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4557,7 +5145,7 @@
       "members" : {
         "job" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An object containing information about the requested job.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4565,6 +5153,76 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Job",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetNetworkProfileRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the network profile you want to return information about.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "arn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetNetworkProfileResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "networkProfile" : {
+          "deprecated" : false,
+          "documentation" : "<p>The network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfile",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4723,7 +5381,7 @@
       "members" : {
         "project" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The project you wish to get information about.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4863,7 +5521,7 @@
       "members" : {
         "run" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The run you wish to get results from.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4933,7 +5591,7 @@
       "members" : {
         "suite" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>A collection of one or more tests.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5003,7 +5661,7 @@
       "members" : {
         "test" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>A test condition that is evaluated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5073,7 +5731,7 @@
       "members" : {
         "upload" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An app or a set of one or more tests to upload or that have been uploaded.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5272,7 +5930,7 @@
       "members" : {
         "appUpload" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An app to upload or that has been uploaded.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5367,7 +6025,7 @@
         },
         "device" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The device (phone or tablet).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5489,6 +6147,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "JobTimeoutMinutes" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
       "value" : null,
       "wrapper" : false
     },
@@ -5950,6 +6629,115 @@
         "nextToken" : {
           "deprecated" : false,
           "documentation" : "<p>If the number of items that are returned is significantly large, this is an identifier that is also returned, which can be used in a subsequent call to this operation to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListNetworkProfilesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of network profile you wish to return information about. Valid values are listed below.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfileType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "arn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListNetworkProfilesResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "networkProfiles" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of the available network profiles.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfiles",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7084,6 +7872,238 @@
       "value" : null,
       "wrapper" : false
     },
+    "NetworkProfile" : {
+      "deprecated" : false,
+      "documentation" : "<p>An array of settings that describes characteristics of a network profile.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description of the network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Message",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the network profile.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Name",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of network profile. Valid values are listed below.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfileType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "NetworkProfileType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "CURATED", "PRIVATE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "NetworkProfiles" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "NetworkProfile",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "NotEligibleException" : {
       "deprecated" : false,
       "documentation" : "<p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>",
@@ -7584,6 +8604,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "PercentInteger" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
     "Problem" : {
       "deprecated" : false,
       "documentation" : "<p>Represents a specific warning or failure.</p>",
@@ -7813,6 +8854,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DateTime",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "defaultJobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default number of minutes (at the project level) a test run will execute before it times out. Default value is 60 minutes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -8229,7 +9283,7 @@
         },
         "device" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The device (phone or tablet) used in the remote access session.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8242,7 +9296,7 @@
         },
         "deviceMinutes" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8749,6 +9803,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "networkProfile" : {
+          "deprecated" : false,
+          "documentation" : "<p>The network profile being used for a test run.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfile",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "platform" : {
           "deprecated" : false,
           "documentation" : "<p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p> </li> </ul>",
@@ -9162,6 +10229,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "executionConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ExecutionConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "name" : {
           "deprecated" : false,
           "documentation" : "<p>The name for the run to be scheduled.</p>",
@@ -9474,7 +10554,7 @@
       "members" : {
         "run" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The run that was stopped.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10234,7 +11314,7 @@
       "members" : {
         "devicePool" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The device pool you just updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10242,6 +11322,219 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DevicePool",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateNetworkProfileRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "arn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The descriptoin of the network profile about which you are returning information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Message",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "downlinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the network profile about which you are returning information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Name",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of network profile you wish to return information about. Valid values are listed below.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfileType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkBandwidthBits" : {
+          "deprecated" : false,
+          "documentation" : "<p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkDelayMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkJitterMs" : {
+          "deprecated" : false,
+          "documentation" : "<p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "uplinkLossPercent" : {
+          "deprecated" : false,
+          "documentation" : "<p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PercentInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "arn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateNetworkProfileResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "networkProfile" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of the available network profiles.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProfile",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -10277,6 +11570,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "AmazonResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "defaultJobTimeoutMinutes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of minutes a test run in the project will execute before it times out.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "JobTimeoutMinutes",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -10317,7 +11623,7 @@
       "members" : {
         "project" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The project you wish to update.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,

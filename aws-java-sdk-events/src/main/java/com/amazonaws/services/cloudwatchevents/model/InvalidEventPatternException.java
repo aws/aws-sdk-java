@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The event pattern is invalid.
+ * The event pattern is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -40,6 +40,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The number of minutes a test run in the project will execute before it times out.
+     * </p>
+     */
+    private Integer defaultJobTimeoutMinutes;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The number of minutes a test run in the project will execute before it times out.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The number of minutes a test run in the project will execute before it times out.
+     */
+
+    public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        this.defaultJobTimeoutMinutes = defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes a test run in the project will execute before it times out.
+     * </p>
+     * 
+     * @return The number of minutes a test run in the project will execute before it times out.
+     */
+
+    public Integer getDefaultJobTimeoutMinutes() {
+        return this.defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes a test run in the project will execute before it times out.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The number of minutes a test run in the project will execute before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        setDefaultJobTimeoutMinutes(defaultJobTimeoutMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -135,7 +181,9 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDefaultJobTimeoutMinutes() != null)
+            sb.append("DefaultJobTimeoutMinutes: ").append(getDefaultJobTimeoutMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +206,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDefaultJobTimeoutMinutes() == null ^ this.getDefaultJobTimeoutMinutes() == null)
+            return false;
+        if (other.getDefaultJobTimeoutMinutes() != null && other.getDefaultJobTimeoutMinutes().equals(this.getDefaultJobTimeoutMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +220,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultJobTimeoutMinutes() == null) ? 0 : getDefaultJobTimeoutMinutes().hashCode());
         return hashCode;
     }
 

@@ -57,6 +57,8 @@ public class RunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("billingMethod").build();
     private static final MarshallingInfo<StructuredPojo> DEVICEMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceMinutes").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkProfile").build();
 
     private static final RunMarshaller instance = new RunMarshaller();
 
@@ -89,6 +91,7 @@ public class RunMarshaller {
             protocolMarshaller.marshall(run.getCompletedJobs(), COMPLETEDJOBS_BINDING);
             protocolMarshaller.marshall(run.getBillingMethod(), BILLINGMETHOD_BINDING);
             protocolMarshaller.marshall(run.getDeviceMinutes(), DEVICEMINUTES_BINDING);
+            protocolMarshaller.marshall(run.getNetworkProfile(), NETWORKPROFILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

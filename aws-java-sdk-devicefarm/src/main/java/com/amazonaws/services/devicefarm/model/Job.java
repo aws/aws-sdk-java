@@ -254,7 +254,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String message;
-
+    /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     */
     private Device device;
     /**
      * <p>
@@ -2408,7 +2412,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet).
      */
 
     public void setDevice(Device device) {
@@ -2416,7 +2425,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
+     * @return The device (phone or tablet).
      */
 
     public Device getDevice() {
@@ -2424,7 +2437,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

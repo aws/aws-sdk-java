@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DevicePoolCompatibilityResult implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     */
     private Device device;
     /**
      * <p>
@@ -43,7 +48,12 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
     private java.util.List<IncompatibilityMessage> incompatibilityMessages;
 
     /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) that you wish to return information about.
      */
 
     public void setDevice(Device device) {
@@ -51,7 +61,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
     }
 
     /**
-     * @return
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
+     * @return The device (phone or tablet) that you wish to return information about.
      */
 
     public Device getDevice() {
@@ -59,7 +73,12 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) that you wish to return information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

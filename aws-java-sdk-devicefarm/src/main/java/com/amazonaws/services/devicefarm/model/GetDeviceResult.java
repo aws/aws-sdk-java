@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An object containing information about the requested device.
+     * </p>
+     */
     private Device device;
 
     /**
+     * <p>
+     * An object containing information about the requested device.
+     * </p>
+     * 
      * @param device
+     *        An object containing information about the requested device.
      */
 
     public void setDevice(Device device) {
@@ -37,7 +47,11 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * @return
+     * <p>
+     * An object containing information about the requested device.
+     * </p>
+     * 
+     * @return An object containing information about the requested device.
      */
 
     public Device getDevice() {
@@ -45,7 +59,12 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * An object containing information about the requested device.
+     * </p>
+     * 
      * @param device
+     *        An object containing information about the requested device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

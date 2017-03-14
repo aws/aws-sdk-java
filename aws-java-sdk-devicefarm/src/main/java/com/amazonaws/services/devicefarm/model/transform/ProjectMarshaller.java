@@ -31,6 +31,8 @@ public class ProjectMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> DEFAULTJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultJobTimeoutMinutes").build();
     private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
 
@@ -52,6 +54,7 @@ public class ProjectMarshaller {
         try {
             protocolMarshaller.marshall(project.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(project.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(project.getDefaultJobTimeoutMinutes(), DEFAULTJOBTIMEOUTMINUTES_BINDING);
             protocolMarshaller.marshall(project.getCreated(), CREATED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

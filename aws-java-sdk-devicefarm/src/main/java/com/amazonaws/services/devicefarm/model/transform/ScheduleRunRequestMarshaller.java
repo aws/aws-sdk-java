@@ -39,6 +39,8 @@ public class ScheduleRunRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("test").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionConfiguration").build();
 
     private static final ScheduleRunRequestMarshaller instance = new ScheduleRunRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class ScheduleRunRequestMarshaller {
             protocolMarshaller.marshall(scheduleRunRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getTest(), TEST_BINDING);
             protocolMarshaller.marshall(scheduleRunRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getExecutionConfiguration(), EXECUTIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

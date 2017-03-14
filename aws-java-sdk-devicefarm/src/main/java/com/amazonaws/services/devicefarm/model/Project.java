@@ -42,6 +42,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     */
+    private Integer defaultJobTimeoutMinutes;
+    /**
+     * <p>
      * When the project was created.
      * </p>
      */
@@ -129,6 +136,52 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The default number of minutes (at the project level) a test run will execute before it times out. Default
+     *        value is 60 minutes.
+     */
+
+    public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        this.defaultJobTimeoutMinutes = defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @return The default number of minutes (at the project level) a test run will execute before it times out. Default
+     *         value is 60 minutes.
+     */
+
+    public Integer getDefaultJobTimeoutMinutes() {
+        return this.defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The default number of minutes (at the project level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The default number of minutes (at the project level) a test run will execute before it times out. Default
+     *        value is 60 minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        setDefaultJobTimeoutMinutes(defaultJobTimeoutMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
      * When the project was created.
      * </p>
      * 
@@ -182,6 +235,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDefaultJobTimeoutMinutes() != null)
+            sb.append("DefaultJobTimeoutMinutes: ").append(getDefaultJobTimeoutMinutes()).append(",");
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated());
         sb.append("}");
@@ -206,6 +261,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDefaultJobTimeoutMinutes() == null ^ this.getDefaultJobTimeoutMinutes() == null)
+            return false;
+        if (other.getDefaultJobTimeoutMinutes() != null && other.getDefaultJobTimeoutMinutes().equals(this.getDefaultJobTimeoutMinutes()) == false)
+            return false;
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
         if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
@@ -220,6 +279,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultJobTimeoutMinutes() == null) ? 0 : getDefaultJobTimeoutMinutes().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         return hashCode;
     }

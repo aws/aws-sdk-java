@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     */
     private DevicePool devicePool;
 
     /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
      * @param devicePool
+     *        The device pool you just updated.
      */
 
     public void setDevicePool(DevicePool devicePool) {
@@ -37,7 +47,11 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
+     * @return The device pool you just updated.
      */
 
     public DevicePool getDevicePool() {
@@ -45,7 +59,12 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
      * @param devicePool
+     *        The device pool you just updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

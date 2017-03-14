@@ -326,6 +326,56 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return Result of the CreateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkProfileRequest> request = null;
+        Response<CreateNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNetworkProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new project.
      * </p>
      * 
@@ -520,6 +570,56 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDevicePoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDevicePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return Result of the DeleteNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkProfileRequest> request = null;
+        Response<DeleteNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -989,6 +1089,56 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return Result of the GetNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetNetworkProfileRequest> request = null;
+        Response<GetNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1612,6 +1762,56 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<ListJobsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @return Result of the ListNetworkProfiles operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest listNetworkProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNetworkProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNetworkProfilesRequest> request = null;
+        Response<ListNetworkProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNetworkProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNetworkProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNetworkProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNetworkProfilesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2464,6 +2664,56 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDevicePoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDevicePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return Result of the UpdateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNetworkProfileRequest> request = null;
+        Response<UpdateNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

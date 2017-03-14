@@ -277,6 +277,38 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request) {
+
+        return createNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(final CreateNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNetworkProfileResult>() {
+            @Override
+            public CreateNetworkProfileResult call() throws Exception {
+                CreateNetworkProfileResult result;
+
+                try {
+                    result = createNetworkProfile(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);
@@ -389,6 +421,38 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = deleteDevicePool(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request) {
+
+        return deleteNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(final DeleteNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNetworkProfileResult>() {
+            @Override
+            public DeleteNetworkProfileResult call() throws Exception {
+                DeleteNetworkProfileResult result;
+
+                try {
+                    result = deleteNetworkProfile(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -677,6 +741,38 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = getJob(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request) {
+
+        return getNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(final GetNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetNetworkProfileResult>() {
+            @Override
+            public GetNetworkProfileResult call() throws Exception {
+                GetNetworkProfileResult result;
+
+                try {
+                    result = getNetworkProfile(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1061,6 +1157,38 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = listJobs(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest request) {
+
+        return listNetworkProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(final ListNetworkProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNetworkProfilesRequest, ListNetworkProfilesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNetworkProfilesResult>() {
+            @Override
+            public ListNetworkProfilesResult call() throws Exception {
+                ListNetworkProfilesResult result;
+
+                try {
+                    result = listNetworkProfiles(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1573,6 +1701,38 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = updateDevicePool(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request) {
+
+        return updateNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(final UpdateNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNetworkProfileResult>() {
+            @Override
+            public UpdateNetworkProfileResult call() throws Exception {
+                UpdateNetworkProfileResult result;
+
+                try {
+                    result = updateNetworkProfile(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>DescribeRule</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
  *      Documentation</a>
@@ -30,18 +27,18 @@ public class DescribeRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the rule you want to describe details for.
+     * The name of the rule.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the rule you want to describe details for.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The name of the rule you want to describe details for.
+     *        The name of the rule.
      */
 
     public void setName(String name) {
@@ -50,10 +47,10 @@ public class DescribeRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the rule you want to describe details for.
+     * The name of the rule.
      * </p>
      * 
-     * @return The name of the rule you want to describe details for.
+     * @return The name of the rule.
      */
 
     public String getName() {
@@ -62,11 +59,11 @@ public class DescribeRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the rule you want to describe details for.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The name of the rule you want to describe details for.
+     *        The name of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

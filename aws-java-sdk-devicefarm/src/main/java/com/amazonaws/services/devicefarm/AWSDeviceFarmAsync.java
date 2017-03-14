@@ -68,6 +68,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new project.
      * </p>
      * 
@@ -199,6 +230,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(DeleteDevicePoolRequest deleteDevicePoolRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -512,6 +574,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -924,6 +1017,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @return A Java Future containing the result of the ListNetworkProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest listNetworkProfilesRequest);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNetworkProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest listNetworkProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNetworkProfilesRequest, ListNetworkProfilesResult> asyncHandler);
 
     /**
      * <p>
@@ -1492,6 +1616,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(UpdateDevicePoolRequest updateDevicePoolRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDevicePoolRequest, UpdateDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler);
 
     /**
      * <p>

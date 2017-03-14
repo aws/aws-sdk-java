@@ -106,7 +106,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CPU cpu;
-
+    /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     */
     private Resolution resolution;
     /**
      * <p>
@@ -834,7 +838,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      */
 
     public void setResolution(Resolution resolution) {
@@ -842,7 +851,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
+     * @return The resolution of the device.
      */
 
     public Resolution getResolution() {
@@ -850,7 +863,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

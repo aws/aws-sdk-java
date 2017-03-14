@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A PutEventsResult contains a list of PutEventsResultEntry.
+ * Represents an event that failed to be submitted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsResultEntry" target="_top">AWS API
@@ -30,30 +30,30 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the event submitted to Amazon CloudWatch Events.
+     * The ID of the event.
      * </p>
      */
     private String eventId;
     /**
      * <p>
-     * The error code representing why the event submission failed on this entry.
+     * The error code that indicates why the event submission failed.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message explaining why the event submission failed on this entry.
+     * The error message that explains why the event submission failed.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The ID of the event submitted to Amazon CloudWatch Events.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event submitted to Amazon CloudWatch Events.
+     *        The ID of the event.
      */
 
     public void setEventId(String eventId) {
@@ -62,10 +62,10 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the event submitted to Amazon CloudWatch Events.
+     * The ID of the event.
      * </p>
      * 
-     * @return The ID of the event submitted to Amazon CloudWatch Events.
+     * @return The ID of the event.
      */
 
     public String getEventId() {
@@ -74,11 +74,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the event submitted to Amazon CloudWatch Events.
+     * The ID of the event.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event submitted to Amazon CloudWatch Events.
+     *        The ID of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this entry.
+     * The error code that indicates why the event submission failed.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the event submission failed on this entry.
+     *        The error code that indicates why the event submission failed.
      */
 
     public void setErrorCode(String errorCode) {
@@ -102,10 +102,10 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this entry.
+     * The error code that indicates why the event submission failed.
      * </p>
      * 
-     * @return The error code representing why the event submission failed on this entry.
+     * @return The error code that indicates why the event submission failed.
      */
 
     public String getErrorCode() {
@@ -114,11 +114,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error code representing why the event submission failed on this entry.
+     * The error code that indicates why the event submission failed.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the event submission failed on this entry.
+     *        The error code that indicates why the event submission failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this entry.
+     * The error message that explains why the event submission failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the event submission failed on this entry.
+     *        The error message that explains why the event submission failed.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -142,10 +142,10 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this entry.
+     * The error message that explains why the event submission failed.
      * </p>
      * 
-     * @return The error message explaining why the event submission failed on this entry.
+     * @return The error message that explains why the event submission failed.
      */
 
     public String getErrorMessage() {
@@ -154,11 +154,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The error message explaining why the event submission failed on this entry.
+     * The error message that explains why the event submission failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the event submission failed on this entry.
+     *        The error message that explains why the event submission failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

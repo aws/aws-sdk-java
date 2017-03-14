@@ -31,6 +31,8 @@ public class UpdateProjectRequestMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> DEFAULTJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultJobTimeoutMinutes").build();
 
     private static final UpdateProjectRequestMarshaller instance = new UpdateProjectRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateProjectRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateProjectRequest.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateProjectRequest.getDefaultJobTimeoutMinutes(), DEFAULTJOBTIMEOUTMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

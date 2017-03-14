@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The account settings.
+     * </p>
+     */
     private AccountSettings accountSettings;
 
     /**
+     * <p>
+     * The account settings.
+     * </p>
+     * 
      * @param accountSettings
+     *        The account settings.
      */
 
     public void setAccountSettings(AccountSettings accountSettings) {
@@ -37,7 +47,11 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The account settings.
+     * </p>
+     * 
+     * @return The account settings.
      */
 
     public AccountSettings getAccountSettings() {
@@ -45,7 +59,12 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The account settings.
+     * </p>
+     * 
      * @param accountSettings
+     *        The account settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

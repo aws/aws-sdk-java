@@ -56,6 +56,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("defaultJobTimeoutMinutes", targetDepth)) {
+                    context.nextToken();
+                    project.setDefaultJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
                     project.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

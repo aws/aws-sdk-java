@@ -41,6 +41,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request) {
+
+        return createNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);
@@ -88,6 +101,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(DeleteDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request) {
+
+        return deleteNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +231,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request) {
+
+        return getNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -361,6 +400,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest request) {
+
+        return listNetworkProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListNetworkProfilesRequest, ListNetworkProfilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -569,6 +621,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(UpdateDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDevicePoolRequest, UpdateDevicePoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request) {
+
+        return updateNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -35,6 +35,10 @@ public class AccountSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unmeteredDevices").build();
     private static final MarshallingInfo<Map> UNMETEREDREMOTEACCESSDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unmeteredRemoteAccessDevices").build();
+    private static final MarshallingInfo<Integer> MAXJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxJobTimeoutMinutes").build();
+    private static final MarshallingInfo<Integer> DEFAULTJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultJobTimeoutMinutes").build();
 
     private static final AccountSettingsMarshaller instance = new AccountSettingsMarshaller();
 
@@ -55,6 +59,8 @@ public class AccountSettingsMarshaller {
             protocolMarshaller.marshall(accountSettings.getAwsAccountNumber(), AWSACCOUNTNUMBER_BINDING);
             protocolMarshaller.marshall(accountSettings.getUnmeteredDevices(), UNMETEREDDEVICES_BINDING);
             protocolMarshaller.marshall(accountSettings.getUnmeteredRemoteAccessDevices(), UNMETEREDREMOTEACCESSDEVICES_BINDING);
+            protocolMarshaller.marshall(accountSettings.getMaxJobTimeoutMinutes(), MAXJOBTIMEOUTMINUTES_BINDING);
+            protocolMarshaller.marshall(accountSettings.getDefaultJobTimeoutMinutes(), DEFAULTJOBTIMEOUTMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -56,6 +56,10 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                     context.nextToken();
                     target.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RoleArn", targetDepth)) {
+                    context.nextToken();
+                    target.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Input", targetDepth)) {
                     context.nextToken();
                     target.setInput(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,22 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                 if (context.testExpression("InputPath", targetDepth)) {
                     context.nextToken();
                     target.setInputPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InputTransformer", targetDepth)) {
+                    context.nextToken();
+                    target.setInputTransformer(InputTransformerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KinesisParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setKinesisParameters(KinesisParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RunCommandParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setRunCommandParameters(RunCommandParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EcsParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setEcsParameters(EcsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -160,7 +160,11 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Date stopped;
-
+    /**
+     * <p>
+     * The device (phone or tablet) used in the remote access session.
+     * </p>
+     */
     private Device device;
     /**
      * <p>
@@ -171,7 +175,11 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String billingMethod;
-
+    /**
+     * <p>
+     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * </p>
+     */
     private DeviceMinutes deviceMinutes;
     /**
      * <p>
@@ -1397,7 +1405,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The device (phone or tablet) used in the remote access session.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) used in the remote access session.
      */
 
     public void setDevice(Device device) {
@@ -1405,7 +1418,11 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The device (phone or tablet) used in the remote access session.
+     * </p>
+     * 
+     * @return The device (phone or tablet) used in the remote access session.
      */
 
     public Device getDevice() {
@@ -1413,7 +1430,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The device (phone or tablet) used in the remote access session.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) used in the remote access session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1526,7 +1548,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * </p>
+     * 
      * @param deviceMinutes
+     *        The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
      */
 
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
@@ -1534,7 +1561,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * </p>
+     * 
+     * @return The number of minutes a device is used in a remote access sesssion (including setup and teardown
+     *         minutes).
      */
 
     public DeviceMinutes getDeviceMinutes() {
@@ -1542,7 +1574,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
+     * </p>
+     * 
      * @param deviceMinutes
+     *        The number of minutes a device is used in a remote access sesssion (including setup and teardown minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -46,6 +46,19 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Map<String, Integer> unmeteredRemoteAccessDevices;
+    /**
+     * <p>
+     * The maximum number of minutes a test run will execute before it times out.
+     * </p>
+     */
+    private Integer maxJobTimeoutMinutes;
+    /**
+     * <p>
+     * The default number of minutes (at the account level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     */
+    private Integer defaultJobTimeoutMinutes;
 
     /**
      * <p>
@@ -210,6 +223,92 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The maximum number of minutes a test run will execute before it times out.
+     * </p>
+     * 
+     * @param maxJobTimeoutMinutes
+     *        The maximum number of minutes a test run will execute before it times out.
+     */
+
+    public void setMaxJobTimeoutMinutes(Integer maxJobTimeoutMinutes) {
+        this.maxJobTimeoutMinutes = maxJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The maximum number of minutes a test run will execute before it times out.
+     * </p>
+     * 
+     * @return The maximum number of minutes a test run will execute before it times out.
+     */
+
+    public Integer getMaxJobTimeoutMinutes() {
+        return this.maxJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The maximum number of minutes a test run will execute before it times out.
+     * </p>
+     * 
+     * @param maxJobTimeoutMinutes
+     *        The maximum number of minutes a test run will execute before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withMaxJobTimeoutMinutes(Integer maxJobTimeoutMinutes) {
+        setMaxJobTimeoutMinutes(maxJobTimeoutMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default number of minutes (at the account level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The default number of minutes (at the account level) a test run will execute before it times out. Default
+     *        value is 60 minutes.
+     */
+
+    public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        this.defaultJobTimeoutMinutes = defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The default number of minutes (at the account level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @return The default number of minutes (at the account level) a test run will execute before it times out. Default
+     *         value is 60 minutes.
+     */
+
+    public Integer getDefaultJobTimeoutMinutes() {
+        return this.defaultJobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The default number of minutes (at the account level) a test run will execute before it times out. Default value
+     * is 60 minutes.
+     * </p>
+     * 
+     * @param defaultJobTimeoutMinutes
+     *        The default number of minutes (at the account level) a test run will execute before it times out. Default
+     *        value is 60 minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
+        setDefaultJobTimeoutMinutes(defaultJobTimeoutMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -225,7 +324,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         if (getUnmeteredDevices() != null)
             sb.append("UnmeteredDevices: ").append(getUnmeteredDevices()).append(",");
         if (getUnmeteredRemoteAccessDevices() != null)
-            sb.append("UnmeteredRemoteAccessDevices: ").append(getUnmeteredRemoteAccessDevices());
+            sb.append("UnmeteredRemoteAccessDevices: ").append(getUnmeteredRemoteAccessDevices()).append(",");
+        if (getMaxJobTimeoutMinutes() != null)
+            sb.append("MaxJobTimeoutMinutes: ").append(getMaxJobTimeoutMinutes()).append(",");
+        if (getDefaultJobTimeoutMinutes() != null)
+            sb.append("DefaultJobTimeoutMinutes: ").append(getDefaultJobTimeoutMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -252,6 +355,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getUnmeteredRemoteAccessDevices() != null && other.getUnmeteredRemoteAccessDevices().equals(this.getUnmeteredRemoteAccessDevices()) == false)
             return false;
+        if (other.getMaxJobTimeoutMinutes() == null ^ this.getMaxJobTimeoutMinutes() == null)
+            return false;
+        if (other.getMaxJobTimeoutMinutes() != null && other.getMaxJobTimeoutMinutes().equals(this.getMaxJobTimeoutMinutes()) == false)
+            return false;
+        if (other.getDefaultJobTimeoutMinutes() == null ^ this.getDefaultJobTimeoutMinutes() == null)
+            return false;
+        if (other.getDefaultJobTimeoutMinutes() != null && other.getDefaultJobTimeoutMinutes().equals(this.getDefaultJobTimeoutMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -263,6 +374,8 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsAccountNumber() == null) ? 0 : getAwsAccountNumber().hashCode());
         hashCode = prime * hashCode + ((getUnmeteredDevices() == null) ? 0 : getUnmeteredDevices().hashCode());
         hashCode = prime * hashCode + ((getUnmeteredRemoteAccessDevices() == null) ? 0 : getUnmeteredRemoteAccessDevices().hashCode());
+        hashCode = prime * hashCode + ((getMaxJobTimeoutMinutes() == null) ? 0 : getMaxJobTimeoutMinutes().hashCode());
+        hashCode = prime * hashCode + ((getDefaultJobTimeoutMinutes() == null) ? 0 : getDefaultJobTimeoutMinutes().hashCode());
         return hashCode;
     }
 

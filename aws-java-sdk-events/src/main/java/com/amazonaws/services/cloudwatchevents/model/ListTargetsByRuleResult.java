@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>ListTargetsByRule</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule" target="_top">AWS API
  *      Documentation</a>
@@ -28,23 +25,23 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Lists the targets assigned to the rule.
+     * The targets assigned to the rule.
      * </p>
      */
     private java.util.List<Target> targets;
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists the targets assigned to the rule.
+     * The targets assigned to the rule.
      * </p>
      * 
-     * @return Lists the targets assigned to the rule.
+     * @return The targets assigned to the rule.
      */
 
     public java.util.List<Target> getTargets() {
@@ -53,11 +50,11 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Lists the targets assigned to the rule.
+     * The targets assigned to the rule.
      * </p>
      * 
      * @param targets
-     *        Lists the targets assigned to the rule.
+     *        The targets assigned to the rule.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -71,7 +68,7 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Lists the targets assigned to the rule.
+     * The targets assigned to the rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +77,7 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param targets
-     *        Lists the targets assigned to the rule.
+     *        The targets assigned to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +93,11 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Lists the targets assigned to the rule.
+     * The targets assigned to the rule.
      * </p>
      * 
      * @param targets
-     *        Lists the targets assigned to the rule.
+     *        The targets assigned to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +108,12 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +122,11 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
-     * @return Indicates that there are additional results to retrieve.
+     * @return Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *         null.
      */
 
     public String getNextToken() {
@@ -136,11 +135,12 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a rule in Amazon CloudWatch Events. A ListRulesResult contains a list of Rules.
+ * Contains information about a rule in Amazon CloudWatch Events.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Rule" target="_top">AWS API Documentation</a>
@@ -29,7 +29,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      */
     private String name;
@@ -47,7 +47,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String eventPattern;
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      */
     private String state;
@@ -65,18 +65,18 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String scheduleExpression;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
+     *        The name of the rule.
      */
 
     public void setName(String name) {
@@ -85,10 +85,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
-     * @return The rule's name.
+     * @return The name of the rule.
      */
 
     public String getName() {
@@ -97,11 +97,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
+     *        The name of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @see RuleState
      */
 
@@ -206,10 +206,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
-     * @return The rule's state.
+     * @return The state of the rule.
      * @see RuleState
      */
 
@@ -219,11 +219,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */
@@ -235,11 +235,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @see RuleState
      */
 
@@ -249,11 +249,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The rule's state.
+     * The state of the rule.
      * </p>
      * 
      * @param state
-     *        The rule's state.
+     *        The state of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */
@@ -345,11 +345,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     *        The Amazon Resource Name (ARN) of the role that is used for target invocation.
      */
 
     public void setRoleArn(String roleArn) {
@@ -358,10 +358,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     * @return The Amazon Resource Name (ARN) of the role that is used for target invocation.
      */
 
     public String getRoleArn() {
@@ -370,11 +370,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     * The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+     *        The Amazon Resource Name (ARN) of the role that is used for target invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
