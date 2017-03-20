@@ -56,7 +56,7 @@ public class CreateStreamResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        return hashCode;
+        return Objects.hashCode(super);
     }
 
     @Override
