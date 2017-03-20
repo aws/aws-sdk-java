@@ -32,18 +32,23 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeConnections" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeInterconnects" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeLocations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeVirtualGateways" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeVirtualInterfaces" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

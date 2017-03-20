@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -300,7 +301,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.BatchDeleteAttributes
      */
     @Override
-    public BatchDeleteAttributesResult batchDeleteAttributes(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
+    public BatchDeleteAttributesResult batchDeleteAttributes(BatchDeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteAttributesResult executeBatchDeleteAttributes(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchDeleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -401,7 +408,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.BatchPutAttributes
      */
     @Override
-    public BatchPutAttributesResult batchPutAttributes(BatchPutAttributesRequest batchPutAttributesRequest) {
+    public BatchPutAttributesResult batchPutAttributes(BatchPutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchPutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final BatchPutAttributesResult executeBatchPutAttributes(BatchPutAttributesRequest batchPutAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchPutAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -457,7 +470,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.CreateDomain
      */
     @Override
-    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+    public CreateDomainResult createDomain(CreateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainResult executeCreateDomain(CreateDomainRequest createDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -515,7 +534,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DeleteAttributes
      */
     @Override
-    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttributesResult executeDeleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +583,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DeleteDomain
      */
     @Override
-    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainResult executeDeleteDomain(DeleteDomainRequest deleteDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -603,7 +634,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DomainMetadata
      */
     @Override
-    public DomainMetadataResult domainMetadata(DomainMetadataRequest domainMetadataRequest) {
+    public DomainMetadataResult domainMetadata(DomainMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDomainMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DomainMetadataResult executeDomainMetadata(DomainMetadataRequest domainMetadataRequest) {
 
         ExecutionContext executionContext = createExecutionContext(domainMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -654,7 +691,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.GetAttributes
      */
     @Override
-    public GetAttributesResult getAttributes(GetAttributesRequest getAttributesRequest) {
+    public GetAttributesResult getAttributes(GetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetAttributesResult executeGetAttributes(GetAttributesRequest getAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -702,7 +745,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.ListDomains
      */
     @Override
-    public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsResult executeListDomains(ListDomainsRequest listDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -796,7 +845,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.PutAttributes
      */
     @Override
-    public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutAttributesResult executePutAttributes(PutAttributesRequest putAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -865,7 +920,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.Select
      */
     @Override
-    public SelectResult select(SelectRequest selectRequest) {
+    public SelectResult select(SelectRequest request) {
+        request = beforeClientExecution(request);
+        return executeSelect(request);
+    }
+
+    @SdkInternalApi
+    final SelectResult executeSelect(SelectRequest selectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(selectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Import job list.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportJobsResponse implements Serializable, Cloneable, StructuredPojo {
 

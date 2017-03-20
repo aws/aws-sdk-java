@@ -32,33 +32,43 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "CreateCluster" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeClusters" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DiscoverPollEndpoint" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListClusters" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListContainerInstances" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListServices" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListTaskDefinitionFamilies" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListTaskDefinitions" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListTasks" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "SubmitContainerStateChange" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

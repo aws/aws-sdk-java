@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -564,7 +565,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public AcceptHandshakeResult acceptHandshake(AcceptHandshakeRequest acceptHandshakeRequest) {
+    public AcceptHandshakeResult acceptHandshake(AcceptHandshakeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptHandshake(request);
+    }
+
+    @SdkInternalApi
+    final AcceptHandshakeResult executeAcceptHandshake(AcceptHandshakeRequest acceptHandshakeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(acceptHandshakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -685,7 +692,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public AttachPolicyResult attachPolicy(AttachPolicyRequest attachPolicyRequest) {
+    public AttachPolicyResult attachPolicy(AttachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachPolicyResult executeAttachPolicy(AttachPolicyRequest attachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -749,7 +762,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public CancelHandshakeResult cancelHandshake(CancelHandshakeRequest cancelHandshakeRequest) {
+    public CancelHandshakeResult cancelHandshake(CancelHandshakeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelHandshake(request);
+    }
+
+    @SdkInternalApi
+    final CancelHandshakeResult executeCancelHandshake(CancelHandshakeRequest cancelHandshakeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelHandshakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -845,7 +864,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public CreateAccountResult createAccount(CreateAccountRequest createAccountRequest) {
+    public CreateAccountResult createAccount(CreateAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccount(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccountResult executeCreateAccount(CreateAccountRequest createAccountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAccountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -919,7 +944,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateOrganizationResult createOrganization(CreateOrganizationRequest createOrganizationRequest) {
+    public CreateOrganizationResult createOrganization(CreateOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOrganization(request);
+    }
+
+    @SdkInternalApi
+    final CreateOrganizationResult executeCreateOrganization(CreateOrganizationRequest createOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -995,7 +1026,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateOrganizationalUnitResult createOrganizationalUnit(CreateOrganizationalUnitRequest createOrganizationalUnitRequest) {
+    public CreateOrganizationalUnitResult createOrganizationalUnit(CreateOrganizationalUnitRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOrganizationalUnit(request);
+    }
+
+    @SdkInternalApi
+    final CreateOrganizationalUnitResult executeCreateOrganizationalUnit(CreateOrganizationalUnitRequest createOrganizationalUnitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createOrganizationalUnitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1075,7 +1112,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest) {
+    public CreatePolicyResult createPolicy(CreatePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreatePolicyResult executeCreatePolicy(CreatePolicyRequest createPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1140,7 +1183,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public DeclineHandshakeResult declineHandshake(DeclineHandshakeRequest declineHandshakeRequest) {
+    public DeclineHandshakeResult declineHandshake(DeclineHandshakeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeclineHandshake(request);
+    }
+
+    @SdkInternalApi
+    final DeclineHandshakeResult executeDeclineHandshake(DeclineHandshakeRequest declineHandshakeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(declineHandshakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1209,7 +1258,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteOrganizationResult deleteOrganization(DeleteOrganizationRequest deleteOrganizationRequest) {
+    public DeleteOrganizationResult deleteOrganization(DeleteOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOrganizationResult executeDeleteOrganization(DeleteOrganizationRequest deleteOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1277,7 +1332,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteOrganizationalUnitResult deleteOrganizationalUnit(DeleteOrganizationalUnitRequest deleteOrganizationalUnitRequest) {
+    public DeleteOrganizationalUnitResult deleteOrganizationalUnit(DeleteOrganizationalUnitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOrganizationalUnit(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOrganizationalUnitResult executeDeleteOrganizationalUnit(DeleteOrganizationalUnitRequest deleteOrganizationalUnitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteOrganizationalUnitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1347,7 +1408,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePolicyResult executeDeletePolicy(DeletePolicyRequest deletePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1410,7 +1477,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public DescribeAccountResult describeAccount(DescribeAccountRequest describeAccountRequest) {
+    public DescribeAccountResult describeAccount(DescribeAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccount(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountResult executeDescribeAccount(DescribeAccountRequest describeAccountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1472,7 +1545,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCreateAccountStatusResult describeCreateAccountStatus(DescribeCreateAccountStatusRequest describeCreateAccountStatusRequest) {
+    public DescribeCreateAccountStatusResult describeCreateAccountStatus(DescribeCreateAccountStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCreateAccountStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCreateAccountStatusResult executeDescribeCreateAccountStatus(DescribeCreateAccountStatusRequest describeCreateAccountStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCreateAccountStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1534,7 +1613,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeHandshakeResult describeHandshake(DescribeHandshakeRequest describeHandshakeRequest) {
+    public DescribeHandshakeResult describeHandshake(DescribeHandshakeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHandshake(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHandshakeResult executeDescribeHandshake(DescribeHandshakeRequest describeHandshakeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeHandshakeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1592,7 +1677,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeOrganizationResult describeOrganization(DescribeOrganizationRequest describeOrganizationRequest) {
+    public DescribeOrganizationResult describeOrganization(DescribeOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationResult executeDescribeOrganization(DescribeOrganizationRequest describeOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1654,7 +1745,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeOrganizationalUnitResult describeOrganizationalUnit(DescribeOrganizationalUnitRequest describeOrganizationalUnitRequest) {
+    public DescribeOrganizationalUnitResult describeOrganizationalUnit(DescribeOrganizationalUnitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationalUnit(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationalUnitResult executeDescribeOrganizationalUnit(DescribeOrganizationalUnitRequest describeOrganizationalUnitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOrganizationalUnitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1718,7 +1815,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public DescribePolicyResult describePolicy(DescribePolicyRequest describePolicyRequest) {
+    public DescribePolicyResult describePolicy(DescribePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DescribePolicyResult executeDescribePolicy(DescribePolicyRequest describePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1805,7 +1908,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest) {
+    public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachPolicyResult executeDetachPolicy(DetachPolicyRequest detachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1878,7 +1987,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisablePolicyTypeResult disablePolicyType(DisablePolicyTypeRequest disablePolicyTypeRequest) {
+    public DisablePolicyTypeResult disablePolicyType(DisablePolicyTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisablePolicyType(request);
+    }
+
+    @SdkInternalApi
+    final DisablePolicyTypeResult executeDisablePolicyType(DisablePolicyTypeRequest disablePolicyTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disablePolicyTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1967,7 +2082,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableFullControlResult enableFullControl(EnableFullControlRequest enableFullControlRequest) {
+    public EnableFullControlResult enableFullControl(EnableFullControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableFullControl(request);
+    }
+
+    @SdkInternalApi
+    final EnableFullControlResult executeEnableFullControl(EnableFullControlRequest enableFullControlRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableFullControlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2042,7 +2163,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public EnablePolicyTypeResult enablePolicyType(EnablePolicyTypeRequest enablePolicyTypeRequest) {
+    public EnablePolicyTypeResult enablePolicyType(EnablePolicyTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnablePolicyType(request);
+    }
+
+    @SdkInternalApi
+    final EnablePolicyTypeResult executeEnablePolicyType(EnablePolicyTypeRequest enablePolicyTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enablePolicyTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2119,7 +2246,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public InviteAccountToOrganizationResult inviteAccountToOrganization(InviteAccountToOrganizationRequest inviteAccountToOrganizationRequest) {
+    public InviteAccountToOrganizationResult inviteAccountToOrganization(InviteAccountToOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeInviteAccountToOrganization(request);
+    }
+
+    @SdkInternalApi
+    final InviteAccountToOrganizationResult executeInviteAccountToOrganization(InviteAccountToOrganizationRequest inviteAccountToOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(inviteAccountToOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2201,7 +2334,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public LeaveOrganizationResult leaveOrganization(LeaveOrganizationRequest leaveOrganizationRequest) {
+    public LeaveOrganizationResult leaveOrganization(LeaveOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeLeaveOrganization(request);
+    }
+
+    @SdkInternalApi
+    final LeaveOrganizationResult executeLeaveOrganization(LeaveOrganizationRequest leaveOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(leaveOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2262,7 +2401,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListAccountsResult listAccounts(ListAccountsRequest listAccountsRequest) {
+    public ListAccountsResult listAccounts(ListAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListAccountsResult executeListAccounts(ListAccountsRequest listAccountsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAccountsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2324,7 +2469,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAccountsForParentResult listAccountsForParent(ListAccountsForParentRequest listAccountsForParentRequest) {
+    public ListAccountsForParentResult listAccountsForParent(ListAccountsForParentRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccountsForParent(request);
+    }
+
+    @SdkInternalApi
+    final ListAccountsForParentResult executeListAccountsForParent(ListAccountsForParentRequest listAccountsForParentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAccountsForParentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2385,7 +2536,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListChildrenResult listChildren(ListChildrenRequest listChildrenRequest) {
+    public ListChildrenResult listChildren(ListChildrenRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChildren(request);
+    }
+
+    @SdkInternalApi
+    final ListChildrenResult executeListChildren(ListChildrenRequest listChildrenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listChildrenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2446,7 +2603,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListCreateAccountStatusResult listCreateAccountStatus(ListCreateAccountStatusRequest listCreateAccountStatusRequest) {
+    public ListCreateAccountStatusResult listCreateAccountStatus(ListCreateAccountStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCreateAccountStatus(request);
+    }
+
+    @SdkInternalApi
+    final ListCreateAccountStatusResult executeListCreateAccountStatus(ListCreateAccountStatusRequest listCreateAccountStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCreateAccountStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2505,7 +2668,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListHandshakesForAccountResult listHandshakesForAccount(ListHandshakesForAccountRequest listHandshakesForAccountRequest) {
+    public ListHandshakesForAccountResult listHandshakesForAccount(ListHandshakesForAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHandshakesForAccount(request);
+    }
+
+    @SdkInternalApi
+    final ListHandshakesForAccountResult executeListHandshakesForAccount(ListHandshakesForAccountRequest listHandshakesForAccountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHandshakesForAccountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2569,7 +2738,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListHandshakesForOrganizationResult listHandshakesForOrganization(ListHandshakesForOrganizationRequest listHandshakesForOrganizationRequest) {
+    public ListHandshakesForOrganizationResult listHandshakesForOrganization(ListHandshakesForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHandshakesForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final ListHandshakesForOrganizationResult executeListHandshakesForOrganization(ListHandshakesForOrganizationRequest listHandshakesForOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHandshakesForOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2633,7 +2808,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListOrganizationalUnitsForParentResult listOrganizationalUnitsForParent(
+    public ListOrganizationalUnitsForParentResult listOrganizationalUnitsForParent(ListOrganizationalUnitsForParentRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOrganizationalUnitsForParent(request);
+    }
+
+    @SdkInternalApi
+    final ListOrganizationalUnitsForParentResult executeListOrganizationalUnitsForParent(
             ListOrganizationalUnitsForParentRequest listOrganizationalUnitsForParentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOrganizationalUnitsForParentRequest);
@@ -2700,7 +2881,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListParentsResult listParents(ListParentsRequest listParentsRequest) {
+    public ListParentsResult listParents(ListParentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListParents(request);
+    }
+
+    @SdkInternalApi
+    final ListParentsResult executeListParents(ListParentsRequest listParentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listParentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2760,7 +2947,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest) {
+    public ListPoliciesResult listPolicies(ListPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListPoliciesResult executeListPolicies(ListPoliciesRequest listPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2823,7 +3016,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPoliciesForTargetResult listPoliciesForTarget(ListPoliciesForTargetRequest listPoliciesForTargetRequest) {
+    public ListPoliciesForTargetResult listPoliciesForTarget(ListPoliciesForTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPoliciesForTarget(request);
+    }
+
+    @SdkInternalApi
+    final ListPoliciesForTargetResult executeListPoliciesForTarget(ListPoliciesForTargetRequest listPoliciesForTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPoliciesForTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2884,7 +3083,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListRootsResult listRoots(ListRootsRequest listRootsRequest) {
+    public ListRootsResult listRoots(ListRootsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRoots(request);
+    }
+
+    @SdkInternalApi
+    final ListRootsResult executeListRoots(ListRootsRequest listRootsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRootsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2946,7 +3151,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest listTargetsForPolicyRequest) {
+    public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTargetsForPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ListTargetsForPolicyResult executeListTargetsForPolicy(ListTargetsForPolicyRequest listTargetsForPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTargetsForPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3015,7 +3226,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public MoveAccountResult moveAccount(MoveAccountRequest moveAccountRequest) {
+    public MoveAccountResult moveAccount(MoveAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeMoveAccount(request);
+    }
+
+    @SdkInternalApi
+    final MoveAccountResult executeMoveAccount(MoveAccountRequest moveAccountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(moveAccountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3099,7 +3316,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveAccountFromOrganizationResult removeAccountFromOrganization(RemoveAccountFromOrganizationRequest removeAccountFromOrganizationRequest) {
+    public RemoveAccountFromOrganizationResult removeAccountFromOrganization(RemoveAccountFromOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveAccountFromOrganization(request);
+    }
+
+    @SdkInternalApi
+    final RemoveAccountFromOrganizationResult executeRemoveAccountFromOrganization(RemoveAccountFromOrganizationRequest removeAccountFromOrganizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeAccountFromOrganizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3168,7 +3391,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateOrganizationalUnitResult updateOrganizationalUnit(UpdateOrganizationalUnitRequest updateOrganizationalUnitRequest) {
+    public UpdateOrganizationalUnitResult updateOrganizationalUnit(UpdateOrganizationalUnitRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOrganizationalUnit(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOrganizationalUnitResult executeUpdateOrganizationalUnit(UpdateOrganizationalUnitRequest updateOrganizationalUnitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateOrganizationalUnitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3241,7 +3470,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public UpdatePolicyResult updatePolicy(UpdatePolicyRequest updatePolicyRequest) {
+    public UpdatePolicyResult updatePolicy(UpdatePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePolicyResult executeUpdatePolicy(UpdatePolicyRequest updatePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

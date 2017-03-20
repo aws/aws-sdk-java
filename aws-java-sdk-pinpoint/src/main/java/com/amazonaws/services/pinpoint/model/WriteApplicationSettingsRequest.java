@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Creating application setting request
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteApplicationSettingsRequest implements Serializable, Cloneable, StructuredPojo {
 

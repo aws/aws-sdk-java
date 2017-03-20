@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -304,7 +305,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.Search
      */
     @Override
-    public SearchResult search(SearchRequest searchRequest) {
+    public SearchResult search(SearchRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearch(request);
+    }
+
+    @SdkInternalApi
+    final SearchResult executeSearch(SearchRequest searchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -362,7 +369,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.Suggest
      */
     @Override
-    public SuggestResult suggest(SuggestRequest suggestRequest) {
+    public SuggestResult suggest(SuggestRequest request) {
+        request = beforeClientExecution(request);
+        return executeSuggest(request);
+    }
+
+    @SdkInternalApi
+    final SuggestResult executeSuggest(SuggestRequest suggestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(suggestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -424,7 +437,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.UploadDocuments
      */
     @Override
-    public UploadDocumentsResult uploadDocuments(UploadDocumentsRequest uploadDocumentsRequest) {
+    public UploadDocumentsResult uploadDocuments(UploadDocumentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadDocuments(request);
+    }
+
+    @SdkInternalApi
+    final UploadDocumentsResult executeUploadDocuments(UploadDocumentsRequest uploadDocumentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

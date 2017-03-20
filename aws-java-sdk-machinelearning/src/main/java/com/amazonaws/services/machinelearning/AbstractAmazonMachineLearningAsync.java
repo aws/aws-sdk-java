@@ -238,6 +238,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
      *
      * @see #describeBatchPredictionsAsync(DescribeBatchPredictionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult> asyncHandler) {
 
@@ -273,6 +274,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
      *
      * @see #describeDataSourcesAsync(DescribeDataSourcesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult> asyncHandler) {
 
@@ -308,6 +310,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
      *
      * @see #describeEvaluationsAsync(DescribeEvaluationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult> asyncHandler) {
 
@@ -343,6 +346,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
      *
      * @see #describeMLModelsAsync(DescribeMLModelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult> asyncHandler) {
 

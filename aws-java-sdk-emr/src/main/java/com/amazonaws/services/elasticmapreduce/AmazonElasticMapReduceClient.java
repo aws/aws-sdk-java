@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -289,7 +290,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddInstanceFleetResult addInstanceFleet(AddInstanceFleetRequest addInstanceFleetRequest) {
+    public AddInstanceFleetResult addInstanceFleet(AddInstanceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddInstanceFleet(request);
+    }
+
+    @SdkInternalApi
+    final AddInstanceFleetResult executeAddInstanceFleet(AddInstanceFleetRequest addInstanceFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addInstanceFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -334,7 +341,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest addInstanceGroupsRequest) {
+    public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddInstanceGroups(request);
+    }
+
+    @SdkInternalApi
+    final AddInstanceGroupsResult executeAddInstanceGroups(AddInstanceGroupsRequest addInstanceGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -401,7 +414,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddJobFlowStepsResult addJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) {
+    public AddJobFlowStepsResult addJobFlowSteps(AddJobFlowStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddJobFlowSteps(request);
+    }
+
+    @SdkInternalApi
+    final AddJobFlowStepsResult executeAddJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addJobFlowStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -451,7 +470,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -501,7 +526,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public CancelStepsResult cancelSteps(CancelStepsRequest cancelStepsRequest) {
+    public CancelStepsResult cancelSteps(CancelStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelSteps(request);
+    }
+
+    @SdkInternalApi
+    final CancelStepsResult executeCancelSteps(CancelStepsRequest cancelStepsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -547,7 +578,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
+    public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateSecurityConfigurationResult executeCreateSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -595,7 +632,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
+    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSecurityConfigurationResult executeDeleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -645,7 +688,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
+    public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCluster(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterResult executeDescribeCluster(DescribeClusterRequest describeClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -718,7 +767,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     @Override
     @Deprecated
-    public DescribeJobFlowsResult describeJobFlows(DescribeJobFlowsRequest describeJobFlowsRequest) {
+    public DescribeJobFlowsResult describeJobFlows(DescribeJobFlowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobFlows(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobFlowsResult executeDescribeJobFlows(DescribeJobFlowsRequest describeJobFlowsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobFlowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -770,7 +825,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
+    public DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSecurityConfigurationResult executeDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSecurityConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -819,7 +880,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public DescribeStepResult describeStep(DescribeStepRequest describeStepRequest) {
+    public DescribeStepResult describeStep(DescribeStepRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStep(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStepResult executeDescribeStep(DescribeStepRequest describeStepRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStepRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -866,7 +933,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListBootstrapActionsResult listBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest) {
+    public ListBootstrapActionsResult listBootstrapActions(ListBootstrapActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBootstrapActions(request);
+    }
+
+    @SdkInternalApi
+    final ListBootstrapActionsResult executeListBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listBootstrapActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -916,7 +989,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusters(request);
+    }
+
+    @SdkInternalApi
+    final ListClustersResult executeListClusters(ListClustersRequest listClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -973,7 +1052,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListInstanceFleetsResult listInstanceFleets(ListInstanceFleetsRequest listInstanceFleetsRequest) {
+    public ListInstanceFleetsResult listInstanceFleets(ListInstanceFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceFleetsResult executeListInstanceFleets(ListInstanceFleetsRequest listInstanceFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInstanceFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1020,7 +1105,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListInstanceGroupsResult listInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest) {
+    public ListInstanceGroupsResult listInstanceGroups(ListInstanceGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceGroupsResult executeListInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1069,7 +1160,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest) {
+    public ListInstancesResult listInstances(ListInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListInstancesResult executeListInstances(ListInstancesRequest listInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1117,7 +1214,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
+    public ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSecurityConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListSecurityConfigurationsResult executeListSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSecurityConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1166,7 +1269,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public ListStepsResult listSteps(ListStepsRequest listStepsRequest) {
+    public ListStepsResult listSteps(ListStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSteps(request);
+    }
+
+    @SdkInternalApi
+    final ListStepsResult executeListSteps(ListStepsRequest listStepsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStepsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1219,7 +1328,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest modifyInstanceFleetRequest) {
+    public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceFleet(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceFleetResult executeModifyInstanceFleet(ModifyInstanceFleetRequest modifyInstanceFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyInstanceFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1266,7 +1381,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyInstanceGroupsResult modifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
+    public ModifyInstanceGroupsResult modifyInstanceGroups(ModifyInstanceGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceGroups(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceGroupsResult executeModifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyInstanceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1315,7 +1436,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest) {
+    public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAutoScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutAutoScalingPolicyResult executePutAutoScalingPolicy(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putAutoScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1357,7 +1484,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest) {
+    public RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveAutoScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final RemoveAutoScalingPolicyResult executeRemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeAutoScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1412,7 +1545,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1487,7 +1626,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest) {
+    public RunJobFlowResult runJobFlow(RunJobFlowRequest request) {
+        request = beforeClientExecution(request);
+        return executeRunJobFlow(request);
+    }
+
+    @SdkInternalApi
+    final RunJobFlowResult executeRunJobFlow(RunJobFlowRequest runJobFlowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(runJobFlowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1550,7 +1695,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+    public SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetTerminationProtection(request);
+    }
+
+    @SdkInternalApi
+    final SetTerminationProtectionResult executeSetTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setTerminationProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1600,7 +1751,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
+    public SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetVisibleToAllUsers(request);
+    }
+
+    @SdkInternalApi
+    final SetVisibleToAllUsersResult executeSetVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setVisibleToAllUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1652,7 +1809,13 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) {
+    public TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateJobFlows(request);
+    }
+
+    @SdkInternalApi
+    final TerminateJobFlowsResult executeTerminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateJobFlowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1745,6 +1908,14 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

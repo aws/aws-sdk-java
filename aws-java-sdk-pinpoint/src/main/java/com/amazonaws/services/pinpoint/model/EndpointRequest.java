@@ -17,10 +17,13 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint update request
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** The address or token of the endpoint. */
+    /** The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId). */
     private String address;
     /**
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
@@ -58,10 +61,11 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
     private EndpointUser user;
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      */
 
     public void setAddress(String address) {
@@ -69,9 +73,10 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
-     * @return The address or token of the endpoint.
+     * @return The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *         RegistrationId).
      */
 
     public String getAddress() {
@@ -79,10 +84,11 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

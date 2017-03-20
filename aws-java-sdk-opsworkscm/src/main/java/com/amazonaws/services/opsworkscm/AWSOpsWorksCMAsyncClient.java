@@ -323,14 +323,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<AssociateNodeResult> associateNodeAsync(final AssociateNodeRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateNodeRequest, AssociateNodeResult> asyncHandler) {
+        final AssociateNodeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssociateNodeResult>() {
             @Override
             public AssociateNodeResult call() throws Exception {
-                AssociateNodeResult result;
+                AssociateNodeResult result = null;
 
                 try {
-                    result = associateNode(request);
+                    result = executeAssociateNode(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -339,7 +340,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -355,14 +356,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<CreateBackupResult> createBackupAsync(final CreateBackupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateBackupRequest, CreateBackupResult> asyncHandler) {
+        final CreateBackupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateBackupResult>() {
             @Override
             public CreateBackupResult call() throws Exception {
-                CreateBackupResult result;
+                CreateBackupResult result = null;
 
                 try {
-                    result = createBackup(request);
+                    result = executeCreateBackup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -371,7 +373,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -387,14 +389,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<CreateServerResult> createServerAsync(final CreateServerRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateServerRequest, CreateServerResult> asyncHandler) {
+        final CreateServerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateServerResult>() {
             @Override
             public CreateServerResult call() throws Exception {
-                CreateServerResult result;
+                CreateServerResult result = null;
 
                 try {
-                    result = createServer(request);
+                    result = executeCreateServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -403,7 +406,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -419,14 +422,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(final DeleteBackupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler) {
+        final DeleteBackupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteBackupResult>() {
             @Override
             public DeleteBackupResult call() throws Exception {
-                DeleteBackupResult result;
+                DeleteBackupResult result = null;
 
                 try {
-                    result = deleteBackup(request);
+                    result = executeDeleteBackup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -435,7 +439,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -451,14 +455,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DeleteServerResult> deleteServerAsync(final DeleteServerRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteServerRequest, DeleteServerResult> asyncHandler) {
+        final DeleteServerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteServerResult>() {
             @Override
             public DeleteServerResult call() throws Exception {
-                DeleteServerResult result;
+                DeleteServerResult result = null;
 
                 try {
-                    result = deleteServer(request);
+                    result = executeDeleteServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -467,7 +472,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -483,14 +488,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(final DescribeAccountAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+        final DescribeAccountAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAccountAttributesResult>() {
             @Override
             public DescribeAccountAttributesResult call() throws Exception {
-                DescribeAccountAttributesResult result;
+                DescribeAccountAttributesResult result = null;
 
                 try {
-                    result = describeAccountAttributes(request);
+                    result = executeDescribeAccountAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -499,7 +505,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -515,14 +521,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DescribeBackupsResult> describeBackupsAsync(final DescribeBackupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeBackupsRequest, DescribeBackupsResult> asyncHandler) {
+        final DescribeBackupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeBackupsResult>() {
             @Override
             public DescribeBackupsResult call() throws Exception {
-                DescribeBackupsResult result;
+                DescribeBackupsResult result = null;
 
                 try {
-                    result = describeBackups(request);
+                    result = executeDescribeBackups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -531,7 +538,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -547,14 +554,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(final DescribeEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
+        final DescribeEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventsResult>() {
             @Override
             public DescribeEventsResult call() throws Exception {
-                DescribeEventsResult result;
+                DescribeEventsResult result = null;
 
                 try {
-                    result = describeEvents(request);
+                    result = executeDescribeEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -563,7 +571,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -580,14 +588,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     public java.util.concurrent.Future<DescribeNodeAssociationStatusResult> describeNodeAssociationStatusAsync(
             final DescribeNodeAssociationStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeNodeAssociationStatusRequest, DescribeNodeAssociationStatusResult> asyncHandler) {
+        final DescribeNodeAssociationStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeNodeAssociationStatusResult>() {
             @Override
             public DescribeNodeAssociationStatusResult call() throws Exception {
-                DescribeNodeAssociationStatusResult result;
+                DescribeNodeAssociationStatusResult result = null;
 
                 try {
-                    result = describeNodeAssociationStatus(request);
+                    result = executeDescribeNodeAssociationStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -596,7 +605,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -612,14 +621,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DescribeServersResult> describeServersAsync(final DescribeServersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeServersRequest, DescribeServersResult> asyncHandler) {
+        final DescribeServersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeServersResult>() {
             @Override
             public DescribeServersResult call() throws Exception {
-                DescribeServersResult result;
+                DescribeServersResult result = null;
 
                 try {
-                    result = describeServers(request);
+                    result = executeDescribeServers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -628,7 +638,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -644,14 +654,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<DisassociateNodeResult> disassociateNodeAsync(final DisassociateNodeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateNodeRequest, DisassociateNodeResult> asyncHandler) {
+        final DisassociateNodeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisassociateNodeResult>() {
             @Override
             public DisassociateNodeResult call() throws Exception {
-                DisassociateNodeResult result;
+                DisassociateNodeResult result = null;
 
                 try {
-                    result = disassociateNode(request);
+                    result = executeDisassociateNode(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -660,7 +671,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -676,14 +687,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<RestoreServerResult> restoreServerAsync(final RestoreServerRequest request,
             final com.amazonaws.handlers.AsyncHandler<RestoreServerRequest, RestoreServerResult> asyncHandler) {
+        final RestoreServerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RestoreServerResult>() {
             @Override
             public RestoreServerResult call() throws Exception {
-                RestoreServerResult result;
+                RestoreServerResult result = null;
 
                 try {
-                    result = restoreServer(request);
+                    result = executeRestoreServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -692,7 +704,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -708,14 +720,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<StartMaintenanceResult> startMaintenanceAsync(final StartMaintenanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartMaintenanceRequest, StartMaintenanceResult> asyncHandler) {
+        final StartMaintenanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartMaintenanceResult>() {
             @Override
             public StartMaintenanceResult call() throws Exception {
-                StartMaintenanceResult result;
+                StartMaintenanceResult result = null;
 
                 try {
-                    result = startMaintenance(request);
+                    result = executeStartMaintenance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -724,7 +737,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -740,14 +753,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateServerResult> updateServerAsync(final UpdateServerRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateServerRequest, UpdateServerResult> asyncHandler) {
+        final UpdateServerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateServerResult>() {
             @Override
             public UpdateServerResult call() throws Exception {
-                UpdateServerResult result;
+                UpdateServerResult result = null;
 
                 try {
-                    result = updateServer(request);
+                    result = executeUpdateServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -756,7 +770,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -772,14 +786,15 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateServerEngineAttributesResult> updateServerEngineAttributesAsync(final UpdateServerEngineAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateServerEngineAttributesRequest, UpdateServerEngineAttributesResult> asyncHandler) {
+        final UpdateServerEngineAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateServerEngineAttributesResult>() {
             @Override
             public UpdateServerEngineAttributesResult call() throws Exception {
-                UpdateServerEngineAttributesResult result;
+                UpdateServerEngineAttributesResult result = null;
 
                 try {
-                    result = updateServerEngineAttributes(request);
+                    result = executeUpdateServerEngineAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -788,7 +803,7 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

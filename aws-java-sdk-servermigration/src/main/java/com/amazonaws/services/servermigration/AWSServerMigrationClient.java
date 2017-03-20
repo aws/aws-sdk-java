@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -312,7 +313,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
+    public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplicationJobResult executeCreateReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -366,7 +373,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
+    public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationJobResult executeDeleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -417,7 +430,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
+    public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServerCatalog(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServerCatalogResult executeDeleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -468,7 +487,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
+    public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConnector(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConnectorResult executeDisassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateConnectorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -511,7 +536,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetConnectorsResult getConnectors(GetConnectorsRequest getConnectorsRequest) {
+    public GetConnectorsResult getConnectors(GetConnectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectors(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectorsResult executeGetConnectors(GetConnectorsRequest getConnectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getConnectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -559,7 +590,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
+    public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReplicationJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetReplicationJobsResult executeGetReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReplicationJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -608,7 +645,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
+    public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReplicationRuns(request);
+    }
+
+    @SdkInternalApi
+    final GetReplicationRunsResult executeGetReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReplicationRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -651,7 +694,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetServersResult getServers(GetServersRequest getServersRequest) {
+    public GetServersResult getServers(GetServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServers(request);
+    }
+
+    @SdkInternalApi
+    final GetServersResult executeGetServers(GetServersRequest getServersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getServersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -706,7 +755,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
+    public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportServerCatalog(request);
+    }
+
+    @SdkInternalApi
+    final ImportServerCatalogResult executeImportServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -760,7 +815,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
+    public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartOnDemandReplicationRun(request);
+    }
+
+    @SdkInternalApi
+    final StartOnDemandReplicationRunResult executeStartOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startOnDemandReplicationRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -819,7 +880,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {
+    public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateReplicationJobResult executeUpdateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

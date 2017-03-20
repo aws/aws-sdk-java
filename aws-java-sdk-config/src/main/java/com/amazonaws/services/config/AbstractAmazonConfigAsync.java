@@ -122,6 +122,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #describeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult> asyncHandler) {
 
@@ -157,6 +158,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      *
      * @see #describeComplianceByResourceAsync(DescribeComplianceByResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult> asyncHandler) {
 
@@ -195,6 +197,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #describeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult> asyncHandler) {
 
@@ -230,6 +233,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      *
      * @see #describeConfigRulesAsync(DescribeConfigRulesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult> asyncHandler) {
 
@@ -268,6 +272,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #describeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult> asyncHandler) {
 
@@ -304,6 +309,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #describeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult> asyncHandler) {
 
@@ -340,6 +346,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #describeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult> asyncHandler) {
 
@@ -375,6 +382,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      *
      * @see #describeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler) {
 
@@ -441,6 +449,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #getComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult> asyncHandler) {
 
@@ -479,6 +488,7 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
      * @see #getComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult> asyncHandler) {
 

@@ -257,14 +257,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
             final CreateCloudFrontOriginAccessIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult> asyncHandler) {
+        final CreateCloudFrontOriginAccessIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateCloudFrontOriginAccessIdentityResult>() {
             @Override
             public CreateCloudFrontOriginAccessIdentityResult call() throws Exception {
-                CreateCloudFrontOriginAccessIdentityResult result;
+                CreateCloudFrontOriginAccessIdentityResult result = null;
 
                 try {
-                    result = createCloudFrontOriginAccessIdentity(request);
+                    result = executeCreateCloudFrontOriginAccessIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -273,7 +274,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -289,14 +290,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(final CreateDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler) {
+        final CreateDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDistributionResult>() {
             @Override
             public CreateDistributionResult call() throws Exception {
-                CreateDistributionResult result;
+                CreateDistributionResult result = null;
 
                 try {
-                    result = createDistribution(request);
+                    result = executeCreateDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -305,7 +307,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -321,14 +323,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(final CreateDistributionWithTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDistributionWithTagsRequest, CreateDistributionWithTagsResult> asyncHandler) {
+        final CreateDistributionWithTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDistributionWithTagsResult>() {
             @Override
             public CreateDistributionWithTagsResult call() throws Exception {
-                CreateDistributionWithTagsResult result;
+                CreateDistributionWithTagsResult result = null;
 
                 try {
-                    result = createDistributionWithTags(request);
+                    result = executeCreateDistributionWithTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -337,7 +340,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -353,14 +356,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(final CreateInvalidationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler) {
+        final CreateInvalidationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateInvalidationResult>() {
             @Override
             public CreateInvalidationResult call() throws Exception {
-                CreateInvalidationResult result;
+                CreateInvalidationResult result = null;
 
                 try {
-                    result = createInvalidation(request);
+                    result = executeCreateInvalidation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,7 +373,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -385,14 +389,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(final CreateStreamingDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult> asyncHandler) {
+        final CreateStreamingDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStreamingDistributionResult>() {
             @Override
             public CreateStreamingDistributionResult call() throws Exception {
-                CreateStreamingDistributionResult result;
+                CreateStreamingDistributionResult result = null;
 
                 try {
-                    result = createStreamingDistribution(request);
+                    result = executeCreateStreamingDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -401,7 +406,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -419,14 +424,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
             final CreateStreamingDistributionWithTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler) {
+        final CreateStreamingDistributionWithTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStreamingDistributionWithTagsResult>() {
             @Override
             public CreateStreamingDistributionWithTagsResult call() throws Exception {
-                CreateStreamingDistributionWithTagsResult result;
+                CreateStreamingDistributionWithTagsResult result = null;
 
                 try {
-                    result = createStreamingDistributionWithTags(request);
+                    result = executeCreateStreamingDistributionWithTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -435,7 +441,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -453,14 +459,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             final DeleteCloudFrontOriginAccessIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult> asyncHandler) {
+        final DeleteCloudFrontOriginAccessIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteCloudFrontOriginAccessIdentityResult>() {
             @Override
             public DeleteCloudFrontOriginAccessIdentityResult call() throws Exception {
-                DeleteCloudFrontOriginAccessIdentityResult result;
+                DeleteCloudFrontOriginAccessIdentityResult result = null;
 
                 try {
-                    result = deleteCloudFrontOriginAccessIdentity(request);
+                    result = executeDeleteCloudFrontOriginAccessIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -469,7 +476,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -485,14 +492,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(final DeleteDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler) {
+        final DeleteDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDistributionResult>() {
             @Override
             public DeleteDistributionResult call() throws Exception {
-                DeleteDistributionResult result;
+                DeleteDistributionResult result = null;
 
                 try {
-                    result = deleteDistribution(request);
+                    result = executeDeleteDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -501,7 +509,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -517,14 +525,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(final DeleteStreamingDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler) {
+        final DeleteStreamingDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteStreamingDistributionResult>() {
             @Override
             public DeleteStreamingDistributionResult call() throws Exception {
-                DeleteStreamingDistributionResult result;
+                DeleteStreamingDistributionResult result = null;
 
                 try {
-                    result = deleteStreamingDistribution(request);
+                    result = executeDeleteStreamingDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -533,7 +542,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -551,14 +560,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
             final GetCloudFrontOriginAccessIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult> asyncHandler) {
+        final GetCloudFrontOriginAccessIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityResult>() {
             @Override
             public GetCloudFrontOriginAccessIdentityResult call() throws Exception {
-                GetCloudFrontOriginAccessIdentityResult result;
+                GetCloudFrontOriginAccessIdentityResult result = null;
 
                 try {
-                    result = getCloudFrontOriginAccessIdentity(request);
+                    result = executeGetCloudFrontOriginAccessIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -567,7 +577,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -585,14 +595,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
             final GetCloudFrontOriginAccessIdentityConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult> asyncHandler) {
+        final GetCloudFrontOriginAccessIdentityConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityConfigResult>() {
             @Override
             public GetCloudFrontOriginAccessIdentityConfigResult call() throws Exception {
-                GetCloudFrontOriginAccessIdentityConfigResult result;
+                GetCloudFrontOriginAccessIdentityConfigResult result = null;
 
                 try {
-                    result = getCloudFrontOriginAccessIdentityConfig(request);
+                    result = executeGetCloudFrontOriginAccessIdentityConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -601,7 +612,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -617,14 +628,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(final GetDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult> asyncHandler) {
+        final GetDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDistributionResult>() {
             @Override
             public GetDistributionResult call() throws Exception {
-                GetDistributionResult result;
+                GetDistributionResult result = null;
 
                 try {
-                    result = getDistribution(request);
+                    result = executeGetDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -633,7 +645,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -649,14 +661,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(final GetDistributionConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult> asyncHandler) {
+        final GetDistributionConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDistributionConfigResult>() {
             @Override
             public GetDistributionConfigResult call() throws Exception {
-                GetDistributionConfigResult result;
+                GetDistributionConfigResult result = null;
 
                 try {
-                    result = getDistributionConfig(request);
+                    result = executeGetDistributionConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -665,7 +678,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -681,14 +694,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(final GetInvalidationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler) {
+        final GetInvalidationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInvalidationResult>() {
             @Override
             public GetInvalidationResult call() throws Exception {
-                GetInvalidationResult result;
+                GetInvalidationResult result = null;
 
                 try {
-                    result = getInvalidation(request);
+                    result = executeGetInvalidation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -697,7 +711,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -713,14 +727,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(final GetStreamingDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult> asyncHandler) {
+        final GetStreamingDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStreamingDistributionResult>() {
             @Override
             public GetStreamingDistributionResult call() throws Exception {
-                GetStreamingDistributionResult result;
+                GetStreamingDistributionResult result = null;
 
                 try {
-                    result = getStreamingDistribution(request);
+                    result = executeGetStreamingDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -729,7 +744,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -746,14 +761,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
             final GetStreamingDistributionConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult> asyncHandler) {
+        final GetStreamingDistributionConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStreamingDistributionConfigResult>() {
             @Override
             public GetStreamingDistributionConfigResult call() throws Exception {
-                GetStreamingDistributionConfigResult result;
+                GetStreamingDistributionConfigResult result = null;
 
                 try {
-                    result = getStreamingDistributionConfig(request);
+                    result = executeGetStreamingDistributionConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -762,7 +778,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -780,14 +796,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             final ListCloudFrontOriginAccessIdentitiesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult> asyncHandler) {
+        final ListCloudFrontOriginAccessIdentitiesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListCloudFrontOriginAccessIdentitiesResult>() {
             @Override
             public ListCloudFrontOriginAccessIdentitiesResult call() throws Exception {
-                ListCloudFrontOriginAccessIdentitiesResult result;
+                ListCloudFrontOriginAccessIdentitiesResult result = null;
 
                 try {
-                    result = listCloudFrontOriginAccessIdentities(request);
+                    result = executeListCloudFrontOriginAccessIdentities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -796,7 +813,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -812,14 +829,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(final ListDistributionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler) {
+        final ListDistributionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDistributionsResult>() {
             @Override
             public ListDistributionsResult call() throws Exception {
-                ListDistributionsResult result;
+                ListDistributionsResult result = null;
 
                 try {
-                    result = listDistributions(request);
+                    result = executeListDistributions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -828,7 +846,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -844,14 +862,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(final ListDistributionsByWebACLIdRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult> asyncHandler) {
+        final ListDistributionsByWebACLIdRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDistributionsByWebACLIdResult>() {
             @Override
             public ListDistributionsByWebACLIdResult call() throws Exception {
-                ListDistributionsByWebACLIdResult result;
+                ListDistributionsByWebACLIdResult result = null;
 
                 try {
-                    result = listDistributionsByWebACLId(request);
+                    result = executeListDistributionsByWebACLId(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -860,7 +879,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -876,14 +895,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(final ListInvalidationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler) {
+        final ListInvalidationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInvalidationsResult>() {
             @Override
             public ListInvalidationsResult call() throws Exception {
-                ListInvalidationsResult result;
+                ListInvalidationsResult result = null;
 
                 try {
-                    result = listInvalidations(request);
+                    result = executeListInvalidations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -892,7 +912,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -908,14 +928,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(final ListStreamingDistributionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult> asyncHandler) {
+        final ListStreamingDistributionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListStreamingDistributionsResult>() {
             @Override
             public ListStreamingDistributionsResult call() throws Exception {
-                ListStreamingDistributionsResult result;
+                ListStreamingDistributionsResult result = null;
 
                 try {
-                    result = listStreamingDistributions(request);
+                    result = executeListStreamingDistributions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -924,7 +945,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -940,14 +961,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -956,7 +978,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -972,14 +994,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
             @Override
             public TagResourceResult call() throws Exception {
-                TagResourceResult result;
+                TagResourceResult result = null;
 
                 try {
-                    result = tagResource(request);
+                    result = executeTagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -988,7 +1011,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1004,14 +1027,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
             @Override
             public UntagResourceResult call() throws Exception {
-                UntagResourceResult result;
+                UntagResourceResult result = null;
 
                 try {
-                    result = untagResource(request);
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1020,7 +1044,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1038,14 +1062,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     public java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
             final UpdateCloudFrontOriginAccessIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult> asyncHandler) {
+        final UpdateCloudFrontOriginAccessIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateCloudFrontOriginAccessIdentityResult>() {
             @Override
             public UpdateCloudFrontOriginAccessIdentityResult call() throws Exception {
-                UpdateCloudFrontOriginAccessIdentityResult result;
+                UpdateCloudFrontOriginAccessIdentityResult result = null;
 
                 try {
-                    result = updateCloudFrontOriginAccessIdentity(request);
+                    result = executeUpdateCloudFrontOriginAccessIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1054,7 +1079,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1070,14 +1095,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(final UpdateDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler) {
+        final UpdateDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDistributionResult>() {
             @Override
             public UpdateDistributionResult call() throws Exception {
-                UpdateDistributionResult result;
+                UpdateDistributionResult result = null;
 
                 try {
-                    result = updateDistribution(request);
+                    result = executeUpdateDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1086,7 +1112,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1102,14 +1128,15 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     @Override
     public java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(final UpdateStreamingDistributionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateStreamingDistributionRequest, UpdateStreamingDistributionResult> asyncHandler) {
+        final UpdateStreamingDistributionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateStreamingDistributionResult>() {
             @Override
             public UpdateStreamingDistributionResult call() throws Exception {
-                UpdateStreamingDistributionResult result;
+                UpdateStreamingDistributionResult result = null;
 
                 try {
-                    result = updateStreamingDistribution(request);
+                    result = executeUpdateStreamingDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1118,7 +1145,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

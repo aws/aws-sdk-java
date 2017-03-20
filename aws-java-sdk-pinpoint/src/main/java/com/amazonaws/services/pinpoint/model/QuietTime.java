@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Quiet Time
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QuietTime implements Serializable, Cloneable, StructuredPojo {
 

@@ -17,10 +17,13 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint response
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The address or token of the endpoint. */
+    /** The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId). */
     private String address;
     /** The ID of the application associated with the endpoint. */
     private String applicationId;
@@ -69,16 +72,17 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     private String optOut;
     /** The unique ID for the most recent request to update the endpoint. */
     private String requestId;
-    /** The ShardId of endpoint */
-    private String shardId;
     /** Custom user-specific attributes that your app reports to Amazon Pinpoint. */
     private EndpointUser user;
+    /** The ShardId of endpoint */
+    private String shardId;
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      */
 
     public void setAddress(String address) {
@@ -86,9 +90,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
-     * @return The address or token of the endpoint.
+     * @return The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *         RegistrationId).
      */
 
     public String getAddress() {
@@ -96,10 +101,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,40 +690,6 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ShardId of endpoint
-     * 
-     * @param shardId
-     *        The ShardId of endpoint
-     */
-
-    public void setShardId(String shardId) {
-        this.shardId = shardId;
-    }
-
-    /**
-     * The ShardId of endpoint
-     * 
-     * @return The ShardId of endpoint
-     */
-
-    public String getShardId() {
-        return this.shardId;
-    }
-
-    /**
-     * The ShardId of endpoint
-     * 
-     * @param shardId
-     *        The ShardId of endpoint
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EndpointResponse withShardId(String shardId) {
-        setShardId(shardId);
-        return this;
-    }
-
-    /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      * 
      * @param user
@@ -748,6 +720,40 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     public EndpointResponse withUser(EndpointUser user) {
         setUser(user);
+        return this;
+    }
+
+    /**
+     * The ShardId of endpoint
+     * 
+     * @param shardId
+     *        The ShardId of endpoint
+     */
+
+    public void setShardId(String shardId) {
+        this.shardId = shardId;
+    }
+
+    /**
+     * The ShardId of endpoint
+     * 
+     * @return The ShardId of endpoint
+     */
+
+    public String getShardId() {
+        return this.shardId;
+    }
+
+    /**
+     * The ShardId of endpoint
+     * 
+     * @param shardId
+     *        The ShardId of endpoint
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointResponse withShardId(String shardId) {
+        setShardId(shardId);
         return this;
     }
 
@@ -790,10 +796,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("OptOut: ").append(getOptOut()).append(",");
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
-        if (getShardId() != null)
-            sb.append("ShardId: ").append(getShardId()).append(",");
         if (getUser() != null)
-            sb.append("User: ").append(getUser());
+            sb.append("User: ").append(getUser()).append(",");
+        if (getShardId() != null)
+            sb.append("ShardId: ").append(getShardId());
         sb.append("}");
         return sb.toString();
     }
@@ -864,13 +870,13 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
-        if (other.getShardId() == null ^ this.getShardId() == null)
-            return false;
-        if (other.getShardId() != null && other.getShardId().equals(this.getShardId()) == false)
-            return false;
         if (other.getUser() == null ^ this.getUser() == null)
             return false;
         if (other.getUser() != null && other.getUser().equals(this.getUser()) == false)
+            return false;
+        if (other.getShardId() == null ^ this.getShardId() == null)
+            return false;
+        if (other.getShardId() != null && other.getShardId().equals(this.getShardId()) == false)
             return false;
         return true;
     }
@@ -894,8 +900,8 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getOptOut() == null) ? 0 : getOptOut().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
-        hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
+        hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
         return hashCode;
     }
 

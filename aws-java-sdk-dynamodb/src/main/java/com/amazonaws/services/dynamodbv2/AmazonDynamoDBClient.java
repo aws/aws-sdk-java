@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -380,7 +381,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) {
+    public BatchGetItemResult batchGetItem(BatchGetItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetItemResult executeBatchGetItem(BatchGetItemRequest batchGetItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -539,7 +546,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
+    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchWriteItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchWriteItemResult executeBatchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchWriteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -617,7 +630,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateTableResult createTable(CreateTableRequest createTableRequest) {
+    public CreateTableResult createTable(CreateTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTable(request);
+    }
+
+    @SdkInternalApi
+    final CreateTableResult executeCreateTable(CreateTableRequest createTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -696,7 +715,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
+    public DeleteItemResult deleteItem(DeleteItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteItem(request);
+    }
+
+    @SdkInternalApi
+    final DeleteItemResult executeDeleteItem(DeleteItemRequest deleteItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -787,7 +812,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
+    public DeleteTableResult deleteTable(DeleteTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTable(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTableResult executeDeleteTable(DeleteTableRequest deleteTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -925,7 +956,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLimitsResult executeDescribeLimits(DescribeLimitsRequest describeLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -982,7 +1019,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) {
+    public DescribeTableResult describeTable(DescribeTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTable(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTableResult executeDescribeTable(DescribeTableRequest describeTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1034,7 +1077,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest describeTimeToLiveRequest) {
+    public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTimeToLive(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTimeToLiveResult executeDescribeTimeToLive(DescribeTimeToLiveRequest describeTimeToLiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTimeToLiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1095,7 +1144,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetItemResult getItem(GetItemRequest getItemRequest) {
+    public GetItemResult getItem(GetItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetItem(request);
+    }
+
+    @SdkInternalApi
+    final GetItemResult executeGetItem(GetItemRequest getItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1151,7 +1206,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
+    public ListTablesResult listTables(ListTablesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTables(request);
+    }
+
+    @SdkInternalApi
+    final ListTablesResult executeListTables(ListTablesRequest listTablesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTablesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1224,7 +1285,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest) {
+    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsOfResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsOfResourceResult executeListTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsOfResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1308,7 +1375,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public PutItemResult putItem(PutItemRequest putItemRequest) {
+    public PutItemResult putItem(PutItemRequest request) {
+        request = beforeClientExecution(request);
+        return executePutItem(request);
+    }
+
+    @SdkInternalApi
+    final PutItemResult executePutItem(PutItemRequest putItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1398,7 +1471,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public QueryResult query(QueryRequest queryRequest) {
+    public QueryResult query(QueryRequest request) {
+        request = beforeClientExecution(request);
+        return executeQuery(request);
+    }
+
+    @SdkInternalApi
+    final QueryResult executeQuery(QueryRequest queryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(queryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1473,7 +1552,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ScanResult scan(ScanRequest scanRequest) {
+    public ScanResult scan(ScanRequest request) {
+        request = beforeClientExecution(request);
+        return executeScan(request);
+    }
+
+    @SdkInternalApi
+    final ScanResult executeScan(ScanRequest scanRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1554,7 +1639,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1619,7 +1710,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1685,7 +1782,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
+    public UpdateItemResult updateItem(UpdateItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateItem(request);
+    }
+
+    @SdkInternalApi
+    final UpdateItemResult executeUpdateItem(UpdateItemRequest updateItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1789,7 +1892,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {
+    public UpdateTableResult updateTable(UpdateTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTable(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTableResult executeUpdateTable(UpdateTableRequest updateTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1886,7 +1995,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest updateTimeToLiveRequest) {
+    public UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTimeToLive(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTimeToLiveResult executeUpdateTimeToLive(UpdateTimeToLiveRequest updateTimeToLiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTimeToLiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1984,6 +2099,14 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

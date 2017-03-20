@@ -271,14 +271,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(final CancelUpdateStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, CancelUpdateStackResult> asyncHandler) {
+        final CancelUpdateStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelUpdateStackResult>() {
             @Override
             public CancelUpdateStackResult call() throws Exception {
-                CancelUpdateStackResult result;
+                CancelUpdateStackResult result = null;
 
                 try {
-                    result = cancelUpdateStack(request);
+                    result = executeCancelUpdateStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -287,7 +288,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -303,14 +304,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(final ContinueUpdateRollbackRequest request,
             final com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult> asyncHandler) {
+        final ContinueUpdateRollbackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ContinueUpdateRollbackResult>() {
             @Override
             public ContinueUpdateRollbackResult call() throws Exception {
-                ContinueUpdateRollbackResult result;
+                ContinueUpdateRollbackResult result = null;
 
                 try {
-                    result = continueUpdateRollback(request);
+                    result = executeContinueUpdateRollback(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -319,7 +321,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -335,14 +337,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(final CreateChangeSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult> asyncHandler) {
+        final CreateChangeSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateChangeSetResult>() {
             @Override
             public CreateChangeSetResult call() throws Exception {
-                CreateChangeSetResult result;
+                CreateChangeSetResult result = null;
 
                 try {
-                    result = createChangeSet(request);
+                    result = executeCreateChangeSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -351,7 +354,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -367,14 +370,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(final CreateStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler) {
+        final CreateStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStackResult>() {
             @Override
             public CreateStackResult call() throws Exception {
-                CreateStackResult result;
+                CreateStackResult result = null;
 
                 try {
-                    result = createStack(request);
+                    result = executeCreateStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -383,7 +387,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -399,14 +403,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(final DeleteChangeSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult> asyncHandler) {
+        final DeleteChangeSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteChangeSetResult>() {
             @Override
             public DeleteChangeSetResult call() throws Exception {
-                DeleteChangeSetResult result;
+                DeleteChangeSetResult result = null;
 
                 try {
-                    result = deleteChangeSet(request);
+                    result = executeDeleteChangeSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -415,7 +420,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -431,14 +436,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(final DeleteStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
+        final DeleteStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteStackResult>() {
             @Override
             public DeleteStackResult call() throws Exception {
-                DeleteStackResult result;
+                DeleteStackResult result = null;
 
                 try {
-                    result = deleteStack(request);
+                    result = executeDeleteStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -447,7 +453,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -463,14 +469,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(final DescribeAccountLimitsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+        final DescribeAccountLimitsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAccountLimitsResult>() {
             @Override
             public DescribeAccountLimitsResult call() throws Exception {
-                DescribeAccountLimitsResult result;
+                DescribeAccountLimitsResult result = null;
 
                 try {
-                    result = describeAccountLimits(request);
+                    result = executeDescribeAccountLimits(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -479,7 +486,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -495,14 +502,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(final DescribeChangeSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler) {
+        final DescribeChangeSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeChangeSetResult>() {
             @Override
             public DescribeChangeSetResult call() throws Exception {
-                DescribeChangeSetResult result;
+                DescribeChangeSetResult result = null;
 
                 try {
-                    result = describeChangeSet(request);
+                    result = executeDescribeChangeSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -511,7 +519,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -527,14 +535,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(final DescribeStackEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult> asyncHandler) {
+        final DescribeStackEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStackEventsResult>() {
             @Override
             public DescribeStackEventsResult call() throws Exception {
-                DescribeStackEventsResult result;
+                DescribeStackEventsResult result = null;
 
                 try {
-                    result = describeStackEvents(request);
+                    result = executeDescribeStackEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -543,7 +552,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -559,14 +568,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeStackResourceResult> describeStackResourceAsync(final DescribeStackResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult> asyncHandler) {
+        final DescribeStackResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStackResourceResult>() {
             @Override
             public DescribeStackResourceResult call() throws Exception {
-                DescribeStackResourceResult result;
+                DescribeStackResourceResult result = null;
 
                 try {
-                    result = describeStackResource(request);
+                    result = executeDescribeStackResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -575,7 +585,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -591,14 +601,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeStackResourcesResult> describeStackResourcesAsync(final DescribeStackResourcesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult> asyncHandler) {
+        final DescribeStackResourcesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStackResourcesResult>() {
             @Override
             public DescribeStackResourcesResult call() throws Exception {
-                DescribeStackResourcesResult result;
+                DescribeStackResourcesResult result = null;
 
                 try {
-                    result = describeStackResources(request);
+                    result = executeDescribeStackResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -607,7 +618,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -623,14 +634,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(final DescribeStacksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
+        final DescribeStacksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStacksResult>() {
             @Override
             public DescribeStacksResult call() throws Exception {
-                DescribeStacksResult result;
+                DescribeStacksResult result = null;
 
                 try {
-                    result = describeStacks(request);
+                    result = executeDescribeStacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -639,7 +651,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -662,6 +674,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
      *
      * @see #describeStacksAsync(DescribeStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
@@ -677,14 +690,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(final EstimateTemplateCostRequest request,
             final com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler) {
+        final EstimateTemplateCostRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EstimateTemplateCostResult>() {
             @Override
             public EstimateTemplateCostResult call() throws Exception {
-                EstimateTemplateCostResult result;
+                EstimateTemplateCostResult result = null;
 
                 try {
-                    result = estimateTemplateCost(request);
+                    result = executeEstimateTemplateCost(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -693,7 +707,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -716,6 +730,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
      *
      * @see #estimateTemplateCostAsync(EstimateTemplateCostRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler) {
 
@@ -731,14 +746,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(final ExecuteChangeSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult> asyncHandler) {
+        final ExecuteChangeSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ExecuteChangeSetResult>() {
             @Override
             public ExecuteChangeSetResult call() throws Exception {
-                ExecuteChangeSetResult result;
+                ExecuteChangeSetResult result = null;
 
                 try {
-                    result = executeChangeSet(request);
+                    result = executeExecuteChangeSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -747,7 +763,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -763,14 +779,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<GetStackPolicyResult> getStackPolicyAsync(final GetStackPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStackPolicyRequest, GetStackPolicyResult> asyncHandler) {
+        final GetStackPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStackPolicyResult>() {
             @Override
             public GetStackPolicyResult call() throws Exception {
-                GetStackPolicyResult result;
+                GetStackPolicyResult result = null;
 
                 try {
-                    result = getStackPolicy(request);
+                    result = executeGetStackPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -779,7 +796,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -795,14 +812,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<GetTemplateResult> getTemplateAsync(final GetTemplateRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTemplateRequest, GetTemplateResult> asyncHandler) {
+        final GetTemplateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTemplateResult>() {
             @Override
             public GetTemplateResult call() throws Exception {
-                GetTemplateResult result;
+                GetTemplateResult result = null;
 
                 try {
-                    result = getTemplate(request);
+                    result = executeGetTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -811,7 +829,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -827,14 +845,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(final GetTemplateSummaryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler) {
+        final GetTemplateSummaryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTemplateSummaryResult>() {
             @Override
             public GetTemplateSummaryResult call() throws Exception {
-                GetTemplateSummaryResult result;
+                GetTemplateSummaryResult result = null;
 
                 try {
-                    result = getTemplateSummary(request);
+                    result = executeGetTemplateSummary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -843,7 +862,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -866,6 +885,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
      *
      * @see #getTemplateSummaryAsync(GetTemplateSummaryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler) {
 
@@ -881,14 +901,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(final ListChangeSetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult> asyncHandler) {
+        final ListChangeSetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListChangeSetsResult>() {
             @Override
             public ListChangeSetsResult call() throws Exception {
-                ListChangeSetsResult result;
+                ListChangeSetsResult result = null;
 
                 try {
-                    result = listChangeSets(request);
+                    result = executeListChangeSets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -897,7 +918,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -913,14 +934,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ListExportsResult> listExportsAsync(final ListExportsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+        final ListExportsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListExportsResult>() {
             @Override
             public ListExportsResult call() throws Exception {
-                ListExportsResult result;
+                ListExportsResult result = null;
 
                 try {
-                    result = listExports(request);
+                    result = executeListExports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -929,7 +951,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -945,14 +967,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ListImportsResult> listImportsAsync(final ListImportsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+        final ListImportsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListImportsResult>() {
             @Override
             public ListImportsResult call() throws Exception {
-                ListImportsResult result;
+                ListImportsResult result = null;
 
                 try {
-                    result = listImports(request);
+                    result = executeListImports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -961,7 +984,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -977,14 +1000,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(final ListStackResourcesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult> asyncHandler) {
+        final ListStackResourcesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListStackResourcesResult>() {
             @Override
             public ListStackResourcesResult call() throws Exception {
-                ListStackResourcesResult result;
+                ListStackResourcesResult result = null;
 
                 try {
-                    result = listStackResources(request);
+                    result = executeListStackResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -993,7 +1017,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1009,14 +1033,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ListStacksResult> listStacksAsync(final ListStacksRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult> asyncHandler) {
+        final ListStacksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListStacksResult>() {
             @Override
             public ListStacksResult call() throws Exception {
-                ListStacksResult result;
+                ListStacksResult result = null;
 
                 try {
-                    result = listStacks(request);
+                    result = executeListStacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1025,7 +1050,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1048,6 +1073,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
      *
      * @see #listStacksAsync(ListStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStacksResult> listStacksAsync(com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult> asyncHandler) {
 
         return listStacksAsync(new ListStacksRequest(), asyncHandler);
@@ -1062,14 +1088,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(final SetStackPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler) {
+        final SetStackPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetStackPolicyResult>() {
             @Override
             public SetStackPolicyResult call() throws Exception {
-                SetStackPolicyResult result;
+                SetStackPolicyResult result = null;
 
                 try {
-                    result = setStackPolicy(request);
+                    result = executeSetStackPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1078,7 +1105,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1094,14 +1121,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(final SignalResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, SignalResourceResult> asyncHandler) {
+        final SignalResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SignalResourceResult>() {
             @Override
             public SignalResourceResult call() throws Exception {
-                SignalResourceResult result;
+                SignalResourceResult result = null;
 
                 try {
-                    result = signalResource(request);
+                    result = executeSignalResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1110,7 +1138,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1126,14 +1154,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(final UpdateStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
+        final UpdateStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateStackResult>() {
             @Override
             public UpdateStackResult call() throws Exception {
-                UpdateStackResult result;
+                UpdateStackResult result = null;
 
                 try {
-                    result = updateStack(request);
+                    result = executeUpdateStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1142,7 +1171,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1158,14 +1187,15 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     @Override
     public java.util.concurrent.Future<ValidateTemplateResult> validateTemplateAsync(final ValidateTemplateRequest request,
             final com.amazonaws.handlers.AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult> asyncHandler) {
+        final ValidateTemplateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ValidateTemplateResult>() {
             @Override
             public ValidateTemplateResult call() throws Exception {
-                ValidateTemplateResult result;
+                ValidateTemplateResult result = null;
 
                 try {
-                    result = validateTemplate(request);
+                    result = executeValidateTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1174,7 +1204,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

@@ -42,9 +42,11 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListEventSourceMappings" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListFunctions" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

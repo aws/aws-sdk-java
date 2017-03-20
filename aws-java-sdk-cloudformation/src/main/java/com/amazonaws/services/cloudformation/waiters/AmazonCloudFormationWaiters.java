@@ -106,4 +106,7 @@ public class AmazonCloudFormationWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

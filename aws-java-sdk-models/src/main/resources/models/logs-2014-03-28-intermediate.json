@@ -69,9 +69,11 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeDestinations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeLogGroups" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

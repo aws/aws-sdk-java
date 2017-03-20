@@ -466,6 +466,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *
      * @see #describeJobFlowsAsync(DescribeJobFlowsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler);
 

@@ -42,6 +42,7 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "GetSessionToken" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

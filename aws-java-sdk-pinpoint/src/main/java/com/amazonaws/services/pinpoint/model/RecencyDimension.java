@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Define how a segment based on recency of use.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecencyDimension implements Serializable, Cloneable, StructuredPojo {
 

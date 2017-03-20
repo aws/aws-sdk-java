@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -292,7 +293,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
+    public DeleteAlarmsResult deleteAlarms(DeleteAlarmsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlarms(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAlarmsResult executeDeleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -339,7 +346,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) {
+    public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlarmHistory(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAlarmHistoryResult executeDescribeAlarmHistory(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAlarmHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -389,7 +402,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DescribeAlarmsResult describeAlarms(DescribeAlarmsRequest describeAlarmsRequest) {
+    public DescribeAlarmsResult describeAlarms(DescribeAlarmsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlarms(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAlarmsResult executeDescribeAlarms(DescribeAlarmsRequest describeAlarmsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -436,7 +455,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAlarmsForMetricResult describeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) {
+    public DescribeAlarmsForMetricResult describeAlarmsForMetric(DescribeAlarmsForMetricRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlarmsForMetric(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAlarmsForMetricResult executeDescribeAlarmsForMetric(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAlarmsForMetricRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -479,7 +504,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public DisableAlarmActionsResult disableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest) {
+    public DisableAlarmActionsResult disableAlarmActions(DisableAlarmActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableAlarmActions(request);
+    }
+
+    @SdkInternalApi
+    final DisableAlarmActionsResult executeDisableAlarmActions(DisableAlarmActionsRequest disableAlarmActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -521,7 +552,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public EnableAlarmActionsResult enableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest) {
+    public EnableAlarmActionsResult enableAlarmActions(EnableAlarmActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableAlarmActions(request);
+    }
+
+    @SdkInternalApi
+    final EnableAlarmActionsResult executeEnableAlarmActions(EnableAlarmActionsRequest enableAlarmActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -611,7 +648,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) {
+    public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricStatisticsResult executeGetMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMetricStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -666,7 +709,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest) {
+    public ListMetricsResult listMetrics(ListMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListMetricsResult executeListMetrics(ListMetricsRequest listMetricsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listMetricsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -770,7 +819,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public PutMetricAlarmResult putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
+    public PutMetricAlarmResult putMetricAlarm(PutMetricAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executePutMetricAlarm(request);
+    }
+
+    @SdkInternalApi
+    final PutMetricAlarmResult executePutMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putMetricAlarmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -837,7 +892,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public PutMetricDataResult putMetricData(PutMetricDataRequest putMetricDataRequest) {
+    public PutMetricDataResult putMetricData(PutMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executePutMetricData(request);
+    }
+
+    @SdkInternalApi
+    final PutMetricDataResult executePutMetricData(PutMetricDataRequest putMetricDataRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -887,7 +948,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public SetAlarmStateResult setAlarmState(SetAlarmStateRequest setAlarmStateRequest) {
+    public SetAlarmStateResult setAlarmState(SetAlarmStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetAlarmState(request);
+    }
+
+    @SdkInternalApi
+    final SetAlarmStateResult executeSetAlarmState(SetAlarmStateRequest setAlarmStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setAlarmStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -979,6 +1046,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

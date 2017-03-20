@@ -1409,6 +1409,7 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    @Deprecated
     public RevokeSecurityGroupIngressResult revokeSecurityGroupIngress() {
         return revokeSecurityGroupIngress(new RevokeSecurityGroupIngressRequest());
     }

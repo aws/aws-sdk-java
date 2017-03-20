@@ -280,8 +280,9 @@ public abstract class AbstractTransfer implements Transfer {
         while (t.getCause() != null && t instanceof ExecutionException) {
             t = t.getCause();
         }
-
-        if (t instanceof AmazonClientException) return (AmazonClientException) t;
+        if (t instanceof AmazonClientException) {
+            return (AmazonClientException) t;
+        }
         return new AmazonClientException("Unable to complete transfer: " + t.getMessage(), t);
     }
 

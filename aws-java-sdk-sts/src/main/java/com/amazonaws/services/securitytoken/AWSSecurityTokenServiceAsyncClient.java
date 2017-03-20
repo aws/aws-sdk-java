@@ -305,14 +305,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<AssumeRoleResult> assumeRoleAsync(final AssumeRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssumeRoleRequest, AssumeRoleResult> asyncHandler) {
+        final AssumeRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssumeRoleResult>() {
             @Override
             public AssumeRoleResult call() throws Exception {
-                AssumeRoleResult result;
+                AssumeRoleResult result = null;
 
                 try {
-                    result = assumeRole(request);
+                    result = executeAssumeRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -321,7 +322,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -337,14 +338,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<AssumeRoleWithSAMLResult> assumeRoleWithSAMLAsync(final AssumeRoleWithSAMLRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResult> asyncHandler) {
+        final AssumeRoleWithSAMLRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssumeRoleWithSAMLResult>() {
             @Override
             public AssumeRoleWithSAMLResult call() throws Exception {
-                AssumeRoleWithSAMLResult result;
+                AssumeRoleWithSAMLResult result = null;
 
                 try {
-                    result = assumeRoleWithSAML(request);
+                    result = executeAssumeRoleWithSAML(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -353,7 +355,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -369,14 +371,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<AssumeRoleWithWebIdentityResult> assumeRoleWithWebIdentityAsync(final AssumeRoleWithWebIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResult> asyncHandler) {
+        final AssumeRoleWithWebIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssumeRoleWithWebIdentityResult>() {
             @Override
             public AssumeRoleWithWebIdentityResult call() throws Exception {
-                AssumeRoleWithWebIdentityResult result;
+                AssumeRoleWithWebIdentityResult result = null;
 
                 try {
-                    result = assumeRoleWithWebIdentity(request);
+                    result = executeAssumeRoleWithWebIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -385,7 +388,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -401,14 +404,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<DecodeAuthorizationMessageResult> decodeAuthorizationMessageAsync(final DecodeAuthorizationMessageRequest request,
             final com.amazonaws.handlers.AsyncHandler<DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResult> asyncHandler) {
+        final DecodeAuthorizationMessageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DecodeAuthorizationMessageResult>() {
             @Override
             public DecodeAuthorizationMessageResult call() throws Exception {
-                DecodeAuthorizationMessageResult result;
+                DecodeAuthorizationMessageResult result = null;
 
                 try {
-                    result = decodeAuthorizationMessage(request);
+                    result = executeDecodeAuthorizationMessage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -417,7 +421,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -433,14 +437,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(final GetCallerIdentityRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCallerIdentityRequest, GetCallerIdentityResult> asyncHandler) {
+        final GetCallerIdentityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCallerIdentityResult>() {
             @Override
             public GetCallerIdentityResult call() throws Exception {
-                GetCallerIdentityResult result;
+                GetCallerIdentityResult result = null;
 
                 try {
-                    result = getCallerIdentity(request);
+                    result = executeGetCallerIdentity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -449,7 +454,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -465,14 +470,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<GetFederationTokenResult> getFederationTokenAsync(final GetFederationTokenRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetFederationTokenRequest, GetFederationTokenResult> asyncHandler) {
+        final GetFederationTokenRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetFederationTokenResult>() {
             @Override
             public GetFederationTokenResult call() throws Exception {
-                GetFederationTokenResult result;
+                GetFederationTokenResult result = null;
 
                 try {
-                    result = getFederationToken(request);
+                    result = executeGetFederationToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -481,7 +487,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -497,14 +503,15 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
     @Override
     public java.util.concurrent.Future<GetSessionTokenResult> getSessionTokenAsync(final GetSessionTokenRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSessionTokenRequest, GetSessionTokenResult> asyncHandler) {
+        final GetSessionTokenRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSessionTokenResult>() {
             @Override
             public GetSessionTokenResult call() throws Exception {
-                GetSessionTokenResult result;
+                GetSessionTokenResult result = null;
 
                 try {
-                    result = getSessionToken(request);
+                    result = executeGetSessionToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -513,7 +520,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -536,6 +543,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      *
      * @see #getSessionTokenAsync(GetSessionTokenRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSessionTokenResult> getSessionTokenAsync(
             com.amazonaws.handlers.AsyncHandler<GetSessionTokenRequest, GetSessionTokenResult> asyncHandler) {
 

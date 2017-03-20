@@ -294,6 +294,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #getCheckerIpRangesAsync(GetCheckerIpRangesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler) {
 
@@ -329,6 +330,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #getGeoLocationAsync(GetGeoLocationRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetGeoLocationResult> getGeoLocationAsync(
             com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult> asyncHandler) {
 
@@ -377,6 +379,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #getHealthCheckCountAsync(GetHealthCheckCountRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetHealthCheckCountResult> getHealthCheckCountAsync(
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult> asyncHandler) {
 
@@ -453,6 +456,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #getHostedZoneCountAsync(GetHostedZoneCountRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetHostedZoneCountResult> getHostedZoneCountAsync(
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult> asyncHandler) {
 
@@ -528,6 +532,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      * @see #getTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler) {
 
@@ -563,6 +568,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listGeoLocationsAsync(ListGeoLocationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListGeoLocationsResult> listGeoLocationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler) {
 
@@ -598,6 +604,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listHealthChecksAsync(ListHealthChecksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListHealthChecksResult> listHealthChecksAsync(
             com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler) {
 
@@ -633,6 +640,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listHostedZonesAsync(ListHostedZonesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListHostedZonesResult> listHostedZonesAsync(
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult> asyncHandler) {
 
@@ -668,6 +676,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listHostedZonesByNameAsync(ListHostedZonesByNameRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler) {
 
@@ -716,6 +725,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listReusableDelegationSetsAsync(ListReusableDelegationSetsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListReusableDelegationSetsResult> listReusableDelegationSetsAsync(
             com.amazonaws.handlers.AsyncHandler<ListReusableDelegationSetsRequest, ListReusableDelegationSetsResult> asyncHandler) {
 
@@ -777,6 +787,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listTrafficPoliciesAsync(ListTrafficPoliciesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(
             com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult> asyncHandler) {
 
@@ -812,6 +823,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
      *
      * @see #listTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult> asyncHandler) {
 

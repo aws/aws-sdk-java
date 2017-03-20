@@ -54,15 +54,19 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "GetSendQuota" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GetSendStatistics" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListIdentities" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListVerifiedEmailAddresses" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

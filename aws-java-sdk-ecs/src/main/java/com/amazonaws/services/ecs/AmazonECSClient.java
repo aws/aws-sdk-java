@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -327,7 +328,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCluster(request);
+    }
+
+    @SdkInternalApi
+    final CreateClusterResult executeCreateCluster(CreateClusterRequest createClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,7 +459,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public CreateServiceResult createService(CreateServiceRequest createServiceRequest) {
+    public CreateServiceResult createService(CreateServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateService(request);
+    }
+
+    @SdkInternalApi
+    final CreateServiceResult executeCreateService(CreateServiceRequest createServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -502,7 +515,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttributesResult executeDeleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -565,7 +584,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) {
+    public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCluster(request);
+    }
+
+    @SdkInternalApi
+    final DeleteClusterResult executeDeleteCluster(DeleteClusterRequest deleteClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -635,7 +660,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
+    public DeleteServiceResult deleteService(DeleteServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteService(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServiceResult executeDeleteService(DeleteServiceRequest deleteServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -706,7 +737,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
+    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterContainerInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterContainerInstanceResult executeDeregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -766,7 +803,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
+    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTaskDefinitionResult executeDeregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -818,7 +861,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
+    public DescribeClustersResult describeClusters(DescribeClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClustersResult executeDescribeClusters(DescribeClustersRequest describeClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -877,7 +926,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
+    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeContainerInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeContainerInstancesResult executeDescribeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -932,7 +987,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+    public DescribeServicesResult describeServices(DescribeServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServicesResult executeDescribeServices(DescribeServicesRequest describeServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -989,7 +1050,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
+    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTaskDefinitionResult executeDescribeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1043,7 +1110,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest) {
+    public DescribeTasksResult describeTasks(DescribeTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTasksResult executeDescribeTasks(DescribeTasksRequest describeTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1097,7 +1170,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
+    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscoverPollEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DiscoverPollEndpointResult executeDiscoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(discoverPollEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1153,7 +1232,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListAttributesResult listAttributes(ListAttributesRequest listAttributesRequest) {
+    public ListAttributesResult listAttributes(ListAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListAttributesResult executeListAttributes(ListAttributesRequest listAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1203,7 +1288,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusters(request);
+    }
+
+    @SdkInternalApi
+    final ListClustersResult executeListClusters(ListClustersRequest listClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1265,7 +1356,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) {
+    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContainerInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListContainerInstancesResult executeListContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1324,7 +1421,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListServicesResult listServices(ListServicesRequest listServicesRequest) {
+    public ListServicesResult listServices(ListServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServices(request);
+    }
+
+    @SdkInternalApi
+    final ListServicesResult executeListServices(ListServicesRequest listServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1385,7 +1488,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
+    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTaskDefinitionFamilies(request);
+    }
+
+    @SdkInternalApi
+    final ListTaskDefinitionFamiliesResult executeListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionFamiliesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1443,7 +1552,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) {
+    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTaskDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListTaskDefinitionsResult executeListTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1510,7 +1625,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListTasksResult listTasks(ListTasksRequest listTasksRequest) {
+    public ListTasksResult listTasks(ListTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListTasksResult executeListTasks(ListTasksRequest listTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1572,7 +1693,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutAttributesResult executePutAttributes(PutAttributesRequest putAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1626,7 +1753,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterContainerInstance(request);
+    }
+
+    @SdkInternalApi
+    final RegisterContainerInstanceResult executeRegisterContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1695,7 +1828,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
+    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTaskDefinitionResult executeRegisterTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1759,7 +1898,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public RunTaskResult runTask(RunTaskRequest runTaskRequest) {
+    public RunTaskResult runTask(RunTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeRunTask(request);
+    }
+
+    @SdkInternalApi
+    final RunTaskResult executeRunTask(RunTaskRequest runTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(runTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1817,7 +1962,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public StartTaskResult startTask(StartTaskRequest startTaskRequest) {
+    public StartTaskResult startTask(StartTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTask(request);
+    }
+
+    @SdkInternalApi
+    final StartTaskResult executeStartTask(StartTaskRequest startTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1876,7 +2027,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) {
+    public StopTaskResult stopTask(StopTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopTask(request);
+    }
+
+    @SdkInternalApi
+    final StopTaskResult executeStopTask(StopTaskRequest stopTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1930,7 +2087,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitContainerStateChange(request);
+    }
+
+    @SdkInternalApi
+    final SubmitContainerStateChangeResult executeSubmitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(submitContainerStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1991,7 +2154,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) {
+    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitTaskStateChange(request);
+    }
+
+    @SdkInternalApi
+    final SubmitTaskStateChangeResult executeSubmitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(submitTaskStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2068,7 +2237,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
+    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContainerAgent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContainerAgentResult executeUpdateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateContainerAgentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2171,7 +2346,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest) {
+    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContainerInstancesState(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContainerInstancesStateResult executeUpdateContainerInstancesState(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateContainerInstancesStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2322,7 +2503,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest) {
+    public UpdateServiceResult updateService(UpdateServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateService(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServiceResult executeUpdateService(UpdateServiceRequest updateServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2415,6 +2602,14 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segments in your account.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentsResponse implements Serializable, Cloneable, StructuredPojo {
 

@@ -35,27 +35,35 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "CreateStream" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName", "ShardCount" ] ]
       },
       "DeleteStream" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName" ] ]
       },
       "DescribeStream" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName" ], [ "StreamName", "ExclusiveStartShardId" ], [ "StreamName", "Limit", "ExclusiveStartShardId" ] ]
       },
       "GetShardIterator" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName", "ShardId", "ShardIteratorType" ], [ "StreamName", "ShardId", "ShardIteratorType", "StartingSequenceNumber" ] ]
       },
       "ListStreams" : {
+        "deprecated" : null,
         "methodForms" : [ [ ], [ "ExclusiveStartStreamName" ], [ "Limit", "ExclusiveStartStreamName" ] ]
       },
       "MergeShards" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName", "ShardToMerge", "AdjacentShardToMerge" ] ]
       },
       "PutRecord" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName", "Data", "PartitionKey" ], [ "StreamName", "Data", "PartitionKey", "SequenceNumberForOrdering" ] ]
       },
       "SplitShard" : {
+        "deprecated" : null,
         "methodForms" : [ [ "StreamName", "ShardToSplit", "NewStartingHashKey" ] ]
       }
     },

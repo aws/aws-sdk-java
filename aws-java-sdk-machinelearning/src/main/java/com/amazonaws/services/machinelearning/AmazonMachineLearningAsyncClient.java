@@ -252,14 +252,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(final AddTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+        final AddTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsResult>() {
             @Override
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+                AddTagsResult result = null;
 
                 try {
-                    result = addTags(request);
+                    result = executeAddTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -268,7 +269,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -284,14 +285,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(final CreateBatchPredictionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionRequest, CreateBatchPredictionResult> asyncHandler) {
+        final CreateBatchPredictionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateBatchPredictionResult>() {
             @Override
             public CreateBatchPredictionResult call() throws Exception {
-                CreateBatchPredictionResult result;
+                CreateBatchPredictionResult result = null;
 
                 try {
-                    result = createBatchPrediction(request);
+                    result = executeCreateBatchPrediction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -300,7 +302,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -316,14 +318,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateDataSourceFromRDSResult> createDataSourceFromRDSAsync(final CreateDataSourceFromRDSRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRDSRequest, CreateDataSourceFromRDSResult> asyncHandler) {
+        final CreateDataSourceFromRDSRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDataSourceFromRDSResult>() {
             @Override
             public CreateDataSourceFromRDSResult call() throws Exception {
-                CreateDataSourceFromRDSResult result;
+                CreateDataSourceFromRDSResult result = null;
 
                 try {
-                    result = createDataSourceFromRDS(request);
+                    result = executeCreateDataSourceFromRDS(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -332,7 +335,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -348,14 +351,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateDataSourceFromRedshiftResult> createDataSourceFromRedshiftAsync(final CreateDataSourceFromRedshiftRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRedshiftRequest, CreateDataSourceFromRedshiftResult> asyncHandler) {
+        final CreateDataSourceFromRedshiftRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDataSourceFromRedshiftResult>() {
             @Override
             public CreateDataSourceFromRedshiftResult call() throws Exception {
-                CreateDataSourceFromRedshiftResult result;
+                CreateDataSourceFromRedshiftResult result = null;
 
                 try {
-                    result = createDataSourceFromRedshift(request);
+                    result = executeCreateDataSourceFromRedshift(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -364,7 +368,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -380,14 +384,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateDataSourceFromS3Result> createDataSourceFromS3Async(final CreateDataSourceFromS3Request request,
             final com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromS3Request, CreateDataSourceFromS3Result> asyncHandler) {
+        final CreateDataSourceFromS3Request finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDataSourceFromS3Result>() {
             @Override
             public CreateDataSourceFromS3Result call() throws Exception {
-                CreateDataSourceFromS3Result result;
+                CreateDataSourceFromS3Result result = null;
 
                 try {
-                    result = createDataSourceFromS3(request);
+                    result = executeCreateDataSourceFromS3(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -396,7 +401,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -412,14 +417,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateEvaluationResult> createEvaluationAsync(final CreateEvaluationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateEvaluationRequest, CreateEvaluationResult> asyncHandler) {
+        final CreateEvaluationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateEvaluationResult>() {
             @Override
             public CreateEvaluationResult call() throws Exception {
-                CreateEvaluationResult result;
+                CreateEvaluationResult result = null;
 
                 try {
-                    result = createEvaluation(request);
+                    result = executeCreateEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -428,7 +434,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -444,14 +450,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateMLModelResult> createMLModelAsync(final CreateMLModelRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateMLModelRequest, CreateMLModelResult> asyncHandler) {
+        final CreateMLModelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateMLModelResult>() {
             @Override
             public CreateMLModelResult call() throws Exception {
-                CreateMLModelResult result;
+                CreateMLModelResult result = null;
 
                 try {
-                    result = createMLModel(request);
+                    result = executeCreateMLModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -460,7 +467,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -476,14 +483,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<CreateRealtimeEndpointResult> createRealtimeEndpointAsync(final CreateRealtimeEndpointRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRealtimeEndpointRequest, CreateRealtimeEndpointResult> asyncHandler) {
+        final CreateRealtimeEndpointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateRealtimeEndpointResult>() {
             @Override
             public CreateRealtimeEndpointResult call() throws Exception {
-                CreateRealtimeEndpointResult result;
+                CreateRealtimeEndpointResult result = null;
 
                 try {
-                    result = createRealtimeEndpoint(request);
+                    result = executeCreateRealtimeEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -492,7 +500,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -508,14 +516,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteBatchPredictionResult> deleteBatchPredictionAsync(final DeleteBatchPredictionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionRequest, DeleteBatchPredictionResult> asyncHandler) {
+        final DeleteBatchPredictionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteBatchPredictionResult>() {
             @Override
             public DeleteBatchPredictionResult call() throws Exception {
-                DeleteBatchPredictionResult result;
+                DeleteBatchPredictionResult result = null;
 
                 try {
-                    result = deleteBatchPrediction(request);
+                    result = executeDeleteBatchPrediction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -524,7 +533,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -540,14 +549,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(final DeleteDataSourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
+        final DeleteDataSourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDataSourceResult>() {
             @Override
             public DeleteDataSourceResult call() throws Exception {
-                DeleteDataSourceResult result;
+                DeleteDataSourceResult result = null;
 
                 try {
-                    result = deleteDataSource(request);
+                    result = executeDeleteDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -556,7 +566,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -572,14 +582,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteEvaluationResult> deleteEvaluationAsync(final DeleteEvaluationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteEvaluationRequest, DeleteEvaluationResult> asyncHandler) {
+        final DeleteEvaluationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteEvaluationResult>() {
             @Override
             public DeleteEvaluationResult call() throws Exception {
-                DeleteEvaluationResult result;
+                DeleteEvaluationResult result = null;
 
                 try {
-                    result = deleteEvaluation(request);
+                    result = executeDeleteEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -588,7 +599,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -604,14 +615,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteMLModelResult> deleteMLModelAsync(final DeleteMLModelRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteMLModelRequest, DeleteMLModelResult> asyncHandler) {
+        final DeleteMLModelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteMLModelResult>() {
             @Override
             public DeleteMLModelResult call() throws Exception {
-                DeleteMLModelResult result;
+                DeleteMLModelResult result = null;
 
                 try {
-                    result = deleteMLModel(request);
+                    result = executeDeleteMLModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -620,7 +632,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -636,14 +648,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteRealtimeEndpointResult> deleteRealtimeEndpointAsync(final DeleteRealtimeEndpointRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRealtimeEndpointRequest, DeleteRealtimeEndpointResult> asyncHandler) {
+        final DeleteRealtimeEndpointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRealtimeEndpointResult>() {
             @Override
             public DeleteRealtimeEndpointResult call() throws Exception {
-                DeleteRealtimeEndpointResult result;
+                DeleteRealtimeEndpointResult result = null;
 
                 try {
-                    result = deleteRealtimeEndpoint(request);
+                    result = executeDeleteRealtimeEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -652,7 +665,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -668,14 +681,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(final DeleteTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+        final DeleteTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
             @Override
             public DeleteTagsResult call() throws Exception {
-                DeleteTagsResult result;
+                DeleteTagsResult result = null;
 
                 try {
-                    result = deleteTags(request);
+                    result = executeDeleteTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -684,7 +698,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -700,14 +714,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(final DescribeBatchPredictionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult> asyncHandler) {
+        final DescribeBatchPredictionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeBatchPredictionsResult>() {
             @Override
             public DescribeBatchPredictionsResult call() throws Exception {
-                DescribeBatchPredictionsResult result;
+                DescribeBatchPredictionsResult result = null;
 
                 try {
-                    result = describeBatchPredictions(request);
+                    result = executeDescribeBatchPredictions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -716,7 +731,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -739,6 +754,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      *
      * @see #describeBatchPredictionsAsync(DescribeBatchPredictionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult> asyncHandler) {
 
@@ -754,14 +770,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(final DescribeDataSourcesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult> asyncHandler) {
+        final DescribeDataSourcesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDataSourcesResult>() {
             @Override
             public DescribeDataSourcesResult call() throws Exception {
-                DescribeDataSourcesResult result;
+                DescribeDataSourcesResult result = null;
 
                 try {
-                    result = describeDataSources(request);
+                    result = executeDescribeDataSources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -770,7 +787,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -793,6 +810,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      *
      * @see #describeDataSourcesAsync(DescribeDataSourcesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult> asyncHandler) {
 
@@ -808,14 +826,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(final DescribeEvaluationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult> asyncHandler) {
+        final DescribeEvaluationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEvaluationsResult>() {
             @Override
             public DescribeEvaluationsResult call() throws Exception {
-                DescribeEvaluationsResult result;
+                DescribeEvaluationsResult result = null;
 
                 try {
-                    result = describeEvaluations(request);
+                    result = executeDescribeEvaluations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -824,7 +843,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -847,6 +866,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      *
      * @see #describeEvaluationsAsync(DescribeEvaluationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult> asyncHandler) {
 
@@ -862,14 +882,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(final DescribeMLModelsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult> asyncHandler) {
+        final DescribeMLModelsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMLModelsResult>() {
             @Override
             public DescribeMLModelsResult call() throws Exception {
-                DescribeMLModelsResult result;
+                DescribeMLModelsResult result = null;
 
                 try {
-                    result = describeMLModels(request);
+                    result = executeDescribeMLModels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -878,7 +899,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -901,6 +922,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
      *
      * @see #describeMLModelsAsync(DescribeMLModelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult> asyncHandler) {
 
@@ -916,14 +938,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(final DescribeTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
+        final DescribeTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTagsResult>() {
             @Override
             public DescribeTagsResult call() throws Exception {
-                DescribeTagsResult result;
+                DescribeTagsResult result = null;
 
                 try {
-                    result = describeTags(request);
+                    result = executeDescribeTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -932,7 +955,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -948,14 +971,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<GetBatchPredictionResult> getBatchPredictionAsync(final GetBatchPredictionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBatchPredictionRequest, GetBatchPredictionResult> asyncHandler) {
+        final GetBatchPredictionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBatchPredictionResult>() {
             @Override
             public GetBatchPredictionResult call() throws Exception {
-                GetBatchPredictionResult result;
+                GetBatchPredictionResult result = null;
 
                 try {
-                    result = getBatchPrediction(request);
+                    result = executeGetBatchPrediction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -964,7 +988,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -980,14 +1004,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(final GetDataSourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
+        final GetDataSourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDataSourceResult>() {
             @Override
             public GetDataSourceResult call() throws Exception {
-                GetDataSourceResult result;
+                GetDataSourceResult result = null;
 
                 try {
-                    result = getDataSource(request);
+                    result = executeGetDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -996,7 +1021,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1012,14 +1037,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<GetEvaluationResult> getEvaluationAsync(final GetEvaluationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetEvaluationRequest, GetEvaluationResult> asyncHandler) {
+        final GetEvaluationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetEvaluationResult>() {
             @Override
             public GetEvaluationResult call() throws Exception {
-                GetEvaluationResult result;
+                GetEvaluationResult result = null;
 
                 try {
-                    result = getEvaluation(request);
+                    result = executeGetEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1028,7 +1054,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1044,14 +1070,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<GetMLModelResult> getMLModelAsync(final GetMLModelRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetMLModelRequest, GetMLModelResult> asyncHandler) {
+        final GetMLModelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetMLModelResult>() {
             @Override
             public GetMLModelResult call() throws Exception {
-                GetMLModelResult result;
+                GetMLModelResult result = null;
 
                 try {
-                    result = getMLModel(request);
+                    result = executeGetMLModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1060,7 +1087,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1076,14 +1103,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<PredictResult> predictAsync(final PredictRequest request,
             final com.amazonaws.handlers.AsyncHandler<PredictRequest, PredictResult> asyncHandler) {
+        final PredictRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PredictResult>() {
             @Override
             public PredictResult call() throws Exception {
-                PredictResult result;
+                PredictResult result = null;
 
                 try {
-                    result = predict(request);
+                    result = executePredict(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1092,7 +1120,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1108,14 +1136,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<UpdateBatchPredictionResult> updateBatchPredictionAsync(final UpdateBatchPredictionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateBatchPredictionRequest, UpdateBatchPredictionResult> asyncHandler) {
+        final UpdateBatchPredictionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateBatchPredictionResult>() {
             @Override
             public UpdateBatchPredictionResult call() throws Exception {
-                UpdateBatchPredictionResult result;
+                UpdateBatchPredictionResult result = null;
 
                 try {
-                    result = updateBatchPrediction(request);
+                    result = executeUpdateBatchPrediction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1124,7 +1153,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1140,14 +1169,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(final UpdateDataSourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
+        final UpdateDataSourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDataSourceResult>() {
             @Override
             public UpdateDataSourceResult call() throws Exception {
-                UpdateDataSourceResult result;
+                UpdateDataSourceResult result = null;
 
                 try {
-                    result = updateDataSource(request);
+                    result = executeUpdateDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1156,7 +1186,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1172,14 +1202,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<UpdateEvaluationResult> updateEvaluationAsync(final UpdateEvaluationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateEvaluationRequest, UpdateEvaluationResult> asyncHandler) {
+        final UpdateEvaluationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateEvaluationResult>() {
             @Override
             public UpdateEvaluationResult call() throws Exception {
-                UpdateEvaluationResult result;
+                UpdateEvaluationResult result = null;
 
                 try {
-                    result = updateEvaluation(request);
+                    result = executeUpdateEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1188,7 +1219,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1204,14 +1235,15 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
     @Override
     public java.util.concurrent.Future<UpdateMLModelResult> updateMLModelAsync(final UpdateMLModelRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateMLModelRequest, UpdateMLModelResult> asyncHandler) {
+        final UpdateMLModelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateMLModelResult>() {
             @Override
             public UpdateMLModelResult call() throws Exception {
-                UpdateMLModelResult result;
+                UpdateMLModelResult result = null;
 
                 try {
-                    result = updateMLModel(request);
+                    result = executeUpdateMLModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1220,7 +1252,7 @@ public class AmazonMachineLearningAsyncClient extends AmazonMachineLearningClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

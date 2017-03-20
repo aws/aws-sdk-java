@@ -225,6 +225,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
      *
      * @see #describeDomainsAsync(DescribeDomainsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDomainsRequest, DescribeDomainsResult> asyncHandler) {
 
@@ -338,6 +339,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
      *
      * @see #listDomainNamesAsync(ListDomainNamesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(
             com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult> asyncHandler) {
 

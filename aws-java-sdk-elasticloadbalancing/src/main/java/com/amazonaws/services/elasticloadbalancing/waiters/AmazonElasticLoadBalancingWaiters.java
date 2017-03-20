@@ -82,4 +82,7 @@ public class AmazonElasticLoadBalancingWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

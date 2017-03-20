@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -317,7 +318,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest) {
+    public AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocateStaticIp(request);
+    }
+
+    @SdkInternalApi
+    final AllocateStaticIpResult executeAllocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(allocateStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -375,7 +382,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public AttachStaticIpResult attachStaticIp(AttachStaticIpRequest attachStaticIpRequest) {
+    public AttachStaticIpResult attachStaticIp(AttachStaticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachStaticIp(request);
+    }
+
+    @SdkInternalApi
+    final AttachStaticIpResult executeAttachStaticIp(AttachStaticIpRequest attachStaticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -433,7 +446,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest) {
+    public CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCloseInstancePublicPorts(request);
+    }
+
+    @SdkInternalApi
+    final CloseInstancePublicPortsResult executeCloseInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(closeInstancePublicPortsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -493,7 +512,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+    public CreateDomainResult createDomain(CreateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainResult executeCreateDomain(CreateDomainRequest createDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -552,7 +577,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest createDomainEntryRequest) {
+    public CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomainEntry(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainEntryResult executeCreateDomainEntry(CreateDomainEntryRequest createDomainEntryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -611,7 +642,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest createInstanceSnapshotRequest) {
+    public CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstanceSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceSnapshotResult executeCreateInstanceSnapshot(CreateInstanceSnapshotRequest createInstanceSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -670,7 +707,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public CreateInstancesResult createInstances(CreateInstancesRequest createInstancesRequest) {
+    public CreateInstancesResult createInstances(CreateInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstances(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstancesResult executeCreateInstances(CreateInstancesRequest createInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -729,7 +772,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateInstancesFromSnapshotResult createInstancesFromSnapshot(CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest) {
+    public CreateInstancesFromSnapshotResult createInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstancesFromSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstancesFromSnapshotResult executeCreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest createInstancesFromSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInstancesFromSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -789,7 +838,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest) {
+    public CreateKeyPairResult createKeyPair(CreateKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final CreateKeyPairResult executeCreateKeyPair(CreateKeyPairRequest createKeyPairRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -847,7 +902,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainResult executeDeleteDomain(DeleteDomainRequest deleteDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -905,7 +966,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public DeleteDomainEntryResult deleteDomainEntry(DeleteDomainEntryRequest deleteDomainEntryRequest) {
+    public DeleteDomainEntryResult deleteDomainEntry(DeleteDomainEntryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomainEntry(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainEntryResult executeDeleteDomainEntry(DeleteDomainEntryRequest deleteDomainEntryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -963,7 +1030,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceResult executeDeleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1021,7 +1094,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteInstanceSnapshotResult deleteInstanceSnapshot(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest) {
+    public DeleteInstanceSnapshotResult deleteInstanceSnapshot(DeleteInstanceSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstanceSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceSnapshotResult executeDeleteInstanceSnapshot(DeleteInstanceSnapshotRequest deleteInstanceSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1080,7 +1159,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) {
+    public DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final DeleteKeyPairResult executeDeleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1138,7 +1223,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DetachStaticIpResult detachStaticIp(DetachStaticIpRequest detachStaticIpRequest) {
+    public DetachStaticIpResult detachStaticIp(DetachStaticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachStaticIp(request);
+    }
+
+    @SdkInternalApi
+    final DetachStaticIpResult executeDetachStaticIp(DetachStaticIpRequest detachStaticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1196,7 +1287,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest) {
+    public DownloadDefaultKeyPairResult downloadDefaultKeyPair(DownloadDefaultKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeDownloadDefaultKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final DownloadDefaultKeyPairResult executeDownloadDefaultKeyPair(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest) {
 
         ExecutionContext executionContext = createExecutionContext(downloadDefaultKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1255,7 +1352,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetActiveNamesResult getActiveNames(GetActiveNamesRequest getActiveNamesRequest) {
+    public GetActiveNamesResult getActiveNames(GetActiveNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetActiveNames(request);
+    }
+
+    @SdkInternalApi
+    final GetActiveNamesResult executeGetActiveNames(GetActiveNamesRequest getActiveNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getActiveNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1315,7 +1418,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetBlueprintsResult getBlueprints(GetBlueprintsRequest getBlueprintsRequest) {
+    public GetBlueprintsResult getBlueprints(GetBlueprintsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBlueprints(request);
+    }
+
+    @SdkInternalApi
+    final GetBlueprintsResult executeGetBlueprints(GetBlueprintsRequest getBlueprintsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBlueprintsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1374,7 +1483,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest) {
+    public GetBundlesResult getBundles(GetBundlesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBundles(request);
+    }
+
+    @SdkInternalApi
+    final GetBundlesResult executeGetBundles(GetBundlesRequest getBundlesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBundlesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1432,7 +1547,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetDomainResult getDomain(GetDomainRequest getDomainRequest) {
+    public GetDomainResult getDomain(GetDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomain(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainResult executeGetDomain(GetDomainRequest getDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1490,7 +1611,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetDomainsResult getDomains(GetDomainsRequest getDomainsRequest) {
+    public GetDomainsResult getDomains(GetDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomains(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainsResult executeGetDomains(GetDomainsRequest getDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1548,7 +1675,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetInstanceResult getInstance(GetInstanceRequest getInstanceRequest) {
+    public GetInstanceResult getInstance(GetInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceResult executeGetInstance(GetInstanceRequest getInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1606,7 +1739,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetInstanceAccessDetailsResult getInstanceAccessDetails(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest) {
+    public GetInstanceAccessDetailsResult getInstanceAccessDetails(GetInstanceAccessDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceAccessDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceAccessDetailsResult executeGetInstanceAccessDetails(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceAccessDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1666,7 +1805,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetInstanceMetricDataResult getInstanceMetricData(GetInstanceMetricDataRequest getInstanceMetricDataRequest) {
+    public GetInstanceMetricDataResult getInstanceMetricData(GetInstanceMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceMetricDataResult executeGetInstanceMetricData(GetInstanceMetricDataRequest getInstanceMetricDataRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1725,7 +1870,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetInstancePortStatesResult getInstancePortStates(GetInstancePortStatesRequest getInstancePortStatesRequest) {
+    public GetInstancePortStatesResult getInstancePortStates(GetInstancePortStatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstancePortStates(request);
+    }
+
+    @SdkInternalApi
+    final GetInstancePortStatesResult executeGetInstancePortStates(GetInstancePortStatesRequest getInstancePortStatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstancePortStatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1784,7 +1935,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public GetInstanceSnapshotResult getInstanceSnapshot(GetInstanceSnapshotRequest getInstanceSnapshotRequest) {
+    public GetInstanceSnapshotResult getInstanceSnapshot(GetInstanceSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceSnapshotResult executeGetInstanceSnapshot(GetInstanceSnapshotRequest getInstanceSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1842,7 +1999,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public GetInstanceSnapshotsResult getInstanceSnapshots(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest) {
+    public GetInstanceSnapshotsResult getInstanceSnapshots(GetInstanceSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceSnapshotsResult executeGetInstanceSnapshots(GetInstanceSnapshotsRequest getInstanceSnapshotsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1900,7 +2063,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetInstanceStateResult getInstanceState(GetInstanceStateRequest getInstanceStateRequest) {
+    public GetInstanceStateResult getInstanceState(GetInstanceStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceState(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceStateResult executeGetInstanceState(GetInstanceStateRequest getInstanceStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1958,7 +2127,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetInstancesResult getInstances(GetInstancesRequest getInstancesRequest) {
+    public GetInstancesResult getInstances(GetInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstances(request);
+    }
+
+    @SdkInternalApi
+    final GetInstancesResult executeGetInstances(GetInstancesRequest getInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2016,7 +2191,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetKeyPairResult getKeyPair(GetKeyPairRequest getKeyPairRequest) {
+    public GetKeyPairResult getKeyPair(GetKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyPairResult executeGetKeyPair(GetKeyPairRequest getKeyPairRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2074,7 +2255,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetKeyPairsResult getKeyPairs(GetKeyPairsRequest getKeyPairsRequest) {
+    public GetKeyPairsResult getKeyPairs(GetKeyPairsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyPairs(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyPairsResult executeGetKeyPairs(GetKeyPairsRequest getKeyPairsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyPairsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2133,7 +2320,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetOperationResult getOperation(GetOperationRequest getOperationRequest) {
+    public GetOperationResult getOperation(GetOperationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOperation(request);
+    }
+
+    @SdkInternalApi
+    final GetOperationResult executeGetOperation(GetOperationRequest getOperationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOperationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2196,7 +2389,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetOperationsResult getOperations(GetOperationsRequest getOperationsRequest) {
+    public GetOperationsResult getOperations(GetOperationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOperations(request);
+    }
+
+    @SdkInternalApi
+    final GetOperationsResult executeGetOperations(GetOperationsRequest getOperationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOperationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2254,7 +2453,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOperationsForResourceResult getOperationsForResource(GetOperationsForResourceRequest getOperationsForResourceRequest) {
+    public GetOperationsForResourceResult getOperationsForResource(GetOperationsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOperationsForResource(request);
+    }
+
+    @SdkInternalApi
+    final GetOperationsForResourceResult executeGetOperationsForResource(GetOperationsForResourceRequest getOperationsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOperationsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2314,7 +2519,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetRegionsResult getRegions(GetRegionsRequest getRegionsRequest) {
+    public GetRegionsResult getRegions(GetRegionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRegions(request);
+    }
+
+    @SdkInternalApi
+    final GetRegionsResult executeGetRegions(GetRegionsRequest getRegionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRegionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2372,7 +2583,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetStaticIpResult getStaticIp(GetStaticIpRequest getStaticIpRequest) {
+    public GetStaticIpResult getStaticIp(GetStaticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStaticIp(request);
+    }
+
+    @SdkInternalApi
+    final GetStaticIpResult executeGetStaticIp(GetStaticIpRequest getStaticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2430,7 +2647,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public GetStaticIpsResult getStaticIps(GetStaticIpsRequest getStaticIpsRequest) {
+    public GetStaticIpsResult getStaticIps(GetStaticIpsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStaticIps(request);
+    }
+
+    @SdkInternalApi
+    final GetStaticIpsResult executeGetStaticIps(GetStaticIpsRequest getStaticIpsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getStaticIpsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2488,7 +2711,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest) {
+    public ImportKeyPairResult importKeyPair(ImportKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final ImportKeyPairResult executeImportKeyPair(ImportKeyPairRequest importKeyPairRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importKeyPairRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2546,7 +2775,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public IsVpcPeeredResult isVpcPeered(IsVpcPeeredRequest isVpcPeeredRequest) {
+    public IsVpcPeeredResult isVpcPeered(IsVpcPeeredRequest request) {
+        request = beforeClientExecution(request);
+        return executeIsVpcPeered(request);
+    }
+
+    @SdkInternalApi
+    final IsVpcPeeredResult executeIsVpcPeered(IsVpcPeeredRequest isVpcPeeredRequest) {
 
         ExecutionContext executionContext = createExecutionContext(isVpcPeeredRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2604,7 +2839,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public OpenInstancePublicPortsResult openInstancePublicPorts(OpenInstancePublicPortsRequest openInstancePublicPortsRequest) {
+    public OpenInstancePublicPortsResult openInstancePublicPorts(OpenInstancePublicPortsRequest request) {
+        request = beforeClientExecution(request);
+        return executeOpenInstancePublicPorts(request);
+    }
+
+    @SdkInternalApi
+    final OpenInstancePublicPortsResult executeOpenInstancePublicPorts(OpenInstancePublicPortsRequest openInstancePublicPortsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(openInstancePublicPortsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2664,7 +2905,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public PeerVpcResult peerVpc(PeerVpcRequest peerVpcRequest) {
+    public PeerVpcResult peerVpc(PeerVpcRequest request) {
+        request = beforeClientExecution(request);
+        return executePeerVpc(request);
+    }
+
+    @SdkInternalApi
+    final PeerVpcResult executePeerVpc(PeerVpcRequest peerVpcRequest) {
 
         ExecutionContext executionContext = createExecutionContext(peerVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2724,7 +2971,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public RebootInstanceResult rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+    public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootInstance(request);
+    }
+
+    @SdkInternalApi
+    final RebootInstanceResult executeRebootInstance(RebootInstanceRequest rebootInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2782,7 +3035,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public ReleaseStaticIpResult releaseStaticIp(ReleaseStaticIpRequest releaseStaticIpRequest) {
+    public ReleaseStaticIpResult releaseStaticIp(ReleaseStaticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeReleaseStaticIp(request);
+    }
+
+    @SdkInternalApi
+    final ReleaseStaticIpResult executeReleaseStaticIp(ReleaseStaticIpRequest releaseStaticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(releaseStaticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2841,7 +3100,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest) {
+    public StartInstanceResult startInstance(StartInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInstance(request);
+    }
+
+    @SdkInternalApi
+    final StartInstanceResult executeStartInstance(StartInstanceRequest startInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2899,7 +3164,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest) {
+    public StopInstanceResult stopInstance(StopInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopInstance(request);
+    }
+
+    @SdkInternalApi
+    final StopInstanceResult executeStopInstance(StopInstanceRequest stopInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2957,7 +3228,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public UnpeerVpcResult unpeerVpc(UnpeerVpcRequest unpeerVpcRequest) {
+    public UnpeerVpcResult unpeerVpc(UnpeerVpcRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnpeerVpc(request);
+    }
+
+    @SdkInternalApi
+    final UnpeerVpcResult executeUnpeerVpc(UnpeerVpcRequest unpeerVpcRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unpeerVpcRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3015,7 +3292,13 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest) {
+    public UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainEntry(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainEntryResult executeUpdateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainEntryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

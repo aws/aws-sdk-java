@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Treatment resource
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TreatmentResource implements Serializable, Cloneable, StructuredPojo {
 

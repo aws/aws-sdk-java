@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Dimension specification of a segment.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SetDimension implements Serializable, Cloneable, StructuredPojo {
 

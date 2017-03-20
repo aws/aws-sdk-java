@@ -3098,10 +3098,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             "The key parameter must be specified when uploading a part");
         rejectNull(uploadId,
             "The upload ID parameter must be specified when uploading a part");
-        rejectNull(partNumber,
-            "The part number parameter must be specified when uploading a part");
-        rejectNull(partSize,
-            "The part size parameter must be specified when uploading a part");
         Request<UploadPartRequest> request = createRequest(bucketName, key, uploadPartRequest, HttpMethodName.PUT);
         request.addParameter("uploadId", uploadId);
         request.addParameter("partNumber", Integer.toString(partNumber));

@@ -93,6 +93,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest request) {
+
+        return deleteEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteGcmChannelResult> deleteGcmChannelAsync(DeleteGcmChannelRequest request) {
 
         return deleteGcmChannelAsync(request, null);
@@ -223,6 +236,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest request) {
+
+        return getEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGcmChannelResult> getGcmChannelAsync(GetGcmChannelRequest request) {
 
         return getGcmChannelAsync(request, null);
@@ -322,6 +348,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetSegmentsResult> getSegmentsAsync(GetSegmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSegmentsRequest, GetSegmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest request) {
+
+        return putEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -301,7 +302,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CancelClusterResult cancelCluster(CancelClusterRequest cancelClusterRequest) {
+    public CancelClusterResult cancelCluster(CancelClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCluster(request);
+    }
+
+    @SdkInternalApi
+    final CancelClusterResult executeCancelCluster(CancelClusterRequest cancelClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -353,7 +360,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -404,7 +417,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateAddressResult createAddress(CreateAddressRequest createAddressRequest) {
+    public CreateAddressResult createAddress(CreateAddressRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAddress(request);
+    }
+
+    @SdkInternalApi
+    final CreateAddressResult executeCreateAddress(CreateAddressRequest createAddressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -457,7 +476,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCluster(request);
+    }
+
+    @SdkInternalApi
+    final CreateClusterResult executeCreateCluster(CreateClusterRequest createClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -513,7 +538,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -559,7 +590,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeAddressResult describeAddress(DescribeAddressRequest describeAddressRequest) {
+    public DescribeAddressResult describeAddress(DescribeAddressRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddress(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddressResult executeDescribeAddress(DescribeAddressRequest describeAddressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -605,7 +642,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeAddressesResult describeAddresses(DescribeAddressesRequest describeAddressesRequest) {
+    public DescribeAddressesResult describeAddresses(DescribeAddressesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddresses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddressesResult executeDescribeAddresses(DescribeAddressesRequest describeAddressesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -651,7 +694,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeClusterResult describeCluster(DescribeClusterRequest describeClusterRequest) {
+    public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCluster(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterResult executeDescribeCluster(DescribeClusterRequest describeClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -697,7 +746,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeJobResult describeJob(DescribeJobRequest describeJobRequest) {
+    public DescribeJobResult describeJob(DescribeJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobResult executeDescribeJob(DescribeJobRequest describeJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -761,7 +816,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetJobManifestResult getJobManifest(GetJobManifestRequest getJobManifestRequest) {
+    public GetJobManifestResult getJobManifest(GetJobManifestRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobManifest(request);
+    }
+
+    @SdkInternalApi
+    final GetJobManifestResult executeGetJobManifest(GetJobManifestRequest getJobManifestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getJobManifestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -819,7 +880,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetJobUnlockCodeResult getJobUnlockCode(GetJobUnlockCodeRequest getJobUnlockCodeRequest) {
+    public GetJobUnlockCodeResult getJobUnlockCode(GetJobUnlockCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobUnlockCode(request);
+    }
+
+    @SdkInternalApi
+    final GetJobUnlockCodeResult executeGetJobUnlockCode(GetJobUnlockCodeRequest getJobUnlockCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getJobUnlockCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -866,7 +933,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetSnowballUsageResult getSnowballUsage(GetSnowballUsageRequest getSnowballUsageRequest) {
+    public GetSnowballUsageResult getSnowballUsage(GetSnowballUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSnowballUsage(request);
+    }
+
+    @SdkInternalApi
+    final GetSnowballUsageResult executeGetSnowballUsage(GetSnowballUsageRequest getSnowballUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSnowballUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -912,7 +985,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest listClusterJobsRequest) {
+    public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusterJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListClusterJobsResult executeListClusterJobs(ListClusterJobsRequest listClusterJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listClusterJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -956,7 +1035,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusters(request);
+    }
+
+    @SdkInternalApi
+    final ListClustersResult executeListClusters(ListClustersRequest listClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1001,7 +1086,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1057,7 +1148,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateClusterResult updateCluster(UpdateClusterRequest updateClusterRequest) {
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCluster(request);
+    }
+
+    @SdkInternalApi
+    final UpdateClusterResult executeUpdateCluster(UpdateClusterRequest updateClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1117,7 +1214,13 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {
+    public UpdateJobResult updateJob(UpdateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateJobResult executeUpdateJob(UpdateJobRequest updateJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -64,10 +64,12 @@ final class SimpleMethodsProcessor implements CodegenCustomizationProcessor {
             } else {
                 String inputShapeName = opModel.getInput().getSimpleType();
                 ShapeModel shape = shapeModels.get(inputShapeName);
-                List<List<String>> methodForms = methodFormsWrapper
-                        .getMethodForms();
+                List<List<String>> methodForms = methodFormsWrapper.getMethodForms();
+                List<Boolean> deprecatedForms = methodFormsWrapper.getDeprecated();
 
-                for (List<String> argumentList : methodForms) {
+                for (int i = 0; i < methodForms.size(); i++) {
+                    List<String> argumentList = methodForms.get(i);
+                    boolean deprecated = deprecatedForms != null ? deprecatedForms.get(i) : false;
                     List<ArgumentModel> simplifiedForm = new ArrayList<ArgumentModel>();
 
                     for (String argument : argumentList) {
@@ -80,7 +82,7 @@ final class SimpleMethodsProcessor implements CodegenCustomizationProcessor {
                         simplifiedForm.add(argModel);
                     }
 
-                    opModel.addSimpleMethodForm(simplifiedForm);
+                    opModel.addSimpleMethodForm(simplifiedForm, deprecated);
                 }
             }
         }

@@ -25,6 +25,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -77,7 +78,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
 
     /**
-     * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
+     * @see HttpResponseHandler#handle(HttpResponse)
      */
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
@@ -113,6 +114,13 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
             log.trace("Done parsing service response");
             return awsResponse;
+        } catch (XMLStreamException e) {
+            // If the exception was caused by an IOE, wrap this in an IOE so
+            // that it will be exposed to the RetryPolicy.
+            if (e.getNestedException() instanceof IOException) {
+                throw new IOException(e);
+            }
+            throw e;
         } finally {
             try {
                 eventReader.close();
@@ -150,5 +158,4 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     public boolean needsConnectionLeftOpen() {
         return false;
     }
-
 }

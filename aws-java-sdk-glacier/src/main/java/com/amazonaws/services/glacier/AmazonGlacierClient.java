@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -367,7 +368,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.AbortMultipartUpload
      */
     @Override
-    public AbortMultipartUploadResult abortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest) {
+    public AbortMultipartUploadResult abortMultipartUpload(AbortMultipartUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortMultipartUpload(request);
+    }
+
+    @SdkInternalApi
+    final AbortMultipartUploadResult executeAbortMultipartUpload(AbortMultipartUploadRequest abortMultipartUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(abortMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -432,7 +439,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.AbortVaultLock
      */
     @Override
-    public AbortVaultLockResult abortVaultLock(AbortVaultLockRequest abortVaultLockRequest) {
+    public AbortVaultLockResult abortVaultLock(AbortVaultLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortVaultLock(request);
+    }
+
+    @SdkInternalApi
+    final AbortVaultLockResult executeAbortVaultLock(AbortVaultLockRequest abortVaultLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(abortVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -487,7 +500,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.AddTagsToVault
      */
     @Override
-    public AddTagsToVaultResult addTagsToVault(AddTagsToVaultRequest addTagsToVaultRequest) {
+    public AddTagsToVaultResult addTagsToVault(AddTagsToVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToVault(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToVaultResult executeAddTagsToVault(AddTagsToVaultRequest addTagsToVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -580,7 +599,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.CompleteMultipartUpload
      */
     @Override
-    public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
+    public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteMultipartUpload(request);
+    }
+
+    @SdkInternalApi
+    final CompleteMultipartUploadResult executeCompleteMultipartUpload(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(completeMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -646,7 +671,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.CompleteVaultLock
      */
     @Override
-    public CompleteVaultLockResult completeVaultLock(CompleteVaultLockRequest completeVaultLockRequest) {
+    public CompleteVaultLockResult completeVaultLock(CompleteVaultLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteVaultLock(request);
+    }
+
+    @SdkInternalApi
+    final CompleteVaultLockResult executeCompleteVaultLock(CompleteVaultLockRequest completeVaultLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(completeVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -728,7 +759,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.CreateVault
      */
     @Override
-    public CreateVaultResult createVault(CreateVaultRequest createVaultRequest) {
+    public CreateVaultResult createVault(CreateVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVault(request);
+    }
+
+    @SdkInternalApi
+    final CreateVaultResult executeCreateVault(CreateVaultRequest createVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -809,7 +846,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DeleteArchive
      */
     @Override
-    public DeleteArchiveResult deleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
+    public DeleteArchiveResult deleteArchive(DeleteArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteArchive(request);
+    }
+
+    @SdkInternalApi
+    final DeleteArchiveResult executeDeleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -882,7 +925,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DeleteVault
      */
     @Override
-    public DeleteVaultResult deleteVault(DeleteVaultRequest deleteVaultRequest) {
+    public DeleteVaultResult deleteVault(DeleteVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVault(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVaultResult executeDeleteVault(DeleteVaultRequest deleteVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -939,7 +988,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DeleteVaultAccessPolicy
      */
     @Override
-    public DeleteVaultAccessPolicyResult deleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) {
+    public DeleteVaultAccessPolicyResult deleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVaultAccessPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVaultAccessPolicyResult executeDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1006,7 +1061,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DeleteVaultNotifications
      */
     @Override
-    public DeleteVaultNotificationsResult deleteVaultNotifications(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) {
+    public DeleteVaultNotificationsResult deleteVaultNotifications(DeleteVaultNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVaultNotifications(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVaultNotificationsResult executeDeleteVaultNotifications(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1081,7 +1142,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DescribeJob
      */
     @Override
-    public DescribeJobResult describeJob(DescribeJobRequest describeJobRequest) {
+    public DescribeJobResult describeJob(DescribeJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobResult executeDescribeJob(DescribeJobRequest describeJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1151,7 +1218,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.DescribeVault
      */
     @Override
-    public DescribeVaultResult describeVault(DescribeVaultRequest describeVaultRequest) {
+    public DescribeVaultResult describeVault(DescribeVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVault(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVaultResult executeDescribeVault(DescribeVaultRequest describeVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1201,7 +1274,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.GetDataRetrievalPolicy
      */
     @Override
-    public GetDataRetrievalPolicyResult getDataRetrievalPolicy(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) {
+    public GetDataRetrievalPolicyResult getDataRetrievalPolicy(GetDataRetrievalPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataRetrievalPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetDataRetrievalPolicyResult executeGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDataRetrievalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1295,7 +1374,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.GetJobOutput
      */
     @Override
-    public GetJobOutputResult getJobOutput(GetJobOutputRequest getJobOutputRequest) {
+    public GetJobOutputResult getJobOutput(GetJobOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobOutput(request);
+    }
+
+    @SdkInternalApi
+    final GetJobOutputResult executeGetJobOutput(GetJobOutputRequest getJobOutputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getJobOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1359,7 +1444,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.GetVaultAccessPolicy
      */
     @Override
-    public GetVaultAccessPolicyResult getVaultAccessPolicy(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) {
+    public GetVaultAccessPolicyResult getVaultAccessPolicy(GetVaultAccessPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVaultAccessPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetVaultAccessPolicyResult executeGetVaultAccessPolicy(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1443,7 +1534,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.GetVaultLock
      */
     @Override
-    public GetVaultLockResult getVaultLock(GetVaultLockRequest getVaultLockRequest) {
+    public GetVaultLockResult getVaultLock(GetVaultLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVaultLock(request);
+    }
+
+    @SdkInternalApi
+    final GetVaultLockResult executeGetVaultLock(GetVaultLockRequest getVaultLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1513,7 +1610,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.GetVaultNotifications
      */
     @Override
-    public GetVaultNotificationsResult getVaultNotifications(GetVaultNotificationsRequest getVaultNotificationsRequest) {
+    public GetVaultNotificationsResult getVaultNotifications(GetVaultNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVaultNotifications(request);
+    }
+
+    @SdkInternalApi
+    final GetVaultNotificationsResult executeGetVaultNotifications(GetVaultNotificationsRequest getVaultNotificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1739,7 +1842,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.InitiateJob
      */
     @Override
-    public InitiateJobResult initiateJob(InitiateJobRequest initiateJobRequest) {
+    public InitiateJobResult initiateJob(InitiateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateJob(request);
+    }
+
+    @SdkInternalApi
+    final InitiateJobResult executeInitiateJob(InitiateJobRequest initiateJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(initiateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1826,7 +1935,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.InitiateMultipartUpload
      */
     @Override
-    public InitiateMultipartUploadResult initiateMultipartUpload(InitiateMultipartUploadRequest initiateMultipartUploadRequest) {
+    public InitiateMultipartUploadResult initiateMultipartUpload(InitiateMultipartUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateMultipartUpload(request);
+    }
+
+    @SdkInternalApi
+    final InitiateMultipartUploadResult executeInitiateMultipartUpload(InitiateMultipartUploadRequest initiateMultipartUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(initiateMultipartUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1920,7 +2035,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.InitiateVaultLock
      */
     @Override
-    public InitiateVaultLockResult initiateVaultLock(InitiateVaultLockRequest initiateVaultLockRequest) {
+    public InitiateVaultLockResult initiateVaultLock(InitiateVaultLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateVaultLock(request);
+    }
+
+    @SdkInternalApi
+    final InitiateVaultLockResult executeInitiateVaultLock(InitiateVaultLockRequest initiateVaultLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(initiateVaultLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2008,7 +2129,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListJobs
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2086,7 +2213,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListMultipartUploads
      */
     @Override
-    public ListMultipartUploadsResult listMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest) {
+    public ListMultipartUploadsResult listMultipartUploads(ListMultipartUploadsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMultipartUploads(request);
+    }
+
+    @SdkInternalApi
+    final ListMultipartUploadsResult executeListMultipartUploads(ListMultipartUploadsRequest listMultipartUploadsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listMultipartUploadsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2161,7 +2294,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListParts
      */
     @Override
-    public ListPartsResult listParts(ListPartsRequest listPartsRequest) {
+    public ListPartsResult listParts(ListPartsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListParts(request);
+    }
+
+    @SdkInternalApi
+    final ListPartsResult executeListParts(ListPartsRequest listPartsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPartsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2207,7 +2346,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListProvisionedCapacity
      */
     @Override
-    public ListProvisionedCapacityResult listProvisionedCapacity(ListProvisionedCapacityRequest listProvisionedCapacityRequest) {
+    public ListProvisionedCapacityResult listProvisionedCapacity(ListProvisionedCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProvisionedCapacity(request);
+    }
+
+    @SdkInternalApi
+    final ListProvisionedCapacityResult executeListProvisionedCapacity(ListProvisionedCapacityRequest listProvisionedCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listProvisionedCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2260,7 +2405,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListTagsForVault
      */
     @Override
-    public ListTagsForVaultResult listTagsForVault(ListTagsForVaultRequest listTagsForVaultRequest) {
+    public ListTagsForVaultResult listTagsForVault(ListTagsForVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForVault(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForVaultResult executeListTagsForVault(ListTagsForVaultRequest listTagsForVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2332,7 +2483,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.ListVaults
      */
     @Override
-    public ListVaultsResult listVaults(ListVaultsRequest listVaultsRequest) {
+    public ListVaultsResult listVaults(ListVaultsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVaults(request);
+    }
+
+    @SdkInternalApi
+    final ListVaultsResult executeListVaults(ListVaultsRequest listVaultsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVaultsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2380,7 +2537,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.PurchaseProvisionedCapacity
      */
     @Override
-    public PurchaseProvisionedCapacityResult purchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest purchaseProvisionedCapacityRequest) {
+    public PurchaseProvisionedCapacityResult purchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseProvisionedCapacity(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseProvisionedCapacityResult executePurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest purchaseProvisionedCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(purchaseProvisionedCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2434,7 +2597,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.RemoveTagsFromVault
      */
     @Override
-    public RemoveTagsFromVaultResult removeTagsFromVault(RemoveTagsFromVaultRequest removeTagsFromVaultRequest) {
+    public RemoveTagsFromVaultResult removeTagsFromVault(RemoveTagsFromVaultRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromVault(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromVaultResult executeRemoveTagsFromVault(RemoveTagsFromVaultRequest removeTagsFromVaultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromVaultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2489,7 +2658,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.SetDataRetrievalPolicy
      */
     @Override
-    public SetDataRetrievalPolicyResult setDataRetrievalPolicy(SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest) {
+    public SetDataRetrievalPolicyResult setDataRetrievalPolicy(SetDataRetrievalPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetDataRetrievalPolicy(request);
+    }
+
+    @SdkInternalApi
+    final SetDataRetrievalPolicyResult executeSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest setDataRetrievalPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setDataRetrievalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2544,7 +2719,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.SetVaultAccessPolicy
      */
     @Override
-    public SetVaultAccessPolicyResult setVaultAccessPolicy(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest) {
+    public SetVaultAccessPolicyResult setVaultAccessPolicy(SetVaultAccessPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetVaultAccessPolicy(request);
+    }
+
+    @SdkInternalApi
+    final SetVaultAccessPolicyResult executeSetVaultAccessPolicy(SetVaultAccessPolicyRequest setVaultAccessPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setVaultAccessPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2633,7 +2814,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.SetVaultNotifications
      */
     @Override
-    public SetVaultNotificationsResult setVaultNotifications(SetVaultNotificationsRequest setVaultNotificationsRequest) {
+    public SetVaultNotificationsResult setVaultNotifications(SetVaultNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetVaultNotifications(request);
+    }
+
+    @SdkInternalApi
+    final SetVaultNotificationsResult executeSetVaultNotifications(SetVaultNotificationsRequest setVaultNotificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setVaultNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2722,7 +2909,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.UploadArchive
      */
     @Override
-    public UploadArchiveResult uploadArchive(UploadArchiveRequest uploadArchiveRequest) {
+    public UploadArchiveResult uploadArchive(UploadArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadArchive(request);
+    }
+
+    @SdkInternalApi
+    final UploadArchiveResult executeUploadArchive(UploadArchiveRequest uploadArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2827,7 +3020,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * @sample AmazonGlacier.UploadMultipartPart
      */
     @Override
-    public UploadMultipartPartResult uploadMultipartPart(UploadMultipartPartRequest uploadMultipartPartRequest) {
+    public UploadMultipartPartResult uploadMultipartPart(UploadMultipartPartRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadMultipartPart(request);
+    }
+
+    @SdkInternalApi
+    final UploadMultipartPartResult executeUploadMultipartPart(UploadMultipartPartRequest uploadMultipartPartRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadMultipartPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2921,6 +3120,14 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

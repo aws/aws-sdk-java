@@ -461,6 +461,7 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
      *
      * @see #describeTapeArchivesAsync(DescribeTapeArchivesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTapeArchivesResult> describeTapeArchivesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTapeArchivesRequest, DescribeTapeArchivesResult> asyncHandler) {
 
@@ -587,6 +588,7 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
      *
      * @see #listGatewaysAsync(ListGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
 
@@ -635,6 +637,7 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
      *
      * @see #listTagsForResourceAsync(ListTagsForResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
@@ -722,6 +725,7 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
      *
      * @see #removeTagsFromResourceAsync(RemoveTagsFromResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 

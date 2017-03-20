@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -401,7 +402,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public CreateByteMatchSetResult createByteMatchSet(CreateByteMatchSetRequest createByteMatchSetRequest) {
+    public CreateByteMatchSetResult createByteMatchSet(CreateByteMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateByteMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateByteMatchSetResult executeCreateByteMatchSet(CreateByteMatchSetRequest createByteMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -541,7 +548,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest) {
+    public CreateIPSetResult createIPSet(CreateIPSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIPSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateIPSetResult executeCreateIPSet(CreateIPSetRequest createIPSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -708,7 +721,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public CreateRuleResult createRule(CreateRuleRequest createRuleRequest) {
+    public CreateRuleResult createRule(CreateRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateRuleResult executeCreateRule(CreateRuleRequest createRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -850,7 +869,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public CreateSizeConstraintSetResult createSizeConstraintSet(CreateSizeConstraintSetRequest createSizeConstraintSetRequest) {
+    public CreateSizeConstraintSetResult createSizeConstraintSet(CreateSizeConstraintSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSizeConstraintSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateSizeConstraintSetResult executeCreateSizeConstraintSet(CreateSizeConstraintSetRequest createSizeConstraintSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -993,7 +1018,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest) {
+    public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSqlInjectionMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateSqlInjectionMatchSetResult executeCreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1154,7 +1185,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public CreateWebACLResult createWebACL(CreateWebACLRequest createWebACLRequest) {
+    public CreateWebACLResult createWebACL(CreateWebACLRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWebACL(request);
+    }
+
+    @SdkInternalApi
+    final CreateWebACLResult executeCreateWebACL(CreateWebACLRequest createWebACLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1295,7 +1332,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest createXssMatchSetRequest) {
+    public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateXssMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateXssMatchSetResult executeCreateXssMatchSet(CreateXssMatchSetRequest createXssMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1411,7 +1454,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public DeleteByteMatchSetResult deleteByteMatchSet(DeleteByteMatchSetRequest deleteByteMatchSetRequest) {
+    public DeleteByteMatchSetResult deleteByteMatchSet(DeleteByteMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteByteMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteByteMatchSetResult executeDeleteByteMatchSet(DeleteByteMatchSetRequest deleteByteMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1526,7 +1575,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest) {
+    public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIPSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIPSetResult executeDeleteIPSet(DeleteIPSetRequest deleteIPSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1641,7 +1696,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleResult executeDeleteRule(DeleteRuleRequest deleteRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1757,7 +1818,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest) {
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(DeleteSizeConstraintSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSizeConstraintSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSizeConstraintSetResult executeDeleteSizeConstraintSet(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1876,7 +1943,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest) {
+    public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSqlInjectionMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSqlInjectionMatchSetResult executeDeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1991,7 +2064,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public DeleteWebACLResult deleteWebACL(DeleteWebACLRequest deleteWebACLRequest) {
+    public DeleteWebACLResult deleteWebACL(DeleteWebACLRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWebACL(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWebACLResult executeDeleteWebACL(DeleteWebACLRequest deleteWebACLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2108,7 +2187,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public DeleteXssMatchSetResult deleteXssMatchSet(DeleteXssMatchSetRequest deleteXssMatchSetRequest) {
+    public DeleteXssMatchSetResult deleteXssMatchSet(DeleteXssMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteXssMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteXssMatchSetResult executeDeleteXssMatchSet(DeleteXssMatchSetRequest deleteXssMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2157,7 +2242,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetByteMatchSetResult getByteMatchSet(GetByteMatchSetRequest getByteMatchSetRequest) {
+    public GetByteMatchSetResult getByteMatchSet(GetByteMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetByteMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final GetByteMatchSetResult executeGetByteMatchSet(GetByteMatchSetRequest getByteMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2214,7 +2305,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetChangeTokenResult getChangeToken(GetChangeTokenRequest getChangeTokenRequest) {
+    public GetChangeTokenResult getChangeToken(GetChangeTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChangeToken(request);
+    }
+
+    @SdkInternalApi
+    final GetChangeTokenResult executeGetChangeToken(GetChangeTokenRequest getChangeTokenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getChangeTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2279,7 +2376,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetChangeTokenStatusResult getChangeTokenStatus(GetChangeTokenStatusRequest getChangeTokenStatusRequest) {
+    public GetChangeTokenStatusResult getChangeTokenStatus(GetChangeTokenStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChangeTokenStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetChangeTokenStatusResult executeGetChangeTokenStatus(GetChangeTokenStatusRequest getChangeTokenStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getChangeTokenStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2328,7 +2431,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest) {
+    public GetIPSetResult getIPSet(GetIPSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIPSet(request);
+    }
+
+    @SdkInternalApi
+    final GetIPSetResult executeGetIPSet(GetIPSetRequest getIPSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2378,7 +2487,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetRuleResult getRule(GetRuleRequest getRuleRequest) {
+    public GetRuleResult getRule(GetRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRule(request);
+    }
+
+    @SdkInternalApi
+    final GetRuleResult executeGetRule(GetRuleRequest getRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2432,7 +2547,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetSampledRequestsResult getSampledRequests(GetSampledRequestsRequest getSampledRequestsRequest) {
+    public GetSampledRequestsResult getSampledRequests(GetSampledRequestsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSampledRequests(request);
+    }
+
+    @SdkInternalApi
+    final GetSampledRequestsResult executeGetSampledRequests(GetSampledRequestsRequest getSampledRequestsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSampledRequestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2481,7 +2602,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetSizeConstraintSetResult getSizeConstraintSet(GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
+    public GetSizeConstraintSetResult getSizeConstraintSet(GetSizeConstraintSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSizeConstraintSet(request);
+    }
+
+    @SdkInternalApi
+    final GetSizeConstraintSetResult executeGetSizeConstraintSet(GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2531,7 +2658,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest) {
+    public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSqlInjectionMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final GetSqlInjectionMatchSetResult executeGetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2582,7 +2715,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest) {
+    public GetWebACLResult getWebACL(GetWebACLRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWebACL(request);
+    }
+
+    @SdkInternalApi
+    final GetWebACLResult executeGetWebACL(GetWebACLRequest getWebACLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2632,7 +2771,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest getXssMatchSetRequest) {
+    public GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetXssMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final GetXssMatchSetResult executeGetXssMatchSet(GetXssMatchSetRequest getXssMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2679,7 +2824,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest listByteMatchSetsRequest) {
+    public ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListByteMatchSets(request);
+    }
+
+    @SdkInternalApi
+    final ListByteMatchSetsResult executeListByteMatchSets(ListByteMatchSetsRequest listByteMatchSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listByteMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2726,7 +2877,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest) {
+    public ListIPSetsResult listIPSets(ListIPSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIPSets(request);
+    }
+
+    @SdkInternalApi
+    final ListIPSetsResult executeListIPSets(ListIPSetsRequest listIPSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIPSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2773,7 +2930,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
+    public ListRulesResult listRules(ListRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRules(request);
+    }
+
+    @SdkInternalApi
+    final ListRulesResult executeListRules(ListRulesRequest listRulesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2820,7 +2983,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListSizeConstraintSetsResult listSizeConstraintSets(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest) {
+    public ListSizeConstraintSetsResult listSizeConstraintSets(ListSizeConstraintSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSizeConstraintSets(request);
+    }
+
+    @SdkInternalApi
+    final ListSizeConstraintSetsResult executeListSizeConstraintSets(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSizeConstraintSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2869,7 +3038,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest) {
+    public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSqlInjectionMatchSets(request);
+    }
+
+    @SdkInternalApi
+    final ListSqlInjectionMatchSetsResult executeListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSqlInjectionMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2918,7 +3093,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest) {
+    public ListWebACLsResult listWebACLs(ListWebACLsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWebACLs(request);
+    }
+
+    @SdkInternalApi
+    final ListWebACLsResult executeListWebACLs(ListWebACLsRequest listWebACLsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listWebACLsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2966,7 +3147,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest) {
+    public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListXssMatchSets(request);
+    }
+
+    @SdkInternalApi
+    final ListXssMatchSetsResult executeListXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listXssMatchSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3202,7 +3389,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest updateByteMatchSetRequest) {
+    public UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateByteMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateByteMatchSetResult executeUpdateByteMatchSet(UpdateByteMatchSetRequest updateByteMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateByteMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3474,7 +3667,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest) {
+    public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateIPSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateIPSetResult executeUpdateIPSet(UpdateIPSetRequest updateIPSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateIPSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3719,7 +3918,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest) {
+    public UpdateRuleResult updateRule(UpdateRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRuleResult executeUpdateRule(UpdateRuleRequest updateRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3969,7 +4174,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public UpdateSizeConstraintSetResult updateSizeConstraintSet(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(UpdateSizeConstraintSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSizeConstraintSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSizeConstraintSetResult executeUpdateSizeConstraintSet(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSizeConstraintSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4197,7 +4408,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      API Documentation</a>
      */
     @Override
-    public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest) {
+    public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSqlInjectionMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSqlInjectionMatchSetResult executeUpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSqlInjectionMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4458,7 +4675,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public UpdateWebACLResult updateWebACL(UpdateWebACLRequest updateWebACLRequest) {
+    public UpdateWebACLResult updateWebACL(UpdateWebACLRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWebACL(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWebACLResult executeUpdateWebACL(UpdateWebACLRequest updateWebACLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateWebACLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4684,7 +4907,13 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *      Documentation</a>
      */
     @Override
-    public UpdateXssMatchSetResult updateXssMatchSet(UpdateXssMatchSetRequest updateXssMatchSetRequest) {
+    public UpdateXssMatchSetResult updateXssMatchSet(UpdateXssMatchSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateXssMatchSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateXssMatchSetResult executeUpdateXssMatchSet(UpdateXssMatchSetRequest updateXssMatchSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateXssMatchSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

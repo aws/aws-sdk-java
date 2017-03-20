@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -505,7 +506,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -569,7 +576,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CancelCommandResult cancelCommand(CancelCommandRequest cancelCommandRequest) {
+    public CancelCommandResult cancelCommand(CancelCommandRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCommand(request);
+    }
+
+    @SdkInternalApi
+    final CancelCommandResult executeCancelCommand(CancelCommandRequest cancelCommandRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -618,7 +631,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateActivationResult createActivation(CreateActivationRequest createActivationRequest) {
+    public CreateActivationResult createActivation(CreateActivationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateActivation(request);
+    }
+
+    @SdkInternalApi
+    final CreateActivationResult executeCreateActivation(CreateActivationRequest createActivationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -707,7 +726,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateAssociationResult createAssociation(CreateAssociationRequest createAssociationRequest) {
+    public CreateAssociationResult createAssociation(CreateAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssociationResult executeCreateAssociation(CreateAssociationRequest createAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -796,7 +821,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest) {
+    public CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssociationBatch(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssociationBatchResult executeCreateAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssociationBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -855,7 +886,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateDocumentResult createDocument(CreateDocumentRequest createDocumentRequest) {
+    public CreateDocumentResult createDocument(CreateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDocument(request);
+    }
+
+    @SdkInternalApi
+    final CreateDocumentResult executeCreateDocument(CreateDocumentRequest createDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -905,7 +942,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
+    public CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final CreateMaintenanceWindowResult executeCreateMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -957,7 +1000,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest) {
+    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final CreatePatchBaselineResult executeCreatePatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1009,7 +1058,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteActivationResult deleteActivation(DeleteActivationRequest deleteActivationRequest) {
+    public DeleteActivationResult deleteActivation(DeleteActivationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteActivation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteActivationResult executeDeleteActivation(DeleteActivationRequest deleteActivationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1080,7 +1135,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest deleteAssociationRequest) {
+    public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAssociationResult executeDeleteAssociation(DeleteAssociationRequest deleteAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1135,7 +1196,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
+    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDocument(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDocumentResult executeDeleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1179,7 +1246,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
+    public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMaintenanceWindowResult executeDeleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1227,7 +1300,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest) {
+    public DeleteParameterResult deleteParameter(DeleteParameterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteParameter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteParameterResult executeDeleteParameter(DeleteParameterRequest deleteParameterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1273,7 +1352,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest) {
+    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final DeletePatchBaselineResult executeDeletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1334,7 +1419,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
+    public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterManagedInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterManagedInstanceResult executeDeregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterManagedInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1382,7 +1473,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(
+    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterPatchBaselineForPatchGroupResult executeDeregisterPatchBaselineForPatchGroup(
             DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterPatchBaselineForPatchGroupRequest);
@@ -1431,7 +1528,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(
+    public DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTargetFromMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTargetFromMaintenanceWindowResult executeDeregisterTargetFromMaintenanceWindow(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTargetFromMaintenanceWindowRequest);
@@ -1480,7 +1583,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(
+    public DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTaskFromMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTaskFromMaintenanceWindowResult executeDeregisterTaskFromMaintenanceWindow(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTaskFromMaintenanceWindowRequest);
@@ -1532,7 +1641,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeActivationsResult describeActivations(DescribeActivationsRequest describeActivationsRequest) {
+    public DescribeActivationsResult describeActivations(DescribeActivationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeActivations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeActivationsResult executeDescribeActivations(DescribeActivationsRequest describeActivationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeActivationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1596,7 +1711,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeAssociationResult describeAssociation(DescribeAssociationRequest describeAssociationRequest) {
+    public DescribeAssociationResult describeAssociation(DescribeAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssociationResult executeDescribeAssociation(DescribeAssociationRequest describeAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1642,7 +1763,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest) {
+    public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutomationExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutomationExecutionsResult executeDescribeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAutomationExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1688,7 +1815,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest) {
+    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAvailablePatches(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAvailablePatchesResult executeDescribeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAvailablePatchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1738,7 +1871,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeDocumentResult describeDocument(DescribeDocumentRequest describeDocumentRequest) {
+    public DescribeDocumentResult describeDocument(DescribeDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocument(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentResult executeDescribeDocument(DescribeDocumentRequest describeDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1787,7 +1926,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
+    public DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentPermission(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentPermissionResult executeDescribeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1851,7 +1996,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
+    public DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEffectiveInstanceAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEffectiveInstanceAssociationsResult executeDescribeEffectiveInstanceAssociations(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEffectiveInstanceAssociationsRequest);
@@ -1902,7 +2053,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(
+    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEffectivePatchesForPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEffectivePatchesForPatchBaselineResult executeDescribeEffectivePatchesForPatchBaseline(
             DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEffectivePatchesForPatchBaselineRequest);
@@ -1967,7 +2124,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(
+    public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceAssociationsStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceAssociationsStatusResult executeDescribeInstanceAssociationsStatus(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstanceAssociationsStatusRequest);
@@ -2040,7 +2203,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest) {
+    public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceInformation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceInformationResult executeDescribeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstanceInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2088,7 +2257,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
+    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatchStates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchStatesResult executeDescribeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2138,7 +2313,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(
+    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatchStatesForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchStatesForPatchGroupResult executeDescribeInstancePatchStatesForPatchGroup(
             DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesForPatchGroupRequest);
@@ -2206,7 +2387,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest) {
+    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatches(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchesResult executeDescribeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2257,6 +2444,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
+            DescribeMaintenanceWindowExecutionTaskInvocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutionTaskInvocations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionTaskInvocationsResult executeDescribeMaintenanceWindowExecutionTaskInvocations(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTaskInvocationsRequest);
@@ -2305,7 +2499,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(
+    public DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutionTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionTasksResult executeDescribeMaintenanceWindowExecutionTasks(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTasksRequest);
@@ -2353,7 +2553,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(
+    public DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionsResult executeDescribeMaintenanceWindowExecutions(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionsRequest);
@@ -2402,7 +2608,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(
+    public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowTargetsResult executeDescribeMaintenanceWindowTargets(
             DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTargetsRequest);
@@ -2451,7 +2663,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest) {
+    public DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowTasksResult executeDescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2497,7 +2715,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest) {
+    public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindows(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowsResult executeDescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2547,7 +2771,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeParametersResult describeParameters(DescribeParametersRequest describeParametersRequest) {
+    public DescribeParametersResult describeParameters(DescribeParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeParametersResult executeDescribeParameters(DescribeParametersRequest describeParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2591,7 +2821,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest) {
+    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchBaselines(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchBaselinesResult executeDescribePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchBaselinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2638,7 +2874,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest) {
+    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchGroupState(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchGroupStateResult executeDescribePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchGroupStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2684,7 +2926,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest) {
+    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchGroupsResult executeDescribePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2730,7 +2978,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest) {
+    public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetAutomationExecutionResult executeGetAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2797,7 +3051,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest) {
+    public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCommandInvocation(request);
+    }
+
+    @SdkInternalApi
+    final GetCommandInvocationResult executeGetCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCommandInvocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2841,7 +3101,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest) {
+    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDefaultPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final GetDefaultPatchBaselineResult executeGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDefaultPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2888,7 +3154,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(
+    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeployablePatchSnapshotForInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetDeployablePatchSnapshotForInstanceResult executeGetDeployablePatchSnapshotForInstance(
             GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeployablePatchSnapshotForInstanceRequest);
@@ -2939,7 +3211,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
+    public GetDocumentResult getDocument(GetDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocument(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentResult executeGetDocument(GetDocumentRequest getDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2991,7 +3269,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetInventoryResult getInventory(GetInventoryRequest getInventoryRequest) {
+    public GetInventoryResult getInventory(GetInventoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInventory(request);
+    }
+
+    @SdkInternalApi
+    final GetInventoryResult executeGetInventory(GetInventoryRequest getInventoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3040,7 +3324,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest) {
+    public GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInventorySchema(request);
+    }
+
+    @SdkInternalApi
+    final GetInventorySchemaResult executeGetInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInventorySchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3086,7 +3376,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest) {
+    public GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowResult executeGetMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3132,7 +3428,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest) {
+    public GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindowExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowExecutionResult executeGetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3180,7 +3482,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(
+    public GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindowExecutionTask(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowExecutionTaskResult executeGetMaintenanceWindowExecutionTask(
             GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionTaskRequest);
@@ -3231,7 +3539,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest) {
+    public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParameterHistory(request);
+    }
+
+    @SdkInternalApi
+    final GetParameterHistoryResult executeGetParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParameterHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3275,7 +3589,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetParametersResult getParameters(GetParametersRequest getParametersRequest) {
+    public GetParametersResult getParameters(GetParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParameters(request);
+    }
+
+    @SdkInternalApi
+    final GetParametersResult executeGetParameters(GetParametersRequest getParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3323,7 +3643,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest) {
+    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final GetPatchBaselineResult executeGetPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3367,7 +3693,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest) {
+    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetPatchBaselineForPatchGroupResult executeGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPatchBaselineForPatchGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3415,7 +3747,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListAssociationsResult listAssociations(ListAssociationsRequest listAssociationsRequest) {
+    public ListAssociationsResult listAssociations(ListAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociationsResult executeListAssociations(ListAssociationsRequest listAssociationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3483,7 +3821,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest) {
+    public ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCommandInvocations(request);
+    }
+
+    @SdkInternalApi
+    final ListCommandInvocationsResult executeListCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCommandInvocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3549,7 +3893,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest) {
+    public ListCommandsResult listCommands(ListCommandsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCommands(request);
+    }
+
+    @SdkInternalApi
+    final ListCommandsResult executeListCommands(ListCommandsRequest listCommandsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCommandsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3597,7 +3947,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest) {
+    public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentVersionsResult executeListDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDocumentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3645,7 +4001,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListDocumentsResult listDocuments(ListDocumentsRequest listDocumentsRequest) {
+    public ListDocumentsResult listDocuments(ListDocumentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocuments(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentsResult executeListDocuments(ListDocumentsRequest listDocumentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3716,7 +4078,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest) {
+    public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInventoryEntries(request);
+    }
+
+    @SdkInternalApi
+    final ListInventoryEntriesResult executeListInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInventoryEntriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3765,7 +4133,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3821,7 +4195,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
+    public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDocumentPermission(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDocumentPermissionResult executeModifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3899,7 +4279,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public PutInventoryResult putInventory(PutInventoryRequest putInventoryRequest) {
+    public PutInventoryResult putInventory(PutInventoryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutInventory(request);
+    }
+
+    @SdkInternalApi
+    final PutInventoryResult executePutInventory(PutInventoryRequest putInventoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3954,7 +4340,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public PutParameterResult putParameter(PutParameterRequest putParameterRequest) {
+    public PutParameterResult putParameter(PutParameterRequest request) {
+        request = beforeClientExecution(request);
+        return executePutParameter(request);
+    }
+
+    @SdkInternalApi
+    final PutParameterResult executePutParameter(PutParameterRequest putParameterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4002,7 +4394,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
+    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDefaultPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDefaultPatchBaselineResult executeRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDefaultPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4058,7 +4456,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(
+    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final RegisterPatchBaselineForPatchGroupResult executeRegisterPatchBaselineForPatchGroup(
             RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerPatchBaselineForPatchGroupRequest);
@@ -4113,7 +4517,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(
+    public RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTargetWithMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTargetWithMaintenanceWindowResult executeRegisterTargetWithMaintenanceWindow(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTargetWithMaintenanceWindowRequest);
@@ -4168,7 +4578,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(
+    public RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTaskWithMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTaskWithMaintenanceWindowResult executeRegisterTaskWithMaintenanceWindow(
             RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTaskWithMaintenanceWindowRequest);
@@ -4220,7 +4636,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4304,7 +4726,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public SendCommandResult sendCommand(SendCommandRequest sendCommandRequest) {
+    public SendCommandResult sendCommand(SendCommandRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendCommand(request);
+    }
+
+    @SdkInternalApi
+    final SendCommandResult executeSendCommand(SendCommandRequest sendCommandRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4357,7 +4785,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest) {
+    public StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartAutomationExecutionResult executeStartAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4405,7 +4839,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest) {
+    public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StopAutomationExecutionResult executeStopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4467,7 +4907,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateAssociationResult updateAssociation(UpdateAssociationRequest updateAssociationRequest) {
+    public UpdateAssociationResult updateAssociation(UpdateAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssociationResult executeUpdateAssociation(UpdateAssociationRequest updateAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4535,7 +4981,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
+    public UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssociationStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssociationStatusResult executeUpdateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssociationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4596,7 +5048,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest) {
+    public UpdateDocumentResult updateDocument(UpdateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocument(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentResult executeUpdateDocument(UpdateDocumentRequest updateDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4646,7 +5104,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest) {
+    public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentDefaultVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentDefaultVersionResult executeUpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentDefaultVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4694,7 +5158,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest) {
+    public UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMaintenanceWindowResult executeUpdateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4756,7 +5226,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
+    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateManagedInstanceRole(request);
+    }
+
+    @SdkInternalApi
+    final UpdateManagedInstanceRoleResult executeUpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateManagedInstanceRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4804,7 +5280,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
+    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePatchBaselineResult executeUpdatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

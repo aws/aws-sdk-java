@@ -277,6 +277,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
      *
      * @see #describeDirectoriesAsync(DescribeDirectoriesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDirectoriesResult> describeDirectoriesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDirectoriesRequest, DescribeDirectoriesResult> asyncHandler) {
 
@@ -325,6 +326,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
      *
      * @see #describeSnapshotsAsync(DescribeSnapshotsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
@@ -425,6 +427,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
      *
      * @see #getDirectoryLimitsAsync(GetDirectoryLimitsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetDirectoryLimitsResult> getDirectoryLimitsAsync(
             com.amazonaws.handlers.AsyncHandler<GetDirectoryLimitsRequest, GetDirectoryLimitsResult> asyncHandler) {
 

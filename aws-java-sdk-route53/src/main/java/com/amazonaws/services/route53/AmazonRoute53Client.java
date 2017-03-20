@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -352,7 +353,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
+    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateVPCWithHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final AssociateVPCWithHostedZoneResult executeAssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -506,7 +513,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeResourceRecordSets(request);
+    }
+
+    @SdkInternalApi
+    final ChangeResourceRecordSetsResult executeChangeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -567,7 +580,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
+    public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ChangeTagsForResourceResult executeChangeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -659,7 +678,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
+    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final CreateHealthCheckResult executeCreateHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -780,7 +805,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final CreateHostedZoneResult executeCreateHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -856,7 +887,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
+    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateReusableDelegationSetResult executeCreateReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -916,7 +953,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
+    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyResult executeCreateTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -982,7 +1025,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
+    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyInstanceResult executeCreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1046,7 +1095,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
+    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyVersionResult executeCreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1121,7 +1176,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(
+    public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVPCAssociationAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final CreateVPCAssociationAuthorizationResult executeCreateVPCAssociationAuthorization(
             CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createVPCAssociationAuthorizationRequest);
@@ -1184,7 +1245,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHealthCheckResult executeDeleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1250,7 +1317,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHostedZoneResult executeDeleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1312,7 +1385,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
+    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReusableDelegationSetResult executeDeleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1367,7 +1446,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
+    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficPolicyResult executeDeleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1429,7 +1514,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
+    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficPolicyInstanceResult executeDeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1499,7 +1590,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(
+    public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVPCAssociationAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVPCAssociationAuthorizationResult executeDeleteVPCAssociationAuthorization(
             DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVPCAssociationAuthorizationRequest);
@@ -1573,7 +1670,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
+    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateVPCFromHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateVPCFromHostedZoneResult executeDisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateVPCFromHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1633,7 +1736,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetChangeResult getChange(GetChangeRequest getChangeRequest) {
+    public GetChangeResult getChange(GetChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChange(request);
+    }
+
+    @SdkInternalApi
+    final GetChangeResult executeGetChange(GetChangeRequest getChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1677,7 +1786,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
+    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCheckerIpRanges(request);
+    }
+
+    @SdkInternalApi
+    final GetCheckerIpRangesResult executeGetCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1730,7 +1845,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
+    public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGeoLocation(request);
+    }
+
+    @SdkInternalApi
+    final GetGeoLocationResult executeGetGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGeoLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1796,7 +1917,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
+    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckResult executeGetHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1841,7 +1968,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
+    public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckCount(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckCountResult executeGetHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1905,7 +2038,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
+    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckLastFailureReason(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckLastFailureReasonResult executeGetHealthCheckLastFailureReason(
+            GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckLastFailureReasonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1954,7 +2094,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
+    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckStatusResult executeGetHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2003,7 +2149,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
+    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedZoneResult executeGetHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2049,7 +2201,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
+    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedZoneCount(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedZoneCountResult executeGetHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHostedZoneCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2104,7 +2262,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
+    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final GetReusableDelegationSetResult executeGetReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2155,7 +2319,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
+    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyResult executeGetTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2220,7 +2390,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
+    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyInstanceResult executeGetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2267,7 +2443,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
+    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicyInstanceCount(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyInstanceCountResult executeGetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2331,7 +2513,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
+    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGeoLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListGeoLocationsResult executeListGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2402,7 +2590,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHealthChecks(request);
+    }
+
+    @SdkInternalApi
+    final ListHealthChecksResult executeListHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2534,7 +2728,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
+    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHostedZones(request);
+    }
+
+    @SdkInternalApi
+    final ListHostedZonesResult executeListHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2719,7 +2919,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
+    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHostedZonesByName(request);
+    }
+
+    @SdkInternalApi
+    final ListHostedZonesByNameResult executeListHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHostedZonesByNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2827,7 +3033,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
+    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceRecordSets(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceRecordSetsResult executeListResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2892,7 +3104,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
+    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReusableDelegationSets(request);
+    }
+
+    @SdkInternalApi
+    final ListReusableDelegationSetsResult executeListReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReusableDelegationSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2959,7 +3177,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3021,7 +3245,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
+    public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResources(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourcesResult executeListTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3117,7 +3347,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
+    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPoliciesResult executeListTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3227,7 +3463,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
+    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesResult executeListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3338,7 +3580,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
+    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstancesByHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesByHostedZoneResult executeListTrafficPolicyInstancesByHostedZone(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByHostedZoneRequest);
@@ -3446,7 +3694,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
+    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstancesByPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesByPolicyResult executeListTrafficPolicyInstancesByPolicy(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByPolicyRequest);
@@ -3545,7 +3799,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
+    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyVersionsResult executeListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3615,7 +3875,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(
+    public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVPCAssociationAuthorizations(request);
+    }
+
+    @SdkInternalApi
+    final ListVPCAssociationAuthorizationsResult executeListVPCAssociationAuthorizations(
             ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVPCAssociationAuthorizationsRequest);
@@ -3714,7 +3980,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
+    public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestDNSAnswer(request);
+    }
+
+    @SdkInternalApi
+    final TestDNSAnswerResult executeTestDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testDNSAnswerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3770,7 +4042,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
+    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHealthCheckResult executeUpdateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3818,7 +4096,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
+    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHostedZoneComment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHostedZoneCommentResult executeUpdateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHostedZoneCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3874,7 +4158,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
+    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrafficPolicyComment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrafficPolicyCommentResult executeUpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3965,7 +4255,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
+    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrafficPolicyInstanceResult executeUpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4058,6 +4354,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

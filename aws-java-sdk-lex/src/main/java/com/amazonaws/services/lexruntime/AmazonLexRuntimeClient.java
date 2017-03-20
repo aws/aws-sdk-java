@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -200,7 +201,13 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public PostTextResult postText(PostTextRequest postTextRequest) {
+    public PostTextResult postText(PostTextRequest request) {
+        request = beforeClientExecution(request);
+        return executePostText(request);
+    }
+
+    @SdkInternalApi
+    final PostTextResult executePostText(PostTextRequest postTextRequest) {
 
         ExecutionContext executionContext = createExecutionContext(postTextRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

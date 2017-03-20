@@ -346,6 +346,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeConnectionsAsync(DescribeConnectionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult> asyncHandler) {
 
@@ -422,6 +423,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeInterconnectsAsync(DescribeInterconnectsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
@@ -483,6 +485,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeLocationsAsync(DescribeLocationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler) {
 
@@ -531,6 +534,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult> asyncHandler) {
 
@@ -566,6 +570,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler) {
 

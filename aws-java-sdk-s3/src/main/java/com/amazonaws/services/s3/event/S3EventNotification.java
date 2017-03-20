@@ -127,6 +127,7 @@ public class S3EventNotification {
         private final Long size;
         private final String eTag;
         private final String versionId;
+        private final String sequencer;
 
         @Deprecated
         public S3ObjectEntity(
@@ -139,6 +140,17 @@ public class S3EventNotification {
             this.size = size == null ? null : size.longValue();
             this.eTag = eTag;
             this.versionId = versionId;
+            this.sequencer = null;
+        }
+
+        @Deprecated
+        public S3ObjectEntity(
+                String key,
+                Long size,
+                String eTag,
+                String versionId)
+        {
+            this(key, size, eTag, versionId, null);
         }
 
         @JsonCreator
@@ -146,12 +158,14 @@ public class S3EventNotification {
                 @JsonProperty(value = "key") String key,
                 @JsonProperty(value = "size") Long size,
                 @JsonProperty(value = "eTag") String eTag,
-                @JsonProperty(value = "versionId") String versionId)
+                @JsonProperty(value = "versionId") String versionId,
+                @JsonProperty(value = "sequencer") String sequencer)
         {
             this.key = key;
             this.size = size;
             this.eTag = eTag;
             this.versionId = versionId;
+            this.sequencer = sequencer;
         }
 
         public String getKey() {
@@ -187,6 +201,10 @@ public class S3EventNotification {
 
         public String getVersionId() {
             return versionId;
+        }
+
+        public String getSequencer() {
+            return sequencer;
         }
     }
 

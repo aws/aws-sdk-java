@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -212,7 +213,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AbortDocumentVersionUploadResult abortDocumentVersionUpload(AbortDocumentVersionUploadRequest abortDocumentVersionUploadRequest) {
+    public AbortDocumentVersionUploadResult abortDocumentVersionUpload(AbortDocumentVersionUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortDocumentVersionUpload(request);
+    }
+
+    @SdkInternalApi
+    final AbortDocumentVersionUploadResult executeAbortDocumentVersionUpload(AbortDocumentVersionUploadRequest abortDocumentVersionUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(abortDocumentVersionUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -267,7 +274,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ActivateUserResult activateUser(ActivateUserRequest activateUserRequest) {
+    public ActivateUserResult activateUser(ActivateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateUser(request);
+    }
+
+    @SdkInternalApi
+    final ActivateUserResult executeActivateUser(ActivateUserRequest activateUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(activateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -319,7 +332,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddResourcePermissionsResult addResourcePermissions(AddResourcePermissionsRequest addResourcePermissionsRequest) {
+    public AddResourcePermissionsResult addResourcePermissions(AddResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final AddResourcePermissionsResult executeAddResourcePermissions(AddResourcePermissionsRequest addResourcePermissionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addResourcePermissionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -379,7 +398,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateFolderResult createFolder(CreateFolderRequest createFolderRequest) {
+    public CreateFolderResult createFolder(CreateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFolder(request);
+    }
+
+    @SdkInternalApi
+    final CreateFolderResult executeCreateFolder(CreateFolderRequest createFolderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFolderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -432,7 +457,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateNotificationSubscriptionResult createNotificationSubscription(CreateNotificationSubscriptionRequest createNotificationSubscriptionRequest) {
+    public CreateNotificationSubscriptionResult createNotificationSubscription(CreateNotificationSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNotificationSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateNotificationSubscriptionResult executeCreateNotificationSubscription(CreateNotificationSubscriptionRequest createNotificationSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createNotificationSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -488,7 +519,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateUserResult createUser(CreateUserRequest createUserRequest) {
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -541,7 +578,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeactivateUserResult deactivateUser(DeactivateUserRequest deactivateUserRequest) {
+    public DeactivateUserResult deactivateUser(DeactivateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateUser(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateUserResult executeDeactivateUser(DeactivateUserRequest deactivateUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deactivateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -598,7 +641,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
+    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDocument(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDocumentResult executeDeleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -655,7 +704,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteFolderResult deleteFolder(DeleteFolderRequest deleteFolderRequest) {
+    public DeleteFolderResult deleteFolder(DeleteFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderResult executeDeleteFolder(DeleteFolderRequest deleteFolderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFolderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -708,7 +763,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DeleteFolderContentsResult deleteFolderContents(DeleteFolderContentsRequest deleteFolderContentsRequest) {
+    public DeleteFolderContentsResult deleteFolderContents(DeleteFolderContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolderContents(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderContentsResult executeDeleteFolderContents(DeleteFolderContentsRequest deleteFolderContentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFolderContentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -758,7 +819,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteNotificationSubscriptionResult deleteNotificationSubscription(DeleteNotificationSubscriptionRequest deleteNotificationSubscriptionRequest) {
+    public DeleteNotificationSubscriptionResult deleteNotificationSubscription(DeleteNotificationSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotificationSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotificationSubscriptionResult executeDeleteNotificationSubscription(DeleteNotificationSubscriptionRequest deleteNotificationSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteNotificationSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -813,7 +880,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -873,7 +946,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDocumentVersionsResult describeDocumentVersions(DescribeDocumentVersionsRequest describeDocumentVersionsRequest) {
+    public DescribeDocumentVersionsResult describeDocumentVersions(DescribeDocumentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentVersionsResult executeDescribeDocumentVersions(DescribeDocumentVersionsRequest describeDocumentVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDocumentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -935,7 +1014,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFolderContentsResult describeFolderContents(DescribeFolderContentsRequest describeFolderContentsRequest) {
+    public DescribeFolderContentsResult describeFolderContents(DescribeFolderContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFolderContents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFolderContentsResult executeDescribeFolderContents(DescribeFolderContentsRequest describeFolderContentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFolderContentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -984,7 +1069,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNotificationSubscriptionsResult describeNotificationSubscriptions(
+    public DescribeNotificationSubscriptionsResult describeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotificationSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotificationSubscriptionsResult executeDescribeNotificationSubscriptions(
             DescribeNotificationSubscriptionsRequest describeNotificationSubscriptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNotificationSubscriptionsRequest);
@@ -1038,7 +1129,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeResourcePermissionsResult describeResourcePermissions(DescribeResourcePermissionsRequest describeResourcePermissionsRequest) {
+    public DescribeResourcePermissionsResult describeResourcePermissions(DescribeResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourcePermissionsResult executeDescribeResourcePermissions(DescribeResourcePermissionsRequest describeResourcePermissionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeResourcePermissionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1098,7 +1195,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeUsersResult describeUsers(DescribeUsersRequest describeUsersRequest) {
+    public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUsers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUsersResult executeDescribeUsers(DescribeUsersRequest describeUsersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1153,7 +1256,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
+    public GetDocumentResult getDocument(GetDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocument(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentResult executeGetDocument(GetDocumentRequest getDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1211,7 +1320,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetDocumentPathResult getDocumentPath(GetDocumentPathRequest getDocumentPathRequest) {
+    public GetDocumentPathResult getDocumentPath(GetDocumentPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocumentPath(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentPathResult executeGetDocumentPath(GetDocumentPathRequest getDocumentPathRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDocumentPathRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1266,7 +1381,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public GetDocumentVersionResult getDocumentVersion(GetDocumentVersionRequest getDocumentVersionRequest) {
+    public GetDocumentVersionResult getDocumentVersion(GetDocumentVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocumentVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentVersionResult executeGetDocumentVersion(GetDocumentVersionRequest getDocumentVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDocumentVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1323,7 +1444,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetFolderResult getFolder(GetFolderRequest getFolderRequest) {
+    public GetFolderResult getFolder(GetFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFolder(request);
+    }
+
+    @SdkInternalApi
+    final GetFolderResult executeGetFolder(GetFolderRequest getFolderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFolderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1381,7 +1508,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetFolderPathResult getFolderPath(GetFolderPathRequest getFolderPathRequest) {
+    public GetFolderPathResult getFolderPath(GetFolderPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFolderPath(request);
+    }
+
+    @SdkInternalApi
+    final GetFolderPathResult executeGetFolderPath(GetFolderPathRequest getFolderPathRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFolderPathRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1450,7 +1583,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public InitiateDocumentVersionUploadResult initiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest initiateDocumentVersionUploadRequest) {
+    public InitiateDocumentVersionUploadResult initiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateDocumentVersionUpload(request);
+    }
+
+    @SdkInternalApi
+    final InitiateDocumentVersionUploadResult executeInitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest initiateDocumentVersionUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(initiateDocumentVersionUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1503,7 +1642,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveAllResourcePermissionsResult removeAllResourcePermissions(RemoveAllResourcePermissionsRequest removeAllResourcePermissionsRequest) {
+    public RemoveAllResourcePermissionsResult removeAllResourcePermissions(RemoveAllResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveAllResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final RemoveAllResourcePermissionsResult executeRemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest removeAllResourcePermissionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeAllResourcePermissionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1556,7 +1701,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveResourcePermissionResult removeResourcePermission(RemoveResourcePermissionRequest removeResourcePermissionRequest) {
+    public RemoveResourcePermissionResult removeResourcePermission(RemoveResourcePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveResourcePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemoveResourcePermissionResult executeRemoveResourcePermission(RemoveResourcePermissionRequest removeResourcePermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeResourcePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1620,7 +1771,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest) {
+    public UpdateDocumentResult updateDocument(UpdateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocument(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentResult executeUpdateDocument(UpdateDocumentRequest updateDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1683,7 +1840,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public UpdateDocumentVersionResult updateDocumentVersion(UpdateDocumentVersionRequest updateDocumentVersionRequest) {
+    public UpdateDocumentVersionResult updateDocumentVersion(UpdateDocumentVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentVersionResult executeUpdateDocumentVersion(UpdateDocumentVersionRequest updateDocumentVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1746,7 +1909,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateFolderResult updateFolder(UpdateFolderRequest updateFolderRequest) {
+    public UpdateFolderResult updateFolder(UpdateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFolder(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFolderResult executeUpdateFolder(UpdateFolderRequest updateFolderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFolderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1804,7 +1973,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateUserResult updateUser(UpdateUserRequest updateUserRequest) {
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUser(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserResult executeUpdateUser(UpdateUserRequest updateUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

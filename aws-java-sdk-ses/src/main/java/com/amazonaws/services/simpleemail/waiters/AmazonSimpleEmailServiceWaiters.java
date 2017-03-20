@@ -56,4 +56,7 @@ public class AmazonSimpleEmailServiceWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

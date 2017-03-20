@@ -265,6 +265,7 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
      *
      * @see #listEventSourceMappingsAsync(ListEventSourceMappingsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
             com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler) {
 
@@ -300,6 +301,7 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
      *
      * @see #listFunctionsAsync(ListFunctionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler) {
 

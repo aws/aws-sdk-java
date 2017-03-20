@@ -17,13 +17,17 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Apple Distribution Push Notification Service channel definition.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
+    /** The ID of the application to which the channel applies. */
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
-
+    /** The unique channel ID. */
     private String id;
     /** Is this channel archived */
     private Boolean isArchived;
@@ -37,7 +41,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     private Integer version;
 
     /**
+     * The ID of the application to which the channel applies.
+     * 
      * @param applicationId
+     *        The ID of the application to which the channel applies.
      */
 
     public void setApplicationId(String applicationId) {
@@ -45,7 +52,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * The ID of the application to which the channel applies.
+     * 
+     * @return The ID of the application to which the channel applies.
      */
 
     public String getApplicationId() {
@@ -53,7 +62,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * The ID of the application to which the channel applies.
+     * 
      * @param applicationId
+     *        The ID of the application to which the channel applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +109,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * The unique channel ID.
+     * 
      * @param id
+     *        The unique channel ID.
      */
 
     public void setId(String id) {
@@ -105,7 +120,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * The unique channel ID.
+     * 
+     * @return The unique channel ID.
      */
 
     public String getId() {
@@ -113,7 +130,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * The unique channel ID.
+     * 
      * @param id
+     *        The unique channel ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

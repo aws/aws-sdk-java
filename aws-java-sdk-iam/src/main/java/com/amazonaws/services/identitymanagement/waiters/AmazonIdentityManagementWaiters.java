@@ -69,4 +69,7 @@ public class AmazonIdentityManagementWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

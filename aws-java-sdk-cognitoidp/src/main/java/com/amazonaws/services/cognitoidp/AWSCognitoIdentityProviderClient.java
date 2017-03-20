@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -380,7 +381,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddCustomAttributesResult addCustomAttributes(AddCustomAttributesRequest addCustomAttributesRequest) {
+    public AddCustomAttributesResult addCustomAttributes(AddCustomAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddCustomAttributes(request);
+    }
+
+    @SdkInternalApi
+    final AddCustomAttributesResult executeAddCustomAttributes(AddCustomAttributesRequest addCustomAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addCustomAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -437,7 +444,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminAddUserToGroupResult adminAddUserToGroup(AdminAddUserToGroupRequest adminAddUserToGroupRequest) {
+    public AdminAddUserToGroupResult adminAddUserToGroup(AdminAddUserToGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminAddUserToGroup(request);
+    }
+
+    @SdkInternalApi
+    final AdminAddUserToGroupResult executeAdminAddUserToGroup(AdminAddUserToGroupRequest adminAddUserToGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminAddUserToGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -508,7 +521,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminConfirmSignUpResult adminConfirmSignUp(AdminConfirmSignUpRequest adminConfirmSignUpRequest) {
+    public AdminConfirmSignUpResult adminConfirmSignUp(AdminConfirmSignUpRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminConfirmSignUp(request);
+    }
+
+    @SdkInternalApi
+    final AdminConfirmSignUpResult executeAdminConfirmSignUp(AdminConfirmSignUpRequest adminConfirmSignUpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminConfirmSignUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -593,7 +612,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminCreateUserResult adminCreateUser(AdminCreateUserRequest adminCreateUserRequest) {
+    public AdminCreateUserResult adminCreateUser(AdminCreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminCreateUserResult executeAdminCreateUser(AdminCreateUserRequest adminCreateUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminCreateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -651,7 +676,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminDeleteUserResult adminDeleteUser(AdminDeleteUserRequest adminDeleteUserRequest) {
+    public AdminDeleteUserResult adminDeleteUser(AdminDeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminDeleteUserResult executeAdminDeleteUser(AdminDeleteUserRequest adminDeleteUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminDeleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -709,7 +740,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminDeleteUserAttributesResult adminDeleteUserAttributes(AdminDeleteUserAttributesRequest adminDeleteUserAttributesRequest) {
+    public AdminDeleteUserAttributesResult adminDeleteUserAttributes(AdminDeleteUserAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminDeleteUserAttributes(request);
+    }
+
+    @SdkInternalApi
+    final AdminDeleteUserAttributesResult executeAdminDeleteUserAttributes(AdminDeleteUserAttributesRequest adminDeleteUserAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminDeleteUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -769,7 +806,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminDisableUserResult adminDisableUser(AdminDisableUserRequest adminDisableUserRequest) {
+    public AdminDisableUserResult adminDisableUser(AdminDisableUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminDisableUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminDisableUserResult executeAdminDisableUser(AdminDisableUserRequest adminDisableUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminDisableUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -827,7 +870,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminEnableUserResult adminEnableUser(AdminEnableUserRequest adminEnableUserRequest) {
+    public AdminEnableUserResult adminEnableUser(AdminEnableUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminEnableUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminEnableUserResult executeAdminEnableUser(AdminEnableUserRequest adminEnableUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminEnableUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -887,7 +936,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminForgetDeviceResult adminForgetDevice(AdminForgetDeviceRequest adminForgetDeviceRequest) {
+    public AdminForgetDeviceResult adminForgetDevice(AdminForgetDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminForgetDevice(request);
+    }
+
+    @SdkInternalApi
+    final AdminForgetDeviceResult executeAdminForgetDevice(AdminForgetDeviceRequest adminForgetDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminForgetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -945,7 +1000,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public AdminGetDeviceResult adminGetDevice(AdminGetDeviceRequest adminGetDeviceRequest) {
+    public AdminGetDeviceResult adminGetDevice(AdminGetDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminGetDevice(request);
+    }
+
+    @SdkInternalApi
+    final AdminGetDeviceResult executeAdminGetDevice(AdminGetDeviceRequest adminGetDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminGetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1003,7 +1064,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public AdminGetUserResult adminGetUser(AdminGetUserRequest adminGetUserRequest) {
+    public AdminGetUserResult adminGetUser(AdminGetUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminGetUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminGetUserResult executeAdminGetUser(AdminGetUserRequest adminGetUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminGetUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1084,7 +1151,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminInitiateAuthResult adminInitiateAuth(AdminInitiateAuthRequest adminInitiateAuthRequest) {
+    public AdminInitiateAuthResult adminInitiateAuth(AdminInitiateAuthRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminInitiateAuth(request);
+    }
+
+    @SdkInternalApi
+    final AdminInitiateAuthResult executeAdminInitiateAuth(AdminInitiateAuthRequest adminInitiateAuthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminInitiateAuthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1142,7 +1215,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AdminListDevicesResult adminListDevices(AdminListDevicesRequest adminListDevicesRequest) {
+    public AdminListDevicesResult adminListDevices(AdminListDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminListDevices(request);
+    }
+
+    @SdkInternalApi
+    final AdminListDevicesResult executeAdminListDevices(AdminListDevicesRequest adminListDevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminListDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1199,7 +1278,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest adminListGroupsForUserRequest) {
+    public AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminListGroupsForUser(request);
+    }
+
+    @SdkInternalApi
+    final AdminListGroupsForUserResult executeAdminListGroupsForUser(AdminListGroupsForUserRequest adminListGroupsForUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminListGroupsForUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1257,7 +1342,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest) {
+    public AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminRemoveUserFromGroup(request);
+    }
+
+    @SdkInternalApi
+    final AdminRemoveUserFromGroupResult executeAdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminRemoveUserFromGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1335,7 +1426,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminResetUserPasswordResult adminResetUserPassword(AdminResetUserPasswordRequest adminResetUserPasswordRequest) {
+    public AdminResetUserPasswordResult adminResetUserPassword(AdminResetUserPasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminResetUserPassword(request);
+    }
+
+    @SdkInternalApi
+    final AdminResetUserPasswordResult executeAdminResetUserPassword(AdminResetUserPasswordRequest adminResetUserPasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminResetUserPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1427,7 +1524,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest) {
+    public AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminRespondToAuthChallenge(request);
+    }
+
+    @SdkInternalApi
+    final AdminRespondToAuthChallengeResult executeAdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminRespondToAuthChallengeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1485,7 +1588,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest adminSetUserSettingsRequest) {
+    public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminSetUserSettings(request);
+    }
+
+    @SdkInternalApi
+    final AdminSetUserSettingsResult executeAdminSetUserSettings(AdminSetUserSettingsRequest adminSetUserSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminSetUserSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1545,7 +1654,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminUpdateDeviceStatusResult adminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest) {
+    public AdminUpdateDeviceStatusResult adminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminUpdateDeviceStatus(request);
+    }
+
+    @SdkInternalApi
+    final AdminUpdateDeviceStatusResult executeAdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminUpdateDeviceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1617,7 +1732,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminUpdateUserAttributesResult adminUpdateUserAttributes(AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest) {
+    public AdminUpdateUserAttributesResult adminUpdateUserAttributes(AdminUpdateUserAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminUpdateUserAttributes(request);
+    }
+
+    @SdkInternalApi
+    final AdminUpdateUserAttributesResult executeAdminUpdateUserAttributes(AdminUpdateUserAttributesRequest adminUpdateUserAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminUpdateUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1677,7 +1798,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AdminUserGlobalSignOutResult adminUserGlobalSignOut(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest) {
+    public AdminUserGlobalSignOutResult adminUserGlobalSignOut(AdminUserGlobalSignOutRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdminUserGlobalSignOut(request);
+    }
+
+    @SdkInternalApi
+    final AdminUserGlobalSignOutResult executeAdminUserGlobalSignOut(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest) {
 
         ExecutionContext executionContext = createExecutionContext(adminUserGlobalSignOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1741,7 +1868,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ChangePasswordResult changePassword(ChangePasswordRequest changePasswordRequest) {
+    public ChangePasswordResult changePassword(ChangePasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangePassword(request);
+    }
+
+    @SdkInternalApi
+    final ChangePasswordResult executeChangePassword(ChangePasswordRequest changePasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1808,7 +1941,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ConfirmDeviceResult confirmDevice(ConfirmDeviceRequest confirmDeviceRequest) {
+    public ConfirmDeviceResult confirmDevice(ConfirmDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmDevice(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmDeviceResult executeConfirmDevice(ConfirmDeviceRequest confirmDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1884,7 +2023,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ConfirmForgotPasswordResult confirmForgotPassword(ConfirmForgotPasswordRequest confirmForgotPasswordRequest) {
+    public ConfirmForgotPasswordResult confirmForgotPassword(ConfirmForgotPasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmForgotPassword(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmForgotPasswordResult executeConfirmForgotPassword(ConfirmForgotPasswordRequest confirmForgotPasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmForgotPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1961,7 +2106,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ConfirmSignUpResult confirmSignUp(ConfirmSignUpRequest confirmSignUpRequest) {
+    public ConfirmSignUpResult confirmSignUp(ConfirmSignUpRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmSignUp(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmSignUpResult executeConfirmSignUp(ConfirmSignUpRequest confirmSignUpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmSignUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2020,7 +2171,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateGroupResult executeCreateGroup(CreateGroupRequest createGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2077,7 +2234,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateUserImportJobResult createUserImportJob(CreateUserImportJobRequest createUserImportJobRequest) {
+    public CreateUserImportJobResult createUserImportJob(CreateUserImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserImportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserImportJobResult executeCreateUserImportJob(CreateUserImportJobRequest createUserImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2142,7 +2305,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateUserPoolResult createUserPool(CreateUserPoolRequest createUserPoolRequest) {
+    public CreateUserPoolResult createUserPool(CreateUserPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserPool(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserPoolResult executeCreateUserPool(CreateUserPoolRequest createUserPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2197,7 +2366,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest createUserPoolClientRequest) {
+    public CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserPoolClient(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserPoolClientResult executeCreateUserPoolClient(CreateUserPoolClientRequest createUserPoolClientRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2252,7 +2427,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupResult executeDeleteGroup(DeleteGroupRequest deleteGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2311,7 +2492,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2370,7 +2557,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteUserAttributesResult deleteUserAttributes(DeleteUserAttributesRequest deleteUserAttributesRequest) {
+    public DeleteUserAttributesResult deleteUserAttributes(DeleteUserAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserAttributesResult executeDeleteUserAttributes(DeleteUserAttributesRequest deleteUserAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2426,7 +2619,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteUserPoolResult deleteUserPool(DeleteUserPoolRequest deleteUserPoolRequest) {
+    public DeleteUserPoolResult deleteUserPool(DeleteUserPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserPool(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserPoolResult executeDeleteUserPool(DeleteUserPoolRequest deleteUserPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2479,7 +2678,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteUserPoolClientResult deleteUserPoolClient(DeleteUserPoolClientRequest deleteUserPoolClientRequest) {
+    public DeleteUserPoolClientResult deleteUserPoolClient(DeleteUserPoolClientRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserPoolClient(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserPoolClientResult executeDeleteUserPoolClient(DeleteUserPoolClientRequest deleteUserPoolClientRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2532,7 +2737,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeUserImportJobResult describeUserImportJob(DescribeUserImportJobRequest describeUserImportJobRequest) {
+    public DescribeUserImportJobResult describeUserImportJob(DescribeUserImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUserImportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUserImportJobResult executeDescribeUserImportJob(DescribeUserImportJobRequest describeUserImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2588,7 +2799,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeUserPoolResult describeUserPool(DescribeUserPoolRequest describeUserPoolRequest) {
+    public DescribeUserPoolResult describeUserPool(DescribeUserPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUserPool(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUserPoolResult executeDescribeUserPool(DescribeUserPoolRequest describeUserPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2641,7 +2858,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeUserPoolClientResult describeUserPoolClient(DescribeUserPoolClientRequest describeUserPoolClientRequest) {
+    public DescribeUserPoolClientResult describeUserPoolClient(DescribeUserPoolClientRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUserPoolClient(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUserPoolClientResult executeDescribeUserPoolClient(DescribeUserPoolClientRequest describeUserPoolClientRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2703,7 +2926,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ForgetDeviceResult forgetDevice(ForgetDeviceRequest forgetDeviceRequest) {
+    public ForgetDeviceResult forgetDevice(ForgetDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeForgetDevice(request);
+    }
+
+    @SdkInternalApi
+    final ForgetDeviceResult executeForgetDevice(ForgetDeviceRequest forgetDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(forgetDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2782,7 +3011,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ForgotPasswordResult forgotPassword(ForgotPasswordRequest forgotPasswordRequest) {
+    public ForgotPasswordResult forgotPassword(ForgotPasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeForgotPassword(request);
+    }
+
+    @SdkInternalApi
+    final ForgotPasswordResult executeForgotPassword(ForgotPasswordRequest forgotPasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(forgotPasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2835,7 +3070,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetCSVHeaderResult getCSVHeader(GetCSVHeaderRequest getCSVHeaderRequest) {
+    public GetCSVHeaderResult getCSVHeader(GetCSVHeaderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCSVHeader(request);
+    }
+
+    @SdkInternalApi
+    final GetCSVHeaderResult executeGetCSVHeader(GetCSVHeaderRequest getCSVHeaderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCSVHeaderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2896,7 +3137,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
+    public GetDeviceResult getDevice(GetDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDevice(request);
+    }
+
+    @SdkInternalApi
+    final GetDeviceResult executeGetDevice(GetDeviceRequest getDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2951,7 +3198,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupResult executeGetGroup(GetGroupRequest getGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3010,7 +3263,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetUserResult getUser(GetUserRequest getUserRequest) {
+    public GetUserResult getUser(GetUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUser(request);
+    }
+
+    @SdkInternalApi
+    final GetUserResult executeGetUser(GetUserRequest getUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3091,7 +3350,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(
+    public GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUserAttributeVerificationCode(request);
+    }
+
+    @SdkInternalApi
+    final GetUserAttributeVerificationCodeResult executeGetUserAttributeVerificationCode(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getUserAttributeVerificationCodeRequest);
@@ -3151,7 +3416,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GlobalSignOutResult globalSignOut(GlobalSignOutRequest globalSignOutRequest) {
+    public GlobalSignOutResult globalSignOut(GlobalSignOutRequest request) {
+        request = beforeClientExecution(request);
+        return executeGlobalSignOut(request);
+    }
+
+    @SdkInternalApi
+    final GlobalSignOutResult executeGlobalSignOut(GlobalSignOutRequest globalSignOutRequest) {
 
         ExecutionContext executionContext = createExecutionContext(globalSignOutRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3220,7 +3491,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public InitiateAuthResult initiateAuth(InitiateAuthRequest initiateAuthRequest) {
+    public InitiateAuthResult initiateAuth(InitiateAuthRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateAuth(request);
+    }
+
+    @SdkInternalApi
+    final InitiateAuthResult executeInitiateAuth(InitiateAuthRequest initiateAuthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(initiateAuthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3281,7 +3558,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
+    public ListDevicesResult listDevices(ListDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevices(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicesResult executeListDevices(ListDevicesRequest listDevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3336,7 +3619,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest) {
+    public ListGroupsResult listGroups(ListGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupsResult executeListGroups(ListGroupsRequest listGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3389,7 +3678,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public ListUserImportJobsResult listUserImportJobs(ListUserImportJobsRequest listUserImportJobsRequest) {
+    public ListUserImportJobsResult listUserImportJobs(ListUserImportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserImportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListUserImportJobsResult executeListUserImportJobs(ListUserImportJobsRequest listUserImportJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUserImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3442,7 +3737,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListUserPoolClientsResult listUserPoolClients(ListUserPoolClientsRequest listUserPoolClientsRequest) {
+    public ListUserPoolClientsResult listUserPoolClients(ListUserPoolClientsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserPoolClients(request);
+    }
+
+    @SdkInternalApi
+    final ListUserPoolClientsResult executeListUserPoolClients(ListUserPoolClientsRequest listUserPoolClientsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUserPoolClientsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3493,7 +3794,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListUserPoolsResult listUserPools(ListUserPoolsRequest listUserPoolsRequest) {
+    public ListUserPoolsResult listUserPools(ListUserPoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserPools(request);
+    }
+
+    @SdkInternalApi
+    final ListUserPoolsResult executeListUserPools(ListUserPoolsRequest listUserPoolsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUserPoolsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3546,7 +3853,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListUsersResult listUsers(ListUsersRequest listUsersRequest) {
+    public ListUsersResult listUsers(ListUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUsers(request);
+    }
+
+    @SdkInternalApi
+    final ListUsersResult executeListUsers(ListUsersRequest listUsersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3601,7 +3914,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public ListUsersInGroupResult listUsersInGroup(ListUsersInGroupRequest listUsersInGroupRequest) {
+    public ListUsersInGroupResult listUsersInGroup(ListUsersInGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUsersInGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListUsersInGroupResult executeListUsersInGroup(ListUsersInGroupRequest listUsersInGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUsersInGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3678,7 +3997,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResendConfirmationCodeResult resendConfirmationCode(ResendConfirmationCodeRequest resendConfirmationCodeRequest) {
+    public ResendConfirmationCodeResult resendConfirmationCode(ResendConfirmationCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeResendConfirmationCode(request);
+    }
+
+    @SdkInternalApi
+    final ResendConfirmationCodeResult executeResendConfirmationCode(ResendConfirmationCodeRequest resendConfirmationCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resendConfirmationCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3767,7 +4092,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RespondToAuthChallengeResult respondToAuthChallenge(RespondToAuthChallengeRequest respondToAuthChallengeRequest) {
+    public RespondToAuthChallengeResult respondToAuthChallenge(RespondToAuthChallengeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRespondToAuthChallenge(request);
+    }
+
+    @SdkInternalApi
+    final RespondToAuthChallengeResult executeRespondToAuthChallenge(RespondToAuthChallengeRequest respondToAuthChallengeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(respondToAuthChallengeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3826,7 +4157,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public SetUserSettingsResult setUserSettings(SetUserSettingsRequest setUserSettingsRequest) {
+    public SetUserSettingsResult setUserSettings(SetUserSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetUserSettings(request);
+    }
+
+    @SdkInternalApi
+    final SetUserSettingsResult executeSetUserSettings(SetUserSettingsRequest setUserSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setUserSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3903,7 +4240,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public SignUpResult signUp(SignUpRequest signUpRequest) {
+    public SignUpResult signUp(SignUpRequest request) {
+        request = beforeClientExecution(request);
+        return executeSignUp(request);
+    }
+
+    @SdkInternalApi
+    final SignUpResult executeSignUp(SignUpRequest signUpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(signUpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3958,7 +4301,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StartUserImportJobResult startUserImportJob(StartUserImportJobRequest startUserImportJobRequest) {
+    public StartUserImportJobResult startUserImportJob(StartUserImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartUserImportJob(request);
+    }
+
+    @SdkInternalApi
+    final StartUserImportJobResult executeStartUserImportJob(StartUserImportJobRequest startUserImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4013,7 +4362,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest stopUserImportJobRequest) {
+    public StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopUserImportJob(request);
+    }
+
+    @SdkInternalApi
+    final StopUserImportJobResult executeStopUserImportJob(StopUserImportJobRequest stopUserImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopUserImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4074,7 +4429,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateDeviceStatusResult updateDeviceStatus(UpdateDeviceStatusRequest updateDeviceStatusRequest) {
+    public UpdateDeviceStatusResult updateDeviceStatus(UpdateDeviceStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDeviceStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDeviceStatusResult executeUpdateDeviceStatus(UpdateDeviceStatusRequest updateDeviceStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDeviceStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4129,7 +4490,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest) {
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGroupResult executeUpdateGroup(UpdateGroupRequest updateGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4216,7 +4583,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateUserAttributesResult updateUserAttributes(UpdateUserAttributesRequest updateUserAttributesRequest) {
+    public UpdateUserAttributesResult updateUserAttributes(UpdateUserAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUserAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserAttributesResult executeUpdateUserAttributes(UpdateUserAttributesRequest updateUserAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4286,7 +4659,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateUserPoolResult updateUserPool(UpdateUserPoolRequest updateUserPoolRequest) {
+    public UpdateUserPoolResult updateUserPool(UpdateUserPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUserPool(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserPoolResult executeUpdateUserPool(UpdateUserPoolRequest updateUserPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4339,7 +4718,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateUserPoolClientResult updateUserPoolClient(UpdateUserPoolClientRequest updateUserPoolClientRequest) {
+    public UpdateUserPoolClientResult updateUserPoolClient(UpdateUserPoolClientRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUserPoolClient(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserPoolClientResult executeUpdateUserPoolClient(UpdateUserPoolClientRequest updateUserPoolClientRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserPoolClientRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4404,7 +4789,13 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public VerifyUserAttributeResult verifyUserAttribute(VerifyUserAttributeRequest verifyUserAttributeRequest) {
+    public VerifyUserAttributeResult verifyUserAttribute(VerifyUserAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyUserAttribute(request);
+    }
+
+    @SdkInternalApi
+    final VerifyUserAttributeResult executeVerifyUserAttribute(VerifyUserAttributeRequest verifyUserAttributeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyUserAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

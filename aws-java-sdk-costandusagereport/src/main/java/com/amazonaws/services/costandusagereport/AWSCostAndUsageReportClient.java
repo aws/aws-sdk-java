@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -282,7 +283,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public DeleteReportDefinitionResult deleteReportDefinition(DeleteReportDefinitionRequest deleteReportDefinitionRequest) {
+    public DeleteReportDefinitionResult deleteReportDefinition(DeleteReportDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReportDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReportDefinitionResult executeDeleteReportDefinition(DeleteReportDefinitionRequest deleteReportDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReportDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -326,7 +333,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public DescribeReportDefinitionsResult describeReportDefinitions(DescribeReportDefinitionsRequest describeReportDefinitionsRequest) {
+    public DescribeReportDefinitionsResult describeReportDefinitions(DescribeReportDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReportDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReportDefinitionsResult executeDescribeReportDefinitions(DescribeReportDefinitionsRequest describeReportDefinitionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReportDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -378,7 +391,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public PutReportDefinitionResult putReportDefinition(PutReportDefinitionRequest putReportDefinitionRequest) {
+    public PutReportDefinitionResult putReportDefinition(PutReportDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutReportDefinition(request);
+    }
+
+    @SdkInternalApi
+    final PutReportDefinitionResult executePutReportDefinition(PutReportDefinitionRequest putReportDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putReportDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

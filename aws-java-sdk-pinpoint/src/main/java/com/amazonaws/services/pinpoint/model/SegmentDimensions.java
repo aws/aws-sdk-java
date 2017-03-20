@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segment dimensions
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentDimensions implements Serializable, Cloneable, StructuredPojo {
 
@@ -26,10 +29,10 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     private SegmentBehaviors behavior;
     /** The segment demographics attributes. */
     private SegmentDemographics demographic;
-    /**
-     * The segment location attributes.
-     */
+    /** The segment location attributes. */
     private SegmentLocation location;
+    /** Custom segment user attributes. */
+    private java.util.Map<String, AttributeDimension> userAttributes;
 
     /**
      * Custom segment attributes.
@@ -189,6 +192,61 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Custom segment user attributes.
+     * 
+     * @return Custom segment user attributes.
+     */
+
+    public java.util.Map<String, AttributeDimension> getUserAttributes() {
+        return userAttributes;
+    }
+
+    /**
+     * Custom segment user attributes.
+     * 
+     * @param userAttributes
+     *        Custom segment user attributes.
+     */
+
+    public void setUserAttributes(java.util.Map<String, AttributeDimension> userAttributes) {
+        this.userAttributes = userAttributes;
+    }
+
+    /**
+     * Custom segment user attributes.
+     * 
+     * @param userAttributes
+     *        Custom segment user attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions withUserAttributes(java.util.Map<String, AttributeDimension> userAttributes) {
+        setUserAttributes(userAttributes);
+        return this;
+    }
+
+    public SegmentDimensions addUserAttributesEntry(String key, AttributeDimension value) {
+        if (null == this.userAttributes) {
+            this.userAttributes = new java.util.HashMap<String, AttributeDimension>();
+        }
+        if (this.userAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions clearUserAttributesEntries() {
+        this.userAttributes = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -206,7 +264,9 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         if (getDemographic() != null)
             sb.append("Demographic: ").append(getDemographic()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getUserAttributes() != null)
+            sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -237,6 +297,10 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
+            return false;
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +313,7 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getBehavior() == null) ? 0 : getBehavior().hashCode());
         hashCode = prime * hashCode + ((getDemographic() == null) ? 0 : getDemographic().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         return hashCode;
     }
 

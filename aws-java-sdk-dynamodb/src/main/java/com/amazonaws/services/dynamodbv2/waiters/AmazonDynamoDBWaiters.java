@@ -69,4 +69,7 @@ public class AmazonDynamoDBWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

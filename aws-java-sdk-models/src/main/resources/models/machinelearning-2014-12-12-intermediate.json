@@ -32,15 +32,19 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeBatchPredictions" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeDataSources" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeEvaluations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeMLModels" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

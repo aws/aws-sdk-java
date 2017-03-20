@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
@@ -322,7 +323,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
+    public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLexicon(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLexiconResult executeDeleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -386,7 +393,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public DescribeVoicesResult describeVoices(DescribeVoicesRequest describeVoicesRequest) {
+    public DescribeVoicesResult describeVoices(DescribeVoicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVoices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVoicesResult executeDescribeVoices(DescribeVoicesRequest describeVoicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVoicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -437,7 +450,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public GetLexiconResult getLexicon(GetLexiconRequest getLexiconRequest) {
+    public GetLexiconResult getLexicon(GetLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLexicon(request);
+    }
+
+    @SdkInternalApi
+    final GetLexiconResult executeGetLexicon(GetLexiconRequest getLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -484,7 +503,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public ListLexiconsResult listLexicons(ListLexiconsRequest listLexiconsRequest) {
+    public ListLexiconsResult listLexicons(ListLexiconsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLexicons(request);
+    }
+
+    @SdkInternalApi
+    final ListLexiconsResult executeListLexicons(ListLexiconsRequest listLexiconsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listLexiconsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -549,7 +574,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public PutLexiconResult putLexicon(PutLexiconRequest putLexiconRequest) {
+    public PutLexiconResult putLexicon(PutLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLexicon(request);
+    }
+
+    @SdkInternalApi
+    final PutLexiconResult executePutLexicon(PutLexiconRequest putLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -611,7 +642,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest) {
+    public SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest request) {
+        request = beforeClientExecution(request);
+        return executeSynthesizeSpeech(request);
+    }
+
+    @SdkInternalApi
+    final SynthesizeSpeechResult executeSynthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest) {
 
         ExecutionContext executionContext = createExecutionContext(synthesizeSpeechRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

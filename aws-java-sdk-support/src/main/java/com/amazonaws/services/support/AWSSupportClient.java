@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -385,7 +386,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
+    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddAttachmentsToSet(request);
+    }
+
+    @SdkInternalApi
+    final AddAttachmentsToSetResult executeAddAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addAttachmentsToSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -445,7 +452,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
+    public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddCommunicationToCase(request);
+    }
+
+    @SdkInternalApi
+    final AddCommunicationToCaseResult executeAddCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addCommunicationToCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -567,7 +580,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public CreateCaseResult createCase(CreateCaseRequest createCaseRequest) {
+    public CreateCaseResult createCase(CreateCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCase(request);
+    }
+
+    @SdkInternalApi
+    final CreateCaseResult executeCreateCase(CreateCaseRequest createCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -618,7 +637,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
+    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAttachment(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAttachmentResult executeDescribeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAttachmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -687,7 +712,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeCasesResult describeCases(DescribeCasesRequest describeCasesRequest) {
+    public DescribeCasesResult describeCases(DescribeCasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCases(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCasesResult executeDescribeCases(DescribeCasesRequest describeCasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -749,7 +780,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
+    public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCommunications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCommunicationsResult executeDescribeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCommunicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -803,7 +840,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+    public DescribeServicesResult describeServices(DescribeServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServicesResult executeDescribeServices(DescribeServicesRequest describeServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -853,7 +896,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
+    public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSeverityLevels(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSeverityLevelsResult executeDescribeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSeverityLevelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -912,7 +961,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
+    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckRefreshStatuses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckRefreshStatusesResult executeDescribeTrustedAdvisorCheckRefreshStatuses(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
@@ -1001,7 +1056,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
+    public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckResult(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckResultResult executeDescribeTrustedAdvisorCheckResult(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckResultRequest);
@@ -1052,7 +1113,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
+    public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckSummaries(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckSummariesResult executeDescribeTrustedAdvisorCheckSummaries(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckSummariesRequest);
@@ -1101,7 +1168,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
+    public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorChecks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorChecksResult executeDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1175,7 +1248,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
+    public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeRefreshTrustedAdvisorCheck(request);
+    }
+
+    @SdkInternalApi
+    final RefreshTrustedAdvisorCheckResult executeRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(refreshTrustedAdvisorCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1224,7 +1303,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {
+    public ResolveCaseResult resolveCase(ResolveCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveCase(request);
+    }
+
+    @SdkInternalApi
+    final ResolveCaseResult executeResolveCase(ResolveCaseRequest resolveCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

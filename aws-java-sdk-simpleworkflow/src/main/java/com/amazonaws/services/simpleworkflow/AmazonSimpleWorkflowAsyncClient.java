@@ -265,14 +265,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowExecutionCount> countClosedWorkflowExecutionsAsync(final CountClosedWorkflowExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CountClosedWorkflowExecutionsRequest, WorkflowExecutionCount> asyncHandler) {
+        final CountClosedWorkflowExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowExecutionCount>() {
             @Override
             public WorkflowExecutionCount call() throws Exception {
-                WorkflowExecutionCount result;
+                WorkflowExecutionCount result = null;
 
                 try {
-                    result = countClosedWorkflowExecutions(request);
+                    result = executeCountClosedWorkflowExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -281,7 +282,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -297,14 +298,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowExecutionCount> countOpenWorkflowExecutionsAsync(final CountOpenWorkflowExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CountOpenWorkflowExecutionsRequest, WorkflowExecutionCount> asyncHandler) {
+        final CountOpenWorkflowExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowExecutionCount>() {
             @Override
             public WorkflowExecutionCount call() throws Exception {
-                WorkflowExecutionCount result;
+                WorkflowExecutionCount result = null;
 
                 try {
-                    result = countOpenWorkflowExecutions(request);
+                    result = executeCountOpenWorkflowExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -313,7 +315,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -329,14 +331,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<PendingTaskCount> countPendingActivityTasksAsync(final CountPendingActivityTasksRequest request,
             final com.amazonaws.handlers.AsyncHandler<CountPendingActivityTasksRequest, PendingTaskCount> asyncHandler) {
+        final CountPendingActivityTasksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PendingTaskCount>() {
             @Override
             public PendingTaskCount call() throws Exception {
-                PendingTaskCount result;
+                PendingTaskCount result = null;
 
                 try {
-                    result = countPendingActivityTasks(request);
+                    result = executeCountPendingActivityTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -345,7 +348,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -361,14 +364,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<PendingTaskCount> countPendingDecisionTasksAsync(final CountPendingDecisionTasksRequest request,
             final com.amazonaws.handlers.AsyncHandler<CountPendingDecisionTasksRequest, PendingTaskCount> asyncHandler) {
+        final CountPendingDecisionTasksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PendingTaskCount>() {
             @Override
             public PendingTaskCount call() throws Exception {
-                PendingTaskCount result;
+                PendingTaskCount result = null;
 
                 try {
-                    result = countPendingDecisionTasks(request);
+                    result = executeCountPendingDecisionTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -377,7 +381,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -393,15 +397,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> deprecateActivityTypeAsync(final DeprecateActivityTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeprecateActivityTypeRequest, Void> asyncHandler) {
+        final DeprecateActivityTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    deprecateActivityType(request);
-                    result = null;
+                    executeDeprecateActivityType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -410,7 +414,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -426,15 +430,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> deprecateDomainAsync(final DeprecateDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeprecateDomainRequest, Void> asyncHandler) {
+        final DeprecateDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    deprecateDomain(request);
-                    result = null;
+                    executeDeprecateDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -443,7 +447,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -459,15 +463,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> deprecateWorkflowTypeAsync(final DeprecateWorkflowTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeprecateWorkflowTypeRequest, Void> asyncHandler) {
+        final DeprecateWorkflowTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    deprecateWorkflowType(request);
-                    result = null;
+                    executeDeprecateWorkflowType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -476,7 +480,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -492,14 +496,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<ActivityTypeDetail> describeActivityTypeAsync(final DescribeActivityTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeActivityTypeRequest, ActivityTypeDetail> asyncHandler) {
+        final DescribeActivityTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivityTypeDetail>() {
             @Override
             public ActivityTypeDetail call() throws Exception {
-                ActivityTypeDetail result;
+                ActivityTypeDetail result = null;
 
                 try {
-                    result = describeActivityType(request);
+                    result = executeDescribeActivityType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -508,7 +513,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -524,14 +529,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<DomainDetail> describeDomainAsync(final DescribeDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DomainDetail> asyncHandler) {
+        final DescribeDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DomainDetail>() {
             @Override
             public DomainDetail call() throws Exception {
-                DomainDetail result;
+                DomainDetail result = null;
 
                 try {
-                    result = describeDomain(request);
+                    result = executeDescribeDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -540,7 +546,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -556,14 +562,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(final DescribeWorkflowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler) {
+        final DescribeWorkflowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowExecutionDetail>() {
             @Override
             public WorkflowExecutionDetail call() throws Exception {
-                WorkflowExecutionDetail result;
+                WorkflowExecutionDetail result = null;
 
                 try {
-                    result = describeWorkflowExecution(request);
+                    result = executeDescribeWorkflowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -572,7 +579,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -588,14 +595,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowTypeDetail> describeWorkflowTypeAsync(final DescribeWorkflowTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeWorkflowTypeRequest, WorkflowTypeDetail> asyncHandler) {
+        final DescribeWorkflowTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowTypeDetail>() {
             @Override
             public WorkflowTypeDetail call() throws Exception {
-                WorkflowTypeDetail result;
+                WorkflowTypeDetail result = null;
 
                 try {
-                    result = describeWorkflowType(request);
+                    result = executeDescribeWorkflowType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -604,7 +612,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -620,14 +628,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<History> getWorkflowExecutionHistoryAsync(final GetWorkflowExecutionHistoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetWorkflowExecutionHistoryRequest, History> asyncHandler) {
+        final GetWorkflowExecutionHistoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<History>() {
             @Override
             public History call() throws Exception {
-                History result;
+                History result = null;
 
                 try {
-                    result = getWorkflowExecutionHistory(request);
+                    result = executeGetWorkflowExecutionHistory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -636,7 +645,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -652,14 +661,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<ActivityTypeInfos> listActivityTypesAsync(final ListActivityTypesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListActivityTypesRequest, ActivityTypeInfos> asyncHandler) {
+        final ListActivityTypesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivityTypeInfos>() {
             @Override
             public ActivityTypeInfos call() throws Exception {
-                ActivityTypeInfos result;
+                ActivityTypeInfos result = null;
 
                 try {
-                    result = listActivityTypes(request);
+                    result = executeListActivityTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -668,7 +678,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -684,14 +694,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowExecutionInfos> listClosedWorkflowExecutionsAsync(final ListClosedWorkflowExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListClosedWorkflowExecutionsRequest, WorkflowExecutionInfos> asyncHandler) {
+        final ListClosedWorkflowExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowExecutionInfos>() {
             @Override
             public WorkflowExecutionInfos call() throws Exception {
-                WorkflowExecutionInfos result;
+                WorkflowExecutionInfos result = null;
 
                 try {
-                    result = listClosedWorkflowExecutions(request);
+                    result = executeListClosedWorkflowExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -700,7 +711,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -716,14 +727,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<DomainInfos> listDomainsAsync(final ListDomainsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, DomainInfos> asyncHandler) {
+        final ListDomainsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DomainInfos>() {
             @Override
             public DomainInfos call() throws Exception {
-                DomainInfos result;
+                DomainInfos result = null;
 
                 try {
-                    result = listDomains(request);
+                    result = executeListDomains(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -732,7 +744,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -748,14 +760,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowExecutionInfos> listOpenWorkflowExecutionsAsync(final ListOpenWorkflowExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListOpenWorkflowExecutionsRequest, WorkflowExecutionInfos> asyncHandler) {
+        final ListOpenWorkflowExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowExecutionInfos>() {
             @Override
             public WorkflowExecutionInfos call() throws Exception {
-                WorkflowExecutionInfos result;
+                WorkflowExecutionInfos result = null;
 
                 try {
-                    result = listOpenWorkflowExecutions(request);
+                    result = executeListOpenWorkflowExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -764,7 +777,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -780,14 +793,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(final ListWorkflowTypesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListWorkflowTypesRequest, WorkflowTypeInfos> asyncHandler) {
+        final ListWorkflowTypesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<WorkflowTypeInfos>() {
             @Override
             public WorkflowTypeInfos call() throws Exception {
-                WorkflowTypeInfos result;
+                WorkflowTypeInfos result = null;
 
                 try {
-                    result = listWorkflowTypes(request);
+                    result = executeListWorkflowTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -796,7 +810,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -812,14 +826,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<ActivityTask> pollForActivityTaskAsync(final PollForActivityTaskRequest request,
             final com.amazonaws.handlers.AsyncHandler<PollForActivityTaskRequest, ActivityTask> asyncHandler) {
+        final PollForActivityTaskRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivityTask>() {
             @Override
             public ActivityTask call() throws Exception {
-                ActivityTask result;
+                ActivityTask result = null;
 
                 try {
-                    result = pollForActivityTask(request);
+                    result = executePollForActivityTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -828,7 +843,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -844,14 +859,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<DecisionTask> pollForDecisionTaskAsync(final PollForDecisionTaskRequest request,
             final com.amazonaws.handlers.AsyncHandler<PollForDecisionTaskRequest, DecisionTask> asyncHandler) {
+        final PollForDecisionTaskRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DecisionTask>() {
             @Override
             public DecisionTask call() throws Exception {
-                DecisionTask result;
+                DecisionTask result = null;
 
                 try {
-                    result = pollForDecisionTask(request);
+                    result = executePollForDecisionTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -860,7 +876,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -876,14 +892,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<ActivityTaskStatus> recordActivityTaskHeartbeatAsync(final RecordActivityTaskHeartbeatRequest request,
             final com.amazonaws.handlers.AsyncHandler<RecordActivityTaskHeartbeatRequest, ActivityTaskStatus> asyncHandler) {
+        final RecordActivityTaskHeartbeatRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivityTaskStatus>() {
             @Override
             public ActivityTaskStatus call() throws Exception {
-                ActivityTaskStatus result;
+                ActivityTaskStatus result = null;
 
                 try {
-                    result = recordActivityTaskHeartbeat(request);
+                    result = executeRecordActivityTaskHeartbeat(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -892,7 +909,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -908,15 +925,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> registerActivityTypeAsync(final RegisterActivityTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterActivityTypeRequest, Void> asyncHandler) {
+        final RegisterActivityTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    registerActivityType(request);
-                    result = null;
+                    executeRegisterActivityType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -925,7 +942,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -941,15 +958,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> registerDomainAsync(final RegisterDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, Void> asyncHandler) {
+        final RegisterDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    registerDomain(request);
-                    result = null;
+                    executeRegisterDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -958,7 +975,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -974,15 +991,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> registerWorkflowTypeAsync(final RegisterWorkflowTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterWorkflowTypeRequest, Void> asyncHandler) {
+        final RegisterWorkflowTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    registerWorkflowType(request);
-                    result = null;
+                    executeRegisterWorkflowType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -991,7 +1008,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1007,15 +1024,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> requestCancelWorkflowExecutionAsync(final RequestCancelWorkflowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<RequestCancelWorkflowExecutionRequest, Void> asyncHandler) {
+        final RequestCancelWorkflowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    requestCancelWorkflowExecution(request);
-                    result = null;
+                    executeRequestCancelWorkflowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1024,7 +1041,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1040,15 +1057,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> respondActivityTaskCanceledAsync(final RespondActivityTaskCanceledRequest request,
             final com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCanceledRequest, Void> asyncHandler) {
+        final RespondActivityTaskCanceledRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    respondActivityTaskCanceled(request);
-                    result = null;
+                    executeRespondActivityTaskCanceled(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1057,7 +1074,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1073,15 +1090,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> respondActivityTaskCompletedAsync(final RespondActivityTaskCompletedRequest request,
             final com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCompletedRequest, Void> asyncHandler) {
+        final RespondActivityTaskCompletedRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    respondActivityTaskCompleted(request);
-                    result = null;
+                    executeRespondActivityTaskCompleted(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1090,7 +1107,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1106,15 +1123,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> respondActivityTaskFailedAsync(final RespondActivityTaskFailedRequest request,
             final com.amazonaws.handlers.AsyncHandler<RespondActivityTaskFailedRequest, Void> asyncHandler) {
+        final RespondActivityTaskFailedRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    respondActivityTaskFailed(request);
-                    result = null;
+                    executeRespondActivityTaskFailed(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1123,7 +1140,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1139,15 +1156,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> respondDecisionTaskCompletedAsync(final RespondDecisionTaskCompletedRequest request,
             final com.amazonaws.handlers.AsyncHandler<RespondDecisionTaskCompletedRequest, Void> asyncHandler) {
+        final RespondDecisionTaskCompletedRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    respondDecisionTaskCompleted(request);
-                    result = null;
+                    executeRespondDecisionTaskCompleted(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1156,7 +1173,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1172,15 +1189,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> signalWorkflowExecutionAsync(final SignalWorkflowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<SignalWorkflowExecutionRequest, Void> asyncHandler) {
+        final SignalWorkflowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    signalWorkflowExecution(request);
-                    result = null;
+                    executeSignalWorkflowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1189,7 +1206,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1205,14 +1222,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Run> startWorkflowExecutionAsync(final StartWorkflowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartWorkflowExecutionRequest, Run> asyncHandler) {
+        final StartWorkflowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Run>() {
             @Override
             public Run call() throws Exception {
-                Run result;
+                Run result = null;
 
                 try {
-                    result = startWorkflowExecution(request);
+                    result = executeStartWorkflowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1221,7 +1239,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1237,15 +1255,15 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
     @Override
     public java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(final TerminateWorkflowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<TerminateWorkflowExecutionRequest, Void> asyncHandler) {
+        final TerminateWorkflowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Void>() {
             @Override
             public Void call() throws Exception {
-                Void result;
+                Void result = null;
 
                 try {
-                    terminateWorkflowExecution(request);
-                    result = null;
+                    executeTerminateWorkflowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1254,7 +1272,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

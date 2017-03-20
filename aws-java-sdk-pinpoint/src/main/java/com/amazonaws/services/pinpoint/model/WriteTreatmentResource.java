@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Used to create a campaign treatment.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteTreatmentResource implements Serializable, Cloneable, StructuredPojo {
 

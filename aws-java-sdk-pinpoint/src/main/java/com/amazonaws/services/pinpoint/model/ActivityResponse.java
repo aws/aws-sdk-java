@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Activity definition
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivityResponse implements Serializable, Cloneable, StructuredPojo {
 
@@ -46,6 +49,10 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
     private String state;
     /** The total number of endpoints to which the campaign successfully delivered messages. */
     private Integer successfulEndpointCount;
+    /** The total number of timezones completed. */
+    private Integer timezonesCompletedCount;
+    /** The total number of unique timezones present in the segment. */
+    private Integer timezonesTotalCount;
     /** The total number of endpoints to which the campaign attempts to deliver messages. */
     private Integer totalEndpointCount;
     /** The ID of a variation of the campaign used for A/B testing. */
@@ -382,6 +389,74 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * The total number of timezones completed.
+     * 
+     * @param timezonesCompletedCount
+     *        The total number of timezones completed.
+     */
+
+    public void setTimezonesCompletedCount(Integer timezonesCompletedCount) {
+        this.timezonesCompletedCount = timezonesCompletedCount;
+    }
+
+    /**
+     * The total number of timezones completed.
+     * 
+     * @return The total number of timezones completed.
+     */
+
+    public Integer getTimezonesCompletedCount() {
+        return this.timezonesCompletedCount;
+    }
+
+    /**
+     * The total number of timezones completed.
+     * 
+     * @param timezonesCompletedCount
+     *        The total number of timezones completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse withTimezonesCompletedCount(Integer timezonesCompletedCount) {
+        setTimezonesCompletedCount(timezonesCompletedCount);
+        return this;
+    }
+
+    /**
+     * The total number of unique timezones present in the segment.
+     * 
+     * @param timezonesTotalCount
+     *        The total number of unique timezones present in the segment.
+     */
+
+    public void setTimezonesTotalCount(Integer timezonesTotalCount) {
+        this.timezonesTotalCount = timezonesTotalCount;
+    }
+
+    /**
+     * The total number of unique timezones present in the segment.
+     * 
+     * @return The total number of unique timezones present in the segment.
+     */
+
+    public Integer getTimezonesTotalCount() {
+        return this.timezonesTotalCount;
+    }
+
+    /**
+     * The total number of unique timezones present in the segment.
+     * 
+     * @param timezonesTotalCount
+     *        The total number of unique timezones present in the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse withTimezonesTotalCount(Integer timezonesTotalCount) {
+        setTimezonesTotalCount(timezonesTotalCount);
+        return this;
+    }
+
+    /**
      * The total number of endpoints to which the campaign attempts to deliver messages.
      * 
      * @param totalEndpointCount
@@ -478,6 +553,10 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("State: ").append(getState()).append(",");
         if (getSuccessfulEndpointCount() != null)
             sb.append("SuccessfulEndpointCount: ").append(getSuccessfulEndpointCount()).append(",");
+        if (getTimezonesCompletedCount() != null)
+            sb.append("TimezonesCompletedCount: ").append(getTimezonesCompletedCount()).append(",");
+        if (getTimezonesTotalCount() != null)
+            sb.append("TimezonesTotalCount: ").append(getTimezonesTotalCount()).append(",");
         if (getTotalEndpointCount() != null)
             sb.append("TotalEndpointCount: ").append(getTotalEndpointCount()).append(",");
         if (getTreatmentId() != null)
@@ -532,6 +611,14 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSuccessfulEndpointCount() != null && other.getSuccessfulEndpointCount().equals(this.getSuccessfulEndpointCount()) == false)
             return false;
+        if (other.getTimezonesCompletedCount() == null ^ this.getTimezonesCompletedCount() == null)
+            return false;
+        if (other.getTimezonesCompletedCount() != null && other.getTimezonesCompletedCount().equals(this.getTimezonesCompletedCount()) == false)
+            return false;
+        if (other.getTimezonesTotalCount() == null ^ this.getTimezonesTotalCount() == null)
+            return false;
+        if (other.getTimezonesTotalCount() != null && other.getTimezonesTotalCount().equals(this.getTimezonesTotalCount()) == false)
+            return false;
         if (other.getTotalEndpointCount() == null ^ this.getTotalEndpointCount() == null)
             return false;
         if (other.getTotalEndpointCount() != null && other.getTotalEndpointCount().equals(this.getTotalEndpointCount()) == false)
@@ -557,6 +644,8 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getSuccessfulEndpointCount() == null) ? 0 : getSuccessfulEndpointCount().hashCode());
+        hashCode = prime * hashCode + ((getTimezonesCompletedCount() == null) ? 0 : getTimezonesCompletedCount().hashCode());
+        hashCode = prime * hashCode + ((getTimezonesTotalCount() == null) ? 0 : getTimezonesTotalCount().hashCode());
         hashCode = prime * hashCode + ((getTotalEndpointCount() == null) ? 0 : getTotalEndpointCount().hashCode());
         hashCode = prime * hashCode + ((getTreatmentId() == null) ? 0 : getTreatmentId().hashCode());
         return hashCode;

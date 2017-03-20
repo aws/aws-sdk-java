@@ -258,14 +258,15 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
     @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(final DescribeStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
+        final DescribeStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStreamResult>() {
             @Override
             public DescribeStreamResult call() throws Exception {
-                DescribeStreamResult result;
+                DescribeStreamResult result = null;
 
                 try {
-                    result = describeStream(request);
+                    result = executeDescribeStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -274,7 +275,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -290,14 +291,15 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
     @Override
     public java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(final GetRecordsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult> asyncHandler) {
+        final GetRecordsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRecordsResult>() {
             @Override
             public GetRecordsResult call() throws Exception {
-                GetRecordsResult result;
+                GetRecordsResult result = null;
 
                 try {
-                    result = getRecords(request);
+                    result = executeGetRecords(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -306,7 +308,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -322,14 +324,15 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
     @Override
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(final GetShardIteratorRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler) {
+        final GetShardIteratorRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetShardIteratorResult>() {
             @Override
             public GetShardIteratorResult call() throws Exception {
-                GetShardIteratorResult result;
+                GetShardIteratorResult result = null;
 
                 try {
-                    result = getShardIterator(request);
+                    result = executeGetShardIterator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -338,7 +341,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -354,14 +357,15 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
     @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(final ListStreamsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
+        final ListStreamsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListStreamsResult>() {
             @Override
             public ListStreamsResult call() throws Exception {
-                ListStreamsResult result;
+                ListStreamsResult result = null;
 
                 try {
-                    result = listStreams(request);
+                    result = executeListStreams(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -370,7 +374,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends AmazonDynamoDBStreamsClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

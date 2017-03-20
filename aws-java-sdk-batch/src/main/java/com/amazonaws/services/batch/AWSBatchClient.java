@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -293,7 +294,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -361,7 +368,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public CreateComputeEnvironmentResult createComputeEnvironment(CreateComputeEnvironmentRequest createComputeEnvironmentRequest) {
+    public CreateComputeEnvironmentResult createComputeEnvironment(CreateComputeEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateComputeEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final CreateComputeEnvironmentResult executeCreateComputeEnvironment(CreateComputeEnvironmentRequest createComputeEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createComputeEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -418,7 +431,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public CreateJobQueueResult createJobQueue(CreateJobQueueRequest createJobQueueRequest) {
+    public CreateJobQueueResult createJobQueue(CreateJobQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJobQueue(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobQueueResult executeCreateJobQueue(CreateJobQueueRequest createJobQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -471,7 +490,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public DeleteComputeEnvironmentResult deleteComputeEnvironment(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest) {
+    public DeleteComputeEnvironmentResult deleteComputeEnvironment(DeleteComputeEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteComputeEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteComputeEnvironmentResult executeDeleteComputeEnvironment(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteComputeEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -526,7 +551,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public DeleteJobQueueResult deleteJobQueue(DeleteJobQueueRequest deleteJobQueueRequest) {
+    public DeleteJobQueueResult deleteJobQueue(DeleteJobQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobQueue(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobQueueResult executeDeleteJobQueue(DeleteJobQueueRequest deleteJobQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteJobQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -574,7 +605,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public DeregisterJobDefinitionResult deregisterJobDefinition(DeregisterJobDefinitionRequest deregisterJobDefinitionRequest) {
+    public DeregisterJobDefinitionResult deregisterJobDefinition(DeregisterJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterJobDefinitionResult executeDeregisterJobDefinition(DeregisterJobDefinitionRequest deregisterJobDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterJobDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -629,7 +666,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeComputeEnvironmentsResult describeComputeEnvironments(DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest) {
+    public DescribeComputeEnvironmentsResult describeComputeEnvironments(DescribeComputeEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeComputeEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeComputeEnvironmentsResult executeDescribeComputeEnvironments(DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeComputeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -680,7 +723,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public DescribeJobDefinitionsResult describeJobDefinitions(DescribeJobDefinitionsRequest describeJobDefinitionsRequest) {
+    public DescribeJobDefinitionsResult describeJobDefinitions(DescribeJobDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobDefinitionsResult executeDescribeJobDefinitions(DescribeJobDefinitionsRequest describeJobDefinitionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -729,7 +778,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public DescribeJobQueuesResult describeJobQueues(DescribeJobQueuesRequest describeJobQueuesRequest) {
+    public DescribeJobQueuesResult describeJobQueues(DescribeJobQueuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobQueues(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobQueuesResult executeDescribeJobQueues(DescribeJobQueuesRequest describeJobQueuesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -777,7 +832,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public DescribeJobsResult describeJobs(DescribeJobsRequest describeJobsRequest) {
+    public DescribeJobsResult describeJobs(DescribeJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobs(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobsResult executeDescribeJobs(DescribeJobsRequest describeJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -826,7 +887,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -874,7 +941,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public RegisterJobDefinitionResult registerJobDefinition(RegisterJobDefinitionRequest registerJobDefinitionRequest) {
+    public RegisterJobDefinitionResult registerJobDefinition(RegisterJobDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterJobDefinition(request);
+    }
+
+    @SdkInternalApi
+    final RegisterJobDefinitionResult executeRegisterJobDefinition(RegisterJobDefinitionRequest registerJobDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerJobDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -924,7 +997,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public SubmitJobResult submitJob(SubmitJobRequest submitJobRequest) {
+    public SubmitJobResult submitJob(SubmitJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitJob(request);
+    }
+
+    @SdkInternalApi
+    final SubmitJobResult executeSubmitJob(SubmitJobRequest submitJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(submitJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -974,7 +1053,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public TerminateJobResult terminateJob(TerminateJobRequest terminateJobRequest) {
+    public TerminateJobResult terminateJob(TerminateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateJob(request);
+    }
+
+    @SdkInternalApi
+    final TerminateJobResult executeTerminateJob(TerminateJobRequest terminateJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1022,7 +1107,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      API Documentation</a>
      */
     @Override
-    public UpdateComputeEnvironmentResult updateComputeEnvironment(UpdateComputeEnvironmentRequest updateComputeEnvironmentRequest) {
+    public UpdateComputeEnvironmentResult updateComputeEnvironment(UpdateComputeEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateComputeEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateComputeEnvironmentResult executeUpdateComputeEnvironment(UpdateComputeEnvironmentRequest updateComputeEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateComputeEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1072,7 +1163,13 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *      Documentation</a>
      */
     @Override
-    public UpdateJobQueueResult updateJobQueue(UpdateJobQueueRequest updateJobQueueRequest) {
+    public UpdateJobQueueResult updateJobQueue(UpdateJobQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateJobQueue(request);
+    }
+
+    @SdkInternalApi
+    final UpdateJobQueueResult executeUpdateJobQueue(UpdateJobQueueRequest updateJobQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateJobQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -393,7 +394,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
+    public AddPermissionResult addPermission(AddPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddPermission(request);
+    }
+
+    @SdkInternalApi
+    final AddPermissionResult executeAddPermission(AddPermissionRequest addPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -482,7 +489,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      API Documentation</a>
      */
     @Override
-    public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
+    public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeMessageVisibility(request);
+    }
+
+    @SdkInternalApi
+    final ChangeMessageVisibilityResult executeChangeMessageVisibility(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +571,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
+    public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeMessageVisibilityBatch(request);
+    }
+
+    @SdkInternalApi
+    final ChangeMessageVisibilityBatchResult executeChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -671,7 +690,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) {
+    public CreateQueueResult createQueue(CreateQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateQueue(request);
+    }
+
+    @SdkInternalApi
+    final CreateQueueResult executeCreateQueue(CreateQueueRequest createQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -740,7 +765,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public DeleteMessageResult deleteMessage(DeleteMessageRequest deleteMessageRequest) {
+    public DeleteMessageResult deleteMessage(DeleteMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMessage(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMessageResult executeDeleteMessage(DeleteMessageRequest deleteMessageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -813,7 +844,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest) {
+    public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMessageBatch(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMessageBatchResult executeDeleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -875,7 +912,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest) {
+    public DeleteQueueResult deleteQueue(DeleteQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQueue(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQueueResult executeDeleteQueue(DeleteQueueRequest deleteQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -935,7 +978,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public GetQueueAttributesResult getQueueAttributes(GetQueueAttributesRequest getQueueAttributesRequest) {
+    public GetQueueAttributesResult getQueueAttributes(GetQueueAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQueueAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetQueueAttributesResult executeGetQueueAttributes(GetQueueAttributesRequest getQueueAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -992,7 +1041,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest getQueueUrlRequest) {
+    public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQueueUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetQueueUrlResult executeGetQueueUrl(GetQueueUrlRequest getQueueUrlRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getQueueUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1046,7 +1101,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      API Documentation</a>
      */
     @Override
-    public ListDeadLetterSourceQueuesResult listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
+    public ListDeadLetterSourceQueuesResult listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeadLetterSourceQueues(request);
+    }
+
+    @SdkInternalApi
+    final ListDeadLetterSourceQueuesResult executeListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeadLetterSourceQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1090,7 +1151,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) {
+    public ListQueuesResult listQueues(ListQueuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQueues(request);
+    }
+
+    @SdkInternalApi
+    final ListQueuesResult executeListQueues(ListQueuesRequest listQueuesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1157,7 +1224,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest) {
+    public PurgeQueueResult purgeQueue(PurgeQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executePurgeQueue(request);
+    }
+
+    @SdkInternalApi
+    final PurgeQueueResult executePurgeQueue(PurgeQueueRequest purgeQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(purgeQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1272,7 +1345,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public ReceiveMessageResult receiveMessage(ReceiveMessageRequest receiveMessageRequest) {
+    public ReceiveMessageResult receiveMessage(ReceiveMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeReceiveMessage(request);
+    }
+
+    @SdkInternalApi
+    final ReceiveMessageResult executeReceiveMessage(ReceiveMessageRequest receiveMessageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(receiveMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1320,7 +1399,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemovePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemovePermissionResult executeRemovePermission(RemovePermissionRequest removePermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1413,7 +1498,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public SendMessageResult sendMessage(SendMessageRequest sendMessageRequest) {
+    public SendMessageResult sendMessage(SendMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendMessage(request);
+    }
+
+    @SdkInternalApi
+    final SendMessageResult executeSendMessage(SendMessageRequest sendMessageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1539,7 +1630,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) {
+    public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendMessageBatch(request);
+    }
+
+    @SdkInternalApi
+    final SendMessageBatchResult executeSendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendMessageBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1596,7 +1693,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *      Documentation</a>
      */
     @Override
-    public SetQueueAttributesResult setQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest) {
+    public SetQueueAttributesResult setQueueAttributes(SetQueueAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetQueueAttributes(request);
+    }
+
+    @SdkInternalApi
+    final SetQueueAttributesResult executeSetQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

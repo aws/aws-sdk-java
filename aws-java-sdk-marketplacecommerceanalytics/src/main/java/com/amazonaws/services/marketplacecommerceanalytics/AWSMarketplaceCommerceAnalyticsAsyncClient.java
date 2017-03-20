@@ -260,14 +260,15 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
     @Override
     public java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(final GenerateDataSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult> asyncHandler) {
+        final GenerateDataSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GenerateDataSetResult>() {
             @Override
             public GenerateDataSetResult call() throws Exception {
-                GenerateDataSetResult result;
+                GenerateDataSetResult result = null;
 
                 try {
-                    result = generateDataSet(request);
+                    result = executeGenerateDataSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -276,7 +277,7 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -292,14 +293,15 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
     @Override
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(final StartSupportDataExportRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
+        final StartSupportDataExportRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartSupportDataExportResult>() {
             @Override
             public StartSupportDataExportResult call() throws Exception {
-                StartSupportDataExportResult result;
+                StartSupportDataExportResult result = null;
 
                 try {
-                    result = startSupportDataExport(request);
+                    result = executeStartSupportDataExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -308,7 +310,7 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends AWSMarketplaceCo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

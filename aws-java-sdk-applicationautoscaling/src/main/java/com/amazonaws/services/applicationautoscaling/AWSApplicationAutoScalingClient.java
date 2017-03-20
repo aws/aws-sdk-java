@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -359,7 +360,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScalingPolicyResult executeDeleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -420,7 +427,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
+    public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterScalableTarget(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterScalableTargetResult executeDeregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -480,7 +493,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
+    public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalableTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalableTargetsResult executeDescribeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalableTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -543,7 +562,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingActivities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingActivitiesResult executeDescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -611,7 +636,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingPoliciesResult executeDescribeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -686,7 +717,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutScalingPolicyResult executePutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -747,7 +784,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {
+    public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterScalableTarget(request);
+    }
+
+    @SdkInternalApi
+    final RegisterScalableTargetResult executeRegisterScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

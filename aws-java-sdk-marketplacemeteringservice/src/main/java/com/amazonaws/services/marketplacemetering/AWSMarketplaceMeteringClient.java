@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -356,7 +357,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
+    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchMeterUsage(request);
+    }
+
+    @SdkInternalApi
+    final BatchMeterUsageResult executeBatchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchMeterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -420,7 +427,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public MeterUsageResult meterUsage(MeterUsageRequest meterUsageRequest) {
+    public MeterUsageResult meterUsage(MeterUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeMeterUsage(request);
+    }
+
+    @SdkInternalApi
+    final MeterUsageResult executeMeterUsage(MeterUsageRequest meterUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(meterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -476,7 +489,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
+    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveCustomer(request);
+    }
+
+    @SdkInternalApi
+    final ResolveCustomerResult executeResolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveCustomerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

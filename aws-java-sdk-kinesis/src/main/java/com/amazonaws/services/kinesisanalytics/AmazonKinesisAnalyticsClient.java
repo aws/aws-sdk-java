@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -314,7 +315,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
+    public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationInput(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationInputResult executeAddApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationInputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -389,7 +396,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
+    public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationOutput(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationOutputResult executeAddApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -456,7 +469,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
+    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationReferenceDataSource(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationReferenceDataSourceResult executeAddApplicationReferenceDataSource(
             AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationReferenceDataSourceRequest);
@@ -536,7 +555,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -590,7 +615,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -643,7 +674,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
+    public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationOutput(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationOutputResult executeDeleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -705,7 +742,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
+    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationReferenceDataSource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationReferenceDataSourceResult executeDeleteApplicationReferenceDataSource(
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationReferenceDataSourceRequest);
@@ -760,7 +803,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest) {
+    public DescribeApplicationResult describeApplication(DescribeApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplication(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationResult executeDescribeApplication(DescribeApplicationRequest describeApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -821,7 +870,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
+    public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscoverInputSchema(request);
+    }
+
+    @SdkInternalApi
+    final DiscoverInputSchemaResult executeDiscoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(discoverInputSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -873,7 +928,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationsResult executeListApplications(ListApplicationsRequest listApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -939,7 +1000,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest) {
+    public StartApplicationResult startApplication(StartApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartApplication(request);
+    }
+
+    @SdkInternalApi
+    final StartApplicationResult executeStartApplication(StartApplicationRequest startApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -991,7 +1058,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest) {
+    public StopApplicationResult stopApplication(StopApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopApplication(request);
+    }
+
+    @SdkInternalApi
+    final StopApplicationResult executeStopApplication(StopApplicationRequest stopApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1052,7 +1125,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -85,12 +85,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
-     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
-     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
-     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
-     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.
+     * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
+     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
+     * console to begin creating a build project, and follow the on-screen instructions to complete the connection.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
+     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -442,12 +442,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
-     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
-     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
-     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
-     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.
+     * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
+     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
+     * console to begin creating a build project, and follow the on-screen instructions to complete the connection.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
+     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -478,12 +478,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
-     *        to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
-     *        follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
-     *        account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
-     *        console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
-     *        the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
+     *        the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS
+     *        CodeBuild console to begin creating a build project, and follow the on-screen instructions to complete the
+     *        connection. (After you have connected to your GitHub account, you do not need to finish creating the build
+     *        project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
+     *        connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value
+     *        to <code>OAUTH</code>.
      *        </p>
      *        </li>
      */
@@ -520,12 +521,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
-     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
-     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
-     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
-     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.
+     * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
+     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
+     * console to begin creating a build project, and follow the on-screen instructions to complete the connection.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
+     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -555,12 +556,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
-     *         to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
-     *         follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
-     *         account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
-     *         console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
-     *         the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *         For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source
+     *         and the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the
+     *         AWS CodeBuild console to begin creating a build project, and follow the on-screen instructions to
+     *         complete the connection. (After you have connected to your GitHub account, you do not need to finish
+     *         creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild
+     *         to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     *         <code>type</code> value to <code>OAUTH</code>.
      *         </p>
      *         </li>
      */
@@ -597,12 +599,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account to your
-     * GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and follow the
-     * on-screen instructions to complete the connection. (After you have connected to your GitHub account, you do not
-     * need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
-     * CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     * <code>type</code> value to <code>OAUTH</code>.
+     * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
+     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
+     * console to begin creating a build project, and follow the on-screen instructions to complete the connection.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project, and you
+     * may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
+     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -633,12 +635,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in a GitHub repository, instead of specifying a value here, you connect your AWS account
-     *        to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project, and
-     *        follow the on-screen instructions to complete the connection. (After you have connected to your GitHub
-     *        account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild
-     *        console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set
-     *        the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
+     *        the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS
+     *        CodeBuild console to begin creating a build project, and follow the on-screen instructions to complete the
+     *        connection. (After you have connected to your GitHub account, you do not need to finish creating the build
+     *        project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
+     *        connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value
+     *        to <code>OAUTH</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -175,7 +175,6 @@ public class MultiFileOutputStream extends OutputStream implements OnFileDelete 
             filesCreated++;
             blockIfNecessary();
             final File file = getFile(filesCreated);
-            file.deleteOnExit();
             os = new FileOutputStream(file);
         }
         return os;

@@ -120,12 +120,15 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeJobFlows" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListClusters" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ModifyInstanceGroups" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

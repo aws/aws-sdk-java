@@ -84,6 +84,14 @@ public class ActivityResponseJsonUnmarshaller implements Unmarshaller<ActivityRe
                     context.nextToken();
                     activityResponse.setSuccessfulEndpointCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("TimezonesCompletedCount", targetDepth)) {
+                    context.nextToken();
+                    activityResponse.setTimezonesCompletedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TimezonesTotalCount", targetDepth)) {
+                    context.nextToken();
+                    activityResponse.setTimezonesTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("TotalEndpointCount", targetDepth)) {
                     context.nextToken();
                     activityResponse.setTotalEndpointCount(context.getUnmarshaller(Integer.class).unmarshall(context));

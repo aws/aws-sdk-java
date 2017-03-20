@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -403,7 +404,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddFacetToObjectResult addFacetToObject(AddFacetToObjectRequest addFacetToObjectRequest) {
+    public AddFacetToObjectResult addFacetToObject(AddFacetToObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddFacetToObject(request);
+    }
+
+    @SdkInternalApi
+    final AddFacetToObjectResult executeAddFacetToObject(AddFacetToObjectRequest addFacetToObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addFacetToObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -471,7 +478,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ApplySchemaResult applySchema(ApplySchemaRequest applySchemaRequest) {
+    public ApplySchemaResult applySchema(ApplySchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplySchema(request);
+    }
+
+    @SdkInternalApi
+    final ApplySchemaResult executeApplySchema(ApplySchemaRequest applySchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(applySchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +571,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public AttachObjectResult attachObject(AttachObjectRequest attachObjectRequest) {
+    public AttachObjectResult attachObject(AttachObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachObject(request);
+    }
+
+    @SdkInternalApi
+    final AttachObjectResult executeAttachObject(AttachObjectRequest attachObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -629,7 +648,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public AttachPolicyResult attachPolicy(AttachPolicyRequest attachPolicyRequest) {
+    public AttachPolicyResult attachPolicy(AttachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachPolicyResult executeAttachPolicy(AttachPolicyRequest attachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -704,7 +729,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public AttachToIndexResult attachToIndex(AttachToIndexRequest attachToIndexRequest) {
+    public AttachToIndexResult attachToIndex(AttachToIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachToIndex(request);
+    }
+
+    @SdkInternalApi
+    final AttachToIndexResult executeAttachToIndex(AttachToIndexRequest attachToIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachToIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -769,7 +800,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public BatchReadResult batchRead(BatchReadRequest batchReadRequest) {
+    public BatchReadResult batchRead(BatchReadRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchRead(request);
+    }
+
+    @SdkInternalApi
+    final BatchReadResult executeBatchRead(BatchReadRequest batchReadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchReadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -837,7 +874,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public BatchWriteResult batchWrite(BatchWriteRequest batchWriteRequest) {
+    public BatchWriteResult batchWrite(BatchWriteRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchWrite(request);
+    }
+
+    @SdkInternalApi
+    final BatchWriteResult executeBatchWrite(BatchWriteRequest batchWriteRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchWriteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -908,7 +951,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateDirectoryResult createDirectory(CreateDirectoryRequest createDirectoryRequest) {
+    public CreateDirectoryResult createDirectory(CreateDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDirectory(request);
+    }
+
+    @SdkInternalApi
+    final CreateDirectoryResult executeCreateDirectory(CreateDirectoryRequest createDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -977,7 +1026,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public CreateFacetResult createFacet(CreateFacetRequest createFacetRequest) {
+    public CreateFacetResult createFacet(CreateFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFacet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFacetResult executeCreateFacet(CreateFacetRequest createFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1053,7 +1108,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public CreateIndexResult createIndex(CreateIndexRequest createIndexRequest) {
+    public CreateIndexResult createIndex(CreateIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIndex(request);
+    }
+
+    @SdkInternalApi
+    final CreateIndexResult executeCreateIndex(CreateIndexRequest createIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1131,7 +1192,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateObjectResult createObject(CreateObjectRequest createObjectRequest) {
+    public CreateObjectResult createObject(CreateObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateObject(request);
+    }
+
+    @SdkInternalApi
+    final CreateObjectResult executeCreateObject(CreateObjectRequest createObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1218,7 +1285,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateSchemaResult createSchema(CreateSchemaRequest createSchemaRequest) {
+    public CreateSchemaResult createSchema(CreateSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSchema(request);
+    }
+
+    @SdkInternalApi
+    final CreateSchemaResult executeCreateSchema(CreateSchemaRequest createSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1287,7 +1360,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
+    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDirectoryResult executeDeleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1358,7 +1437,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public DeleteFacetResult deleteFacet(DeleteFacetRequest deleteFacetRequest) {
+    public DeleteFacetResult deleteFacet(DeleteFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFacet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFacetResult executeDeleteFacet(DeleteFacetRequest deleteFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1428,7 +1513,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteObjectResult deleteObject(DeleteObjectRequest deleteObjectRequest) {
+    public DeleteObjectResult deleteObject(DeleteObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteObject(request);
+    }
+
+    @SdkInternalApi
+    final DeleteObjectResult executeDeleteObject(DeleteObjectRequest deleteObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1496,7 +1587,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteSchemaResult deleteSchema(DeleteSchemaRequest deleteSchemaRequest) {
+    public DeleteSchemaResult deleteSchema(DeleteSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSchema(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSchemaResult executeDeleteSchema(DeleteSchemaRequest deleteSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1567,7 +1664,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachFromIndexResult detachFromIndex(DetachFromIndexRequest detachFromIndexRequest) {
+    public DetachFromIndexResult detachFromIndex(DetachFromIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachFromIndex(request);
+    }
+
+    @SdkInternalApi
+    final DetachFromIndexResult executeDetachFromIndex(DetachFromIndexRequest detachFromIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachFromIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1635,7 +1738,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachObjectResult detachObject(DetachObjectRequest detachObjectRequest) {
+    public DetachObjectResult detachObject(DetachObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachObject(request);
+    }
+
+    @SdkInternalApi
+    final DetachObjectResult executeDetachObject(DetachObjectRequest detachObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1706,7 +1815,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest) {
+    public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachPolicyResult executeDetachPolicy(DetachPolicyRequest detachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1773,7 +1888,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDirectoryResult disableDirectory(DisableDirectoryRequest disableDirectoryRequest) {
+    public DisableDirectoryResult disableDirectory(DisableDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DisableDirectoryResult executeDisableDirectory(DisableDirectoryRequest disableDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1840,7 +1961,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public EnableDirectoryResult enableDirectory(EnableDirectoryRequest enableDirectoryRequest) {
+    public EnableDirectoryResult enableDirectory(EnableDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDirectory(request);
+    }
+
+    @SdkInternalApi
+    final EnableDirectoryResult executeEnableDirectory(EnableDirectoryRequest enableDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1903,7 +2030,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetDirectoryResult getDirectory(GetDirectoryRequest getDirectoryRequest) {
+    public GetDirectoryResult getDirectory(GetDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDirectory(request);
+    }
+
+    @SdkInternalApi
+    final GetDirectoryResult executeGetDirectory(GetDirectoryRequest getDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1971,7 +2104,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public GetFacetResult getFacet(GetFacetRequest getFacetRequest) {
+    public GetFacetResult getFacet(GetFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFacet(request);
+    }
+
+    @SdkInternalApi
+    final GetFacetResult executeGetFacet(GetFacetRequest getFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2038,7 +2177,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetObjectInformationResult getObjectInformation(GetObjectInformationRequest getObjectInformationRequest) {
+    public GetObjectInformationResult getObjectInformation(GetObjectInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetObjectInformation(request);
+    }
+
+    @SdkInternalApi
+    final GetObjectInformationResult executeGetObjectInformation(GetObjectInformationRequest getObjectInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getObjectInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2107,7 +2252,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest) {
+    public GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSchemaAsJson(request);
+    }
+
+    @SdkInternalApi
+    final GetSchemaAsJsonResult executeGetSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSchemaAsJsonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2174,7 +2325,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest) {
+    public ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppliedSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListAppliedSchemaArnsResult executeListAppliedSchemaArns(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAppliedSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2242,7 +2399,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAttachedIndicesResult listAttachedIndices(ListAttachedIndicesRequest listAttachedIndicesRequest) {
+    public ListAttachedIndicesResult listAttachedIndices(ListAttachedIndicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedIndices(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedIndicesResult executeListAttachedIndices(ListAttachedIndicesRequest listAttachedIndicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttachedIndicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2309,7 +2472,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDevelopmentSchemaArnsResult listDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest) {
+    public ListDevelopmentSchemaArnsResult listDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevelopmentSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListDevelopmentSchemaArnsResult executeListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDevelopmentSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2376,7 +2545,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public ListDirectoriesResult listDirectories(ListDirectoriesRequest listDirectoriesRequest) {
+    public ListDirectoriesResult listDirectories(ListDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDirectories(request);
+    }
+
+    @SdkInternalApi
+    final ListDirectoriesResult executeListDirectories(ListDirectoriesRequest listDirectoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2445,7 +2620,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListFacetAttributesResult listFacetAttributes(ListFacetAttributesRequest listFacetAttributesRequest) {
+    public ListFacetAttributesResult listFacetAttributes(ListFacetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFacetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListFacetAttributesResult executeListFacetAttributes(ListFacetAttributesRequest listFacetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2512,7 +2693,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public ListFacetNamesResult listFacetNames(ListFacetNamesRequest listFacetNamesRequest) {
+    public ListFacetNamesResult listFacetNames(ListFacetNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFacetNames(request);
+    }
+
+    @SdkInternalApi
+    final ListFacetNamesResult executeListFacetNames(ListFacetNamesRequest listFacetNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacetNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2581,7 +2768,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListIndexResult listIndex(ListIndexRequest listIndexRequest) {
+    public ListIndexResult listIndex(ListIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIndex(request);
+    }
+
+    @SdkInternalApi
+    final ListIndexResult executeListIndex(ListIndexRequest listIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2652,7 +2845,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest listObjectAttributesRequest) {
+    public ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectAttributesResult executeListObjectAttributes(ListObjectAttributesRequest listObjectAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2726,7 +2925,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest) {
+    public ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectChildren(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectChildrenResult executeListObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectChildrenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2805,7 +3010,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest listObjectParentPathsRequest) {
+    public ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectParentPaths(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectParentPathsResult executeListObjectParentPaths(ListObjectParentPathsRequest listObjectParentPathsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectParentPathsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2879,7 +3090,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectParentsResult listObjectParents(ListObjectParentsRequest listObjectParentsRequest) {
+    public ListObjectParentsResult listObjectParents(ListObjectParentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectParents(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectParentsResult executeListObjectParents(ListObjectParentsRequest listObjectParentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectParentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2948,7 +3165,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest) {
+    public ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectPoliciesResult executeListObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3021,7 +3244,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest) {
+    public ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicyAttachments(request);
+    }
+
+    @SdkInternalApi
+    final ListPolicyAttachmentsResult executeListPolicyAttachments(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPolicyAttachmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3089,7 +3318,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPublishedSchemaArnsResult listPublishedSchemaArns(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest) {
+    public ListPublishedSchemaArnsResult listPublishedSchemaArns(ListPublishedSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublishedSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListPublishedSchemaArnsResult executeListPublishedSchemaArns(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPublishedSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3160,7 +3395,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3235,7 +3476,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public LookupPolicyResult lookupPolicy(LookupPolicyRequest lookupPolicyRequest) {
+    public LookupPolicyResult lookupPolicy(LookupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeLookupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final LookupPolicyResult executeLookupPolicy(LookupPolicyRequest lookupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(lookupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3304,7 +3551,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public PublishSchemaResult publishSchema(PublishSchemaRequest publishSchemaRequest) {
+    public PublishSchemaResult publishSchema(PublishSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executePublishSchema(request);
+    }
+
+    @SdkInternalApi
+    final PublishSchemaResult executePublishSchema(PublishSchemaRequest publishSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(publishSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3373,7 +3626,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutSchemaFromJsonResult putSchemaFromJson(PutSchemaFromJsonRequest putSchemaFromJsonRequest) {
+    public PutSchemaFromJsonResult putSchemaFromJson(PutSchemaFromJsonRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSchemaFromJson(request);
+    }
+
+    @SdkInternalApi
+    final PutSchemaFromJsonResult executePutSchemaFromJson(PutSchemaFromJsonRequest putSchemaFromJsonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putSchemaFromJsonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3442,7 +3701,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveFacetFromObjectResult removeFacetFromObject(RemoveFacetFromObjectRequest removeFacetFromObjectRequest) {
+    public RemoveFacetFromObjectResult removeFacetFromObject(RemoveFacetFromObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveFacetFromObject(request);
+    }
+
+    @SdkInternalApi
+    final RemoveFacetFromObjectResult executeRemoveFacetFromObject(RemoveFacetFromObjectRequest removeFacetFromObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeFacetFromObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3511,7 +3776,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3579,7 +3850,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3667,7 +3944,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public UpdateFacetResult updateFacet(UpdateFacetRequest updateFacetRequest) {
+    public UpdateFacetResult updateFacet(UpdateFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFacet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFacetResult executeUpdateFacet(UpdateFacetRequest updateFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3736,7 +4019,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateObjectAttributesResult updateObjectAttributes(UpdateObjectAttributesRequest updateObjectAttributesRequest) {
+    public UpdateObjectAttributesResult updateObjectAttributes(UpdateObjectAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateObjectAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateObjectAttributesResult executeUpdateObjectAttributes(UpdateObjectAttributesRequest updateObjectAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateObjectAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3802,7 +4091,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public UpdateSchemaResult updateSchema(UpdateSchemaRequest updateSchemaRequest) {
+    public UpdateSchemaResult updateSchema(UpdateSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSchema(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSchemaResult executeUpdateSchema(UpdateSchemaRequest updateSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

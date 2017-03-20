@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -425,7 +426,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      Documentation</a>
      */
     @Override
-    public AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest) {
+    public AssumeRoleResult assumeRole(AssumeRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssumeRole(request);
+    }
+
+    @SdkInternalApi
+    final AssumeRoleResult executeAssumeRole(AssumeRoleRequest assumeRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(assumeRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -572,7 +579,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      Documentation</a>
      */
     @Override
-    public AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest) {
+    public AssumeRoleWithSAMLResult assumeRoleWithSAML(AssumeRoleWithSAMLRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssumeRoleWithSAML(request);
+    }
+
+    @SdkInternalApi
+    final AssumeRoleWithSAMLResult executeAssumeRoleWithSAML(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithSAMLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -749,7 +762,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      API Documentation</a>
      */
     @Override
-    public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest) {
+    public AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssumeRoleWithWebIdentity(request);
+    }
+
+    @SdkInternalApi
+    final AssumeRoleWithWebIdentityResult executeAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(assumeRoleWithWebIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -845,7 +864,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      API Documentation</a>
      */
     @Override
-    public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) {
+    public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDecodeAuthorizationMessage(request);
+    }
+
+    @SdkInternalApi
+    final DecodeAuthorizationMessageResult executeDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(decodeAuthorizationMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -887,7 +912,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      Documentation</a>
      */
     @Override
-    public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest getCallerIdentityRequest) {
+    public GetCallerIdentityResult getCallerIdentity(GetCallerIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCallerIdentity(request);
+    }
+
+    @SdkInternalApi
+    final GetCallerIdentityResult executeGetCallerIdentity(GetCallerIdentityRequest getCallerIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCallerIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1039,7 +1070,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      Documentation</a>
      */
     @Override
-    public GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest) {
+    public GetFederationTokenResult getFederationToken(GetFederationTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFederationToken(request);
+    }
+
+    @SdkInternalApi
+    final GetFederationTokenResult executeGetFederationToken(GetFederationTokenRequest getFederationTokenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFederationTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1140,7 +1177,13 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *      Documentation</a>
      */
     @Override
-    public GetSessionTokenResult getSessionToken(GetSessionTokenRequest getSessionTokenRequest) {
+    public GetSessionTokenResult getSessionToken(GetSessionTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSessionToken(request);
+    }
+
+    @SdkInternalApi
+    final GetSessionTokenResult executeGetSessionToken(GetSessionTokenRequest getSessionTokenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSessionTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

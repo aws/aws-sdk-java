@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -356,7 +357,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.AssociateConfigurationItemsToApplication
      */
     @Override
-    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(
+    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateConfigurationItemsToApplication(request);
+    }
+
+    @SdkInternalApi
+    final AssociateConfigurationItemsToApplicationResult executeAssociateConfigurationItemsToApplication(
             AssociateConfigurationItemsToApplicationRequest associateConfigurationItemsToApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateConfigurationItemsToApplicationRequest);
@@ -409,7 +416,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.CreateApplication
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -462,7 +475,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.CreateTags
      */
     @Override
-    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagsResult executeCreateTags(CreateTagsRequest createTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -512,7 +531,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DeleteApplications
      */
     @Override
-    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest deleteApplicationsRequest) {
+    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplications(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationsResult executeDeleteApplications(DeleteApplicationsRequest deleteApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -565,7 +590,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DeleteTags
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -616,7 +647,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeAgents
      */
     @Override
-    public DescribeAgentsResult describeAgents(DescribeAgentsRequest describeAgentsRequest) {
+    public DescribeAgentsResult describeAgents(DescribeAgentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAgents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAgentsResult executeDescribeAgents(DescribeAgentsRequest describeAgentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -674,7 +711,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeConfigurations
      */
     @Override
-    public DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest) {
+    public DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationsResult executeDescribeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -727,7 +770,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeExportConfigurations
      */
     @Override
-    public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest describeExportConfigurationsRequest) {
+    public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExportConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportConfigurationsResult executeDescribeExportConfigurations(DescribeExportConfigurationsRequest describeExportConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeExportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -782,7 +831,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeTags
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -833,6 +888,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DisassociateConfigurationItemsFromApplicationResult disassociateConfigurationItemsFromApplication(
+            DisassociateConfigurationItemsFromApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConfigurationItemsFromApplication(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConfigurationItemsFromApplicationResult executeDisassociateConfigurationItemsFromApplication(
             DisassociateConfigurationItemsFromApplicationRequest disassociateConfigurationItemsFromApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateConfigurationItemsFromApplicationRequest);
@@ -890,7 +952,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ExportConfigurations
      */
     @Override
-    public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest exportConfigurationsRequest) {
+    public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ExportConfigurationsResult executeExportConfigurations(ExportConfigurationsRequest exportConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(exportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -940,7 +1008,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.GetDiscoverySummary
      */
     @Override
-    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest) {
+    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDiscoverySummary(request);
+    }
+
+    @SdkInternalApi
+    final GetDiscoverySummaryResult executeGetDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDiscoverySummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -993,7 +1067,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ListConfigurations
      */
     @Override
-    public ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
+    public ListConfigurationsResult listConfigurations(ListConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListConfigurationsResult executeListConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1043,7 +1123,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ListServerNeighbors
      */
     @Override
-    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest) {
+    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServerNeighbors(request);
+    }
+
+    @SdkInternalApi
+    final ListServerNeighborsResult executeListServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServerNeighborsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1093,7 +1179,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.StartDataCollectionByAgentIds
      */
     @Override
-    public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest) {
+    public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDataCollectionByAgentIds(request);
+    }
+
+    @SdkInternalApi
+    final StartDataCollectionByAgentIdsResult executeStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1145,7 +1237,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.StopDataCollectionByAgentIds
      */
     @Override
-    public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest) {
+    public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDataCollectionByAgentIds(request);
+    }
+
+    @SdkInternalApi
+    final StopDataCollectionByAgentIdsResult executeStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1197,7 +1295,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.UpdateApplication
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

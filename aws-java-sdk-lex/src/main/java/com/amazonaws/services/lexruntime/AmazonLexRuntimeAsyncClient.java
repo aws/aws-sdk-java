@@ -78,14 +78,15 @@ public class AmazonLexRuntimeAsyncClient extends AmazonLexRuntimeClient implemen
     @Override
     public java.util.concurrent.Future<PostTextResult> postTextAsync(final PostTextRequest request,
             final com.amazonaws.handlers.AsyncHandler<PostTextRequest, PostTextResult> asyncHandler) {
+        final PostTextRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PostTextResult>() {
             @Override
             public PostTextResult call() throws Exception {
-                PostTextResult result;
+                PostTextResult result = null;
 
                 try {
-                    result = postText(request);
+                    result = executePostText(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -94,7 +95,7 @@ public class AmazonLexRuntimeAsyncClient extends AmazonLexRuntimeClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

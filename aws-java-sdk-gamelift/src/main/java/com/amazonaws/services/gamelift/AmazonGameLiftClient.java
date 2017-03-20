@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -739,7 +740,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -813,7 +820,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateBuildResult createBuild(CreateBuildRequest createBuildRequest) {
+    public CreateBuildResult createBuild(CreateBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBuild(request);
+    }
+
+    @SdkInternalApi
+    final CreateBuildResult executeCreateBuild(CreateBuildRequest createBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -949,7 +962,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+    public CreateFleetResult createFleet(CreateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetResult executeCreateFleet(CreateFleetRequest createFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1036,7 +1055,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateGameSessionResult createGameSession(CreateGameSessionRequest createGameSessionRequest) {
+    public CreateGameSessionResult createGameSession(CreateGameSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGameSession(request);
+    }
+
+    @SdkInternalApi
+    final CreateGameSessionResult executeCreateGameSession(CreateGameSessionRequest createGameSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1098,7 +1123,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateGameSessionQueueResult createGameSessionQueue(CreateGameSessionQueueRequest createGameSessionQueueRequest) {
+    public CreateGameSessionQueueResult createGameSessionQueue(CreateGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final CreateGameSessionQueueResult executeCreateGameSessionQueue(CreateGameSessionQueueRequest createGameSessionQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGameSessionQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1171,7 +1202,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
+    public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlayerSession(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlayerSessionResult executeCreatePlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1244,7 +1281,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
+    public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlayerSessions(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlayerSessionsResult executeCreatePlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1299,7 +1342,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAliasResult executeDeleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1357,7 +1406,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest) {
+    public DeleteBuildResult deleteBuild(DeleteBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBuild(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBuildResult executeDeleteBuild(DeleteBuildRequest deleteBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1419,7 +1474,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetResult executeDeleteFleet(DeleteFleetRequest deleteFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1473,7 +1534,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteGameSessionQueueResult deleteGameSessionQueue(DeleteGameSessionQueueRequest deleteGameSessionQueueRequest) {
+    public DeleteGameSessionQueueResult deleteGameSessionQueue(DeleteGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGameSessionQueueResult executeDeleteGameSessionQueue(DeleteGameSessionQueueRequest deleteGameSessionQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGameSessionQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1529,7 +1596,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScalingPolicyResult executeDeleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1587,7 +1660,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeAliasResult describeAlias(DescribeAliasRequest describeAliasRequest) {
+    public DescribeAliasResult describeAlias(DescribeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAliasResult executeDescribeAlias(DescribeAliasRequest describeAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1642,7 +1721,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeBuildResult describeBuild(DescribeBuildRequest describeBuildRequest) {
+    public DescribeBuildResult describeBuild(DescribeBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBuild(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBuildResult executeDescribeBuild(DescribeBuildRequest describeBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1709,7 +1794,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
+    public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEC2InstanceLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEC2InstanceLimitsResult executeDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEC2InstanceLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1775,7 +1866,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
+    public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAttributesResult executeDescribeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1842,7 +1939,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
+    public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetCapacity(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetCapacityResult executeDescribeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1899,7 +2002,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
+    public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetEventsResult executeDescribeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1956,7 +2065,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
+    public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetPortSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetPortSettingsResult executeDescribeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2022,7 +2137,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
+    public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetUtilization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetUtilizationResult executeDescribeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetUtilizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2092,7 +2213,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
+    public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionDetails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionDetailsResult executeDescribeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2148,7 +2275,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGameSessionPlacementResult describeGameSessionPlacement(DescribeGameSessionPlacementRequest describeGameSessionPlacementRequest) {
+    public DescribeGameSessionPlacementResult describeGameSessionPlacement(DescribeGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionPlacementResult executeDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest describeGameSessionPlacementRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionPlacementRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2206,7 +2339,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGameSessionQueuesResult describeGameSessionQueues(DescribeGameSessionQueuesRequest describeGameSessionQueuesRequest) {
+    public DescribeGameSessionQueuesResult describeGameSessionQueues(DescribeGameSessionQueuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionQueues(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionQueuesResult executeDescribeGameSessionQueues(DescribeGameSessionQueuesRequest describeGameSessionQueuesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionQueuesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2275,7 +2414,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
+    public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionsResult executeDescribeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2335,7 +2480,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) {
+    public DescribeInstancesResult describeInstances(DescribeInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancesResult executeDescribeInstances(DescribeInstancesRequest describeInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2399,7 +2550,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
+    public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePlayerSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribePlayerSessionsResult executeDescribePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2455,7 +2612,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
+    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuntimeConfigurationResult executeDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2516,7 +2679,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingPoliciesResult executeDescribeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2579,7 +2748,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
+    public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGameSessionLogUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetGameSessionLogUrlResult executeGetGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGameSessionLogUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2648,7 +2823,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest getInstanceAccessRequest) {
+    public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceAccess(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceAccessResult executeGetInstanceAccess(GetInstanceAccessRequest getInstanceAccessRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2705,7 +2886,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2763,7 +2950,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
+    public ListBuildsResult listBuilds(ListBuildsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBuilds(request);
+    }
+
+    @SdkInternalApi
+    final ListBuildsResult executeListBuilds(ListBuildsRequest listBuildsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listBuildsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2823,7 +3016,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest) {
+    public ListFleetsResult listFleets(ListFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListFleetsResult executeListFleets(ListFleetsRequest listFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2900,7 +3099,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutScalingPolicyResult executePutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2956,7 +3161,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
+    public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestUploadCredentials(request);
+    }
+
+    @SdkInternalApi
+    final RequestUploadCredentialsResult executeRequestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(requestUploadCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3017,7 +3228,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ResolveAliasResult resolveAlias(ResolveAliasRequest resolveAliasRequest) {
+    public ResolveAliasResult resolveAlias(ResolveAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveAlias(request);
+    }
+
+    @SdkInternalApi
+    final ResolveAliasResult executeResolveAlias(ResolveAliasRequest resolveAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3136,7 +3353,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
+    public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchGameSessions(request);
+    }
+
+    @SdkInternalApi
+    final SearchGameSessionsResult executeSearchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3213,7 +3436,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartGameSessionPlacementResult startGameSessionPlacement(StartGameSessionPlacementRequest startGameSessionPlacementRequest) {
+    public StartGameSessionPlacementResult startGameSessionPlacement(StartGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final StartGameSessionPlacementResult executeStartGameSessionPlacement(StartGameSessionPlacementRequest startGameSessionPlacementRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startGameSessionPlacementRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3269,7 +3498,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StopGameSessionPlacementResult stopGameSessionPlacement(StopGameSessionPlacementRequest stopGameSessionPlacementRequest) {
+    public StopGameSessionPlacementResult stopGameSessionPlacement(StopGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final StopGameSessionPlacementResult executeStopGameSessionPlacement(StopGameSessionPlacementRequest stopGameSessionPlacementRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopGameSessionPlacementRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3327,7 +3562,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAliasResult executeUpdateAlias(UpdateAliasRequest updateAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3383,7 +3624,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateBuildResult updateBuild(UpdateBuildRequest updateBuildRequest) {
+    public UpdateBuildResult updateBuild(UpdateBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBuild(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBuildResult executeUpdateBuild(UpdateBuildRequest updateBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3447,7 +3694,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
+    public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetAttributesResult executeUpdateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3525,7 +3778,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
+    public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetCapacity(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetCapacityResult executeUpdateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3592,7 +3851,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
+    public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetPortSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetPortSettingsResult executeUpdateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3658,7 +3923,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateGameSessionResult updateGameSession(UpdateGameSessionRequest updateGameSessionRequest) {
+    public UpdateGameSessionResult updateGameSession(UpdateGameSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGameSession(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGameSessionResult executeUpdateGameSession(UpdateGameSessionRequest updateGameSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3713,7 +3984,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateGameSessionQueueResult updateGameSessionQueue(UpdateGameSessionQueueRequest updateGameSessionQueueRequest) {
+    public UpdateGameSessionQueueResult updateGameSessionQueue(UpdateGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGameSessionQueueResult executeUpdateGameSessionQueue(UpdateGameSessionQueueRequest updateGameSessionQueueRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGameSessionQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3784,7 +4061,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
+    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRuntimeConfigurationResult executeUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

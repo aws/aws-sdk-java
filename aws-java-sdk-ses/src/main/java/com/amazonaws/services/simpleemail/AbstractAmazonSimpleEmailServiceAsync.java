@@ -365,6 +365,7 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
      *
      * @see #getSendQuotaAsync(GetSendQuotaRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSendQuotaResult> getSendQuotaAsync(
             com.amazonaws.handlers.AsyncHandler<GetSendQuotaRequest, GetSendQuotaResult> asyncHandler) {
 
@@ -400,6 +401,7 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
      *
      * @see #getSendStatisticsAsync(GetSendStatisticsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSendStatisticsResult> getSendStatisticsAsync(
             com.amazonaws.handlers.AsyncHandler<GetSendStatisticsRequest, GetSendStatisticsResult> asyncHandler) {
 
@@ -448,6 +450,7 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
      *
      * @see #listIdentitiesAsync(ListIdentitiesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(
             com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult> asyncHandler) {
 
@@ -522,6 +525,7 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
      *
      * @see #listVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListVerifiedEmailAddressesResult> listVerifiedEmailAddressesAsync(
             com.amazonaws.handlers.AsyncHandler<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResult> asyncHandler) {
 

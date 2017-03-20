@@ -32,6 +32,7 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListPipelines" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -299,7 +300,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagsResult executeCreateTags(CreateTagsRequest createTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -351,7 +358,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
+    public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkspacesResult executeCreateWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -398,7 +411,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -443,7 +462,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -497,7 +522,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
+    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceBundles(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceBundlesResult executeDescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceBundlesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -555,7 +586,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
+    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceDirectories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceDirectoriesResult executeDescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -618,7 +655,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
+    public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspacesResult executeDescribeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -667,7 +710,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
+    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspacesConnectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspacesConnectionStatusResult executeDescribeWorkspacesConnectionStatus(
             DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesConnectionStatusRequest);
@@ -727,7 +776,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
+    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyWorkspaceProperties(request);
+    }
+
+    @SdkInternalApi
+    final ModifyWorkspacePropertiesResult executeModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyWorkspacePropertiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -781,7 +836,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
+    public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final RebootWorkspacesResult executeRebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -852,7 +913,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
+    public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebuildWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final RebuildWorkspacesResult executeRebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebuildWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -895,7 +962,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest startWorkspacesRequest) {
+    public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final StartWorkspacesResult executeStartWorkspaces(StartWorkspacesRequest startWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -938,7 +1011,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest stopWorkspacesRequest) {
+    public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final StopWorkspacesResult executeStopWorkspaces(StopWorkspacesRequest stopWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -993,7 +1072,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {
+    public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final TerminateWorkspacesResult executeTerminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

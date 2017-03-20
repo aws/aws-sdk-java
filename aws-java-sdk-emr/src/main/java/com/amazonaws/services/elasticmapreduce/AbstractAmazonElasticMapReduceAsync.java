@@ -163,6 +163,8 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #describeJobFlowsAsync(DescribeJobFlowsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler) {
 
@@ -237,6 +239,7 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #listClustersAsync(ListClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
 
@@ -350,6 +353,7 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 

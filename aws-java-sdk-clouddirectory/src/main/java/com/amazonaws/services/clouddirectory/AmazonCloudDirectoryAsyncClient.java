@@ -260,14 +260,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<AddFacetToObjectResult> addFacetToObjectAsync(final AddFacetToObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddFacetToObjectRequest, AddFacetToObjectResult> asyncHandler) {
+        final AddFacetToObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddFacetToObjectResult>() {
             @Override
             public AddFacetToObjectResult call() throws Exception {
-                AddFacetToObjectResult result;
+                AddFacetToObjectResult result = null;
 
                 try {
-                    result = addFacetToObject(request);
+                    result = executeAddFacetToObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -276,7 +277,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -292,14 +293,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ApplySchemaResult> applySchemaAsync(final ApplySchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<ApplySchemaRequest, ApplySchemaResult> asyncHandler) {
+        final ApplySchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ApplySchemaResult>() {
             @Override
             public ApplySchemaResult call() throws Exception {
-                ApplySchemaResult result;
+                ApplySchemaResult result = null;
 
                 try {
-                    result = applySchema(request);
+                    result = executeApplySchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -308,7 +310,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -324,14 +326,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<AttachObjectResult> attachObjectAsync(final AttachObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachObjectRequest, AttachObjectResult> asyncHandler) {
+        final AttachObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachObjectResult>() {
             @Override
             public AttachObjectResult call() throws Exception {
-                AttachObjectResult result;
+                AttachObjectResult result = null;
 
                 try {
-                    result = attachObject(request);
+                    result = executeAttachObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -340,7 +343,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -356,14 +359,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(final AttachPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachPolicyRequest, AttachPolicyResult> asyncHandler) {
+        final AttachPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachPolicyResult>() {
             @Override
             public AttachPolicyResult call() throws Exception {
-                AttachPolicyResult result;
+                AttachPolicyResult result = null;
 
                 try {
-                    result = attachPolicy(request);
+                    result = executeAttachPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -372,7 +376,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -388,14 +392,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<AttachToIndexResult> attachToIndexAsync(final AttachToIndexRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachToIndexRequest, AttachToIndexResult> asyncHandler) {
+        final AttachToIndexRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachToIndexResult>() {
             @Override
             public AttachToIndexResult call() throws Exception {
-                AttachToIndexResult result;
+                AttachToIndexResult result = null;
 
                 try {
-                    result = attachToIndex(request);
+                    result = executeAttachToIndex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -404,7 +409,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -420,14 +425,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<BatchReadResult> batchReadAsync(final BatchReadRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchReadRequest, BatchReadResult> asyncHandler) {
+        final BatchReadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchReadResult>() {
             @Override
             public BatchReadResult call() throws Exception {
-                BatchReadResult result;
+                BatchReadResult result = null;
 
                 try {
-                    result = batchRead(request);
+                    result = executeBatchRead(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -436,7 +442,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -452,14 +458,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<BatchWriteResult> batchWriteAsync(final BatchWriteRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchWriteRequest, BatchWriteResult> asyncHandler) {
+        final BatchWriteRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchWriteResult>() {
             @Override
             public BatchWriteResult call() throws Exception {
-                BatchWriteResult result;
+                BatchWriteResult result = null;
 
                 try {
-                    result = batchWrite(request);
+                    result = executeBatchWrite(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -468,7 +475,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -484,14 +491,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<CreateDirectoryResult> createDirectoryAsync(final CreateDirectoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDirectoryRequest, CreateDirectoryResult> asyncHandler) {
+        final CreateDirectoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDirectoryResult>() {
             @Override
             public CreateDirectoryResult call() throws Exception {
-                CreateDirectoryResult result;
+                CreateDirectoryResult result = null;
 
                 try {
-                    result = createDirectory(request);
+                    result = executeCreateDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -500,7 +508,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -516,14 +524,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<CreateFacetResult> createFacetAsync(final CreateFacetRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateFacetRequest, CreateFacetResult> asyncHandler) {
+        final CreateFacetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateFacetResult>() {
             @Override
             public CreateFacetResult call() throws Exception {
-                CreateFacetResult result;
+                CreateFacetResult result = null;
 
                 try {
-                    result = createFacet(request);
+                    result = executeCreateFacet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -532,7 +541,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -548,14 +557,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<CreateIndexResult> createIndexAsync(final CreateIndexRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateIndexRequest, CreateIndexResult> asyncHandler) {
+        final CreateIndexRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateIndexResult>() {
             @Override
             public CreateIndexResult call() throws Exception {
-                CreateIndexResult result;
+                CreateIndexResult result = null;
 
                 try {
-                    result = createIndex(request);
+                    result = executeCreateIndex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -564,7 +574,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -580,14 +590,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<CreateObjectResult> createObjectAsync(final CreateObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateObjectRequest, CreateObjectResult> asyncHandler) {
+        final CreateObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateObjectResult>() {
             @Override
             public CreateObjectResult call() throws Exception {
-                CreateObjectResult result;
+                CreateObjectResult result = null;
 
                 try {
-                    result = createObject(request);
+                    result = executeCreateObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -596,7 +607,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -612,14 +623,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(final CreateSchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSchemaRequest, CreateSchemaResult> asyncHandler) {
+        final CreateSchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSchemaResult>() {
             @Override
             public CreateSchemaResult call() throws Exception {
-                CreateSchemaResult result;
+                CreateSchemaResult result = null;
 
                 try {
-                    result = createSchema(request);
+                    result = executeCreateSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -628,7 +640,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -644,14 +656,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(final DeleteDirectoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDirectoryRequest, DeleteDirectoryResult> asyncHandler) {
+        final DeleteDirectoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDirectoryResult>() {
             @Override
             public DeleteDirectoryResult call() throws Exception {
-                DeleteDirectoryResult result;
+                DeleteDirectoryResult result = null;
 
                 try {
-                    result = deleteDirectory(request);
+                    result = executeDeleteDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -660,7 +673,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -676,14 +689,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DeleteFacetResult> deleteFacetAsync(final DeleteFacetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFacetRequest, DeleteFacetResult> asyncHandler) {
+        final DeleteFacetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFacetResult>() {
             @Override
             public DeleteFacetResult call() throws Exception {
-                DeleteFacetResult result;
+                DeleteFacetResult result = null;
 
                 try {
-                    result = deleteFacet(request);
+                    result = executeDeleteFacet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -692,7 +706,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -708,14 +722,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DeleteObjectResult> deleteObjectAsync(final DeleteObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteObjectRequest, DeleteObjectResult> asyncHandler) {
+        final DeleteObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteObjectResult>() {
             @Override
             public DeleteObjectResult call() throws Exception {
-                DeleteObjectResult result;
+                DeleteObjectResult result = null;
 
                 try {
-                    result = deleteObject(request);
+                    result = executeDeleteObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -724,7 +739,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -740,14 +755,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(final DeleteSchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSchemaRequest, DeleteSchemaResult> asyncHandler) {
+        final DeleteSchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSchemaResult>() {
             @Override
             public DeleteSchemaResult call() throws Exception {
-                DeleteSchemaResult result;
+                DeleteSchemaResult result = null;
 
                 try {
-                    result = deleteSchema(request);
+                    result = executeDeleteSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -756,7 +772,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -772,14 +788,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DetachFromIndexResult> detachFromIndexAsync(final DetachFromIndexRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachFromIndexRequest, DetachFromIndexResult> asyncHandler) {
+        final DetachFromIndexRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachFromIndexResult>() {
             @Override
             public DetachFromIndexResult call() throws Exception {
-                DetachFromIndexResult result;
+                DetachFromIndexResult result = null;
 
                 try {
-                    result = detachFromIndex(request);
+                    result = executeDetachFromIndex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -788,7 +805,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -804,14 +821,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DetachObjectResult> detachObjectAsync(final DetachObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachObjectRequest, DetachObjectResult> asyncHandler) {
+        final DetachObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachObjectResult>() {
             @Override
             public DetachObjectResult call() throws Exception {
-                DetachObjectResult result;
+                DetachObjectResult result = null;
 
                 try {
-                    result = detachObject(request);
+                    result = executeDetachObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -820,7 +838,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -836,14 +854,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(final DetachPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachPolicyRequest, DetachPolicyResult> asyncHandler) {
+        final DetachPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachPolicyResult>() {
             @Override
             public DetachPolicyResult call() throws Exception {
-                DetachPolicyResult result;
+                DetachPolicyResult result = null;
 
                 try {
-                    result = detachPolicy(request);
+                    result = executeDetachPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -852,7 +871,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -868,14 +887,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<DisableDirectoryResult> disableDirectoryAsync(final DisableDirectoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableDirectoryRequest, DisableDirectoryResult> asyncHandler) {
+        final DisableDirectoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableDirectoryResult>() {
             @Override
             public DisableDirectoryResult call() throws Exception {
-                DisableDirectoryResult result;
+                DisableDirectoryResult result = null;
 
                 try {
-                    result = disableDirectory(request);
+                    result = executeDisableDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -884,7 +904,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -900,14 +920,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<EnableDirectoryResult> enableDirectoryAsync(final EnableDirectoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableDirectoryRequest, EnableDirectoryResult> asyncHandler) {
+        final EnableDirectoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableDirectoryResult>() {
             @Override
             public EnableDirectoryResult call() throws Exception {
-                EnableDirectoryResult result;
+                EnableDirectoryResult result = null;
 
                 try {
-                    result = enableDirectory(request);
+                    result = executeEnableDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -916,7 +937,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -932,14 +953,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<GetDirectoryResult> getDirectoryAsync(final GetDirectoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDirectoryRequest, GetDirectoryResult> asyncHandler) {
+        final GetDirectoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDirectoryResult>() {
             @Override
             public GetDirectoryResult call() throws Exception {
-                GetDirectoryResult result;
+                GetDirectoryResult result = null;
 
                 try {
-                    result = getDirectory(request);
+                    result = executeGetDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -948,7 +970,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -964,14 +986,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<GetFacetResult> getFacetAsync(final GetFacetRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetFacetRequest, GetFacetResult> asyncHandler) {
+        final GetFacetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetFacetResult>() {
             @Override
             public GetFacetResult call() throws Exception {
-                GetFacetResult result;
+                GetFacetResult result = null;
 
                 try {
-                    result = getFacet(request);
+                    result = executeGetFacet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -980,7 +1003,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -996,14 +1019,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<GetObjectInformationResult> getObjectInformationAsync(final GetObjectInformationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetObjectInformationRequest, GetObjectInformationResult> asyncHandler) {
+        final GetObjectInformationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetObjectInformationResult>() {
             @Override
             public GetObjectInformationResult call() throws Exception {
-                GetObjectInformationResult result;
+                GetObjectInformationResult result = null;
 
                 try {
-                    result = getObjectInformation(request);
+                    result = executeGetObjectInformation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1012,7 +1036,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1028,14 +1052,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<GetSchemaAsJsonResult> getSchemaAsJsonAsync(final GetSchemaAsJsonRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSchemaAsJsonRequest, GetSchemaAsJsonResult> asyncHandler) {
+        final GetSchemaAsJsonRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSchemaAsJsonResult>() {
             @Override
             public GetSchemaAsJsonResult call() throws Exception {
-                GetSchemaAsJsonResult result;
+                GetSchemaAsJsonResult result = null;
 
                 try {
-                    result = getSchemaAsJson(request);
+                    result = executeGetSchemaAsJson(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1044,7 +1069,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1060,14 +1085,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListAppliedSchemaArnsResult> listAppliedSchemaArnsAsync(final ListAppliedSchemaArnsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAppliedSchemaArnsRequest, ListAppliedSchemaArnsResult> asyncHandler) {
+        final ListAppliedSchemaArnsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAppliedSchemaArnsResult>() {
             @Override
             public ListAppliedSchemaArnsResult call() throws Exception {
-                ListAppliedSchemaArnsResult result;
+                ListAppliedSchemaArnsResult result = null;
 
                 try {
-                    result = listAppliedSchemaArns(request);
+                    result = executeListAppliedSchemaArns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1076,7 +1102,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1092,14 +1118,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListAttachedIndicesResult> listAttachedIndicesAsync(final ListAttachedIndicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAttachedIndicesRequest, ListAttachedIndicesResult> asyncHandler) {
+        final ListAttachedIndicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAttachedIndicesResult>() {
             @Override
             public ListAttachedIndicesResult call() throws Exception {
-                ListAttachedIndicesResult result;
+                ListAttachedIndicesResult result = null;
 
                 try {
-                    result = listAttachedIndices(request);
+                    result = executeListAttachedIndices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1108,7 +1135,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1124,14 +1151,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListDevelopmentSchemaArnsResult> listDevelopmentSchemaArnsAsync(final ListDevelopmentSchemaArnsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDevelopmentSchemaArnsRequest, ListDevelopmentSchemaArnsResult> asyncHandler) {
+        final ListDevelopmentSchemaArnsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDevelopmentSchemaArnsResult>() {
             @Override
             public ListDevelopmentSchemaArnsResult call() throws Exception {
-                ListDevelopmentSchemaArnsResult result;
+                ListDevelopmentSchemaArnsResult result = null;
 
                 try {
-                    result = listDevelopmentSchemaArns(request);
+                    result = executeListDevelopmentSchemaArns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1140,7 +1168,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1156,14 +1184,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListDirectoriesResult> listDirectoriesAsync(final ListDirectoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDirectoriesRequest, ListDirectoriesResult> asyncHandler) {
+        final ListDirectoriesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDirectoriesResult>() {
             @Override
             public ListDirectoriesResult call() throws Exception {
-                ListDirectoriesResult result;
+                ListDirectoriesResult result = null;
 
                 try {
-                    result = listDirectories(request);
+                    result = executeListDirectories(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1172,7 +1201,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1188,14 +1217,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListFacetAttributesResult> listFacetAttributesAsync(final ListFacetAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListFacetAttributesRequest, ListFacetAttributesResult> asyncHandler) {
+        final ListFacetAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListFacetAttributesResult>() {
             @Override
             public ListFacetAttributesResult call() throws Exception {
-                ListFacetAttributesResult result;
+                ListFacetAttributesResult result = null;
 
                 try {
-                    result = listFacetAttributes(request);
+                    result = executeListFacetAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1204,7 +1234,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1220,14 +1250,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListFacetNamesResult> listFacetNamesAsync(final ListFacetNamesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListFacetNamesRequest, ListFacetNamesResult> asyncHandler) {
+        final ListFacetNamesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListFacetNamesResult>() {
             @Override
             public ListFacetNamesResult call() throws Exception {
-                ListFacetNamesResult result;
+                ListFacetNamesResult result = null;
 
                 try {
-                    result = listFacetNames(request);
+                    result = executeListFacetNames(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1236,7 +1267,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1252,14 +1283,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListIndexResult> listIndexAsync(final ListIndexRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListIndexRequest, ListIndexResult> asyncHandler) {
+        final ListIndexRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListIndexResult>() {
             @Override
             public ListIndexResult call() throws Exception {
-                ListIndexResult result;
+                ListIndexResult result = null;
 
                 try {
-                    result = listIndex(request);
+                    result = executeListIndex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1268,7 +1300,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1284,14 +1316,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListObjectAttributesResult> listObjectAttributesAsync(final ListObjectAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListObjectAttributesRequest, ListObjectAttributesResult> asyncHandler) {
+        final ListObjectAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListObjectAttributesResult>() {
             @Override
             public ListObjectAttributesResult call() throws Exception {
-                ListObjectAttributesResult result;
+                ListObjectAttributesResult result = null;
 
                 try {
-                    result = listObjectAttributes(request);
+                    result = executeListObjectAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1300,7 +1333,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1316,14 +1349,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListObjectChildrenResult> listObjectChildrenAsync(final ListObjectChildrenRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListObjectChildrenRequest, ListObjectChildrenResult> asyncHandler) {
+        final ListObjectChildrenRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListObjectChildrenResult>() {
             @Override
             public ListObjectChildrenResult call() throws Exception {
-                ListObjectChildrenResult result;
+                ListObjectChildrenResult result = null;
 
                 try {
-                    result = listObjectChildren(request);
+                    result = executeListObjectChildren(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1332,7 +1366,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1348,14 +1382,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(final ListObjectParentPathsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListObjectParentPathsRequest, ListObjectParentPathsResult> asyncHandler) {
+        final ListObjectParentPathsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListObjectParentPathsResult>() {
             @Override
             public ListObjectParentPathsResult call() throws Exception {
-                ListObjectParentPathsResult result;
+                ListObjectParentPathsResult result = null;
 
                 try {
-                    result = listObjectParentPaths(request);
+                    result = executeListObjectParentPaths(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1364,7 +1399,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1380,14 +1415,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListObjectParentsResult> listObjectParentsAsync(final ListObjectParentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListObjectParentsRequest, ListObjectParentsResult> asyncHandler) {
+        final ListObjectParentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListObjectParentsResult>() {
             @Override
             public ListObjectParentsResult call() throws Exception {
-                ListObjectParentsResult result;
+                ListObjectParentsResult result = null;
 
                 try {
-                    result = listObjectParents(request);
+                    result = executeListObjectParents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1396,7 +1432,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1412,14 +1448,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListObjectPoliciesResult> listObjectPoliciesAsync(final ListObjectPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListObjectPoliciesRequest, ListObjectPoliciesResult> asyncHandler) {
+        final ListObjectPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListObjectPoliciesResult>() {
             @Override
             public ListObjectPoliciesResult call() throws Exception {
-                ListObjectPoliciesResult result;
+                ListObjectPoliciesResult result = null;
 
                 try {
-                    result = listObjectPolicies(request);
+                    result = executeListObjectPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1428,7 +1465,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1444,14 +1481,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListPolicyAttachmentsResult> listPolicyAttachmentsAsync(final ListPolicyAttachmentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPolicyAttachmentsRequest, ListPolicyAttachmentsResult> asyncHandler) {
+        final ListPolicyAttachmentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPolicyAttachmentsResult>() {
             @Override
             public ListPolicyAttachmentsResult call() throws Exception {
-                ListPolicyAttachmentsResult result;
+                ListPolicyAttachmentsResult result = null;
 
                 try {
-                    result = listPolicyAttachments(request);
+                    result = executeListPolicyAttachments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1460,7 +1498,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1476,14 +1514,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListPublishedSchemaArnsResult> listPublishedSchemaArnsAsync(final ListPublishedSchemaArnsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPublishedSchemaArnsRequest, ListPublishedSchemaArnsResult> asyncHandler) {
+        final ListPublishedSchemaArnsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPublishedSchemaArnsResult>() {
             @Override
             public ListPublishedSchemaArnsResult call() throws Exception {
-                ListPublishedSchemaArnsResult result;
+                ListPublishedSchemaArnsResult result = null;
 
                 try {
-                    result = listPublishedSchemaArns(request);
+                    result = executeListPublishedSchemaArns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1492,7 +1531,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1508,14 +1547,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1524,7 +1564,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1540,14 +1580,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<LookupPolicyResult> lookupPolicyAsync(final LookupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<LookupPolicyRequest, LookupPolicyResult> asyncHandler) {
+        final LookupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<LookupPolicyResult>() {
             @Override
             public LookupPolicyResult call() throws Exception {
-                LookupPolicyResult result;
+                LookupPolicyResult result = null;
 
                 try {
-                    result = lookupPolicy(request);
+                    result = executeLookupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1556,7 +1597,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1572,14 +1613,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<PublishSchemaResult> publishSchemaAsync(final PublishSchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<PublishSchemaRequest, PublishSchemaResult> asyncHandler) {
+        final PublishSchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PublishSchemaResult>() {
             @Override
             public PublishSchemaResult call() throws Exception {
-                PublishSchemaResult result;
+                PublishSchemaResult result = null;
 
                 try {
-                    result = publishSchema(request);
+                    result = executePublishSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1588,7 +1630,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1604,14 +1646,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<PutSchemaFromJsonResult> putSchemaFromJsonAsync(final PutSchemaFromJsonRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutSchemaFromJsonRequest, PutSchemaFromJsonResult> asyncHandler) {
+        final PutSchemaFromJsonRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutSchemaFromJsonResult>() {
             @Override
             public PutSchemaFromJsonResult call() throws Exception {
-                PutSchemaFromJsonResult result;
+                PutSchemaFromJsonResult result = null;
 
                 try {
-                    result = putSchemaFromJson(request);
+                    result = executePutSchemaFromJson(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1620,7 +1663,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1636,14 +1679,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<RemoveFacetFromObjectResult> removeFacetFromObjectAsync(final RemoveFacetFromObjectRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveFacetFromObjectRequest, RemoveFacetFromObjectResult> asyncHandler) {
+        final RemoveFacetFromObjectRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveFacetFromObjectResult>() {
             @Override
             public RemoveFacetFromObjectResult call() throws Exception {
-                RemoveFacetFromObjectResult result;
+                RemoveFacetFromObjectResult result = null;
 
                 try {
-                    result = removeFacetFromObject(request);
+                    result = executeRemoveFacetFromObject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1652,7 +1696,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1668,14 +1712,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
             @Override
             public TagResourceResult call() throws Exception {
-                TagResourceResult result;
+                TagResourceResult result = null;
 
                 try {
-                    result = tagResource(request);
+                    result = executeTagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1684,7 +1729,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1700,14 +1745,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
             @Override
             public UntagResourceResult call() throws Exception {
-                UntagResourceResult result;
+                UntagResourceResult result = null;
 
                 try {
-                    result = untagResource(request);
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1716,7 +1762,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1732,14 +1778,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<UpdateFacetResult> updateFacetAsync(final UpdateFacetRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateFacetRequest, UpdateFacetResult> asyncHandler) {
+        final UpdateFacetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateFacetResult>() {
             @Override
             public UpdateFacetResult call() throws Exception {
-                UpdateFacetResult result;
+                UpdateFacetResult result = null;
 
                 try {
-                    result = updateFacet(request);
+                    result = executeUpdateFacet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1748,7 +1795,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1764,14 +1811,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<UpdateObjectAttributesResult> updateObjectAttributesAsync(final UpdateObjectAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateObjectAttributesRequest, UpdateObjectAttributesResult> asyncHandler) {
+        final UpdateObjectAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateObjectAttributesResult>() {
             @Override
             public UpdateObjectAttributesResult call() throws Exception {
-                UpdateObjectAttributesResult result;
+                UpdateObjectAttributesResult result = null;
 
                 try {
-                    result = updateObjectAttributes(request);
+                    result = executeUpdateObjectAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1780,7 +1828,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1796,14 +1844,15 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     @Override
     public java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(final UpdateSchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSchemaRequest, UpdateSchemaResult> asyncHandler) {
+        final UpdateSchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateSchemaResult>() {
             @Override
             public UpdateSchemaResult call() throws Exception {
-                UpdateSchemaResult result;
+                UpdateSchemaResult result = null;
 
                 try {
-                    result = updateSchema(request);
+                    result = executeUpdateSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1812,7 +1861,7 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

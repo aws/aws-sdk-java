@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -346,7 +347,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public BulkPublishResult bulkPublish(BulkPublishRequest bulkPublishRequest) {
+    public BulkPublishResult bulkPublish(BulkPublishRequest request) {
+        request = beforeClientExecution(request);
+        return executeBulkPublish(request);
+    }
+
+    @SdkInternalApi
+    final BulkPublishResult executeBulkPublish(BulkPublishRequest bulkPublishRequest) {
 
         ExecutionContext executionContext = createExecutionContext(bulkPublishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -408,7 +415,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeleteDatasetResult deleteDataset(DeleteDatasetRequest deleteDatasetRequest) {
+    public DeleteDatasetResult deleteDataset(DeleteDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataset(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDatasetResult executeDeleteDataset(DeleteDatasetRequest deleteDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -467,7 +480,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest) {
+    public DescribeDatasetResult describeDataset(DescribeDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDataset(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDatasetResult executeDescribeDataset(DescribeDatasetRequest describeDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -524,7 +543,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
+    public DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentityPoolUsage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityPoolUsageResult executeDescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityPoolUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -583,7 +608,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
+    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentityUsage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityUsageResult executeDescribeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -639,7 +670,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
+    public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBulkPublishDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetBulkPublishDetailsResult executeGetBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBulkPublishDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -697,7 +734,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest) {
+    public GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCognitoEvents(request);
+    }
+
+    @SdkInternalApi
+    final GetCognitoEventsResult executeGetCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -754,7 +797,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
+    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityPoolConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityPoolConfigurationResult executeGetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -812,7 +861,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest) {
+    public ListDatasetsResult listDatasets(ListDatasetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasets(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasetsResult executeListDatasets(ListDatasetsRequest listDatasetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDatasetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -867,7 +922,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListIdentityPoolUsageResult listIdentityPoolUsage(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
+    public ListIdentityPoolUsageResult listIdentityPoolUsage(ListIdentityPoolUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentityPoolUsage(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentityPoolUsageResult executeListIdentityPoolUsage(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentityPoolUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -925,7 +986,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListRecordsResult listRecords(ListRecordsRequest listRecordsRequest) {
+    public ListRecordsResult listRecords(ListRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecords(request);
+    }
+
+    @SdkInternalApi
+    final ListRecordsResult executeListRecords(ListRecordsRequest listRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -983,7 +1050,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest) {
+    public RegisterDeviceResult registerDevice(RegisterDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDevice(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDeviceResult executeRegisterDevice(RegisterDeviceRequest registerDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1042,7 +1115,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
+    public SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetCognitoEvents(request);
+    }
+
+    @SdkInternalApi
+    final SetCognitoEventsResult executeSetCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1101,7 +1180,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
+    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityPoolConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityPoolConfigurationResult executeSetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1161,7 +1246,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
+    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubscribeToDataset(request);
+    }
+
+    @SdkInternalApi
+    final SubscribeToDatasetResult executeSubscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(subscribeToDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1219,7 +1310,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
+    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnsubscribeFromDataset(request);
+    }
+
+    @SdkInternalApi
+    final UnsubscribeFromDatasetResult executeUnsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1298,7 +1395,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public UpdateRecordsResult updateRecords(UpdateRecordsRequest updateRecordsRequest) {
+    public UpdateRecordsResult updateRecords(UpdateRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRecords(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRecordsResult executeUpdateRecords(UpdateRecordsRequest updateRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

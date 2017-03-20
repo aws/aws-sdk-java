@@ -115,6 +115,7 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListDomains" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

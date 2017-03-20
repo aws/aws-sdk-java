@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -392,7 +393,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateFileSystemResult createFileSystem(CreateFileSystemRequest createFileSystemRequest) {
+    public CreateFileSystemResult createFileSystem(CreateFileSystemRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFileSystem(request);
+    }
+
+    @SdkInternalApi
+    final CreateFileSystemResult executeCreateFileSystem(CreateFileSystemRequest createFileSystemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFileSystemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -616,7 +623,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateMountTargetResult createMountTarget(CreateMountTargetRequest createMountTargetRequest) {
+    public CreateMountTargetResult createMountTarget(CreateMountTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMountTarget(request);
+    }
+
+    @SdkInternalApi
+    final CreateMountTargetResult executeCreateMountTarget(CreateMountTargetRequest createMountTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createMountTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -671,7 +684,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      API Documentation</a>
      */
     @Override
-    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagsResult executeCreateTags(CreateTagsRequest createTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -738,7 +757,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
+    public DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFileSystem(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFileSystemResult executeDeleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFileSystemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -825,7 +850,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest) {
+    public DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMountTarget(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMountTargetResult executeDeleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteMountTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -880,7 +911,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      API Documentation</a>
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -954,7 +991,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest describeFileSystemsRequest) {
+    public DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFileSystems(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFileSystemsResult executeDescribeFileSystems(DescribeFileSystemsRequest describeFileSystemsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFileSystemsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1028,7 +1071,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(
+    public DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMountTargetSecurityGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMountTargetSecurityGroupsResult executeDescribeMountTargetSecurityGroups(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMountTargetSecurityGroupsRequest);
@@ -1088,7 +1137,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMountTargetsResult describeMountTargets(DescribeMountTargetsRequest describeMountTargetsRequest) {
+    public DescribeMountTargetsResult describeMountTargets(DescribeMountTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMountTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMountTargetsResult executeDescribeMountTargets(DescribeMountTargetsRequest describeMountTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMountTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1142,7 +1197,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      API Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1220,7 +1281,14 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
+    public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyMountTargetSecurityGroups(request);
+    }
+
+    @SdkInternalApi
+    final ModifyMountTargetSecurityGroupsResult executeModifyMountTargetSecurityGroups(
+            ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyMountTargetSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

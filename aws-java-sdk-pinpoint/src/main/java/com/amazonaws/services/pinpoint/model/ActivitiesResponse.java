@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Activities for campaign.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivitiesResponse implements Serializable, Cloneable, StructuredPojo {
 

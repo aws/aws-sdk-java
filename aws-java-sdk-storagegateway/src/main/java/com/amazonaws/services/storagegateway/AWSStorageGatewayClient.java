@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -402,7 +403,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ActivateGatewayResult activateGateway(ActivateGatewayRequest activateGatewayRequest) {
+    public ActivateGatewayResult activateGateway(ActivateGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateGateway(request);
+    }
+
+    @SdkInternalApi
+    final ActivateGatewayResult executeActivateGateway(ActivateGatewayRequest activateGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(activateGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -457,7 +464,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public AddCacheResult addCache(AddCacheRequest addCacheRequest) {
+    public AddCacheResult addCache(AddCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddCache(request);
+    }
+
+    @SdkInternalApi
+    final AddCacheResult executeAddCache(AddCacheRequest addCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -534,7 +547,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -587,7 +606,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
+    public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddUploadBuffer(request);
+    }
+
+    @SdkInternalApi
+    final AddUploadBufferResult executeAddUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -654,7 +679,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
+    public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddWorkingStorage(request);
+    }
+
+    @SdkInternalApi
+    final AddWorkingStorageResult executeAddWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -703,7 +734,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) {
+    public CancelArchivalResult cancelArchival(CancelArchivalRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelArchival(request);
+    }
+
+    @SdkInternalApi
+    final CancelArchivalResult executeCancelArchival(CancelArchivalRequest cancelArchivalRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelArchivalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -753,7 +790,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
+    public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelRetrieval(request);
+    }
+
+    @SdkInternalApi
+    final CancelRetrievalResult executeCancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelRetrievalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -819,7 +862,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
+    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCachediSCSIVolume(request);
+    }
+
+    @SdkInternalApi
+    final CreateCachediSCSIVolumeResult executeCreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCachediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -872,7 +921,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest) {
+    public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNFSFileShare(request);
+    }
+
+    @SdkInternalApi
+    final CreateNFSFileShareResult executeCreateNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createNFSFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -962,7 +1017,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotResult executeCreateSnapshot(CreateSnapshotRequest createSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1033,7 +1094,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
+    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshotFromVolumeRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotFromVolumeRecoveryPointResult executeCreateSnapshotFromVolumeRecoveryPoint(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotFromVolumeRecoveryPointRequest);
@@ -1122,7 +1189,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
+    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStorediSCSIVolume(request);
+    }
+
+    @SdkInternalApi
+    final CreateStorediSCSIVolumeResult executeCreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStorediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1179,7 +1252,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
+    public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTapeWithBarcode(request);
+    }
+
+    @SdkInternalApi
+    final CreateTapeWithBarcodeResult executeCreateTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTapeWithBarcodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1235,7 +1314,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public CreateTapesResult createTapes(CreateTapesRequest createTapesRequest) {
+    public CreateTapesResult createTapes(CreateTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTapes(request);
+    }
+
+    @SdkInternalApi
+    final CreateTapesResult executeCreateTapes(CreateTapesRequest createTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1292,7 +1377,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
+    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBandwidthRateLimitResult executeDeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1355,7 +1446,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
+    public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChapCredentialsResult executeDeleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1405,7 +1502,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest deleteFileShareRequest) {
+    public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFileShare(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFileShareResult executeDeleteFileShare(DeleteFileShareRequest deleteFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1470,7 +1573,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
+    public DeleteGatewayResult deleteGateway(DeleteGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGateway(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGatewayResult executeDeleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1531,7 +1640,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSnapshotScheduleResult executeDeleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1581,7 +1696,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) {
+    public DeleteTapeResult deleteTape(DeleteTapeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTape(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTapeResult executeDeleteTape(DeleteTapeRequest deleteTapeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTapeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1630,7 +1751,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
+    public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTapeArchive(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTapeArchiveResult executeDeleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1691,7 +1818,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
+    public DeleteVolumeResult deleteVolume(DeleteVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVolume(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVolumeResult executeDeleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1746,7 +1879,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
+    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBandwidthRateLimitResult executeDescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1801,7 +1940,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) {
+    public DescribeCacheResult describeCache(DescribeCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCache(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheResult executeDescribeCache(DescribeCacheRequest describeCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1854,7 +1999,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
+    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCachediSCSIVolumes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCachediSCSIVolumesResult executeDescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCachediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1906,7 +2057,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
+    public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChapCredentialsResult executeDescribeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1959,7 +2116,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
+    public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGatewayInformation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGatewayInformationResult executeDescribeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2011,7 +2174,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
+    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceStartTime(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceStartTimeResult executeDescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2062,7 +2231,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest) {
+    public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNFSFileShares(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNFSFileSharesResult executeDescribeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNFSFileSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2113,7 +2288,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
+    public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotScheduleResult executeDescribeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2166,7 +2347,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
+    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStorediSCSIVolumes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStorediSCSIVolumesResult executeDescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStorediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2221,7 +2408,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+    public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapeArchives(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapeArchivesResult executeDescribeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapeArchivesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2279,7 +2472,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
+    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapeRecoveryPoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapeRecoveryPointsResult executeDescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2331,7 +2530,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest) {
+    public DescribeTapesResult describeTapes(DescribeTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapesResult executeDescribeTapes(DescribeTapesRequest describeTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2384,7 +2589,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
+    public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUploadBuffer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUploadBufferResult executeDescribeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2437,7 +2648,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
+    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVTLDevices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVTLDevicesResult executeDescribeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVTLDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2498,7 +2715,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
+    public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkingStorage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkingStorageResult executeDescribeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2557,7 +2780,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) {
+    public DisableGatewayResult disableGateway(DisableGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableGateway(request);
+    }
+
+    @SdkInternalApi
+    final DisableGatewayResult executeDisableGateway(DisableGatewayRequest disableGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2607,7 +2836,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListFileSharesResult listFileShares(ListFileSharesRequest listFileSharesRequest) {
+    public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFileShares(request);
+    }
+
+    @SdkInternalApi
+    final ListFileSharesResult executeListFileShares(ListFileSharesRequest listFileSharesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFileSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2677,7 +2912,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) {
+    public ListGatewaysResult listGateways(ListGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGateways(request);
+    }
+
+    @SdkInternalApi
+    final ListGatewaysResult executeListGateways(ListGatewaysRequest listGatewaysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2738,7 +2979,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
+    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLocalDisks(request);
+    }
+
+    @SdkInternalApi
+    final ListLocalDisksResult executeListLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listLocalDisksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2787,7 +3034,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2865,7 +3118,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListTapesResult listTapes(ListTapesRequest listTapesRequest) {
+    public ListTapesResult listTapes(ListTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTapes(request);
+    }
+
+    @SdkInternalApi
+    final ListTapesResult executeListTapes(ListTapesRequest listTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2915,7 +3174,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
+    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumeInitiators(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumeInitiatorsResult executeListVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumeInitiatorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2969,7 +3234,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
+    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumeRecoveryPoints(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumeRecoveryPointsResult executeListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3039,7 +3310,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest) {
+    public ListVolumesResult listVolumes(ListVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumes(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumesResult executeListVolumes(ListVolumesRequest listVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3088,7 +3365,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3152,7 +3435,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest) {
+    public ResetCacheResult resetCache(ResetCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetCache(request);
+    }
+
+    @SdkInternalApi
+    final ResetCacheResult executeResetCache(ResetCacheRequest resetCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3207,7 +3496,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
+    public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveTapeArchive(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveTapeArchiveResult executeRetrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3266,7 +3561,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
+    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveTapeRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveTapeRecoveryPointResult executeRetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveTapeRecoveryPointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3319,7 +3620,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
+    public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetLocalConsolePassword(request);
+    }
+
+    @SdkInternalApi
+    final SetLocalConsolePasswordResult executeSetLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setLocalConsolePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3397,7 +3704,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
+    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeShutdownGateway(request);
+    }
+
+    @SdkInternalApi
+    final ShutdownGatewayResult executeShutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(shutdownGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3458,7 +3771,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) {
+    public StartGatewayResult startGateway(StartGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartGateway(request);
+    }
+
+    @SdkInternalApi
+    final StartGatewayResult executeStartGateway(StartGatewayRequest startGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3526,7 +3845,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
+    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBandwidthRateLimitResult executeUpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3605,7 +3930,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
+    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChapCredentialsResult executeUpdateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3661,7 +3992,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
+    public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewayInformation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayInformationResult executeUpdateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3729,7 +4066,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
+    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewaySoftwareNow(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewaySoftwareNowResult executeUpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGatewaySoftwareNowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3797,7 +4140,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
+    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMaintenanceStartTime(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMaintenanceStartTimeResult executeUpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3853,7 +4202,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
+    public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNFSFileShare(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNFSFileShareResult executeUpdateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateNFSFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3931,7 +4286,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
+    public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSnapshotScheduleResult executeUpdateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3982,7 +4343,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {
+    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVTLDeviceType(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVTLDeviceTypeResult executeUpdateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateVTLDeviceTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

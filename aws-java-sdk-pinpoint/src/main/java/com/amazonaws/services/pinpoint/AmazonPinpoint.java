@@ -194,6 +194,28 @@ public interface AmazonPinpoint {
     DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest);
 
     /**
+     * Deletes the event stream for an app.
+     * 
+     * @param deleteEventStreamRequest
+     *        DeleteEventStream Request
+     * @return Result of the DeleteEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteEventStream
+     */
+    DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest deleteEventStreamRequest);
+
+    /**
      * Deletes the GCM channel for an app.
      * 
      * @param deleteGcmChannelRequest
@@ -320,7 +342,7 @@ public interface AmazonPinpoint {
     GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
 
     /**
-     * Returns information about your campaign versions.
+     * Returns information about a specific version of a campaign.
      * 
      * @param getCampaignVersionRequest
      * @return Result of the GetCampaignVersion operation returned by the service.
@@ -402,6 +424,28 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.GetEndpoint
      */
     GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest);
+
+    /**
+     * Returns the event stream for an app.
+     * 
+     * @param getEventStreamRequest
+     *        GetEventStream Request
+     * @return Result of the GetEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetEventStream
+     */
+    GetEventStreamResult getEventStream(GetEventStreamRequest getEventStreamRequest);
 
     /**
      * Returns information about the GCM channel for an app.
@@ -572,6 +616,28 @@ public interface AmazonPinpoint {
     GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest);
 
     /**
+     * Use to create or update the event stream for an app.
+     * 
+     * @param putEventStreamRequest
+     *        PutEventStream Request
+     * @return Result of the PutEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.PutEventStream
+     */
+    PutEventStreamResult putEventStream(PutEventStreamRequest putEventStreamRequest);
+
+    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -656,7 +722,7 @@ public interface AmazonPinpoint {
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
 
     /**
-     * Use to update your endpoints.
+     * Use to update a batch of endpoints.
      * 
      * @param updateEndpointsBatchRequest
      * @return Result of the UpdateEndpointsBatch operation returned by the service.

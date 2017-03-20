@@ -1032,21 +1032,7 @@ public class AmazonHttpClient {
                         return response;
                     }
                 } catch (IOException ioe) {
-                    captureExceptionMetrics(ioe);
-                    awsRequestMetrics.addProperty(Field.AWSRequestID, null);
-                    SdkClientException sdkClientException = new SdkClientException(
-                            "Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                    boolean willRetry = shouldRetry(execOneParams, sdkClientException);
-                    if (log.isTraceEnabled()) {
-                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), ioe);
-                    } else if (log.isDebugEnabled()) {
-                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
-                    }
-                    if (!willRetry) {
-                        throw lastReset(sdkClientException);
-                    }
-                    // Cache the retryable exception
-                    execOneParams.retriedException = sdkClientException;
+                    handleRetryableException(execOneParams, ioe);
                 } catch (RuntimeException e) {
                     throw lastReset(captureExceptionMetrics(e));
                 } catch (Error e) {
@@ -1072,6 +1058,29 @@ public class AmazonHttpClient {
                     }
                 }
             } /* end while (true) */
+        }
+
+        private void handleRetryableException(ExecOneRequestParams execOneParams, Exception e) {
+            captureExceptionMetrics(e);
+            awsRequestMetrics.addProperty(Field.AWSRequestID, null);
+            SdkClientException sdkClientException;
+            if (!(e instanceof SdkClientException)) {
+                sdkClientException = new SdkClientException(
+                        "Unable to execute HTTP request: " + e.getMessage(), e);
+            } else {
+                sdkClientException = (SdkClientException) e;
+            }
+            boolean willRetry = shouldRetry(execOneParams, sdkClientException);
+            if (log.isTraceEnabled()) {
+                log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), e);
+            } else if (log.isDebugEnabled()) {
+                log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
+            }
+            if (!willRetry) {
+                throw lastReset(sdkClientException);
+            }
+            // Cache the retryable exception
+            execOneParams.retriedException = sdkClientException;
         }
 
         /**

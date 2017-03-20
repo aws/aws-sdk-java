@@ -22,6 +22,8 @@ import java.util.List;
 
 public class SimpleMethodFormModel {
 
+    private boolean deprecated;
+
     private List<ArgumentModel> arguments;
 
     public List<ArgumentModel> getArguments() {
@@ -63,5 +65,13 @@ public class SimpleMethodFormModel {
         }
 
         return builder.toString();
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
     }
 }

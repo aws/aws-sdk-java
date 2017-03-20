@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -277,7 +278,13 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest) {
+    public GenerateDataSetResult generateDataSet(GenerateDataSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataSet(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataSetResult executeGenerateDataSet(GenerateDataSetRequest generateDataSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -328,7 +335,13 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {
+    public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSupportDataExport(request);
+    }
+
+    @SdkInternalApi
+    final StartSupportDataExportResult executeStartSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startSupportDataExportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

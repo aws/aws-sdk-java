@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -314,7 +315,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest) {
+    public AcceptPortfolioShareResult acceptPortfolioShare(AcceptPortfolioShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptPortfolioShare(request);
+    }
+
+    @SdkInternalApi
+    final AcceptPortfolioShareResult executeAcceptPortfolioShare(AcceptPortfolioShareRequest acceptPortfolioShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(acceptPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -363,7 +370,14 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest) {
+    public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociatePrincipalWithPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final AssociatePrincipalWithPortfolioResult executeAssociatePrincipalWithPortfolio(
+            AssociatePrincipalWithPortfolioRequest associatePrincipalWithPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associatePrincipalWithPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -414,7 +428,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest) {
+    public AssociateProductWithPortfolioResult associateProductWithPortfolio(AssociateProductWithPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateProductWithPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final AssociateProductWithPortfolioResult executeAssociateProductWithPortfolio(AssociateProductWithPortfolioRequest associateProductWithPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateProductWithPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -467,7 +487,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateConstraintResult createConstraint(CreateConstraintRequest createConstraintRequest) {
+    public CreateConstraintResult createConstraint(CreateConstraintRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConstraint(request);
+    }
+
+    @SdkInternalApi
+    final CreateConstraintResult executeCreateConstraint(CreateConstraintRequest createConstraintRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -514,7 +540,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CreatePortfolioResult createPortfolio(CreatePortfolioRequest createPortfolioRequest) {
+    public CreatePortfolioResult createPortfolio(CreatePortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePortfolio(request);
+    }
+
+    @SdkInternalApi
+    final CreatePortfolioResult executeCreatePortfolio(CreatePortfolioRequest createPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -563,7 +595,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest) {
+    public CreatePortfolioShareResult createPortfolioShare(CreatePortfolioShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePortfolioShare(request);
+    }
+
+    @SdkInternalApi
+    final CreatePortfolioShareResult executeCreatePortfolioShare(CreatePortfolioShareRequest createPortfolioShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -610,7 +648,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CreateProductResult createProduct(CreateProductRequest createProductRequest) {
+    public CreateProductResult createProduct(CreateProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProduct(request);
+    }
+
+    @SdkInternalApi
+    final CreateProductResult executeCreateProduct(CreateProductRequest createProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -660,7 +704,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest) {
+    public CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProvisioningArtifact(request);
+    }
+
+    @SdkInternalApi
+    final CreateProvisioningArtifactResult executeCreateProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -708,7 +758,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteConstraintResult deleteConstraint(DeleteConstraintRequest deleteConstraintRequest) {
+    public DeleteConstraintResult deleteConstraint(DeleteConstraintRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConstraint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConstraintResult executeDeleteConstraint(DeleteConstraintRequest deleteConstraintRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -758,7 +814,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeletePortfolioResult deletePortfolio(DeletePortfolioRequest deletePortfolioRequest) {
+    public DeletePortfolioResult deletePortfolio(DeletePortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePortfolio(request);
+    }
+
+    @SdkInternalApi
+    final DeletePortfolioResult executeDeletePortfolio(DeletePortfolioRequest deletePortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -802,7 +864,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest) {
+    public DeletePortfolioShareResult deletePortfolioShare(DeletePortfolioShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePortfolioShare(request);
+    }
+
+    @SdkInternalApi
+    final DeletePortfolioShareResult executeDeletePortfolioShare(DeletePortfolioShareRequest deletePortfolioShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -852,7 +920,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteProductResult deleteProduct(DeleteProductRequest deleteProductRequest) {
+    public DeleteProductResult deleteProduct(DeleteProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProduct(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProductResult executeDeleteProduct(DeleteProductRequest deleteProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -903,7 +977,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
+    public DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProvisioningArtifact(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProvisioningArtifactResult executeDeleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -949,7 +1029,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest) {
+    public DescribeConstraintResult describeConstraint(DescribeConstraintRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConstraint(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConstraintResult executeDescribeConstraint(DescribeConstraintRequest describeConstraintRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -993,7 +1079,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest) {
+    public DescribePortfolioResult describePortfolio(DescribePortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePortfolio(request);
+    }
+
+    @SdkInternalApi
+    final DescribePortfolioResult executeDescribePortfolio(DescribePortfolioRequest describePortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1043,7 +1135,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeProductResult describeProduct(DescribeProductRequest describeProductRequest) {
+    public DescribeProductResult describeProduct(DescribeProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProduct(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProductResult executeDescribeProduct(DescribeProductRequest describeProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1087,7 +1185,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest) {
+    public DescribeProductAsAdminResult describeProductAsAdmin(DescribeProductAsAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProductAsAdmin(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProductAsAdminResult executeDescribeProductAsAdmin(DescribeProductAsAdminRequest describeProductAsAdminRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProductAsAdminRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1138,7 +1242,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeProductViewResult describeProductView(DescribeProductViewRequest describeProductViewRequest) {
+    public DescribeProductViewResult describeProductView(DescribeProductViewRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProductView(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProductViewResult executeDescribeProductView(DescribeProductViewRequest describeProductViewRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProductViewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1182,7 +1292,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest) {
+    public DescribeProvisioningArtifactResult describeProvisioningArtifact(DescribeProvisioningArtifactRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProvisioningArtifact(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProvisioningArtifactResult executeDescribeProvisioningArtifact(DescribeProvisioningArtifactRequest describeProvisioningArtifactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1232,7 +1348,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeProvisioningParametersResult describeProvisioningParameters(DescribeProvisioningParametersRequest describeProvisioningParametersRequest) {
+    public DescribeProvisioningParametersResult describeProvisioningParameters(DescribeProvisioningParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProvisioningParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProvisioningParametersResult executeDescribeProvisioningParameters(DescribeProvisioningParametersRequest describeProvisioningParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProvisioningParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1279,7 +1401,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeRecordResult describeRecord(DescribeRecordRequest describeRecordRequest) {
+    public DescribeRecordResult describeRecord(DescribeRecordRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRecord(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRecordResult executeDescribeRecord(DescribeRecordRequest describeRecordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1326,7 +1454,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(
+    public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociatePrincipalFromPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final DisassociatePrincipalFromPortfolioResult executeDisassociatePrincipalFromPortfolio(
             DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociatePrincipalFromPortfolioRequest);
@@ -1375,7 +1509,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(
+    public DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateProductFromPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateProductFromPortfolioResult executeDisassociateProductFromPortfolio(
             DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateProductFromPortfolioRequest);
@@ -1422,7 +1562,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest) {
+    public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAcceptedPortfolioShares(request);
+    }
+
+    @SdkInternalApi
+    final ListAcceptedPortfolioSharesResult executeListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAcceptedPortfolioSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1470,7 +1616,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest) {
+    public ListConstraintsForPortfolioResult listConstraintsForPortfolio(ListConstraintsForPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConstraintsForPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final ListConstraintsForPortfolioResult executeListConstraintsForPortfolio(ListConstraintsForPortfolioRequest listConstraintsForPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listConstraintsForPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1519,7 +1671,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest) {
+    public ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLaunchPaths(request);
+    }
+
+    @SdkInternalApi
+    final ListLaunchPathsResult executeListLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listLaunchPathsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1563,7 +1721,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest) {
+    public ListPortfolioAccessResult listPortfolioAccess(ListPortfolioAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPortfolioAccess(request);
+    }
+
+    @SdkInternalApi
+    final ListPortfolioAccessResult executeListPortfolioAccess(ListPortfolioAccessRequest listPortfolioAccessRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPortfolioAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1607,7 +1771,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListPortfoliosResult listPortfolios(ListPortfoliosRequest listPortfoliosRequest) {
+    public ListPortfoliosResult listPortfolios(ListPortfoliosRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPortfolios(request);
+    }
+
+    @SdkInternalApi
+    final ListPortfoliosResult executeListPortfolios(ListPortfoliosRequest listPortfoliosRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPortfoliosRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1653,7 +1823,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
+    public ListPortfoliosForProductResult listPortfoliosForProduct(ListPortfoliosForProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPortfoliosForProduct(request);
+    }
+
+    @SdkInternalApi
+    final ListPortfoliosForProductResult executeListPortfoliosForProduct(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPortfoliosForProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1701,7 +1877,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest) {
+    public ListPrincipalsForPortfolioResult listPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPrincipalsForPortfolio(request);
+    }
+
+    @SdkInternalApi
+    final ListPrincipalsForPortfolioResult executeListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest listPrincipalsForPortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPrincipalsForPortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1749,7 +1931,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest) {
+    public ListProvisioningArtifactsResult listProvisioningArtifacts(ListProvisioningArtifactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProvisioningArtifacts(request);
+    }
+
+    @SdkInternalApi
+    final ListProvisioningArtifactsResult executeListProvisioningArtifacts(ListProvisioningArtifactsRequest listProvisioningArtifactsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listProvisioningArtifactsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1796,7 +1984,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListRecordHistoryResult listRecordHistory(ListRecordHistoryRequest listRecordHistoryRequest) {
+    public ListRecordHistoryResult listRecordHistory(ListRecordHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecordHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListRecordHistoryResult executeListRecordHistory(ListRecordHistoryRequest listRecordHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRecordHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1849,7 +2043,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ProvisionProductResult provisionProduct(ProvisionProductRequest provisionProductRequest) {
+    public ProvisionProductResult provisionProduct(ProvisionProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeProvisionProduct(request);
+    }
+
+    @SdkInternalApi
+    final ProvisionProductResult executeProvisionProduct(ProvisionProductRequest provisionProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(provisionProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1893,7 +2093,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest) {
+    public RejectPortfolioShareResult rejectPortfolioShare(RejectPortfolioShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectPortfolioShare(request);
+    }
+
+    @SdkInternalApi
+    final RejectPortfolioShareResult executeRejectPortfolioShare(RejectPortfolioShareRequest rejectPortfolioShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rejectPortfolioShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1937,7 +2143,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ScanProvisionedProductsResult scanProvisionedProducts(ScanProvisionedProductsRequest scanProvisionedProductsRequest) {
+    public ScanProvisionedProductsResult scanProvisionedProducts(ScanProvisionedProductsRequest request) {
+        request = beforeClientExecution(request);
+        return executeScanProvisionedProducts(request);
+    }
+
+    @SdkInternalApi
+    final ScanProvisionedProductsResult executeScanProvisionedProducts(ScanProvisionedProductsRequest scanProvisionedProductsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scanProvisionedProductsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1986,7 +2198,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SearchProductsResult searchProducts(SearchProductsRequest searchProductsRequest) {
+    public SearchProductsResult searchProducts(SearchProductsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchProducts(request);
+    }
+
+    @SdkInternalApi
+    final SearchProductsResult executeSearchProducts(SearchProductsRequest searchProductsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchProductsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2034,7 +2252,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest) {
+    public SearchProductsAsAdminResult searchProductsAsAdmin(SearchProductsAsAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchProductsAsAdmin(request);
+    }
+
+    @SdkInternalApi
+    final SearchProductsAsAdminResult executeSearchProductsAsAdmin(SearchProductsAsAdminRequest searchProductsAsAdminRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchProductsAsAdminRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2086,7 +2310,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TerminateProvisionedProductResult terminateProvisionedProduct(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
+    public TerminateProvisionedProductResult terminateProvisionedProduct(TerminateProvisionedProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateProvisionedProduct(request);
+    }
+
+    @SdkInternalApi
+    final TerminateProvisionedProductResult executeTerminateProvisionedProduct(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateProvisionedProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2134,7 +2364,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateConstraintResult updateConstraint(UpdateConstraintRequest updateConstraintRequest) {
+    public UpdateConstraintResult updateConstraint(UpdateConstraintRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConstraint(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConstraintResult executeUpdateConstraint(UpdateConstraintRequest updateConstraintRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateConstraintRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2184,7 +2420,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest updatePortfolioRequest) {
+    public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePortfolio(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePortfolioResult executeUpdatePortfolio(UpdatePortfolioRequest updatePortfolioRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePortfolioRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2230,7 +2472,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public UpdateProductResult updateProduct(UpdateProductRequest updateProductRequest) {
+    public UpdateProductResult updateProduct(UpdateProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProduct(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProductResult executeUpdateProduct(UpdateProductRequest updateProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2282,7 +2530,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest) {
+    public UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProvisionedProduct(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProvisionedProductResult executeUpdateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateProvisionedProductRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2331,7 +2585,13 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest) {
+    public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProvisioningArtifact(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProvisioningArtifactResult executeUpdateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateProvisioningArtifactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

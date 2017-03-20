@@ -32,12 +32,15 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeTrails" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListPublicKeys" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "LookupEvents" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

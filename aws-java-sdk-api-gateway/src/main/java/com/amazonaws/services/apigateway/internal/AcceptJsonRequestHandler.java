@@ -19,11 +19,16 @@ import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.handlers.RequestHandler2;
 
+import java.util.Map;
+
 public final class AcceptJsonRequestHandler extends RequestHandler2 {
 
     @Override
     public void beforeRequest(Request<?> request) {
-        request.addHeader("Accept", "application/json");
+        // Some operations marshall to this header, so don't clobber if it exists
+        if (!request.getHeaders().containsKey("Accept")) {
+            request.addHeader("Accept", "application/json");
+        }
     }
 
     @Override

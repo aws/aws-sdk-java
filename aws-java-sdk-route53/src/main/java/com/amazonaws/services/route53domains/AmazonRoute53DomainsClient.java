@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -291,7 +292,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
+    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckDomainAvailability(request);
+    }
+
+    @SdkInternalApi
+    final CheckDomainAvailabilityResult executeCheckDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(checkDomainAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -348,7 +355,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
+    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsForDomainResult executeDeleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -396,7 +409,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) {
+    public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDomainAutoRenew(request);
+    }
+
+    @SdkInternalApi
+    final DisableDomainAutoRenewResult executeDisableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -456,7 +475,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) {
+    public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDomainTransferLock(request);
+    }
+
+    @SdkInternalApi
+    final DisableDomainTransferLockResult executeDisableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -516,7 +541,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) {
+    public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDomainAutoRenew(request);
+    }
+
+    @SdkInternalApi
+    final EnableDomainAutoRenewResult executeEnableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -575,7 +606,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
+    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDomainTransferLock(request);
+    }
+
+    @SdkInternalApi
+    final EnableDomainTransferLockResult executeEnableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -631,7 +668,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
+    public GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContactReachabilityStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetContactReachabilityStatusResult executeGetContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getContactReachabilityStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -683,7 +726,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest getDomainDetailRequest) {
+    public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainDetail(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainDetailResult executeGetDomainDetail(GetDomainDetailRequest getDomainDetailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -744,7 +793,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
+    public GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainSuggestions(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainSuggestionsResult executeGetDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainSuggestionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -791,7 +846,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest getOperationDetailRequest) {
+    public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOperationDetail(request);
+    }
+
+    @SdkInternalApi
+    final GetOperationDetailResult executeGetOperationDetail(GetOperationDetailRequest getOperationDetailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOperationDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -838,7 +899,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsResult executeListDomains(ListDomainsRequest listDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -890,7 +957,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public ListOperationsResult listOperations(ListOperationsRequest listOperationsRequest) {
+    public ListOperationsResult listOperations(ListOperationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOperations(request);
+    }
+
+    @SdkInternalApi
+    final ListOperationsResult executeListOperations(ListOperationsRequest listOperationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOperationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -950,7 +1023,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) {
+    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForDomainResult executeListTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1024,7 +1103,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public RegisterDomainResult registerDomain(RegisterDomainRequest registerDomainRequest) {
+    public RegisterDomainResult registerDomain(RegisterDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDomain(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDomainResult executeRegisterDomain(RegisterDomainRequest registerDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1087,7 +1172,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest) {
+    public RenewDomainResult renewDomain(RenewDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeRenewDomain(request);
+    }
+
+    @SdkInternalApi
+    final RenewDomainResult executeRenewDomain(RenewDomainRequest renewDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(renewDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1139,7 +1230,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeResendContactReachabilityEmail(request);
+    }
+
+    @SdkInternalApi
+    final ResendContactReachabilityEmailResult executeResendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resendContactReachabilityEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1191,7 +1288,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) {
+    public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveDomainAuthCode(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveDomainAuthCodeResult executeRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveDomainAuthCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1271,7 +1374,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public TransferDomainResult transferDomain(TransferDomainRequest transferDomainRequest) {
+    public TransferDomainResult transferDomain(TransferDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeTransferDomain(request);
+    }
+
+    @SdkInternalApi
+    final TransferDomainResult executeTransferDomain(TransferDomainRequest transferDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(transferDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1332,7 +1441,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) {
+    public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainContact(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainContactResult executeUpdateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainContactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1396,7 +1511,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) {
+    public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainContactPrivacy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainContactPrivacyResult executeUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainContactPrivacyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1459,7 +1580,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) {
+    public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainNameservers(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainNameserversResult executeUpdateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainNameserversRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1516,7 +1643,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
+    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTagsForDomainResult executeUpdateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1563,7 +1696,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest) {
+    public ViewBillingResult viewBilling(ViewBillingRequest request) {
+        request = beforeClientExecution(request);
+        return executeViewBilling(request);
+    }
+
+    @SdkInternalApi
+    final ViewBillingResult executeViewBilling(ViewBillingRequest viewBillingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(viewBillingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

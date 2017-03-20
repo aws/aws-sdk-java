@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segment import definition.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentImportResource implements Serializable, Cloneable, StructuredPojo {
 

@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Shcedule that defines when a campaign is run.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Schedule implements Serializable, Cloneable, StructuredPojo {
 

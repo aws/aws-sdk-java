@@ -144,6 +144,31 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteCampaignRequest, DeleteCampaignResult> asyncHandler);
 
     /**
+     * Deletes the event stream for an app.
+     * 
+     * @param deleteEventStreamRequest
+     *        DeleteEventStream Request
+     * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteEventStream
+     */
+    java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest);
+
+    /**
+     * Deletes the event stream for an app.
+     * 
+     * @param deleteEventStreamRequest
+     *        DeleteEventStream Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteEventStream
+     */
+    java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler);
+
+    /**
      * Deletes the GCM channel for an app.
      * 
      * @param deleteGcmChannelRequest
@@ -282,7 +307,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetCampaignActivitiesRequest, GetCampaignActivitiesResult> asyncHandler);
 
     /**
-     * Returns information about your campaign versions.
+     * Returns information about a specific version of a campaign.
      * 
      * @param getCampaignVersionRequest
      * @return A Java Future containing the result of the GetCampaignVersion operation returned by the service.
@@ -291,7 +316,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetCampaignVersionResult> getCampaignVersionAsync(GetCampaignVersionRequest getCampaignVersionRequest);
 
     /**
-     * Returns information about your campaign versions.
+     * Returns information about a specific version of a campaign.
      * 
      * @param getCampaignVersionRequest
      * @param asyncHandler
@@ -372,6 +397,31 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetEndpointResult> getEndpointAsync(GetEndpointRequest getEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<GetEndpointRequest, GetEndpointResult> asyncHandler);
+
+    /**
+     * Returns the event stream for an app.
+     * 
+     * @param getEventStreamRequest
+     *        GetEventStream Request
+     * @return A Java Future containing the result of the GetEventStream operation returned by the service.
+     * @sample AmazonPinpointAsync.GetEventStream
+     */
+    java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest);
+
+    /**
+     * Returns the event stream for an app.
+     * 
+     * @param getEventStreamRequest
+     *        GetEventStream Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventStream operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetEventStream
+     */
+    java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler);
 
     /**
      * Returns information about the GCM channel for an app.
@@ -558,6 +608,31 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentsRequest, GetSegmentsResult> asyncHandler);
 
     /**
+     * Use to create or update the event stream for an app.
+     * 
+     * @param putEventStreamRequest
+     *        PutEventStream Request
+     * @return A Java Future containing the result of the PutEventStream operation returned by the service.
+     * @sample AmazonPinpointAsync.PutEventStream
+     */
+    java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest putEventStreamRequest);
+
+    /**
+     * Use to create or update the event stream for an app.
+     * 
+     * @param putEventStreamRequest
+     *        PutEventStream Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEventStream operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.PutEventStream
+     */
+    java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest putEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler);
+
+    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -652,7 +727,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler);
 
     /**
-     * Use to update your endpoints.
+     * Use to update a batch of endpoints.
      * 
      * @param updateEndpointsBatchRequest
      * @return A Java Future containing the result of the UpdateEndpointsBatch operation returned by the service.
@@ -661,7 +736,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateEndpointsBatchResult> updateEndpointsBatchAsync(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
 
     /**
-     * Use to update your endpoints.
+     * Use to update a batch of endpoints.
      * 
      * @param updateEndpointsBatchRequest
      * @param asyncHandler

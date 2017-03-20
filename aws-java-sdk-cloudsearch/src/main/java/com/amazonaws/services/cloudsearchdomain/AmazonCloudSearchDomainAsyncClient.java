@@ -264,14 +264,15 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
     @Override
     public java.util.concurrent.Future<SearchResult> searchAsync(final SearchRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchRequest, SearchResult> asyncHandler) {
+        final SearchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SearchResult>() {
             @Override
             public SearchResult call() throws Exception {
-                SearchResult result;
+                SearchResult result = null;
 
                 try {
-                    result = search(request);
+                    result = executeSearch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +281,7 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +297,15 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
     @Override
     public java.util.concurrent.Future<SuggestResult> suggestAsync(final SuggestRequest request,
             final com.amazonaws.handlers.AsyncHandler<SuggestRequest, SuggestResult> asyncHandler) {
+        final SuggestRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SuggestResult>() {
             @Override
             public SuggestResult call() throws Exception {
-                SuggestResult result;
+                SuggestResult result = null;
 
                 try {
-                    result = suggest(request);
+                    result = executeSuggest(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +314,7 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +330,15 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
     @Override
     public java.util.concurrent.Future<UploadDocumentsResult> uploadDocumentsAsync(final UploadDocumentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadDocumentsRequest, UploadDocumentsResult> asyncHandler) {
+        final UploadDocumentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadDocumentsResult>() {
             @Override
             public UploadDocumentsResult call() throws Exception {
-                UploadDocumentsResult result;
+                UploadDocumentsResult result = null;
 
                 try {
-                    result = uploadDocuments(request);
+                    result = executeUploadDocuments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +347,7 @@ public class AmazonCloudSearchDomainAsyncClient extends AmazonCloudSearchDomainC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

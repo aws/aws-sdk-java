@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -317,7 +318,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -371,7 +378,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public CreateEndpointResult createEndpoint(CreateEndpointRequest createEndpointRequest) {
+    public CreateEndpointResult createEndpoint(CreateEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateEndpointResult executeCreateEndpoint(CreateEndpointRequest createEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -434,7 +447,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public CreateReplicationInstanceResult createReplicationInstance(CreateReplicationInstanceRequest createReplicationInstanceRequest) {
+    public CreateReplicationInstanceResult createReplicationInstance(CreateReplicationInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplicationInstanceResult executeCreateReplicationInstance(CreateReplicationInstanceRequest createReplicationInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -491,7 +510,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateReplicationSubnetGroupResult createReplicationSubnetGroup(CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
+    public CreateReplicationSubnetGroupResult createReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplicationSubnetGroupResult executeCreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest createReplicationSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -545,7 +570,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public CreateReplicationTaskResult createReplicationTask(CreateReplicationTaskRequest createReplicationTaskRequest) {
+    public CreateReplicationTaskResult createReplicationTask(CreateReplicationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplicationTaskResult executeCreateReplicationTask(CreateReplicationTaskRequest createReplicationTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -592,7 +623,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCertificateResult executeDeleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -644,7 +681,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEndpointResult executeDeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -696,7 +739,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public DeleteReplicationInstanceResult deleteReplicationInstance(DeleteReplicationInstanceRequest deleteReplicationInstanceRequest) {
+    public DeleteReplicationInstanceResult deleteReplicationInstance(DeleteReplicationInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationInstanceResult executeDeleteReplicationInstance(DeleteReplicationInstanceRequest deleteReplicationInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -744,7 +793,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteReplicationSubnetGroupResult deleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest deleteReplicationSubnetGroupRequest) {
+    public DeleteReplicationSubnetGroupResult deleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationSubnetGroupResult executeDeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest deleteReplicationSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -792,7 +847,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DeleteReplicationTaskResult deleteReplicationTask(DeleteReplicationTaskRequest deleteReplicationTaskRequest) {
+    public DeleteReplicationTaskResult deleteReplicationTask(DeleteReplicationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationTask(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationTaskResult executeDeleteReplicationTask(DeleteReplicationTaskRequest deleteReplicationTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -840,7 +901,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -886,7 +953,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificatesResult executeDescribeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -931,7 +1004,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
+    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConnectionsResult executeDescribeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConnectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -973,7 +1052,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DescribeEndpointTypesResult describeEndpointTypes(DescribeEndpointTypesRequest describeEndpointTypesRequest) {
+    public DescribeEndpointTypesResult describeEndpointTypes(DescribeEndpointTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEndpointTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEndpointTypesResult executeDescribeEndpointTypes(DescribeEndpointTypesRequest describeEndpointTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEndpointTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1018,7 +1103,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest) {
+    public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEndpointsResult executeDescribeEndpoints(DescribeEndpointsRequest describeEndpointsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEndpointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1060,7 +1151,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(
+    public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrderableReplicationInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrderableReplicationInstancesResult executeDescribeOrderableReplicationInstances(
             DescribeOrderableReplicationInstancesRequest describeOrderableReplicationInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOrderableReplicationInstancesRequest);
@@ -1109,7 +1206,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest describeRefreshSchemasStatusRequest) {
+    public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRefreshSchemasStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRefreshSchemasStatusResult executeDescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest describeRefreshSchemasStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRefreshSchemasStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1155,7 +1258,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReplicationInstancesResult describeReplicationInstances(DescribeReplicationInstancesRequest describeReplicationInstancesRequest) {
+    public DescribeReplicationInstancesResult describeReplicationInstances(DescribeReplicationInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationInstancesResult executeDescribeReplicationInstances(DescribeReplicationInstancesRequest describeReplicationInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReplicationInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1201,7 +1310,14 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest) {
+    public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationSubnetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationSubnetGroupsResult executeDescribeReplicationSubnetGroups(
+            DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReplicationSubnetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1247,7 +1363,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public DescribeReplicationTasksResult describeReplicationTasks(DescribeReplicationTasksRequest describeReplicationTasksRequest) {
+    public DescribeReplicationTasksResult describeReplicationTasks(DescribeReplicationTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationTasksResult executeDescribeReplicationTasks(DescribeReplicationTasksRequest describeReplicationTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReplicationTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1296,7 +1418,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public DescribeSchemasResult describeSchemas(DescribeSchemasRequest describeSchemasRequest) {
+    public DescribeSchemasResult describeSchemas(DescribeSchemasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSchemas(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSchemasResult executeDescribeSchemas(DescribeSchemasRequest describeSchemasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSchemasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1343,7 +1471,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public DescribeTableStatisticsResult describeTableStatistics(DescribeTableStatisticsRequest describeTableStatisticsRequest) {
+    public DescribeTableStatisticsResult describeTableStatistics(DescribeTableStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTableStatistics(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTableStatisticsResult executeDescribeTableStatistics(DescribeTableStatisticsRequest describeTableStatisticsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTableStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1391,7 +1525,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest) {
+    public ImportCertificateResult importCertificate(ImportCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportCertificate(request);
+    }
+
+    @SdkInternalApi
+    final ImportCertificateResult executeImportCertificate(ImportCertificateRequest importCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1435,7 +1575,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1485,7 +1631,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public ModifyEndpointResult modifyEndpoint(ModifyEndpointRequest modifyEndpointRequest) {
+    public ModifyEndpointResult modifyEndpoint(ModifyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyEndpointResult executeModifyEndpoint(ModifyEndpointRequest modifyEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1544,7 +1696,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      API Documentation</a>
      */
     @Override
-    public ModifyReplicationInstanceResult modifyReplicationInstance(ModifyReplicationInstanceRequest modifyReplicationInstanceRequest) {
+    public ModifyReplicationInstanceResult modifyReplicationInstance(ModifyReplicationInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyReplicationInstance(request);
+    }
+
+    @SdkInternalApi
+    final ModifyReplicationInstanceResult executeModifyReplicationInstance(ModifyReplicationInstanceRequest modifyReplicationInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyReplicationInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1601,7 +1759,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest) {
+    public ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyReplicationSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyReplicationSubnetGroupResult executeModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyReplicationSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1656,7 +1820,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest) {
+    public ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyReplicationTask(request);
+    }
+
+    @SdkInternalApi
+    final ModifyReplicationTaskResult executeModifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyReplicationTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1708,7 +1878,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public RefreshSchemasResult refreshSchemas(RefreshSchemasRequest refreshSchemasRequest) {
+    public RefreshSchemasResult refreshSchemas(RefreshSchemasRequest request) {
+        request = beforeClientExecution(request);
+        return executeRefreshSchemas(request);
+    }
+
+    @SdkInternalApi
+    final RefreshSchemasResult executeRefreshSchemas(RefreshSchemasRequest refreshSchemasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(refreshSchemasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1752,7 +1928,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1799,7 +1981,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest startReplicationTaskRequest) {
+    public StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartReplicationTask(request);
+    }
+
+    @SdkInternalApi
+    final StartReplicationTaskResult executeStartReplicationTask(StartReplicationTaskRequest startReplicationTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startReplicationTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1846,7 +2034,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public StopReplicationTaskResult stopReplicationTask(StopReplicationTaskRequest stopReplicationTaskRequest) {
+    public StopReplicationTaskResult stopReplicationTask(StopReplicationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopReplicationTask(request);
+    }
+
+    @SdkInternalApi
+    final StopReplicationTaskResult executeStopReplicationTask(StopReplicationTaskRequest stopReplicationTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopReplicationTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1896,7 +2090,13 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *      Documentation</a>
      */
     @Override
-    public TestConnectionResult testConnection(TestConnectionRequest testConnectionRequest) {
+    public TestConnectionResult testConnection(TestConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestConnection(request);
+    }
+
+    @SdkInternalApi
+    final TestConnectionResult executeTestConnection(TestConnectionRequest testConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

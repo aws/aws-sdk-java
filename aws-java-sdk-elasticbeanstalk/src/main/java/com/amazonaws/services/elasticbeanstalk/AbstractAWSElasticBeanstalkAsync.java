@@ -56,6 +56,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(
             com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
@@ -195,6 +196,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #createStorageLocationAsync(CreateStorageLocationRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(
             com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler) {
 
@@ -295,6 +297,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #describeApplicationVersionsAsync(DescribeApplicationVersionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult> asyncHandler) {
 
@@ -330,6 +333,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #describeApplicationsAsync(DescribeApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler) {
 
@@ -447,6 +451,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #describeEnvironmentsAsync(DescribeEnvironmentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler) {
 
@@ -482,6 +487,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #describeEventsAsync(DescribeEventsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
@@ -543,6 +549,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler) {
 
@@ -643,6 +650,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
      *
      * @see #swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(
             com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 

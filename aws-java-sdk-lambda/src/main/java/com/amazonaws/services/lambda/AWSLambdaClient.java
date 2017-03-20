@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -370,7 +371,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
+    public AddPermissionResult addPermission(AddPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddPermission(request);
+    }
+
+    @SdkInternalApi
+    final AddPermissionResult executeAddPermission(AddPermissionRequest addPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -428,7 +435,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -510,7 +523,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest createEventSourceMappingRequest) {
+    public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventSourceMapping(request);
+    }
+
+    @SdkInternalApi
+    final CreateEventSourceMappingResult executeCreateEventSourceMapping(CreateEventSourceMappingRequest createEventSourceMappingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -580,7 +599,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public CreateFunctionResult createFunction(CreateFunctionRequest createFunctionRequest) {
+    public CreateFunctionResult createFunction(CreateFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFunction(request);
+    }
+
+    @SdkInternalApi
+    final CreateFunctionResult executeCreateFunction(CreateFunctionRequest createFunctionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -633,7 +658,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAliasResult executeDeleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -689,7 +720,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
+    public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventSourceMapping(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventSourceMappingResult executeDeleteEventSourceMapping(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -760,7 +797,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionResult executeDeleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -810,7 +853,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSettingsResult executeGetAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -867,7 +916,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public GetAliasResult getAlias(GetAliasRequest getAliasRequest) {
+    public GetAliasResult getAlias(GetAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAlias(request);
+    }
+
+    @SdkInternalApi
+    final GetAliasResult executeGetAlias(GetAliasRequest getAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -922,7 +977,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      API Documentation</a>
      */
     @Override
-    public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest getEventSourceMappingRequest) {
+    public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventSourceMapping(request);
+    }
+
+    @SdkInternalApi
+    final GetEventSourceMappingResult executeGetEventSourceMapping(GetEventSourceMappingRequest getEventSourceMappingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -988,7 +1049,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest) {
+    public GetFunctionResult getFunction(GetFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunction(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionResult executeGetFunction(GetFunctionRequest getFunctionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1052,7 +1119,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
+    public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunctionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionConfigurationResult executeGetFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFunctionConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1119,7 +1192,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
+    public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPolicyResult executeGetPolicy(GetPolicyRequest getPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1222,7 +1301,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public InvokeResult invoke(InvokeRequest invokeRequest) {
+    public InvokeResult invoke(InvokeRequest request) {
+        request = beforeClientExecution(request);
+        return executeInvoke(request);
+    }
+
+    @SdkInternalApi
+    final InvokeResult executeInvoke(InvokeRequest invokeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(invokeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1281,7 +1366,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     @Deprecated
-    public InvokeAsyncResult invokeAsync(InvokeAsyncRequest invokeAsyncRequest) {
+    public InvokeAsyncResult invokeAsync(InvokeAsyncRequest request) {
+        request = beforeClientExecution(request);
+        return executeInvokeAsync(request);
+    }
+
+    @SdkInternalApi
+    final InvokeAsyncResult executeInvokeAsync(InvokeAsyncRequest invokeAsyncRequest) {
 
         ExecutionContext executionContext = createExecutionContext(invokeAsyncRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1338,7 +1429,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1404,7 +1501,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      API Documentation</a>
      */
     @Override
-    public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
+    public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventSourceMappings(request);
+    }
+
+    @SdkInternalApi
+    final ListEventSourceMappingsResult executeListEventSourceMappings(ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listEventSourceMappingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1466,7 +1569,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public ListFunctionsResult listFunctions(ListFunctionsRequest listFunctionsRequest) {
+    public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFunctions(request);
+    }
+
+    @SdkInternalApi
+    final ListFunctionsResult executeListFunctions(ListFunctionsRequest listFunctionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFunctionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1525,7 +1634,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      API Documentation</a>
      */
     @Override
-    public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
+    public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVersionsByFunction(request);
+    }
+
+    @SdkInternalApi
+    final ListVersionsByFunctionResult executeListVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVersionsByFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1585,7 +1700,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public PublishVersionResult publishVersion(PublishVersionRequest publishVersionRequest) {
+    public PublishVersionResult publishVersion(PublishVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executePublishVersion(request);
+    }
+
+    @SdkInternalApi
+    final PublishVersionResult executePublishVersion(PublishVersionRequest publishVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(publishVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1650,7 +1771,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemovePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemovePermissionResult executeRemovePermission(RemovePermissionRequest removePermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1707,7 +1834,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAliasResult executeUpdateAlias(UpdateAliasRequest updateAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1777,7 +1910,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
+    public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEventSourceMapping(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEventSourceMappingResult executeUpdateEventSourceMapping(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1844,7 +1983,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      Documentation</a>
      */
     @Override
-    public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
+    public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFunctionCode(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFunctionCodeResult executeUpdateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFunctionCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1907,7 +2052,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
+    public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFunctionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFunctionConfigurationResult executeUpdateFunctionConfiguration(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFunctionConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

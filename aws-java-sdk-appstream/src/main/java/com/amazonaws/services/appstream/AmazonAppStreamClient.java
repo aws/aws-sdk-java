@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -296,7 +297,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public AssociateFleetResult associateFleet(AssociateFleetRequest associateFleetRequest) {
+    public AssociateFleetResult associateFleet(AssociateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFleet(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFleetResult executeAssociateFleet(AssociateFleetRequest associateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -349,7 +356,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+    public CreateFleetResult createFleet(CreateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetResult executeCreateFleet(CreateFleetRequest createFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -395,7 +408,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+    public CreateStackResult createStack(CreateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStack(request);
+    }
+
+    @SdkInternalApi
+    final CreateStackResult executeCreateStack(CreateStackRequest createStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -444,7 +463,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
+    public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStreamingURL(request);
+    }
+
+    @SdkInternalApi
+    final CreateStreamingURLResult executeCreateStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStreamingURLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -490,7 +515,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetResult executeDeleteFleet(DeleteFleetRequest deleteFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -537,7 +568,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStackResult executeDeleteStack(DeleteStackRequest deleteStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -582,7 +619,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest) {
+    public DescribeFleetsResult describeFleets(DescribeFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetsResult executeDescribeFleets(DescribeFleetsRequest describeFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -627,7 +670,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
+    public DescribeImagesResult describeImages(DescribeImagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImagesResult executeDescribeImages(DescribeImagesRequest describeImagesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -671,7 +720,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeSessionsResult describeSessions(DescribeSessionsRequest describeSessionsRequest) {
+    public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSessionsResult executeDescribeSessions(DescribeSessionsRequest describeSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -717,7 +772,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+    public DescribeStacksResult describeStacks(DescribeStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStacksResult executeDescribeStacks(DescribeStacksRequest describeStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -763,7 +824,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
+    public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFleet(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFleetResult executeDisassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -805,7 +872,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public ExpireSessionResult expireSession(ExpireSessionRequest expireSessionRequest) {
+    public ExpireSessionResult expireSession(ExpireSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeExpireSession(request);
+    }
+
+    @SdkInternalApi
+    final ExpireSessionResult executeExpireSession(ExpireSessionRequest expireSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(expireSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -847,7 +920,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
+    public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedFleetsResult executeListAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociatedFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -889,7 +968,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
+    public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedStacks(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedStacksResult executeListAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociatedStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -935,7 +1020,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public StartFleetResult startFleet(StartFleetRequest startFleetRequest) {
+    public StartFleetResult startFleet(StartFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartFleet(request);
+    }
+
+    @SdkInternalApi
+    final StartFleetResult executeStartFleet(StartFleetRequest startFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -979,7 +1070,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public StopFleetResult stopFleet(StopFleetRequest stopFleetRequest) {
+    public StopFleetResult stopFleet(StopFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopFleet(request);
+    }
+
+    @SdkInternalApi
+    final StopFleetResult executeStopFleet(StopFleetRequest stopFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1030,7 +1127,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest) {
+    public UpdateFleetResult updateFleet(UpdateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetResult executeUpdateFleet(UpdateFleetRequest updateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1076,7 +1179,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+    public UpdateStackResult updateStack(UpdateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStack(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStackResult executeUpdateStack(UpdateStackRequest updateStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1169,6 +1278,14 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

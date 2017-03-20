@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -441,7 +442,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -557,7 +564,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public CreateTrailResult createTrail(CreateTrailRequest createTrailRequest) {
+    public CreateTrailResult createTrail(CreateTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrail(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrailResult executeCreateTrail(CreateTrailRequest createTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -637,7 +650,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest) {
+    public DeleteTrailResult deleteTrail(DeleteTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrail(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrailResult executeDeleteTrail(DeleteTrailRequest deleteTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -684,7 +703,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) {
+    public DescribeTrailsResult describeTrails(DescribeTrailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrailsResult executeDescribeTrails(DescribeTrailsRequest describeTrailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -790,7 +815,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      API Documentation</a>
      */
     @Override
-    public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest) {
+    public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventSelectors(request);
+    }
+
+    @SdkInternalApi
+    final GetEventSelectorsResult executeGetEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -868,7 +899,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest getTrailStatusRequest) {
+    public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrailStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetTrailStatusResult executeGetTrailStatus(GetTrailStatusRequest getTrailStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrailStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -928,7 +965,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
+    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublicKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListPublicKeysResult executeListPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPublicKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1022,7 +1065,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+    public ListTagsResult listTags(ListTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTags(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsResult executeListTags(ListTagsRequest listTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1124,7 +1173,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest) {
+    public LookupEventsResult lookupEvents(LookupEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeLookupEvents(request);
+    }
+
+    @SdkInternalApi
+    final LookupEventsResult executeLookupEvents(LookupEventsRequest lookupEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(lookupEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1273,7 +1328,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      API Documentation</a>
      */
     @Override
-    public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest) {
+    public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEventSelectors(request);
+    }
+
+    @SdkInternalApi
+    final PutEventSelectorsResult executePutEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1363,7 +1424,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1443,7 +1510,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public StartLoggingResult startLogging(StartLoggingRequest startLoggingRequest) {
+    public StartLoggingResult startLogging(StartLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLogging(request);
+    }
+
+    @SdkInternalApi
+    final StartLoggingResult executeStartLogging(StartLoggingRequest startLoggingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1525,7 +1598,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) {
+    public StopLoggingResult stopLogging(StopLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopLogging(request);
+    }
+
+    @SdkInternalApi
+    final StopLoggingResult executeStopLogging(StopLoggingRequest stopLoggingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1645,7 +1724,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest) {
+    public UpdateTrailResult updateTrail(UpdateTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrail(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrailResult executeUpdateTrail(UpdateTrailRequest updateTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

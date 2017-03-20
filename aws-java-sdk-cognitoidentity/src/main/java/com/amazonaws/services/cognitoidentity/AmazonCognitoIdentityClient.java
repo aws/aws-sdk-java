@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -376,7 +377,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateIdentityPoolResult createIdentityPool(CreateIdentityPoolRequest createIdentityPoolRequest) {
+    public CreateIdentityPoolResult createIdentityPool(CreateIdentityPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIdentityPool(request);
+    }
+
+    @SdkInternalApi
+    final CreateIdentityPoolResult executeCreateIdentityPool(CreateIdentityPoolRequest createIdentityPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createIdentityPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -428,7 +435,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest deleteIdentitiesRequest) {
+    public DeleteIdentitiesResult deleteIdentities(DeleteIdentitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIdentities(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIdentitiesResult executeDeleteIdentities(DeleteIdentitiesRequest deleteIdentitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -484,7 +497,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteIdentityPoolResult deleteIdentityPool(DeleteIdentityPoolRequest deleteIdentityPoolRequest) {
+    public DeleteIdentityPoolResult deleteIdentityPool(DeleteIdentityPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIdentityPool(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIdentityPoolResult executeDeleteIdentityPool(DeleteIdentityPoolRequest deleteIdentityPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIdentityPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -541,7 +560,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest describeIdentityRequest) {
+    public DescribeIdentityResult describeIdentity(DescribeIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentity(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityResult executeDescribeIdentity(DescribeIdentityRequest describeIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -598,7 +623,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityPoolResult describeIdentityPool(DescribeIdentityPoolRequest describeIdentityPoolRequest) {
+    public DescribeIdentityPoolResult describeIdentityPool(DescribeIdentityPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentityPool(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityPoolResult executeDescribeIdentityPool(DescribeIdentityPoolRequest describeIdentityPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -663,7 +694,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetCredentialsForIdentityResult getCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsForIdentityRequest) {
+    public GetCredentialsForIdentityResult getCredentialsForIdentity(GetCredentialsForIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCredentialsForIdentity(request);
+    }
+
+    @SdkInternalApi
+    final GetCredentialsForIdentityResult executeGetCredentialsForIdentity(GetCredentialsForIdentityRequest getCredentialsForIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCredentialsForIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -727,7 +764,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public GetIdResult getId(GetIdRequest getIdRequest) {
+    public GetIdResult getId(GetIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetId(request);
+    }
+
+    @SdkInternalApi
+    final GetIdResult executeGetId(GetIdRequest getIdRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -785,7 +828,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityPoolRolesResult getIdentityPoolRoles(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest) {
+    public GetIdentityPoolRolesResult getIdentityPoolRoles(GetIdentityPoolRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityPoolRoles(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityPoolRolesResult executeGetIdentityPoolRoles(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityPoolRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -849,7 +898,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOpenIdTokenResult getOpenIdToken(GetOpenIdTokenRequest getOpenIdTokenRequest) {
+    public GetOpenIdTokenResult getOpenIdToken(GetOpenIdTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOpenIdToken(request);
+    }
+
+    @SdkInternalApi
+    final GetOpenIdTokenResult executeGetOpenIdToken(GetOpenIdTokenRequest getOpenIdTokenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOpenIdTokenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -920,7 +975,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(
+    public GetOpenIdTokenForDeveloperIdentityResult getOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOpenIdTokenForDeveloperIdentity(request);
+    }
+
+    @SdkInternalApi
+    final GetOpenIdTokenForDeveloperIdentityResult executeGetOpenIdTokenForDeveloperIdentity(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOpenIdTokenForDeveloperIdentityRequest);
@@ -979,7 +1040,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListIdentitiesResult listIdentities(ListIdentitiesRequest listIdentitiesRequest) {
+    public ListIdentitiesResult listIdentities(ListIdentitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentities(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentitiesResult executeListIdentities(ListIdentitiesRequest listIdentitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1033,7 +1100,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListIdentityPoolsResult listIdentityPools(ListIdentityPoolsRequest listIdentityPoolsRequest) {
+    public ListIdentityPoolsResult listIdentityPools(ListIdentityPoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentityPools(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentityPoolsResult executeListIdentityPools(ListIdentityPoolsRequest listIdentityPoolsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentityPoolsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1097,7 +1170,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public LookupDeveloperIdentityResult lookupDeveloperIdentity(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest) {
+    public LookupDeveloperIdentityResult lookupDeveloperIdentity(LookupDeveloperIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeLookupDeveloperIdentity(request);
+    }
+
+    @SdkInternalApi
+    final LookupDeveloperIdentityResult executeLookupDeveloperIdentity(LookupDeveloperIdentityRequest lookupDeveloperIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(lookupDeveloperIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1162,7 +1241,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest) {
+    public MergeDeveloperIdentitiesResult mergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeMergeDeveloperIdentities(request);
+    }
+
+    @SdkInternalApi
+    final MergeDeveloperIdentitiesResult executeMergeDeveloperIdentities(MergeDeveloperIdentitiesRequest mergeDeveloperIdentitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(mergeDeveloperIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1225,7 +1310,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityPoolRolesResult setIdentityPoolRoles(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest) {
+    public SetIdentityPoolRolesResult setIdentityPoolRoles(SetIdentityPoolRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityPoolRoles(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityPoolRolesResult executeSetIdentityPoolRoles(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityPoolRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1285,7 +1376,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
+    public UnlinkDeveloperIdentityResult unlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnlinkDeveloperIdentity(request);
+    }
+
+    @SdkInternalApi
+    final UnlinkDeveloperIdentityResult executeUnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest unlinkDeveloperIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unlinkDeveloperIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1348,7 +1445,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UnlinkIdentityResult unlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest) {
+    public UnlinkIdentityResult unlinkIdentity(UnlinkIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnlinkIdentity(request);
+    }
+
+    @SdkInternalApi
+    final UnlinkIdentityResult executeUnlinkIdentity(UnlinkIdentityRequest unlinkIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unlinkIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1410,7 +1513,13 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateIdentityPoolResult updateIdentityPool(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
+    public UpdateIdentityPoolResult updateIdentityPool(UpdateIdentityPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateIdentityPool(request);
+    }
+
+    @SdkInternalApi
+    final UpdateIdentityPoolResult executeUpdateIdentityPool(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateIdentityPoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

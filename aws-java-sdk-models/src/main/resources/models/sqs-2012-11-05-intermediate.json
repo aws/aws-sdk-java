@@ -93,48 +93,63 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "AddPermission" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Label", "AWSAccountIds", "Actions" ] ]
       },
       "ChangeMessageVisibility" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "ReceiptHandle", "VisibilityTimeout" ] ]
       },
       "ChangeMessageVisibilityBatch" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Entries" ] ]
       },
       "CreateQueue" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueName" ] ]
       },
       "DeleteMessage" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "ReceiptHandle" ] ]
       },
       "DeleteMessageBatch" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Entries" ] ]
       },
       "DeleteQueue" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl" ] ]
       },
       "GetQueueAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "AttributeNames" ] ]
       },
       "GetQueueUrl" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueName" ] ]
       },
       "ListQueues" : {
+        "deprecated" : null,
         "methodForms" : [ [ ], [ "QueueNamePrefix" ] ]
       },
       "ReceiveMessage" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl" ] ]
       },
       "RemovePermission" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Label" ] ]
       },
       "SendMessage" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "MessageBody" ] ]
       },
       "SendMessageBatch" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Entries" ] ]
       },
       "SetQueueAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "QueueUrl", "Attributes" ] ]
       }
     },

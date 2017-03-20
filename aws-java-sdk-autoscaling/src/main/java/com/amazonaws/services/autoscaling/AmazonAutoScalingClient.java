@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -297,7 +298,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public AttachInstancesResult attachInstances(AttachInstancesRequest attachInstancesRequest) {
+    public AttachInstancesResult attachInstances(AttachInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachInstances(request);
+    }
+
+    @SdkInternalApi
+    final AttachInstancesResult executeAttachInstances(AttachInstancesRequest attachInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -352,7 +359,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest) {
+    public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachLoadBalancerTargetGroups(request);
+    }
+
+    @SdkInternalApi
+    final AttachLoadBalancerTargetGroupsResult executeAttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest attachLoadBalancerTargetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachLoadBalancerTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -410,7 +423,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest) {
+    public AttachLoadBalancersResult attachLoadBalancers(AttachLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final AttachLoadBalancersResult executeAttachLoadBalancers(AttachLoadBalancersRequest attachLoadBalancersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -498,7 +517,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest) {
+    public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompleteLifecycleAction(request);
+    }
+
+    @SdkInternalApi
+    final CompleteLifecycleActionResult executeCompleteLifecycleAction(CompleteLifecycleActionRequest completeLifecycleActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(completeLifecycleActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +583,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
+    public CreateAutoScalingGroupResult createAutoScalingGroup(CreateAutoScalingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAutoScalingGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateAutoScalingGroupResult executeCreateAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -618,7 +649,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
+    public CreateLaunchConfigurationResult createLaunchConfiguration(CreateLaunchConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLaunchConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateLaunchConfigurationResult executeCreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -678,7 +715,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
+    public CreateOrUpdateTagsResult createOrUpdateTags(CreateOrUpdateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOrUpdateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateOrUpdateTagsResult executeCreateOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createOrUpdateTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -745,7 +788,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
+    public DeleteAutoScalingGroupResult deleteAutoScalingGroup(DeleteAutoScalingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAutoScalingGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAutoScalingGroupResult executeDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -797,7 +846,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
+    public DeleteLaunchConfigurationResult deleteLaunchConfiguration(DeleteLaunchConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLaunchConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLaunchConfigurationResult executeDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLaunchConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -847,7 +902,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest deleteLifecycleHookRequest) {
+    public DeleteLifecycleHookResult deleteLifecycleHook(DeleteLifecycleHookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLifecycleHook(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLifecycleHookResult executeDeleteLifecycleHook(DeleteLifecycleHookRequest deleteLifecycleHookRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLifecycleHookRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -893,7 +954,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
+    public DeleteNotificationConfigurationResult deleteNotificationConfiguration(DeleteNotificationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotificationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotificationConfigurationResult executeDeleteNotificationConfiguration(
+            DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -943,7 +1011,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePolicyResult executeDeletePolicy(DeletePolicyRequest deletePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -988,7 +1062,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) {
+    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteScheduledAction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScheduledActionResult executeDeleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteScheduledActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1034,7 +1114,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1083,7 +1169,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountLimitsResult executeDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1133,7 +1225,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) {
+    public DescribeAdjustmentTypesResult describeAdjustmentTypes(DescribeAdjustmentTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAdjustmentTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAdjustmentTypesResult executeDescribeAdjustmentTypes(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAdjustmentTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1186,7 +1284,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
+    public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutoScalingGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutoScalingGroupsResult executeDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1239,7 +1343,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) {
+    public DescribeAutoScalingInstancesResult describeAutoScalingInstances(DescribeAutoScalingInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutoScalingInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutoScalingInstancesResult executeDescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1289,7 +1399,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(
+    public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutoScalingNotificationTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutoScalingNotificationTypesResult executeDescribeAutoScalingNotificationTypes(
             DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAutoScalingNotificationTypesRequest);
@@ -1344,7 +1460,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
+    public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLaunchConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLaunchConfigurationsResult executeDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLaunchConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1394,7 +1516,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest) {
+    public DescribeLifecycleHookTypesResult describeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLifecycleHookTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLifecycleHookTypesResult executeDescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest describeLifecycleHookTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLifecycleHookTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1445,7 +1573,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest describeLifecycleHooksRequest) {
+    public DescribeLifecycleHooksResult describeLifecycleHooks(DescribeLifecycleHooksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLifecycleHooks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLifecycleHooksResult executeDescribeLifecycleHooks(DescribeLifecycleHooksRequest describeLifecycleHooksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLifecycleHooksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1491,7 +1625,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(
+    public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoadBalancerTargetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoadBalancerTargetGroupsResult executeDescribeLoadBalancerTargetGroups(
             DescribeLoadBalancerTargetGroupsRequest describeLoadBalancerTargetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancerTargetGroupsRequest);
@@ -1542,7 +1682,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoadBalancersResult executeDescribeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1591,7 +1737,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
+    public DescribeMetricCollectionTypesResult describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMetricCollectionTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMetricCollectionTypesResult executeDescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMetricCollectionTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1644,7 +1796,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNotificationConfigurationsResult describeNotificationConfigurations(
+    public DescribeNotificationConfigurationsResult describeNotificationConfigurations(DescribeNotificationConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotificationConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotificationConfigurationsResult executeDescribeNotificationConfigurations(
             DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNotificationConfigurationsRequest);
@@ -1699,7 +1857,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribePoliciesResult describePolicies(DescribePoliciesRequest describePoliciesRequest) {
+    public DescribePoliciesResult describePolicies(DescribePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribePoliciesResult executeDescribePolicies(DescribePoliciesRequest describePoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1752,7 +1916,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingActivities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingActivitiesResult executeDescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1802,7 +1972,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
+    public DescribeScalingProcessTypesResult describeScalingProcessTypes(DescribeScalingProcessTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingProcessTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingProcessTypesResult executeDescribeScalingProcessTypes(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingProcessTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1856,7 +2032,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
+    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScheduledActions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScheduledActionsResult executeDescribeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScheduledActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1918,7 +2100,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1967,7 +2155,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) {
+    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTerminationPolicyTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTerminationPolicyTypesResult executeDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTerminationPolicyTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2035,7 +2229,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DetachInstancesResult detachInstances(DetachInstancesRequest detachInstancesRequest) {
+    public DetachInstancesResult detachInstances(DetachInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachInstances(request);
+    }
+
+    @SdkInternalApi
+    final DetachInstancesResult executeDetachInstances(DetachInstancesRequest detachInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2080,7 +2280,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest) {
+    public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachLoadBalancerTargetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DetachLoadBalancerTargetGroupsResult executeDetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest detachLoadBalancerTargetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachLoadBalancerTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2135,7 +2341,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest) {
+    public DetachLoadBalancersResult detachLoadBalancers(DetachLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final DetachLoadBalancersResult executeDetachLoadBalancers(DetachLoadBalancersRequest detachLoadBalancersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2186,7 +2398,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
+    public DisableMetricsCollectionResult disableMetricsCollection(DisableMetricsCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableMetricsCollection(request);
+    }
+
+    @SdkInternalApi
+    final DisableMetricsCollectionResult executeDisableMetricsCollection(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2234,7 +2452,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
+    public EnableMetricsCollectionResult enableMetricsCollection(EnableMetricsCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableMetricsCollection(request);
+    }
+
+    @SdkInternalApi
+    final EnableMetricsCollectionResult executeEnableMetricsCollection(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableMetricsCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2285,7 +2509,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public EnterStandbyResult enterStandby(EnterStandbyRequest enterStandbyRequest) {
+    public EnterStandbyResult enterStandby(EnterStandbyRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnterStandby(request);
+    }
+
+    @SdkInternalApi
+    final EnterStandbyResult executeEnterStandby(EnterStandbyRequest enterStandbyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enterStandbyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2332,7 +2562,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ExecutePolicyResult executePolicy(ExecutePolicyRequest executePolicyRequest) {
+    public ExecutePolicyResult executePolicy(ExecutePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecutePolicy(request);
+    }
+
+    @SdkInternalApi
+    final ExecutePolicyResult executeExecutePolicy(ExecutePolicyRequest executePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(executePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2382,7 +2618,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ExitStandbyResult exitStandby(ExitStandbyRequest exitStandbyRequest) {
+    public ExitStandbyResult exitStandby(ExitStandbyRequest request) {
+        request = beforeClientExecution(request);
+        return executeExitStandby(request);
+    }
+
+    @SdkInternalApi
+    final ExitStandbyResult executeExitStandby(ExitStandbyRequest exitStandbyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(exitStandbyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2477,7 +2719,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest putLifecycleHookRequest) {
+    public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLifecycleHook(request);
+    }
+
+    @SdkInternalApi
+    final PutLifecycleHookResult executePutLifecycleHook(PutLifecycleHookRequest putLifecycleHookRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putLifecycleHookRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2535,7 +2783,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
+    public PutNotificationConfigurationResult putNotificationConfiguration(PutNotificationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutNotificationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutNotificationConfigurationResult executePutNotificationConfiguration(PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putNotificationConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2592,7 +2846,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutScalingPolicyResult executePutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2649,7 +2909,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
+    public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScheduledUpdateGroupAction(request);
+    }
+
+    @SdkInternalApi
+    final PutScheduledUpdateGroupActionResult executePutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScheduledUpdateGroupActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2733,7 +2999,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest) {
+    public RecordLifecycleActionHeartbeatResult recordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request) {
+        request = beforeClientExecution(request);
+        return executeRecordLifecycleActionHeartbeat(request);
+    }
+
+    @SdkInternalApi
+    final RecordLifecycleActionHeartbeatResult executeRecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest recordLifecycleActionHeartbeatRequest) {
 
         ExecutionContext executionContext = createExecutionContext(recordLifecycleActionHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2787,7 +3059,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ResumeProcessesResult resumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
+    public ResumeProcessesResult resumeProcesses(ResumeProcessesRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeProcesses(request);
+    }
+
+    @SdkInternalApi
+    final ResumeProcessesResult executeResumeProcesses(ResumeProcessesRequest resumeProcessesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resumeProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2840,7 +3118,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) {
+    public SetDesiredCapacityResult setDesiredCapacity(SetDesiredCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetDesiredCapacity(request);
+    }
+
+    @SdkInternalApi
+    final SetDesiredCapacityResult executeSetDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setDesiredCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2891,7 +3175,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) {
+    public SetInstanceHealthResult setInstanceHealth(SetInstanceHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetInstanceHealth(request);
+    }
+
+    @SdkInternalApi
+    final SetInstanceHealthResult executeSetInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setInstanceHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2945,7 +3235,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest) {
+    public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetInstanceProtection(request);
+    }
+
+    @SdkInternalApi
+    final SetInstanceProtectionResult executeSetInstanceProtection(SetInstanceProtectionRequest setInstanceProtectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setInstanceProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3005,7 +3301,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SuspendProcessesResult suspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
+    public SuspendProcessesResult suspendProcesses(SuspendProcessesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSuspendProcesses(request);
+    }
+
+    @SdkInternalApi
+    final SuspendProcessesResult executeSuspendProcesses(SuspendProcessesRequest suspendProcessesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(suspendProcessesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3056,7 +3358,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(
+    public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateInstanceInAutoScalingGroup(request);
+    }
+
+    @SdkInternalApi
+    final TerminateInstanceInAutoScalingGroupResult executeTerminateInstanceInAutoScalingGroup(
             TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateInstanceInAutoScalingGroupRequest);
@@ -3140,7 +3448,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
+    public UpdateAutoScalingGroupResult updateAutoScalingGroup(UpdateAutoScalingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAutoScalingGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAutoScalingGroupResult executeUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAutoScalingGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3233,6 +3547,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

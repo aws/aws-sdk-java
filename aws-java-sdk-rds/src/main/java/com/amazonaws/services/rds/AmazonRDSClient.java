@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -423,7 +424,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest addRoleToDBClusterRequest) {
+    public AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddRoleToDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final AddRoleToDBClusterResult executeAddRoleToDBCluster(AddRoleToDBClusterRequest addRoleToDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addRoleToDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -469,7 +476,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
+    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddSourceIdentifierToSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addSourceIdentifierToSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -522,7 +535,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -566,7 +585,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResourcePendingMaintenanceActions applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest applyPendingMaintenanceActionRequest) {
+    public ResourcePendingMaintenanceActions applyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplyPendingMaintenanceAction(request);
+    }
+
+    @SdkInternalApi
+    final ResourcePendingMaintenanceActions executeApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest applyPendingMaintenanceActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(applyPendingMaintenanceActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -630,7 +655,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) {
+    public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeAuthorizeDBSecurityGroupIngress(request);
+    }
+
+    @SdkInternalApi
+    final DBSecurityGroup executeAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(authorizeDBSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -677,7 +708,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBClusterParameterGroup copyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest) {
+    public DBClusterParameterGroup copyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyDBClusterParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterParameterGroup executeCopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copyDBClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -819,7 +856,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBClusterSnapshot copyDBClusterSnapshot(CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest) {
+    public DBClusterSnapshot copyDBClusterSnapshot(CopyDBClusterSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyDBClusterSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterSnapshot executeCopyDBClusterSnapshot(CopyDBClusterSnapshotRequest copyDBClusterSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copyDBClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -866,7 +909,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBParameterGroup copyDBParameterGroup(CopyDBParameterGroupRequest copyDBParameterGroupRequest) {
+    public DBParameterGroup copyDBParameterGroup(CopyDBParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyDBParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBParameterGroup executeCopyDBParameterGroup(CopyDBParameterGroupRequest copyDBParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copyDBParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -999,7 +1048,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) {
+    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyDBSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshot executeCopyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copyDBSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1046,7 +1101,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public OptionGroup copyOptionGroup(CopyOptionGroupRequest copyOptionGroupRequest) {
+    public OptionGroup copyOptionGroup(CopyOptionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyOptionGroup(request);
+    }
+
+    @SdkInternalApi
+    final OptionGroup executeCopyOptionGroup(CopyOptionGroupRequest copyOptionGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copyOptionGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1131,7 +1192,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBCluster createDBCluster(CreateDBClusterRequest createDBClusterRequest) {
+    public DBCluster createDBCluster(CreateDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeCreateDBCluster(CreateDBClusterRequest createDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1204,7 +1271,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBClusterParameterGroup createDBClusterParameterGroup(CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest) {
+    public DBClusterParameterGroup createDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBClusterParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterParameterGroup executeCreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest createDBClusterParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1258,7 +1331,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DBClusterSnapshot createDBClusterSnapshot(CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest) {
+    public DBClusterSnapshot createDBClusterSnapshot(CreateDBClusterSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBClusterSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterSnapshot executeCreateDBClusterSnapshot(CreateDBClusterSnapshotRequest createDBClusterSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1338,7 +1417,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) {
+    public DBInstance createDBInstance(CreateDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeCreateDBInstance(CreateDBInstanceRequest createDBInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1507,7 +1592,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBInstance createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) {
+    public DBInstance createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBInstanceReadReplica(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBInstanceReadReplicaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1571,7 +1662,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
+    public DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBParameterGroup executeCreateDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1618,7 +1715,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) {
+    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBSecurityGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBSecurityGroup executeCreateDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1667,7 +1770,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) {
+    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshot executeCreateDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1720,7 +1829,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) {
+    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBSubnetGroup executeCreateDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDBSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1790,7 +1905,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
+    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1835,7 +1956,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) {
+    public OptionGroup createOptionGroup(CreateOptionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOptionGroup(request);
+    }
+
+    @SdkInternalApi
+    final OptionGroup executeCreateOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createOptionGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1894,7 +2021,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest) {
+    public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeDeleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1945,7 +2078,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteDBClusterParameterGroupResult deleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest) {
+    public DeleteDBClusterParameterGroupResult deleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBClusterParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBClusterParameterGroupResult executeDeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest deleteDBClusterParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2001,7 +2140,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DBClusterSnapshot deleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest) {
+    public DBClusterSnapshot deleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBClusterSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterSnapshot executeDeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest deleteDBClusterSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBClusterSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2085,7 +2230,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) {
+    public DBInstance deleteDBInstance(DeleteDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeDeleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2131,7 +2282,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DeleteDBParameterGroupResult deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) {
+    public DeleteDBParameterGroupResult deleteDBParameterGroup(DeleteDBParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBParameterGroupResult executeDeleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2182,7 +2339,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DeleteDBSecurityGroupResult deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) {
+    public DeleteDBSecurityGroupResult deleteDBSecurityGroup(DeleteDBSecurityGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBSecurityGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBSecurityGroupResult executeDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2233,7 +2396,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
+    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshot executeDeleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2285,7 +2454,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DeleteDBSubnetGroupResult deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) {
+    public DeleteDBSubnetGroupResult deleteDBSubnetGroup(DeleteDBSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBSubnetGroupResult executeDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDBSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2331,7 +2506,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
+    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2376,7 +2557,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) {
+    public DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOptionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOptionGroupResult executeDeleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteOptionGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2423,7 +2610,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2472,7 +2665,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificatesResult executeDescribeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2528,7 +2727,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups(
+    public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterParameterGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterParameterGroupsResult executeDescribeDBClusterParameterGroups(
             DescribeDBClusterParameterGroupsRequest describeDBClusterParameterGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBClusterParameterGroupsRequest);
@@ -2583,7 +2788,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDBClusterParametersResult describeDBClusterParameters(DescribeDBClusterParametersRequest describeDBClusterParametersRequest) {
+    public DescribeDBClusterParametersResult describeDBClusterParameters(DescribeDBClusterParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterParametersResult executeDescribeDBClusterParameters(DescribeDBClusterParametersRequest describeDBClusterParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBClusterParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2637,7 +2848,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBClusterSnapshotAttributesResult describeDBClusterSnapshotAttributes(
+    public DBClusterSnapshotAttributesResult describeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterSnapshotAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterSnapshotAttributesResult executeDescribeDBClusterSnapshotAttributes(
             DescribeDBClusterSnapshotAttributesRequest describeDBClusterSnapshotAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBClusterSnapshotAttributesRequest);
@@ -2688,7 +2905,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest) {
+    public DescribeDBClusterSnapshotsResult describeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterSnapshotsResult executeDescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest describeDBClusterSnapshotsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBClusterSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2742,7 +2965,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBClustersResult describeDBClusters(DescribeDBClustersRequest describeDBClustersRequest) {
+    public DescribeDBClustersResult describeDBClusters(DescribeDBClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClustersResult executeDescribeDBClusters(DescribeDBClustersRequest describeDBClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2789,7 +3018,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
+    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBEngineVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBEngineVersionsResult executeDescribeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBEngineVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2838,7 +3073,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) {
+    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBInstancesResult executeDescribeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2887,7 +3128,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBLogFilesResult describeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest) {
+    public DescribeDBLogFilesResult describeDBLogFiles(DescribeDBLogFilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBLogFiles(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBLogFilesResult executeDescribeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBLogFilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2932,7 +3179,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
+    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBParameterGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBParameterGroupsResult executeDescribeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBParameterGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2981,7 +3234,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) {
+    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBParametersResult executeDescribeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3026,7 +3285,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) {
+    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBSecurityGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBSecurityGroupsResult executeDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3085,7 +3350,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBSnapshotAttributesResult describeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest describeDBSnapshotAttributesRequest) {
+    public DBSnapshotAttributesResult describeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBSnapshotAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshotAttributesResult executeDescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest describeDBSnapshotAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBSnapshotAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3134,7 +3405,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) {
+    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBSnapshotsResult executeDescribeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3188,7 +3465,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeDBSubnetGroupsResult describeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) {
+    public DescribeDBSubnetGroupsResult describeDBSubnetGroups(DescribeDBSubnetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBSubnetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBSubnetGroupsResult executeDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDBSubnetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3240,7 +3523,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EngineDefaults describeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) {
+    public EngineDefaults describeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEngineDefaultClusterParameters(request);
+    }
+
+    @SdkInternalApi
+    final EngineDefaults executeDescribeEngineDefaultClusterParameters(
+            DescribeEngineDefaultClusterParametersRequest describeEngineDefaultClusterParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEngineDefaultClusterParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3282,7 +3572,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEngineDefaultParameters(request);
+    }
+
+    @SdkInternalApi
+    final EngineDefaults executeDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3326,7 +3622,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
+    public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventCategories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventCategoriesResult executeDescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventCategoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3379,7 +3681,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
+    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventSubscriptionsResult executeDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3428,7 +3736,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3475,7 +3789,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
+    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOptionGroupOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOptionGroupOptionsResult executeDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOptionGroupOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3519,7 +3839,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) {
+    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOptionGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOptionGroupsResult executeDescribeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOptionGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3566,7 +3892,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(
+    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrderableDBInstanceOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrderableDBInstanceOptionsResult executeDescribeOrderableDBInstanceOptions(
             DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeOrderableDBInstanceOptionsRequest);
@@ -3612,7 +3944,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(
+    public DescribePendingMaintenanceActionsResult describePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePendingMaintenanceActions(request);
+    }
+
+    @SdkInternalApi
+    final DescribePendingMaintenanceActionsResult executeDescribePendingMaintenanceActions(
             DescribePendingMaintenanceActionsRequest describePendingMaintenanceActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePendingMaintenanceActionsRequest);
@@ -3662,7 +4000,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReservedDBInstancesResult describeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) {
+    public DescribeReservedDBInstancesResult describeReservedDBInstances(DescribeReservedDBInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedDBInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedDBInstancesResult executeDescribeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReservedDBInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3711,7 +4055,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(
+    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedDBInstancesOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedDBInstancesOfferingsResult executeDescribeReservedDBInstancesOfferings(
             DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReservedDBInstancesOfferingsRequest);
@@ -3761,7 +4111,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DescribeSourceRegionsResult describeSourceRegions(DescribeSourceRegionsRequest describeSourceRegionsRequest) {
+    public DescribeSourceRegionsResult describeSourceRegions(DescribeSourceRegionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSourceRegions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSourceRegionsResult executeDescribeSourceRegions(DescribeSourceRegionsRequest describeSourceRegionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSourceRegionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3807,7 +4163,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) {
+    public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDownloadDBLogFilePortion(request);
+    }
+
+    @SdkInternalApi
+    final DownloadDBLogFilePortionResult executeDownloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(downloadDBLogFilePortionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3870,7 +4232,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBCluster failoverDBCluster(FailoverDBClusterRequest failoverDBClusterRequest) {
+    public DBCluster failoverDBCluster(FailoverDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeFailoverDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeFailoverDBCluster(FailoverDBClusterRequest failoverDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(failoverDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3927,7 +4295,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3994,7 +4368,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBCluster modifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest) {
+    public DBCluster modifyDBCluster(ModifyDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeModifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4063,7 +4443,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyDBClusterParameterGroupResult modifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest) {
+    public ModifyDBClusterParameterGroupResult modifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBClusterParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBClusterParameterGroupResult executeModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest modifyDBClusterParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4126,7 +4512,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBClusterSnapshotAttributesResult modifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest) {
+    public DBClusterSnapshotAttributesResult modifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBClusterSnapshotAttribute(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterSnapshotAttributesResult executeModifyDBClusterSnapshotAttribute(
+            ModifyDBClusterSnapshotAttributeRequest modifyDBClusterSnapshotAttributeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBClusterSnapshotAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4203,7 +4596,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) {
+    public DBInstance modifyDBInstance(ModifyDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeModifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4266,7 +4665,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) {
+    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBParameterGroupResult executeModifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4314,7 +4719,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSnapshot modifyDBSnapshot(ModifyDBSnapshotRequest modifyDBSnapshotRequest) {
+    public DBSnapshot modifyDBSnapshot(ModifyDBSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshot executeModifyDBSnapshot(ModifyDBSnapshotRequest modifyDBSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4376,7 +4787,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public DBSnapshotAttributesResult modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) {
+    public DBSnapshotAttributesResult modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBSnapshotAttribute(request);
+    }
+
+    @SdkInternalApi
+    final DBSnapshotAttributesResult executeModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest modifyDBSnapshotAttributeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBSnapshotAttributeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4430,7 +4847,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBSubnetGroup modifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) {
+    public DBSubnetGroup modifyDBSubnetGroup(ModifyDBSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DBSubnetGroup executeModifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDBSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4490,7 +4913,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
+    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyEventSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4535,7 +4964,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) {
+    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyOptionGroup(request);
+    }
+
+    @SdkInternalApi
+    final OptionGroup executeModifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyOptionGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4587,7 +5022,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBInstance promoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) {
+    public DBInstance promoteReadReplica(PromoteReadReplicaRequest request) {
+        request = beforeClientExecution(request);
+        return executePromoteReadReplica(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executePromoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(promoteReadReplicaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4632,7 +5073,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBCluster promoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest promoteReadReplicaDBClusterRequest) {
+    public DBCluster promoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executePromoteReadReplicaDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executePromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest promoteReadReplicaDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(promoteReadReplicaDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4679,7 +5126,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ReservedDBInstance purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
+    public ReservedDBInstance purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseReservedDBInstancesOffering(request);
+    }
+
+    @SdkInternalApi
+    final ReservedDBInstance executePurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(purchaseReservedDBInstancesOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4739,7 +5192,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) {
+    public DBInstance rebootDBInstance(RebootDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeRebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootDBInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4788,7 +5247,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      API Documentation</a>
      */
     @Override
-    public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest) {
+    public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveRoleFromDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final RemoveRoleFromDBClusterResult executeRemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeRoleFromDBClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4834,7 +5299,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
+    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveSourceIdentifierFromSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeRemoveSourceIdentifierFromSubscription(
+            RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeSourceIdentifierFromSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4887,7 +5359,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4947,7 +5425,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResetDBClusterParameterGroupResult resetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
+    public ResetDBClusterParameterGroupResult resetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetDBClusterParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ResetDBClusterParameterGroupResult executeResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest resetDBClusterParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetDBClusterParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4998,7 +5482,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
+    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetDBParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ResetDBParameterGroupResult executeResetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetDBParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5073,7 +5563,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      Documentation</a>
      */
     @Override
-    public DBCluster restoreDBClusterFromS3(RestoreDBClusterFromS3Request restoreDBClusterFromS3Request) {
+    public DBCluster restoreDBClusterFromS3(RestoreDBClusterFromS3Request request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDBClusterFromS3(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeRestoreDBClusterFromS3(RestoreDBClusterFromS3Request restoreDBClusterFromS3Request) {
 
         ExecutionContext executionContext = createExecutionContext(restoreDBClusterFromS3Request);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5157,7 +5653,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBCluster restoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest) {
+    public DBCluster restoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDBClusterFromSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeRestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest restoreDBClusterFromSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreDBClusterFromSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5242,7 +5744,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest) {
+    public DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDBClusterToPointInTime(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeRestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreDBClusterToPointInTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5338,7 +5846,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
+    public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDBInstanceFromDBSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreDBInstanceFromDBSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5429,7 +5943,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
+    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreDBInstanceToPointInTime(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreDBInstanceToPointInTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5480,7 +6000,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {
+    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeDBSecurityGroupIngress(request);
+    }
+
+    @SdkInternalApi
+    final DBSecurityGroup executeRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(revokeDBSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5572,6 +6098,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -319,7 +320,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleResult executeDeleteRule(DeleteRuleRequest deleteRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -365,7 +372,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DescribeRuleResult describeRule(DescribeRuleRequest describeRuleRequest) {
+    public DescribeRuleResult describeRule(DescribeRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuleResult executeDescribeRule(DescribeRuleRequest describeRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -418,7 +431,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest) {
+    public DisableRuleResult disableRule(DisableRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableRule(request);
+    }
+
+    @SdkInternalApi
+    final DisableRuleResult executeDisableRule(DisableRuleRequest disableRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -470,7 +489,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest) {
+    public EnableRuleResult enableRule(EnableRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableRule(request);
+    }
+
+    @SdkInternalApi
+    final EnableRuleResult executeEnableRule(EnableRuleRequest enableRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -515,7 +540,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
+    public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRuleNamesByTarget(request);
+    }
+
+    @SdkInternalApi
+    final ListRuleNamesByTargetResult executeListRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRuleNamesByTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -561,7 +592,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
+    public ListRulesResult listRules(ListRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRules(request);
+    }
+
+    @SdkInternalApi
+    final ListRulesResult executeListRules(ListRulesRequest listRulesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -607,7 +644,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
+    public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTargetsByRule(request);
+    }
+
+    @SdkInternalApi
+    final ListTargetsByRuleResult executeListTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTargetsByRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -651,7 +694,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutEventsResult putEvents(PutEventsRequest putEventsRequest) {
+    public PutEventsResult putEvents(PutEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEvents(request);
+    }
+
+    @SdkInternalApi
+    final PutEventsResult executePutEvents(PutEventsRequest putEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -717,7 +766,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutRuleResult putRule(PutRuleRequest putRuleRequest) {
+    public PutRuleResult putRule(PutRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRule(request);
+    }
+
+    @SdkInternalApi
+    final PutRuleResult executePutRule(PutRuleRequest putRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -822,7 +877,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutTargetsResult putTargets(PutTargetsRequest putTargetsRequest) {
+    public PutTargetsResult putTargets(PutTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTargets(request);
+    }
+
+    @SdkInternalApi
+    final PutTargetsResult executePutTargets(PutTargetsRequest putTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -875,7 +936,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest) {
+    public RemoveTargetsResult removeTargets(RemoveTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTargets(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTargetsResult executeRemoveTargets(RemoveTargetsRequest removeTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -926,7 +993,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public TestEventPatternResult testEventPattern(TestEventPatternRequest testEventPatternRequest) {
+    public TestEventPatternResult testEventPattern(TestEventPatternRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestEventPattern(request);
+    }
+
+    @SdkInternalApi
+    final TestEventPatternResult executeTestEventPattern(TestEventPatternRequest testEventPatternRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testEventPatternRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

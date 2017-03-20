@@ -45,6 +45,10 @@ public class ActivityResponseMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<Integer> SUCCESSFULENDPOINTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SuccessfulEndpointCount").build();
+    private static final MarshallingInfo<Integer> TIMEZONESCOMPLETEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimezonesCompletedCount").build();
+    private static final MarshallingInfo<Integer> TIMEZONESTOTALCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimezonesTotalCount").build();
     private static final MarshallingInfo<Integer> TOTALENDPOINTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalEndpointCount").build();
     private static final MarshallingInfo<String> TREATMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -75,6 +79,8 @@ public class ActivityResponseMarshaller {
             protocolMarshaller.marshall(activityResponse.getStart(), START_BINDING);
             protocolMarshaller.marshall(activityResponse.getState(), STATE_BINDING);
             protocolMarshaller.marshall(activityResponse.getSuccessfulEndpointCount(), SUCCESSFULENDPOINTCOUNT_BINDING);
+            protocolMarshaller.marshall(activityResponse.getTimezonesCompletedCount(), TIMEZONESCOMPLETEDCOUNT_BINDING);
+            protocolMarshaller.marshall(activityResponse.getTimezonesTotalCount(), TIMEZONESTOTALCOUNT_BINDING);
             protocolMarshaller.marshall(activityResponse.getTotalEndpointCount(), TOTALENDPOINTCOUNT_BINDING);
             protocolMarshaller.marshall(activityResponse.getTreatmentId(), TREATMENTID_BINDING);
         } catch (Exception e) {

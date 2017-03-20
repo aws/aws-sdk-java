@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -516,7 +517,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public AcknowledgeJobResult acknowledgeJob(AcknowledgeJobRequest acknowledgeJobRequest) {
+    public AcknowledgeJobResult acknowledgeJob(AcknowledgeJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcknowledgeJob(request);
+    }
+
+    @SdkInternalApi
+    final AcknowledgeJobResult executeAcknowledgeJob(AcknowledgeJobRequest acknowledgeJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(acknowledgeJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -567,7 +574,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AcknowledgeThirdPartyJobResult acknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest) {
+    public AcknowledgeThirdPartyJobResult acknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcknowledgeThirdPartyJob(request);
+    }
+
+    @SdkInternalApi
+    final AcknowledgeThirdPartyJobResult executeAcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest acknowledgeThirdPartyJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(acknowledgeThirdPartyJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -617,7 +630,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateCustomActionTypeResult createCustomActionType(CreateCustomActionTypeRequest createCustomActionTypeRequest) {
+    public CreateCustomActionTypeResult createCustomActionType(CreateCustomActionTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCustomActionType(request);
+    }
+
+    @SdkInternalApi
+    final CreateCustomActionTypeResult executeCreateCustomActionType(CreateCustomActionTypeRequest createCustomActionTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCustomActionTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -675,7 +694,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+    public CreatePipelineResult createPipeline(CreatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreatePipelineResult executeCreatePipeline(CreatePipelineRequest createPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -727,7 +752,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteCustomActionTypeResult deleteCustomActionType(DeleteCustomActionTypeRequest deleteCustomActionTypeRequest) {
+    public DeleteCustomActionTypeResult deleteCustomActionType(DeleteCustomActionTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCustomActionType(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCustomActionTypeResult executeDeleteCustomActionType(DeleteCustomActionTypeRequest deleteCustomActionTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCustomActionTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -773,7 +804,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePipeline(request);
+    }
+
+    @SdkInternalApi
+    final DeletePipelineResult executeDeletePipeline(DeletePipelineRequest deletePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -822,7 +859,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableStageTransitionResult disableStageTransition(DisableStageTransitionRequest disableStageTransitionRequest) {
+    public DisableStageTransitionResult disableStageTransition(DisableStageTransitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableStageTransition(request);
+    }
+
+    @SdkInternalApi
+    final DisableStageTransitionResult executeDisableStageTransition(DisableStageTransitionRequest disableStageTransitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -872,7 +915,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableStageTransitionResult enableStageTransition(EnableStageTransitionRequest enableStageTransitionRequest) {
+    public EnableStageTransitionResult enableStageTransition(EnableStageTransitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableStageTransition(request);
+    }
+
+    @SdkInternalApi
+    final EnableStageTransitionResult executeEnableStageTransition(EnableStageTransitionRequest enableStageTransitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -927,7 +976,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      Documentation</a>
      */
     @Override
-    public GetJobDetailsResult getJobDetails(GetJobDetailsRequest getJobDetailsRequest) {
+    public GetJobDetailsResult getJobDetails(GetJobDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetJobDetailsResult executeGetJobDetails(GetJobDetailsRequest getJobDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getJobDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -978,7 +1033,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      Documentation</a>
      */
     @Override
-    public GetPipelineResult getPipeline(GetPipelineRequest getPipelineRequest) {
+    public GetPipelineResult getPipeline(GetPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPipeline(request);
+    }
+
+    @SdkInternalApi
+    final GetPipelineResult executeGetPipeline(GetPipelineRequest getPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1029,7 +1090,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetPipelineExecutionResult getPipelineExecution(GetPipelineExecutionRequest getPipelineExecutionRequest) {
+    public GetPipelineExecutionResult getPipelineExecution(GetPipelineExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPipelineExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetPipelineExecutionResult executeGetPipelineExecution(GetPipelineExecutionRequest getPipelineExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPipelineExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1076,7 +1143,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public GetPipelineStateResult getPipelineState(GetPipelineStateRequest getPipelineStateRequest) {
+    public GetPipelineStateResult getPipelineState(GetPipelineStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPipelineState(request);
+    }
+
+    @SdkInternalApi
+    final GetPipelineStateResult executeGetPipelineState(GetPipelineStateRequest getPipelineStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPipelineStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1134,7 +1207,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetThirdPartyJobDetailsResult getThirdPartyJobDetails(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest) {
+    public GetThirdPartyJobDetailsResult getThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetThirdPartyJobDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetThirdPartyJobDetailsResult executeGetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getThirdPartyJobDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1184,7 +1263,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public ListActionTypesResult listActionTypes(ListActionTypesRequest listActionTypesRequest) {
+    public ListActionTypesResult listActionTypes(ListActionTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListActionTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListActionTypesResult executeListActionTypes(ListActionTypesRequest listActionTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listActionTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1230,7 +1315,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      Documentation</a>
      */
     @Override
-    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+    public ListPipelinesResult listPipelines(ListPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPipelines(request);
+    }
+
+    @SdkInternalApi
+    final ListPipelinesResult executeListPipelines(ListPipelinesRequest listPipelinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1284,7 +1375,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      Documentation</a>
      */
     @Override
-    public PollForJobsResult pollForJobs(PollForJobsRequest pollForJobsRequest) {
+    public PollForJobsResult pollForJobs(PollForJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executePollForJobs(request);
+    }
+
+    @SdkInternalApi
+    final PollForJobsResult executePollForJobs(PollForJobsRequest pollForJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(pollForJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1337,7 +1434,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PollForThirdPartyJobsResult pollForThirdPartyJobs(PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest) {
+    public PollForThirdPartyJobsResult pollForThirdPartyJobs(PollForThirdPartyJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executePollForThirdPartyJobs(request);
+    }
+
+    @SdkInternalApi
+    final PollForThirdPartyJobsResult executePollForThirdPartyJobs(PollForThirdPartyJobsRequest pollForThirdPartyJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(pollForThirdPartyJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1389,7 +1492,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public PutActionRevisionResult putActionRevision(PutActionRevisionRequest putActionRevisionRequest) {
+    public PutActionRevisionResult putActionRevision(PutActionRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutActionRevision(request);
+    }
+
+    @SdkInternalApi
+    final PutActionRevisionResult executePutActionRevision(PutActionRevisionRequest putActionRevisionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putActionRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1445,7 +1554,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public PutApprovalResultResult putApprovalResult(PutApprovalResultRequest putApprovalResultRequest) {
+    public PutApprovalResultResult putApprovalResult(PutApprovalResultRequest request) {
+        request = beforeClientExecution(request);
+        return executePutApprovalResult(request);
+    }
+
+    @SdkInternalApi
+    final PutApprovalResultResult executePutApprovalResult(PutApprovalResultRequest putApprovalResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putApprovalResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1494,7 +1609,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutJobFailureResultResult putJobFailureResult(PutJobFailureResultRequest putJobFailureResultRequest) {
+    public PutJobFailureResultResult putJobFailureResult(PutJobFailureResultRequest request) {
+        request = beforeClientExecution(request);
+        return executePutJobFailureResult(request);
+    }
+
+    @SdkInternalApi
+    final PutJobFailureResultResult executePutJobFailureResult(PutJobFailureResultRequest putJobFailureResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1543,7 +1664,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutJobSuccessResultResult putJobSuccessResult(PutJobSuccessResultRequest putJobSuccessResultRequest) {
+    public PutJobSuccessResultResult putJobSuccessResult(PutJobSuccessResultRequest request) {
+        request = beforeClientExecution(request);
+        return executePutJobSuccessResult(request);
+    }
+
+    @SdkInternalApi
+    final PutJobSuccessResultResult executePutJobSuccessResult(PutJobSuccessResultRequest putJobSuccessResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1595,7 +1722,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest) {
+    public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request) {
+        request = beforeClientExecution(request);
+        return executePutThirdPartyJobFailureResult(request);
+    }
+
+    @SdkInternalApi
+    final PutThirdPartyJobFailureResultResult executePutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1649,7 +1782,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest) {
+    public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request) {
+        request = beforeClientExecution(request);
+        return executePutThirdPartyJobSuccessResult(request);
+    }
+
+    @SdkInternalApi
+    final PutThirdPartyJobSuccessResultResult executePutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1707,7 +1846,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetryStageExecutionResult retryStageExecution(RetryStageExecutionRequest retryStageExecutionRequest) {
+    public RetryStageExecutionResult retryStageExecution(RetryStageExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetryStageExecution(request);
+    }
+
+    @SdkInternalApi
+    final RetryStageExecutionResult executeRetryStageExecution(RetryStageExecutionRequest retryStageExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retryStageExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1755,7 +1900,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest) {
+    public StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartPipelineExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartPipelineExecutionResult executeStartPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startPipelineExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1811,7 +1962,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *      API Documentation</a>
      */
     @Override
-    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineResult executeUpdatePipeline(UpdatePipelineRequest updatePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

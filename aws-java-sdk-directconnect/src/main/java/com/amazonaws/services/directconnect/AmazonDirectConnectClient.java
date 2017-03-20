@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -305,7 +306,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(
+    public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocateConnectionOnInterconnect(request);
+    }
+
+    @SdkInternalApi
+    final AllocateConnectionOnInterconnectResult executeAllocateConnectionOnInterconnect(
             AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(allocateConnectionOnInterconnectRequest);
@@ -366,7 +373,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AllocateHostedConnectionResult allocateHostedConnection(AllocateHostedConnectionRequest allocateHostedConnectionRequest) {
+    public AllocateHostedConnectionResult allocateHostedConnection(AllocateHostedConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocateHostedConnection(request);
+    }
+
+    @SdkInternalApi
+    final AllocateHostedConnectionResult executeAllocateHostedConnection(AllocateHostedConnectionRequest allocateHostedConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(allocateHostedConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -422,7 +435,14 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) {
+    public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocatePrivateVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final AllocatePrivateVirtualInterfaceResult executeAllocatePrivateVirtualInterface(
+            AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(allocatePrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -486,7 +506,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) {
+    public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocatePublicVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final AllocatePublicVirtualInterfaceResult executeAllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(allocatePublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -553,7 +579,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateConnectionWithLagResult associateConnectionWithLag(AssociateConnectionWithLagRequest associateConnectionWithLagRequest) {
+    public AssociateConnectionWithLagResult associateConnectionWithLag(AssociateConnectionWithLagRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateConnectionWithLag(request);
+    }
+
+    @SdkInternalApi
+    final AssociateConnectionWithLagResult executeAssociateConnectionWithLag(AssociateConnectionWithLagRequest associateConnectionWithLagRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateConnectionWithLagRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -612,7 +644,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateHostedConnectionResult associateHostedConnection(AssociateHostedConnectionRequest associateHostedConnectionRequest) {
+    public AssociateHostedConnectionResult associateHostedConnection(AssociateHostedConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateHostedConnection(request);
+    }
+
+    @SdkInternalApi
+    final AssociateHostedConnectionResult executeAssociateHostedConnection(AssociateHostedConnectionRequest associateHostedConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateHostedConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -673,7 +711,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateVirtualInterfaceResult associateVirtualInterface(AssociateVirtualInterfaceRequest associateVirtualInterfaceRequest) {
+    public AssociateVirtualInterfaceResult associateVirtualInterface(AssociateVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final AssociateVirtualInterfaceResult executeAssociateVirtualInterface(AssociateVirtualInterfaceRequest associateVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -728,7 +772,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest confirmConnectionRequest) {
+    public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmConnection(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmConnectionResult executeConfirmConnection(ConfirmConnectionRequest confirmConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -781,7 +831,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) {
+    public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmPrivateVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmPrivateVirtualInterfaceResult executeConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmPrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -836,7 +892,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) {
+    public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmPublicVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmPublicVirtualInterfaceResult executeConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(confirmPublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -900,7 +962,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest createBGPPeerRequest) {
+    public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBGPPeer(request);
+    }
+
+    @SdkInternalApi
+    final CreateBGPPeerResult executeCreateBGPPeer(CreateBGPPeerRequest createBGPPeerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBGPPeerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -962,7 +1030,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest) {
+    public CreateConnectionResult createConnection(CreateConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConnection(request);
+    }
+
+    @SdkInternalApi
+    final CreateConnectionResult executeCreateConnection(CreateConnectionRequest createConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1035,7 +1109,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateInterconnectResult createInterconnect(CreateInterconnectRequest createInterconnectRequest) {
+    public CreateInterconnectResult createInterconnect(CreateInterconnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInterconnect(request);
+    }
+
+    @SdkInternalApi
+    final CreateInterconnectResult executeCreateInterconnect(CreateInterconnectRequest createInterconnectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1107,7 +1187,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateLagResult createLag(CreateLagRequest createLagRequest) {
+    public CreateLagResult createLag(CreateLagRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLag(request);
+    }
+
+    @SdkInternalApi
+    final CreateLagResult executeCreateLag(CreateLagRequest createLagRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createLagRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1157,7 +1243,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) {
+    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePrivateVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final CreatePrivateVirtualInterfaceResult executeCreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPrivateVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1214,7 +1306,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) {
+    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePublicVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final CreatePublicVirtualInterfaceResult executeCreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPublicVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1266,7 +1364,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest) {
+    public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBGPPeer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBGPPeerResult executeDeleteBGPPeer(DeleteBGPPeerRequest deleteBGPPeerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBGPPeerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1320,7 +1424,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConnectionResult executeDeleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConnectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1374,7 +1484,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) {
+    public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInterconnect(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInterconnectResult executeDeleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteInterconnectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1424,7 +1540,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DeleteLagResult deleteLag(DeleteLagRequest deleteLagRequest) {
+    public DeleteLagResult deleteLag(DeleteLagRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLag(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLagResult executeDeleteLag(DeleteLagRequest deleteLagRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLagRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1473,7 +1595,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) {
+    public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVirtualInterfaceResult executeDeleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVirtualInterfaceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1532,7 +1660,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest describeConnectionLoaRequest) {
+    public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConnectionLoa(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConnectionLoaResult executeDescribeConnectionLoa(DescribeConnectionLoaRequest describeConnectionLoaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConnectionLoaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1585,7 +1719,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
+    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConnectionsResult executeDescribeConnections(DescribeConnectionsRequest describeConnectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConnectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1647,7 +1787,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
+    public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConnectionsOnInterconnect(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConnectionsOnInterconnectResult executeDescribeConnectionsOnInterconnect(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConnectionsOnInterconnectRequest);
@@ -1705,7 +1851,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeHostedConnectionsResult describeHostedConnections(DescribeHostedConnectionsRequest describeHostedConnectionsRequest) {
+    public DescribeHostedConnectionsResult describeHostedConnections(DescribeHostedConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHostedConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHostedConnectionsResult executeDescribeHostedConnections(DescribeHostedConnectionsRequest describeHostedConnectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeHostedConnectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1765,7 +1917,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest describeInterconnectLoaRequest) {
+    public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInterconnectLoa(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInterconnectLoaResult executeDescribeInterconnectLoa(DescribeInterconnectLoaRequest describeInterconnectLoaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInterconnectLoaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1819,7 +1977,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) {
+    public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInterconnects(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInterconnectsResult executeDescribeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInterconnectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1877,7 +2041,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeLagsResult describeLags(DescribeLagsRequest describeLagsRequest) {
+    public DescribeLagsResult describeLags(DescribeLagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLagsResult executeDescribeLags(DescribeLagsRequest describeLagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1932,7 +2102,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeLoaResult describeLoa(DescribeLoaRequest describeLoaRequest) {
+    public DescribeLoaResult describeLoa(DescribeLoaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoa(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoaResult executeDescribeLoa(DescribeLoaRequest describeLoaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1981,7 +2157,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) {
+    public DescribeLocationsResult describeLocations(DescribeLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLocations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLocationsResult executeDescribeLocations(DescribeLocationsRequest describeLocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2035,7 +2217,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2089,7 +2277,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) {
+    public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVirtualGateways(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVirtualGatewaysResult executeDescribeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVirtualGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2151,7 +2345,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) {
+    public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVirtualInterfaces(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVirtualInterfacesResult executeDescribeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVirtualInterfacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2216,7 +2416,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociateConnectionFromLagResult disassociateConnectionFromLag(DisassociateConnectionFromLagRequest disassociateConnectionFromLagRequest) {
+    public DisassociateConnectionFromLagResult disassociateConnectionFromLag(DisassociateConnectionFromLagRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConnectionFromLag(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConnectionFromLagResult executeDisassociateConnectionFromLag(DisassociateConnectionFromLagRequest disassociateConnectionFromLagRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateConnectionFromLagRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2276,7 +2482,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2325,7 +2537,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2396,7 +2614,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public UpdateLagResult updateLag(UpdateLagRequest updateLagRequest) {
+    public UpdateLagResult updateLag(UpdateLagRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLag(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLagResult executeUpdateLag(UpdateLagRequest updateLagRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateLagRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -32,6 +32,7 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListJobs" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

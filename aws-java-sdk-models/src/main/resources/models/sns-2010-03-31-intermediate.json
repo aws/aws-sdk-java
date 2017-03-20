@@ -100,51 +100,67 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "AddPermission" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "Label", "AWSAccountIds", "ActionNames" ] ]
       },
       "ConfirmSubscription" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "Token", "AuthenticateOnUnsubscribe" ], [ "TopicArn", "Token" ] ]
       },
       "CreateTopic" : {
+        "deprecated" : null,
         "methodForms" : [ [ "Name" ] ]
       },
       "DeleteTopic" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn" ] ]
       },
       "GetSubscriptionAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "SubscriptionArn" ] ]
       },
       "GetTopicAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn" ] ]
       },
       "ListPlatformApplications" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListSubscriptions" : {
+        "deprecated" : null,
         "methodForms" : [ [ ], [ "NextToken" ] ]
       },
       "ListSubscriptionsByTopic" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn" ], [ "TopicArn", "NextToken" ] ]
       },
       "ListTopics" : {
+        "deprecated" : null,
         "methodForms" : [ [ ], [ "NextToken" ] ]
       },
       "Publish" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "Message" ], [ "TopicArn", "Message", "Subject" ] ]
       },
       "RemovePermission" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "Label" ] ]
       },
       "SetSubscriptionAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "SubscriptionArn", "AttributeName", "AttributeValue" ] ]
       },
       "SetTopicAttributes" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "AttributeName", "AttributeValue" ] ]
       },
       "Subscribe" : {
+        "deprecated" : null,
         "methodForms" : [ [ "TopicArn", "Protocol", "Endpoint" ] ]
       },
       "Unsubscribe" : {
+        "deprecated" : null,
         "methodForms" : [ [ "SubscriptionArn" ] ]
       }
     },

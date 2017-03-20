@@ -69,4 +69,7 @@ public class AmazonGlacierWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

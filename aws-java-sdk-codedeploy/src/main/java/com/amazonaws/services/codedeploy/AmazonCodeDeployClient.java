@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -577,7 +578,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
+    public AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToOnPremisesInstances(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToOnPremisesInstancesResult executeAddTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest addTagsToOnPremisesInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -634,7 +641,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest) {
+    public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetApplicationRevisions(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetApplicationRevisionsResult executeBatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest batchGetApplicationRevisionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetApplicationRevisionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -687,7 +700,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) {
+    public BatchGetApplicationsResult batchGetApplications(BatchGetApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetApplications(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetApplicationsResult executeBatchGetApplications(BatchGetApplicationsRequest batchGetApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -747,7 +766,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest) {
+    public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDeploymentGroups(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDeploymentGroupsResult executeBatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -804,7 +829,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest) {
+    public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDeploymentInstances(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDeploymentInstancesResult executeBatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -855,7 +886,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
+    public BatchGetDeploymentsResult batchGetDeployments(BatchGetDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDeployments(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDeploymentsResult executeBatchGetDeployments(BatchGetDeploymentsRequest batchGetDeploymentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -909,7 +946,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
+    public BatchGetOnPremisesInstancesResult batchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetOnPremisesInstances(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetOnPremisesInstancesResult executeBatchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -973,7 +1016,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public ContinueDeploymentResult continueDeployment(ContinueDeploymentRequest continueDeploymentRequest) {
+    public ContinueDeploymentResult continueDeployment(ContinueDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeContinueDeployment(request);
+    }
+
+    @SdkInternalApi
+    final ContinueDeploymentResult executeContinueDeployment(ContinueDeploymentRequest continueDeploymentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(continueDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1024,7 +1073,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1121,7 +1176,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
+    public CreateDeploymentResult createDeployment(CreateDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeployment(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeploymentResult executeCreateDeployment(CreateDeploymentRequest createDeploymentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1175,7 +1236,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
+    public CreateDeploymentConfigResult createDeploymentConfig(CreateDeploymentConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeploymentConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeploymentConfigResult executeCreateDeploymentConfig(CreateDeploymentConfigRequest createDeploymentConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1296,7 +1363,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+    public CreateDeploymentGroupResult createDeploymentGroup(CreateDeploymentGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeploymentGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeploymentGroupResult executeCreateDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1344,7 +1417,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1401,7 +1480,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteDeploymentConfigResult deleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
+    public DeleteDeploymentConfigResult deleteDeploymentConfig(DeleteDeploymentConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeploymentConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeploymentConfigResult executeDeleteDeploymentConfig(DeleteDeploymentConfigRequest deleteDeploymentConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1456,7 +1541,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
+    public DeleteDeploymentGroupResult deleteDeploymentGroup(DeleteDeploymentGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeploymentGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeploymentGroupResult executeDeleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1504,7 +1595,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
+    public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterOnPremisesInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterOnPremisesInstanceResult executeDeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest deregisterOnPremisesInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1555,7 +1652,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public GetApplicationResult getApplication(GetApplicationRequest getApplicationRequest) {
+    public GetApplicationResult getApplication(GetApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplication(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationResult executeGetApplication(GetApplicationRequest getApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1610,7 +1713,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) {
+    public GetApplicationRevisionResult getApplicationRevision(GetApplicationRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationRevision(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationRevisionResult executeGetApplicationRevision(GetApplicationRevisionRequest getApplicationRevisionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getApplicationRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1660,7 +1769,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest) {
+    public GetDeploymentResult getDeployment(GetDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeployment(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentResult executeGetDeployment(GetDeploymentRequest getDeploymentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1709,7 +1824,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) {
+    public GetDeploymentConfigResult getDeploymentConfig(GetDeploymentConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeploymentConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentConfigResult executeGetDeploymentConfig(GetDeploymentConfigRequest getDeploymentConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeploymentConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1764,7 +1885,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) {
+    public GetDeploymentGroupResult getDeploymentGroup(GetDeploymentGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeploymentGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentGroupResult executeGetDeploymentGroup(GetDeploymentGroupRequest getDeploymentGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1819,7 +1946,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
+    public GetDeploymentInstanceResult getDeploymentInstance(GetDeploymentInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeploymentInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetDeploymentInstanceResult executeGetDeploymentInstance(GetDeploymentInstanceRequest getDeploymentInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeploymentInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1869,7 +2002,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
+    public GetOnPremisesInstanceResult getOnPremisesInstance(GetOnPremisesInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOnPremisesInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetOnPremisesInstanceResult executeGetOnPremisesInstance(GetOnPremisesInstanceRequest getOnPremisesInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1933,7 +2072,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+    public ListApplicationRevisionsResult listApplicationRevisions(ListApplicationRevisionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationRevisions(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationRevisionsResult executeListApplicationRevisions(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listApplicationRevisionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1980,7 +2125,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationsResult executeListApplications(ListApplicationsRequest listApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2030,7 +2181,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
+    public ListDeploymentConfigsResult listDeploymentConfigs(ListDeploymentConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeploymentConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListDeploymentConfigsResult executeListDeploymentConfigs(ListDeploymentConfigsRequest listDeploymentConfigsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeploymentConfigsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2087,7 +2244,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
+    public ListDeploymentGroupsResult listDeploymentGroups(ListDeploymentGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeploymentGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListDeploymentGroupsResult executeListDeploymentGroups(ListDeploymentGroupsRequest listDeploymentGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeploymentGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2145,7 +2308,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
+    public ListDeploymentInstancesResult listDeploymentInstances(ListDeploymentInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeploymentInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListDeploymentInstancesResult executeListDeploymentInstances(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeploymentInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2209,7 +2378,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public ListDeploymentsResult listDeployments(ListDeploymentsRequest listDeploymentsRequest) {
+    public ListDeploymentsResult listDeployments(ListDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeployments(request);
+    }
+
+    @SdkInternalApi
+    final ListDeploymentsResult executeListDeployments(ListDeploymentsRequest listDeploymentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2267,7 +2442,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
+    public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOnPremisesInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListOnPremisesInstancesResult executeListOnPremisesInstances(ListOnPremisesInstancesRequest listOnPremisesInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOnPremisesInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2329,7 +2510,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
+    public RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterApplicationRevision(request);
+    }
+
+    @SdkInternalApi
+    final RegisterApplicationRevisionResult executeRegisterApplicationRevision(RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerApplicationRevisionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2399,7 +2586,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterOnPremisesInstanceResult registerOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
+    public RegisterOnPremisesInstanceResult registerOnPremisesInstance(RegisterOnPremisesInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterOnPremisesInstance(request);
+    }
+
+    @SdkInternalApi
+    final RegisterOnPremisesInstanceResult executeRegisterOnPremisesInstance(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerOnPremisesInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2456,7 +2649,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(
+    public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromOnPremisesInstances(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromOnPremisesInstancesResult executeRemoveTagsFromOnPremisesInstances(
             RemoveTagsFromOnPremisesInstancesRequest removeTagsFromOnPremisesInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromOnPremisesInstancesRequest);
@@ -2514,7 +2713,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(
+    public SkipWaitTimeForInstanceTerminationResult skipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSkipWaitTimeForInstanceTermination(request);
+    }
+
+    @SdkInternalApi
+    final SkipWaitTimeForInstanceTerminationResult executeSkipWaitTimeForInstanceTermination(
             SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(skipWaitTimeForInstanceTerminationRequest);
@@ -2568,7 +2773,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public StopDeploymentResult stopDeployment(StopDeploymentRequest stopDeploymentRequest) {
+    public StopDeploymentResult stopDeployment(StopDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StopDeploymentResult executeStopDeployment(StopDeploymentRequest stopDeploymentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2619,7 +2830,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2742,7 +2959,13 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
+    public UpdateDeploymentGroupResult updateDeploymentGroup(UpdateDeploymentGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDeploymentGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDeploymentGroupResult executeUpdateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDeploymentGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2836,6 +3059,14 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

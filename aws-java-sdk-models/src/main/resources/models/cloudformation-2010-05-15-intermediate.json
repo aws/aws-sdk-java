@@ -47,15 +47,19 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeStacks" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "EstimateTemplateCost" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GetTemplateSummary" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListStacks" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

@@ -320,6 +320,67 @@
         "shape" : "DeleteCampaignResponse"
       }
     },
+    "DeleteEventStream" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Deletes the event stream for an app.",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/v1/apps/{application-id}/eventstream",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteEventStreamRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteEventStream",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteEventStreamResponse"
+      }
+    },
     "DeleteGcmChannel" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -690,7 +751,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "Returns information about your campaign versions.",
+      "documentation" : "Returns information about a specific version of a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
         "error" : null,
@@ -928,6 +989,67 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetEndpointResponse"
+      }
+    },
+    "GetEventStream" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Returns the event stream for an app.",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/v1/apps/{application-id}/eventstream",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetEventStreamRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetEventStream",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetEventStreamResponse"
       }
     },
     "GetGcmChannel" : {
@@ -1418,6 +1540,67 @@
         "shape" : "GetSegmentsResponse"
       }
     },
+    "PutEventStream" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Use to create or update the event stream for an app.",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/v1/apps/{application-id}/eventstream",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "PutEventStreamRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "PutEventStream",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "PutEventStreamResponse"
+      }
+    },
     "UpdateApnsChannel" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1666,7 +1849,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "Use to update your endpoints.",
+      "documentation" : "Use to update a batch of endpoints.",
       "errors" : [ {
         "documentation" : "400 response",
         "error" : null,
@@ -1849,7 +2032,7 @@
   "shapes" : {
     "APNSChannelRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Apple Push Notification Service channel definition.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1897,7 +2080,7 @@
     },
     "APNSChannelResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Apple Distribution Push Notification Service channel definition.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1909,7 +2092,7 @@
       "members" : {
         "ApplicationId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The ID of the application to which the channel applies.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1935,7 +2118,7 @@
         },
         "Id" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The unique channel ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2044,7 +2227,7 @@
     },
     "ActivitiesResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Activities for campaign.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2079,7 +2262,7 @@
     },
     "ActivityResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Activity definition",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2206,6 +2389,32 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "TimezonesCompletedCount" : {
+          "deprecated" : false,
+          "documentation" : "The total number of timezones completed.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TimezonesTotalCount" : {
+          "deprecated" : false,
+          "documentation" : "The total number of unique timezones present in the segment.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "TotalEndpointCount" : {
           "deprecated" : false,
           "documentation" : "The total number of endpoints to which the campaign attempts to deliver messages.",
@@ -2244,7 +2453,7 @@
     },
     "ApplicationSettingsResource" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Application settings.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2318,7 +2527,7 @@
     },
     "AttributeDimension" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Custom attibute dimension",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2387,7 +2596,7 @@
     },
     "BadRequestException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -2402,7 +2611,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2425,7 +2647,7 @@
     },
     "CampaignLimits" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Campaign Limits are used to limit the number of messages that can be sent to a user.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2473,7 +2695,7 @@
     },
     "CampaignResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Campaign definition",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2742,7 +2964,7 @@
     },
     "CampaignState" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "State of the Campaign",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2798,7 +3020,7 @@
     },
     "CampaignsResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "List of available campaigns.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3267,6 +3489,76 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeleteEventStreamRequest" : {
+      "deprecated" : false,
+      "documentation" : "DeleteEventStream Request",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "ApplicationId",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteEventStreamResponse" : {
+      "deprecated" : false,
+      "documentation" : "DeleteEventStream Response",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EventStream" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventStream",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EventStream",
+      "required" : [ "EventStream" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeleteGcmChannelRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3464,7 +3756,7 @@
     },
     "EndpointBatchItem" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint update request",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3476,7 +3768,7 @@
       "members" : {
         "Address" : {
           "deprecated" : false,
-          "documentation" : "The address or token of the endpoint.",
+          "documentation" : "The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3554,7 +3846,7 @@
         },
         "Id" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The unique Id for the Endpoint in the batch.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3642,7 +3934,7 @@
     },
     "EndpointBatchRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint batch update request.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3677,7 +3969,7 @@
     },
     "EndpointDemographic" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint demographic data",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3803,7 +4095,7 @@
     },
     "EndpointLocation" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint location data",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3903,7 +4195,7 @@
     },
     "EndpointRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint update request",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3915,7 +4207,7 @@
       "members" : {
         "Address" : {
           "deprecated" : false,
-          "documentation" : "The address or token of the endpoint.",
+          "documentation" : "The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4068,7 +4360,7 @@
     },
     "EndpointResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint response",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4080,7 +4372,7 @@
       "members" : {
         "Address" : {
           "deprecated" : false,
-          "documentation" : "The address or token of the endpoint.",
+          "documentation" : "The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4298,7 +4590,7 @@
     },
     "EndpointUser" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Endpoint user specific custom userAttributes",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4310,7 +4602,7 @@
       "members" : {
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "Custom attributesd specific to the user.",
+          "documentation" : "Custom attributes specific to the user.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4344,9 +4636,109 @@
       "value" : null,
       "wrapper" : false
     },
+    "EventStream" : {
+      "deprecated" : false,
+      "documentation" : "Model for an event publishing subscription export.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "The ID of the application from which events should be published.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DestinationStreamArn" : {
+          "deprecated" : false,
+          "documentation" : "The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events.\n Firehose ARN: arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME\n Kinesis ARN: arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ExternalId" : {
+          "deprecated" : false,
+          "documentation" : "The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish to the stream.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "The date the event stream was last updated in ISO 8601 format.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastUpdatedBy" : {
+          "deprecated" : false,
+          "documentation" : "The IAM user who last modified the event stream.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "The IAM role that authorizes Amazon Pinpoint to publish events to the stream in your account.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ForbiddenException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -4361,7 +4753,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4426,7 +4831,7 @@
     },
     "GCMChannelRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Google Cloud Messaging credentials",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4461,7 +4866,7 @@
     },
     "GCMChannelResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Google Cloud Messaging channel definition",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4473,7 +4878,7 @@
       "members" : {
         "ApplicationId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The ID of the application to which the channel applies.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4512,7 +4917,7 @@
         },
         "Id" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The unique channel ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5309,6 +5714,76 @@
       "pattern" : null,
       "payload" : "EndpointResponse",
       "required" : [ "EndpointResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetEventStreamRequest" : {
+      "deprecated" : false,
+      "documentation" : "GetEventStream Request",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "ApplicationId",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetEventStreamResponse" : {
+      "deprecated" : false,
+      "documentation" : "GetEventStream Response",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EventStream" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventStream",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EventStream",
+      "required" : [ "EventStream" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -6501,7 +6976,7 @@
     },
     "ImportJobsResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Import job list.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6549,7 +7024,7 @@
     },
     "InternalServerErrorException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -6564,7 +7039,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7146,7 +7634,7 @@
     },
     "MessageBody" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7158,7 +7646,7 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7171,7 +7659,7 @@
         },
         "RequestID" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7194,7 +7682,7 @@
     },
     "MessageConfiguration" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Message configuration for a campaign.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7255,7 +7743,7 @@
     },
     "MethodNotAllowedException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -7270,7 +7758,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7293,7 +7794,7 @@
     },
     "NotFoundException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -7308,7 +7809,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7329,9 +7843,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "PutEventStreamRequest" : {
+      "deprecated" : false,
+      "documentation" : "PutEventStream Request",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "ApplicationId",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "WriteEventStream" : {
+          "deprecated" : false,
+          "documentation" : "EventStream to write.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "WriteEventStream",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "WriteEventStream",
+      "required" : [ "ApplicationId", "WriteEventStream" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PutEventStreamResponse" : {
+      "deprecated" : false,
+      "documentation" : "PutEventStream Response",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EventStream" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EventStream",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EventStream",
+      "required" : [ "EventStream" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "QuietTime" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Quiet Time",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7379,7 +7976,7 @@
     },
     "RecencyDimension" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Define how a segment based on recency of use.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7448,7 +8045,7 @@
     },
     "Schedule" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Shcedule that defines when a campaign is run.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7548,7 +8145,7 @@
     },
     "SegmentBehaviors" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment behavior dimensions",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7583,7 +8180,7 @@
     },
     "SegmentDemographics" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment demographic dimensions",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7670,7 +8267,7 @@
     },
     "SegmentDimensions" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment dimensions",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7721,7 +8318,7 @@
         },
         "Location" : {
           "deprecated" : false,
-          "documentation" : "The segment location attributes.\n",
+          "documentation" : "The segment location attributes.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7729,6 +8326,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "SegmentLocation",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserAttributes" : {
+          "deprecated" : false,
+          "documentation" : "Custom segment user attributes.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfAttributeDimension",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -7744,7 +8354,7 @@
     },
     "SegmentImportResource" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment import definition.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7831,7 +8441,7 @@
     },
     "SegmentLocation" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment location dimensions",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7866,7 +8476,7 @@
     },
     "SegmentResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment definition.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8026,7 +8636,7 @@
     },
     "SegmentsResponse" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segments in your account.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8074,7 +8684,7 @@
     },
     "SetDimension" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Dimension specification of a segment.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8122,7 +8732,7 @@
     },
     "TooManyRequestsException" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Simple message object.",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -8137,7 +8747,20 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "The error message returned from the API.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestID" : {
+          "deprecated" : false,
+          "documentation" : "The unique message body ID.",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8160,7 +8783,7 @@
     },
     "TreatmentResource" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Treatment resource",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8893,7 +9516,7 @@
     },
     "WriteApplicationSettingsRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Creating application setting request",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8941,7 +9564,7 @@
     },
     "WriteCampaignRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Used to create a campaign.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9117,9 +9740,70 @@
       "value" : null,
       "wrapper" : false
     },
+    "WriteEventStream" : {
+      "deprecated" : false,
+      "documentation" : "Request to save an EventStream.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DestinationStreamArn" : {
+          "deprecated" : false,
+          "documentation" : "The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events.\n Firehose ARN: arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME\n Kinesis ARN: arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ExternalId" : {
+          "deprecated" : false,
+          "documentation" : "The external ID assigned the IAM role that authorizes Amazon Pinpoint to publish to the stream.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "The IAM role that authorizes Amazon Pinpoint to publish events to the stream in your account.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "WriteSegmentRequest" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Segment definition.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9167,7 +9851,7 @@
     },
     "WriteTreatmentResource" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "Used to create a campaign treatment.",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9333,6 +10017,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "__timestamp" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
       "value" : null,
       "wrapper" : false
     }

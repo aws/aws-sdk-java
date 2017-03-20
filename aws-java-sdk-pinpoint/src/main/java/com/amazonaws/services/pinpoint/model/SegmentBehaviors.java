@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segment behavior dimensions
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentBehaviors implements Serializable, Cloneable, StructuredPojo {
 

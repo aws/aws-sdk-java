@@ -32,33 +32,43 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeComplianceByConfigRule" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeComplianceByResource" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeConfigRuleEvaluationStatus" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeConfigRules" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeConfigurationRecorderStatus" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeConfigurationRecorders" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeDeliveryChannelStatus" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeDeliveryChannels" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GetComplianceSummaryByConfigRule" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GetComplianceSummaryByResourceType" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

@@ -35,6 +35,8 @@ public enum PinpointActions implements Action {
     DeleteApnsChannel("pinpoint:DeleteApnsChannel"),
     /** Action for the DeleteCampaign operation. */
     DeleteCampaign("pinpoint:DeleteCampaign"),
+    /** Action for the DeleteEventStream operation. */
+    DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */
     DeleteGcmChannel("pinpoint:DeleteGcmChannel"),
     /** Action for the DeleteSegment operation. */
@@ -55,6 +57,8 @@ public enum PinpointActions implements Action {
     GetCampaigns("pinpoint:GetCampaigns"),
     /** Action for the GetEndpoint operation. */
     GetEndpoint("pinpoint:GetEndpoint"),
+    /** Action for the GetEventStream operation. */
+    GetEventStream("pinpoint:GetEventStream"),
     /** Action for the GetGcmChannel operation. */
     GetGcmChannel("pinpoint:GetGcmChannel"),
     /** Action for the GetImportJob operation. */
@@ -71,6 +75,8 @@ public enum PinpointActions implements Action {
     GetSegmentVersions("pinpoint:GetSegmentVersions"),
     /** Action for the GetSegments operation. */
     GetSegments("pinpoint:GetSegments"),
+    /** Action for the PutEventStream operation. */
+    PutEventStream("pinpoint:PutEventStream"),
     /** Action for the UpdateApnsChannel operation. */
     UpdateApnsChannel("pinpoint:UpdateApnsChannel"),
     /** Action for the UpdateApplicationSettings operation. */

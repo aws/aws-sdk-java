@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -303,7 +304,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortEnvironmentUpdate(request);
+    }
+
+    @SdkInternalApi
+    final AbortEnvironmentUpdateResult executeAbortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(abortEnvironmentUpdateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -357,7 +364,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplyEnvironmentManagedAction(request);
+    }
+
+    @SdkInternalApi
+    final ApplyEnvironmentManagedActionResult executeApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(applyEnvironmentManagedActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -400,7 +413,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
+    public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckDNSAvailability(request);
+    }
+
+    @SdkInternalApi
+    final CheckDNSAvailabilityResult executeCheckDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(checkDNSAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,7 +471,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
+    public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeComposeEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final ComposeEnvironmentsResult executeComposeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(composeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -498,7 +523,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -588,7 +619,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
+    public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationVersionResult executeCreateApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -658,7 +695,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
+    public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfigurationTemplateResult executeCreateConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -704,7 +747,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
+    public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final CreateEnvironmentResult executeCreateEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -753,7 +802,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreatePlatformVersionResult createPlatformVersion(CreatePlatformVersionRequest createPlatformVersionRequest) {
+    public CreatePlatformVersionResult createPlatformVersion(CreatePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlatformVersionResult executeCreatePlatformVersion(CreatePlatformVersionRequest createPlatformVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPlatformVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -804,7 +859,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
+    public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStorageLocation(request);
+    }
+
+    @SdkInternalApi
+    final CreateStorageLocationResult executeCreateStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStorageLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -861,7 +922,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -936,7 +1003,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
+    public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationVersionResult executeDeleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -988,7 +1061,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
+    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationTemplateResult executeDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1037,7 +1116,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
+    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEnvironmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEnvironmentConfigurationResult executeDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEnvironmentConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1088,7 +1173,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest) {
+    public DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeletePlatformVersionResult executeDeletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePlatformVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1131,7 +1222,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
+    public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicationVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationVersionsResult executeDescribeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1179,7 +1276,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
+    public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationsResult executeDescribeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1231,7 +1334,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
+    public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationOptionsResult executeDescribeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1293,7 +1402,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
+    public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationSettingsResult executeDescribeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1342,7 +1457,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
+    public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentHealth(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentHealthResult executeDescribeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1388,7 +1509,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentManagedActionHistory(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentManagedActionHistoryResult executeDescribeEnvironmentManagedActionHistory(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionHistoryRequest);
@@ -1436,7 +1563,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentManagedActions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentManagedActionsResult executeDescribeEnvironmentManagedActions(
             DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionsRequest);
@@ -1482,7 +1615,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
+    public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentResources(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentResourcesResult executeDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1525,7 +1664,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
+    public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentsResult executeDescribeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1578,7 +1723,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1633,7 +1784,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
+    public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancesHealth(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancesHealthResult executeDescribeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancesHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1679,7 +1836,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest describePlatformVersionRequest) {
+    public DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribePlatformVersionResult executeDescribePlatformVersion(DescribePlatformVersionRequest describePlatformVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePlatformVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1722,7 +1885,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
+    public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAvailableSolutionStacks(request);
+    }
+
+    @SdkInternalApi
+    final ListAvailableSolutionStacksResult executeListAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAvailableSolutionStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1773,7 +1942,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest listPlatformVersionsRequest) {
+    public ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPlatformVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListPlatformVersionsResult executeListPlatformVersions(ListPlatformVersionsRequest listPlatformVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPlatformVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1818,7 +1993,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
+    public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebuildEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final RebuildEnvironmentResult executeRebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebuildEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1882,7 +2063,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
+    public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestEnvironmentInfo(request);
+    }
+
+    @SdkInternalApi
+    final RequestEnvironmentInfoResult executeRequestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(requestEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1924,7 +2111,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RestartAppServerResult restartAppServer(RestartAppServerRequest restartAppServerRequest) {
+    public RestartAppServerResult restartAppServer(RestartAppServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestartAppServer(request);
+    }
+
+    @SdkInternalApi
+    final RestartAppServerResult executeRestartAppServer(RestartAppServerRequest restartAppServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restartAppServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1977,7 +2170,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
+    public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveEnvironmentInfo(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveEnvironmentInfoResult executeRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2020,7 +2219,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSwapEnvironmentCNAMEs(request);
+    }
+
+    @SdkInternalApi
+    final SwapEnvironmentCNAMEsResult executeSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2070,7 +2275,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
+    public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final TerminateEnvironmentResult executeTerminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2119,7 +2330,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2164,7 +2381,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
+    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationResourceLifecycle(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResourceLifecycleResult executeUpdateApplicationResourceLifecycle(
             UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationResourceLifecycleRequest);
@@ -2214,7 +2437,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
+    public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationVersionResult executeUpdateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2277,7 +2506,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
+    public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationTemplateResult executeUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2334,7 +2569,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
+    public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEnvironmentResult executeUpdateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2386,7 +2627,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
+    public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidateConfigurationSettings(request);
+    }
+
+    @SdkInternalApi
+    final ValidateConfigurationSettingsResult executeValidateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(validateConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

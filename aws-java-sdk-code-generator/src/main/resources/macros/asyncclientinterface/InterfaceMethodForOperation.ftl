@@ -22,7 +22,7 @@ ${operationModel.asyncFutureType} ${operationModel.methodName}Async(
      *
      * @see #${operationModel.methodName}Async(${operationModel.input.variableType})
      */
-    <#if operationModel.deprecated>
+    <#if operationModel.deprecated || form.deprecated>
       @Deprecated
     </#if>
     ${operationModel.asyncFutureType} ${operationModel.methodName}Async(${form.argumentsDeclaration});
@@ -33,6 +33,9 @@ ${operationModel.asyncFutureType} ${operationModel.methodName}Async(
      *
      * @see #${operationModel.methodName}Async(${operationModel.input.variableType}, com.amazonaws.handlers.AsyncHandler)
      */
+    <#if operationModel.deprecated || form.deprecated>
+    @Deprecated
+    </#if>
     ${operationModel.asyncFutureType} ${operationModel.methodName}Async(
         <#if form.arguments?has_content>
           ${form.argumentsDeclaration},

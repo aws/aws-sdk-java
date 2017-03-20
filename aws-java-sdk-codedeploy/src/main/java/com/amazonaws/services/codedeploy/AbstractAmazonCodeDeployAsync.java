@@ -82,6 +82,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetApplicationsAsync(BatchGetApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult> asyncHandler) {
 
@@ -143,6 +144,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetDeploymentsAsync(BatchGetDeploymentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler) {
 
@@ -178,6 +180,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult> asyncHandler) {
 
@@ -434,6 +437,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listApplicationsAsync(ListApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
@@ -469,6 +473,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listDeploymentConfigsAsync(ListDeploymentConfigsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult> asyncHandler) {
 
@@ -530,6 +535,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listDeploymentsAsync(ListDeploymentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
 
@@ -565,6 +571,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler) {
 
@@ -669,6 +676,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #updateApplicationAsync(UpdateApplicationRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 

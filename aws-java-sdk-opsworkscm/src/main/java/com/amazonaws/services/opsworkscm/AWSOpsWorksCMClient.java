@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -373,7 +374,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public AssociateNodeResult associateNode(AssociateNodeRequest associateNodeRequest) {
+    public AssociateNodeResult associateNode(AssociateNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateNode(request);
+    }
+
+    @SdkInternalApi
+    final AssociateNodeResult executeAssociateNode(AssociateNodeRequest associateNodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateNodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -437,7 +444,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public CreateBackupResult createBackup(CreateBackupRequest createBackupRequest) {
+    public CreateBackupResult createBackup(CreateBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBackup(request);
+    }
+
+    @SdkInternalApi
+    final CreateBackupResult executeCreateBackup(CreateBackupRequest createBackupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBackupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -508,7 +521,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public CreateServerResult createServer(CreateServerRequest createServerRequest) {
+    public CreateServerResult createServer(CreateServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateServer(request);
+    }
+
+    @SdkInternalApi
+    final CreateServerResult executeCreateServer(CreateServerRequest createServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -561,7 +580,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DeleteBackupResult deleteBackup(DeleteBackupRequest deleteBackupRequest) {
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBackup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBackupResult executeDeleteBackup(DeleteBackupRequest deleteBackupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBackupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -622,7 +647,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DeleteServerResult deleteServer(DeleteServerRequest deleteServerRequest) {
+    public DeleteServerResult deleteServer(DeleteServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServerResult executeDeleteServer(DeleteServerRequest deleteServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -667,7 +698,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -725,7 +762,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeBackupsResult describeBackups(DescribeBackupsRequest describeBackupsRequest) {
+    public DescribeBackupsResult describeBackups(DescribeBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBackups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBackupsResult executeDescribeBackups(DescribeBackupsRequest describeBackupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBackupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -780,7 +823,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -831,7 +880,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNodeAssociationStatusResult describeNodeAssociationStatus(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
+    public DescribeNodeAssociationStatusResult describeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNodeAssociationStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNodeAssociationStatusResult executeDescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNodeAssociationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -889,7 +944,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeServersResult describeServers(DescribeServersRequest describeServersRequest) {
+    public DescribeServersResult describeServers(DescribeServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServersResult executeDescribeServers(DescribeServersRequest describeServersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -944,7 +1005,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      API Documentation</a>
      */
     @Override
-    public DisassociateNodeResult disassociateNode(DisassociateNodeRequest disassociateNodeRequest) {
+    public DisassociateNodeResult disassociateNode(DisassociateNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateNode(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateNodeResult executeDisassociateNode(DisassociateNodeRequest disassociateNodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateNodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1003,7 +1070,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public RestoreServerResult restoreServer(RestoreServerRequest restoreServerRequest) {
+    public RestoreServerResult restoreServer(RestoreServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreServer(request);
+    }
+
+    @SdkInternalApi
+    final RestoreServerResult executeRestoreServer(RestoreServerRequest restoreServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1058,7 +1131,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      API Documentation</a>
      */
     @Override
-    public StartMaintenanceResult startMaintenance(StartMaintenanceRequest startMaintenanceRequest) {
+    public StartMaintenanceResult startMaintenance(StartMaintenanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMaintenance(request);
+    }
+
+    @SdkInternalApi
+    final StartMaintenanceResult executeStartMaintenance(StartMaintenanceRequest startMaintenanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startMaintenanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1109,7 +1188,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public UpdateServerResult updateServer(UpdateServerRequest updateServerRequest) {
+    public UpdateServerResult updateServer(UpdateServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServerResult executeUpdateServer(UpdateServerRequest updateServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1168,7 +1253,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateServerEngineAttributesResult updateServerEngineAttributes(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {
+    public UpdateServerEngineAttributesResult updateServerEngineAttributes(UpdateServerEngineAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServerEngineAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServerEngineAttributesResult executeUpdateServerEngineAttributes(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServerEngineAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

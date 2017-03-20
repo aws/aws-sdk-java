@@ -103,14 +103,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<AbortDocumentVersionUploadResult> abortDocumentVersionUploadAsync(final AbortDocumentVersionUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<AbortDocumentVersionUploadRequest, AbortDocumentVersionUploadResult> asyncHandler) {
+        final AbortDocumentVersionUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AbortDocumentVersionUploadResult>() {
             @Override
             public AbortDocumentVersionUploadResult call() throws Exception {
-                AbortDocumentVersionUploadResult result;
+                AbortDocumentVersionUploadResult result = null;
 
                 try {
-                    result = abortDocumentVersionUpload(request);
+                    result = executeAbortDocumentVersionUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -119,7 +120,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -135,14 +136,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<ActivateUserResult> activateUserAsync(final ActivateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<ActivateUserRequest, ActivateUserResult> asyncHandler) {
+        final ActivateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivateUserResult>() {
             @Override
             public ActivateUserResult call() throws Exception {
-                ActivateUserResult result;
+                ActivateUserResult result = null;
 
                 try {
-                    result = activateUser(request);
+                    result = executeActivateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -151,7 +153,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -167,14 +169,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<AddResourcePermissionsResult> addResourcePermissionsAsync(final AddResourcePermissionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddResourcePermissionsRequest, AddResourcePermissionsResult> asyncHandler) {
+        final AddResourcePermissionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddResourcePermissionsResult>() {
             @Override
             public AddResourcePermissionsResult call() throws Exception {
-                AddResourcePermissionsResult result;
+                AddResourcePermissionsResult result = null;
 
                 try {
-                    result = addResourcePermissions(request);
+                    result = executeAddResourcePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -183,7 +186,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -199,14 +202,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(final CreateFolderRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler) {
+        final CreateFolderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateFolderResult>() {
             @Override
             public CreateFolderResult call() throws Exception {
-                CreateFolderResult result;
+                CreateFolderResult result = null;
 
                 try {
-                    result = createFolder(request);
+                    result = executeCreateFolder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -215,7 +219,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -232,14 +236,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     public java.util.concurrent.Future<CreateNotificationSubscriptionResult> createNotificationSubscriptionAsync(
             final CreateNotificationSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateNotificationSubscriptionRequest, CreateNotificationSubscriptionResult> asyncHandler) {
+        final CreateNotificationSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateNotificationSubscriptionResult>() {
             @Override
             public CreateNotificationSubscriptionResult call() throws Exception {
-                CreateNotificationSubscriptionResult result;
+                CreateNotificationSubscriptionResult result = null;
 
                 try {
-                    result = createNotificationSubscription(request);
+                    result = executeCreateNotificationSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -248,7 +253,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -264,14 +269,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(final CreateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
+        final CreateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateUserResult>() {
             @Override
             public CreateUserResult call() throws Exception {
-                CreateUserResult result;
+                CreateUserResult result = null;
 
                 try {
-                    result = createUser(request);
+                    result = executeCreateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +286,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +302,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DeactivateUserResult> deactivateUserAsync(final DeactivateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeactivateUserRequest, DeactivateUserResult> asyncHandler) {
+        final DeactivateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeactivateUserResult>() {
             @Override
             public DeactivateUserResult call() throws Exception {
-                DeactivateUserResult result;
+                DeactivateUserResult result = null;
 
                 try {
-                    result = deactivateUser(request);
+                    result = executeDeactivateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +319,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +335,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(final DeleteDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler) {
+        final DeleteDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentResult>() {
             @Override
             public DeleteDocumentResult call() throws Exception {
-                DeleteDocumentResult result;
+                DeleteDocumentResult result = null;
 
                 try {
-                    result = deleteDocument(request);
+                    result = executeDeleteDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +352,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -360,14 +368,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(final DeleteFolderRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFolderRequest, DeleteFolderResult> asyncHandler) {
+        final DeleteFolderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFolderResult>() {
             @Override
             public DeleteFolderResult call() throws Exception {
-                DeleteFolderResult result;
+                DeleteFolderResult result = null;
 
                 try {
-                    result = deleteFolder(request);
+                    result = executeDeleteFolder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,7 +385,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -392,14 +401,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DeleteFolderContentsResult> deleteFolderContentsAsync(final DeleteFolderContentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFolderContentsRequest, DeleteFolderContentsResult> asyncHandler) {
+        final DeleteFolderContentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFolderContentsResult>() {
             @Override
             public DeleteFolderContentsResult call() throws Exception {
-                DeleteFolderContentsResult result;
+                DeleteFolderContentsResult result = null;
 
                 try {
-                    result = deleteFolderContents(request);
+                    result = executeDeleteFolderContents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -408,7 +418,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -425,14 +435,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     public java.util.concurrent.Future<DeleteNotificationSubscriptionResult> deleteNotificationSubscriptionAsync(
             final DeleteNotificationSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteNotificationSubscriptionRequest, DeleteNotificationSubscriptionResult> asyncHandler) {
+        final DeleteNotificationSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteNotificationSubscriptionResult>() {
             @Override
             public DeleteNotificationSubscriptionResult call() throws Exception {
-                DeleteNotificationSubscriptionResult result;
+                DeleteNotificationSubscriptionResult result = null;
 
                 try {
-                    result = deleteNotificationSubscription(request);
+                    result = executeDeleteNotificationSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -441,7 +452,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -457,14 +468,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(final DeleteUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+        final DeleteUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteUserResult>() {
             @Override
             public DeleteUserResult call() throws Exception {
-                DeleteUserResult result;
+                DeleteUserResult result = null;
 
                 try {
-                    result = deleteUser(request);
+                    result = executeDeleteUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -473,7 +485,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -489,14 +501,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DescribeDocumentVersionsResult> describeDocumentVersionsAsync(final DescribeDocumentVersionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDocumentVersionsRequest, DescribeDocumentVersionsResult> asyncHandler) {
+        final DescribeDocumentVersionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDocumentVersionsResult>() {
             @Override
             public DescribeDocumentVersionsResult call() throws Exception {
-                DescribeDocumentVersionsResult result;
+                DescribeDocumentVersionsResult result = null;
 
                 try {
-                    result = describeDocumentVersions(request);
+                    result = executeDescribeDocumentVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -505,7 +518,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -521,14 +534,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DescribeFolderContentsResult> describeFolderContentsAsync(final DescribeFolderContentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeFolderContentsRequest, DescribeFolderContentsResult> asyncHandler) {
+        final DescribeFolderContentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeFolderContentsResult>() {
             @Override
             public DescribeFolderContentsResult call() throws Exception {
-                DescribeFolderContentsResult result;
+                DescribeFolderContentsResult result = null;
 
                 try {
-                    result = describeFolderContents(request);
+                    result = executeDescribeFolderContents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -537,7 +551,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -555,14 +569,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     public java.util.concurrent.Future<DescribeNotificationSubscriptionsResult> describeNotificationSubscriptionsAsync(
             final DescribeNotificationSubscriptionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeNotificationSubscriptionsRequest, DescribeNotificationSubscriptionsResult> asyncHandler) {
+        final DescribeNotificationSubscriptionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeNotificationSubscriptionsResult>() {
             @Override
             public DescribeNotificationSubscriptionsResult call() throws Exception {
-                DescribeNotificationSubscriptionsResult result;
+                DescribeNotificationSubscriptionsResult result = null;
 
                 try {
-                    result = describeNotificationSubscriptions(request);
+                    result = executeDescribeNotificationSubscriptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -571,7 +586,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -587,14 +602,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DescribeResourcePermissionsResult> describeResourcePermissionsAsync(final DescribeResourcePermissionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeResourcePermissionsRequest, DescribeResourcePermissionsResult> asyncHandler) {
+        final DescribeResourcePermissionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeResourcePermissionsResult>() {
             @Override
             public DescribeResourcePermissionsResult call() throws Exception {
-                DescribeResourcePermissionsResult result;
+                DescribeResourcePermissionsResult result = null;
 
                 try {
-                    result = describeResourcePermissions(request);
+                    result = executeDescribeResourcePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -603,7 +619,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -619,14 +635,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(final DescribeUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeUsersRequest, DescribeUsersResult> asyncHandler) {
+        final DescribeUsersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeUsersResult>() {
             @Override
             public DescribeUsersResult call() throws Exception {
-                DescribeUsersResult result;
+                DescribeUsersResult result = null;
 
                 try {
-                    result = describeUsers(request);
+                    result = executeDescribeUsers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -635,7 +652,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -651,14 +668,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(final GetDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler) {
+        final GetDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDocumentResult>() {
             @Override
             public GetDocumentResult call() throws Exception {
-                GetDocumentResult result;
+                GetDocumentResult result = null;
 
                 try {
-                    result = getDocument(request);
+                    result = executeGetDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -667,7 +685,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -683,14 +701,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<GetDocumentPathResult> getDocumentPathAsync(final GetDocumentPathRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDocumentPathRequest, GetDocumentPathResult> asyncHandler) {
+        final GetDocumentPathRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDocumentPathResult>() {
             @Override
             public GetDocumentPathResult call() throws Exception {
-                GetDocumentPathResult result;
+                GetDocumentPathResult result = null;
 
                 try {
-                    result = getDocumentPath(request);
+                    result = executeGetDocumentPath(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -699,7 +718,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -715,14 +734,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<GetDocumentVersionResult> getDocumentVersionAsync(final GetDocumentVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDocumentVersionRequest, GetDocumentVersionResult> asyncHandler) {
+        final GetDocumentVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDocumentVersionResult>() {
             @Override
             public GetDocumentVersionResult call() throws Exception {
-                GetDocumentVersionResult result;
+                GetDocumentVersionResult result = null;
 
                 try {
-                    result = getDocumentVersion(request);
+                    result = executeGetDocumentVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -731,7 +751,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -747,14 +767,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<GetFolderResult> getFolderAsync(final GetFolderRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetFolderRequest, GetFolderResult> asyncHandler) {
+        final GetFolderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetFolderResult>() {
             @Override
             public GetFolderResult call() throws Exception {
-                GetFolderResult result;
+                GetFolderResult result = null;
 
                 try {
-                    result = getFolder(request);
+                    result = executeGetFolder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -763,7 +784,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -779,14 +800,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<GetFolderPathResult> getFolderPathAsync(final GetFolderPathRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetFolderPathRequest, GetFolderPathResult> asyncHandler) {
+        final GetFolderPathRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetFolderPathResult>() {
             @Override
             public GetFolderPathResult call() throws Exception {
-                GetFolderPathResult result;
+                GetFolderPathResult result = null;
 
                 try {
-                    result = getFolderPath(request);
+                    result = executeGetFolderPath(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -795,7 +817,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -812,14 +834,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     public java.util.concurrent.Future<InitiateDocumentVersionUploadResult> initiateDocumentVersionUploadAsync(
             final InitiateDocumentVersionUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<InitiateDocumentVersionUploadRequest, InitiateDocumentVersionUploadResult> asyncHandler) {
+        final InitiateDocumentVersionUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<InitiateDocumentVersionUploadResult>() {
             @Override
             public InitiateDocumentVersionUploadResult call() throws Exception {
-                InitiateDocumentVersionUploadResult result;
+                InitiateDocumentVersionUploadResult result = null;
 
                 try {
-                    result = initiateDocumentVersionUpload(request);
+                    result = executeInitiateDocumentVersionUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -828,7 +851,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -844,14 +867,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<RemoveAllResourcePermissionsResult> removeAllResourcePermissionsAsync(final RemoveAllResourcePermissionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveAllResourcePermissionsRequest, RemoveAllResourcePermissionsResult> asyncHandler) {
+        final RemoveAllResourcePermissionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveAllResourcePermissionsResult>() {
             @Override
             public RemoveAllResourcePermissionsResult call() throws Exception {
-                RemoveAllResourcePermissionsResult result;
+                RemoveAllResourcePermissionsResult result = null;
 
                 try {
-                    result = removeAllResourcePermissions(request);
+                    result = executeRemoveAllResourcePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -860,7 +884,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -876,14 +900,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<RemoveResourcePermissionResult> removeResourcePermissionAsync(final RemoveResourcePermissionRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveResourcePermissionRequest, RemoveResourcePermissionResult> asyncHandler) {
+        final RemoveResourcePermissionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveResourcePermissionResult>() {
             @Override
             public RemoveResourcePermissionResult call() throws Exception {
-                RemoveResourcePermissionResult result;
+                RemoveResourcePermissionResult result = null;
 
                 try {
-                    result = removeResourcePermission(request);
+                    result = executeRemoveResourcePermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -892,7 +917,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -908,14 +933,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(final UpdateDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDocumentRequest, UpdateDocumentResult> asyncHandler) {
+        final UpdateDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentResult>() {
             @Override
             public UpdateDocumentResult call() throws Exception {
-                UpdateDocumentResult result;
+                UpdateDocumentResult result = null;
 
                 try {
-                    result = updateDocument(request);
+                    result = executeUpdateDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -924,7 +950,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -940,14 +966,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<UpdateDocumentVersionResult> updateDocumentVersionAsync(final UpdateDocumentVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDocumentVersionRequest, UpdateDocumentVersionResult> asyncHandler) {
+        final UpdateDocumentVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentVersionResult>() {
             @Override
             public UpdateDocumentVersionResult call() throws Exception {
-                UpdateDocumentVersionResult result;
+                UpdateDocumentVersionResult result = null;
 
                 try {
-                    result = updateDocumentVersion(request);
+                    result = executeUpdateDocumentVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -956,7 +983,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -972,14 +999,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(final UpdateFolderRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateFolderRequest, UpdateFolderResult> asyncHandler) {
+        final UpdateFolderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateFolderResult>() {
             @Override
             public UpdateFolderResult call() throws Exception {
-                UpdateFolderResult result;
+                UpdateFolderResult result = null;
 
                 try {
-                    result = updateFolder(request);
+                    result = executeUpdateFolder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -988,7 +1016,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1004,14 +1032,15 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     @Override
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(final UpdateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
+        final UpdateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateUserResult>() {
             @Override
             public UpdateUserResult call() throws Exception {
-                UpdateUserResult result;
+                UpdateUserResult result = null;
 
                 try {
-                    result = updateUser(request);
+                    result = executeUpdateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1020,7 +1049,7 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

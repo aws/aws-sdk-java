@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -304,7 +305,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
+    public AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToStream(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToStreamResult executeAddTagsToStream(AddTagsToStreamRequest addTagsToStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -404,7 +411,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public CreateStreamResult createStream(CreateStreamRequest createStreamRequest) {
+    public CreateStreamResult createStream(CreateStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStream(request);
+    }
+
+    @SdkInternalApi
+    final CreateStreamResult executeCreateStream(CreateStreamRequest createStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -465,7 +478,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
+    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request) {
+        request = beforeClientExecution(request);
+        return executeDecreaseStreamRetentionPeriod(request);
+    }
+
+    @SdkInternalApi
+    final DecreaseStreamRetentionPeriodResult executeDecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
 
         ExecutionContext executionContext = createExecutionContext(decreaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -537,7 +556,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest) {
+    public DeleteStreamResult deleteStream(DeleteStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStream(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStreamResult executeDeleteStream(DeleteStreamRequest deleteStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -593,7 +618,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLimitsResult executeDescribeLimits(DescribeLimitsRequest describeLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -660,7 +691,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
+    public DescribeStreamResult describeStream(DescribeStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStream(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStreamResult executeDescribeStream(DescribeStreamRequest describeStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -729,7 +766,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest) {
+    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(DisableEnhancedMonitoringRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableEnhancedMonitoring(request);
+    }
+
+    @SdkInternalApi
+    final DisableEnhancedMonitoringResult executeDisableEnhancedMonitoring(DisableEnhancedMonitoringRequest disableEnhancedMonitoringRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableEnhancedMonitoringRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -785,7 +828,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest) {
+    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(EnableEnhancedMonitoringRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableEnhancedMonitoring(request);
+    }
+
+    @SdkInternalApi
+    final EnableEnhancedMonitoringResult executeEnableEnhancedMonitoring(EnableEnhancedMonitoringRequest enableEnhancedMonitoringRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableEnhancedMonitoringRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -891,7 +940,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
+    public GetRecordsResult getRecords(GetRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRecords(request);
+    }
+
+    @SdkInternalApi
+    final GetRecordsResult executeGetRecords(GetRecordsRequest getRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -985,7 +1040,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
+    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShardIterator(request);
+    }
+
+    @SdkInternalApi
+    final GetShardIteratorResult executeGetShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getShardIteratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1055,7 +1116,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
+    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request) {
+        request = beforeClientExecution(request);
+        return executeIncreaseStreamRetentionPeriod(request);
+    }
+
+    @SdkInternalApi
+    final IncreaseStreamRetentionPeriodResult executeIncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
 
         ExecutionContext executionContext = createExecutionContext(increaseStreamRetentionPeriodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1118,7 +1185,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
+    public ListStreamsResult listStreams(ListStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListStreamsResult executeListStreams(ListStreamsRequest listStreamsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1184,7 +1257,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest) {
+    public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForStream(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForStreamResult executeListTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1277,7 +1356,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public MergeShardsResult mergeShards(MergeShardsRequest mergeShardsRequest) {
+    public MergeShardsResult mergeShards(MergeShardsRequest request) {
+        request = beforeClientExecution(request);
+        return executeMergeShards(request);
+    }
+
+    @SdkInternalApi
+    final MergeShardsResult executeMergeShards(MergeShardsRequest mergeShardsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(mergeShardsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1379,7 +1464,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
+    public PutRecordResult putRecord(PutRecordRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRecord(request);
+    }
+
+    @SdkInternalApi
+    final PutRecordResult executePutRecord(PutRecordRequest putRecordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1508,7 +1599,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public PutRecordsResult putRecords(PutRecordsRequest putRecordsRequest) {
+    public PutRecordsResult putRecords(PutRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRecords(request);
+    }
+
+    @SdkInternalApi
+    final PutRecordsResult executePutRecords(PutRecordsRequest putRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1566,7 +1663,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
+    public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromStream(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromStreamResult executeRemoveTagsFromStream(RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1670,7 +1773,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public SplitShardResult splitShard(SplitShardRequest splitShardRequest) {
+    public SplitShardResult splitShard(SplitShardRequest request) {
+        request = beforeClientExecution(request);
+        return executeSplitShard(request);
+    }
+
+    @SdkInternalApi
+    final SplitShardResult executeSplitShard(SplitShardRequest splitShardRequest) {
 
         ExecutionContext executionContext = createExecutionContext(splitShardRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1750,7 +1859,13 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public UpdateShardCountResult updateShardCount(UpdateShardCountRequest updateShardCountRequest) {
+    public UpdateShardCountResult updateShardCount(UpdateShardCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateShardCount(request);
+    }
+
+    @SdkInternalApi
+    final UpdateShardCountResult executeUpdateShardCount(UpdateShardCountRequest updateShardCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateShardCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1843,6 +1958,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

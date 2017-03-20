@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -312,7 +313,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.AddTags
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -372,7 +379,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.CreateElasticsearchDomain
      */
     @Override
-    public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
+    public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateElasticsearchDomainResult executeCreateElasticsearchDomain(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -426,7 +439,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DeleteElasticsearchDomain
      */
     @Override
-    public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
+    public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteElasticsearchDomainResult executeDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -479,7 +498,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomain
      */
     @Override
-    public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
+    public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainResult executeDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -533,7 +558,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomainConfig
      */
     @Override
-    public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
+    public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomainConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainConfigResult executeDescribeElasticsearchDomainConfig(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainConfigRequest);
@@ -586,7 +617,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomains
      */
     @Override
-    public DescribeElasticsearchDomainsResult describeElasticsearchDomains(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
+    public DescribeElasticsearchDomainsResult describeElasticsearchDomains(DescribeElasticsearchDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomains(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainsResult executeDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -645,7 +682,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchInstanceTypeLimits
      */
     @Override
-    public DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(
+    public DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchInstanceTypeLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchInstanceTypeLimitsResult executeDescribeElasticsearchInstanceTypeLimits(
             DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchInstanceTypeLimitsRequest);
@@ -692,7 +735,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListDomainNames
      */
     @Override
-    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
+    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainNames(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainNamesResult executeListDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -742,7 +791,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListElasticsearchInstanceTypes
      */
     @Override
-    public ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest) {
+    public ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListElasticsearchInstanceTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListElasticsearchInstanceTypesResult executeListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listElasticsearchInstanceTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -802,7 +857,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListElasticsearchVersions
      */
     @Override
-    public ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest) {
+    public ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListElasticsearchVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListElasticsearchVersionsResult executeListElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listElasticsearchVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -855,7 +916,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListTags
      */
     @Override
-    public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+    public ListTagsResult listTags(ListTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTags(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsResult executeListTags(ListTagsRequest listTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -904,7 +971,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.RemoveTags
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -962,7 +1035,14 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     @Override
-    public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
+    public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateElasticsearchDomainConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateElasticsearchDomainConfigResult executeUpdateElasticsearchDomainConfig(
+            UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

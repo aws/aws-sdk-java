@@ -467,4 +467,7 @@ public class AmazonEC2Waiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

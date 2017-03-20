@@ -32,12 +32,15 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeDirectories" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeSnapshots" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GetDirectoryLimits" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

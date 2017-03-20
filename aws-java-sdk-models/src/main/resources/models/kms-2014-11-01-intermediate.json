@@ -32,18 +32,23 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "CreateKey" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "GenerateRandom" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListAliases" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListKeys" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "RetireGrant" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

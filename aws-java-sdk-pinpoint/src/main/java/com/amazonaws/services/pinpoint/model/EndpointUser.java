@@ -17,18 +17,21 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint user specific custom userAttributes
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointUser implements Serializable, Cloneable, StructuredPojo {
 
-    /** Custom attributesd specific to the user. */
+    /** Custom attributes specific to the user. */
     private java.util.Map<String, java.util.List<String>> userAttributes;
     /** The unique ID of the user. */
     private String userId;
 
     /**
-     * Custom attributesd specific to the user.
+     * Custom attributes specific to the user.
      * 
-     * @return Custom attributesd specific to the user.
+     * @return Custom attributes specific to the user.
      */
 
     public java.util.Map<String, java.util.List<String>> getUserAttributes() {
@@ -36,10 +39,10 @@ public class EndpointUser implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom attributesd specific to the user.
+     * Custom attributes specific to the user.
      * 
      * @param userAttributes
-     *        Custom attributesd specific to the user.
+     *        Custom attributes specific to the user.
      */
 
     public void setUserAttributes(java.util.Map<String, java.util.List<String>> userAttributes) {
@@ -47,10 +50,10 @@ public class EndpointUser implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Custom attributesd specific to the user.
+     * Custom attributes specific to the user.
      * 
      * @param userAttributes
-     *        Custom attributesd specific to the user.
+     *        Custom attributes specific to the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

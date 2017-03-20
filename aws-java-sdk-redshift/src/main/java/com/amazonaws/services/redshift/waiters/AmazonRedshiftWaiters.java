@@ -98,4 +98,7 @@ public class AmazonRedshiftWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

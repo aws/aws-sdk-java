@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint location data
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointLocation implements Serializable, Cloneable, StructuredPojo {
 

@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Google Cloud Messaging credentials
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GCMChannelRequest implements Serializable, Cloneable, StructuredPojo {
 

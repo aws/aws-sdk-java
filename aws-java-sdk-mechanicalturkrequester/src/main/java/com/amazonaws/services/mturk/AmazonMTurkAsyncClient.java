@@ -68,14 +68,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<AcceptQualificationRequestResult> acceptQualificationRequestAsync(final AcceptQualificationRequestRequest request,
             final com.amazonaws.handlers.AsyncHandler<AcceptQualificationRequestRequest, AcceptQualificationRequestResult> asyncHandler) {
+        final AcceptQualificationRequestRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AcceptQualificationRequestResult>() {
             @Override
             public AcceptQualificationRequestResult call() throws Exception {
-                AcceptQualificationRequestResult result;
+                AcceptQualificationRequestResult result = null;
 
                 try {
-                    result = acceptQualificationRequest(request);
+                    result = executeAcceptQualificationRequest(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -84,7 +85,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -100,14 +101,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ApproveAssignmentResult> approveAssignmentAsync(final ApproveAssignmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<ApproveAssignmentRequest, ApproveAssignmentResult> asyncHandler) {
+        final ApproveAssignmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ApproveAssignmentResult>() {
             @Override
             public ApproveAssignmentResult call() throws Exception {
-                ApproveAssignmentResult result;
+                ApproveAssignmentResult result = null;
 
                 try {
-                    result = approveAssignment(request);
+                    result = executeApproveAssignment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -116,7 +118,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -134,14 +136,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     public java.util.concurrent.Future<AssociateQualificationWithWorkerResult> associateQualificationWithWorkerAsync(
             final AssociateQualificationWithWorkerRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateQualificationWithWorkerRequest, AssociateQualificationWithWorkerResult> asyncHandler) {
+        final AssociateQualificationWithWorkerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssociateQualificationWithWorkerResult>() {
             @Override
             public AssociateQualificationWithWorkerResult call() throws Exception {
-                AssociateQualificationWithWorkerResult result;
+                AssociateQualificationWithWorkerResult result = null;
 
                 try {
-                    result = associateQualificationWithWorker(request);
+                    result = executeAssociateQualificationWithWorker(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -150,7 +153,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -168,14 +171,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     public java.util.concurrent.Future<CreateAdditionalAssignmentsForHITResult> createAdditionalAssignmentsForHITAsync(
             final CreateAdditionalAssignmentsForHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAdditionalAssignmentsForHITRequest, CreateAdditionalAssignmentsForHITResult> asyncHandler) {
+        final CreateAdditionalAssignmentsForHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAdditionalAssignmentsForHITResult>() {
             @Override
             public CreateAdditionalAssignmentsForHITResult call() throws Exception {
-                CreateAdditionalAssignmentsForHITResult result;
+                CreateAdditionalAssignmentsForHITResult result = null;
 
                 try {
-                    result = createAdditionalAssignmentsForHIT(request);
+                    result = executeCreateAdditionalAssignmentsForHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -184,7 +188,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -200,14 +204,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<CreateHITResult> createHITAsync(final CreateHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateHITRequest, CreateHITResult> asyncHandler) {
+        final CreateHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateHITResult>() {
             @Override
             public CreateHITResult call() throws Exception {
-                CreateHITResult result;
+                CreateHITResult result = null;
 
                 try {
-                    result = createHIT(request);
+                    result = executeCreateHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -216,7 +221,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -232,14 +237,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<CreateHITTypeResult> createHITTypeAsync(final CreateHITTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateHITTypeRequest, CreateHITTypeResult> asyncHandler) {
+        final CreateHITTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateHITTypeResult>() {
             @Override
             public CreateHITTypeResult call() throws Exception {
-                CreateHITTypeResult result;
+                CreateHITTypeResult result = null;
 
                 try {
-                    result = createHITType(request);
+                    result = executeCreateHITType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -248,7 +254,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -264,14 +270,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<CreateHITWithHITTypeResult> createHITWithHITTypeAsync(final CreateHITWithHITTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateHITWithHITTypeRequest, CreateHITWithHITTypeResult> asyncHandler) {
+        final CreateHITWithHITTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateHITWithHITTypeResult>() {
             @Override
             public CreateHITWithHITTypeResult call() throws Exception {
-                CreateHITWithHITTypeResult result;
+                CreateHITWithHITTypeResult result = null;
 
                 try {
-                    result = createHITWithHITType(request);
+                    result = executeCreateHITWithHITType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +287,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +303,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<CreateQualificationTypeResult> createQualificationTypeAsync(final CreateQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateQualificationTypeRequest, CreateQualificationTypeResult> asyncHandler) {
+        final CreateQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateQualificationTypeResult>() {
             @Override
             public CreateQualificationTypeResult call() throws Exception {
-                CreateQualificationTypeResult result;
+                CreateQualificationTypeResult result = null;
 
                 try {
-                    result = createQualificationType(request);
+                    result = executeCreateQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +320,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +336,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<CreateWorkerBlockResult> createWorkerBlockAsync(final CreateWorkerBlockRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateWorkerBlockRequest, CreateWorkerBlockResult> asyncHandler) {
+        final CreateWorkerBlockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateWorkerBlockResult>() {
             @Override
             public CreateWorkerBlockResult call() throws Exception {
-                CreateWorkerBlockResult result;
+                CreateWorkerBlockResult result = null;
 
                 try {
-                    result = createWorkerBlock(request);
+                    result = executeCreateWorkerBlock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +353,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -360,14 +369,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<DeleteHITResult> deleteHITAsync(final DeleteHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteHITRequest, DeleteHITResult> asyncHandler) {
+        final DeleteHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteHITResult>() {
             @Override
             public DeleteHITResult call() throws Exception {
-                DeleteHITResult result;
+                DeleteHITResult result = null;
 
                 try {
-                    result = deleteHIT(request);
+                    result = executeDeleteHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,7 +386,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -392,14 +402,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<DeleteQualificationTypeResult> deleteQualificationTypeAsync(final DeleteQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteQualificationTypeRequest, DeleteQualificationTypeResult> asyncHandler) {
+        final DeleteQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteQualificationTypeResult>() {
             @Override
             public DeleteQualificationTypeResult call() throws Exception {
-                DeleteQualificationTypeResult result;
+                DeleteQualificationTypeResult result = null;
 
                 try {
-                    result = deleteQualificationType(request);
+                    result = executeDeleteQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -408,7 +419,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -424,14 +435,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<DeleteWorkerBlockResult> deleteWorkerBlockAsync(final DeleteWorkerBlockRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteWorkerBlockRequest, DeleteWorkerBlockResult> asyncHandler) {
+        final DeleteWorkerBlockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteWorkerBlockResult>() {
             @Override
             public DeleteWorkerBlockResult call() throws Exception {
-                DeleteWorkerBlockResult result;
+                DeleteWorkerBlockResult result = null;
 
                 try {
-                    result = deleteWorkerBlock(request);
+                    result = executeDeleteWorkerBlock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -440,7 +452,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -458,14 +470,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     public java.util.concurrent.Future<DisassociateQualificationFromWorkerResult> disassociateQualificationFromWorkerAsync(
             final DisassociateQualificationFromWorkerRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateQualificationFromWorkerRequest, DisassociateQualificationFromWorkerResult> asyncHandler) {
+        final DisassociateQualificationFromWorkerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisassociateQualificationFromWorkerResult>() {
             @Override
             public DisassociateQualificationFromWorkerResult call() throws Exception {
-                DisassociateQualificationFromWorkerResult result;
+                DisassociateQualificationFromWorkerResult result = null;
 
                 try {
-                    result = disassociateQualificationFromWorker(request);
+                    result = executeDisassociateQualificationFromWorker(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -474,7 +487,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -490,14 +503,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetAccountBalanceResult> getAccountBalanceAsync(final GetAccountBalanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAccountBalanceRequest, GetAccountBalanceResult> asyncHandler) {
+        final GetAccountBalanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAccountBalanceResult>() {
             @Override
             public GetAccountBalanceResult call() throws Exception {
-                GetAccountBalanceResult result;
+                GetAccountBalanceResult result = null;
 
                 try {
-                    result = getAccountBalance(request);
+                    result = executeGetAccountBalance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -506,7 +520,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -522,14 +536,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetAssignmentResult> getAssignmentAsync(final GetAssignmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAssignmentRequest, GetAssignmentResult> asyncHandler) {
+        final GetAssignmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAssignmentResult>() {
             @Override
             public GetAssignmentResult call() throws Exception {
-                GetAssignmentResult result;
+                GetAssignmentResult result = null;
 
                 try {
-                    result = getAssignment(request);
+                    result = executeGetAssignment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -538,7 +553,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -554,14 +569,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetFileUploadURLResult> getFileUploadURLAsync(final GetFileUploadURLRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetFileUploadURLRequest, GetFileUploadURLResult> asyncHandler) {
+        final GetFileUploadURLRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetFileUploadURLResult>() {
             @Override
             public GetFileUploadURLResult call() throws Exception {
-                GetFileUploadURLResult result;
+                GetFileUploadURLResult result = null;
 
                 try {
-                    result = getFileUploadURL(request);
+                    result = executeGetFileUploadURL(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -570,7 +586,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -586,14 +602,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetHITResult> getHITAsync(final GetHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetHITRequest, GetHITResult> asyncHandler) {
+        final GetHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetHITResult>() {
             @Override
             public GetHITResult call() throws Exception {
-                GetHITResult result;
+                GetHITResult result = null;
 
                 try {
-                    result = getHIT(request);
+                    result = executeGetHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -602,7 +619,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -618,14 +635,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetQualificationScoreResult> getQualificationScoreAsync(final GetQualificationScoreRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetQualificationScoreRequest, GetQualificationScoreResult> asyncHandler) {
+        final GetQualificationScoreRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetQualificationScoreResult>() {
             @Override
             public GetQualificationScoreResult call() throws Exception {
-                GetQualificationScoreResult result;
+                GetQualificationScoreResult result = null;
 
                 try {
-                    result = getQualificationScore(request);
+                    result = executeGetQualificationScore(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -634,7 +652,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -650,14 +668,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<GetQualificationTypeResult> getQualificationTypeAsync(final GetQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetQualificationTypeRequest, GetQualificationTypeResult> asyncHandler) {
+        final GetQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetQualificationTypeResult>() {
             @Override
             public GetQualificationTypeResult call() throws Exception {
-                GetQualificationTypeResult result;
+                GetQualificationTypeResult result = null;
 
                 try {
-                    result = getQualificationType(request);
+                    result = executeGetQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -666,7 +685,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -682,14 +701,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListAssignmentsForHITResult> listAssignmentsForHITAsync(final ListAssignmentsForHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAssignmentsForHITRequest, ListAssignmentsForHITResult> asyncHandler) {
+        final ListAssignmentsForHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAssignmentsForHITResult>() {
             @Override
             public ListAssignmentsForHITResult call() throws Exception {
-                ListAssignmentsForHITResult result;
+                ListAssignmentsForHITResult result = null;
 
                 try {
-                    result = listAssignmentsForHIT(request);
+                    result = executeListAssignmentsForHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -698,7 +718,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -714,14 +734,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListBonusPaymentsResult> listBonusPaymentsAsync(final ListBonusPaymentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListBonusPaymentsRequest, ListBonusPaymentsResult> asyncHandler) {
+        final ListBonusPaymentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListBonusPaymentsResult>() {
             @Override
             public ListBonusPaymentsResult call() throws Exception {
-                ListBonusPaymentsResult result;
+                ListBonusPaymentsResult result = null;
 
                 try {
-                    result = listBonusPayments(request);
+                    result = executeListBonusPayments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -730,7 +751,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -746,14 +767,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListHITsResult> listHITsAsync(final ListHITsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListHITsRequest, ListHITsResult> asyncHandler) {
+        final ListHITsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListHITsResult>() {
             @Override
             public ListHITsResult call() throws Exception {
-                ListHITsResult result;
+                ListHITsResult result = null;
 
                 try {
-                    result = listHITs(request);
+                    result = executeListHITs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -762,7 +784,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -778,14 +800,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListHITsForQualificationTypeResult> listHITsForQualificationTypeAsync(final ListHITsForQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListHITsForQualificationTypeRequest, ListHITsForQualificationTypeResult> asyncHandler) {
+        final ListHITsForQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListHITsForQualificationTypeResult>() {
             @Override
             public ListHITsForQualificationTypeResult call() throws Exception {
-                ListHITsForQualificationTypeResult result;
+                ListHITsForQualificationTypeResult result = null;
 
                 try {
-                    result = listHITsForQualificationType(request);
+                    result = executeListHITsForQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -794,7 +817,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -810,14 +833,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListQualificationRequestsResult> listQualificationRequestsAsync(final ListQualificationRequestsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListQualificationRequestsRequest, ListQualificationRequestsResult> asyncHandler) {
+        final ListQualificationRequestsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListQualificationRequestsResult>() {
             @Override
             public ListQualificationRequestsResult call() throws Exception {
-                ListQualificationRequestsResult result;
+                ListQualificationRequestsResult result = null;
 
                 try {
-                    result = listQualificationRequests(request);
+                    result = executeListQualificationRequests(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -826,7 +850,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -842,14 +866,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListQualificationTypesResult> listQualificationTypesAsync(final ListQualificationTypesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListQualificationTypesRequest, ListQualificationTypesResult> asyncHandler) {
+        final ListQualificationTypesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListQualificationTypesResult>() {
             @Override
             public ListQualificationTypesResult call() throws Exception {
-                ListQualificationTypesResult result;
+                ListQualificationTypesResult result = null;
 
                 try {
-                    result = listQualificationTypes(request);
+                    result = executeListQualificationTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -858,7 +883,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -875,14 +900,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     public java.util.concurrent.Future<ListReviewPolicyResultsForHITResult> listReviewPolicyResultsForHITAsync(
             final ListReviewPolicyResultsForHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListReviewPolicyResultsForHITRequest, ListReviewPolicyResultsForHITResult> asyncHandler) {
+        final ListReviewPolicyResultsForHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListReviewPolicyResultsForHITResult>() {
             @Override
             public ListReviewPolicyResultsForHITResult call() throws Exception {
-                ListReviewPolicyResultsForHITResult result;
+                ListReviewPolicyResultsForHITResult result = null;
 
                 try {
-                    result = listReviewPolicyResultsForHIT(request);
+                    result = executeListReviewPolicyResultsForHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -891,7 +917,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -907,14 +933,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListReviewableHITsResult> listReviewableHITsAsync(final ListReviewableHITsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListReviewableHITsRequest, ListReviewableHITsResult> asyncHandler) {
+        final ListReviewableHITsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListReviewableHITsResult>() {
             @Override
             public ListReviewableHITsResult call() throws Exception {
-                ListReviewableHITsResult result;
+                ListReviewableHITsResult result = null;
 
                 try {
-                    result = listReviewableHITs(request);
+                    result = executeListReviewableHITs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -923,7 +950,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -939,14 +966,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<ListWorkerBlocksResult> listWorkerBlocksAsync(final ListWorkerBlocksRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListWorkerBlocksRequest, ListWorkerBlocksResult> asyncHandler) {
+        final ListWorkerBlocksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListWorkerBlocksResult>() {
             @Override
             public ListWorkerBlocksResult call() throws Exception {
-                ListWorkerBlocksResult result;
+                ListWorkerBlocksResult result = null;
 
                 try {
-                    result = listWorkerBlocks(request);
+                    result = executeListWorkerBlocks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -955,7 +983,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -973,14 +1001,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     public java.util.concurrent.Future<ListWorkersWithQualificationTypeResult> listWorkersWithQualificationTypeAsync(
             final ListWorkersWithQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListWorkersWithQualificationTypeRequest, ListWorkersWithQualificationTypeResult> asyncHandler) {
+        final ListWorkersWithQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListWorkersWithQualificationTypeResult>() {
             @Override
             public ListWorkersWithQualificationTypeResult call() throws Exception {
-                ListWorkersWithQualificationTypeResult result;
+                ListWorkersWithQualificationTypeResult result = null;
 
                 try {
-                    result = listWorkersWithQualificationType(request);
+                    result = executeListWorkersWithQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -989,7 +1018,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1005,14 +1034,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<NotifyWorkersResult> notifyWorkersAsync(final NotifyWorkersRequest request,
             final com.amazonaws.handlers.AsyncHandler<NotifyWorkersRequest, NotifyWorkersResult> asyncHandler) {
+        final NotifyWorkersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<NotifyWorkersResult>() {
             @Override
             public NotifyWorkersResult call() throws Exception {
-                NotifyWorkersResult result;
+                NotifyWorkersResult result = null;
 
                 try {
-                    result = notifyWorkers(request);
+                    result = executeNotifyWorkers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1021,7 +1051,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1037,14 +1067,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<RejectAssignmentResult> rejectAssignmentAsync(final RejectAssignmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<RejectAssignmentRequest, RejectAssignmentResult> asyncHandler) {
+        final RejectAssignmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RejectAssignmentResult>() {
             @Override
             public RejectAssignmentResult call() throws Exception {
-                RejectAssignmentResult result;
+                RejectAssignmentResult result = null;
 
                 try {
-                    result = rejectAssignment(request);
+                    result = executeRejectAssignment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1053,7 +1084,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1069,14 +1100,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<RejectQualificationRequestResult> rejectQualificationRequestAsync(final RejectQualificationRequestRequest request,
             final com.amazonaws.handlers.AsyncHandler<RejectQualificationRequestRequest, RejectQualificationRequestResult> asyncHandler) {
+        final RejectQualificationRequestRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RejectQualificationRequestResult>() {
             @Override
             public RejectQualificationRequestResult call() throws Exception {
-                RejectQualificationRequestResult result;
+                RejectQualificationRequestResult result = null;
 
                 try {
-                    result = rejectQualificationRequest(request);
+                    result = executeRejectQualificationRequest(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1085,7 +1117,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1101,14 +1133,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<SendBonusResult> sendBonusAsync(final SendBonusRequest request,
             final com.amazonaws.handlers.AsyncHandler<SendBonusRequest, SendBonusResult> asyncHandler) {
+        final SendBonusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SendBonusResult>() {
             @Override
             public SendBonusResult call() throws Exception {
-                SendBonusResult result;
+                SendBonusResult result = null;
 
                 try {
-                    result = sendBonus(request);
+                    result = executeSendBonus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1117,7 +1150,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1133,14 +1166,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<SendTestEventNotificationResult> sendTestEventNotificationAsync(final SendTestEventNotificationRequest request,
             final com.amazonaws.handlers.AsyncHandler<SendTestEventNotificationRequest, SendTestEventNotificationResult> asyncHandler) {
+        final SendTestEventNotificationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SendTestEventNotificationResult>() {
             @Override
             public SendTestEventNotificationResult call() throws Exception {
-                SendTestEventNotificationResult result;
+                SendTestEventNotificationResult result = null;
 
                 try {
-                    result = sendTestEventNotification(request);
+                    result = executeSendTestEventNotification(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1149,7 +1183,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1165,14 +1199,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<UpdateExpirationForHITResult> updateExpirationForHITAsync(final UpdateExpirationForHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateExpirationForHITRequest, UpdateExpirationForHITResult> asyncHandler) {
+        final UpdateExpirationForHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateExpirationForHITResult>() {
             @Override
             public UpdateExpirationForHITResult call() throws Exception {
-                UpdateExpirationForHITResult result;
+                UpdateExpirationForHITResult result = null;
 
                 try {
-                    result = updateExpirationForHIT(request);
+                    result = executeUpdateExpirationForHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1181,7 +1216,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1197,14 +1232,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<UpdateHITReviewStatusResult> updateHITReviewStatusAsync(final UpdateHITReviewStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateHITReviewStatusRequest, UpdateHITReviewStatusResult> asyncHandler) {
+        final UpdateHITReviewStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateHITReviewStatusResult>() {
             @Override
             public UpdateHITReviewStatusResult call() throws Exception {
-                UpdateHITReviewStatusResult result;
+                UpdateHITReviewStatusResult result = null;
 
                 try {
-                    result = updateHITReviewStatus(request);
+                    result = executeUpdateHITReviewStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1213,7 +1249,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1229,14 +1265,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<UpdateHITTypeOfHITResult> updateHITTypeOfHITAsync(final UpdateHITTypeOfHITRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateHITTypeOfHITRequest, UpdateHITTypeOfHITResult> asyncHandler) {
+        final UpdateHITTypeOfHITRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateHITTypeOfHITResult>() {
             @Override
             public UpdateHITTypeOfHITResult call() throws Exception {
-                UpdateHITTypeOfHITResult result;
+                UpdateHITTypeOfHITResult result = null;
 
                 try {
-                    result = updateHITTypeOfHIT(request);
+                    result = executeUpdateHITTypeOfHIT(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1245,7 +1282,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1261,14 +1298,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<UpdateNotificationSettingsResult> updateNotificationSettingsAsync(final UpdateNotificationSettingsRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateNotificationSettingsRequest, UpdateNotificationSettingsResult> asyncHandler) {
+        final UpdateNotificationSettingsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateNotificationSettingsResult>() {
             @Override
             public UpdateNotificationSettingsResult call() throws Exception {
-                UpdateNotificationSettingsResult result;
+                UpdateNotificationSettingsResult result = null;
 
                 try {
-                    result = updateNotificationSettings(request);
+                    result = executeUpdateNotificationSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1277,7 +1315,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1293,14 +1331,15 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
     @Override
     public java.util.concurrent.Future<UpdateQualificationTypeResult> updateQualificationTypeAsync(final UpdateQualificationTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateQualificationTypeRequest, UpdateQualificationTypeResult> asyncHandler) {
+        final UpdateQualificationTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateQualificationTypeResult>() {
             @Override
             public UpdateQualificationTypeResult call() throws Exception {
-                UpdateQualificationTypeResult result;
+                UpdateQualificationTypeResult result = null;
 
                 try {
-                    result = updateQualificationType(request);
+                    result = executeUpdateQualificationType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1309,7 +1348,7 @@ public class AmazonMTurkAsyncClient extends AmazonMTurkClient implements AmazonM
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

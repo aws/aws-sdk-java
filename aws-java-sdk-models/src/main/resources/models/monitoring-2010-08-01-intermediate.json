@@ -32,12 +32,15 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeAlarmHistory" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAlarms" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListMetrics" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

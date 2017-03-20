@@ -45,15 +45,19 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeTapeArchives" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListGateways" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListTagsForResource" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "RemoveTagsFromResource" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

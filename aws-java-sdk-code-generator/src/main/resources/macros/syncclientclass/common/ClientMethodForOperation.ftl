@@ -6,7 +6,17 @@
     <#if operationModel.deprecated>
         @Deprecated
     </#if>
-    public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} ${operationModel.input.variableName}) {
+    public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} request) {
+        request = beforeClientExecution(request);
+        <#if operationModel.returnType??>
+            return execute${operationModel.methodName?cap_first}(request);
+        <#else>
+            execute${operationModel.methodName?cap_first}(request);
+        </#if>
+    }
+
+    @SdkInternalApi
+    final ${operationModel.syncReturnType} execute${operationModel.methodName?cap_first}(${operationModel.input.variableType} ${operationModel.input.variableName}) {
 
         ExecutionContext executionContext = createExecutionContext(${operationModel.input.variableName});
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

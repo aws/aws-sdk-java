@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -278,7 +279,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
+    public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetTraces(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetTracesResult executeBatchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetTracesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -327,7 +334,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
+    public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceGraph(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceGraphResult executeGetServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getServiceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -373,7 +386,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
+    public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTraceGraph(request);
+    }
+
+    @SdkInternalApi
+    final GetTraceGraphResult executeGetTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTraceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -420,7 +439,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
+    public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTraceSummaries(request);
+    }
+
+    @SdkInternalApi
+    final GetTraceSummariesResult executeGetTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTraceSummariesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -466,7 +491,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
+    public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTelemetryRecords(request);
+    }
+
+    @SdkInternalApi
+    final PutTelemetryRecordsResult executePutTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTelemetryRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -514,7 +545,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {
+    public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTraceSegments(request);
+    }
+
+    @SdkInternalApi
+    final PutTraceSegmentsResult executePutTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTraceSegmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

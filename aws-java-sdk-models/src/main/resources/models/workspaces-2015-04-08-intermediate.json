@@ -32,12 +32,15 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeWorkspaceBundles" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeWorkspaceDirectories" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeWorkspaces" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

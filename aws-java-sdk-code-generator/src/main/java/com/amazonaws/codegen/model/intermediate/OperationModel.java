@@ -277,13 +277,14 @@ public class OperationModel extends DocumentationModel {
         return simpleMethods;
     }
 
-    public void addSimpleMethodForm(List<ArgumentModel> arguments) {
+    public void addSimpleMethodForm(List<ArgumentModel> arguments, boolean deprecated) {
         if (this.simpleMethods == null) {
             this.simpleMethods = new ArrayList<>();
         }
 
         SimpleMethodFormModel form = new SimpleMethodFormModel();
         form.setArguments(arguments);
+        form.setDeprecated(deprecated);
 
         this.simpleMethods.add(form);
     }

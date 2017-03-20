@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -445,7 +446,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest) {
+    public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelKeyDeletion(request);
+    }
+
+    @SdkInternalApi
+    final CancelKeyDeletionResult executeCancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -517,7 +524,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -587,7 +600,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CreateGrantResult createGrant(CreateGrantRequest createGrantRequest) {
+    public CreateGrantResult createGrant(CreateGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGrant(request);
+    }
+
+    @SdkInternalApi
+    final CreateGrantResult executeCreateGrant(CreateGrantRequest createGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -664,7 +683,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CreateKeyResult createKey(CreateKeyRequest createKeyRequest) {
+    public CreateKeyResult createKey(CreateKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateKey(request);
+    }
+
+    @SdkInternalApi
+    final CreateKeyResult executeCreateKey(CreateKeyRequest createKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -757,7 +782,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DecryptResult decrypt(DecryptRequest decryptRequest) {
+    public DecryptResult decrypt(DecryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeDecrypt(request);
+    }
+
+    @SdkInternalApi
+    final DecryptResult executeDecrypt(DecryptRequest decryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(decryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -811,7 +842,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAliasResult executeDeleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -881,7 +918,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      API Documentation</a>
      */
     @Override
-    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
+    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImportedKeyMaterial(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImportedKeyMaterialResult executeDeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteImportedKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -933,7 +976,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest) {
+    public DescribeKeyResult describeKey(DescribeKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeKey(request);
+    }
+
+    @SdkInternalApi
+    final DescribeKeyResult executeDescribeKey(DescribeKeyRequest describeKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -992,7 +1041,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest) {
+    public DisableKeyResult disableKey(DisableKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableKey(request);
+    }
+
+    @SdkInternalApi
+    final DisableKeyResult executeDisableKey(DisableKeyRequest disableKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1053,7 +1108,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest) {
+    public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableKeyRotation(request);
+    }
+
+    @SdkInternalApi
+    final DisableKeyRotationResult executeDisableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1113,7 +1174,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest) {
+    public EnableKeyResult enableKey(EnableKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableKey(request);
+    }
+
+    @SdkInternalApi
+    final EnableKeyResult executeEnableKey(EnableKeyRequest enableKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1174,7 +1241,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest) {
+    public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableKeyRotation(request);
+    }
+
+    @SdkInternalApi
+    final EnableKeyRotationResult executeEnableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1264,7 +1337,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EncryptResult encrypt(EncryptRequest encryptRequest) {
+    public EncryptResult encrypt(EncryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeEncrypt(request);
+    }
+
+    @SdkInternalApi
+    final EncryptResult executeEncrypt(EncryptRequest encryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(encryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1386,7 +1465,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GenerateDataKeyResult generateDataKey(GenerateDataKeyRequest generateDataKeyRequest) {
+    public GenerateDataKeyResult generateDataKey(GenerateDataKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataKey(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataKeyResult executeGenerateDataKey(GenerateDataKeyRequest generateDataKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1459,7 +1544,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest) {
+    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataKeyWithoutPlaintext(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataKeyWithoutPlaintextResult executeGenerateDataKeyWithoutPlaintext(
+            GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataKeyWithoutPlaintextRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1507,7 +1599,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GenerateRandomResult generateRandom(GenerateRandomRequest generateRandomRequest) {
+    public GenerateRandomResult generateRandom(GenerateRandomRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateRandom(request);
+    }
+
+    @SdkInternalApi
+    final GenerateRandomResult executeGenerateRandom(GenerateRandomRequest generateRandomRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateRandomRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1568,7 +1666,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest) {
+    public GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyPolicyResult executeGetKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1627,7 +1731,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
+    public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyRotationStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyRotationStatusResult executeGetKeyRotationStatus(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyRotationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1701,7 +1811,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest getParametersForImportRequest) {
+    public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParametersForImport(request);
+    }
+
+    @SdkInternalApi
+    final GetParametersForImportResult executeGetParametersForImport(GetParametersForImportRequest getParametersForImportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParametersForImportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1793,7 +1909,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest) {
+    public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportKeyMaterial(request);
+    }
+
+    @SdkInternalApi
+    final ImportKeyMaterialResult executeImportKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1842,7 +1964,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1906,7 +2034,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListGrantsResult listGrants(ListGrantsRequest listGrantsRequest) {
+    public ListGrantsResult listGrants(ListGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListGrantsResult executeListGrants(ListGrantsRequest listGrantsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1962,7 +2096,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListKeyPoliciesResult listKeyPolicies(ListKeyPoliciesRequest listKeyPoliciesRequest) {
+    public ListKeyPoliciesResult listKeyPolicies(ListKeyPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeyPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListKeyPoliciesResult executeListKeyPolicies(ListKeyPoliciesRequest listKeyPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listKeyPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2011,7 +2151,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListKeysResult listKeys(ListKeysRequest listKeysRequest) {
+    public ListKeysResult listKeys(ListKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListKeysResult executeListKeys(ListKeysRequest listKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2067,7 +2213,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListResourceTagsResult listResourceTags(ListResourceTagsRequest listResourceTagsRequest) {
+    public ListResourceTagsResult listResourceTags(ListResourceTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceTags(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceTagsResult executeListResourceTags(ListResourceTagsRequest listResourceTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listResourceTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2123,7 +2275,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest) {
+    public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRetirableGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListRetirableGrantsResult executeListRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRetirableGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2193,7 +2351,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
+    public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutKeyPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutKeyPolicyResult executePutKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2268,7 +2432,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ReEncryptResult reEncrypt(ReEncryptRequest reEncryptRequest) {
+    public ReEncryptResult reEncrypt(ReEncryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeReEncrypt(request);
+    }
+
+    @SdkInternalApi
+    final ReEncryptResult executeReEncrypt(ReEncryptRequest reEncryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(reEncryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2349,7 +2519,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest) {
+    public RetireGrantResult retireGrant(RetireGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetireGrant(request);
+    }
+
+    @SdkInternalApi
+    final RetireGrantResult executeRetireGrant(RetireGrantRequest retireGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retireGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2412,7 +2588,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest) {
+    public RevokeGrantResult revokeGrant(RevokeGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeGrant(request);
+    }
+
+    @SdkInternalApi
+    final RevokeGrantResult executeRevokeGrant(RevokeGrantRequest revokeGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(revokeGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2484,7 +2666,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
+    public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
+        request = beforeClientExecution(request);
+        return executeScheduleKeyDeletion(request);
+    }
+
+    @SdkInternalApi
+    final ScheduleKeyDeletionResult executeScheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scheduleKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2554,7 +2742,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2614,7 +2808,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2680,7 +2880,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAliasResult executeUpdateAlias(UpdateAliasRequest updateAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2736,7 +2942,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
+    public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateKeyDescription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateKeyDescriptionResult executeUpdateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateKeyDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

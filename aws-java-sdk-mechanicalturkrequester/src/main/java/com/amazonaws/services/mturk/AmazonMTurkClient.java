@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -130,7 +131,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AcceptQualificationRequestResult acceptQualificationRequest(AcceptQualificationRequestRequest acceptQualificationRequestRequest) {
+    public AcceptQualificationRequestResult acceptQualificationRequest(AcceptQualificationRequestRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptQualificationRequest(request);
+    }
+
+    @SdkInternalApi
+    final AcceptQualificationRequestResult executeAcceptQualificationRequest(AcceptQualificationRequestRequest acceptQualificationRequestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(acceptQualificationRequestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -203,7 +210,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ApproveAssignmentResult approveAssignment(ApproveAssignmentRequest approveAssignmentRequest) {
+    public ApproveAssignmentResult approveAssignment(ApproveAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeApproveAssignment(request);
+    }
+
+    @SdkInternalApi
+    final ApproveAssignmentResult executeApproveAssignment(ApproveAssignmentRequest approveAssignmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(approveAssignmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -264,7 +277,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateQualificationWithWorkerResult associateQualificationWithWorker(
+    public AssociateQualificationWithWorkerResult associateQualificationWithWorker(AssociateQualificationWithWorkerRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateQualificationWithWorker(request);
+    }
+
+    @SdkInternalApi
+    final AssociateQualificationWithWorkerResult executeAssociateQualificationWithWorker(
             AssociateQualificationWithWorkerRequest associateQualificationWithWorkerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateQualificationWithWorkerRequest);
@@ -336,7 +355,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateAdditionalAssignmentsForHITResult createAdditionalAssignmentsForHIT(
+    public CreateAdditionalAssignmentsForHITResult createAdditionalAssignmentsForHIT(CreateAdditionalAssignmentsForHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAdditionalAssignmentsForHIT(request);
+    }
+
+    @SdkInternalApi
+    final CreateAdditionalAssignmentsForHITResult executeCreateAdditionalAssignmentsForHIT(
             CreateAdditionalAssignmentsForHITRequest createAdditionalAssignmentsForHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAdditionalAssignmentsForHITRequest);
@@ -408,7 +433,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      Documentation</a>
      */
     @Override
-    public CreateHITResult createHIT(CreateHITRequest createHITRequest) {
+    public CreateHITResult createHIT(CreateHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHIT(request);
+    }
+
+    @SdkInternalApi
+    final CreateHITResult executeCreateHIT(CreateHITRequest createHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -456,7 +487,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      API Documentation</a>
      */
     @Override
-    public CreateHITTypeResult createHITType(CreateHITTypeRequest createHITTypeRequest) {
+    public CreateHITTypeResult createHITType(CreateHITTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHITType(request);
+    }
+
+    @SdkInternalApi
+    final CreateHITTypeResult executeCreateHITType(CreateHITTypeRequest createHITTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHITTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -518,7 +555,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateHITWithHITTypeResult createHITWithHITType(CreateHITWithHITTypeRequest createHITWithHITTypeRequest) {
+    public CreateHITWithHITTypeResult createHITWithHITType(CreateHITWithHITTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHITWithHITType(request);
+    }
+
+    @SdkInternalApi
+    final CreateHITWithHITTypeResult executeCreateHITWithHITType(CreateHITWithHITTypeRequest createHITWithHITTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHITWithHITTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -565,7 +608,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateQualificationTypeResult createQualificationType(CreateQualificationTypeRequest createQualificationTypeRequest) {
+    public CreateQualificationTypeResult createQualificationType(CreateQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final CreateQualificationTypeResult executeCreateQualificationType(CreateQualificationTypeRequest createQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createQualificationTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -614,7 +663,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateWorkerBlockResult createWorkerBlock(CreateWorkerBlockRequest createWorkerBlockRequest) {
+    public CreateWorkerBlockResult createWorkerBlock(CreateWorkerBlockRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkerBlock(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkerBlockResult executeCreateWorkerBlock(CreateWorkerBlockRequest createWorkerBlockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createWorkerBlockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -692,7 +747,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      Documentation</a>
      */
     @Override
-    public DeleteHITResult deleteHIT(DeleteHITRequest deleteHITRequest) {
+    public DeleteHITResult deleteHIT(DeleteHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHIT(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHITResult executeDeleteHIT(DeleteHITRequest deleteHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -752,7 +813,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteQualificationTypeResult deleteQualificationType(DeleteQualificationTypeRequest deleteQualificationTypeRequest) {
+    public DeleteQualificationTypeResult deleteQualificationType(DeleteQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQualificationTypeResult executeDeleteQualificationType(DeleteQualificationTypeRequest deleteQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteQualificationTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -803,7 +870,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteWorkerBlockResult deleteWorkerBlock(DeleteWorkerBlockRequest deleteWorkerBlockRequest) {
+    public DeleteWorkerBlockResult deleteWorkerBlock(DeleteWorkerBlockRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkerBlock(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkerBlockResult executeDeleteWorkerBlock(DeleteWorkerBlockRequest deleteWorkerBlockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteWorkerBlockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -854,7 +927,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociateQualificationFromWorkerResult disassociateQualificationFromWorker(
+    public DisassociateQualificationFromWorkerResult disassociateQualificationFromWorker(DisassociateQualificationFromWorkerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateQualificationFromWorker(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateQualificationFromWorkerResult executeDisassociateQualificationFromWorker(
             DisassociateQualificationFromWorkerRequest disassociateQualificationFromWorkerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateQualificationFromWorkerRequest);
@@ -904,7 +983,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetAccountBalanceResult getAccountBalance(GetAccountBalanceRequest getAccountBalanceRequest) {
+    public GetAccountBalanceResult getAccountBalance(GetAccountBalanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountBalance(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountBalanceResult executeGetAccountBalance(GetAccountBalanceRequest getAccountBalanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountBalanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -950,7 +1035,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      API Documentation</a>
      */
     @Override
-    public GetAssignmentResult getAssignment(GetAssignmentRequest getAssignmentRequest) {
+    public GetAssignmentResult getAssignment(GetAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssignment(request);
+    }
+
+    @SdkInternalApi
+    final GetAssignmentResult executeGetAssignment(GetAssignmentRequest getAssignmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAssignmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1000,7 +1091,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetFileUploadURLResult getFileUploadURL(GetFileUploadURLRequest getFileUploadURLRequest) {
+    public GetFileUploadURLResult getFileUploadURL(GetFileUploadURLRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFileUploadURL(request);
+    }
+
+    @SdkInternalApi
+    final GetFileUploadURLResult executeGetFileUploadURL(GetFileUploadURLRequest getFileUploadURLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFileUploadURLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1046,7 +1143,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      Documentation</a>
      */
     @Override
-    public GetHITResult getHIT(GetHITRequest getHITRequest) {
+    public GetHITResult getHIT(GetHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHIT(request);
+    }
+
+    @SdkInternalApi
+    final GetHITResult executeGetHIT(GetHITRequest getHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1100,7 +1203,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetQualificationScoreResult getQualificationScore(GetQualificationScoreRequest getQualificationScoreRequest) {
+    public GetQualificationScoreResult getQualificationScore(GetQualificationScoreRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQualificationScore(request);
+    }
+
+    @SdkInternalApi
+    final GetQualificationScoreResult executeGetQualificationScore(GetQualificationScoreRequest getQualificationScoreRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getQualificationScoreRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1147,7 +1256,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetQualificationTypeResult getQualificationType(GetQualificationTypeRequest getQualificationTypeRequest) {
+    public GetQualificationTypeResult getQualificationType(GetQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final GetQualificationTypeResult executeGetQualificationType(GetQualificationTypeRequest getQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getQualificationTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1212,7 +1327,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAssignmentsForHITResult listAssignmentsForHIT(ListAssignmentsForHITRequest listAssignmentsForHITRequest) {
+    public ListAssignmentsForHITResult listAssignmentsForHIT(ListAssignmentsForHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssignmentsForHIT(request);
+    }
+
+    @SdkInternalApi
+    final ListAssignmentsForHITResult executeListAssignmentsForHIT(ListAssignmentsForHITRequest listAssignmentsForHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssignmentsForHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1260,7 +1381,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListBonusPaymentsResult listBonusPayments(ListBonusPaymentsRequest listBonusPaymentsRequest) {
+    public ListBonusPaymentsResult listBonusPayments(ListBonusPaymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBonusPayments(request);
+    }
+
+    @SdkInternalApi
+    final ListBonusPaymentsResult executeListBonusPayments(ListBonusPaymentsRequest listBonusPaymentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listBonusPaymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1307,7 +1434,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      Documentation</a>
      */
     @Override
-    public ListHITsResult listHITs(ListHITsRequest listHITsRequest) {
+    public ListHITsResult listHITs(ListHITsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHITs(request);
+    }
+
+    @SdkInternalApi
+    final ListHITsResult executeListHITs(ListHITsRequest listHITsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHITsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1355,7 +1488,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListHITsForQualificationTypeResult listHITsForQualificationType(ListHITsForQualificationTypeRequest listHITsForQualificationTypeRequest) {
+    public ListHITsForQualificationTypeResult listHITsForQualificationType(ListHITsForQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHITsForQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final ListHITsForQualificationTypeResult executeListHITsForQualificationType(ListHITsForQualificationTypeRequest listHITsForQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHITsForQualificationTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1405,7 +1544,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListQualificationRequestsResult listQualificationRequests(ListQualificationRequestsRequest listQualificationRequestsRequest) {
+    public ListQualificationRequestsResult listQualificationRequests(ListQualificationRequestsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQualificationRequests(request);
+    }
+
+    @SdkInternalApi
+    final ListQualificationRequestsResult executeListQualificationRequests(ListQualificationRequestsRequest listQualificationRequestsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listQualificationRequestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1455,7 +1600,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListQualificationTypesResult listQualificationTypes(ListQualificationTypesRequest listQualificationTypesRequest) {
+    public ListQualificationTypesResult listQualificationTypes(ListQualificationTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQualificationTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListQualificationTypesResult executeListQualificationTypes(ListQualificationTypesRequest listQualificationTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listQualificationTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1505,7 +1656,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListReviewPolicyResultsForHITResult listReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest listReviewPolicyResultsForHITRequest) {
+    public ListReviewPolicyResultsForHITResult listReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReviewPolicyResultsForHIT(request);
+    }
+
+    @SdkInternalApi
+    final ListReviewPolicyResultsForHITResult executeListReviewPolicyResultsForHIT(ListReviewPolicyResultsForHITRequest listReviewPolicyResultsForHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReviewPolicyResultsForHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1554,7 +1711,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListReviewableHITsResult listReviewableHITs(ListReviewableHITsRequest listReviewableHITsRequest) {
+    public ListReviewableHITsResult listReviewableHITs(ListReviewableHITsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReviewableHITs(request);
+    }
+
+    @SdkInternalApi
+    final ListReviewableHITsResult executeListReviewableHITs(ListReviewableHITsRequest listReviewableHITsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReviewableHITsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1601,7 +1764,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListWorkerBlocksResult listWorkerBlocks(ListWorkerBlocksRequest listWorkerBlocksRequest) {
+    public ListWorkerBlocksResult listWorkerBlocks(ListWorkerBlocksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkerBlocks(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkerBlocksResult executeListWorkerBlocks(ListWorkerBlocksRequest listWorkerBlocksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listWorkerBlocksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1648,7 +1817,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListWorkersWithQualificationTypeResult listWorkersWithQualificationType(
+    public ListWorkersWithQualificationTypeResult listWorkersWithQualificationType(ListWorkersWithQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkersWithQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkersWithQualificationTypeResult executeListWorkersWithQualificationType(
             ListWorkersWithQualificationTypeRequest listWorkersWithQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listWorkersWithQualificationTypeRequest);
@@ -1700,7 +1875,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      API Documentation</a>
      */
     @Override
-    public NotifyWorkersResult notifyWorkers(NotifyWorkersRequest notifyWorkersRequest) {
+    public NotifyWorkersResult notifyWorkers(NotifyWorkersRequest request) {
+        request = beforeClientExecution(request);
+        return executeNotifyWorkers(request);
+    }
+
+    @SdkInternalApi
+    final NotifyWorkersResult executeNotifyWorkers(NotifyWorkersRequest notifyWorkersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(notifyWorkersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1754,7 +1935,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RejectAssignmentResult rejectAssignment(RejectAssignmentRequest rejectAssignmentRequest) {
+    public RejectAssignmentResult rejectAssignment(RejectAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectAssignment(request);
+    }
+
+    @SdkInternalApi
+    final RejectAssignmentResult executeRejectAssignment(RejectAssignmentRequest rejectAssignmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rejectAssignmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1804,7 +1991,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RejectQualificationRequestResult rejectQualificationRequest(RejectQualificationRequestRequest rejectQualificationRequestRequest) {
+    public RejectQualificationRequestResult rejectQualificationRequest(RejectQualificationRequestRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectQualificationRequest(request);
+    }
+
+    @SdkInternalApi
+    final RejectQualificationRequestResult executeRejectQualificationRequest(RejectQualificationRequestRequest rejectQualificationRequestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rejectQualificationRequestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1857,7 +2050,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      Documentation</a>
      */
     @Override
-    public SendBonusResult sendBonus(SendBonusRequest sendBonusRequest) {
+    public SendBonusResult sendBonus(SendBonusRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendBonus(request);
+    }
+
+    @SdkInternalApi
+    final SendBonusResult executeSendBonus(SendBonusRequest sendBonusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendBonusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1906,7 +2105,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SendTestEventNotificationResult sendTestEventNotification(SendTestEventNotificationRequest sendTestEventNotificationRequest) {
+    public SendTestEventNotificationResult sendTestEventNotification(SendTestEventNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendTestEventNotification(request);
+    }
+
+    @SdkInternalApi
+    final SendTestEventNotificationResult executeSendTestEventNotification(SendTestEventNotificationRequest sendTestEventNotificationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendTestEventNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1955,7 +2160,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateExpirationForHITResult updateExpirationForHIT(UpdateExpirationForHITRequest updateExpirationForHITRequest) {
+    public UpdateExpirationForHITResult updateExpirationForHIT(UpdateExpirationForHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateExpirationForHIT(request);
+    }
+
+    @SdkInternalApi
+    final UpdateExpirationForHITResult executeUpdateExpirationForHIT(UpdateExpirationForHITRequest updateExpirationForHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateExpirationForHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2003,7 +2214,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateHITReviewStatusResult updateHITReviewStatus(UpdateHITReviewStatusRequest updateHITReviewStatusRequest) {
+    public UpdateHITReviewStatusResult updateHITReviewStatus(UpdateHITReviewStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHITReviewStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHITReviewStatusResult executeUpdateHITReviewStatus(UpdateHITReviewStatusRequest updateHITReviewStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHITReviewStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2052,7 +2269,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateHITTypeOfHITResult updateHITTypeOfHIT(UpdateHITTypeOfHITRequest updateHITTypeOfHITRequest) {
+    public UpdateHITTypeOfHITResult updateHITTypeOfHIT(UpdateHITTypeOfHITRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHITTypeOfHIT(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHITTypeOfHITResult executeUpdateHITTypeOfHIT(UpdateHITTypeOfHITRequest updateHITTypeOfHITRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHITTypeOfHITRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2105,7 +2328,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateNotificationSettingsResult updateNotificationSettings(UpdateNotificationSettingsRequest updateNotificationSettingsRequest) {
+    public UpdateNotificationSettingsResult updateNotificationSettings(UpdateNotificationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNotificationSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNotificationSettingsResult executeUpdateNotificationSettings(UpdateNotificationSettingsRequest updateNotificationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateNotificationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2183,7 +2412,13 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateQualificationTypeResult updateQualificationType(UpdateQualificationTypeRequest updateQualificationTypeRequest) {
+    public UpdateQualificationTypeResult updateQualificationType(UpdateQualificationTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateQualificationType(request);
+    }
+
+    @SdkInternalApi
+    final UpdateQualificationTypeResult executeUpdateQualificationType(UpdateQualificationTypeRequest updateQualificationTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateQualificationTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

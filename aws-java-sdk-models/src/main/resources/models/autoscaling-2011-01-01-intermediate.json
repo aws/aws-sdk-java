@@ -32,54 +32,71 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "AttachLoadBalancers" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAccountLimits" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAdjustmentTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAutoScalingGroups" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAutoScalingInstances" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeAutoScalingNotificationTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeLaunchConfigurations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeLifecycleHookTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeMetricCollectionTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeNotificationConfigurations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribePolicies" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeScalingActivities" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeScalingProcessTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeScheduledActions" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeTags" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeTerminationPolicyTypes" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DetachLoadBalancers" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

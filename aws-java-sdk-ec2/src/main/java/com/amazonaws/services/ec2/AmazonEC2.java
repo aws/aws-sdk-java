@@ -5202,6 +5202,7 @@ public interface AmazonEC2 {
      *
      * @see #revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest)
      */
+    @Deprecated
     RevokeSecurityGroupIngressResult revokeSecurityGroupIngress();
 
     /**

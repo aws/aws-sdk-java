@@ -32,27 +32,35 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "BatchGetApplications" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "BatchGetDeployments" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "BatchGetOnPremisesInstances" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListApplications" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListDeploymentConfigs" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListDeployments" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListOnPremisesInstances" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "UpdateApplication" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

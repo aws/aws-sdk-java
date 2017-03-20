@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -348,7 +349,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.CompareFaces
      */
     @Override
-    public CompareFacesResult compareFaces(CompareFacesRequest compareFacesRequest) {
+    public CompareFacesResult compareFaces(CompareFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompareFaces(request);
+    }
+
+    @SdkInternalApi
+    final CompareFacesResult executeCompareFaces(CompareFacesRequest compareFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(compareFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -412,7 +419,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.CreateCollection
      */
     @Override
-    public CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest) {
+    public CreateCollectionResult createCollection(CreateCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCollection(request);
+    }
+
+    @SdkInternalApi
+    final CreateCollectionResult executeCreateCollection(CreateCollectionRequest createCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -469,7 +482,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DeleteCollection
      */
     @Override
-    public DeleteCollectionResult deleteCollection(DeleteCollectionRequest deleteCollectionRequest) {
+    public DeleteCollectionResult deleteCollection(DeleteCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCollection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCollectionResult executeDeleteCollection(DeleteCollectionRequest deleteCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -526,7 +545,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DeleteFaces
      */
     @Override
-    public DeleteFacesResult deleteFaces(DeleteFacesRequest deleteFacesRequest) {
+    public DeleteFacesResult deleteFaces(DeleteFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFaces(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFacesResult executeDeleteFaces(DeleteFacesRequest deleteFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -603,7 +628,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DetectFaces
      */
     @Override
-    public DetectFacesResult detectFaces(DetectFacesRequest detectFacesRequest) {
+    public DetectFacesResult detectFaces(DetectFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectFaces(request);
+    }
+
+    @SdkInternalApi
+    final DetectFacesResult executeDetectFaces(DetectFacesRequest detectFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detectFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -711,7 +742,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DetectLabels
      */
     @Override
-    public DetectLabelsResult detectLabels(DetectLabelsRequest detectLabelsRequest) {
+    public DetectLabelsResult detectLabels(DetectLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectLabels(request);
+    }
+
+    @SdkInternalApi
+    final DetectLabelsResult executeDetectLabels(DetectLabelsRequest detectLabelsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detectLabelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -797,7 +834,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.IndexFaces
      */
     @Override
-    public IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest) {
+    public IndexFacesResult indexFaces(IndexFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeIndexFaces(request);
+    }
+
+    @SdkInternalApi
+    final IndexFacesResult executeIndexFaces(IndexFacesRequest indexFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(indexFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -859,7 +902,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.ListCollections
      */
     @Override
-    public ListCollectionsResult listCollections(ListCollectionsRequest listCollectionsRequest) {
+    public ListCollectionsResult listCollections(ListCollectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollections(request);
+    }
+
+    @SdkInternalApi
+    final ListCollectionsResult executeListCollections(ListCollectionsRequest listCollectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCollectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -919,7 +968,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.ListFaces
      */
     @Override
-    public ListFacesResult listFaces(ListFacesRequest listFacesRequest) {
+    public ListFacesResult listFaces(ListFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFaces(request);
+    }
+
+    @SdkInternalApi
+    final ListFacesResult executeListFaces(ListFacesRequest listFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -991,7 +1046,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.SearchFaces
      */
     @Override
-    public SearchFacesResult searchFaces(SearchFacesRequest searchFacesRequest) {
+    public SearchFacesResult searchFaces(SearchFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchFaces(request);
+    }
+
+    @SdkInternalApi
+    final SearchFacesResult executeSearchFaces(SearchFacesRequest searchFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1074,7 +1135,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.SearchFacesByImage
      */
     @Override
-    public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest searchFacesByImageRequest) {
+    public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchFacesByImage(request);
+    }
+
+    @SdkInternalApi
+    final SearchFacesByImageResult executeSearchFacesByImage(SearchFacesByImageRequest searchFacesByImageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchFacesByImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

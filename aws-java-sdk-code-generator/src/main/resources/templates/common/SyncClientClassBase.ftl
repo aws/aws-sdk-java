@@ -15,6 +15,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
@@ -366,6 +367,14 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
                }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
     </#if>
 

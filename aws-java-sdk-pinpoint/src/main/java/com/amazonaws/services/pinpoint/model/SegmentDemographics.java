@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segment demographic dimensions
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentDemographics implements Serializable, Cloneable, StructuredPojo {
 

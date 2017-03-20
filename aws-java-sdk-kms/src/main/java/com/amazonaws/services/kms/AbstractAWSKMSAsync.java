@@ -94,6 +94,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #createKeyAsync(CreateKeyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
 
         return createKeyAsync(new CreateKeyRequest(), asyncHandler);
@@ -273,6 +274,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #generateRandomAsync(GenerateRandomRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(
             com.amazonaws.handlers.AsyncHandler<GenerateRandomRequest, GenerateRandomResult> asyncHandler) {
 
@@ -360,6 +362,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #listAliasesAsync(ListAliasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler) {
 
@@ -421,6 +424,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #listKeysAsync(ListKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListKeysResult> listKeysAsync(com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
 
         return listKeysAsync(new ListKeysRequest(), asyncHandler);
@@ -507,6 +511,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #retireGrantAsync(RetireGrantRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
             com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
 

@@ -264,14 +264,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(final AddPermissionRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
+        final AddPermissionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddPermissionResult>() {
             @Override
             public AddPermissionResult call() throws Exception {
-                AddPermissionResult result;
+                AddPermissionResult result = null;
 
                 try {
-                    result = addPermission(request);
+                    result = executeAddPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +281,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -305,6 +306,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #addPermissionAsync(AddPermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(String topicArn, String label, java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames, com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
@@ -321,14 +323,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(final CheckIfPhoneNumberIsOptedOutRequest request,
             final com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult> asyncHandler) {
+        final CheckIfPhoneNumberIsOptedOutRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CheckIfPhoneNumberIsOptedOutResult>() {
             @Override
             public CheckIfPhoneNumberIsOptedOutResult call() throws Exception {
-                CheckIfPhoneNumberIsOptedOutResult result;
+                CheckIfPhoneNumberIsOptedOutResult result = null;
 
                 try {
-                    result = checkIfPhoneNumberIsOptedOut(request);
+                    result = executeCheckIfPhoneNumberIsOptedOut(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -337,7 +340,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -353,14 +356,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(final ConfirmSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
+        final ConfirmSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ConfirmSubscriptionResult>() {
             @Override
             public ConfirmSubscriptionResult call() throws Exception {
-                ConfirmSubscriptionResult result;
+                ConfirmSubscriptionResult result = null;
 
                 try {
-                    result = confirmSubscription(request);
+                    result = executeConfirmSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,7 +373,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -393,6 +397,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(String topicArn, String token, String authenticateOnUnsubscribe,
             com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
 
@@ -416,6 +421,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(String topicArn, String token,
             com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
 
@@ -431,14 +437,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(final CreatePlatformApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult> asyncHandler) {
+        final CreatePlatformApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePlatformApplicationResult>() {
             @Override
             public CreatePlatformApplicationResult call() throws Exception {
-                CreatePlatformApplicationResult result;
+                CreatePlatformApplicationResult result = null;
 
                 try {
-                    result = createPlatformApplication(request);
+                    result = executeCreatePlatformApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -447,7 +454,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -463,14 +470,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(final CreatePlatformEndpointRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult> asyncHandler) {
+        final CreatePlatformEndpointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePlatformEndpointResult>() {
             @Override
             public CreatePlatformEndpointResult call() throws Exception {
-                CreatePlatformEndpointResult result;
+                CreatePlatformEndpointResult result = null;
 
                 try {
-                    result = createPlatformEndpoint(request);
+                    result = executeCreatePlatformEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -479,7 +487,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -495,14 +503,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(final CreateTopicRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
+        final CreateTopicRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateTopicResult>() {
             @Override
             public CreateTopicResult call() throws Exception {
-                CreateTopicResult result;
+                CreateTopicResult result = null;
 
                 try {
-                    result = createTopic(request);
+                    result = executeCreateTopic(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -511,7 +520,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -534,6 +543,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #createTopicAsync(CreateTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(String name,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
 
@@ -549,14 +559,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(final DeleteEndpointRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler) {
+        final DeleteEndpointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteEndpointResult>() {
             @Override
             public DeleteEndpointResult call() throws Exception {
-                DeleteEndpointResult result;
+                DeleteEndpointResult result = null;
 
                 try {
-                    result = deleteEndpoint(request);
+                    result = executeDeleteEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -565,7 +576,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -581,14 +592,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(final DeletePlatformApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult> asyncHandler) {
+        final DeletePlatformApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeletePlatformApplicationResult>() {
             @Override
             public DeletePlatformApplicationResult call() throws Exception {
-                DeletePlatformApplicationResult result;
+                DeletePlatformApplicationResult result = null;
 
                 try {
-                    result = deletePlatformApplication(request);
+                    result = executeDeletePlatformApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -597,7 +609,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -613,14 +625,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(final DeleteTopicRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
+        final DeleteTopicRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTopicResult>() {
             @Override
             public DeleteTopicResult call() throws Exception {
-                DeleteTopicResult result;
+                DeleteTopicResult result = null;
 
                 try {
-                    result = deleteTopic(request);
+                    result = executeDeleteTopic(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -629,7 +642,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -652,6 +665,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #deleteTopicAsync(DeleteTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
 
@@ -667,14 +681,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<GetEndpointAttributesResult> getEndpointAttributesAsync(final GetEndpointAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult> asyncHandler) {
+        final GetEndpointAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetEndpointAttributesResult>() {
             @Override
             public GetEndpointAttributesResult call() throws Exception {
-                GetEndpointAttributesResult result;
+                GetEndpointAttributesResult result = null;
 
                 try {
-                    result = getEndpointAttributes(request);
+                    result = executeGetEndpointAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -683,7 +698,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -701,14 +716,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     public java.util.concurrent.Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(
             final GetPlatformApplicationAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult> asyncHandler) {
+        final GetPlatformApplicationAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPlatformApplicationAttributesResult>() {
             @Override
             public GetPlatformApplicationAttributesResult call() throws Exception {
-                GetPlatformApplicationAttributesResult result;
+                GetPlatformApplicationAttributesResult result = null;
 
                 try {
-                    result = getPlatformApplicationAttributes(request);
+                    result = executeGetPlatformApplicationAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -717,7 +733,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -733,14 +749,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(final GetSMSAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult> asyncHandler) {
+        final GetSMSAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSMSAttributesResult>() {
             @Override
             public GetSMSAttributesResult call() throws Exception {
-                GetSMSAttributesResult result;
+                GetSMSAttributesResult result = null;
 
                 try {
-                    result = getSMSAttributes(request);
+                    result = executeGetSMSAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -749,7 +766,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -765,14 +782,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(final GetSubscriptionAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
+        final GetSubscriptionAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSubscriptionAttributesResult>() {
             @Override
             public GetSubscriptionAttributesResult call() throws Exception {
-                GetSubscriptionAttributesResult result;
+                GetSubscriptionAttributesResult result = null;
 
                 try {
-                    result = getSubscriptionAttributes(request);
+                    result = executeGetSubscriptionAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -781,7 +799,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -804,6 +822,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #getSubscriptionAttributesAsync(GetSubscriptionAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(String subscriptionArn,
             com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
 
@@ -819,14 +838,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(final GetTopicAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
+        final GetTopicAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTopicAttributesResult>() {
             @Override
             public GetTopicAttributesResult call() throws Exception {
-                GetTopicAttributesResult result;
+                GetTopicAttributesResult result = null;
 
                 try {
-                    result = getTopicAttributes(request);
+                    result = executeGetTopicAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -835,7 +855,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -858,6 +878,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #getTopicAttributesAsync(GetTopicAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
 
@@ -875,14 +896,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     public java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
             final ListEndpointsByPlatformApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler) {
+        final ListEndpointsByPlatformApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListEndpointsByPlatformApplicationResult>() {
             @Override
             public ListEndpointsByPlatformApplicationResult call() throws Exception {
-                ListEndpointsByPlatformApplicationResult result;
+                ListEndpointsByPlatformApplicationResult result = null;
 
                 try {
-                    result = listEndpointsByPlatformApplication(request);
+                    result = executeListEndpointsByPlatformApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -891,7 +913,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -907,14 +929,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(final ListPhoneNumbersOptedOutRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult> asyncHandler) {
+        final ListPhoneNumbersOptedOutRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPhoneNumbersOptedOutResult>() {
             @Override
             public ListPhoneNumbersOptedOutResult call() throws Exception {
-                ListPhoneNumbersOptedOutResult result;
+                ListPhoneNumbersOptedOutResult result = null;
 
                 try {
-                    result = listPhoneNumbersOptedOut(request);
+                    result = executeListPhoneNumbersOptedOut(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -923,7 +946,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -939,14 +962,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(final ListPlatformApplicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
+        final ListPlatformApplicationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPlatformApplicationsResult>() {
             @Override
             public ListPlatformApplicationsResult call() throws Exception {
-                ListPlatformApplicationsResult result;
+                ListPlatformApplicationsResult result = null;
 
                 try {
-                    result = listPlatformApplications(request);
+                    result = executeListPlatformApplications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -955,7 +979,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -978,6 +1002,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listPlatformApplicationsAsync(ListPlatformApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
 
@@ -993,14 +1018,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(final ListSubscriptionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
+        final ListSubscriptionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSubscriptionsResult>() {
             @Override
             public ListSubscriptionsResult call() throws Exception {
-                ListSubscriptionsResult result;
+                ListSubscriptionsResult result = null;
 
                 try {
-                    result = listSubscriptions(request);
+                    result = executeListSubscriptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1009,7 +1035,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1032,6 +1058,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listSubscriptionsAsync(ListSubscriptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
 
@@ -1054,6 +1081,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listSubscriptionsAsync(ListSubscriptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
 
@@ -1069,14 +1097,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(final ListSubscriptionsByTopicRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
+        final ListSubscriptionsByTopicRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSubscriptionsByTopicResult>() {
             @Override
             public ListSubscriptionsByTopicResult call() throws Exception {
-                ListSubscriptionsByTopicResult result;
+                ListSubscriptionsByTopicResult result = null;
 
                 try {
-                    result = listSubscriptionsByTopic(request);
+                    result = executeListSubscriptionsByTopic(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1085,7 +1114,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1108,6 +1137,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
 
@@ -1130,6 +1160,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(String topicArn, String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
 
@@ -1145,14 +1176,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(final ListTopicsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
+        final ListTopicsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTopicsResult>() {
             @Override
             public ListTopicsResult call() throws Exception {
-                ListTopicsResult result;
+                ListTopicsResult result = null;
 
                 try {
-                    result = listTopics(request);
+                    result = executeListTopics(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1161,7 +1193,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1184,6 +1216,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listTopicsAsync(ListTopicsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
 
         return listTopicsAsync(new ListTopicsRequest(), asyncHandler);
@@ -1205,6 +1238,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #listTopicsAsync(ListTopicsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
 
@@ -1220,14 +1254,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(final OptInPhoneNumberRequest request,
             final com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult> asyncHandler) {
+        final OptInPhoneNumberRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<OptInPhoneNumberResult>() {
             @Override
             public OptInPhoneNumberResult call() throws Exception {
-                OptInPhoneNumberResult result;
+                OptInPhoneNumberResult result = null;
 
                 try {
-                    result = optInPhoneNumber(request);
+                    result = executeOptInPhoneNumber(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1236,7 +1271,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1252,14 +1287,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(final PublishRequest request,
             final com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
+        final PublishRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PublishResult>() {
             @Override
             public PublishResult call() throws Exception {
-                PublishResult result;
+                PublishResult result = null;
 
                 try {
-                    result = publish(request);
+                    result = executePublish(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1268,7 +1304,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1291,6 +1327,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(String topicArn, String message,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
@@ -1313,6 +1350,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(String topicArn, String message, String subject,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
@@ -1328,14 +1366,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(final RemovePermissionRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+        final RemovePermissionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
             @Override
             public RemovePermissionResult call() throws Exception {
-                RemovePermissionResult result;
+                RemovePermissionResult result = null;
 
                 try {
-                    result = removePermission(request);
+                    result = executeRemovePermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1344,7 +1383,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1367,6 +1406,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #removePermissionAsync(RemovePermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(String topicArn, String label,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
@@ -1382,14 +1422,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(final SetEndpointAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, SetEndpointAttributesResult> asyncHandler) {
+        final SetEndpointAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetEndpointAttributesResult>() {
             @Override
             public SetEndpointAttributesResult call() throws Exception {
-                SetEndpointAttributesResult result;
+                SetEndpointAttributesResult result = null;
 
                 try {
-                    result = setEndpointAttributes(request);
+                    result = executeSetEndpointAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1398,7 +1439,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1416,14 +1457,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     public java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             final SetPlatformApplicationAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler) {
+        final SetPlatformApplicationAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetPlatformApplicationAttributesResult>() {
             @Override
             public SetPlatformApplicationAttributesResult call() throws Exception {
-                SetPlatformApplicationAttributesResult result;
+                SetPlatformApplicationAttributesResult result = null;
 
                 try {
-                    result = setPlatformApplicationAttributes(request);
+                    result = executeSetPlatformApplicationAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1432,7 +1474,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1448,14 +1490,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(final SetSMSAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult> asyncHandler) {
+        final SetSMSAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetSMSAttributesResult>() {
             @Override
             public SetSMSAttributesResult call() throws Exception {
-                SetSMSAttributesResult result;
+                SetSMSAttributesResult result = null;
 
                 try {
-                    result = setSMSAttributes(request);
+                    result = executeSetSMSAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1464,7 +1507,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1480,14 +1523,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(final SetSubscriptionAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
+        final SetSubscriptionAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetSubscriptionAttributesResult>() {
             @Override
             public SetSubscriptionAttributesResult call() throws Exception {
-                SetSubscriptionAttributesResult result;
+                SetSubscriptionAttributesResult result = null;
 
                 try {
-                    result = setSubscriptionAttributes(request);
+                    result = executeSetSubscriptionAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1496,7 +1540,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1521,6 +1565,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(String subscriptionArn, String attributeName,
             String attributeValue, com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
 
@@ -1537,14 +1582,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(final SetTopicAttributesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
+        final SetTopicAttributesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetTopicAttributesResult>() {
             @Override
             public SetTopicAttributesResult call() throws Exception {
-                SetTopicAttributesResult result;
+                SetTopicAttributesResult result = null;
 
                 try {
-                    result = setTopicAttributes(request);
+                    result = executeSetTopicAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1553,7 +1599,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1577,6 +1623,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(String topicArn, String attributeName, String attributeValue,
             com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
 
@@ -1593,14 +1640,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<SubscribeResult> subscribeAsync(final SubscribeRequest request,
             final com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
+        final SubscribeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SubscribeResult>() {
             @Override
             public SubscribeResult call() throws Exception {
-                SubscribeResult result;
+                SubscribeResult result = null;
 
                 try {
-                    result = subscribe(request);
+                    result = executeSubscribe(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1609,7 +1657,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1632,6 +1680,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #subscribeAsync(SubscribeRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SubscribeResult> subscribeAsync(String topicArn, String protocol, String endpoint,
             com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
 
@@ -1647,14 +1696,15 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
     @Override
     public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(final UnsubscribeRequest request,
             final com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
+        final UnsubscribeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UnsubscribeResult>() {
             @Override
             public UnsubscribeResult call() throws Exception {
-                UnsubscribeResult result;
+                UnsubscribeResult result = null;
 
                 try {
-                    result = unsubscribe(request);
+                    result = executeUnsubscribe(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1663,7 +1713,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1686,6 +1736,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements AmazonSNSAs
      *
      * @see #unsubscribeAsync(UnsubscribeRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(String subscriptionArn,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 

@@ -160,6 +160,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
      *
      * @see #listPipelinesAsync(ListPipelinesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
 
@@ -195,6 +196,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
      *
      * @see #listPresetsAsync(ListPresetsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPresetsResult> listPresetsAsync(
             com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult> asyncHandler) {
 

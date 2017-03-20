@@ -56,4 +56,7 @@ public class AmazonRoute53Waiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

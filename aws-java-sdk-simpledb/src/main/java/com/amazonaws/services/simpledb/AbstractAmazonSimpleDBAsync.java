@@ -147,6 +147,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
      *
      * @see #listDomainsAsync(ListDomainsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
 

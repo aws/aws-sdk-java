@@ -11575,6 +11575,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest)
      */
+    @Deprecated
     java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync();
 
     /**
@@ -11582,6 +11583,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Deprecated
     java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler);
 

@@ -173,6 +173,7 @@ public class AbstractDataPipelineAsync extends AbstractDataPipeline implements D
      *
      * @see #listPipelinesAsync(ListPipelinesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
 

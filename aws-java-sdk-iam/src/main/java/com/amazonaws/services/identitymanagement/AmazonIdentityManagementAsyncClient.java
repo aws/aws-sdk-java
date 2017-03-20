@@ -318,14 +318,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             final AddClientIDToOpenIDConnectProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, AddClientIDToOpenIDConnectProviderResult> asyncHandler) {
+        final AddClientIDToOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddClientIDToOpenIDConnectProviderResult>() {
             @Override
             public AddClientIDToOpenIDConnectProviderResult call() throws Exception {
-                AddClientIDToOpenIDConnectProviderResult result;
+                AddClientIDToOpenIDConnectProviderResult result = null;
 
                 try {
-                    result = addClientIDToOpenIDConnectProvider(request);
+                    result = executeAddClientIDToOpenIDConnectProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -334,7 +335,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -350,14 +351,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(final AddRoleToInstanceProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResult> asyncHandler) {
+        final AddRoleToInstanceProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddRoleToInstanceProfileResult>() {
             @Override
             public AddRoleToInstanceProfileResult call() throws Exception {
-                AddRoleToInstanceProfileResult result;
+                AddRoleToInstanceProfileResult result = null;
 
                 try {
-                    result = addRoleToInstanceProfile(request);
+                    result = executeAddRoleToInstanceProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -366,7 +368,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -382,14 +384,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(final AddUserToGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResult> asyncHandler) {
+        final AddUserToGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddUserToGroupResult>() {
             @Override
             public AddUserToGroupResult call() throws Exception {
-                AddUserToGroupResult result;
+                AddUserToGroupResult result = null;
 
                 try {
-                    result = addUserToGroup(request);
+                    result = executeAddUserToGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -398,7 +401,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -414,14 +417,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(final AttachGroupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, AttachGroupPolicyResult> asyncHandler) {
+        final AttachGroupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachGroupPolicyResult>() {
             @Override
             public AttachGroupPolicyResult call() throws Exception {
-                AttachGroupPolicyResult result;
+                AttachGroupPolicyResult result = null;
 
                 try {
-                    result = attachGroupPolicy(request);
+                    result = executeAttachGroupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -430,7 +434,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -446,14 +450,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(final AttachRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, AttachRolePolicyResult> asyncHandler) {
+        final AttachRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachRolePolicyResult>() {
             @Override
             public AttachRolePolicyResult call() throws Exception {
-                AttachRolePolicyResult result;
+                AttachRolePolicyResult result = null;
 
                 try {
-                    result = attachRolePolicy(request);
+                    result = executeAttachRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -462,7 +467,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -478,14 +483,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(final AttachUserPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, AttachUserPolicyResult> asyncHandler) {
+        final AttachUserPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachUserPolicyResult>() {
             @Override
             public AttachUserPolicyResult call() throws Exception {
-                AttachUserPolicyResult result;
+                AttachUserPolicyResult result = null;
 
                 try {
-                    result = attachUserPolicy(request);
+                    result = executeAttachUserPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -494,7 +500,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -510,14 +516,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(final ChangePasswordRequest request,
             final com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler) {
+        final ChangePasswordRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ChangePasswordResult>() {
             @Override
             public ChangePasswordResult call() throws Exception {
-                ChangePasswordResult result;
+                ChangePasswordResult result = null;
 
                 try {
-                    result = changePassword(request);
+                    result = executeChangePassword(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -526,7 +533,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -542,14 +549,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateAccessKeyResult> createAccessKeyAsync(final CreateAccessKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAccessKeyRequest, CreateAccessKeyResult> asyncHandler) {
+        final CreateAccessKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAccessKeyResult>() {
             @Override
             public CreateAccessKeyResult call() throws Exception {
-                CreateAccessKeyResult result;
+                CreateAccessKeyResult result = null;
 
                 try {
-                    result = createAccessKey(request);
+                    result = executeCreateAccessKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -558,7 +566,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -581,6 +589,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #createAccessKeyAsync(CreateAccessKeyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateAccessKeyResult> createAccessKeyAsync(
             com.amazonaws.handlers.AsyncHandler<CreateAccessKeyRequest, CreateAccessKeyResult> asyncHandler) {
 
@@ -596,14 +605,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(final CreateAccountAliasRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, CreateAccountAliasResult> asyncHandler) {
+        final CreateAccountAliasRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAccountAliasResult>() {
             @Override
             public CreateAccountAliasResult call() throws Exception {
-                CreateAccountAliasResult result;
+                CreateAccountAliasResult result = null;
 
                 try {
-                    result = createAccountAlias(request);
+                    result = executeCreateAccountAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -612,7 +622,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -628,14 +638,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(final CreateGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
+        final CreateGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateGroupResult>() {
             @Override
             public CreateGroupResult call() throws Exception {
-                CreateGroupResult result;
+                CreateGroupResult result = null;
 
                 try {
-                    result = createGroup(request);
+                    result = executeCreateGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -644,7 +655,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -660,14 +671,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(final CreateInstanceProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInstanceProfileRequest, CreateInstanceProfileResult> asyncHandler) {
+        final CreateInstanceProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateInstanceProfileResult>() {
             @Override
             public CreateInstanceProfileResult call() throws Exception {
-                CreateInstanceProfileResult result;
+                CreateInstanceProfileResult result = null;
 
                 try {
-                    result = createInstanceProfile(request);
+                    result = executeCreateInstanceProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -676,7 +688,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -692,14 +704,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateLoginProfileResult> createLoginProfileAsync(final CreateLoginProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateLoginProfileRequest, CreateLoginProfileResult> asyncHandler) {
+        final CreateLoginProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateLoginProfileResult>() {
             @Override
             public CreateLoginProfileResult call() throws Exception {
-                CreateLoginProfileResult result;
+                CreateLoginProfileResult result = null;
 
                 try {
-                    result = createLoginProfile(request);
+                    result = executeCreateLoginProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -708,7 +721,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -724,14 +737,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateOpenIDConnectProviderResult> createOpenIDConnectProviderAsync(final CreateOpenIDConnectProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateOpenIDConnectProviderRequest, CreateOpenIDConnectProviderResult> asyncHandler) {
+        final CreateOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateOpenIDConnectProviderResult>() {
             @Override
             public CreateOpenIDConnectProviderResult call() throws Exception {
-                CreateOpenIDConnectProviderResult result;
+                CreateOpenIDConnectProviderResult result = null;
 
                 try {
-                    result = createOpenIDConnectProvider(request);
+                    result = executeCreateOpenIDConnectProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -740,7 +754,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -756,14 +770,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(final CreatePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePolicyRequest, CreatePolicyResult> asyncHandler) {
+        final CreatePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePolicyResult>() {
             @Override
             public CreatePolicyResult call() throws Exception {
-                CreatePolicyResult result;
+                CreatePolicyResult result = null;
 
                 try {
-                    result = createPolicy(request);
+                    result = executeCreatePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -772,7 +787,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -788,14 +803,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(final CreatePolicyVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePolicyVersionRequest, CreatePolicyVersionResult> asyncHandler) {
+        final CreatePolicyVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePolicyVersionResult>() {
             @Override
             public CreatePolicyVersionResult call() throws Exception {
-                CreatePolicyVersionResult result;
+                CreatePolicyVersionResult result = null;
 
                 try {
-                    result = createPolicyVersion(request);
+                    result = executeCreatePolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -804,7 +820,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -820,14 +836,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateRoleResult> createRoleAsync(final CreateRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRoleRequest, CreateRoleResult> asyncHandler) {
+        final CreateRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateRoleResult>() {
             @Override
             public CreateRoleResult call() throws Exception {
-                CreateRoleResult result;
+                CreateRoleResult result = null;
 
                 try {
-                    result = createRole(request);
+                    result = executeCreateRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -836,7 +853,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -852,14 +869,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateSAMLProviderResult> createSAMLProviderAsync(final CreateSAMLProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSAMLProviderRequest, CreateSAMLProviderResult> asyncHandler) {
+        final CreateSAMLProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSAMLProviderResult>() {
             @Override
             public CreateSAMLProviderResult call() throws Exception {
-                CreateSAMLProviderResult result;
+                CreateSAMLProviderResult result = null;
 
                 try {
-                    result = createSAMLProvider(request);
+                    result = executeCreateSAMLProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -868,7 +886,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -886,14 +904,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
             final CreateServiceSpecificCredentialRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateServiceSpecificCredentialRequest, CreateServiceSpecificCredentialResult> asyncHandler) {
+        final CreateServiceSpecificCredentialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateServiceSpecificCredentialResult>() {
             @Override
             public CreateServiceSpecificCredentialResult call() throws Exception {
-                CreateServiceSpecificCredentialResult result;
+                CreateServiceSpecificCredentialResult result = null;
 
                 try {
-                    result = createServiceSpecificCredential(request);
+                    result = executeCreateServiceSpecificCredential(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -902,7 +921,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -918,14 +937,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(final CreateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
+        final CreateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateUserResult>() {
             @Override
             public CreateUserResult call() throws Exception {
-                CreateUserResult result;
+                CreateUserResult result = null;
 
                 try {
-                    result = createUser(request);
+                    result = executeCreateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -934,7 +954,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -950,14 +970,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<CreateVirtualMFADeviceResult> createVirtualMFADeviceAsync(final CreateVirtualMFADeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResult> asyncHandler) {
+        final CreateVirtualMFADeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateVirtualMFADeviceResult>() {
             @Override
             public CreateVirtualMFADeviceResult call() throws Exception {
-                CreateVirtualMFADeviceResult result;
+                CreateVirtualMFADeviceResult result = null;
 
                 try {
-                    result = createVirtualMFADevice(request);
+                    result = executeCreateVirtualMFADevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -966,7 +987,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -982,14 +1003,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(final DeactivateMFADeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, DeactivateMFADeviceResult> asyncHandler) {
+        final DeactivateMFADeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeactivateMFADeviceResult>() {
             @Override
             public DeactivateMFADeviceResult call() throws Exception {
-                DeactivateMFADeviceResult result;
+                DeactivateMFADeviceResult result = null;
 
                 try {
-                    result = deactivateMFADevice(request);
+                    result = executeDeactivateMFADevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -998,7 +1020,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1014,14 +1036,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(final DeleteAccessKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, DeleteAccessKeyResult> asyncHandler) {
+        final DeleteAccessKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAccessKeyResult>() {
             @Override
             public DeleteAccessKeyResult call() throws Exception {
-                DeleteAccessKeyResult result;
+                DeleteAccessKeyResult result = null;
 
                 try {
-                    result = deleteAccessKey(request);
+                    result = executeDeleteAccessKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1030,7 +1053,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1046,14 +1069,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(final DeleteAccountAliasRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, DeleteAccountAliasResult> asyncHandler) {
+        final DeleteAccountAliasRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAccountAliasResult>() {
             @Override
             public DeleteAccountAliasResult call() throws Exception {
-                DeleteAccountAliasResult result;
+                DeleteAccountAliasResult result = null;
 
                 try {
-                    result = deleteAccountAlias(request);
+                    result = executeDeleteAccountAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1062,7 +1086,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1078,14 +1102,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(final DeleteAccountPasswordPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler) {
+        final DeleteAccountPasswordPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAccountPasswordPolicyResult>() {
             @Override
             public DeleteAccountPasswordPolicyResult call() throws Exception {
-                DeleteAccountPasswordPolicyResult result;
+                DeleteAccountPasswordPolicyResult result = null;
 
                 try {
-                    result = deleteAccountPasswordPolicy(request);
+                    result = executeDeleteAccountPasswordPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1094,7 +1119,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1117,6 +1142,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler) {
 
@@ -1132,14 +1158,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(final DeleteGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
+        final DeleteGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteGroupResult>() {
             @Override
             public DeleteGroupResult call() throws Exception {
-                DeleteGroupResult result;
+                DeleteGroupResult result = null;
 
                 try {
-                    result = deleteGroup(request);
+                    result = executeDeleteGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1148,7 +1175,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1164,14 +1191,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(final DeleteGroupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, DeleteGroupPolicyResult> asyncHandler) {
+        final DeleteGroupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteGroupPolicyResult>() {
             @Override
             public DeleteGroupPolicyResult call() throws Exception {
-                DeleteGroupPolicyResult result;
+                DeleteGroupPolicyResult result = null;
 
                 try {
-                    result = deleteGroupPolicy(request);
+                    result = executeDeleteGroupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1180,7 +1208,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1196,14 +1224,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(final DeleteInstanceProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler) {
+        final DeleteInstanceProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteInstanceProfileResult>() {
             @Override
             public DeleteInstanceProfileResult call() throws Exception {
-                DeleteInstanceProfileResult result;
+                DeleteInstanceProfileResult result = null;
 
                 try {
-                    result = deleteInstanceProfile(request);
+                    result = executeDeleteInstanceProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1212,7 +1241,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1228,14 +1257,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(final DeleteLoginProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, DeleteLoginProfileResult> asyncHandler) {
+        final DeleteLoginProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteLoginProfileResult>() {
             @Override
             public DeleteLoginProfileResult call() throws Exception {
-                DeleteLoginProfileResult result;
+                DeleteLoginProfileResult result = null;
 
                 try {
-                    result = deleteLoginProfile(request);
+                    result = executeDeleteLoginProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1244,7 +1274,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1260,14 +1290,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(final DeleteOpenIDConnectProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteOpenIDConnectProviderRequest, DeleteOpenIDConnectProviderResult> asyncHandler) {
+        final DeleteOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteOpenIDConnectProviderResult>() {
             @Override
             public DeleteOpenIDConnectProviderResult call() throws Exception {
-                DeleteOpenIDConnectProviderResult result;
+                DeleteOpenIDConnectProviderResult result = null;
 
                 try {
-                    result = deleteOpenIDConnectProvider(request);
+                    result = executeDeleteOpenIDConnectProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1276,7 +1307,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1292,14 +1323,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(final DeletePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
+        final DeletePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeletePolicyResult>() {
             @Override
             public DeletePolicyResult call() throws Exception {
-                DeletePolicyResult result;
+                DeletePolicyResult result = null;
 
                 try {
-                    result = deletePolicy(request);
+                    result = executeDeletePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1308,7 +1340,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1324,14 +1356,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(final DeletePolicyVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler) {
+        final DeletePolicyVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeletePolicyVersionResult>() {
             @Override
             public DeletePolicyVersionResult call() throws Exception {
-                DeletePolicyVersionResult result;
+                DeletePolicyVersionResult result = null;
 
                 try {
-                    result = deletePolicyVersion(request);
+                    result = executeDeletePolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1340,7 +1373,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1356,14 +1389,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(final DeleteRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, DeleteRoleResult> asyncHandler) {
+        final DeleteRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRoleResult>() {
             @Override
             public DeleteRoleResult call() throws Exception {
-                DeleteRoleResult result;
+                DeleteRoleResult result = null;
 
                 try {
-                    result = deleteRole(request);
+                    result = executeDeleteRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1372,7 +1406,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1388,14 +1422,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(final DeleteRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, DeleteRolePolicyResult> asyncHandler) {
+        final DeleteRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRolePolicyResult>() {
             @Override
             public DeleteRolePolicyResult call() throws Exception {
-                DeleteRolePolicyResult result;
+                DeleteRolePolicyResult result = null;
 
                 try {
-                    result = deleteRolePolicy(request);
+                    result = executeDeleteRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1404,7 +1439,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1420,14 +1455,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(final DeleteSAMLProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, DeleteSAMLProviderResult> asyncHandler) {
+        final DeleteSAMLProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSAMLProviderResult>() {
             @Override
             public DeleteSAMLProviderResult call() throws Exception {
-                DeleteSAMLProviderResult result;
+                DeleteSAMLProviderResult result = null;
 
                 try {
-                    result = deleteSAMLProvider(request);
+                    result = executeDeleteSAMLProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1436,7 +1472,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1452,14 +1488,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(final DeleteSSHPublicKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResult> asyncHandler) {
+        final DeleteSSHPublicKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSSHPublicKeyResult>() {
             @Override
             public DeleteSSHPublicKeyResult call() throws Exception {
-                DeleteSSHPublicKeyResult result;
+                DeleteSSHPublicKeyResult result = null;
 
                 try {
-                    result = deleteSSHPublicKey(request);
+                    result = executeDeleteSSHPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1468,7 +1505,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1484,14 +1521,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(final DeleteServerCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, DeleteServerCertificateResult> asyncHandler) {
+        final DeleteServerCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteServerCertificateResult>() {
             @Override
             public DeleteServerCertificateResult call() throws Exception {
-                DeleteServerCertificateResult result;
+                DeleteServerCertificateResult result = null;
 
                 try {
-                    result = deleteServerCertificate(request);
+                    result = executeDeleteServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1500,7 +1538,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1518,14 +1556,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
             final DeleteServiceSpecificCredentialRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteServiceSpecificCredentialRequest, DeleteServiceSpecificCredentialResult> asyncHandler) {
+        final DeleteServiceSpecificCredentialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteServiceSpecificCredentialResult>() {
             @Override
             public DeleteServiceSpecificCredentialResult call() throws Exception {
-                DeleteServiceSpecificCredentialResult result;
+                DeleteServiceSpecificCredentialResult result = null;
 
                 try {
-                    result = deleteServiceSpecificCredential(request);
+                    result = executeDeleteServiceSpecificCredential(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1534,7 +1573,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1550,14 +1589,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(final DeleteSigningCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, DeleteSigningCertificateResult> asyncHandler) {
+        final DeleteSigningCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSigningCertificateResult>() {
             @Override
             public DeleteSigningCertificateResult call() throws Exception {
-                DeleteSigningCertificateResult result;
+                DeleteSigningCertificateResult result = null;
 
                 try {
-                    result = deleteSigningCertificate(request);
+                    result = executeDeleteSigningCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1566,7 +1606,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1582,14 +1622,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(final DeleteUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+        final DeleteUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteUserResult>() {
             @Override
             public DeleteUserResult call() throws Exception {
-                DeleteUserResult result;
+                DeleteUserResult result = null;
 
                 try {
-                    result = deleteUser(request);
+                    result = executeDeleteUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1598,7 +1639,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1614,14 +1655,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(final DeleteUserPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, DeleteUserPolicyResult> asyncHandler) {
+        final DeleteUserPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteUserPolicyResult>() {
             @Override
             public DeleteUserPolicyResult call() throws Exception {
-                DeleteUserPolicyResult result;
+                DeleteUserPolicyResult result = null;
 
                 try {
-                    result = deleteUserPolicy(request);
+                    result = executeDeleteUserPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1630,7 +1672,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1646,14 +1688,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(final DeleteVirtualMFADeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResult> asyncHandler) {
+        final DeleteVirtualMFADeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteVirtualMFADeviceResult>() {
             @Override
             public DeleteVirtualMFADeviceResult call() throws Exception {
-                DeleteVirtualMFADeviceResult result;
+                DeleteVirtualMFADeviceResult result = null;
 
                 try {
-                    result = deleteVirtualMFADevice(request);
+                    result = executeDeleteVirtualMFADevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1662,7 +1705,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1678,14 +1721,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(final DetachGroupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, DetachGroupPolicyResult> asyncHandler) {
+        final DetachGroupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachGroupPolicyResult>() {
             @Override
             public DetachGroupPolicyResult call() throws Exception {
-                DetachGroupPolicyResult result;
+                DetachGroupPolicyResult result = null;
 
                 try {
-                    result = detachGroupPolicy(request);
+                    result = executeDetachGroupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1694,7 +1738,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1710,14 +1754,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(final DetachRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, DetachRolePolicyResult> asyncHandler) {
+        final DetachRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachRolePolicyResult>() {
             @Override
             public DetachRolePolicyResult call() throws Exception {
-                DetachRolePolicyResult result;
+                DetachRolePolicyResult result = null;
 
                 try {
-                    result = detachRolePolicy(request);
+                    result = executeDetachRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1726,7 +1771,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1742,14 +1787,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(final DetachUserPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, DetachUserPolicyResult> asyncHandler) {
+        final DetachUserPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachUserPolicyResult>() {
             @Override
             public DetachUserPolicyResult call() throws Exception {
-                DetachUserPolicyResult result;
+                DetachUserPolicyResult result = null;
 
                 try {
-                    result = detachUserPolicy(request);
+                    result = executeDetachUserPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1758,7 +1804,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1774,14 +1820,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(final EnableMFADeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, EnableMFADeviceResult> asyncHandler) {
+        final EnableMFADeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableMFADeviceResult>() {
             @Override
             public EnableMFADeviceResult call() throws Exception {
-                EnableMFADeviceResult result;
+                EnableMFADeviceResult result = null;
 
                 try {
-                    result = enableMFADevice(request);
+                    result = executeEnableMFADevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1790,7 +1837,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1806,14 +1853,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GenerateCredentialReportResult> generateCredentialReportAsync(final GenerateCredentialReportRequest request,
             final com.amazonaws.handlers.AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler) {
+        final GenerateCredentialReportRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GenerateCredentialReportResult>() {
             @Override
             public GenerateCredentialReportResult call() throws Exception {
-                GenerateCredentialReportResult result;
+                GenerateCredentialReportResult result = null;
 
                 try {
-                    result = generateCredentialReport(request);
+                    result = executeGenerateCredentialReport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1822,7 +1870,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1845,6 +1893,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #generateCredentialReportAsync(GenerateCredentialReportRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GenerateCredentialReportResult> generateCredentialReportAsync(
             com.amazonaws.handlers.AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler) {
 
@@ -1860,14 +1909,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetAccessKeyLastUsedResult> getAccessKeyLastUsedAsync(final GetAccessKeyLastUsedRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAccessKeyLastUsedRequest, GetAccessKeyLastUsedResult> asyncHandler) {
+        final GetAccessKeyLastUsedRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAccessKeyLastUsedResult>() {
             @Override
             public GetAccessKeyLastUsedResult call() throws Exception {
-                GetAccessKeyLastUsedResult result;
+                GetAccessKeyLastUsedResult result = null;
 
                 try {
-                    result = getAccessKeyLastUsed(request);
+                    result = executeGetAccessKeyLastUsed(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1876,7 +1926,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1893,14 +1943,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(
             final GetAccountAuthorizationDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResult> asyncHandler) {
+        final GetAccountAuthorizationDetailsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAccountAuthorizationDetailsResult>() {
             @Override
             public GetAccountAuthorizationDetailsResult call() throws Exception {
-                GetAccountAuthorizationDetailsResult result;
+                GetAccountAuthorizationDetailsResult result = null;
 
                 try {
-                    result = getAccountAuthorizationDetails(request);
+                    result = executeGetAccountAuthorizationDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1909,7 +1960,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1933,6 +1984,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * @see #getAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResult> asyncHandler) {
 
@@ -1948,14 +2000,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(final GetAccountPasswordPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResult> asyncHandler) {
+        final GetAccountPasswordPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAccountPasswordPolicyResult>() {
             @Override
             public GetAccountPasswordPolicyResult call() throws Exception {
-                GetAccountPasswordPolicyResult result;
+                GetAccountPasswordPolicyResult result = null;
 
                 try {
-                    result = getAccountPasswordPolicy(request);
+                    result = executeGetAccountPasswordPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1964,7 +2017,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1987,6 +2040,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #getAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResult> asyncHandler) {
 
@@ -2002,14 +2056,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetAccountSummaryResult> getAccountSummaryAsync(final GetAccountSummaryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAccountSummaryRequest, GetAccountSummaryResult> asyncHandler) {
+        final GetAccountSummaryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAccountSummaryResult>() {
             @Override
             public GetAccountSummaryResult call() throws Exception {
-                GetAccountSummaryResult result;
+                GetAccountSummaryResult result = null;
 
                 try {
-                    result = getAccountSummary(request);
+                    result = executeGetAccountSummary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2018,7 +2073,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2041,6 +2096,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #getAccountSummaryAsync(GetAccountSummaryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountSummaryResult> getAccountSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountSummaryRequest, GetAccountSummaryResult> asyncHandler) {
 
@@ -2057,14 +2113,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<GetContextKeysForCustomPolicyResult> getContextKeysForCustomPolicyAsync(
             final GetContextKeysForCustomPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetContextKeysForCustomPolicyRequest, GetContextKeysForCustomPolicyResult> asyncHandler) {
+        final GetContextKeysForCustomPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetContextKeysForCustomPolicyResult>() {
             @Override
             public GetContextKeysForCustomPolicyResult call() throws Exception {
-                GetContextKeysForCustomPolicyResult result;
+                GetContextKeysForCustomPolicyResult result = null;
 
                 try {
-                    result = getContextKeysForCustomPolicy(request);
+                    result = executeGetContextKeysForCustomPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2073,7 +2130,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2091,14 +2148,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<GetContextKeysForPrincipalPolicyResult> getContextKeysForPrincipalPolicyAsync(
             final GetContextKeysForPrincipalPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResult> asyncHandler) {
+        final GetContextKeysForPrincipalPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetContextKeysForPrincipalPolicyResult>() {
             @Override
             public GetContextKeysForPrincipalPolicyResult call() throws Exception {
-                GetContextKeysForPrincipalPolicyResult result;
+                GetContextKeysForPrincipalPolicyResult result = null;
 
                 try {
-                    result = getContextKeysForPrincipalPolicy(request);
+                    result = executeGetContextKeysForPrincipalPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2107,7 +2165,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2123,14 +2181,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetCredentialReportResult> getCredentialReportAsync(final GetCredentialReportRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCredentialReportRequest, GetCredentialReportResult> asyncHandler) {
+        final GetCredentialReportRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCredentialReportResult>() {
             @Override
             public GetCredentialReportResult call() throws Exception {
-                GetCredentialReportResult result;
+                GetCredentialReportResult result = null;
 
                 try {
-                    result = getCredentialReport(request);
+                    result = executeGetCredentialReport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2139,7 +2198,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2162,6 +2221,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #getCredentialReportAsync(GetCredentialReportRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetCredentialReportResult> getCredentialReportAsync(
             com.amazonaws.handlers.AsyncHandler<GetCredentialReportRequest, GetCredentialReportResult> asyncHandler) {
 
@@ -2177,14 +2237,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetGroupResult> getGroupAsync(final GetGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
+        final GetGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetGroupResult>() {
             @Override
             public GetGroupResult call() throws Exception {
-                GetGroupResult result;
+                GetGroupResult result = null;
 
                 try {
-                    result = getGroup(request);
+                    result = executeGetGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2193,7 +2254,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2209,14 +2270,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetGroupPolicyResult> getGroupPolicyAsync(final GetGroupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetGroupPolicyRequest, GetGroupPolicyResult> asyncHandler) {
+        final GetGroupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetGroupPolicyResult>() {
             @Override
             public GetGroupPolicyResult call() throws Exception {
-                GetGroupPolicyResult result;
+                GetGroupPolicyResult result = null;
 
                 try {
-                    result = getGroupPolicy(request);
+                    result = executeGetGroupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2225,7 +2287,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2241,14 +2303,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(final GetInstanceProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceProfileRequest, GetInstanceProfileResult> asyncHandler) {
+        final GetInstanceProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceProfileResult>() {
             @Override
             public GetInstanceProfileResult call() throws Exception {
-                GetInstanceProfileResult result;
+                GetInstanceProfileResult result = null;
 
                 try {
-                    result = getInstanceProfile(request);
+                    result = executeGetInstanceProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2257,7 +2320,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2273,14 +2336,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetLoginProfileResult> getLoginProfileAsync(final GetLoginProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetLoginProfileRequest, GetLoginProfileResult> asyncHandler) {
+        final GetLoginProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetLoginProfileResult>() {
             @Override
             public GetLoginProfileResult call() throws Exception {
-                GetLoginProfileResult result;
+                GetLoginProfileResult result = null;
 
                 try {
-                    result = getLoginProfile(request);
+                    result = executeGetLoginProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2289,7 +2353,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2305,14 +2369,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(final GetOpenIDConnectProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResult> asyncHandler) {
+        final GetOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetOpenIDConnectProviderResult>() {
             @Override
             public GetOpenIDConnectProviderResult call() throws Exception {
-                GetOpenIDConnectProviderResult result;
+                GetOpenIDConnectProviderResult result = null;
 
                 try {
-                    result = getOpenIDConnectProvider(request);
+                    result = executeGetOpenIDConnectProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2321,7 +2386,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2337,14 +2402,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(final GetPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
+        final GetPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPolicyResult>() {
             @Override
             public GetPolicyResult call() throws Exception {
-                GetPolicyResult result;
+                GetPolicyResult result = null;
 
                 try {
-                    result = getPolicy(request);
+                    result = executeGetPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2353,7 +2419,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2369,14 +2435,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(final GetPolicyVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult> asyncHandler) {
+        final GetPolicyVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPolicyVersionResult>() {
             @Override
             public GetPolicyVersionResult call() throws Exception {
-                GetPolicyVersionResult result;
+                GetPolicyVersionResult result = null;
 
                 try {
-                    result = getPolicyVersion(request);
+                    result = executeGetPolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2385,7 +2452,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2401,14 +2468,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetRoleResult> getRoleAsync(final GetRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRoleRequest, GetRoleResult> asyncHandler) {
+        final GetRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRoleResult>() {
             @Override
             public GetRoleResult call() throws Exception {
-                GetRoleResult result;
+                GetRoleResult result = null;
 
                 try {
-                    result = getRole(request);
+                    result = executeGetRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2417,7 +2485,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2433,14 +2501,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetRolePolicyResult> getRolePolicyAsync(final GetRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRolePolicyRequest, GetRolePolicyResult> asyncHandler) {
+        final GetRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRolePolicyResult>() {
             @Override
             public GetRolePolicyResult call() throws Exception {
-                GetRolePolicyResult result;
+                GetRolePolicyResult result = null;
 
                 try {
-                    result = getRolePolicy(request);
+                    result = executeGetRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2449,7 +2518,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2465,14 +2534,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetSAMLProviderResult> getSAMLProviderAsync(final GetSAMLProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSAMLProviderRequest, GetSAMLProviderResult> asyncHandler) {
+        final GetSAMLProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSAMLProviderResult>() {
             @Override
             public GetSAMLProviderResult call() throws Exception {
-                GetSAMLProviderResult result;
+                GetSAMLProviderResult result = null;
 
                 try {
-                    result = getSAMLProvider(request);
+                    result = executeGetSAMLProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2481,7 +2551,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2497,14 +2567,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetSSHPublicKeyResult> getSSHPublicKeyAsync(final GetSSHPublicKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSSHPublicKeyRequest, GetSSHPublicKeyResult> asyncHandler) {
+        final GetSSHPublicKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetSSHPublicKeyResult>() {
             @Override
             public GetSSHPublicKeyResult call() throws Exception {
-                GetSSHPublicKeyResult result;
+                GetSSHPublicKeyResult result = null;
 
                 try {
-                    result = getSSHPublicKey(request);
+                    result = executeGetSSHPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2513,7 +2584,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2529,14 +2600,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetServerCertificateResult> getServerCertificateAsync(final GetServerCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetServerCertificateRequest, GetServerCertificateResult> asyncHandler) {
+        final GetServerCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetServerCertificateResult>() {
             @Override
             public GetServerCertificateResult call() throws Exception {
-                GetServerCertificateResult result;
+                GetServerCertificateResult result = null;
 
                 try {
-                    result = getServerCertificate(request);
+                    result = executeGetServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2545,7 +2617,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2561,14 +2633,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(final GetUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler) {
+        final GetUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetUserResult>() {
             @Override
             public GetUserResult call() throws Exception {
-                GetUserResult result;
+                GetUserResult result = null;
 
                 try {
-                    result = getUser(request);
+                    result = executeGetUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2577,7 +2650,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2600,6 +2673,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #getUserAsync(GetUserRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler) {
 
         return getUserAsync(new GetUserRequest(), asyncHandler);
@@ -2614,14 +2688,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<GetUserPolicyResult> getUserPolicyAsync(final GetUserPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetUserPolicyRequest, GetUserPolicyResult> asyncHandler) {
+        final GetUserPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetUserPolicyResult>() {
             @Override
             public GetUserPolicyResult call() throws Exception {
-                GetUserPolicyResult result;
+                GetUserPolicyResult result = null;
 
                 try {
-                    result = getUserPolicy(request);
+                    result = executeGetUserPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2630,7 +2705,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2646,14 +2721,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListAccessKeysResult> listAccessKeysAsync(final ListAccessKeysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAccessKeysRequest, ListAccessKeysResult> asyncHandler) {
+        final ListAccessKeysRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAccessKeysResult>() {
             @Override
             public ListAccessKeysResult call() throws Exception {
-                ListAccessKeysResult result;
+                ListAccessKeysResult result = null;
 
                 try {
-                    result = listAccessKeys(request);
+                    result = executeListAccessKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2662,7 +2738,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2685,6 +2761,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listAccessKeysAsync(ListAccessKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAccessKeysResult> listAccessKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListAccessKeysRequest, ListAccessKeysResult> asyncHandler) {
 
@@ -2700,14 +2777,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListAccountAliasesResult> listAccountAliasesAsync(final ListAccountAliasesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler) {
+        final ListAccountAliasesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAccountAliasesResult>() {
             @Override
             public ListAccountAliasesResult call() throws Exception {
-                ListAccountAliasesResult result;
+                ListAccountAliasesResult result = null;
 
                 try {
-                    result = listAccountAliases(request);
+                    result = executeListAccountAliases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2716,7 +2794,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2739,6 +2817,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listAccountAliasesAsync(ListAccountAliasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAccountAliasesResult> listAccountAliasesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler) {
 
@@ -2754,14 +2833,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListAttachedGroupPoliciesResult> listAttachedGroupPoliciesAsync(final ListAttachedGroupPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAttachedGroupPoliciesRequest, ListAttachedGroupPoliciesResult> asyncHandler) {
+        final ListAttachedGroupPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAttachedGroupPoliciesResult>() {
             @Override
             public ListAttachedGroupPoliciesResult call() throws Exception {
-                ListAttachedGroupPoliciesResult result;
+                ListAttachedGroupPoliciesResult result = null;
 
                 try {
-                    result = listAttachedGroupPolicies(request);
+                    result = executeListAttachedGroupPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2770,7 +2850,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2786,14 +2866,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListAttachedRolePoliciesResult> listAttachedRolePoliciesAsync(final ListAttachedRolePoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAttachedRolePoliciesRequest, ListAttachedRolePoliciesResult> asyncHandler) {
+        final ListAttachedRolePoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAttachedRolePoliciesResult>() {
             @Override
             public ListAttachedRolePoliciesResult call() throws Exception {
-                ListAttachedRolePoliciesResult result;
+                ListAttachedRolePoliciesResult result = null;
 
                 try {
-                    result = listAttachedRolePolicies(request);
+                    result = executeListAttachedRolePolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2802,7 +2883,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2818,14 +2899,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListAttachedUserPoliciesResult> listAttachedUserPoliciesAsync(final ListAttachedUserPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAttachedUserPoliciesRequest, ListAttachedUserPoliciesResult> asyncHandler) {
+        final ListAttachedUserPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAttachedUserPoliciesResult>() {
             @Override
             public ListAttachedUserPoliciesResult call() throws Exception {
-                ListAttachedUserPoliciesResult result;
+                ListAttachedUserPoliciesResult result = null;
 
                 try {
-                    result = listAttachedUserPolicies(request);
+                    result = executeListAttachedUserPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2834,7 +2916,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2850,14 +2932,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListEntitiesForPolicyResult> listEntitiesForPolicyAsync(final ListEntitiesForPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResult> asyncHandler) {
+        final ListEntitiesForPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListEntitiesForPolicyResult>() {
             @Override
             public ListEntitiesForPolicyResult call() throws Exception {
-                ListEntitiesForPolicyResult result;
+                ListEntitiesForPolicyResult result = null;
 
                 try {
-                    result = listEntitiesForPolicy(request);
+                    result = executeListEntitiesForPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2866,7 +2949,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2882,14 +2965,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListGroupPoliciesResult> listGroupPoliciesAsync(final ListGroupPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGroupPoliciesRequest, ListGroupPoliciesResult> asyncHandler) {
+        final ListGroupPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListGroupPoliciesResult>() {
             @Override
             public ListGroupPoliciesResult call() throws Exception {
-                ListGroupPoliciesResult result;
+                ListGroupPoliciesResult result = null;
 
                 try {
-                    result = listGroupPolicies(request);
+                    result = executeListGroupPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2898,7 +2982,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2914,14 +2998,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(final ListGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
+        final ListGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListGroupsResult>() {
             @Override
             public ListGroupsResult call() throws Exception {
-                ListGroupsResult result;
+                ListGroupsResult result = null;
 
                 try {
-                    result = listGroups(request);
+                    result = executeListGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2930,7 +3015,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2953,6 +3038,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listGroupsAsync(ListGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
 
         return listGroupsAsync(new ListGroupsRequest(), asyncHandler);
@@ -2967,14 +3053,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListGroupsForUserResult> listGroupsForUserAsync(final ListGroupsForUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGroupsForUserRequest, ListGroupsForUserResult> asyncHandler) {
+        final ListGroupsForUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListGroupsForUserResult>() {
             @Override
             public ListGroupsForUserResult call() throws Exception {
-                ListGroupsForUserResult result;
+                ListGroupsForUserResult result = null;
 
                 try {
-                    result = listGroupsForUser(request);
+                    result = executeListGroupsForUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2983,7 +3070,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2999,14 +3086,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(final ListInstanceProfilesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler) {
+        final ListInstanceProfilesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInstanceProfilesResult>() {
             @Override
             public ListInstanceProfilesResult call() throws Exception {
-                ListInstanceProfilesResult result;
+                ListInstanceProfilesResult result = null;
 
                 try {
-                    result = listInstanceProfiles(request);
+                    result = executeListInstanceProfiles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3015,7 +3103,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3038,6 +3126,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listInstanceProfilesAsync(ListInstanceProfilesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(
             com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler) {
 
@@ -3053,14 +3142,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListInstanceProfilesForRoleResult> listInstanceProfilesForRoleAsync(final ListInstanceProfilesForRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResult> asyncHandler) {
+        final ListInstanceProfilesForRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInstanceProfilesForRoleResult>() {
             @Override
             public ListInstanceProfilesForRoleResult call() throws Exception {
-                ListInstanceProfilesForRoleResult result;
+                ListInstanceProfilesForRoleResult result = null;
 
                 try {
-                    result = listInstanceProfilesForRole(request);
+                    result = executeListInstanceProfilesForRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3069,7 +3159,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3085,14 +3175,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(final ListMFADevicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler) {
+        final ListMFADevicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListMFADevicesResult>() {
             @Override
             public ListMFADevicesResult call() throws Exception {
-                ListMFADevicesResult result;
+                ListMFADevicesResult result = null;
 
                 try {
-                    result = listMFADevices(request);
+                    result = executeListMFADevices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3101,7 +3192,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3124,6 +3215,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listMFADevicesAsync(ListMFADevicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(
             com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler) {
 
@@ -3139,14 +3231,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(final ListOpenIDConnectProvidersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResult> asyncHandler) {
+        final ListOpenIDConnectProvidersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListOpenIDConnectProvidersResult>() {
             @Override
             public ListOpenIDConnectProvidersResult call() throws Exception {
-                ListOpenIDConnectProvidersResult result;
+                ListOpenIDConnectProvidersResult result = null;
 
                 try {
-                    result = listOpenIDConnectProviders(request);
+                    result = executeListOpenIDConnectProviders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3155,7 +3248,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3178,6 +3271,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(
             com.amazonaws.handlers.AsyncHandler<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResult> asyncHandler) {
 
@@ -3193,14 +3287,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(final ListPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
+        final ListPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPoliciesResult>() {
             @Override
             public ListPoliciesResult call() throws Exception {
-                ListPoliciesResult result;
+                ListPoliciesResult result = null;
 
                 try {
-                    result = listPolicies(request);
+                    result = executeListPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3209,7 +3304,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3232,6 +3327,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listPoliciesAsync(ListPoliciesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
 
@@ -3247,14 +3343,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(final ListPolicyVersionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPolicyVersionsRequest, ListPolicyVersionsResult> asyncHandler) {
+        final ListPolicyVersionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPolicyVersionsResult>() {
             @Override
             public ListPolicyVersionsResult call() throws Exception {
-                ListPolicyVersionsResult result;
+                ListPolicyVersionsResult result = null;
 
                 try {
-                    result = listPolicyVersions(request);
+                    result = executeListPolicyVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3263,7 +3360,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3279,14 +3376,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListRolePoliciesResult> listRolePoliciesAsync(final ListRolePoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRolePoliciesRequest, ListRolePoliciesResult> asyncHandler) {
+        final ListRolePoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRolePoliciesResult>() {
             @Override
             public ListRolePoliciesResult call() throws Exception {
-                ListRolePoliciesResult result;
+                ListRolePoliciesResult result = null;
 
                 try {
-                    result = listRolePolicies(request);
+                    result = executeListRolePolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3295,7 +3393,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3311,14 +3409,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListRolesResult> listRolesAsync(final ListRolesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRolesRequest, ListRolesResult> asyncHandler) {
+        final ListRolesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRolesResult>() {
             @Override
             public ListRolesResult call() throws Exception {
-                ListRolesResult result;
+                ListRolesResult result = null;
 
                 try {
-                    result = listRoles(request);
+                    result = executeListRoles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3327,7 +3426,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3350,6 +3449,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listRolesAsync(ListRolesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListRolesResult> listRolesAsync(com.amazonaws.handlers.AsyncHandler<ListRolesRequest, ListRolesResult> asyncHandler) {
 
         return listRolesAsync(new ListRolesRequest(), asyncHandler);
@@ -3364,14 +3464,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(final ListSAMLProvidersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSAMLProvidersRequest, ListSAMLProvidersResult> asyncHandler) {
+        final ListSAMLProvidersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSAMLProvidersResult>() {
             @Override
             public ListSAMLProvidersResult call() throws Exception {
-                ListSAMLProvidersResult result;
+                ListSAMLProvidersResult result = null;
 
                 try {
-                    result = listSAMLProviders(request);
+                    result = executeListSAMLProviders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3380,7 +3481,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3403,6 +3504,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listSAMLProvidersAsync(ListSAMLProvidersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(
             com.amazonaws.handlers.AsyncHandler<ListSAMLProvidersRequest, ListSAMLProvidersResult> asyncHandler) {
 
@@ -3418,14 +3520,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(final ListSSHPublicKeysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler) {
+        final ListSSHPublicKeysRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSSHPublicKeysResult>() {
             @Override
             public ListSSHPublicKeysResult call() throws Exception {
-                ListSSHPublicKeysResult result;
+                ListSSHPublicKeysResult result = null;
 
                 try {
-                    result = listSSHPublicKeys(request);
+                    result = executeListSSHPublicKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3434,7 +3537,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3457,6 +3560,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listSSHPublicKeysAsync(ListSSHPublicKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler) {
 
@@ -3472,14 +3576,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListServerCertificatesResult> listServerCertificatesAsync(final ListServerCertificatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListServerCertificatesRequest, ListServerCertificatesResult> asyncHandler) {
+        final ListServerCertificatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListServerCertificatesResult>() {
             @Override
             public ListServerCertificatesResult call() throws Exception {
-                ListServerCertificatesResult result;
+                ListServerCertificatesResult result = null;
 
                 try {
-                    result = listServerCertificates(request);
+                    result = executeListServerCertificates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3488,7 +3593,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3511,6 +3616,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listServerCertificatesAsync(ListServerCertificatesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListServerCertificatesResult> listServerCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<ListServerCertificatesRequest, ListServerCertificatesResult> asyncHandler) {
 
@@ -3527,14 +3633,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<ListServiceSpecificCredentialsResult> listServiceSpecificCredentialsAsync(
             final ListServiceSpecificCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListServiceSpecificCredentialsRequest, ListServiceSpecificCredentialsResult> asyncHandler) {
+        final ListServiceSpecificCredentialsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListServiceSpecificCredentialsResult>() {
             @Override
             public ListServiceSpecificCredentialsResult call() throws Exception {
-                ListServiceSpecificCredentialsResult result;
+                ListServiceSpecificCredentialsResult result = null;
 
                 try {
-                    result = listServiceSpecificCredentials(request);
+                    result = executeListServiceSpecificCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3543,7 +3650,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3559,14 +3666,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(final ListSigningCertificatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler) {
+        final ListSigningCertificatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSigningCertificatesResult>() {
             @Override
             public ListSigningCertificatesResult call() throws Exception {
-                ListSigningCertificatesResult result;
+                ListSigningCertificatesResult result = null;
 
                 try {
-                    result = listSigningCertificates(request);
+                    result = executeListSigningCertificates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3575,7 +3683,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3598,6 +3706,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listSigningCertificatesAsync(ListSigningCertificatesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler) {
 
@@ -3613,14 +3722,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListUserPoliciesResult> listUserPoliciesAsync(final ListUserPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListUserPoliciesRequest, ListUserPoliciesResult> asyncHandler) {
+        final ListUserPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListUserPoliciesResult>() {
             @Override
             public ListUserPoliciesResult call() throws Exception {
-                ListUserPoliciesResult result;
+                ListUserPoliciesResult result = null;
 
                 try {
-                    result = listUserPolicies(request);
+                    result = executeListUserPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3629,7 +3739,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3645,14 +3755,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(final ListUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
+        final ListUsersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListUsersResult>() {
             @Override
             public ListUsersResult call() throws Exception {
-                ListUsersResult result;
+                ListUsersResult result = null;
 
                 try {
-                    result = listUsers(request);
+                    result = executeListUsers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3661,7 +3772,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3684,6 +3795,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listUsersAsync(ListUsersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
 
         return listUsersAsync(new ListUsersRequest(), asyncHandler);
@@ -3698,14 +3810,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ListVirtualMFADevicesResult> listVirtualMFADevicesAsync(final ListVirtualMFADevicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResult> asyncHandler) {
+        final ListVirtualMFADevicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListVirtualMFADevicesResult>() {
             @Override
             public ListVirtualMFADevicesResult call() throws Exception {
-                ListVirtualMFADevicesResult result;
+                ListVirtualMFADevicesResult result = null;
 
                 try {
-                    result = listVirtualMFADevices(request);
+                    result = executeListVirtualMFADevices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3714,7 +3827,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3737,6 +3850,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *
      * @see #listVirtualMFADevicesAsync(ListVirtualMFADevicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListVirtualMFADevicesResult> listVirtualMFADevicesAsync(
             com.amazonaws.handlers.AsyncHandler<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResult> asyncHandler) {
 
@@ -3752,14 +3866,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(final PutGroupPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, PutGroupPolicyResult> asyncHandler) {
+        final PutGroupPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutGroupPolicyResult>() {
             @Override
             public PutGroupPolicyResult call() throws Exception {
-                PutGroupPolicyResult result;
+                PutGroupPolicyResult result = null;
 
                 try {
-                    result = putGroupPolicy(request);
+                    result = executePutGroupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3768,7 +3883,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3784,14 +3899,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(final PutRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler) {
+        final PutRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRolePolicyResult>() {
             @Override
             public PutRolePolicyResult call() throws Exception {
-                PutRolePolicyResult result;
+                PutRolePolicyResult result = null;
 
                 try {
-                    result = putRolePolicy(request);
+                    result = executePutRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3800,7 +3916,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3816,14 +3932,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(final PutUserPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, PutUserPolicyResult> asyncHandler) {
+        final PutUserPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutUserPolicyResult>() {
             @Override
             public PutUserPolicyResult call() throws Exception {
-                PutUserPolicyResult result;
+                PutUserPolicyResult result = null;
 
                 try {
-                    result = putUserPolicy(request);
+                    result = executePutUserPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3832,7 +3949,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3850,14 +3967,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             final RemoveClientIDFromOpenIDConnectProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, RemoveClientIDFromOpenIDConnectProviderResult> asyncHandler) {
+        final RemoveClientIDFromOpenIDConnectProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveClientIDFromOpenIDConnectProviderResult>() {
             @Override
             public RemoveClientIDFromOpenIDConnectProviderResult call() throws Exception {
-                RemoveClientIDFromOpenIDConnectProviderResult result;
+                RemoveClientIDFromOpenIDConnectProviderResult result = null;
 
                 try {
-                    result = removeClientIDFromOpenIDConnectProvider(request);
+                    result = executeRemoveClientIDFromOpenIDConnectProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3866,7 +3984,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3883,14 +4001,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             final RemoveRoleFromInstanceProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResult> asyncHandler) {
+        final RemoveRoleFromInstanceProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveRoleFromInstanceProfileResult>() {
             @Override
             public RemoveRoleFromInstanceProfileResult call() throws Exception {
-                RemoveRoleFromInstanceProfileResult result;
+                RemoveRoleFromInstanceProfileResult result = null;
 
                 try {
-                    result = removeRoleFromInstanceProfile(request);
+                    result = executeRemoveRoleFromInstanceProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3899,7 +4018,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3915,14 +4034,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(final RemoveUserFromGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResult> asyncHandler) {
+        final RemoveUserFromGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveUserFromGroupResult>() {
             @Override
             public RemoveUserFromGroupResult call() throws Exception {
-                RemoveUserFromGroupResult result;
+                RemoveUserFromGroupResult result = null;
 
                 try {
-                    result = removeUserFromGroup(request);
+                    result = executeRemoveUserFromGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3931,7 +4051,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3948,14 +4068,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<ResetServiceSpecificCredentialResult> resetServiceSpecificCredentialAsync(
             final ResetServiceSpecificCredentialRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResetServiceSpecificCredentialRequest, ResetServiceSpecificCredentialResult> asyncHandler) {
+        final ResetServiceSpecificCredentialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResetServiceSpecificCredentialResult>() {
             @Override
             public ResetServiceSpecificCredentialResult call() throws Exception {
-                ResetServiceSpecificCredentialResult result;
+                ResetServiceSpecificCredentialResult result = null;
 
                 try {
-                    result = resetServiceSpecificCredential(request);
+                    result = executeResetServiceSpecificCredential(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3964,7 +4085,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -3980,14 +4101,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(final ResyncMFADeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, ResyncMFADeviceResult> asyncHandler) {
+        final ResyncMFADeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResyncMFADeviceResult>() {
             @Override
             public ResyncMFADeviceResult call() throws Exception {
-                ResyncMFADeviceResult result;
+                ResyncMFADeviceResult result = null;
 
                 try {
-                    result = resyncMFADevice(request);
+                    result = executeResyncMFADevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3996,7 +4118,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4012,14 +4134,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(final SetDefaultPolicyVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler) {
+        final SetDefaultPolicyVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetDefaultPolicyVersionResult>() {
             @Override
             public SetDefaultPolicyVersionResult call() throws Exception {
-                SetDefaultPolicyVersionResult result;
+                SetDefaultPolicyVersionResult result = null;
 
                 try {
-                    result = setDefaultPolicyVersion(request);
+                    result = executeSetDefaultPolicyVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4028,7 +4151,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4044,14 +4167,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(final SimulateCustomPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SimulateCustomPolicyRequest, SimulateCustomPolicyResult> asyncHandler) {
+        final SimulateCustomPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SimulateCustomPolicyResult>() {
             @Override
             public SimulateCustomPolicyResult call() throws Exception {
-                SimulateCustomPolicyResult result;
+                SimulateCustomPolicyResult result = null;
 
                 try {
-                    result = simulateCustomPolicy(request);
+                    result = executeSimulateCustomPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4060,7 +4184,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4076,14 +4200,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<SimulatePrincipalPolicyResult> simulatePrincipalPolicyAsync(final SimulatePrincipalPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResult> asyncHandler) {
+        final SimulatePrincipalPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SimulatePrincipalPolicyResult>() {
             @Override
             public SimulatePrincipalPolicyResult call() throws Exception {
-                SimulatePrincipalPolicyResult result;
+                SimulatePrincipalPolicyResult result = null;
 
                 try {
-                    result = simulatePrincipalPolicy(request);
+                    result = executeSimulatePrincipalPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4092,7 +4217,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4108,14 +4233,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(final UpdateAccessKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, UpdateAccessKeyResult> asyncHandler) {
+        final UpdateAccessKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAccessKeyResult>() {
             @Override
             public UpdateAccessKeyResult call() throws Exception {
-                UpdateAccessKeyResult result;
+                UpdateAccessKeyResult result = null;
 
                 try {
-                    result = updateAccessKey(request);
+                    result = executeUpdateAccessKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4124,7 +4250,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4140,14 +4266,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(final UpdateAccountPasswordPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResult> asyncHandler) {
+        final UpdateAccountPasswordPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAccountPasswordPolicyResult>() {
             @Override
             public UpdateAccountPasswordPolicyResult call() throws Exception {
-                UpdateAccountPasswordPolicyResult result;
+                UpdateAccountPasswordPolicyResult result = null;
 
                 try {
-                    result = updateAccountPasswordPolicy(request);
+                    result = executeUpdateAccountPasswordPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4156,7 +4283,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4172,14 +4299,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(final UpdateAssumeRolePolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResult> asyncHandler) {
+        final UpdateAssumeRolePolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAssumeRolePolicyResult>() {
             @Override
             public UpdateAssumeRolePolicyResult call() throws Exception {
-                UpdateAssumeRolePolicyResult result;
+                UpdateAssumeRolePolicyResult result = null;
 
                 try {
-                    result = updateAssumeRolePolicy(request);
+                    result = executeUpdateAssumeRolePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4188,7 +4316,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4204,14 +4332,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(final UpdateGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
+        final UpdateGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateGroupResult>() {
             @Override
             public UpdateGroupResult call() throws Exception {
-                UpdateGroupResult result;
+                UpdateGroupResult result = null;
 
                 try {
-                    result = updateGroup(request);
+                    result = executeUpdateGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4220,7 +4349,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4236,14 +4365,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(final UpdateLoginProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, UpdateLoginProfileResult> asyncHandler) {
+        final UpdateLoginProfileRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateLoginProfileResult>() {
             @Override
             public UpdateLoginProfileResult call() throws Exception {
-                UpdateLoginProfileResult result;
+                UpdateLoginProfileResult result = null;
 
                 try {
-                    result = updateLoginProfile(request);
+                    result = executeUpdateLoginProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4252,7 +4382,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4270,14 +4400,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             final UpdateOpenIDConnectProviderThumbprintRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResult> asyncHandler) {
+        final UpdateOpenIDConnectProviderThumbprintRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateOpenIDConnectProviderThumbprintResult>() {
             @Override
             public UpdateOpenIDConnectProviderThumbprintResult call() throws Exception {
-                UpdateOpenIDConnectProviderThumbprintResult result;
+                UpdateOpenIDConnectProviderThumbprintResult result = null;
 
                 try {
-                    result = updateOpenIDConnectProviderThumbprint(request);
+                    result = executeUpdateOpenIDConnectProviderThumbprint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4286,7 +4417,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4302,14 +4433,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateSAMLProviderResult> updateSAMLProviderAsync(final UpdateSAMLProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSAMLProviderRequest, UpdateSAMLProviderResult> asyncHandler) {
+        final UpdateSAMLProviderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateSAMLProviderResult>() {
             @Override
             public UpdateSAMLProviderResult call() throws Exception {
-                UpdateSAMLProviderResult result;
+                UpdateSAMLProviderResult result = null;
 
                 try {
-                    result = updateSAMLProvider(request);
+                    result = executeUpdateSAMLProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4318,7 +4450,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4334,14 +4466,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(final UpdateSSHPublicKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResult> asyncHandler) {
+        final UpdateSSHPublicKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateSSHPublicKeyResult>() {
             @Override
             public UpdateSSHPublicKeyResult call() throws Exception {
-                UpdateSSHPublicKeyResult result;
+                UpdateSSHPublicKeyResult result = null;
 
                 try {
-                    result = updateSSHPublicKey(request);
+                    result = executeUpdateSSHPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4350,7 +4483,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4366,14 +4499,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(final UpdateServerCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, UpdateServerCertificateResult> asyncHandler) {
+        final UpdateServerCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateServerCertificateResult>() {
             @Override
             public UpdateServerCertificateResult call() throws Exception {
-                UpdateServerCertificateResult result;
+                UpdateServerCertificateResult result = null;
 
                 try {
-                    result = updateServerCertificate(request);
+                    result = executeUpdateServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4382,7 +4516,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4400,14 +4534,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     public java.util.concurrent.Future<UpdateServiceSpecificCredentialResult> updateServiceSpecificCredentialAsync(
             final UpdateServiceSpecificCredentialRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateServiceSpecificCredentialRequest, UpdateServiceSpecificCredentialResult> asyncHandler) {
+        final UpdateServiceSpecificCredentialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateServiceSpecificCredentialResult>() {
             @Override
             public UpdateServiceSpecificCredentialResult call() throws Exception {
-                UpdateServiceSpecificCredentialResult result;
+                UpdateServiceSpecificCredentialResult result = null;
 
                 try {
-                    result = updateServiceSpecificCredential(request);
+                    result = executeUpdateServiceSpecificCredential(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4416,7 +4551,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4432,14 +4567,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(final UpdateSigningCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, UpdateSigningCertificateResult> asyncHandler) {
+        final UpdateSigningCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateSigningCertificateResult>() {
             @Override
             public UpdateSigningCertificateResult call() throws Exception {
-                UpdateSigningCertificateResult result;
+                UpdateSigningCertificateResult result = null;
 
                 try {
-                    result = updateSigningCertificate(request);
+                    result = executeUpdateSigningCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4448,7 +4584,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4464,14 +4600,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(final UpdateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
+        final UpdateUserRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateUserResult>() {
             @Override
             public UpdateUserResult call() throws Exception {
-                UpdateUserResult result;
+                UpdateUserResult result = null;
 
                 try {
-                    result = updateUser(request);
+                    result = executeUpdateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4480,7 +4617,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4496,14 +4633,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UploadSSHPublicKeyResult> uploadSSHPublicKeyAsync(final UploadSSHPublicKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadSSHPublicKeyRequest, UploadSSHPublicKeyResult> asyncHandler) {
+        final UploadSSHPublicKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadSSHPublicKeyResult>() {
             @Override
             public UploadSSHPublicKeyResult call() throws Exception {
-                UploadSSHPublicKeyResult result;
+                UploadSSHPublicKeyResult result = null;
 
                 try {
-                    result = uploadSSHPublicKey(request);
+                    result = executeUploadSSHPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4512,7 +4650,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4528,14 +4666,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UploadServerCertificateResult> uploadServerCertificateAsync(final UploadServerCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadServerCertificateRequest, UploadServerCertificateResult> asyncHandler) {
+        final UploadServerCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadServerCertificateResult>() {
             @Override
             public UploadServerCertificateResult call() throws Exception {
-                UploadServerCertificateResult result;
+                UploadServerCertificateResult result = null;
 
                 try {
-                    result = uploadServerCertificate(request);
+                    result = executeUploadServerCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4544,7 +4683,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -4560,14 +4699,15 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     @Override
     public java.util.concurrent.Future<UploadSigningCertificateResult> uploadSigningCertificateAsync(final UploadSigningCertificateRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadSigningCertificateRequest, UploadSigningCertificateResult> asyncHandler) {
+        final UploadSigningCertificateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadSigningCertificateResult>() {
             @Override
             public UploadSigningCertificateResult call() throws Exception {
-                UploadSigningCertificateResult result;
+                UploadSigningCertificateResult result = null;
 
                 try {
-                    result = uploadSigningCertificate(request);
+                    result = executeUploadSigningCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4576,7 +4716,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

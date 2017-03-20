@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -349,7 +350,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
+    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAffectedEntities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAffectedEntitiesResult executeDescribeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAffectedEntitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -394,7 +401,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
+    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntityAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntityAggregatesResult executeDescribeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEntityAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -441,7 +454,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
+    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventAggregatesResult executeDescribeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -493,7 +512,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
+    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventDetails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventDetailsResult executeDescribeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -540,7 +565,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
+    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventTypesResult executeDescribeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -593,7 +624,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

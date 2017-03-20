@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint batch update request.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointBatchRequest implements Serializable, Cloneable, StructuredPojo {
 

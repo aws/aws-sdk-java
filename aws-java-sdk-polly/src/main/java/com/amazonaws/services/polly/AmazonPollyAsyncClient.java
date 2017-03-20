@@ -257,14 +257,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<DeleteLexiconResult> deleteLexiconAsync(final DeleteLexiconRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteLexiconRequest, DeleteLexiconResult> asyncHandler) {
+        final DeleteLexiconRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteLexiconResult>() {
             @Override
             public DeleteLexiconResult call() throws Exception {
-                DeleteLexiconResult result;
+                DeleteLexiconResult result = null;
 
                 try {
-                    result = deleteLexicon(request);
+                    result = executeDeleteLexicon(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -273,7 +274,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -289,14 +290,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<DescribeVoicesResult> describeVoicesAsync(final DescribeVoicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeVoicesRequest, DescribeVoicesResult> asyncHandler) {
+        final DescribeVoicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeVoicesResult>() {
             @Override
             public DescribeVoicesResult call() throws Exception {
-                DescribeVoicesResult result;
+                DescribeVoicesResult result = null;
 
                 try {
-                    result = describeVoices(request);
+                    result = executeDescribeVoices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -305,7 +307,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -321,14 +323,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<GetLexiconResult> getLexiconAsync(final GetLexiconRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetLexiconRequest, GetLexiconResult> asyncHandler) {
+        final GetLexiconRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetLexiconResult>() {
             @Override
             public GetLexiconResult call() throws Exception {
-                GetLexiconResult result;
+                GetLexiconResult result = null;
 
                 try {
-                    result = getLexicon(request);
+                    result = executeGetLexicon(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -337,7 +340,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -353,14 +356,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(final ListLexiconsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListLexiconsRequest, ListLexiconsResult> asyncHandler) {
+        final ListLexiconsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListLexiconsResult>() {
             @Override
             public ListLexiconsResult call() throws Exception {
-                ListLexiconsResult result;
+                ListLexiconsResult result = null;
 
                 try {
-                    result = listLexicons(request);
+                    result = executeListLexicons(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,7 +373,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -385,14 +389,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(final PutLexiconRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutLexiconRequest, PutLexiconResult> asyncHandler) {
+        final PutLexiconRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutLexiconResult>() {
             @Override
             public PutLexiconResult call() throws Exception {
-                PutLexiconResult result;
+                PutLexiconResult result = null;
 
                 try {
-                    result = putLexicon(request);
+                    result = executePutLexicon(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -401,7 +406,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -417,14 +422,15 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     @Override
     public java.util.concurrent.Future<SynthesizeSpeechResult> synthesizeSpeechAsync(final SynthesizeSpeechRequest request,
             final com.amazonaws.handlers.AsyncHandler<SynthesizeSpeechRequest, SynthesizeSpeechResult> asyncHandler) {
+        final SynthesizeSpeechRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SynthesizeSpeechResult>() {
             @Override
             public SynthesizeSpeechResult call() throws Exception {
-                SynthesizeSpeechResult result;
+                SynthesizeSpeechResult result = null;
 
                 try {
-                    result = synthesizeSpeech(request);
+                    result = executeSynthesizeSpeech(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -433,7 +439,7 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

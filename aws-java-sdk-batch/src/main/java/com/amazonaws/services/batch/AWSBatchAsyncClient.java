@@ -264,14 +264,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(final CancelJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
+        final CancelJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelJobResult>() {
             @Override
             public CancelJobResult call() throws Exception {
-                CancelJobResult result;
+                CancelJobResult result = null;
 
                 try {
-                    result = cancelJob(request);
+                    result = executeCancelJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +281,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +297,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<CreateComputeEnvironmentResult> createComputeEnvironmentAsync(final CreateComputeEnvironmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateComputeEnvironmentRequest, CreateComputeEnvironmentResult> asyncHandler) {
+        final CreateComputeEnvironmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateComputeEnvironmentResult>() {
             @Override
             public CreateComputeEnvironmentResult call() throws Exception {
-                CreateComputeEnvironmentResult result;
+                CreateComputeEnvironmentResult result = null;
 
                 try {
-                    result = createComputeEnvironment(request);
+                    result = executeCreateComputeEnvironment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +314,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +330,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<CreateJobQueueResult> createJobQueueAsync(final CreateJobQueueRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateJobQueueRequest, CreateJobQueueResult> asyncHandler) {
+        final CreateJobQueueRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateJobQueueResult>() {
             @Override
             public CreateJobQueueResult call() throws Exception {
-                CreateJobQueueResult result;
+                CreateJobQueueResult result = null;
 
                 try {
-                    result = createJobQueue(request);
+                    result = executeCreateJobQueue(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +347,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -360,14 +363,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DeleteComputeEnvironmentResult> deleteComputeEnvironmentAsync(final DeleteComputeEnvironmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteComputeEnvironmentRequest, DeleteComputeEnvironmentResult> asyncHandler) {
+        final DeleteComputeEnvironmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteComputeEnvironmentResult>() {
             @Override
             public DeleteComputeEnvironmentResult call() throws Exception {
-                DeleteComputeEnvironmentResult result;
+                DeleteComputeEnvironmentResult result = null;
 
                 try {
-                    result = deleteComputeEnvironment(request);
+                    result = executeDeleteComputeEnvironment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,7 +380,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -392,14 +396,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DeleteJobQueueResult> deleteJobQueueAsync(final DeleteJobQueueRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteJobQueueRequest, DeleteJobQueueResult> asyncHandler) {
+        final DeleteJobQueueRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteJobQueueResult>() {
             @Override
             public DeleteJobQueueResult call() throws Exception {
-                DeleteJobQueueResult result;
+                DeleteJobQueueResult result = null;
 
                 try {
-                    result = deleteJobQueue(request);
+                    result = executeDeleteJobQueue(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -408,7 +413,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -424,14 +429,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DeregisterJobDefinitionResult> deregisterJobDefinitionAsync(final DeregisterJobDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterJobDefinitionRequest, DeregisterJobDefinitionResult> asyncHandler) {
+        final DeregisterJobDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterJobDefinitionResult>() {
             @Override
             public DeregisterJobDefinitionResult call() throws Exception {
-                DeregisterJobDefinitionResult result;
+                DeregisterJobDefinitionResult result = null;
 
                 try {
-                    result = deregisterJobDefinition(request);
+                    result = executeDeregisterJobDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -440,7 +446,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -456,14 +462,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DescribeComputeEnvironmentsResult> describeComputeEnvironmentsAsync(final DescribeComputeEnvironmentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeComputeEnvironmentsRequest, DescribeComputeEnvironmentsResult> asyncHandler) {
+        final DescribeComputeEnvironmentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeComputeEnvironmentsResult>() {
             @Override
             public DescribeComputeEnvironmentsResult call() throws Exception {
-                DescribeComputeEnvironmentsResult result;
+                DescribeComputeEnvironmentsResult result = null;
 
                 try {
-                    result = describeComputeEnvironments(request);
+                    result = executeDescribeComputeEnvironments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -472,7 +479,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -488,14 +495,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DescribeJobDefinitionsResult> describeJobDefinitionsAsync(final DescribeJobDefinitionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeJobDefinitionsRequest, DescribeJobDefinitionsResult> asyncHandler) {
+        final DescribeJobDefinitionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeJobDefinitionsResult>() {
             @Override
             public DescribeJobDefinitionsResult call() throws Exception {
-                DescribeJobDefinitionsResult result;
+                DescribeJobDefinitionsResult result = null;
 
                 try {
-                    result = describeJobDefinitions(request);
+                    result = executeDescribeJobDefinitions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -504,7 +512,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -520,14 +528,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DescribeJobQueuesResult> describeJobQueuesAsync(final DescribeJobQueuesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeJobQueuesRequest, DescribeJobQueuesResult> asyncHandler) {
+        final DescribeJobQueuesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeJobQueuesResult>() {
             @Override
             public DescribeJobQueuesResult call() throws Exception {
-                DescribeJobQueuesResult result;
+                DescribeJobQueuesResult result = null;
 
                 try {
-                    result = describeJobQueues(request);
+                    result = executeDescribeJobQueues(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -536,7 +545,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -552,14 +561,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<DescribeJobsResult> describeJobsAsync(final DescribeJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeJobsRequest, DescribeJobsResult> asyncHandler) {
+        final DescribeJobsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeJobsResult>() {
             @Override
             public DescribeJobsResult call() throws Exception {
-                DescribeJobsResult result;
+                DescribeJobsResult result = null;
 
                 try {
-                    result = describeJobs(request);
+                    result = executeDescribeJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -568,7 +578,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -584,14 +594,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(final ListJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+        final ListJobsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListJobsResult>() {
             @Override
             public ListJobsResult call() throws Exception {
-                ListJobsResult result;
+                ListJobsResult result = null;
 
                 try {
-                    result = listJobs(request);
+                    result = executeListJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -600,7 +611,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -616,14 +627,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<RegisterJobDefinitionResult> registerJobDefinitionAsync(final RegisterJobDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterJobDefinitionRequest, RegisterJobDefinitionResult> asyncHandler) {
+        final RegisterJobDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterJobDefinitionResult>() {
             @Override
             public RegisterJobDefinitionResult call() throws Exception {
-                RegisterJobDefinitionResult result;
+                RegisterJobDefinitionResult result = null;
 
                 try {
-                    result = registerJobDefinition(request);
+                    result = executeRegisterJobDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -632,7 +644,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -648,14 +660,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<SubmitJobResult> submitJobAsync(final SubmitJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<SubmitJobRequest, SubmitJobResult> asyncHandler) {
+        final SubmitJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SubmitJobResult>() {
             @Override
             public SubmitJobResult call() throws Exception {
-                SubmitJobResult result;
+                SubmitJobResult result = null;
 
                 try {
-                    result = submitJob(request);
+                    result = executeSubmitJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -664,7 +677,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -680,14 +693,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<TerminateJobResult> terminateJobAsync(final TerminateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<TerminateJobRequest, TerminateJobResult> asyncHandler) {
+        final TerminateJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TerminateJobResult>() {
             @Override
             public TerminateJobResult call() throws Exception {
-                TerminateJobResult result;
+                TerminateJobResult result = null;
 
                 try {
-                    result = terminateJob(request);
+                    result = executeTerminateJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -696,7 +710,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -712,14 +726,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<UpdateComputeEnvironmentResult> updateComputeEnvironmentAsync(final UpdateComputeEnvironmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateComputeEnvironmentRequest, UpdateComputeEnvironmentResult> asyncHandler) {
+        final UpdateComputeEnvironmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateComputeEnvironmentResult>() {
             @Override
             public UpdateComputeEnvironmentResult call() throws Exception {
-                UpdateComputeEnvironmentResult result;
+                UpdateComputeEnvironmentResult result = null;
 
                 try {
-                    result = updateComputeEnvironment(request);
+                    result = executeUpdateComputeEnvironment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -728,7 +743,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -744,14 +759,15 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     @Override
     public java.util.concurrent.Future<UpdateJobQueueResult> updateJobQueueAsync(final UpdateJobQueueRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateJobQueueRequest, UpdateJobQueueResult> asyncHandler) {
+        final UpdateJobQueueRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateJobQueueResult>() {
             @Override
             public UpdateJobQueueResult call() throws Exception {
-                UpdateJobQueueResult result;
+                UpdateJobQueueResult result = null;
 
                 try {
-                    result = updateJobQueue(request);
+                    result = executeUpdateJobQueue(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -760,7 +776,7 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

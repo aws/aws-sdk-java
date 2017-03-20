@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -348,7 +349,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public CreateDeliveryStreamResult createDeliveryStream(CreateDeliveryStreamRequest createDeliveryStreamRequest) {
+    public CreateDeliveryStreamResult createDeliveryStream(CreateDeliveryStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeliveryStream(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeliveryStreamResult executeCreateDeliveryStream(CreateDeliveryStreamRequest createDeliveryStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -407,7 +414,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public DeleteDeliveryStreamResult deleteDeliveryStream(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest) {
+    public DeleteDeliveryStreamResult deleteDeliveryStream(DeleteDeliveryStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeliveryStream(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeliveryStreamResult executeDeleteDeliveryStream(DeleteDeliveryStreamRequest deleteDeliveryStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -453,7 +466,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest) {
+    public DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDeliveryStream(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeliveryStreamResult executeDescribeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDeliveryStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -503,7 +522,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public ListDeliveryStreamsResult listDeliveryStreams(ListDeliveryStreamsRequest listDeliveryStreamsRequest) {
+    public ListDeliveryStreamsResult listDeliveryStreams(ListDeliveryStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeliveryStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListDeliveryStreamsResult executeListDeliveryStreams(ListDeliveryStreamsRequest listDeliveryStreamsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDeliveryStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -586,7 +611,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public PutRecordResult putRecord(PutRecordRequest putRecordRequest) {
+    public PutRecordResult putRecord(PutRecordRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRecord(request);
+    }
+
+    @SdkInternalApi
+    final PutRecordResult executePutRecord(PutRecordRequest putRecordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRecordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -690,7 +721,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public PutRecordBatchResult putRecordBatch(PutRecordBatchRequest putRecordBatchRequest) {
+    public PutRecordBatchResult putRecordBatch(PutRecordBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRecordBatch(request);
+    }
+
+    @SdkInternalApi
+    final PutRecordBatchResult executePutRecordBatch(PutRecordBatchRequest putRecordBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRecordBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -769,7 +806,13 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public UpdateDestinationResult updateDestination(UpdateDestinationRequest updateDestinationRequest) {
+    public UpdateDestinationResult updateDestination(UpdateDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDestination(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDestinationResult executeUpdateDestination(UpdateDestinationRequest updateDestinationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

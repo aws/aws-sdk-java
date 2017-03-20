@@ -264,14 +264,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(final AddTagsToResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+        final AddTagsToResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsToResourceResult>() {
             @Override
             public AddTagsToResourceResult call() throws Exception {
-                AddTagsToResourceResult result;
+                AddTagsToResourceResult result = null;
 
                 try {
-                    result = addTagsToResource(request);
+                    result = executeAddTagsToResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +281,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +297,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheSecurityGroup> authorizeCacheSecurityGroupIngressAsync(final AuthorizeCacheSecurityGroupIngressRequest request,
             final com.amazonaws.handlers.AsyncHandler<AuthorizeCacheSecurityGroupIngressRequest, CacheSecurityGroup> asyncHandler) {
+        final AuthorizeCacheSecurityGroupIngressRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheSecurityGroup>() {
             @Override
             public CacheSecurityGroup call() throws Exception {
-                CacheSecurityGroup result;
+                CacheSecurityGroup result = null;
 
                 try {
-                    result = authorizeCacheSecurityGroupIngress(request);
+                    result = executeAuthorizeCacheSecurityGroupIngress(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +314,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +330,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<Snapshot> copySnapshotAsync(final CopySnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, Snapshot> asyncHandler) {
+        final CopySnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Snapshot>() {
             @Override
             public Snapshot call() throws Exception {
-                Snapshot result;
+                Snapshot result = null;
 
                 try {
-                    result = copySnapshot(request);
+                    result = executeCopySnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +347,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -360,14 +363,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheCluster> createCacheClusterAsync(final CreateCacheClusterRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCacheClusterRequest, CacheCluster> asyncHandler) {
+        final CreateCacheClusterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheCluster>() {
             @Override
             public CacheCluster call() throws Exception {
-                CacheCluster result;
+                CacheCluster result = null;
 
                 try {
-                    result = createCacheCluster(request);
+                    result = executeCreateCacheCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,7 +380,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -392,14 +396,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheParameterGroup> createCacheParameterGroupAsync(final CreateCacheParameterGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCacheParameterGroupRequest, CacheParameterGroup> asyncHandler) {
+        final CreateCacheParameterGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheParameterGroup>() {
             @Override
             public CacheParameterGroup call() throws Exception {
-                CacheParameterGroup result;
+                CacheParameterGroup result = null;
 
                 try {
-                    result = createCacheParameterGroup(request);
+                    result = executeCreateCacheParameterGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -408,7 +413,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -424,14 +429,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheSecurityGroup> createCacheSecurityGroupAsync(final CreateCacheSecurityGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCacheSecurityGroupRequest, CacheSecurityGroup> asyncHandler) {
+        final CreateCacheSecurityGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheSecurityGroup>() {
             @Override
             public CacheSecurityGroup call() throws Exception {
-                CacheSecurityGroup result;
+                CacheSecurityGroup result = null;
 
                 try {
-                    result = createCacheSecurityGroup(request);
+                    result = executeCreateCacheSecurityGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -440,7 +446,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -456,14 +462,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheSubnetGroup> createCacheSubnetGroupAsync(final CreateCacheSubnetGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCacheSubnetGroupRequest, CacheSubnetGroup> asyncHandler) {
+        final CreateCacheSubnetGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheSubnetGroup>() {
             @Override
             public CacheSubnetGroup call() throws Exception {
-                CacheSubnetGroup result;
+                CacheSubnetGroup result = null;
 
                 try {
-                    result = createCacheSubnetGroup(request);
+                    result = executeCreateCacheSubnetGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -472,7 +479,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -488,14 +495,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ReplicationGroup> createReplicationGroupAsync(final CreateReplicationGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateReplicationGroupRequest, ReplicationGroup> asyncHandler) {
+        final CreateReplicationGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReplicationGroup>() {
             @Override
             public ReplicationGroup call() throws Exception {
-                ReplicationGroup result;
+                ReplicationGroup result = null;
 
                 try {
-                    result = createReplicationGroup(request);
+                    result = executeCreateReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -504,7 +512,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -520,14 +528,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<Snapshot> createSnapshotAsync(final CreateSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, Snapshot> asyncHandler) {
+        final CreateSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Snapshot>() {
             @Override
             public Snapshot call() throws Exception {
-                Snapshot result;
+                Snapshot result = null;
 
                 try {
-                    result = createSnapshot(request);
+                    result = executeCreateSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -536,7 +545,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -552,14 +561,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheCluster> deleteCacheClusterAsync(final DeleteCacheClusterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCacheClusterRequest, CacheCluster> asyncHandler) {
+        final DeleteCacheClusterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheCluster>() {
             @Override
             public CacheCluster call() throws Exception {
-                CacheCluster result;
+                CacheCluster result = null;
 
                 try {
-                    result = deleteCacheCluster(request);
+                    result = executeDeleteCacheCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -568,7 +578,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -584,14 +594,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DeleteCacheParameterGroupResult> deleteCacheParameterGroupAsync(final DeleteCacheParameterGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResult> asyncHandler) {
+        final DeleteCacheParameterGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteCacheParameterGroupResult>() {
             @Override
             public DeleteCacheParameterGroupResult call() throws Exception {
-                DeleteCacheParameterGroupResult result;
+                DeleteCacheParameterGroupResult result = null;
 
                 try {
-                    result = deleteCacheParameterGroup(request);
+                    result = executeDeleteCacheParameterGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -600,7 +611,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -616,14 +627,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DeleteCacheSecurityGroupResult> deleteCacheSecurityGroupAsync(final DeleteCacheSecurityGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResult> asyncHandler) {
+        final DeleteCacheSecurityGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteCacheSecurityGroupResult>() {
             @Override
             public DeleteCacheSecurityGroupResult call() throws Exception {
-                DeleteCacheSecurityGroupResult result;
+                DeleteCacheSecurityGroupResult result = null;
 
                 try {
-                    result = deleteCacheSecurityGroup(request);
+                    result = executeDeleteCacheSecurityGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -632,7 +644,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -648,14 +660,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DeleteCacheSubnetGroupResult> deleteCacheSubnetGroupAsync(final DeleteCacheSubnetGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResult> asyncHandler) {
+        final DeleteCacheSubnetGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteCacheSubnetGroupResult>() {
             @Override
             public DeleteCacheSubnetGroupResult call() throws Exception {
-                DeleteCacheSubnetGroupResult result;
+                DeleteCacheSubnetGroupResult result = null;
 
                 try {
-                    result = deleteCacheSubnetGroup(request);
+                    result = executeDeleteCacheSubnetGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -664,7 +677,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -680,14 +693,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ReplicationGroup> deleteReplicationGroupAsync(final DeleteReplicationGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteReplicationGroupRequest, ReplicationGroup> asyncHandler) {
+        final DeleteReplicationGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReplicationGroup>() {
             @Override
             public ReplicationGroup call() throws Exception {
-                ReplicationGroup result;
+                ReplicationGroup result = null;
 
                 try {
-                    result = deleteReplicationGroup(request);
+                    result = executeDeleteReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -696,7 +710,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -712,14 +726,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<Snapshot> deleteSnapshotAsync(final DeleteSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Snapshot> asyncHandler) {
+        final DeleteSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<Snapshot>() {
             @Override
             public Snapshot call() throws Exception {
-                Snapshot result;
+                Snapshot result = null;
 
                 try {
-                    result = deleteSnapshot(request);
+                    result = executeDeleteSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -728,7 +743,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -744,14 +759,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheClustersResult> describeCacheClustersAsync(final DescribeCacheClustersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheClustersRequest, DescribeCacheClustersResult> asyncHandler) {
+        final DescribeCacheClustersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheClustersResult>() {
             @Override
             public DescribeCacheClustersResult call() throws Exception {
-                DescribeCacheClustersResult result;
+                DescribeCacheClustersResult result = null;
 
                 try {
-                    result = describeCacheClusters(request);
+                    result = executeDescribeCacheClusters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -760,7 +776,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -783,6 +799,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeCacheClustersAsync(DescribeCacheClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCacheClustersResult> describeCacheClustersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCacheClustersRequest, DescribeCacheClustersResult> asyncHandler) {
 
@@ -798,14 +815,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheEngineVersionsResult> describeCacheEngineVersionsAsync(final DescribeCacheEngineVersionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResult> asyncHandler) {
+        final DescribeCacheEngineVersionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheEngineVersionsResult>() {
             @Override
             public DescribeCacheEngineVersionsResult call() throws Exception {
-                DescribeCacheEngineVersionsResult result;
+                DescribeCacheEngineVersionsResult result = null;
 
                 try {
-                    result = describeCacheEngineVersions(request);
+                    result = executeDescribeCacheEngineVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -814,7 +832,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -837,6 +855,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeCacheEngineVersionsAsync(DescribeCacheEngineVersionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCacheEngineVersionsResult> describeCacheEngineVersionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResult> asyncHandler) {
 
@@ -852,14 +871,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheParameterGroupsResult> describeCacheParameterGroupsAsync(final DescribeCacheParameterGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResult> asyncHandler) {
+        final DescribeCacheParameterGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheParameterGroupsResult>() {
             @Override
             public DescribeCacheParameterGroupsResult call() throws Exception {
-                DescribeCacheParameterGroupsResult result;
+                DescribeCacheParameterGroupsResult result = null;
 
                 try {
-                    result = describeCacheParameterGroups(request);
+                    result = executeDescribeCacheParameterGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -868,7 +888,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -891,6 +911,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeCacheParameterGroupsAsync(DescribeCacheParameterGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCacheParameterGroupsResult> describeCacheParameterGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResult> asyncHandler) {
 
@@ -906,14 +927,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheParametersResult> describeCacheParametersAsync(final DescribeCacheParametersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheParametersRequest, DescribeCacheParametersResult> asyncHandler) {
+        final DescribeCacheParametersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheParametersResult>() {
             @Override
             public DescribeCacheParametersResult call() throws Exception {
-                DescribeCacheParametersResult result;
+                DescribeCacheParametersResult result = null;
 
                 try {
-                    result = describeCacheParameters(request);
+                    result = executeDescribeCacheParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -922,7 +944,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -938,14 +960,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheSecurityGroupsResult> describeCacheSecurityGroupsAsync(final DescribeCacheSecurityGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResult> asyncHandler) {
+        final DescribeCacheSecurityGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheSecurityGroupsResult>() {
             @Override
             public DescribeCacheSecurityGroupsResult call() throws Exception {
-                DescribeCacheSecurityGroupsResult result;
+                DescribeCacheSecurityGroupsResult result = null;
 
                 try {
-                    result = describeCacheSecurityGroups(request);
+                    result = executeDescribeCacheSecurityGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -954,7 +977,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -977,6 +1000,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeCacheSecurityGroupsAsync(DescribeCacheSecurityGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCacheSecurityGroupsResult> describeCacheSecurityGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResult> asyncHandler) {
 
@@ -992,14 +1016,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheSubnetGroupsResult> describeCacheSubnetGroupsAsync(final DescribeCacheSubnetGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResult> asyncHandler) {
+        final DescribeCacheSubnetGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheSubnetGroupsResult>() {
             @Override
             public DescribeCacheSubnetGroupsResult call() throws Exception {
-                DescribeCacheSubnetGroupsResult result;
+                DescribeCacheSubnetGroupsResult result = null;
 
                 try {
-                    result = describeCacheSubnetGroups(request);
+                    result = executeDescribeCacheSubnetGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1008,7 +1033,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1031,6 +1056,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeCacheSubnetGroupsAsync(DescribeCacheSubnetGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCacheSubnetGroupsResult> describeCacheSubnetGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResult> asyncHandler) {
 
@@ -1046,14 +1072,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<EngineDefaults> describeEngineDefaultParametersAsync(final DescribeEngineDefaultParametersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults> asyncHandler) {
+        final DescribeEngineDefaultParametersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EngineDefaults>() {
             @Override
             public EngineDefaults call() throws Exception {
-                EngineDefaults result;
+                EngineDefaults result = null;
 
                 try {
-                    result = describeEngineDefaultParameters(request);
+                    result = executeDescribeEngineDefaultParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1062,7 +1089,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1078,14 +1105,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(final DescribeEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
+        final DescribeEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventsResult>() {
             @Override
             public DescribeEventsResult call() throws Exception {
-                DescribeEventsResult result;
+                DescribeEventsResult result = null;
 
                 try {
-                    result = describeEvents(request);
+                    result = executeDescribeEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1094,7 +1122,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1117,6 +1145,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeEventsAsync(DescribeEventsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
@@ -1132,14 +1161,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeReplicationGroupsResult> describeReplicationGroupsAsync(final DescribeReplicationGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult> asyncHandler) {
+        final DescribeReplicationGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeReplicationGroupsResult>() {
             @Override
             public DescribeReplicationGroupsResult call() throws Exception {
-                DescribeReplicationGroupsResult result;
+                DescribeReplicationGroupsResult result = null;
 
                 try {
-                    result = describeReplicationGroups(request);
+                    result = executeDescribeReplicationGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1148,7 +1178,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1171,6 +1201,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeReplicationGroupsAsync(DescribeReplicationGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReplicationGroupsResult> describeReplicationGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult> asyncHandler) {
 
@@ -1186,14 +1217,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeReservedCacheNodesResult> describeReservedCacheNodesAsync(final DescribeReservedCacheNodesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResult> asyncHandler) {
+        final DescribeReservedCacheNodesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeReservedCacheNodesResult>() {
             @Override
             public DescribeReservedCacheNodesResult call() throws Exception {
-                DescribeReservedCacheNodesResult result;
+                DescribeReservedCacheNodesResult result = null;
 
                 try {
-                    result = describeReservedCacheNodes(request);
+                    result = executeDescribeReservedCacheNodes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1202,7 +1234,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1225,6 +1257,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeReservedCacheNodesAsync(DescribeReservedCacheNodesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedCacheNodesResult> describeReservedCacheNodesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResult> asyncHandler) {
 
@@ -1242,14 +1275,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     public java.util.concurrent.Future<DescribeReservedCacheNodesOfferingsResult> describeReservedCacheNodesOfferingsAsync(
             final DescribeReservedCacheNodesOfferingsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResult> asyncHandler) {
+        final DescribeReservedCacheNodesOfferingsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeReservedCacheNodesOfferingsResult>() {
             @Override
             public DescribeReservedCacheNodesOfferingsResult call() throws Exception {
-                DescribeReservedCacheNodesOfferingsResult result;
+                DescribeReservedCacheNodesOfferingsResult result = null;
 
                 try {
-                    result = describeReservedCacheNodesOfferings(request);
+                    result = executeDescribeReservedCacheNodesOfferings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1258,7 +1292,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1282,6 +1316,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      * @see #describeReservedCacheNodesOfferingsAsync(DescribeReservedCacheNodesOfferingsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedCacheNodesOfferingsResult> describeReservedCacheNodesOfferingsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResult> asyncHandler) {
 
@@ -1297,14 +1332,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(final DescribeSnapshotsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
+        final DescribeSnapshotsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSnapshotsResult>() {
             @Override
             public DescribeSnapshotsResult call() throws Exception {
-                DescribeSnapshotsResult result;
+                DescribeSnapshotsResult result = null;
 
                 try {
-                    result = describeSnapshots(request);
+                    result = executeDescribeSnapshots(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1313,7 +1349,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1336,6 +1372,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      *
      * @see #describeSnapshotsAsync(DescribeSnapshotsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
@@ -1353,14 +1390,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     public java.util.concurrent.Future<ListAllowedNodeTypeModificationsResult> listAllowedNodeTypeModificationsAsync(
             final ListAllowedNodeTypeModificationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult> asyncHandler) {
+        final ListAllowedNodeTypeModificationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAllowedNodeTypeModificationsResult>() {
             @Override
             public ListAllowedNodeTypeModificationsResult call() throws Exception {
-                ListAllowedNodeTypeModificationsResult result;
+                ListAllowedNodeTypeModificationsResult result = null;
 
                 try {
-                    result = listAllowedNodeTypeModifications(request);
+                    result = executeListAllowedNodeTypeModifications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1369,7 +1407,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1393,6 +1431,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
      * @see #listAllowedNodeTypeModificationsAsync(ListAllowedNodeTypeModificationsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAllowedNodeTypeModificationsResult> listAllowedNodeTypeModificationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult> asyncHandler) {
 
@@ -1408,14 +1447,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1424,7 +1464,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1440,14 +1480,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheCluster> modifyCacheClusterAsync(final ModifyCacheClusterRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyCacheClusterRequest, CacheCluster> asyncHandler) {
+        final ModifyCacheClusterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheCluster>() {
             @Override
             public CacheCluster call() throws Exception {
-                CacheCluster result;
+                CacheCluster result = null;
 
                 try {
-                    result = modifyCacheCluster(request);
+                    result = executeModifyCacheCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1456,7 +1497,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1472,14 +1513,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ModifyCacheParameterGroupResult> modifyCacheParameterGroupAsync(final ModifyCacheParameterGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResult> asyncHandler) {
+        final ModifyCacheParameterGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyCacheParameterGroupResult>() {
             @Override
             public ModifyCacheParameterGroupResult call() throws Exception {
-                ModifyCacheParameterGroupResult result;
+                ModifyCacheParameterGroupResult result = null;
 
                 try {
-                    result = modifyCacheParameterGroup(request);
+                    result = executeModifyCacheParameterGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1488,7 +1530,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1504,14 +1546,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheSubnetGroup> modifyCacheSubnetGroupAsync(final ModifyCacheSubnetGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyCacheSubnetGroupRequest, CacheSubnetGroup> asyncHandler) {
+        final ModifyCacheSubnetGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheSubnetGroup>() {
             @Override
             public CacheSubnetGroup call() throws Exception {
-                CacheSubnetGroup result;
+                CacheSubnetGroup result = null;
 
                 try {
-                    result = modifyCacheSubnetGroup(request);
+                    result = executeModifyCacheSubnetGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1520,7 +1563,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1536,14 +1579,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ReplicationGroup> modifyReplicationGroupAsync(final ModifyReplicationGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyReplicationGroupRequest, ReplicationGroup> asyncHandler) {
+        final ModifyReplicationGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReplicationGroup>() {
             @Override
             public ReplicationGroup call() throws Exception {
-                ReplicationGroup result;
+                ReplicationGroup result = null;
 
                 try {
-                    result = modifyReplicationGroup(request);
+                    result = executeModifyReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1552,7 +1596,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1568,14 +1612,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ReservedCacheNode> purchaseReservedCacheNodesOfferingAsync(final PurchaseReservedCacheNodesOfferingRequest request,
             final com.amazonaws.handlers.AsyncHandler<PurchaseReservedCacheNodesOfferingRequest, ReservedCacheNode> asyncHandler) {
+        final PurchaseReservedCacheNodesOfferingRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReservedCacheNode>() {
             @Override
             public ReservedCacheNode call() throws Exception {
-                ReservedCacheNode result;
+                ReservedCacheNode result = null;
 
                 try {
-                    result = purchaseReservedCacheNodesOffering(request);
+                    result = executePurchaseReservedCacheNodesOffering(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1584,7 +1629,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1600,14 +1645,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheCluster> rebootCacheClusterAsync(final RebootCacheClusterRequest request,
             final com.amazonaws.handlers.AsyncHandler<RebootCacheClusterRequest, CacheCluster> asyncHandler) {
+        final RebootCacheClusterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheCluster>() {
             @Override
             public CacheCluster call() throws Exception {
-                CacheCluster result;
+                CacheCluster result = null;
 
                 try {
-                    result = rebootCacheCluster(request);
+                    result = executeRebootCacheCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1616,7 +1662,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1632,14 +1678,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
+        final RemoveTagsFromResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsFromResourceResult>() {
             @Override
             public RemoveTagsFromResourceResult call() throws Exception {
-                RemoveTagsFromResourceResult result;
+                RemoveTagsFromResourceResult result = null;
 
                 try {
-                    result = removeTagsFromResource(request);
+                    result = executeRemoveTagsFromResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1648,7 +1695,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1664,14 +1711,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<ResetCacheParameterGroupResult> resetCacheParameterGroupAsync(final ResetCacheParameterGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResetCacheParameterGroupRequest, ResetCacheParameterGroupResult> asyncHandler) {
+        final ResetCacheParameterGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResetCacheParameterGroupResult>() {
             @Override
             public ResetCacheParameterGroupResult call() throws Exception {
-                ResetCacheParameterGroupResult result;
+                ResetCacheParameterGroupResult result = null;
 
                 try {
-                    result = resetCacheParameterGroup(request);
+                    result = executeResetCacheParameterGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1680,7 +1728,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1696,14 +1744,15 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     @Override
     public java.util.concurrent.Future<CacheSecurityGroup> revokeCacheSecurityGroupIngressAsync(final RevokeCacheSecurityGroupIngressRequest request,
             final com.amazonaws.handlers.AsyncHandler<RevokeCacheSecurityGroupIngressRequest, CacheSecurityGroup> asyncHandler) {
+        final RevokeCacheSecurityGroupIngressRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CacheSecurityGroup>() {
             @Override
             public CacheSecurityGroup call() throws Exception {
-                CacheSecurityGroup result;
+                CacheSecurityGroup result = null;
 
                 try {
-                    result = revokeCacheSecurityGroupIngress(request);
+                    result = executeRevokeCacheSecurityGroupIngress(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1712,7 +1761,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

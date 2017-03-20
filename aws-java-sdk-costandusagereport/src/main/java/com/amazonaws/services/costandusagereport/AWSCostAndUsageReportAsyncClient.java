@@ -252,14 +252,15 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
     @Override
     public java.util.concurrent.Future<DeleteReportDefinitionResult> deleteReportDefinitionAsync(final DeleteReportDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteReportDefinitionRequest, DeleteReportDefinitionResult> asyncHandler) {
+        final DeleteReportDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteReportDefinitionResult>() {
             @Override
             public DeleteReportDefinitionResult call() throws Exception {
-                DeleteReportDefinitionResult result;
+                DeleteReportDefinitionResult result = null;
 
                 try {
-                    result = deleteReportDefinition(request);
+                    result = executeDeleteReportDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -268,7 +269,7 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -284,14 +285,15 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
     @Override
     public java.util.concurrent.Future<DescribeReportDefinitionsResult> describeReportDefinitionsAsync(final DescribeReportDefinitionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeReportDefinitionsRequest, DescribeReportDefinitionsResult> asyncHandler) {
+        final DescribeReportDefinitionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeReportDefinitionsResult>() {
             @Override
             public DescribeReportDefinitionsResult call() throws Exception {
-                DescribeReportDefinitionsResult result;
+                DescribeReportDefinitionsResult result = null;
 
                 try {
-                    result = describeReportDefinitions(request);
+                    result = executeDescribeReportDefinitions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -300,7 +302,7 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -316,14 +318,15 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
     @Override
     public java.util.concurrent.Future<PutReportDefinitionResult> putReportDefinitionAsync(final PutReportDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutReportDefinitionRequest, PutReportDefinitionResult> asyncHandler) {
+        final PutReportDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutReportDefinitionResult>() {
             @Override
             public PutReportDefinitionResult call() throws Exception {
-                PutReportDefinitionResult result;
+                PutReportDefinitionResult result = null;
 
                 try {
-                    result = putReportDefinition(request);
+                    result = executePutReportDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -332,7 +335,7 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Campaign Limits are used to limit the number of messages that can be sent to a user.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
 

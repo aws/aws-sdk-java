@@ -84,4 +84,7 @@ public class AmazonElasticMapReduceWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

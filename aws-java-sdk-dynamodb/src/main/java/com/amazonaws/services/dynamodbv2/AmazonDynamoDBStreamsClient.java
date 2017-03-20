@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -304,7 +305,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
+    public DescribeStreamResult describeStream(DescribeStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStream(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStreamResult executeDescribeStream(DescribeStreamRequest describeStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -391,7 +398,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
+    public GetRecordsResult getRecords(GetRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRecords(request);
+    }
+
+    @SdkInternalApi
+    final GetRecordsResult executeGetRecords(GetRecordsRequest getRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -465,7 +478,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
+    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShardIterator(request);
+    }
+
+    @SdkInternalApi
+    final GetShardIteratorResult executeGetShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getShardIteratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -518,7 +537,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
+    public ListStreamsResult listStreams(ListStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListStreamsResult executeListStreams(ListStreamsRequest listStreamsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

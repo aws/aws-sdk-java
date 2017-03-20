@@ -32,15 +32,19 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeCases" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeServices" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeSeverityLevels" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ResolveCase" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

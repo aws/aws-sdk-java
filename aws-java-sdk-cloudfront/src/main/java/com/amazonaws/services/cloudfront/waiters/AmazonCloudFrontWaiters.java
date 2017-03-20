@@ -82,4 +82,7 @@ public class AmazonCloudFrontWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

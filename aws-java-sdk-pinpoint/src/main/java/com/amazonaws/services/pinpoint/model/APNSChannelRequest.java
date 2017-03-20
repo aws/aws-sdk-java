@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Apple Push Notification Service channel definition.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSChannelRequest implements Serializable, Cloneable, StructuredPojo {
 

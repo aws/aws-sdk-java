@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -294,7 +295,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public CreateDevicePoolResult createDevicePool(CreateDevicePoolRequest createDevicePoolRequest) {
+    public CreateDevicePoolResult createDevicePool(CreateDevicePoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDevicePool(request);
+    }
+
+    @SdkInternalApi
+    final CreateDevicePoolResult executeCreateDevicePool(CreateDevicePoolRequest createDevicePoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -344,7 +351,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest) {
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkProfileResult executeCreateNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createNetworkProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -395,7 +408,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public CreateProjectResult createProject(CreateProjectRequest createProjectRequest) {
+    public CreateProjectResult createProject(CreateProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProject(request);
+    }
+
+    @SdkInternalApi
+    final CreateProjectResult executeCreateProject(CreateProjectRequest createProjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -446,7 +465,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
+    public CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRemoteAccessSession(request);
+    }
+
+    @SdkInternalApi
+    final CreateRemoteAccessSessionResult executeCreateRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -499,7 +524,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public CreateUploadResult createUpload(CreateUploadRequest createUploadRequest) {
+    public CreateUploadResult createUpload(CreateUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUpload(request);
+    }
+
+    @SdkInternalApi
+    final CreateUploadResult executeCreateUpload(CreateUploadRequest createUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -550,7 +581,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest) {
+    public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDevicePool(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDevicePoolResult executeDeleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -600,7 +637,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest) {
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkProfileResult executeDeleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteNetworkProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -654,7 +697,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest) {
+    public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProject(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProjectResult executeDeleteProject(DeleteProjectRequest deleteProjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -705,7 +754,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest) {
+    public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRemoteAccessSession(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRemoteAccessSessionResult executeDeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -761,7 +816,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
+    public DeleteRunResult deleteRun(DeleteRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRun(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRunResult executeDeleteRun(DeleteRunRequest deleteRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -812,7 +873,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public DeleteUploadResult deleteUpload(DeleteUploadRequest deleteUploadRequest) {
+    public DeleteUploadResult deleteUpload(DeleteUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUpload(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUploadResult executeDeleteUpload(DeleteUploadRequest deleteUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -863,7 +930,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSettingsResult executeGetAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -914,7 +987,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
+    public GetDeviceResult getDevice(GetDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDevice(request);
+    }
+
+    @SdkInternalApi
+    final GetDeviceResult executeGetDevice(GetDeviceRequest getDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -965,7 +1044,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetDevicePoolResult getDevicePool(GetDevicePoolRequest getDevicePoolRequest) {
+    public GetDevicePoolResult getDevicePool(GetDevicePoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDevicePool(request);
+    }
+
+    @SdkInternalApi
+    final GetDevicePoolResult executeGetDevicePool(GetDevicePoolRequest getDevicePoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1016,7 +1101,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest) {
+    public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDevicePoolCompatibility(request);
+    }
+
+    @SdkInternalApi
+    final GetDevicePoolCompatibilityResult executeGetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest getDevicePoolCompatibilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDevicePoolCompatibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1069,7 +1160,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetJobResult getJob(GetJobRequest getJobRequest) {
+    public GetJobResult getJob(GetJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJob(request);
+    }
+
+    @SdkInternalApi
+    final GetJobResult executeGetJob(GetJobRequest getJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1119,7 +1216,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest) {
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetNetworkProfileResult executeGetNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getNetworkProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1176,7 +1279,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public GetOfferingStatusResult getOfferingStatus(GetOfferingStatusRequest getOfferingStatusRequest) {
+    public GetOfferingStatusResult getOfferingStatus(GetOfferingStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOfferingStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetOfferingStatusResult executeGetOfferingStatus(GetOfferingStatusRequest getOfferingStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOfferingStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1227,7 +1336,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetProjectResult getProject(GetProjectRequest getProjectRequest) {
+    public GetProjectResult getProject(GetProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProject(request);
+    }
+
+    @SdkInternalApi
+    final GetProjectResult executeGetProject(GetProjectRequest getProjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1278,7 +1393,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetRemoteAccessSessionResult getRemoteAccessSession(GetRemoteAccessSessionRequest getRemoteAccessSessionRequest) {
+    public GetRemoteAccessSessionResult getRemoteAccessSession(GetRemoteAccessSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRemoteAccessSession(request);
+    }
+
+    @SdkInternalApi
+    final GetRemoteAccessSessionResult executeGetRemoteAccessSession(GetRemoteAccessSessionRequest getRemoteAccessSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1330,7 +1451,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetRunResult getRun(GetRunRequest getRunRequest) {
+    public GetRunResult getRun(GetRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRun(request);
+    }
+
+    @SdkInternalApi
+    final GetRunResult executeGetRun(GetRunRequest getRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1381,7 +1508,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetSuiteResult getSuite(GetSuiteRequest getSuiteRequest) {
+    public GetSuiteResult getSuite(GetSuiteRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSuite(request);
+    }
+
+    @SdkInternalApi
+    final GetSuiteResult executeGetSuite(GetSuiteRequest getSuiteRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSuiteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1432,7 +1565,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetTestResult getTest(GetTestRequest getTestRequest) {
+    public GetTestResult getTest(GetTestRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTest(request);
+    }
+
+    @SdkInternalApi
+    final GetTestResult executeGetTest(GetTestRequest getTestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1483,7 +1622,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public GetUploadResult getUpload(GetUploadRequest getUploadRequest) {
+    public GetUploadResult getUpload(GetUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUpload(request);
+    }
+
+    @SdkInternalApi
+    final GetUploadResult executeGetUpload(GetUploadRequest getUploadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getUploadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1536,7 +1681,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest) {
+    public InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeInstallToRemoteAccessSession(request);
+    }
+
+    @SdkInternalApi
+    final InstallToRemoteAccessSessionResult executeInstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(installToRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1589,7 +1740,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest) {
+    public ListArtifactsResult listArtifacts(ListArtifactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListArtifacts(request);
+    }
+
+    @SdkInternalApi
+    final ListArtifactsResult executeListArtifacts(ListArtifactsRequest listArtifactsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listArtifactsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1640,7 +1797,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListDevicePoolsResult listDevicePools(ListDevicePoolsRequest listDevicePoolsRequest) {
+    public ListDevicePoolsResult listDevicePools(ListDevicePoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevicePools(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicePoolsResult executeListDevicePools(ListDevicePoolsRequest listDevicePoolsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDevicePoolsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1691,7 +1854,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
+    public ListDevicesResult listDevices(ListDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevices(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicesResult executeListDevices(ListDevicesRequest listDevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1742,7 +1911,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1792,7 +1967,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest listNetworkProfilesRequest) {
+    public ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNetworkProfiles(request);
+    }
+
+    @SdkInternalApi
+    final ListNetworkProfilesResult executeListNetworkProfiles(ListNetworkProfilesRequest listNetworkProfilesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listNetworkProfilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1849,7 +2030,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
+    public ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOfferingTransactions(request);
+    }
+
+    @SdkInternalApi
+    final ListOfferingTransactionsResult executeListOfferingTransactions(ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOfferingTransactionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1908,7 +2095,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest) {
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOfferings(request);
+    }
+
+    @SdkInternalApi
+    final ListOfferingsResult executeListOfferings(ListOfferingsRequest listOfferingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOfferingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1959,7 +2152,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest) {
+    public ListProjectsResult listProjects(ListProjectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProjects(request);
+    }
+
+    @SdkInternalApi
+    final ListProjectsResult executeListProjects(ListProjectsRequest listProjectsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listProjectsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2010,7 +2209,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListRemoteAccessSessionsResult listRemoteAccessSessions(ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest) {
+    public ListRemoteAccessSessionsResult listRemoteAccessSessions(ListRemoteAccessSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRemoteAccessSessions(request);
+    }
+
+    @SdkInternalApi
+    final ListRemoteAccessSessionsResult executeListRemoteAccessSessions(ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRemoteAccessSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2063,7 +2268,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
+    public ListRunsResult listRuns(ListRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListRunsResult executeListRuns(ListRunsRequest listRunsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2114,7 +2325,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListSamplesResult listSamples(ListSamplesRequest listSamplesRequest) {
+    public ListSamplesResult listSamples(ListSamplesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSamples(request);
+    }
+
+    @SdkInternalApi
+    final ListSamplesResult executeListSamples(ListSamplesRequest listSamplesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSamplesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2165,7 +2382,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListSuitesResult listSuites(ListSuitesRequest listSuitesRequest) {
+    public ListSuitesResult listSuites(ListSuitesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSuites(request);
+    }
+
+    @SdkInternalApi
+    final ListSuitesResult executeListSuites(ListSuitesRequest listSuitesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSuitesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2216,7 +2439,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListTestsResult listTests(ListTestsRequest listTestsRequest) {
+    public ListTestsResult listTests(ListTestsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTests(request);
+    }
+
+    @SdkInternalApi
+    final ListTestsResult executeListTests(ListTestsRequest listTestsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTestsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2267,7 +2496,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public ListUniqueProblemsResult listUniqueProblems(ListUniqueProblemsRequest listUniqueProblemsRequest) {
+    public ListUniqueProblemsResult listUniqueProblems(ListUniqueProblemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUniqueProblems(request);
+    }
+
+    @SdkInternalApi
+    final ListUniqueProblemsResult executeListUniqueProblems(ListUniqueProblemsRequest listUniqueProblemsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUniqueProblemsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2318,7 +2553,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest) {
+    public ListUploadsResult listUploads(ListUploadsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUploads(request);
+    }
+
+    @SdkInternalApi
+    final ListUploadsResult executeListUploads(ListUploadsRequest listUploadsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUploadsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2375,7 +2616,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
+    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseOfferingResult executePurchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(purchaseOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2432,7 +2679,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public RenewOfferingResult renewOffering(RenewOfferingRequest renewOfferingRequest) {
+    public RenewOfferingResult renewOffering(RenewOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executeRenewOffering(request);
+    }
+
+    @SdkInternalApi
+    final RenewOfferingResult executeRenewOffering(RenewOfferingRequest renewOfferingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(renewOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2485,7 +2738,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest) {
+    public ScheduleRunResult scheduleRun(ScheduleRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeScheduleRun(request);
+    }
+
+    @SdkInternalApi
+    final ScheduleRunResult executeScheduleRun(ScheduleRunRequest scheduleRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scheduleRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2536,7 +2795,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest) {
+    public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopRemoteAccessSession(request);
+    }
+
+    @SdkInternalApi
+    final StopRemoteAccessSessionResult executeStopRemoteAccessSession(StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopRemoteAccessSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2592,7 +2857,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public StopRunResult stopRun(StopRunRequest stopRunRequest) {
+    public StopRunResult stopRun(StopRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopRun(request);
+    }
+
+    @SdkInternalApi
+    final StopRunResult executeStopRun(StopRunRequest stopRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2644,7 +2915,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      API Documentation</a>
      */
     @Override
-    public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest) {
+    public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDevicePool(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDevicePoolResult executeUpdateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDevicePoolRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2694,7 +2971,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest) {
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNetworkProfileResult executeUpdateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateNetworkProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2745,7 +3028,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *      Documentation</a>
      */
     @Override
-    public UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest) {
+    public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProject(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProjectResult executeUpdateProject(UpdateProjectRequest updateProjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateProjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

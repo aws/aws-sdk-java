@@ -270,14 +270,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<ActivatePipelineResult> activatePipelineAsync(final ActivatePipelineRequest request,
             final com.amazonaws.handlers.AsyncHandler<ActivatePipelineRequest, ActivatePipelineResult> asyncHandler) {
+        final ActivatePipelineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivatePipelineResult>() {
             @Override
             public ActivatePipelineResult call() throws Exception {
-                ActivatePipelineResult result;
+                ActivatePipelineResult result = null;
 
                 try {
-                    result = activatePipeline(request);
+                    result = executeActivatePipeline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -286,7 +287,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -302,14 +303,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(final AddTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+        final AddTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsResult>() {
             @Override
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+                AddTagsResult result = null;
 
                 try {
-                    result = addTags(request);
+                    result = executeAddTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -318,7 +320,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -334,14 +336,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(final CreatePipelineRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult> asyncHandler) {
+        final CreatePipelineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePipelineResult>() {
             @Override
             public CreatePipelineResult call() throws Exception {
-                CreatePipelineResult result;
+                CreatePipelineResult result = null;
 
                 try {
-                    result = createPipeline(request);
+                    result = executeCreatePipeline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -350,7 +353,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -366,14 +369,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<DeactivatePipelineResult> deactivatePipelineAsync(final DeactivatePipelineRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeactivatePipelineRequest, DeactivatePipelineResult> asyncHandler) {
+        final DeactivatePipelineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeactivatePipelineResult>() {
             @Override
             public DeactivatePipelineResult call() throws Exception {
-                DeactivatePipelineResult result;
+                DeactivatePipelineResult result = null;
 
                 try {
-                    result = deactivatePipeline(request);
+                    result = executeDeactivatePipeline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -382,7 +386,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -398,14 +402,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(final DeletePipelineRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
+        final DeletePipelineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeletePipelineResult>() {
             @Override
             public DeletePipelineResult call() throws Exception {
-                DeletePipelineResult result;
+                DeletePipelineResult result = null;
 
                 try {
-                    result = deletePipeline(request);
+                    result = executeDeletePipeline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -414,7 +419,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -430,14 +435,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<DescribeObjectsResult> describeObjectsAsync(final DescribeObjectsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeObjectsRequest, DescribeObjectsResult> asyncHandler) {
+        final DescribeObjectsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeObjectsResult>() {
             @Override
             public DescribeObjectsResult call() throws Exception {
-                DescribeObjectsResult result;
+                DescribeObjectsResult result = null;
 
                 try {
-                    result = describeObjects(request);
+                    result = executeDescribeObjects(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -446,7 +452,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -462,14 +468,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<DescribePipelinesResult> describePipelinesAsync(final DescribePipelinesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribePipelinesRequest, DescribePipelinesResult> asyncHandler) {
+        final DescribePipelinesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribePipelinesResult>() {
             @Override
             public DescribePipelinesResult call() throws Exception {
-                DescribePipelinesResult result;
+                DescribePipelinesResult result = null;
 
                 try {
-                    result = describePipelines(request);
+                    result = executeDescribePipelines(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -478,7 +485,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -494,14 +501,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<EvaluateExpressionResult> evaluateExpressionAsync(final EvaluateExpressionRequest request,
             final com.amazonaws.handlers.AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult> asyncHandler) {
+        final EvaluateExpressionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EvaluateExpressionResult>() {
             @Override
             public EvaluateExpressionResult call() throws Exception {
-                EvaluateExpressionResult result;
+                EvaluateExpressionResult result = null;
 
                 try {
-                    result = evaluateExpression(request);
+                    result = executeEvaluateExpression(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -510,7 +518,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -526,14 +534,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<GetPipelineDefinitionResult> getPipelineDefinitionAsync(final GetPipelineDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPipelineDefinitionRequest, GetPipelineDefinitionResult> asyncHandler) {
+        final GetPipelineDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPipelineDefinitionResult>() {
             @Override
             public GetPipelineDefinitionResult call() throws Exception {
-                GetPipelineDefinitionResult result;
+                GetPipelineDefinitionResult result = null;
 
                 try {
-                    result = getPipelineDefinition(request);
+                    result = executeGetPipelineDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -542,7 +551,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -558,14 +567,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(final ListPipelinesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
+        final ListPipelinesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPipelinesResult>() {
             @Override
             public ListPipelinesResult call() throws Exception {
-                ListPipelinesResult result;
+                ListPipelinesResult result = null;
 
                 try {
-                    result = listPipelines(request);
+                    result = executeListPipelines(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -574,7 +584,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -597,6 +607,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
      *
      * @see #listPipelinesAsync(ListPipelinesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
 
@@ -612,14 +623,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<PollForTaskResult> pollForTaskAsync(final PollForTaskRequest request,
             final com.amazonaws.handlers.AsyncHandler<PollForTaskRequest, PollForTaskResult> asyncHandler) {
+        final PollForTaskRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PollForTaskResult>() {
             @Override
             public PollForTaskResult call() throws Exception {
-                PollForTaskResult result;
+                PollForTaskResult result = null;
 
                 try {
-                    result = pollForTask(request);
+                    result = executePollForTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -628,7 +640,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -644,14 +656,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<PutPipelineDefinitionResult> putPipelineDefinitionAsync(final PutPipelineDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult> asyncHandler) {
+        final PutPipelineDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutPipelineDefinitionResult>() {
             @Override
             public PutPipelineDefinitionResult call() throws Exception {
-                PutPipelineDefinitionResult result;
+                PutPipelineDefinitionResult result = null;
 
                 try {
-                    result = putPipelineDefinition(request);
+                    result = executePutPipelineDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -660,7 +673,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -676,14 +689,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<QueryObjectsResult> queryObjectsAsync(final QueryObjectsRequest request,
             final com.amazonaws.handlers.AsyncHandler<QueryObjectsRequest, QueryObjectsResult> asyncHandler) {
+        final QueryObjectsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<QueryObjectsResult>() {
             @Override
             public QueryObjectsResult call() throws Exception {
-                QueryObjectsResult result;
+                QueryObjectsResult result = null;
 
                 try {
-                    result = queryObjects(request);
+                    result = executeQueryObjects(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -692,7 +706,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -708,14 +722,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(final RemoveTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
+        final RemoveTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsResult>() {
             @Override
             public RemoveTagsResult call() throws Exception {
-                RemoveTagsResult result;
+                RemoveTagsResult result = null;
 
                 try {
-                    result = removeTags(request);
+                    result = executeRemoveTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -724,7 +739,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -740,14 +755,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<ReportTaskProgressResult> reportTaskProgressAsync(final ReportTaskProgressRequest request,
             final com.amazonaws.handlers.AsyncHandler<ReportTaskProgressRequest, ReportTaskProgressResult> asyncHandler) {
+        final ReportTaskProgressRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReportTaskProgressResult>() {
             @Override
             public ReportTaskProgressResult call() throws Exception {
-                ReportTaskProgressResult result;
+                ReportTaskProgressResult result = null;
 
                 try {
-                    result = reportTaskProgress(request);
+                    result = executeReportTaskProgress(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -756,7 +772,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -772,14 +788,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult> reportTaskRunnerHeartbeatAsync(final ReportTaskRunnerHeartbeatRequest request,
             final com.amazonaws.handlers.AsyncHandler<ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResult> asyncHandler) {
+        final ReportTaskRunnerHeartbeatRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReportTaskRunnerHeartbeatResult>() {
             @Override
             public ReportTaskRunnerHeartbeatResult call() throws Exception {
-                ReportTaskRunnerHeartbeatResult result;
+                ReportTaskRunnerHeartbeatResult result = null;
 
                 try {
-                    result = reportTaskRunnerHeartbeat(request);
+                    result = executeReportTaskRunnerHeartbeat(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -788,7 +805,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -804,14 +821,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<SetStatusResult> setStatusAsync(final SetStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetStatusRequest, SetStatusResult> asyncHandler) {
+        final SetStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetStatusResult>() {
             @Override
             public SetStatusResult call() throws Exception {
-                SetStatusResult result;
+                SetStatusResult result = null;
 
                 try {
-                    result = setStatus(request);
+                    result = executeSetStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -820,7 +838,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -836,14 +854,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<SetTaskStatusResult> setTaskStatusAsync(final SetTaskStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetTaskStatusRequest, SetTaskStatusResult> asyncHandler) {
+        final SetTaskStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetTaskStatusResult>() {
             @Override
             public SetTaskStatusResult call() throws Exception {
-                SetTaskStatusResult result;
+                SetTaskStatusResult result = null;
 
                 try {
-                    result = setTaskStatus(request);
+                    result = executeSetTaskStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -852,7 +871,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -868,14 +887,15 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
     @Override
     public java.util.concurrent.Future<ValidatePipelineDefinitionResult> validatePipelineDefinitionAsync(final ValidatePipelineDefinitionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult> asyncHandler) {
+        final ValidatePipelineDefinitionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ValidatePipelineDefinitionResult>() {
             @Override
             public ValidatePipelineDefinitionResult call() throws Exception {
-                ValidatePipelineDefinitionResult result;
+                ValidatePipelineDefinitionResult result = null;
 
                 try {
-                    result = validatePipelineDefinition(request);
+                    result = executeValidatePipelineDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -884,7 +904,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements DataP
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

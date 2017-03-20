@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -300,7 +301,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.CancelJob
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -378,7 +385,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.CreateJob
      */
     @Override
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -431,7 +444,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.GetShippingLabel
      */
     @Override
-    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
+    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShippingLabel(request);
+    }
+
+    @SdkInternalApi
+    final GetShippingLabelResult executeGetShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getShippingLabelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -483,7 +502,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.GetStatus
      */
     @Override
-    public GetStatusResult getStatus(GetStatusRequest getStatusRequest) {
+    public GetStatusResult getStatus(GetStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetStatusResult executeGetStatus(GetStatusRequest getStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -530,7 +555,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.ListJobs
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -616,7 +647,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.UpdateJob
      */
     @Override
-    public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {
+    public UpdateJobResult updateJob(UpdateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateJobResult executeUpdateJob(UpdateJobRequest updateJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

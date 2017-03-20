@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -553,7 +554,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchGetRepositoriesResult batchGetRepositories(BatchGetRepositoriesRequest batchGetRepositoriesRequest) {
+    public BatchGetRepositoriesResult batchGetRepositories(BatchGetRepositoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetRepositories(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetRepositoriesResult executeBatchGetRepositories(BatchGetRepositoriesRequest batchGetRepositoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetRepositoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -635,7 +642,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public CreateBranchResult createBranch(CreateBranchRequest createBranchRequest) {
+    public CreateBranchResult createBranch(CreateBranchRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBranch(request);
+    }
+
+    @SdkInternalApi
+    final CreateBranchResult executeCreateBranch(CreateBranchRequest createBranchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -702,7 +715,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      API Documentation</a>
      */
     @Override
-    public CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest) {
+    public CreateRepositoryResult createRepository(CreateRepositoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRepository(request);
+    }
+
+    @SdkInternalApi
+    final CreateRepositoryResult executeCreateRepository(CreateRepositoryRequest createRepositoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -769,7 +788,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      API Documentation</a>
      */
     @Override
-    public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
+    public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRepository(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRepositoryResult executeDeleteRepository(DeleteRepositoryRequest deleteRepositoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -842,7 +867,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public GetBlobResult getBlob(GetBlobRequest getBlobRequest) {
+    public GetBlobResult getBlob(GetBlobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBlob(request);
+    }
+
+    @SdkInternalApi
+    final GetBlobResult executeGetBlob(GetBlobRequest getBlobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBlobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -911,7 +942,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public GetBranchResult getBranch(GetBranchRequest getBranchRequest) {
+    public GetBranchResult getBranch(GetBranchRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBranch(request);
+    }
+
+    @SdkInternalApi
+    final GetBranchResult executeGetBranch(GetBranchRequest getBranchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -980,7 +1017,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public GetCommitResult getCommit(GetCommitRequest getCommitRequest) {
+    public GetCommitResult getCommit(GetCommitRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCommit(request);
+    }
+
+    @SdkInternalApi
+    final GetCommitResult executeGetCommit(GetCommitRequest getCommitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCommitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1060,7 +1103,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public GetDifferencesResult getDifferences(GetDifferencesRequest getDifferencesRequest) {
+    public GetDifferencesResult getDifferences(GetDifferencesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDifferences(request);
+    }
+
+    @SdkInternalApi
+    final GetDifferencesResult executeGetDifferences(GetDifferencesRequest getDifferencesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDifferencesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1131,7 +1180,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public GetRepositoryResult getRepository(GetRepositoryRequest getRepositoryRequest) {
+    public GetRepositoryResult getRepository(GetRepositoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRepository(request);
+    }
+
+    @SdkInternalApi
+    final GetRepositoryResult executeGetRepository(GetRepositoryRequest getRepositoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRepositoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1194,7 +1249,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetRepositoryTriggersResult getRepositoryTriggers(GetRepositoryTriggersRequest getRepositoryTriggersRequest) {
+    public GetRepositoryTriggersResult getRepositoryTriggers(GetRepositoryTriggersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRepositoryTriggers(request);
+    }
+
+    @SdkInternalApi
+    final GetRepositoryTriggersResult executeGetRepositoryTriggers(GetRepositoryTriggersRequest getRepositoryTriggersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1260,7 +1321,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      Documentation</a>
      */
     @Override
-    public ListBranchesResult listBranches(ListBranchesRequest listBranchesRequest) {
+    public ListBranchesResult listBranches(ListBranchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBranches(request);
+    }
+
+    @SdkInternalApi
+    final ListBranchesResult executeListBranches(ListBranchesRequest listBranchesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listBranchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1309,7 +1376,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      API Documentation</a>
      */
     @Override
-    public ListRepositoriesResult listRepositories(ListRepositoriesRequest listRepositoriesRequest) {
+    public ListRepositoriesResult listRepositories(ListRepositoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRepositories(request);
+    }
+
+    @SdkInternalApi
+    final ListRepositoriesResult executeListRepositories(ListRepositoriesRequest listRepositoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRepositoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1401,7 +1474,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutRepositoryTriggersResult putRepositoryTriggers(PutRepositoryTriggersRequest putRepositoryTriggersRequest) {
+    public PutRepositoryTriggersResult putRepositoryTriggers(PutRepositoryTriggersRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRepositoryTriggers(request);
+    }
+
+    @SdkInternalApi
+    final PutRepositoryTriggersResult executePutRepositoryTriggers(PutRepositoryTriggersRequest putRepositoryTriggersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1496,7 +1575,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest) {
+    public TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestRepositoryTriggers(request);
+    }
+
+    @SdkInternalApi
+    final TestRepositoryTriggersResult executeTestRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testRepositoryTriggersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1572,7 +1657,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      API Documentation</a>
      */
     @Override
-    public UpdateDefaultBranchResult updateDefaultBranch(UpdateDefaultBranchRequest updateDefaultBranchRequest) {
+    public UpdateDefaultBranchResult updateDefaultBranch(UpdateDefaultBranchRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDefaultBranch(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDefaultBranchResult executeUpdateDefaultBranch(UpdateDefaultBranchRequest updateDefaultBranchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDefaultBranchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1645,7 +1736,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateRepositoryDescriptionResult updateRepositoryDescription(UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
+    public UpdateRepositoryDescriptionResult updateRepositoryDescription(UpdateRepositoryDescriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRepositoryDescription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRepositoryDescriptionResult executeUpdateRepositoryDescription(UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRepositoryDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1706,7 +1803,13 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateRepositoryNameResult updateRepositoryName(UpdateRepositoryNameRequest updateRepositoryNameRequest) {
+    public UpdateRepositoryNameResult updateRepositoryName(UpdateRepositoryNameRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRepositoryName(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRepositoryNameResult executeUpdateRepositoryName(UpdateRepositoryNameRequest updateRepositoryNameRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRepositoryNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

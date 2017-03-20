@@ -32,9 +32,11 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListDomains" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListOperations" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

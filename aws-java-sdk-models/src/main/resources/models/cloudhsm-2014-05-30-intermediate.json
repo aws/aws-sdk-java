@@ -61,21 +61,27 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeHsm" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "DescribeLunaClient" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListAvailableZones" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListHapgs" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListHsms" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       },
       "ListLunaClients" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },

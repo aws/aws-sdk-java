@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -291,7 +292,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.BuildSuggesters
      */
     @Override
-    public BuildSuggestersResult buildSuggesters(BuildSuggestersRequest buildSuggestersRequest) {
+    public BuildSuggestersResult buildSuggesters(BuildSuggestersRequest request) {
+        request = beforeClientExecution(request);
+        return executeBuildSuggesters(request);
+    }
+
+    @SdkInternalApi
+    final BuildSuggestersResult executeBuildSuggesters(BuildSuggestersRequest buildSuggestersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(buildSuggestersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -342,7 +349,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.CreateDomain
      */
     @Override
-    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+    public CreateDomainResult createDomain(CreateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainResult executeCreateDomain(CreateDomainRequest createDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -397,7 +410,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DefineAnalysisScheme
      */
     @Override
-    public DefineAnalysisSchemeResult defineAnalysisScheme(DefineAnalysisSchemeRequest defineAnalysisSchemeRequest) {
+    public DefineAnalysisSchemeResult defineAnalysisScheme(DefineAnalysisSchemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDefineAnalysisScheme(request);
+    }
+
+    @SdkInternalApi
+    final DefineAnalysisSchemeResult executeDefineAnalysisScheme(DefineAnalysisSchemeRequest defineAnalysisSchemeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(defineAnalysisSchemeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -453,7 +472,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DefineExpression
      */
     @Override
-    public DefineExpressionResult defineExpression(DefineExpressionRequest defineExpressionRequest) {
+    public DefineExpressionResult defineExpression(DefineExpressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDefineExpression(request);
+    }
+
+    @SdkInternalApi
+    final DefineExpressionResult executeDefineExpression(DefineExpressionRequest defineExpressionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(defineExpressionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -512,7 +537,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DefineIndexField
      */
     @Override
-    public DefineIndexFieldResult defineIndexField(DefineIndexFieldRequest defineIndexFieldRequest) {
+    public DefineIndexFieldResult defineIndexField(DefineIndexFieldRequest request) {
+        request = beforeClientExecution(request);
+        return executeDefineIndexField(request);
+    }
+
+    @SdkInternalApi
+    final DefineIndexFieldResult executeDefineIndexField(DefineIndexFieldRequest defineIndexFieldRequest) {
 
         ExecutionContext executionContext = createExecutionContext(defineIndexFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -569,7 +600,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DefineSuggester
      */
     @Override
-    public DefineSuggesterResult defineSuggester(DefineSuggesterRequest defineSuggesterRequest) {
+    public DefineSuggesterResult defineSuggester(DefineSuggesterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDefineSuggester(request);
+    }
+
+    @SdkInternalApi
+    final DefineSuggesterResult executeDefineSuggester(DefineSuggesterRequest defineSuggesterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(defineSuggesterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -622,7 +659,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DeleteAnalysisScheme
      */
     @Override
-    public DeleteAnalysisSchemeResult deleteAnalysisScheme(DeleteAnalysisSchemeRequest deleteAnalysisSchemeRequest) {
+    public DeleteAnalysisSchemeResult deleteAnalysisScheme(DeleteAnalysisSchemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnalysisScheme(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnalysisSchemeResult executeDeleteAnalysisScheme(DeleteAnalysisSchemeRequest deleteAnalysisSchemeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAnalysisSchemeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -672,7 +715,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DeleteDomain
      */
     @Override
-    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainResult executeDeleteDomain(DeleteDomainRequest deleteDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -724,7 +773,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DeleteExpression
      */
     @Override
-    public DeleteExpressionResult deleteExpression(DeleteExpressionRequest deleteExpressionRequest) {
+    public DeleteExpressionResult deleteExpression(DeleteExpressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteExpression(request);
+    }
+
+    @SdkInternalApi
+    final DeleteExpressionResult executeDeleteExpression(DeleteExpressionRequest deleteExpressionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteExpressionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -777,7 +832,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DeleteIndexField
      */
     @Override
-    public DeleteIndexFieldResult deleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest) {
+    public DeleteIndexFieldResult deleteIndexField(DeleteIndexFieldRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIndexField(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIndexFieldResult executeDeleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIndexFieldRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -830,7 +891,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DeleteSuggester
      */
     @Override
-    public DeleteSuggesterResult deleteSuggester(DeleteSuggesterRequest deleteSuggesterRequest) {
+    public DeleteSuggesterResult deleteSuggester(DeleteSuggesterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSuggester(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSuggesterResult executeDeleteSuggester(DeleteSuggesterRequest deleteSuggesterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSuggesterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -886,7 +953,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeAnalysisSchemes
      */
     @Override
-    public DescribeAnalysisSchemesResult describeAnalysisSchemes(DescribeAnalysisSchemesRequest describeAnalysisSchemesRequest) {
+    public DescribeAnalysisSchemesResult describeAnalysisSchemes(DescribeAnalysisSchemesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAnalysisSchemes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAnalysisSchemesResult executeDescribeAnalysisSchemes(DescribeAnalysisSchemesRequest describeAnalysisSchemesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAnalysisSchemesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -946,7 +1019,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeAvailabilityOptions
      */
     @Override
-    public DescribeAvailabilityOptionsResult describeAvailabilityOptions(DescribeAvailabilityOptionsRequest describeAvailabilityOptionsRequest) {
+    public DescribeAvailabilityOptionsResult describeAvailabilityOptions(DescribeAvailabilityOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAvailabilityOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAvailabilityOptionsResult executeDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest describeAvailabilityOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAvailabilityOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -999,7 +1078,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeDomains
      */
     @Override
-    public DescribeDomainsResult describeDomains(DescribeDomainsRequest describeDomainsRequest) {
+    public DescribeDomainsResult describeDomains(DescribeDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomains(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainsResult executeDescribeDomains(DescribeDomainsRequest describeDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1060,7 +1145,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeExpressions
      */
     @Override
-    public DescribeExpressionsResult describeExpressions(DescribeExpressionsRequest describeExpressionsRequest) {
+    public DescribeExpressionsResult describeExpressions(DescribeExpressionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExpressions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExpressionsResult executeDescribeExpressions(DescribeExpressionsRequest describeExpressionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeExpressionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1116,7 +1207,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeIndexFields
      */
     @Override
-    public DescribeIndexFieldsResult describeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest) {
+    public DescribeIndexFieldsResult describeIndexFields(DescribeIndexFieldsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIndexFields(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIndexFieldsResult executeDescribeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIndexFieldsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1168,7 +1265,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeScalingParameters
      */
     @Override
-    public DescribeScalingParametersResult describeScalingParameters(DescribeScalingParametersRequest describeScalingParametersRequest) {
+    public DescribeScalingParametersResult describeScalingParameters(DescribeScalingParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingParametersResult executeDescribeScalingParameters(DescribeScalingParametersRequest describeScalingParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1222,7 +1325,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeServiceAccessPolicies
      */
     @Override
-    public DescribeServiceAccessPoliciesResult describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) {
+    public DescribeServiceAccessPoliciesResult describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServiceAccessPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServiceAccessPoliciesResult executeDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServiceAccessPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1278,7 +1387,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.DescribeSuggesters
      */
     @Override
-    public DescribeSuggestersResult describeSuggesters(DescribeSuggestersRequest describeSuggestersRequest) {
+    public DescribeSuggestersResult describeSuggesters(DescribeSuggestersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSuggesters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSuggestersResult executeDescribeSuggesters(DescribeSuggestersRequest describeSuggestersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSuggestersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1328,7 +1443,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.IndexDocuments
      */
     @Override
-    public IndexDocumentsResult indexDocuments(IndexDocumentsRequest indexDocumentsRequest) {
+    public IndexDocumentsResult indexDocuments(IndexDocumentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeIndexDocuments(request);
+    }
+
+    @SdkInternalApi
+    final IndexDocumentsResult executeIndexDocuments(IndexDocumentsRequest indexDocumentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(indexDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1370,7 +1491,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.ListDomainNames
      */
     @Override
-    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
+    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainNames(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainNamesResult executeListDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1435,7 +1562,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.UpdateAvailabilityOptions
      */
     @Override
-    public UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest) {
+    public UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAvailabilityOptions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAvailabilityOptionsResult executeUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAvailabilityOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1493,7 +1626,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.UpdateScalingParameters
      */
     @Override
-    public UpdateScalingParametersResult updateScalingParameters(UpdateScalingParametersRequest updateScalingParametersRequest) {
+    public UpdateScalingParametersResult updateScalingParameters(UpdateScalingParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateScalingParameters(request);
+    }
+
+    @SdkInternalApi
+    final UpdateScalingParametersResult executeUpdateScalingParameters(UpdateScalingParametersRequest updateScalingParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateScalingParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1548,7 +1687,13 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * @sample AmazonCloudSearch.UpdateServiceAccessPolicies
      */
     @Override
-    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
+    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServiceAccessPolicies(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServiceAccessPoliciesResult executeUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServiceAccessPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

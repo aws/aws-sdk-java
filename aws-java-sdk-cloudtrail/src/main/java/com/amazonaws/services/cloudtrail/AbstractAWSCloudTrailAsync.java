@@ -95,6 +95,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
      *
      * @see #describeTrailsAsync(DescribeTrailsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler) {
 
@@ -156,6 +157,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
      *
      * @see #listPublicKeysAsync(ListPublicKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler) {
 
@@ -204,6 +206,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
      *
      * @see #lookupEventsAsync(LookupEventsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(
             com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler) {
 

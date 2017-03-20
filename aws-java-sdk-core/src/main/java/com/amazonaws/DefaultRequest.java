@@ -20,7 +20,6 @@ import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.json.Jackson;
-
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
@@ -99,9 +98,10 @@ public class DefaultRequest<T> implements Request<T> {
      */
     public DefaultRequest(AmazonWebServiceRequest originalRequest, String serviceName) {
         this.serviceName = serviceName;
-        this.originalRequest = originalRequest == null
-                ? AmazonWebServiceRequest.NOOP
-                : originalRequest;
+
+        this.originalRequest = originalRequest == null ? AmazonWebServiceRequest.NOOP
+                                                       : originalRequest;
+        this.handlerContext.putAll(this.originalRequest.getHandlerContext());
     }
 
     /**

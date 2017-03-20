@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -312,7 +313,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CancelJob
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -372,7 +379,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreateJob
      */
     @Override
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -426,7 +439,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreatePipeline
      */
     @Override
-    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+    public CreatePipelineResult createPipeline(CreatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreatePipelineResult executeCreatePipeline(CreatePipelineRequest createPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -493,7 +512,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreatePreset
      */
     @Override
-    public CreatePresetResult createPreset(CreatePresetRequest createPresetRequest) {
+    public CreatePresetResult createPreset(CreatePresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePreset(request);
+    }
+
+    @SdkInternalApi
+    final CreatePresetResult executeCreatePreset(CreatePresetRequest createPresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -551,7 +576,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.DeletePipeline
      */
     @Override
-    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePipeline(request);
+    }
+
+    @SdkInternalApi
+    final DeletePipelineResult executeDeletePipeline(DeletePipelineRequest deletePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -607,7 +638,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.DeletePreset
      */
     @Override
-    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) {
+    public DeletePresetResult deletePreset(DeletePresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePreset(request);
+    }
+
+    @SdkInternalApi
+    final DeletePresetResult executeDeletePreset(DeletePresetRequest deletePresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -662,7 +699,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListJobsByPipeline
      */
     @Override
-    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
+    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobsByPipeline(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsByPipelineResult executeListJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsByPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -714,7 +757,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListJobsByStatus
      */
     @Override
-    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
+    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobsByStatus(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsByStatusResult executeListJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsByStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -762,7 +811,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListPipelines
      */
     @Override
-    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+    public ListPipelinesResult listPipelines(ListPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPipelines(request);
+    }
+
+    @SdkInternalApi
+    final ListPipelinesResult executeListPipelines(ListPipelinesRequest listPipelinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -816,7 +871,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListPresets
      */
     @Override
-    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) {
+    public ListPresetsResult listPresets(ListPresetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPresets(request);
+    }
+
+    @SdkInternalApi
+    final ListPresetsResult executeListPresets(ListPresetsRequest listPresetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPresetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -872,7 +933,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadJob
      */
     @Override
-    public ReadJobResult readJob(ReadJobRequest readJobRequest) {
+    public ReadJobResult readJob(ReadJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadJob(request);
+    }
+
+    @SdkInternalApi
+    final ReadJobResult executeReadJob(ReadJobRequest readJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -923,7 +990,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadPipeline
      */
     @Override
-    public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) {
+    public ReadPipelineResult readPipeline(ReadPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadPipeline(request);
+    }
+
+    @SdkInternalApi
+    final ReadPipelineResult executeReadPipeline(ReadPipelineRequest readPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -974,7 +1047,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadPreset
      */
     @Override
-    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) {
+    public ReadPresetResult readPreset(ReadPresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadPreset(request);
+    }
+
+    @SdkInternalApi
+    final ReadPresetResult executeReadPreset(ReadPresetRequest readPresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1032,7 +1111,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     @Deprecated
-    public TestRoleResult testRole(TestRoleRequest testRoleRequest) {
+    public TestRoleResult testRole(TestRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestRole(request);
+    }
+
+    @SdkInternalApi
+    final TestRoleResult executeTestRole(TestRoleRequest testRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1093,7 +1178,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipeline
      */
     @Override
-    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineResult executeUpdatePipeline(UpdatePipelineRequest updatePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1152,7 +1243,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipelineNotifications
      */
     @Override
-    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
+    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipelineNotifications(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineNotificationsResult executeUpdatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1214,7 +1311,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipelineStatus
      */
     @Override
-    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
+    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipelineStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineStatusResult executeUpdatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1307,6 +1410,14 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

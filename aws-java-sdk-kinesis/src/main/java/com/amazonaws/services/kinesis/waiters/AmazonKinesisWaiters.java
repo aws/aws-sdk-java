@@ -56,4 +56,7 @@ public class AmazonKinesisWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

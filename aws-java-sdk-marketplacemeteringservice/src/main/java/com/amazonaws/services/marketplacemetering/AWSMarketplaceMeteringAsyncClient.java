@@ -286,14 +286,15 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
     @Override
     public java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(final BatchMeterUsageRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchMeterUsageRequest, BatchMeterUsageResult> asyncHandler) {
+        final BatchMeterUsageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchMeterUsageResult>() {
             @Override
             public BatchMeterUsageResult call() throws Exception {
-                BatchMeterUsageResult result;
+                BatchMeterUsageResult result = null;
 
                 try {
-                    result = batchMeterUsage(request);
+                    result = executeBatchMeterUsage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -302,7 +303,7 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -318,14 +319,15 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
     @Override
     public java.util.concurrent.Future<MeterUsageResult> meterUsageAsync(final MeterUsageRequest request,
             final com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult> asyncHandler) {
+        final MeterUsageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<MeterUsageResult>() {
             @Override
             public MeterUsageResult call() throws Exception {
-                MeterUsageResult result;
+                MeterUsageResult result = null;
 
                 try {
-                    result = meterUsage(request);
+                    result = executeMeterUsage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -334,7 +336,7 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -350,14 +352,15 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
     @Override
     public java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(final ResolveCustomerRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResolveCustomerRequest, ResolveCustomerResult> asyncHandler) {
+        final ResolveCustomerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResolveCustomerResult>() {
             @Override
             public ResolveCustomerResult call() throws Exception {
-                ResolveCustomerResult result;
+                ResolveCustomerResult result = null;
 
                 try {
-                    result = resolveCustomer(request);
+                    result = executeResolveCustomer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -366,7 +369,7 @@ public class AWSMarketplaceMeteringAsyncClient extends AWSMarketplaceMeteringCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

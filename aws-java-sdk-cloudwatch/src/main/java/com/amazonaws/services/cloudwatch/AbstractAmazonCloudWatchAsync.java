@@ -69,6 +69,7 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
      *
      * @see #describeAlarmHistoryAsync(DescribeAlarmHistoryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler) {
 
@@ -104,6 +105,7 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
      *
      * @see #describeAlarmsAsync(DescribeAlarmsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler) {
 
@@ -191,6 +193,7 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
      *
      * @see #listMetricsAsync(ListMetricsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
             com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler) {
 

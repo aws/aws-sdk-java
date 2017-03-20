@@ -185,6 +185,7 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
      *
      * @see #describeDestinationsAsync(DescribeDestinationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler) {
 
@@ -233,6 +234,7 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
      *
      * @see #describeLogGroupsAsync(DescribeLogGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler) {
 
