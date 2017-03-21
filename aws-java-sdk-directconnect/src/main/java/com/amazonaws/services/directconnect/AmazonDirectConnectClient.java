@@ -306,6 +306,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request) {
         request = beforeClientExecution(request);
         return executeAllocateConnectionOnInterconnect(request);
@@ -1660,6 +1661,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeConnectionLoa(request);
@@ -1787,6 +1789,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeConnectionsOnInterconnect(request);
@@ -1917,6 +1920,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeInterconnectLoa(request);

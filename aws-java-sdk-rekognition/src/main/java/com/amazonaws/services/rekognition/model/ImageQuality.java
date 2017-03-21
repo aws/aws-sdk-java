@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies image brightness and sharpness.
+ * Identifies face image brightness and sharpness.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,28 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      */
     private Float brightness;
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      */
     private Float sharpness;
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
      * @param brightness
-     *        Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     *        Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a brighter face image.
      */
 
     public void setBrightness(Float brightness) {
@@ -53,10 +57,12 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
-     * @return Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * @return Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *         higher value indicates a brighter face image.
      */
 
     public Float getBrightness() {
@@ -65,11 +71,13 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
      * @param brightness
-     *        Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     *        Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a brighter face image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +88,13 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
      * @param sharpness
-     *        Value representing sharpness of the face.
+     *        Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a sharper face image.
      */
 
     public void setSharpness(Float sharpness) {
@@ -93,10 +103,12 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
-     * @return Value representing sharpness of the face.
+     * @return Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *         higher value indicates a sharper face image.
      */
 
     public Float getSharpness() {
@@ -105,11 +117,13 @@ public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
      * @param sharpness
-     *        Value representing sharpness of the face.
+     *        Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a sharper face image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

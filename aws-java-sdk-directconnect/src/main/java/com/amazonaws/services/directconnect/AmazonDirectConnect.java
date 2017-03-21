@@ -129,6 +129,7 @@ public interface AmazonDirectConnect {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest);
 
     /**
@@ -723,6 +724,7 @@ public interface AmazonDirectConnect {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest describeConnectionLoaRequest);
 
     /**
@@ -781,6 +783,7 @@ public interface AmazonDirectConnect {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest);
 
     /**
@@ -836,6 +839,7 @@ public interface AmazonDirectConnect {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest describeInterconnectLoaRequest);
 
     /**

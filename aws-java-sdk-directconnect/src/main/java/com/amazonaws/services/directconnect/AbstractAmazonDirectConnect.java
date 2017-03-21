@@ -38,6 +38,7 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +144,7 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +160,7 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +171,7 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

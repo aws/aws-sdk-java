@@ -1,3 +1,8 @@
+# __1.11.107__ __2017-03-21__
+## __AWS Direct Connect__
+  - ### Deprecations
+    - Deprecated DescribeConnectionLoa, DescribeInterconnectLoa, AllocateConnectionOnInterconnect and DescribeConnectionsOnInterconnect operations in favor of DescribeLoa, DescribeLoa, AllocateHostedConnection and DescribeHostedConnections respectively.
+
 # __1.11.106__ __2017-03-20__
 ## __AWS Marketplace Commerce Analytics__
   - ### Features
