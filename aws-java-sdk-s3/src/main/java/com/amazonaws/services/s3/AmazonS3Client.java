@@ -1837,6 +1837,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * remote server thinks there's more data to pull.
          */
         setZeroContentLength(request);
+
+        final ProgressListener listener = copyObjectRequest.getGeneralProgressListener();
+        publishProgress(listener, ProgressEventType.TRANSFER_STARTED_EVENT);
         CopyObjectResultHandler copyObjectResultHandler = null;
         try {
             @SuppressWarnings("unchecked")
@@ -1858,9 +1861,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * use constraints.
              */
             if (ase.getStatusCode() == Constants.FAILED_PRECONDITION_STATUS_CODE) {
+				publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
                return null;
             }
-
+publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw ase;
         }
 
@@ -1878,6 +1882,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * one special case.
          */
         if (copyObjectResultHandler.getErrorCode() != null) {
+			publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             String errorCode = copyObjectResultHandler.getErrorCode();
             String errorMessage = copyObjectResultHandler.getErrorMessage();
             String requestId = copyObjectResultHandler.getErrorRequestId();
@@ -1893,6 +1898,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             throw ase;
         }
+        publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
 
         // TODO: Might be nice to create this in our custom S3VersionHeaderHandler
         CopyObjectResult copyObjectResult = new CopyObjectResult();
