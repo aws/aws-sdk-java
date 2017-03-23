@@ -1,3 +1,12 @@
+# __1.11.109__ __2017-03-23__
+## __AWS CloudTrail__
+  - ### Features
+    - Doc-only Update for CloudTrail: Add required parameters for GetEventSelectors and PutEventSelectors
+
+## __Application Auto Scaling__
+  - ### Features
+    - Application AutoScaling is launching support for a new target resource (AppStream 2.0 Fleets) as a scalable target.
+
 # __1.11.108__ __2017-03-22__
 ## __AWS Application Discovery Service__
   - ### Features

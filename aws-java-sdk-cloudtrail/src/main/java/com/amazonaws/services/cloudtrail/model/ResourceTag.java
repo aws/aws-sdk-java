@@ -34,7 +34,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String resourceId;
-
+    /**
+     * <p>
+     * A list of tags.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tagsList;
 
     /**
@@ -78,7 +82,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
+     * @return A list of tags.
      */
 
     public java.util.List<Tag> getTagsList() {
@@ -89,7 +97,12 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
      * @param tagsList
+     *        A list of tags.
      */
 
     public void setTagsList(java.util.Collection<Tag> tagsList) {
@@ -103,12 +116,16 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A list of tags.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagsList
+     *        A list of tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +140,12 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of tags.
+     * </p>
+     * 
      * @param tagsList
+     *        A list of tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

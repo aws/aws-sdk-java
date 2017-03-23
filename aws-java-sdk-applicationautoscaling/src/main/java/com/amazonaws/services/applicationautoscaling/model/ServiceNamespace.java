@@ -22,7 +22,8 @@ public enum ServiceNamespace {
 
     Ecs("ecs"),
     Elasticmapreduce("elasticmapreduce"),
-    Ec2("ec2");
+    Ec2("ec2"),
+    Appstream("appstream");
 
     private String value;
 

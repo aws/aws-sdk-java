@@ -7240,7 +7240,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "TrailName" ],
       "shapeName" : "GetEventSelectorsRequest",
       "unmarshaller" : null,
       "variable" : {
@@ -11979,11 +11979,11 @@
         "c2jName" : "ResourceTagList",
         "c2jShape" : "ResourceTagList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>A list of resource tags.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param resourceTagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of resource tags.</p>\n@param resourceTagList A list of resource tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceTagList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>A list of resource tags.</p>\n@return A list of resource tags.*/",
         "getterMethodName" : "getResourceTagList",
         "getterModel" : {
           "returnType" : "java.util.List<ResourceTag>",
@@ -12089,7 +12089,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "ResourceTagList",
-        "setterDocumentation" : "/**\n@param resourceTagList */",
+        "setterDocumentation" : "/**<p>A list of resource tags.</p>\n@param resourceTagList A list of resource tags.*/",
         "setterMethodName" : "setResourceTagList",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
@@ -12100,12 +12100,12 @@
           "variableSetterType" : "java.util.Collection<ResourceTag>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagList(java.util.Collection)} or {@link #withResourceTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of resource tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagList(java.util.Collection)} or {@link #withResourceTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagList A list of resource tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
           "variableName" : "resourceTagList",
           "variableType" : "java.util.List<ResourceTag>",
-          "documentation" : "",
+          "documentation" : "<p>A list of resource tags.</p>",
           "simpleType" : "List<ResourceTag>",
           "variableSetterType" : "java.util.Collection<ResourceTag>"
         },
@@ -12237,11 +12237,11 @@
           "c2jName" : "ResourceTagList",
           "c2jShape" : "ResourceTagList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>A list of resource tags.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param resourceTagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of resource tags.</p>\n@param resourceTagList A list of resource tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceTagList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>A list of resource tags.</p>\n@return A list of resource tags.*/",
           "getterMethodName" : "getResourceTagList",
           "getterModel" : {
             "returnType" : "java.util.List<ResourceTag>",
@@ -12347,7 +12347,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "ResourceTagList",
-          "setterDocumentation" : "/**\n@param resourceTagList */",
+          "setterDocumentation" : "/**<p>A list of resource tags.</p>\n@param resourceTagList A list of resource tags.*/",
           "setterMethodName" : "setResourceTagList",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
@@ -12358,12 +12358,12 @@
             "variableSetterType" : "java.util.Collection<ResourceTag>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagList(java.util.Collection)} or {@link #withResourceTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of resource tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagList(java.util.Collection)} or {@link #withResourceTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagList A list of resource tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
             "variableName" : "resourceTagList",
             "variableType" : "java.util.List<ResourceTag>",
-            "documentation" : "",
+            "documentation" : "<p>A list of resource tags.</p>",
             "simpleType" : "List<ResourceTag>",
             "variableSetterType" : "java.util.Collection<ResourceTag>"
           },
@@ -14961,7 +14961,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "TrailName", "EventSelectors" ],
       "shapeName" : "PutEventSelectorsRequest",
       "unmarshaller" : null,
       "variable" : {
@@ -16316,11 +16316,11 @@
         "c2jName" : "TagsList",
         "c2jShape" : "TagsList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>A list of tags.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param tagsList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of tags.</p>\n@param tagsList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagsList",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>A list of tags.</p>\n@return A list of tags.*/",
         "getterMethodName" : "getTagsList",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -16426,7 +16426,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagsList",
-        "setterDocumentation" : "/**\n@param tagsList */",
+        "setterDocumentation" : "/**<p>A list of tags.</p>\n@param tagsList A list of tags.*/",
         "setterMethodName" : "setTagsList",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
@@ -16437,12 +16437,12 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "variableName" : "tagsList",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "",
+          "documentation" : "<p>A list of tags.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -16514,11 +16514,11 @@
           "c2jName" : "TagsList",
           "c2jShape" : "TagsList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>A list of tags.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param tagsList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of tags.</p>\n@param tagsList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagsList",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>A list of tags.</p>\n@return A list of tags.*/",
           "getterMethodName" : "getTagsList",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -16624,7 +16624,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagsList",
-          "setterDocumentation" : "/**\n@param tagsList */",
+          "setterDocumentation" : "/**<p>A list of tags.</p>\n@param tagsList A list of tags.*/",
           "setterMethodName" : "setTagsList",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
@@ -16635,12 +16635,12 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsList A list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "variableName" : "tagsList",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "",
+            "documentation" : "<p>A list of tags.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },

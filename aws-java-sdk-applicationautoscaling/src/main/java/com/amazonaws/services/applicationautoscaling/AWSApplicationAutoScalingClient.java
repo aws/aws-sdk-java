@@ -95,6 +95,13 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * AppStream 2.0 fleets. For more information, see <a
+ * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Autoscaling Amazon AppStream 2.0
+ * Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * For a list of supported regions, see <a

@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of resource tags.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<ResourceTag> resourceTagList;
     /**
      * <p>
@@ -35,7 +40,11 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of resource tags.
+     * </p>
+     * 
+     * @return A list of resource tags.
      */
 
     public java.util.List<ResourceTag> getResourceTagList() {
@@ -46,7 +55,12 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * A list of resource tags.
+     * </p>
+     * 
      * @param resourceTagList
+     *        A list of resource tags.
      */
 
     public void setResourceTagList(java.util.Collection<ResourceTag> resourceTagList) {
@@ -60,12 +74,16 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
+     * A list of resource tags.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTagList(java.util.Collection)} or {@link #withResourceTagList(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param resourceTagList
+     *        A list of resource tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +98,12 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * A list of resource tags.
+     * </p>
+     * 
      * @param resourceTagList
+     *        A list of resource tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

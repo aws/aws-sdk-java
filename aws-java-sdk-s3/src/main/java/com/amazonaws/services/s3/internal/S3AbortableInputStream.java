@@ -134,6 +134,15 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
         bytesRead = markedBytes;
     }
 
+    @Override
+    public synchronized long skip(long n) throws IOException {
+        long skipped = super.skip(n);
+        if (skipped > 0) {
+            bytesRead += skipped;
+        }
+        return skipped;
+    }
+
     /**
      * {@inheritDoc}
      *
