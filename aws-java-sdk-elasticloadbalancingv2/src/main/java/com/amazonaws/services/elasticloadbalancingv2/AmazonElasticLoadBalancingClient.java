@@ -38,6 +38,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.elasticloadbalancingv2.AmazonElasticLoadBalancingClientBuilder;
+import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBalancingWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -131,6 +132,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elasticloadbalancing";
+
+    private volatile AmazonElasticLoadBalancingWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -2191,6 +2194,26 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public AmazonElasticLoadBalancingWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonElasticLoadBalancingWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

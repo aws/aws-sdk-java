@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The name of a tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
+ * The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name of a tag filter.
+     * A name of the tag filter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values of a tag filter.
+     * Values for the tag filter.
      * </p>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * A name of a tag filter.
+     * A name of the tag filter.
      * </p>
      * 
      * @param name
-     *        A name of a tag filter.
+     *        A name of the tag filter.
      */
 
     public void setName(String name) {
@@ -53,10 +53,10 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name of a tag filter.
+     * A name of the tag filter.
      * </p>
      * 
-     * @return A name of a tag filter.
+     * @return A name of the tag filter.
      */
 
     public String getName() {
@@ -65,11 +65,11 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name of a tag filter.
+     * A name of the tag filter.
      * </p>
      * 
      * @param name
-     *        A name of a tag filter.
+     *        A name of the tag filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Values of a tag filter.
+     * Values for the tag filter.
      * </p>
      * 
-     * @return Values of a tag filter.
+     * @return Values for the tag filter.
      */
 
     public java.util.List<String> getValues() {
@@ -92,11 +92,11 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Values of a tag filter.
+     * Values for the tag filter.
      * </p>
      * 
      * @param values
-     *        Values of a tag filter.
+     *        Values for the tag filter.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -110,7 +110,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Values of a tag filter.
+     * Values for the tag filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        Values of a tag filter.
+     *        Values for the tag filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Values of a tag filter.
+     * Values for the tag filter.
      * </p>
      * 
      * @param values
-     *        Values of a tag filter.
+     *        Values for the tag filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

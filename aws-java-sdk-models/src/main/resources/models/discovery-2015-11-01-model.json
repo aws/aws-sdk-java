@@ -325,7 +325,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations\">Querying Discovered Configuration Items</a>.</p>",
+      "documentation" : "<p>Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -373,8 +373,8 @@
     "DescribeExportConfigurations" : {
       "authorizer" : null,
       "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.</p>",
+      "deprecated" : true,
+      "documentation" : "<p>Deprecated. Use <code>DescribeExportTasks</code> instead.</p> <p>Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -423,6 +423,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DescribeExportConfigurationsResponse"
+      }
+    },
+    "DescribeExportTasks" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AuthorizationErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterValueException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServerInternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeExportTasksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeExportTasks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeExportTasksResponse"
       }
     },
     "DescribeTags" : {
@@ -532,8 +581,8 @@
     "ExportConfigurations" : {
       "authorizer" : null,
       "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
+      "deprecated" : true,
+      "documentation" : "<p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -632,7 +681,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria identify relationship requirements.</p>",
+      "documentation" : "<p>Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria identifies the relationship requirements.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -687,7 +736,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves a list of servers which are one network hop away from a specified server.</p>",
+      "documentation" : "<p>Retrieves a list of servers that are one network hop away from a specified server.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -736,7 +785,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Instructs the specified agents or Connectors to start collecting data.</p>",
+      "documentation" : "<p>Instructs the specified agents or connectors to start collecting data.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -781,11 +830,66 @@
         "shape" : "StartDataCollectionByAgentIdsResponse"
       }
     },
+    "StartExportTask" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Export the configuration data about discovered configuration items and relationships to an S3 bucket in a specified format.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AuthorizationErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterValueException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServerInternalErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "OperationNotPermittedException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "StartExportTaskRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "StartExportTask",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "StartExportTaskResponse"
+      }
+    },
     "StopDataCollectionByAgentIds" : {
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Instructs the specified agents or Connectors to stop collecting data.</p>",
+      "documentation" : "<p>Instructs the specified agents or connectors to stop collecting data.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -883,7 +987,7 @@
   "shapes" : {
     "AgentConfigurationStatus" : {
       "deprecated" : false,
-      "documentation" : "<p>Information about agents or Connectors that were instructed to start collecting data. Information includes the agent/Connector ID, a description of the operation, and whether or not the agent/Connector configuration was updated.</p>",
+      "documentation" : "<p>Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -895,7 +999,7 @@
       "members" : {
         "agentId" : {
           "deprecated" : false,
-          "documentation" : "<p>The agent/Connector ID.</p>",
+          "documentation" : "<p>The agent/connector ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -921,7 +1025,7 @@
         },
         "operationSucceeded" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/Connector receives this command the next time it polls for a new command. </p>",
+          "documentation" : "<p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1147,7 +1251,7 @@
         },
         "registeredTime" : {
           "deprecated" : false,
-          "documentation" : "<p>Agent's first registration time stamp in UTC.</p>",
+          "documentation" : "<p>Agent's first registration timestamp in UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1183,7 +1287,7 @@
     },
     "AgentNetworkInfo" : {
       "deprecated" : false,
-      "documentation" : "<p>Network details about the host where the agent/Connector resides.</p>",
+      "documentation" : "<p>Network details about the host where the agent/connector resides.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1195,7 +1299,7 @@
       "members" : {
         "ipAddress" : {
           "deprecated" : false,
-          "documentation" : "<p>The IP address for the host where the agent/Connector resides.</p>",
+          "documentation" : "<p>The IP address for the host where the agent/connector resides.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1208,7 +1312,7 @@
         },
         "macAddress" : {
           "deprecated" : false,
-          "documentation" : "<p>The MAC address for the host where the agent/Connector resides.</p>",
+          "documentation" : "<p>The MAC address for the host where the agent/connector resides.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1671,7 +1775,7 @@
       "members" : {
         "configurationId" : {
           "deprecated" : false,
-          "documentation" : "<p>The configuration ID for the item you want to tag. You can specify a list of keys and values.</p>",
+          "documentation" : "<p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1684,7 +1788,7 @@
         },
         "configurationType" : {
           "deprecated" : false,
-          "documentation" : "<p>A type of IT asset that you want to tag.</p>",
+          "documentation" : "<p>A type of IT asset to tag.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1697,7 +1801,7 @@
         },
         "key" : {
           "deprecated" : false,
-          "documentation" : "<p>A type of tag to filter on. For example, <i>serverType</i>.</p>",
+          "documentation" : "<p>A type of tag on which to filter. For example, <i>serverType</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1723,7 +1827,7 @@
         },
         "value" : {
           "deprecated" : false,
-          "documentation" : "<p>A value to filter on. For example <i>key = serverType</i> and <i>value = web server</i>.</p>",
+          "documentation" : "<p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2382,7 +2486,7 @@
         },
         "filters" : {
           "deprecated" : false,
-          "documentation" : "<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html\">Managing AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.</p>",
+          "documentation" : "<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"collectionStatus\", \"value\": \"STARTED\"}</code> </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2665,7 +2769,7 @@
         },
         "nextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
+          "documentation" : "<p>A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2713,7 +2817,116 @@
         },
         "nextToken" : {
           "deprecated" : false,
-          "documentation" : "<p>A token to get the next set of results. For example, if you specified 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
+          "documentation" : "<p>A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get results in a set of 10. Use the token in the query to get the next set of 10.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeExportTasksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "exportIds" : {
+          "deprecated" : false,
+          "documentation" : "<p>One or more unique identifiers used to query the status of an export request.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ExportIds",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeExportTasksResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "exportsInfo" : {
+          "deprecated" : false,
+          "documentation" : "<p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ExportsInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2748,7 +2961,7 @@
       "members" : {
         "filters" : {
           "deprecated" : false,
-          "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html\">Managing AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.</p>",
+          "documentation" : "<p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2857,7 +3070,7 @@
       "members" : {
         "applicationConfigurationId" : {
           "deprecated" : false,
-          "documentation" : "<p>Configuration ID of an application from which each item will be disassociated.</p>",
+          "documentation" : "<p>Configuration ID of an application from which each item is disassociated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2870,7 +3083,7 @@
         },
         "configurationIds" : {
           "deprecated" : false,
-          "documentation" : "<p>Configuration ID of each item be be disassociated from an application.</p>",
+          "documentation" : "<p>Configuration ID of each item to be disassociated from an application.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2947,6 +3160,60 @@
       "value" : null,
       "wrapper" : false
     },
+    "ExportDataFormat" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "CSV", "GRAPHML" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ExportDataFormats" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ExportDataFormat",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "ExportIds" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3020,7 +3287,7 @@
         },
         "exportRequestTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the configuration data export was initiated.</p>",
+          "documentation" : "<p>The time that the configuration data export was initiated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3165,7 +3432,7 @@
     },
     "Filter" : {
       "deprecated" : false,
-      "documentation" : "<p>A filter that can use conditional operators.</p> <p>for a complete list of filters and guidance for using them with the Application Discovery Service, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html\">Querying Discovered Configuration Items</a>.</p>",
+      "documentation" : "<p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html\">Querying Discovered Configuration Items</a>. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3203,7 +3470,7 @@
         },
         "values" : {
           "deprecated" : false,
-          "documentation" : "<p>A string value that you want to filter on. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>",
+          "documentation" : "<p>A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3380,7 +3647,7 @@
         },
         "applications" : {
           "deprecated" : false,
-          "documentation" : "<p>Number of applications discovered.</p>",
+          "documentation" : "<p>The number of applications discovered.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3406,7 +3673,7 @@
         },
         "servers" : {
           "deprecated" : false,
-          "documentation" : "<p>Number of servers discovered.</p>",
+          "documentation" : "<p>The number of servers discovered.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3419,7 +3686,7 @@
         },
         "serversMappedToApplications" : {
           "deprecated" : false,
-          "documentation" : "<p>Number of servers mapped to applications.</p>",
+          "documentation" : "<p>The number of servers mapped to applications.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3432,7 +3699,7 @@
         },
         "serversMappedtoTags" : {
           "deprecated" : false,
-          "documentation" : "<p>Number of servers mapped to tags.</p>",
+          "documentation" : "<p>The number of servers mapped to tags.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3558,7 +3825,7 @@
       "members" : {
         "configurationType" : {
           "deprecated" : false,
-          "documentation" : "<p>A valid configuration identified by the Discovery Service. </p>",
+          "documentation" : "<p>A valid configuration identified by Application Discovery Service. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3571,7 +3838,7 @@
         },
         "filters" : {
           "deprecated" : false,
-          "documentation" : "<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations\">Querying Discovered Configuration Items</a>. </p>",
+          "documentation" : "<p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{\"key\": \"serverType\", \"value\": \"webServer\"}</code> </p> <p>For a complete list of filter options and guidance about using them with this action, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Querying Discovered Configuration Items</a>. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3610,7 +3877,7 @@
         },
         "orderBy" : {
           "deprecated" : false,
-          "documentation" : "<p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations\">Querying Discovered Configuration Items</a>.</p>",
+          "documentation" : "<p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations\">Using the ListConfigurations Action</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3883,7 +4150,7 @@
       "members" : {
         "connectionsCount" : {
           "deprecated" : false,
-          "documentation" : "<p>Number of open network connections with the neighboring server.</p>",
+          "documentation" : "<p>The number of open network connections with the neighboring server.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3896,7 +4163,7 @@
         },
         "destinationPort" : {
           "deprecated" : false,
-          "documentation" : "<p>Destination network port for the connection.</p>",
+          "documentation" : "<p>The destination network port for the connection.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3909,7 +4176,7 @@
         },
         "destinationServerId" : {
           "deprecated" : false,
-          "documentation" : "<p>ID of the server that accepted the networker connection.</p>",
+          "documentation" : "<p>The ID of the server that accepted the network connection.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3922,7 +4189,7 @@
         },
         "sourceServerId" : {
           "deprecated" : false,
-          "documentation" : "<p>ID of server that opened the network connection.</p>",
+          "documentation" : "<p>The ID of the server that opened the network connection.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3935,7 +4202,7 @@
         },
         "transportProtocol" : {
           "deprecated" : false,
-          "documentation" : "<p>Network protocol used for the connection.</p>",
+          "documentation" : "<p>The network protocol used for the connection.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4047,7 +4314,7 @@
     },
     "OrderByElement" : {
       "deprecated" : false,
-      "documentation" : "<p>Field and direction for ordered output.</p>",
+      "documentation" : "<p>A field and direction for ordered output.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4059,7 +4326,7 @@
       "members" : {
         "fieldName" : {
           "deprecated" : false,
-          "documentation" : "<p>Field to order on.</p>",
+          "documentation" : "<p>The field on which to order.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4210,7 +4477,7 @@
       "members" : {
         "agentIds" : {
           "deprecated" : false,
-          "documentation" : "<p>The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>",
+          "documentation" : "<p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4245,7 +4512,7 @@
       "members" : {
         "agentsConfigurationStatus" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about agents or the Connector that were instructed to start collecting data. Information includes the agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector configuration was updated.</p>",
+          "documentation" : "<p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4253,6 +4520,76 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "AgentConfigurationStatusList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StartExportTaskRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "exportDataFormat" : {
+          "deprecated" : false,
+          "documentation" : "<p>The file format for the returned export data. Default value is <code>CSV</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ExportDataFormats",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StartExportTaskResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "exportId" : {
+          "deprecated" : false,
+          "documentation" : "<p> A unique identifier used to query the status of an export request.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ConfigurationsExportId",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4280,7 +4617,7 @@
       "members" : {
         "agentIds" : {
           "deprecated" : false,
-          "documentation" : "<p>The IDs of the agents or Connectors that you want to stop collecting data.</p>",
+          "documentation" : "<p>The IDs of the agents or connectors from which to stop collecting data.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4315,7 +4652,7 @@
       "members" : {
         "agentsConfigurationStatus" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about agents or the Connector that were instructed to stop collecting data. Information includes the agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector configuration was updated.</p>",
+          "documentation" : "<p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4371,7 +4708,7 @@
       "members" : {
         "key" : {
           "deprecated" : false,
-          "documentation" : "<p>A type of tag to filter on.</p>",
+          "documentation" : "<p>The type of tag on which to filter.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4384,7 +4721,7 @@
         },
         "value" : {
           "deprecated" : false,
-          "documentation" : "<p>A value for a tag key to filter on.</p>",
+          "documentation" : "<p>A value for a tag key on which to filter.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4407,7 +4744,7 @@
     },
     "TagFilter" : {
       "deprecated" : false,
-      "documentation" : "<p>The name of a tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.</p>",
+      "documentation" : "<p>The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4419,7 +4756,7 @@
       "members" : {
         "name" : {
           "deprecated" : false,
-          "documentation" : "<p>A name of a tag filter.</p>",
+          "documentation" : "<p>A name of the tag filter.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4432,7 +4769,7 @@
         },
         "values" : {
           "deprecated" : false,
-          "documentation" : "<p>Values of a tag filter.</p>",
+          "documentation" : "<p>Values for the tag filter.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4686,5 +5023,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS Application Discovery Service</fullname> <p>AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers, virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application Discovery Service also collects application performance data, which can help you assess the outcome of your migration. The data collected by Application Discovery Service is securely retained in an Amazon-hosted and managed database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or cloud-migration solution to plan your migration. For more information, see the Application Discovery Service <a href=\"http://aws.amazon.com/application-discovery/faqs/\">FAQ</a>.</p> <p>Application Discovery Service offers two modes of operation.</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't require you to install an agent on each host. Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware environments. We recommend that you use agent-based discovery for non-VMware environments and if you want to collect information about software and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts to gather information about software and software dependencies.</p> </li> <li> <p> <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using Amazon software, the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and application information, including an inventory of installed software applications, system and process performance, resource utilization, and network dependencies between workloads. The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the cloud. </p> </li> </ul> <p>Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN) partners. Third-party application discovery tools can query the Application Discovery Service and write to the Application Discovery Service database using a public API. You can then import the data into either a visualization tool or cloud-migration solution.</p> <important> <p>Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a href=\"http://aws.amazon.com/privacy/\">AWS Privacy Policy</a>. You can operate Application Discovery Service using offline mode to inspect collected data before it is shared with the service.</p> </important> <p>Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This is true for AWS partners and customers alike. To request access, sign up for the AWS Application Discovery Service <a href=\"http://aws.amazon.com/application-discovery/preview/\">here</a>. We will send you information about how to get started.</p> <p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a href=\"http://aws.amazon.com/tools/#SDKs\">AWS SDKs</a>.</p> <p>This guide is intended for use with the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/userguide/\"> <i>AWS Application Discovery Service User Guide</i> </a>.</p>"
+  "documentation" : "<fullname>AWS Application Discovery Service</fullname> <p>AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers, virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application Discovery Service also collects application performance data, which can help you assess the outcome of your migration. The data collected by Application Discovery Service is securely retained in an Amazon-hosted and managed database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or cloud-migration solution to plan your migration. For more information, see the Application Discovery Service <a href=\"http://aws.amazon.com/application-discovery/faqs/\">FAQ</a>.</p> <p>Application Discovery Service offers two modes of operation.</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't require you to install an agent on each host. Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware environments. We recommend that you use agent-based discovery for non-VMware environments and if you want to collect information about software and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts to gather information about software and software dependencies.</p> </li> <li> <p> <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using Amazon software, the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and application information, including an inventory of installed software applications, system and process performance, resource utilization, and network dependencies between workloads. The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the cloud. </p> </li> </ul> <p>Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN) partners. Third-party application discovery tools can query Application Discovery Service and write to the Application Discovery Service database using a public API. You can then import the data into either a visualization tool or cloud-migration solution.</p> <important> <p>Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a href=\"http://aws.amazon.com/privacy/\">AWS Privacy Policy</a>. You can operate Application Discovery Service using offline mode to inspect collected data before it is shared with the service.</p> </important> <p>Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This is true for AWS partners and customers alike. To request access, sign up for AWS Application Discovery Service <a href=\"http://aws.amazon.com/application-discovery/preview/\">here</a>. We send you information about how to get started.</p> <p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a href=\"http://aws.amazon.com/tools/#SDKs\">AWS SDKs</a>.</p> <p>This guide is intended for use with the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/userguide/\"> <i>AWS Application Discovery Service User Guide</i> </a>.</p>"
 }

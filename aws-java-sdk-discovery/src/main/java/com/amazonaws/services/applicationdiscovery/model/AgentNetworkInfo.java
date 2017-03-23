@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Network details about the host where the agent/Connector resides.
+ * Network details about the host where the agent/connector resides.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The IP address for the host where the agent/Connector resides.
+     * The IP address for the host where the agent/connector resides.
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * The MAC address for the host where the agent/Connector resides.
+     * The MAC address for the host where the agent/connector resides.
      * </p>
      */
     private String macAddress;
 
     /**
      * <p>
-     * The IP address for the host where the agent/Connector resides.
+     * The IP address for the host where the agent/connector resides.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address for the host where the agent/Connector resides.
+     *        The IP address for the host where the agent/connector resides.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -53,10 +53,10 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The IP address for the host where the agent/Connector resides.
+     * The IP address for the host where the agent/connector resides.
      * </p>
      * 
-     * @return The IP address for the host where the agent/Connector resides.
+     * @return The IP address for the host where the agent/connector resides.
      */
 
     public String getIpAddress() {
@@ -65,11 +65,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The IP address for the host where the agent/Connector resides.
+     * The IP address for the host where the agent/connector resides.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address for the host where the agent/Connector resides.
+     *        The IP address for the host where the agent/connector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The MAC address for the host where the agent/Connector resides.
+     * The MAC address for the host where the agent/connector resides.
      * </p>
      * 
      * @param macAddress
-     *        The MAC address for the host where the agent/Connector resides.
+     *        The MAC address for the host where the agent/connector resides.
      */
 
     public void setMacAddress(String macAddress) {
@@ -93,10 +93,10 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The MAC address for the host where the agent/Connector resides.
+     * The MAC address for the host where the agent/connector resides.
      * </p>
      * 
-     * @return The MAC address for the host where the agent/Connector resides.
+     * @return The MAC address for the host where the agent/connector resides.
      */
 
     public String getMacAddress() {
@@ -105,11 +105,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The MAC address for the host where the agent/Connector resides.
+     * The MAC address for the host where the agent/connector resides.
      * </p>
      * 
      * @param macAddress
-     *        The MAC address for the host where the agent/Connector resides.
+     *        The MAC address for the host where the agent/connector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

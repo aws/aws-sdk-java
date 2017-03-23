@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBalancingWaiters;
 
 /**
  * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient method forms pass through to the
@@ -194,6 +195,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonElasticLoadBalancingWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

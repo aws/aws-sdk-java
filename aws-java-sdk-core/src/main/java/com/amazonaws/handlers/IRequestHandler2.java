@@ -24,7 +24,7 @@ import com.amazonaws.http.HttpResponse;
 
 /**
  * Interface for {@link RequestHandler2}. Do not use this outside the core SDK. We can and will add
- * methods to this interface in the future. Extends {@link RequestHandler2} to implement a custom
+ * methods to this interface in the future. Extend {@link RequestHandler2} to implement a custom
  * request handler.
  */
 @SdkInternalApi

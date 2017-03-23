@@ -1,3 +1,16 @@
+# __1.11.108__ __2017-03-22__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Adds export configuration options to the AWS Discovery Service API.
+
+## __AWS Lambda__
+  - ### Features
+    - Adds support for new runtime Node.js v6.10 for AWS Lambda service
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adding waiters for Elastic Load Balancing V2
+
 # __1.11.107__ __2017-03-21__
 ## __AWS Direct Connect__
   - ### Deprecations

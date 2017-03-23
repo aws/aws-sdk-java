@@ -53,7 +53,7 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
     private String configurationsDownloadUrl;
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      */
     private java.util.Date exportRequestTime;
@@ -265,11 +265,11 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
      * @param exportRequestTime
-     *        The time the configuration data export was initiated.
+     *        The time that the configuration data export was initiated.
      */
 
     public void setExportRequestTime(java.util.Date exportRequestTime) {
@@ -278,10 +278,10 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
-     * @return The time the configuration data export was initiated.
+     * @return The time that the configuration data export was initiated.
      */
 
     public java.util.Date getExportRequestTime() {
@@ -290,11 +290,11 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
      * @param exportRequestTime
-     *        The time the configuration data export was initiated.
+     *        The time that the configuration data export was initiated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

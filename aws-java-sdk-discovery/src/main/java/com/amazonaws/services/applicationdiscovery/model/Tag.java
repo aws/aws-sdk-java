@@ -27,24 +27,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of tag to filter on.
+     * The type of tag on which to filter.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * A value for a tag key to filter on.
+     * A value for a tag key on which to filter.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * A type of tag to filter on.
+     * The type of tag on which to filter.
      * </p>
      * 
      * @param key
-     *        A type of tag to filter on.
+     *        The type of tag on which to filter.
      */
 
     public void setKey(String key) {
@@ -53,10 +53,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of tag to filter on.
+     * The type of tag on which to filter.
      * </p>
      * 
-     * @return A type of tag to filter on.
+     * @return The type of tag on which to filter.
      */
 
     public String getKey() {
@@ -65,11 +65,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A type of tag to filter on.
+     * The type of tag on which to filter.
      * </p>
      * 
      * @param key
-     *        A type of tag to filter on.
+     *        The type of tag on which to filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value for a tag key to filter on.
+     * A value for a tag key on which to filter.
      * </p>
      * 
      * @param value
-     *        A value for a tag key to filter on.
+     *        A value for a tag key on which to filter.
      */
 
     public void setValue(String value) {
@@ -93,10 +93,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value for a tag key to filter on.
+     * A value for a tag key on which to filter.
      * </p>
      * 
-     * @return A value for a tag key to filter on.
+     * @return A value for a tag key on which to filter.
      */
 
     public String getValue() {
@@ -105,11 +105,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value for a tag key to filter on.
+     * A value for a tag key on which to filter.
      * </p>
      * 
      * @param value
-     *        A value for a tag key to filter on.
+     *        A value for a tag key on which to filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33581,6 +33581,9 @@
         "name" : "Nodejs43",
         "value" : "nodejs4.3"
       }, {
+        "name" : "Nodejs610",
+        "value" : "nodejs6.10"
+      }, {
         "name" : "Java8",
         "value" : "java8"
       }, {

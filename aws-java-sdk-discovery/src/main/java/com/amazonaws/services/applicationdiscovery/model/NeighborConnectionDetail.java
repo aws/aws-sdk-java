@@ -27,42 +27,42 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      */
     private String sourceServerId;
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      */
     private String destinationServerId;
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      */
     private Integer destinationPort;
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      */
     private String transportProtocol;
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      */
     private Long connectionsCount;
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
      * @param sourceServerId
-     *        ID of server that opened the network connection.
+     *        The ID of the server that opened the network connection.
      */
 
     public void setSourceServerId(String sourceServerId) {
@@ -71,10 +71,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
-     * @return ID of server that opened the network connection.
+     * @return The ID of the server that opened the network connection.
      */
 
     public String getSourceServerId() {
@@ -83,11 +83,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
      * @param sourceServerId
-     *        ID of server that opened the network connection.
+     *        The ID of the server that opened the network connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
      * @param destinationServerId
-     *        ID of the server that accepted the networker connection.
+     *        The ID of the server that accepted the network connection.
      */
 
     public void setDestinationServerId(String destinationServerId) {
@@ -111,10 +111,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
-     * @return ID of the server that accepted the networker connection.
+     * @return The ID of the server that accepted the network connection.
      */
 
     public String getDestinationServerId() {
@@ -123,11 +123,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
      * @param destinationServerId
-     *        ID of the server that accepted the networker connection.
+     *        The ID of the server that accepted the network connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
      * @param destinationPort
-     *        Destination network port for the connection.
+     *        The destination network port for the connection.
      */
 
     public void setDestinationPort(Integer destinationPort) {
@@ -151,10 +151,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
-     * @return Destination network port for the connection.
+     * @return The destination network port for the connection.
      */
 
     public Integer getDestinationPort() {
@@ -163,11 +163,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
      * @param destinationPort
-     *        Destination network port for the connection.
+     *        The destination network port for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
      * @param transportProtocol
-     *        Network protocol used for the connection.
+     *        The network protocol used for the connection.
      */
 
     public void setTransportProtocol(String transportProtocol) {
@@ -191,10 +191,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
-     * @return Network protocol used for the connection.
+     * @return The network protocol used for the connection.
      */
 
     public String getTransportProtocol() {
@@ -203,11 +203,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
      * @param transportProtocol
-     *        Network protocol used for the connection.
+     *        The network protocol used for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
      * @param connectionsCount
-     *        Number of open network connections with the neighboring server.
+     *        The number of open network connections with the neighboring server.
      */
 
     public void setConnectionsCount(Long connectionsCount) {
@@ -231,10 +231,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
-     * @return Number of open network connections with the neighboring server.
+     * @return The number of open network connections with the neighboring server.
      */
 
     public Long getConnectionsCount() {
@@ -243,11 +243,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
      * @param connectionsCount
-     *        Number of open network connections with the neighboring server.
+     *        The number of open network connections with the neighboring server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

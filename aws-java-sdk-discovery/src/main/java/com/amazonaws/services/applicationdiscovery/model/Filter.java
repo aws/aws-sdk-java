@@ -22,9 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A filter that can use conditional operators.
  * </p>
  * <p>
- * for a complete list of filters and guidance for using them with the Application Discovery Service, see <a
- * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html"
- * >Querying Discovered Configuration Items</a>.
+ * For more information about filters, see <a
+ * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying
+ * Discovered Configuration Items</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -38,8 +38,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      */
     private java.util.List<String> values;
@@ -95,11 +95,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
-     * @return A string value that you want to filter on. For example, if you choose the
+     * @return A string value on which to filter. For example, if you choose the
      *         <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the
      *         value.
      */
@@ -110,13 +110,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -130,8 +130,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,8 +140,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,13 +157,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

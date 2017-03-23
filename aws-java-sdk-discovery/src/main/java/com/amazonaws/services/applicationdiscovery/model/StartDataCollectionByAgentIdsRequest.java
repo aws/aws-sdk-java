@@ -22,10 +22,10 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     * agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does
+     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     * agent/connector ID that you do not have permission to contact, according to your AWS account, the service does
      * not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
-     * multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system
+     * multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system
      * does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      */
@@ -33,18 +33,18 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     * agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does
+     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     * agent/connector ID that you do not have permission to contact, according to your AWS account, the service does
      * not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
-     * multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system
+     * multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system
      * does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
-     * @return The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     *         agent/Connector ID that you do not have permission to contact, according to your AWS account, the service
+     * @return The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     *         agent/connector ID that you do not have permission to contact, according to your AWS account, the service
      *         does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     *         request to multiple agents/Connectors and you do not have permission to contact some of those
-     *         agents/Connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
+     *         request to multiple agents/connectors and you do not have permission to contact some of those
+     *         agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
      *         in the <i>Description</i> field.
      */
 
@@ -54,19 +54,19 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     * agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does
+     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     * agent/connector ID that you do not have permission to contact, according to your AWS account, the service does
      * not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
-     * multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system
+     * multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system
      * does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     *        agent/Connector ID that you do not have permission to contact, according to your AWS account, the service
+     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     *        agent/connector ID that you do not have permission to contact, according to your AWS account, the service
      *        does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     *        request to multiple agents/Connectors and you do not have permission to contact some of those
-     *        agents/Connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
+     *        request to multiple agents/connectors and you do not have permission to contact some of those
+     *        agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
      *        in the <i>Description</i> field.
      */
 
@@ -81,10 +81,10 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     * agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does
+     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     * agent/connector ID that you do not have permission to contact, according to your AWS account, the service does
      * not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
-     * multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system
+     * multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system
      * does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * <p>
@@ -94,11 +94,11 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     *        agent/Connector ID that you do not have permission to contact, according to your AWS account, the service
+     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     *        agent/connector ID that you do not have permission to contact, according to your AWS account, the service
      *        does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     *        request to multiple agents/Connectors and you do not have permission to contact some of those
-     *        agents/Connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
+     *        request to multiple agents/connectors and you do not have permission to contact some of those
+     *        agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
      *        in the <i>Description</i> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -115,19 +115,19 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     * agent/Connector ID that you do not have permission to contact, according to your AWS account, the service does
+     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     * agent/connector ID that you do not have permission to contact, according to your AWS account, the service does
      * not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to
-     * multiple agents/Connectors and you do not have permission to contact some of those agents/Connectors, the system
+     * multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system
      * does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or Connectors that you want to start collecting data. If you send a request to an
-     *        agent/Connector ID that you do not have permission to contact, according to your AWS account, the service
+     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
+     *        agent/connector ID that you do not have permission to contact, according to your AWS account, the service
      *        does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     *        request to multiple agents/Connectors and you do not have permission to contact some of those
-     *        agents/Connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
+     *        request to multiple agents/connectors and you do not have permission to contact some of those
+     *        agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code>
      *        in the <i>Description</i> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

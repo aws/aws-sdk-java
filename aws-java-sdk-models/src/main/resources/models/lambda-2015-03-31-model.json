@@ -5732,7 +5732,7 @@
     "Runtime" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "nodejs", "nodejs4.3", "java8", "python2.7", "dotnetcore1.0", "nodejs4.3-edge" ],
+      "enum" : [ "nodejs", "nodejs4.3", "nodejs6.10", "java8", "python2.7", "dotnetcore1.0", "nodejs4.3-edge" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
