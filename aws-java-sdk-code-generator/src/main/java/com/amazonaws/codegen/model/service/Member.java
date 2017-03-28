@@ -27,6 +27,8 @@ public class Member {
 
     private boolean streaming;
 
+    private boolean jsonvalue;
+
     private String documentation;
 
     private String queryName;
@@ -77,6 +79,14 @@ public class Member {
 
     public void setStreaming(boolean streaming) {
         this.streaming = streaming;
+    }
+
+    public boolean isJsonvalue() {
+        return jsonvalue;
+    }
+
+    public void setJsonvalue(boolean jsonvalue) {
+        this.jsonvalue = jsonvalue;
     }
 
     public String getDocumentation() {

@@ -36,7 +36,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     private String instanceId;
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      */
     private String pingStatus;
@@ -48,13 +48,13 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     private java.util.Date lastPingDateTime;
     /**
      * <p>
-     * The version of the SSM agent running on your Linux instance.
+     * The version of the SSM Agent running on your Linux instance.
      * </p>
      */
     private String agentVersion;
     /**
      * <p>
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * Indicates whether latest version of the SSM Agent is running on your instance.
      * </p>
      */
     private Boolean isLatestVersion;
@@ -185,11 +185,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      * 
      * @param pingStatus
-     *        Connection status of the SSM agent.
+     *        Connection status of the SSM Agent.
      * @see PingStatus
      */
 
@@ -199,10 +199,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      * 
-     * @return Connection status of the SSM agent.
+     * @return Connection status of the SSM Agent.
      * @see PingStatus
      */
 
@@ -212,11 +212,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      * 
      * @param pingStatus
-     *        Connection status of the SSM agent.
+     *        Connection status of the SSM Agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PingStatus
      */
@@ -228,11 +228,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      * 
      * @param pingStatus
-     *        Connection status of the SSM agent.
+     *        Connection status of the SSM Agent.
      * @see PingStatus
      */
 
@@ -242,11 +242,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Connection status of the SSM agent.
+     * Connection status of the SSM Agent.
      * </p>
      * 
      * @param pingStatus
-     *        Connection status of the SSM agent.
+     *        Connection status of the SSM Agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PingStatus
      */
@@ -298,11 +298,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the SSM agent running on your Linux instance.
+     * The version of the SSM Agent running on your Linux instance.
      * </p>
      * 
      * @param agentVersion
-     *        The version of the SSM agent running on your Linux instance.
+     *        The version of the SSM Agent running on your Linux instance.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -311,10 +311,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the SSM agent running on your Linux instance.
+     * The version of the SSM Agent running on your Linux instance.
      * </p>
      * 
-     * @return The version of the SSM agent running on your Linux instance.
+     * @return The version of the SSM Agent running on your Linux instance.
      */
 
     public String getAgentVersion() {
@@ -323,11 +323,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the SSM agent running on your Linux instance.
+     * The version of the SSM Agent running on your Linux instance.
      * </p>
      * 
      * @param agentVersion
-     *        The version of the SSM agent running on your Linux instance.
+     *        The version of the SSM Agent running on your Linux instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +338,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * Indicates whether latest version of the SSM Agent is running on your instance.
      * </p>
      * 
      * @param isLatestVersion
-     *        Indicates whether latest version of the SSM agent is running on your instance.
+     *        Indicates whether latest version of the SSM Agent is running on your instance.
      */
 
     public void setIsLatestVersion(Boolean isLatestVersion) {
@@ -351,10 +351,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * Indicates whether latest version of the SSM Agent is running on your instance.
      * </p>
      * 
-     * @return Indicates whether latest version of the SSM agent is running on your instance.
+     * @return Indicates whether latest version of the SSM Agent is running on your instance.
      */
 
     public Boolean getIsLatestVersion() {
@@ -363,11 +363,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * Indicates whether latest version of the SSM Agent is running on your instance.
      * </p>
      * 
      * @param isLatestVersion
-     *        Indicates whether latest version of the SSM agent is running on your instance.
+     *        Indicates whether latest version of the SSM Agent is running on your instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,10 +378,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * Indicates whether latest version of the SSM Agent is running on your instance.
      * </p>
      * 
-     * @return Indicates whether latest version of the SSM agent is running on your instance.
+     * @return Indicates whether latest version of the SSM Agent is running on your instance.
      */
 
     public Boolean isLatestVersion() {

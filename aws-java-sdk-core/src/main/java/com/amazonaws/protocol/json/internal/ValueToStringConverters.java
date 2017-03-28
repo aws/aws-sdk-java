@@ -15,8 +15,9 @@
 package com.amazonaws.protocol.json.internal;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.util.Base64;
 import com.amazonaws.util.StringUtils;
-
+import java.nio.charset.Charset;
 import java.util.Date;
 
 /**
@@ -89,6 +90,16 @@ public class ValueToStringConverters {
         @Override
         public String convert(Date val) {
             return StringUtils.fromDate(val);
+        }
+    };
+
+    /**
+     * Converter for JSON value headers. JSON value headers are base-64 encoded.
+     */
+    public static final ValueToString<String> FROM_JSON_VALUE_HEADER = new ValueToString<String>() {
+        @Override
+        public String convert(String val) {
+            return Base64.encodeAsString(val.getBytes(Charset.forName("utf-8")));
         }
     };
 }

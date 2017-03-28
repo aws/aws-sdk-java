@@ -84,6 +84,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
     private static MarshallerRegistry createMarshallerRegistry() {
         return MarshallerRegistry.builder()
                 .payloadMarshaller(MarshallingType.STRING, SimpleTypeJsonMarshallers.STRING)
+                .payloadMarshaller(MarshallingType.JSON_VALUE, SimpleTypeJsonMarshallers.STRING)
                 .payloadMarshaller(MarshallingType.INTEGER, SimpleTypeJsonMarshallers.INTEGER)
                 .payloadMarshaller(MarshallingType.LONG, SimpleTypeJsonMarshallers.LONG)
                 .payloadMarshaller(MarshallingType.DOUBLE, SimpleTypeJsonMarshallers.DOUBLE)
@@ -98,6 +99,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
                 .payloadMarshaller(MarshallingType.NULL, SimpleTypeJsonMarshallers.NULL)
 
                 .headerMarshaller(MarshallingType.STRING, HeaderMarshallers.STRING)
+                .headerMarshaller(MarshallingType.JSON_VALUE, HeaderMarshallers.JSON_VALUE)
                 .headerMarshaller(MarshallingType.INTEGER, HeaderMarshallers.INTEGER)
                 .headerMarshaller(MarshallingType.LONG, HeaderMarshallers.LONG)
                 .headerMarshaller(MarshallingType.DOUBLE, HeaderMarshallers.DOUBLE)

@@ -15,11 +15,6 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import com.amazonaws.codegen.internal.TypeUtils;
-import com.amazonaws.protocol.MarshallingInfo;
-import com.amazonaws.transform.PathMarshallers;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
 import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_FLUENT_RETURN;
 import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_GETTER;
@@ -28,6 +23,12 @@ import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER;
 import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER_PARAM;
 import static com.amazonaws.codegen.internal.DocumentationUtils.LIST_VARARG_ADDITIONAL_DOC;
 import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
+
+import com.amazonaws.codegen.internal.TypeUtils;
+import com.amazonaws.protocol.MarshallingInfo;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.PathMarshallers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class MemberModel extends DocumentationModel {
 
@@ -64,6 +65,8 @@ public class MemberModel extends DocumentationModel {
     private boolean idempotencyToken;
 
     private ShapeModel shape;
+
+    private boolean isJsonValue;
 
     public String getName() {
         return name;
@@ -408,6 +411,14 @@ public class MemberModel extends DocumentationModel {
         this.idempotencyToken = idempotencyToken;
     }
 
+    public boolean isJsonValue() {
+        return isJsonValue;
+    }
+
+    public void setJsonValue(boolean isJsonValue) {
+        this.isJsonValue = isJsonValue;
+    }
+
     public boolean getIsBinary() {
         return http.getIsStreaming() || (http.getIsPayload() && "java.nio.ByteBuffer".equals(variable.getVariableType()));
     }
@@ -453,11 +464,28 @@ public class MemberModel extends DocumentationModel {
             return "LIST";
         } else if (isMap()) {
             return "MAP";
+        } else if (isJsonValue()) {
+            return "JSON_VALUE";
         } else if (!isSimple()) {
             return "STRUCTURED";
         } else {
             return TypeUtils.getMarshallingType(variable.getSimpleType());
         }
+    }
+
+    /**
+     * Currently used only for JSON services.
+     *
+     * @return The Marshalling type to use when loading the unmarshaller from the {@link JsonUnmarshallerContext}. Must be
+     * a field of {@link JsonUnmarshallerContext.UnmarshallerType}. This will be null if the default simple-type
+     * marshaller should be used.
+     */
+    public String getUnmarshallingType() {
+        if(isJsonValue()) {
+            return "JSON_VALUE";
+        }
+
+        return null;
     }
 
     /**

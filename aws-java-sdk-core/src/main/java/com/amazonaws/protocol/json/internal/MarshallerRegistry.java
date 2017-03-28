@@ -70,7 +70,7 @@ public class MarshallerRegistry {
         synchronized (marshallingTypeCache) {
             if (!marshallingTypeCache.containsKey(clzz)) {
                 for (MarshallingType<?> marshallingType : marshallingTypes) {
-                    if (marshallingType.getTargetClass().isAssignableFrom(clzz)) {
+                    if (marshallingType.isDefaultMarshallerForType(clzz)) {
                         marshallingTypeCache.put(clzz, marshallingType);
                         return marshallingType;
                     }

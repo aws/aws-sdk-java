@@ -1,3 +1,8 @@
+# __1.11.110__ __2017-03-27__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Updated validation rules for SendCommand and RegisterTaskWithMaintenanceWindow APIs.
+
 # __1.11.109__ __2017-03-23__
 ## __AWS CloudTrail__
   - ### Features

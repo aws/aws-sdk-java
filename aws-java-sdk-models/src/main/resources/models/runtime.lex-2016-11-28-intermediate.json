@@ -255,6 +255,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -273,6 +274,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Text visible to the user on the button.</p>\n@param text Text visible to the user on the button.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -315,6 +317,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -333,6 +336,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value sent to Amazon Lex when user clicks the button. For example, consider button text \"NYC\". When the user clicks the button, the value sent can be \"New York City\".</p>\n@param value Value sent to Amazon Lex when user clicks the button. For example, consider button text \"NYC\". When the user clicks the button, the value sent can be \"New York City\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -377,6 +381,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -395,6 +400,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Text visible to the user on the button.</p>\n@param text Text visible to the user on the button.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -438,6 +444,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -456,6 +463,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value sent to Amazon Lex when user clicks the button. For example, consider button text \"NYC\". When the user clicks the button, the value sent can be \"New York City\".</p>\n@param value Value sent to Amazon Lex when user clicks the button. For example, consider button text \"NYC\". When the user clicks the button, the value sent can be \"New York City\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -698,6 +706,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -716,6 +725,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Title of the option.</p>\n@param title Title of the option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -758,6 +768,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -776,6 +787,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Subtitle shown below the title.</p>\n@param subTitle Subtitle shown below the title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -818,6 +830,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -836,6 +849,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param attachmentLinkUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -878,6 +892,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -896,6 +911,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>URL of an image that is displayed to the user.</p>\n@param imageUrl URL of an image that is displayed to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -938,6 +954,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -974,6 +991,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -992,6 +1010,7 @@
               "variableSetterType" : "Button"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Button",
@@ -1031,6 +1050,7 @@
           "variableSetterType" : "java.util.Collection<Button>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of options to show to the user.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setButtons(java.util.Collection)} or {@link #withButtons(java.util.Collection)} if you want to override the existing values.</p>\n@param buttons List of options to show to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Button>",
@@ -1075,6 +1095,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1093,6 +1114,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param attachmentLinkUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1136,6 +1158,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1172,6 +1195,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -1190,6 +1214,7 @@
                 "variableSetterType" : "Button"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Button",
@@ -1229,6 +1254,7 @@
             "variableSetterType" : "java.util.Collection<Button>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of options to show to the user.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setButtons(java.util.Collection)} or {@link #withButtons(java.util.Collection)} if you want to override the existing values.</p>\n@param buttons List of options to show to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Button>",
@@ -1272,6 +1298,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1290,6 +1317,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>URL of an image that is displayed to the user.</p>\n@param imageUrl URL of an image that is displayed to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1333,6 +1361,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1351,6 +1380,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Subtitle shown below the title.</p>\n@param subTitle Subtitle shown below the title.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1394,6 +1424,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1412,6 +1443,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Title of the option.</p>\n@param title Title of the option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1525,6 +1557,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1543,6 +1576,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1587,6 +1621,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1605,6 +1640,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1756,6 +1792,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1774,6 +1811,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the Amazon Lex bot.</p>\n@param botName Name of the Amazon Lex bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1816,6 +1854,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1834,6 +1873,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Alias of the Amazon Lex bot.</p>\n@param botAlias Alias of the Amazon Lex bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1876,6 +1916,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1894,6 +1935,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>User ID of your client application. Typically, each of your application users should have a unique ID. Note the following considerations: </p> <ul> <li> <p> If you want a user to start a conversation on one mobile device and continue the conversation on another device, you might choose a user-specific identifier, such as a login or Amazon Cognito user ID (assuming your application is using Amazon Cognito). </p> </li> <li> <p> If you want the same user to be able to have two independent conversations on two different devices, you might choose a device-specific identifier, such as device ID, or some globally unique identifier. </p> </li> </ul>\n@param userId User ID of your client application. Typically, each of your application users should have a unique ID. Note the following considerations: </p> <ul> <li> <p> If you want a user to start a conversation on one mobile device and continue the conversation on another device, you might choose a user-specific identifier, such as a login or Amazon Cognito user ID (assuming your application is using Amazon Cognito). </p> </li> <li> <p> If you want the same user to be able to have two independent conversations on two different devices, you might choose a device-specific identifier, such as device ID, or some globally unique identifier. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1936,6 +1978,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : true,
@@ -1978,6 +2021,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -1996,6 +2040,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -2029,6 +2074,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> A session represents the dialog between a user and Amazon Lex. At runtime, a client application can pass contextual information (session attributes) in the request. For example, <code>\"FirstName\" : \"Joe\"</code>. Amazon Lex passes these session attributes to the AWS Lambda functions configured for the intent (see <code>dialogCodeHook</code> and <code>fulfillmentActivity.codeHook</code> in <code>CreateIntent</code>). </p> <p>In your Lambda function, you can use the session attributes for customization. Some examples are:</p> <ul> <li> <p> In a pizza ordering application, if you can pass user location as a session attribute (for example, <code>\"Location\" : \"111 Maple street\"</code>), your Lambda function might use this information to determine the closest pizzeria to place the order. </p> </li> <li> <p> Use session attributes to personalize prompts. For example, you pass in user name as a session attribute (<code>\"FirstName\" : \"Joe\"</code>), you might configure subsequent prompts to refer to this attribute, as <code>$session.FirstName\"</code>. At runtime, Amazon Lex substitutes a real value when it generates a prompt, such as \"Hello Joe, what would you like to order?\" </p> </li> </ul> <note> <p> Amazon Lex does not persist session attributes. </p> <p> If the intent is configured without a Lambda function to process the intent (that is, the client application to process the intent), Amazon Lex simply returns the session attributes back to the client application. </p> <p> If the intent is configured with a Lambda function to process the intent, Amazon Lex passes the incoming session attributes to the Lambda function. The Lambda function must return these session attributes if you want Amazon Lex to return them back to the client. </p> </note>\n@param sessionAttributes A session represents the dialog between a user and Amazon Lex. At runtime, a client application can pass contextual information (session attributes) in the request. For example, <code>\"FirstName\" : \"Joe\"</code>. Amazon Lex passes these session attributes to the AWS Lambda functions configured for the intent (see <code>dialogCodeHook</code> and <code>fulfillmentActivity.codeHook</code> in <code>CreateIntent</code>). </p> <p>In your Lambda function, you can use the session attributes for customization. Some examples are:</p> <ul> <li> <p> In a pizza ordering application, if you can pass user location as a session attribute (for example, <code>\"Location\" : \"111 Maple street\"</code>), your Lambda function might use this information to determine the closest pizzeria to place the order. </p> </li> <li> <p> Use session attributes to personalize prompts. For example, you pass in user name as a session attribute (<code>\"FirstName\" : \"Joe\"</code>), you might configure subsequent prompts to refer to this attribute, as <code>$session.FirstName\"</code>. At runtime, Amazon Lex substitutes a real value when it generates a prompt, such as \"Hello Joe, what would you like to order?\" </p> </li> </ul> <note> <p> Amazon Lex does not persist session attributes. </p> <p> If the intent is configured without a Lambda function to process the intent (that is, the client application to process the intent), Amazon Lex simply returns the session attributes back to the client application. </p> <p> If the intent is configured with a Lambda function to process the intent, Amazon Lex passes the incoming session attributes to the Lambda function. The Lambda function must return these session attributes if you want Amazon Lex to return them back to the client. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Map<String,String>",
@@ -2071,6 +2117,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2089,6 +2136,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Text user entered (Amazon Lex interprets this text).</p>\n@param inputText Text user entered (Amazon Lex interprets this text).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2133,6 +2181,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2151,6 +2200,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Alias of the Amazon Lex bot.</p>\n@param botAlias Alias of the Amazon Lex bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2194,6 +2244,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2212,6 +2263,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the Amazon Lex bot.</p>\n@param botName Name of the Amazon Lex bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2255,6 +2307,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2273,6 +2326,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Text user entered (Amazon Lex interprets this text).</p>\n@param inputText Text user entered (Amazon Lex interprets this text).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2316,6 +2370,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : true,
@@ -2358,6 +2413,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -2376,6 +2432,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -2409,6 +2466,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> A session represents the dialog between a user and Amazon Lex. At runtime, a client application can pass contextual information (session attributes) in the request. For example, <code>\"FirstName\" : \"Joe\"</code>. Amazon Lex passes these session attributes to the AWS Lambda functions configured for the intent (see <code>dialogCodeHook</code> and <code>fulfillmentActivity.codeHook</code> in <code>CreateIntent</code>). </p> <p>In your Lambda function, you can use the session attributes for customization. Some examples are:</p> <ul> <li> <p> In a pizza ordering application, if you can pass user location as a session attribute (for example, <code>\"Location\" : \"111 Maple street\"</code>), your Lambda function might use this information to determine the closest pizzeria to place the order. </p> </li> <li> <p> Use session attributes to personalize prompts. For example, you pass in user name as a session attribute (<code>\"FirstName\" : \"Joe\"</code>), you might configure subsequent prompts to refer to this attribute, as <code>$session.FirstName\"</code>. At runtime, Amazon Lex substitutes a real value when it generates a prompt, such as \"Hello Joe, what would you like to order?\" </p> </li> </ul> <note> <p> Amazon Lex does not persist session attributes. </p> <p> If the intent is configured without a Lambda function to process the intent (that is, the client application to process the intent), Amazon Lex simply returns the session attributes back to the client application. </p> <p> If the intent is configured with a Lambda function to process the intent, Amazon Lex passes the incoming session attributes to the Lambda function. The Lambda function must return these session attributes if you want Amazon Lex to return them back to the client. </p> </note>\n@param sessionAttributes A session represents the dialog between a user and Amazon Lex. At runtime, a client application can pass contextual information (session attributes) in the request. For example, <code>\"FirstName\" : \"Joe\"</code>. Amazon Lex passes these session attributes to the AWS Lambda functions configured for the intent (see <code>dialogCodeHook</code> and <code>fulfillmentActivity.codeHook</code> in <code>CreateIntent</code>). </p> <p>In your Lambda function, you can use the session attributes for customization. Some examples are:</p> <ul> <li> <p> In a pizza ordering application, if you can pass user location as a session attribute (for example, <code>\"Location\" : \"111 Maple street\"</code>), your Lambda function might use this information to determine the closest pizzeria to place the order. </p> </li> <li> <p> Use session attributes to personalize prompts. For example, you pass in user name as a session attribute (<code>\"FirstName\" : \"Joe\"</code>), you might configure subsequent prompts to refer to this attribute, as <code>$session.FirstName\"</code>. At runtime, Amazon Lex substitutes a real value when it generates a prompt, such as \"Hello Joe, what would you like to order?\" </p> </li> </ul> <note> <p> Amazon Lex does not persist session attributes. </p> <p> If the intent is configured without a Lambda function to process the intent (that is, the client application to process the intent), Amazon Lex simply returns the session attributes back to the client application. </p> <p> If the intent is configured with a Lambda function to process the intent, Amazon Lex passes the incoming session attributes to the Lambda function. The Lambda function must return these session attributes if you want Amazon Lex to return them back to the client. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Map<String,String>",
@@ -2452,6 +2510,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2470,6 +2529,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>User ID of your client application. Typically, each of your application users should have a unique ID. Note the following considerations: </p> <ul> <li> <p> If you want a user to start a conversation on one mobile device and continue the conversation on another device, you might choose a user-specific identifier, such as a login or Amazon Cognito user ID (assuming your application is using Amazon Cognito). </p> </li> <li> <p> If you want the same user to be able to have two independent conversations on two different devices, you might choose a device-specific identifier, such as device ID, or some globally unique identifier. </p> </li> </ul>\n@param userId User ID of your client application. Typically, each of your application users should have a unique ID. Note the following considerations: </p> <ul> <li> <p> If you want a user to start a conversation on one mobile device and continue the conversation on another device, you might choose a user-specific identifier, such as a login or Amazon Cognito user ID (assuming your application is using Amazon Cognito). </p> </li> <li> <p> If you want the same user to be able to have two independent conversations on two different devices, you might choose a device-specific identifier, such as device ID, or some globally unique identifier. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2546,6 +2606,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2564,6 +2625,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Intent Amazon Lex inferred from the user input text. This is one of the intents configured for the bot. </p>\n@param intentName Intent Amazon Lex inferred from the user input text. This is one of the intents configured for the bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2606,6 +2668,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : true,
@@ -2648,6 +2711,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -2666,6 +2730,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -2699,6 +2764,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Intent slots (name/value pairs) Amazon Lex detected so far from the user input in the conversation. </p>\n@param slots Intent slots (name/value pairs) Amazon Lex detected so far from the user input in the conversation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Map<String,String>",
@@ -2741,6 +2807,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : true,
@@ -2783,6 +2850,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -2801,6 +2869,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -2834,6 +2903,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Map of key value pairs representing the session specific context information.</p>\n@param sessionAttributes Map of key value pairs representing the session specific context information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Map<String,String>",
@@ -2876,6 +2946,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2894,6 +2965,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Prompt (or statement) to convey to the user. This is based on the application configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the application. In another example, if the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Suppose the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. In that situation, Amazon Lex sends that message in the response. </p>\n@param message Prompt (or statement) to convey to the user. This is based on the application configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the application. In another example, if the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Suppose the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. In that situation, Amazon Lex sends that message in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2936,6 +3008,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2954,6 +3027,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the message type to be conveyed to the user. For example: </p> <ul> <li> <p> <code>ElicitIntent</code> – Amazon Lex wants to elicit user intent. For example, Amazon Lex did not understand the first utterances such as \"I want to order pizza\", which indicates the OrderPizza intent. If Amazon Lex doesn't understand the intent, it returns this <code>dialogState</code>. Another example is when your intent is configured with a follow up prompt. For example, after OrderPizza intent is fulfilled, the intent might have a follow up prompt such as \" Do you want to order a drink or desert?\" In this case, Amazon Lex returns this <code>dialogState</code>. </p> </li> <li> <p> <code>ConfirmIntent</code> – Amazon Lex is expecting a yes/no response from the user indicating whether to go ahead and fulfill the intent (for example, OK to go ahead and order the pizza). In addition to a yes/no reply, the user might provide a response with additional slot information (either new slot information or changes to the existing slot values). For example, \"Yes, but change to thick crust.\" Amazon Lex understands the additional information and updates the intent slots accordingly. </p> <p> Consider another example. Before fulfilling an order, your application might prompt for confirmation such as \"Do you want to place this pizza order?\" A user might reply with \"No, I want to order a drink.\" Amazon Lex recognizes the new OrderDrink intent. </p> </li> <li> <p> <code>ElicitSlot</code> – Amazon Lex is expecting a value of a slot for the current intent. For example, suppose Amazon Lex asks, \"What size pizza would you like?\" A user might reply with \"Medium pepperoni pizza.\" Amazon Lex recognizes the size and the topping as the two separate slot values. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the Lambda function has successfully fulfilled the intent. If Lambda function returns a statement/message to convey the fulfillment result, Amazon Lex passes this string to the client. If not, Amazon Lex looks for <code>conclusionStatement</code> that you configured for the intent. </p> <p> If both the Lambda function statement and the <code>conclusionStatement</code> are missing, Amazon Lex throws a bad request exception. </p> </li> <li> <p> <code>ReadyForFulfillment</code> – conveys that the client has to do the fulfillment work for the intent. This is the case when the current intent is configured with <code>ReturnIntent</code> as the <code>fulfillmentActivity </code>, where Amazon Lex returns this state to client. </p> </li> <li> <p> <code>Failed</code> – Conversation with the user failed. Some of the reasons for this <code>dialogState</code> are: after the configured number of attempts the user didn't provide an appropriate response, or the Lambda function failed to fulfill an intent. </p> </li> </ul>\n@param dialogState Represents the message type to be conveyed to the user. For example: </p> <ul> <li> <p> <code>ElicitIntent</code> – Amazon Lex wants to elicit user intent. For example, Amazon Lex did not understand the first utterances such as \"I want to order pizza\", which indicates the OrderPizza intent. If Amazon Lex doesn't understand the intent, it returns this <code>dialogState</code>. Another example is when your intent is configured with a follow up prompt. For example, after OrderPizza intent is fulfilled, the intent might have a follow up prompt such as \" Do you want to order a drink or desert?\" In this case, Amazon Lex returns this <code>dialogState</code>. </p> </li> <li> <p> <code>ConfirmIntent</code> – Amazon Lex is expecting a yes/no response from the user indicating whether to go ahead and fulfill the intent (for example, OK to go ahead and order the pizza). In addition to a yes/no reply, the user might provide a response with additional slot information (either new slot information or changes to the existing slot values). For example, \"Yes, but change to thick crust.\" Amazon Lex understands the additional information and updates the intent slots accordingly. </p> <p> Consider another example. Before fulfilling an order, your application might prompt for confirmation such as \"Do you want to place this pizza order?\" A user might reply with \"No, I want to order a drink.\" Amazon Lex recognizes the new OrderDrink intent. </p> </li> <li> <p> <code>ElicitSlot</code> – Amazon Lex is expecting a value of a slot for the current intent. For example, suppose Amazon Lex asks, \"What size pizza would you like?\" A user might reply with \"Medium pepperoni pizza.\" Amazon Lex recognizes the size and the topping as the two separate slot values. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the Lambda function has successfully fulfilled the intent. If Lambda function returns a statement/message to convey the fulfillment result, Amazon Lex passes this string to the client. If not, Amazon Lex looks for <code>conclusionStatement</code> that you configured for the intent. </p> <p> If both the Lambda function statement and the <code>conclusionStatement</code> are missing, Amazon Lex throws a bad request exception. </p> </li> <li> <p> <code>ReadyForFulfillment</code> – conveys that the client has to do the fulfillment work for the intent. This is the case when the current intent is configured with <code>ReturnIntent</code> as the <code>fulfillmentActivity </code>, where Amazon Lex returns this state to client. </p> </li> <li> <p> <code>Failed</code> – Conversation with the user failed. Some of the reasons for this <code>dialogState</code> are: after the configured number of attempts the user didn't provide an appropriate response, or the Lambda function failed to fulfill an intent. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DialogState*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2996,6 +3070,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3014,6 +3089,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>\n@param slotToElicit If <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3056,6 +3132,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3074,6 +3151,7 @@
           "variableSetterType" : "ResponseCard"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the options that the user has to respond to the current prompt. Amazon Lex sends this in the response only if the <code>dialogState</code> value indicates that a user response is expected. </p>\n@param responseCard Represents the options that the user has to respond to the current prompt. Amazon Lex sends this in the response only if the <code>dialogState</code> value indicates that a user response is expected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ResponseCard",
@@ -3118,6 +3196,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3136,6 +3215,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the message type to be conveyed to the user. For example: </p> <ul> <li> <p> <code>ElicitIntent</code> – Amazon Lex wants to elicit user intent. For example, Amazon Lex did not understand the first utterances such as \"I want to order pizza\", which indicates the OrderPizza intent. If Amazon Lex doesn't understand the intent, it returns this <code>dialogState</code>. Another example is when your intent is configured with a follow up prompt. For example, after OrderPizza intent is fulfilled, the intent might have a follow up prompt such as \" Do you want to order a drink or desert?\" In this case, Amazon Lex returns this <code>dialogState</code>. </p> </li> <li> <p> <code>ConfirmIntent</code> – Amazon Lex is expecting a yes/no response from the user indicating whether to go ahead and fulfill the intent (for example, OK to go ahead and order the pizza). In addition to a yes/no reply, the user might provide a response with additional slot information (either new slot information or changes to the existing slot values). For example, \"Yes, but change to thick crust.\" Amazon Lex understands the additional information and updates the intent slots accordingly. </p> <p> Consider another example. Before fulfilling an order, your application might prompt for confirmation such as \"Do you want to place this pizza order?\" A user might reply with \"No, I want to order a drink.\" Amazon Lex recognizes the new OrderDrink intent. </p> </li> <li> <p> <code>ElicitSlot</code> – Amazon Lex is expecting a value of a slot for the current intent. For example, suppose Amazon Lex asks, \"What size pizza would you like?\" A user might reply with \"Medium pepperoni pizza.\" Amazon Lex recognizes the size and the topping as the two separate slot values. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the Lambda function has successfully fulfilled the intent. If Lambda function returns a statement/message to convey the fulfillment result, Amazon Lex passes this string to the client. If not, Amazon Lex looks for <code>conclusionStatement</code> that you configured for the intent. </p> <p> If both the Lambda function statement and the <code>conclusionStatement</code> are missing, Amazon Lex throws a bad request exception. </p> </li> <li> <p> <code>ReadyForFulfillment</code> – conveys that the client has to do the fulfillment work for the intent. This is the case when the current intent is configured with <code>ReturnIntent</code> as the <code>fulfillmentActivity </code>, where Amazon Lex returns this state to client. </p> </li> <li> <p> <code>Failed</code> – Conversation with the user failed. Some of the reasons for this <code>dialogState</code> are: after the configured number of attempts the user didn't provide an appropriate response, or the Lambda function failed to fulfill an intent. </p> </li> </ul>\n@param dialogState Represents the message type to be conveyed to the user. For example: </p> <ul> <li> <p> <code>ElicitIntent</code> – Amazon Lex wants to elicit user intent. For example, Amazon Lex did not understand the first utterances such as \"I want to order pizza\", which indicates the OrderPizza intent. If Amazon Lex doesn't understand the intent, it returns this <code>dialogState</code>. Another example is when your intent is configured with a follow up prompt. For example, after OrderPizza intent is fulfilled, the intent might have a follow up prompt such as \" Do you want to order a drink or desert?\" In this case, Amazon Lex returns this <code>dialogState</code>. </p> </li> <li> <p> <code>ConfirmIntent</code> – Amazon Lex is expecting a yes/no response from the user indicating whether to go ahead and fulfill the intent (for example, OK to go ahead and order the pizza). In addition to a yes/no reply, the user might provide a response with additional slot information (either new slot information or changes to the existing slot values). For example, \"Yes, but change to thick crust.\" Amazon Lex understands the additional information and updates the intent slots accordingly. </p> <p> Consider another example. Before fulfilling an order, your application might prompt for confirmation such as \"Do you want to place this pizza order?\" A user might reply with \"No, I want to order a drink.\" Amazon Lex recognizes the new OrderDrink intent. </p> </li> <li> <p> <code>ElicitSlot</code> – Amazon Lex is expecting a value of a slot for the current intent. For example, suppose Amazon Lex asks, \"What size pizza would you like?\" A user might reply with \"Medium pepperoni pizza.\" Amazon Lex recognizes the size and the topping as the two separate slot values. </p> </li> <li> <p> <code>Fulfilled</code> – Conveys that the Lambda function has successfully fulfilled the intent. If Lambda function returns a statement/message to convey the fulfillment result, Amazon Lex passes this string to the client. If not, Amazon Lex looks for <code>conclusionStatement</code> that you configured for the intent. </p> <p> If both the Lambda function statement and the <code>conclusionStatement</code> are missing, Amazon Lex throws a bad request exception. </p> </li> <li> <p> <code>ReadyForFulfillment</code> – conveys that the client has to do the fulfillment work for the intent. This is the case when the current intent is configured with <code>ReturnIntent</code> as the <code>fulfillmentActivity </code>, where Amazon Lex returns this state to client. </p> </li> <li> <p> <code>Failed</code> – Conversation with the user failed. Some of the reasons for this <code>dialogState</code> are: after the configured number of attempts the user didn't provide an appropriate response, or the Lambda function failed to fulfill an intent. </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DialogState*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3179,6 +3259,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3197,6 +3278,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Intent Amazon Lex inferred from the user input text. This is one of the intents configured for the bot. </p>\n@param intentName Intent Amazon Lex inferred from the user input text. This is one of the intents configured for the bot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3240,6 +3322,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3258,6 +3341,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Prompt (or statement) to convey to the user. This is based on the application configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the application. In another example, if the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Suppose the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. In that situation, Amazon Lex sends that message in the response. </p>\n@param message Prompt (or statement) to convey to the user. This is based on the application configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the application. In another example, if the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Suppose the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. In that situation, Amazon Lex sends that message in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3301,6 +3385,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3319,6 +3404,7 @@
             "variableSetterType" : "ResponseCard"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the options that the user has to respond to the current prompt. Amazon Lex sends this in the response only if the <code>dialogState</code> value indicates that a user response is expected. </p>\n@param responseCard Represents the options that the user has to respond to the current prompt. Amazon Lex sends this in the response only if the <code>dialogState</code> value indicates that a user response is expected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ResponseCard",
@@ -3362,6 +3448,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : true,
@@ -3404,6 +3491,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -3422,6 +3510,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -3455,6 +3544,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Map of key value pairs representing the session specific context information.</p>\n@param sessionAttributes Map of key value pairs representing the session specific context information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Map<String,String>",
@@ -3498,6 +3588,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3516,6 +3607,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>\n@param slotToElicit If <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3559,6 +3651,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : true,
@@ -3601,6 +3694,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -3619,6 +3713,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -3652,6 +3747,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Intent slots (name/value pairs) Amazon Lex detected so far from the user input in the conversation. </p>\n@param slots Intent slots (name/value pairs) Amazon Lex detected so far from the user input in the conversation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Map<String,String>",
@@ -3731,6 +3827,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3749,6 +3846,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Version of response card format.</p>\n@param version Version of response card format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3791,6 +3889,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3809,6 +3908,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Content type of the response.</p>\n@param contentType Content type of the response.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3851,6 +3951,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -3887,6 +3988,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -3905,6 +4007,7 @@
               "variableSetterType" : "GenericAttachment"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "GenericAttachment",
@@ -3944,6 +4047,7 @@
           "variableSetterType" : "java.util.Collection<GenericAttachment>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of attachment objects representing options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setGenericAttachments(java.util.Collection)} or {@link #withGenericAttachments(java.util.Collection)} if you want to override the existing values.</p>\n@param genericAttachments An array of attachment objects representing options.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<GenericAttachment>",
@@ -3988,6 +4092,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4006,6 +4111,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Content type of the response.</p>\n@param contentType Content type of the response.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4049,6 +4155,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -4085,6 +4192,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -4103,6 +4211,7 @@
                 "variableSetterType" : "GenericAttachment"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "GenericAttachment",
@@ -4142,6 +4251,7 @@
             "variableSetterType" : "java.util.Collection<GenericAttachment>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of attachment objects representing options.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setGenericAttachments(java.util.Collection)} or {@link #withGenericAttachments(java.util.Collection)} if you want to override the existing values.</p>\n@param genericAttachments An array of attachment objects representing options.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<GenericAttachment>",
@@ -4185,6 +4295,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4203,6 +4314,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Version of response card format.</p>\n@param version Version of response card format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",

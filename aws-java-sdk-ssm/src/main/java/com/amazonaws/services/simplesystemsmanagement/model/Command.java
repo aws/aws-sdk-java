@@ -35,7 +35,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String commandId;
     /**
      * <p>
-     * The name of the SSM document requested for execution.
+     * The name of the document requested for execution.
      * </p>
      */
     private String documentName;
@@ -54,7 +54,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date expiresAfter;
     /**
      * <p>
-     * The parameter values to be inserted in the SSM document when executing the command.
+     * The parameter values to be inserted in the document when executing the command.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
@@ -66,7 +66,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
      * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
      * </p>
      */
@@ -88,10 +88,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -175,10 +173,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private String maxConcurrency;
@@ -187,10 +183,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private String maxErrors;
@@ -270,11 +264,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SSM document requested for execution.
+     * The name of the document requested for execution.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document requested for execution.
+     *        The name of the document requested for execution.
      */
 
     public void setDocumentName(String documentName) {
@@ -283,10 +277,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SSM document requested for execution.
+     * The name of the document requested for execution.
      * </p>
      * 
-     * @return The name of the SSM document requested for execution.
+     * @return The name of the document requested for execution.
      */
 
     public String getDocumentName() {
@@ -295,11 +289,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SSM document requested for execution.
+     * The name of the document requested for execution.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document requested for execution.
+     *        The name of the document requested for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,10 +390,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the SSM document when executing the command.
+     * The parameter values to be inserted in the document when executing the command.
      * </p>
      * 
-     * @return The parameter values to be inserted in the SSM document when executing the command.
+     * @return The parameter values to be inserted in the document when executing the command.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -408,11 +402,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the SSM document when executing the command.
+     * The parameter values to be inserted in the document when executing the command.
      * </p>
      * 
      * @param parameters
-     *        The parameter values to be inserted in the SSM document when executing the command.
+     *        The parameter values to be inserted in the document when executing the command.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -421,11 +415,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameter values to be inserted in the SSM document when executing the command.
+     * The parameter values to be inserted in the document when executing the command.
      * </p>
      * 
      * @param parameters
-     *        The parameter values to be inserted in the SSM document when executing the command.
+     *        The parameter values to be inserted in the document when executing the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,11 +524,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
      * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
-     * @return An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * @return An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      *         combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
      *         IDs in the call.
      */
@@ -548,12 +542,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
      * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
      *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
      *        call.
      */
@@ -569,7 +563,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
      * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
      * </p>
      * <p>
@@ -579,7 +573,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
      *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
      *        call.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -597,12 +591,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that
+     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
      * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination
+     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
      *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
      *        call.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -731,10 +725,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -796,9 +788,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
      *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -864,10 +855,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -928,9 +917,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *         <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      *         about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *         Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -996,10 +984,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -1061,9 +1047,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
      *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1269,20 +1254,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1294,19 +1275,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *         a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50.
      *         For more information about how to use <code>MaxConcurrency</code>, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public String getMaxConcurrency() {
@@ -1318,20 +1295,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1345,20 +1318,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -1370,19 +1339,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *         is 50. For more information about how to use <code>MaxErrors</code>, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public String getMaxErrors() {
@@ -1394,20 +1359,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

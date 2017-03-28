@@ -609,6 +609,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -627,6 +628,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param connectorId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -669,6 +671,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -687,6 +690,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -729,6 +733,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -747,6 +752,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorStatus*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -789,6 +795,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -825,6 +832,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -843,6 +851,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorCapability*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -882,6 +891,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCapabilityList(java.util.Collection)} or {@link #withCapabilityList(java.util.Collection)} if you want to override the existing values.</p>\n@param capabilityList \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorCapability*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -924,6 +934,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -942,6 +953,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -984,6 +996,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1002,6 +1015,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerType \n@return Returns a reference to this object so that method calls can be chained together.\n@see VmManagerType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1044,6 +1058,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1062,6 +1077,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1104,6 +1120,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1122,6 +1139,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param ipAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1164,6 +1182,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1182,6 +1201,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param macAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1224,6 +1244,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1242,6 +1263,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param associatedOn \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -1286,6 +1308,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1304,6 +1327,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param associatedOn \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -1347,6 +1371,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1383,6 +1408,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -1401,6 +1427,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorCapability*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -1440,6 +1467,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCapabilityList(java.util.Collection)} or {@link #withCapabilityList(java.util.Collection)} if you want to override the existing values.</p>\n@param capabilityList \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorCapability*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -1483,6 +1511,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1501,6 +1530,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param connectorId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1544,6 +1574,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1562,6 +1593,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param ipAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1605,6 +1637,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1623,6 +1656,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param macAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1666,6 +1700,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1684,6 +1719,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectorStatus*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1727,6 +1763,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1745,6 +1782,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1788,6 +1826,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1806,6 +1845,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1849,6 +1889,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1867,6 +1908,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1910,6 +1952,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1928,6 +1971,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerType \n@return Returns a reference to this object so that method calls can be chained together.\n@see VmManagerType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2097,6 +2141,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2115,6 +2160,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2157,6 +2203,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2175,6 +2222,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param seedReplicationTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -2217,6 +2265,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2235,6 +2284,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -2277,6 +2327,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2295,6 +2346,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2337,6 +2389,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2355,6 +2408,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2397,6 +2451,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2415,6 +2470,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2459,6 +2515,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2477,6 +2534,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2520,6 +2578,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2538,6 +2597,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -2581,6 +2641,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2599,6 +2660,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2642,6 +2704,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2660,6 +2723,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2703,6 +2767,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2721,6 +2786,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param seedReplicationTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -2764,6 +2830,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2782,6 +2849,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2858,6 +2926,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2876,6 +2945,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2920,6 +2990,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2938,6 +3009,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3024,6 +3096,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3042,6 +3115,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3086,6 +3160,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3104,6 +3179,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3302,6 +3378,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3320,6 +3397,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param connectorId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3364,6 +3442,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3382,6 +3461,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param connectorId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3502,6 +3582,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3520,6 +3601,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3562,6 +3644,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3580,6 +3663,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -3624,6 +3708,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3642,6 +3727,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -3685,6 +3771,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3703,6 +3790,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3779,6 +3867,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -3815,6 +3904,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -3833,6 +3923,7 @@
               "variableSetterType" : "Connector"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Connector",
@@ -3872,6 +3963,7 @@
           "variableSetterType" : "java.util.Collection<Connector>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConnectorList(java.util.Collection)} or {@link #withConnectorList(java.util.Collection)} if you want to override the existing values.</p>\n@param connectorList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Connector>",
@@ -3914,6 +4006,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3932,6 +4025,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3976,6 +4070,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -4012,6 +4107,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -4030,6 +4126,7 @@
                 "variableSetterType" : "Connector"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Connector",
@@ -4069,6 +4166,7 @@
             "variableSetterType" : "java.util.Collection<Connector>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConnectorList(java.util.Collection)} or {@link #withConnectorList(java.util.Collection)} if you want to override the existing values.</p>\n@param connectorList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Connector>",
@@ -4112,6 +4210,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4130,6 +4229,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4216,6 +4316,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4234,6 +4335,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4276,6 +4378,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4294,6 +4397,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4336,6 +4440,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4354,6 +4459,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -4398,6 +4504,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4416,6 +4523,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -4459,6 +4567,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4477,6 +4586,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4520,6 +4630,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4538,6 +4649,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4614,6 +4726,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -4650,6 +4763,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -4668,6 +4782,7 @@
               "variableSetterType" : "ReplicationJob"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "ReplicationJob",
@@ -4707,6 +4822,7 @@
           "variableSetterType" : "java.util.Collection<ReplicationJob>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationJobList(java.util.Collection)} or {@link #withReplicationJobList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationJobList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<ReplicationJob>",
@@ -4749,6 +4865,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4767,6 +4884,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4811,6 +4929,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4829,6 +4948,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4872,6 +4992,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -4908,6 +5029,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -4926,6 +5048,7 @@
                 "variableSetterType" : "ReplicationJob"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "ReplicationJob",
@@ -4965,6 +5088,7 @@
             "variableSetterType" : "java.util.Collection<ReplicationJob>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationJobList(java.util.Collection)} or {@link #withReplicationJobList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationJobList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<ReplicationJob>",
@@ -5051,6 +5175,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5069,6 +5194,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5111,6 +5237,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5129,6 +5256,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5171,6 +5299,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5189,6 +5318,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -5233,6 +5363,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5251,6 +5382,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -5294,6 +5426,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5312,6 +5445,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5355,6 +5489,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5373,6 +5508,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5449,6 +5585,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5467,6 +5604,7 @@
           "variableSetterType" : "ReplicationJob"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJob \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ReplicationJob",
@@ -5509,6 +5647,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -5545,6 +5684,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -5563,6 +5703,7 @@
               "variableSetterType" : "ReplicationRun"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "ReplicationRun",
@@ -5602,6 +5743,7 @@
           "variableSetterType" : "java.util.Collection<ReplicationRun>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationRunList(java.util.Collection)} or {@link #withReplicationRunList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationRunList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<ReplicationRun>",
@@ -5644,6 +5786,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5662,6 +5805,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5706,6 +5850,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5724,6 +5869,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5767,6 +5913,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5785,6 +5932,7 @@
             "variableSetterType" : "ReplicationJob"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJob \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ReplicationJob",
@@ -5828,6 +5976,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -5864,6 +6013,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -5882,6 +6032,7 @@
                 "variableSetterType" : "ReplicationRun"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "ReplicationRun",
@@ -5921,6 +6072,7 @@
             "variableSetterType" : "java.util.Collection<ReplicationRun>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationRunList(java.util.Collection)} or {@link #withReplicationRunList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationRunList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<ReplicationRun>",
@@ -6007,6 +6159,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6025,6 +6178,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6067,6 +6221,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6085,6 +6240,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -6129,6 +6285,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6147,6 +6304,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -6190,6 +6348,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6208,6 +6367,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6284,6 +6444,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6302,6 +6463,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lastModifiedOn \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -6344,6 +6506,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6362,6 +6525,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverCatalogStatus \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerCatalogStatus*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6404,6 +6568,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -6440,6 +6605,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -6458,6 +6624,7 @@
               "variableSetterType" : "Server"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Server",
@@ -6497,6 +6664,7 @@
           "variableSetterType" : "java.util.Collection<Server>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServerList(java.util.Collection)} or {@link #withServerList(java.util.Collection)} if you want to override the existing values.</p>\n@param serverList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Server>",
@@ -6539,6 +6707,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6557,6 +6726,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6601,6 +6771,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6619,6 +6790,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lastModifiedOn \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -6662,6 +6834,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6680,6 +6853,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6723,6 +6897,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6741,6 +6916,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverCatalogStatus \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerCatalogStatus*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6784,6 +6960,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -6820,6 +6997,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -6838,6 +7016,7 @@
                 "variableSetterType" : "Server"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Server",
@@ -6877,6 +7056,7 @@
             "variableSetterType" : "java.util.Collection<Server>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServerList(java.util.Collection)} or {@link #withServerList(java.util.Collection)} if you want to override the existing values.</p>\n@param serverList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Server>",
@@ -7247,6 +7427,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7265,6 +7446,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7307,6 +7489,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7325,6 +7508,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7367,6 +7551,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7385,6 +7570,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7427,6 +7613,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7445,6 +7632,7 @@
           "variableSetterType" : "VmServer"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmServer \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "VmServer",
@@ -7487,6 +7675,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7505,6 +7694,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param seedReplicationTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -7547,6 +7737,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7565,6 +7756,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -7607,6 +7799,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7625,6 +7818,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextReplicationRunStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -7667,6 +7861,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7685,6 +7880,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7727,6 +7923,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7745,6 +7942,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7787,6 +7985,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7805,6 +8004,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param latestAmiId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7847,6 +8047,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7865,6 +8066,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationJobState*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7907,6 +8109,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7925,6 +8128,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param statusMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7967,6 +8171,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7985,6 +8190,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8027,6 +8233,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -8063,6 +8270,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -8081,6 +8289,7 @@
               "variableSetterType" : "ReplicationRun"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "ReplicationRun",
@@ -8120,6 +8329,7 @@
           "variableSetterType" : "java.util.Collection<ReplicationRun>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationRunList(java.util.Collection)} or {@link #withReplicationRunList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationRunList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<ReplicationRun>",
@@ -8164,6 +8374,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8182,6 +8393,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8225,6 +8437,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8243,6 +8456,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -8286,6 +8500,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8304,6 +8519,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param latestAmiId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8347,6 +8563,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8365,6 +8582,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8408,6 +8626,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8426,6 +8645,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextReplicationRunStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -8469,6 +8689,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8487,6 +8708,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8530,6 +8752,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -8566,6 +8789,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -8584,6 +8808,7 @@
                 "variableSetterType" : "ReplicationRun"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "ReplicationRun",
@@ -8623,6 +8848,7 @@
             "variableSetterType" : "java.util.Collection<ReplicationRun>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReplicationRunList(java.util.Collection)} or {@link #withReplicationRunList(java.util.Collection)} if you want to override the existing values.</p>\n@param replicationRunList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<ReplicationRun>",
@@ -8666,6 +8892,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8684,6 +8911,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8727,6 +8955,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8745,6 +8974,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param seedReplicationTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -8788,6 +9018,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8806,6 +9037,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8849,6 +9081,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8867,6 +9100,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8910,6 +9144,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8928,6 +9163,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationJobState*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8971,6 +9207,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8989,6 +9226,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param statusMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9032,6 +9270,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9050,6 +9289,7 @@
             "variableSetterType" : "VmServer"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmServer \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "VmServer",
@@ -9249,6 +9489,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9267,6 +9508,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationRunId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9309,6 +9551,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9327,6 +9570,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationRunState*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9369,6 +9613,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9387,6 +9632,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationRunType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9429,6 +9675,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9447,6 +9694,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param statusMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9489,6 +9737,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9507,6 +9756,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param amiId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9549,6 +9799,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9567,6 +9818,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param scheduledStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -9609,6 +9861,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9627,6 +9880,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param completedTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -9669,6 +9923,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9687,6 +9942,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9731,6 +9987,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9749,6 +10006,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param amiId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9792,6 +10050,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9810,6 +10069,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param completedTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -9853,6 +10113,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9871,6 +10132,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9914,6 +10176,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9932,6 +10195,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationRunId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9975,6 +10239,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9993,6 +10258,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param scheduledStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -10036,6 +10302,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10054,6 +10321,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationRunState*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10097,6 +10365,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10115,6 +10384,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param statusMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10158,6 +10428,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10176,6 +10447,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReplicationRunType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10390,6 +10662,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10408,6 +10681,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10450,6 +10724,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10468,6 +10743,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param serverType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10510,6 +10786,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10528,6 +10805,7 @@
           "variableSetterType" : "VmServer"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmServer \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "VmServer",
@@ -10570,6 +10848,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10588,6 +10867,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10630,6 +10910,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10648,6 +10929,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobTerminated \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -10692,6 +10974,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10710,6 +10993,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10753,6 +11037,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10771,6 +11056,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobTerminated \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -10814,6 +11100,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10832,6 +11119,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10875,6 +11163,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10893,6 +11182,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param serverType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ServerType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10936,6 +11226,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10954,6 +11245,7 @@
             "variableSetterType" : "VmServer"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmServer \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "VmServer",
@@ -11166,6 +11458,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11184,6 +11477,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11226,6 +11520,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11244,6 +11539,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11288,6 +11584,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11306,6 +11603,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11349,6 +11647,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11367,6 +11666,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11443,6 +11743,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11461,6 +11762,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationRunId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11505,6 +11807,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11523,6 +11826,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationRunId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11643,6 +11947,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11661,6 +11966,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11703,6 +12009,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11721,6 +12028,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -11763,6 +12071,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11781,6 +12090,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextReplicationRunStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -11823,6 +12133,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11841,6 +12152,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11883,6 +12195,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11901,6 +12214,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11943,6 +12257,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11961,6 +12276,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12005,6 +12321,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12023,6 +12340,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12066,6 +12384,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12084,6 +12403,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param frequency \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -12127,6 +12447,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12145,6 +12466,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param licenseType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LicenseType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12188,6 +12510,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12206,6 +12529,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextReplicationRunStartTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -12249,6 +12573,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12267,6 +12592,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param replicationJobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12310,6 +12636,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12328,6 +12655,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param roleName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12481,6 +12809,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12499,6 +12828,7 @@
           "variableSetterType" : "VmServerAddress"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmServerAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "VmServerAddress",
@@ -12541,6 +12871,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12559,6 +12890,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12601,6 +12933,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12619,6 +12952,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12661,6 +12995,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12679,6 +13014,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerType \n@return Returns a reference to this object so that method calls can be chained together.\n@see VmManagerType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12721,6 +13057,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12739,6 +13076,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmPath \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12783,6 +13121,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12801,6 +13140,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12844,6 +13184,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12862,6 +13203,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerType \n@return Returns a reference to this object so that method calls can be chained together.\n@see VmManagerType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12905,6 +13247,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12923,6 +13266,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12966,6 +13310,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12984,6 +13329,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmPath \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13027,6 +13373,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13045,6 +13392,7 @@
             "variableSetterType" : "VmServerAddress"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmServerAddress \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "VmServerAddress",
@@ -13124,6 +13472,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -13142,6 +13491,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmManagerId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13184,6 +13534,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -13202,6 +13553,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param vmId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13246,6 +13598,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13264,6 +13617,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13307,6 +13661,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13325,6 +13680,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param vmManagerId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",

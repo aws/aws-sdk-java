@@ -21,6 +21,7 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContext.UnmarshallerType;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
@@ -59,18 +60,20 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private final boolean isPayloadJson;
 
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
+    private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers;
 
     /**
      * Constructs a new response handler that will use the specified JSON unmarshaller to unmarshall
      * the service response and uses the specified response element path to find the root of the
      * business data in the service's response.
-     *
      * @param responseUnmarshaller    The JSON unmarshaller to use on the response.
      * @param simpleTypeUnmarshallers List of unmarshallers to be used for scalar types.
+     * @param customTypeMarshallers   List of custom unmarshallers to be used for special types.
      * @param jsonFactory             the json factory to be used for parsing the response.
      */
     public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller,
                                Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
+                               Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeMarshallers,
                                JsonFactory jsonFactory, boolean needsConnectionLeftOpen,
                                boolean isPayloadJson) {
         /*
@@ -86,8 +89,8 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         this.needsConnectionLeftOpen = needsConnectionLeftOpen;
         this.isPayloadJson = isPayloadJson;
 
-        this.simpleTypeUnmarshallers = ValidationUtils
-                .assertNotNull(simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.simpleTypeUnmarshallers = ValidationUtils.assertNotNull(simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.customTypeMarshallers = ValidationUtils.assertNotNull(customTypeMarshallers, "custom type marshallers");
         this.jsonFactory = ValidationUtils.assertNotNull(jsonFactory, "JSONFactory");
     }
 
@@ -109,7 +112,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContextImpl(
-                    jsonParser, simpleTypeUnmarshallers, response);
+                    jsonParser, simpleTypeUnmarshallers, customTypeMarshallers, response);
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);

@@ -31,6 +31,13 @@ import com.fasterxml.jackson.core.JsonToken;
  */
 public abstract class JsonUnmarshallerContext {
 
+    public enum UnmarshallerType {
+        /**
+         * @see SimpleTypeJsonUnmarshallers.JsonValueStringUnmarshaller
+         */
+        JSON_VALUE
+    }
+
     /**
      * Returns the value of the header with the specified name from the
      * response, or null if not present.
@@ -209,11 +216,16 @@ public abstract class JsonUnmarshallerContext {
     }
 
     /**
-     * Returns the JsonUnmarsheller for the specified scalar type. Returns null
-     * by default.
+     * Returns the JsonUnmarshaller for the specified scalar type. Returns null by default.
      */
     public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type) {
         return null;
     }
 
+    /**
+     * Returns the JsonUnmarshaller for requested custom unmarshaller type. Returns null by default.
+     */
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type, UnmarshallerType unmarshallerType) {
+        return null;
+    }
 }

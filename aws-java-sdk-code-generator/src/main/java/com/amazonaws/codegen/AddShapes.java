@@ -90,14 +90,14 @@ abstract class AddShapes {
         shapeModel.setDeprecated(shape.isDeprecated());
         shapeModel.setWrapper(shape.isWrapper());
 
-        boolean hasHeaderMember = false;
-        boolean hasStatusCodeMember = false;
-        boolean hasPayloadMember = false;
-        boolean hasStreamingMember = false;
-
         final Map<String, Member> members = shape.getMembers();
 
         if (members != null) {
+            boolean hasHeaderMember = false;
+            boolean hasStatusCodeMember = false;
+            boolean hasPayloadMember = false;
+            boolean hasStreamingMember = false;
+
             for (Map.Entry<String, Member> memberEntry : members.entrySet()) {
 
                 String c2jMemberName = memberEntry.getKey();
@@ -164,19 +164,20 @@ abstract class AddShapes {
 
         final MemberModel memberModel = new MemberModel();
 
-        memberModel.withC2jName(c2jMemberName).withC2jShape(c2jShapeName)
-                .withName(capitialize(c2jMemberName)).withVariable(
-                new VariableModel(variableName, variableType, variableDeclarationType)
-                        .withDocumentation(c2jMemberDefinition.getDocumentation())).withSetterModel(
-                new VariableModel(variableName, variableType, variableDeclarationType)
-                        .withDocumentation(generateSetterDocumentation())).withGetterModel(
-                new ReturnTypeModel(variableType).withDocumentation(generateGetterDocumentation()));
+        memberModel.withC2jName(c2jMemberName)
+                   .withC2jShape(c2jShapeName)
+                   .withName(capitialize(c2jMemberName))
+                   .withVariable(new VariableModel(variableName, variableType, variableDeclarationType)
+                                         .withDocumentation(c2jMemberDefinition.getDocumentation()))
+                   .withSetterModel(new VariableModel(variableName, variableType, variableDeclarationType)
+                                            .withDocumentation(generateSetterDocumentation()))
+                   .withGetterModel(new ReturnTypeModel(variableType).withDocumentation(generateGetterDocumentation()));
+
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
         memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
-        memberModel
-                .withGetterMethodName(namingStrategy.getGetterMethodName(c2jMemberName))
-                .withSetterMethodName(namingStrategy.getSetterMethodName(c2jMemberName))
-                .withFluentSetterMethodName(namingStrategy.getFluentSetterMethodName(c2jMemberName));
+        memberModel.withGetterMethodName(namingStrategy.getGetterMethodName(c2jMemberName))
+                   .withSetterMethodName(namingStrategy.getSetterMethodName(c2jMemberName))
+                   .withFluentSetterMethodName(namingStrategy.getFluentSetterMethodName(c2jMemberName));
 
         memberModel.setIdempotencyToken(c2jMemberDefinition.isIdempotencyToken());
 
@@ -197,9 +198,10 @@ abstract class AddShapes {
 
         final String payload = parentShape.getPayload();
         httpMapping.withPayload(payload != null && payload.equals(c2jMemberName))
-                .withStreaming(allC2jShapes.get(c2jMemberDefinition.getShape()).isStreaming());
+                   .withStreaming(allC2jShapes.get(c2jMemberDefinition.getShape()).isStreaming());
 
         memberModel.setHttp(httpMapping);
+        memberModel.setJsonValue(c2jMemberDefinition.isJsonvalue());
 
         return memberModel;
     }
@@ -215,12 +217,12 @@ abstract class AddShapes {
         Shape memberShape = allC2jShapes.get(member.getShape());
 
         mapping.withLocation(Location.forValue(member.getLocation()))
-                .withPayload(member.isPayload()).withStreaming(member.isStreaming())
-                .withFlattened(member.isFlattened() || memberShape.isFlattened())
-                .withUnmarshallLocationName(deriveUnmarshallerLocationName(memberName, member))
-                .withMarshallLocationName(
-                        deriveMarshallerLocationName(memberName, member, protocol))
-                .withIsGreedy(isGreedy(parentShape, allC2jShapes, mapping));
+               .withPayload(member.isPayload())
+               .withStreaming(member.isStreaming())
+               .withFlattened(member.isFlattened() || memberShape.isFlattened())
+               .withUnmarshallLocationName(deriveUnmarshallerLocationName(memberName, member))
+               .withMarshallLocationName(deriveMarshallerLocationName(memberName, member, protocol))
+               .withIsGreedy(isGreedy(parentShape, allC2jShapes, mapping));
 
         return mapping;
     }

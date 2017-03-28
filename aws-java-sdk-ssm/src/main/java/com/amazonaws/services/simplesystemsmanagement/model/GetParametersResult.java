@@ -25,7 +25,7 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of parameters used by the AWS account.
+     * A list of details for a parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -38,10 +38,10 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of parameters used by the AWS account.
+     * A list of details for a parameter.
      * </p>
      * 
-     * @return A list of parameters used by the AWS account.
+     * @return A list of details for a parameter.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -53,11 +53,11 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of parameters used by the AWS account.
+     * A list of details for a parameter.
      * </p>
      * 
      * @param parameters
-     *        A list of parameters used by the AWS account.
+     *        A list of details for a parameter.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -71,7 +71,7 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of parameters used by the AWS account.
+     * A list of details for a parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param parameters
-     *        A list of parameters used by the AWS account.
+     *        A list of details for a parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of parameters used by the AWS account.
+     * A list of details for a parameter.
      * </p>
      * 
      * @param parameters
-     *        A list of parameters used by the AWS account.
+     *        A list of details for a parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

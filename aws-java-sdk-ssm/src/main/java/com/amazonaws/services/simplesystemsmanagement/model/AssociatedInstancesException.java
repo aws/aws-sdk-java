@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You must disassociate an SSM document from all instances before you can delete it.
+ * You must disassociate a document from all instances before you can delete it.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

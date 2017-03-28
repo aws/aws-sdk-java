@@ -1326,6 +1326,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -1362,6 +1363,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -1380,6 +1382,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -1419,6 +1422,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -1463,6 +1467,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1499,6 +1504,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -1517,6 +1523,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -1556,6 +1563,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The names of the repositories to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoryNames The names of the repositories to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -1632,6 +1640,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -1668,6 +1677,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -1686,6 +1696,7 @@
               "variableSetterType" : "RepositoryMetadata"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryMetadata",
@@ -1725,6 +1736,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryMetadata>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryMetadata>",
@@ -1767,6 +1779,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -1803,6 +1816,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -1821,6 +1835,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -1860,6 +1875,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -1904,6 +1920,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1940,6 +1957,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -1958,6 +1976,7 @@
                 "variableSetterType" : "RepositoryMetadata"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryMetadata",
@@ -1997,6 +2016,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryMetadata>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of repositories returned by the batch get repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories A list of repositories returned by the batch get repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryMetadata>",
@@ -2040,6 +2060,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -2076,6 +2097,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -2094,6 +2116,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -2133,6 +2156,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns a list of repository names for which information could not be found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositoriesNotFound(java.util.Collection)} or {@link #withRepositoriesNotFound(java.util.Collection)} if you want to override the existing values.</p>\n@param repositoriesNotFound Returns a list of repository names for which information could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -2280,6 +2304,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2298,6 +2323,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The full ID of the blob.</p>\n@param blobId The full ID of the blob.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2340,6 +2366,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2358,6 +2385,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path to the blob and any associated file name, if any.</p>\n@param path The path to the blob and any associated file name, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2400,6 +2428,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2418,6 +2447,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The file mode permissions of the blob. File mode permission codes include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li> <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p> <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code> indicates a symlink</p> </li> </ul>\n@param mode The file mode permissions of the blob. File mode permission codes include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li> <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p> <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code> indicates a symlink</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2462,6 +2492,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2480,6 +2511,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The full ID of the blob.</p>\n@param blobId The full ID of the blob.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2523,6 +2555,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2541,6 +2574,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The file mode permissions of the blob. File mode permission codes include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li> <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p> <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code> indicates a symlink</p> </li> </ul>\n@param mode The file mode permissions of the blob. File mode permission codes include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li> <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p> <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code> indicates a symlink</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2584,6 +2618,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2602,6 +2637,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path to the blob and any associated file name, if any.</p>\n@param path The path to the blob and any associated file name, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2715,6 +2751,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2733,6 +2770,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2775,6 +2813,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2793,6 +2832,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2837,6 +2877,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2855,6 +2896,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branchName The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2898,6 +2940,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2916,6 +2959,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the last commit made to the branch.</p>\n@param commitId The ID of the last commit made to the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3109,6 +3153,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3127,6 +3172,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Tree information for the specified commit.</p>\n@param treeId Tree information for the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3169,6 +3215,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -3205,6 +3252,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -3223,6 +3271,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -3262,6 +3311,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parent list for the specified commit.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParents(java.util.Collection)} or {@link #withParents(java.util.Collection)} if you want to override the existing values.</p>\n@param parents The parent list for the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -3304,6 +3354,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3322,6 +3373,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The commit message associated with the specified commit.</p>\n@param message The commit message associated with the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3364,6 +3416,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3382,6 +3435,7 @@
           "variableSetterType" : "UserInfo"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>\n@param author Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "UserInfo",
@@ -3424,6 +3478,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3442,6 +3497,7 @@
           "variableSetterType" : "UserInfo"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> <p>For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>\n@param committer Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> <p>For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "UserInfo",
@@ -3484,6 +3540,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -3502,6 +3559,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any additional data associated with the specified commit.</p>\n@param additionalData Any additional data associated with the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3546,6 +3604,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3564,6 +3623,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any additional data associated with the specified commit.</p>\n@param additionalData Any additional data associated with the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3607,6 +3667,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3625,6 +3686,7 @@
             "variableSetterType" : "UserInfo"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>\n@param author Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "UserInfo",
@@ -3668,6 +3730,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3686,6 +3749,7 @@
             "variableSetterType" : "UserInfo"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> <p>For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>\n@param committer Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p> <p>For more information about the difference between an author and a committer in Git, see <a href=\"http://git-scm.com/book/ch2-3.html\">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "UserInfo",
@@ -3729,6 +3793,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3747,6 +3812,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The commit message associated with the specified commit.</p>\n@param message The commit message associated with the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3790,6 +3856,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -3826,6 +3893,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -3844,6 +3912,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -3883,6 +3952,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parent list for the specified commit.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParents(java.util.Collection)} or {@link #withParents(java.util.Collection)} if you want to override the existing values.</p>\n@param parents The parent list for the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -3926,6 +3996,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -3944,6 +4015,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Tree information for the specified commit.</p>\n@param treeId Tree information for the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4166,6 +4238,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4184,6 +4257,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4226,6 +4300,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4244,6 +4319,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4286,6 +4362,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4304,6 +4381,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p>\n@param commitId The ID of the commit to point the new branch to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4348,6 +4426,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4366,6 +4445,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the new branch to create.</p>\n@param branchName The name of the new branch to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4409,6 +4489,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4427,6 +4508,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the commit to point the new branch to.</p>\n@param commitId The ID of the commit to point the new branch to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4470,6 +4552,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4488,6 +4571,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository in which you want to create the new branch.</p>\n@param repositoryName The name of the repository in which you want to create the new branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4608,6 +4692,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4626,6 +4711,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note> <p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p> </note>\n@param repositoryName The name of the new repository to be created.</p> <note> <p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4668,6 +4754,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4686,6 +4773,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>\n@param repositoryDescription A comment or description about the new repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4730,6 +4818,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4748,6 +4837,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A comment or description about the new repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>\n@param repositoryDescription A comment or description about the new repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4791,6 +4881,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4809,6 +4900,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the new repository to be created.</p> <note> <p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p> </note>\n@param repositoryName The name of the new repository to be created.</p> <note> <p>The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide. The suffix \".git\" is prohibited.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4885,6 +4977,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -4903,6 +4996,7 @@
           "variableSetterType" : "RepositoryMetadata"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "RepositoryMetadata",
@@ -4947,6 +5041,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -4965,6 +5060,7 @@
             "variableSetterType" : "RepositoryMetadata"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the newly created repository.</p>\n@param repositoryMetadata Information about the newly created repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "RepositoryMetadata",
@@ -5051,6 +5147,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5069,6 +5166,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5113,6 +5211,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5131,6 +5230,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository to delete.</p>\n@param repositoryName The name of the repository to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5207,6 +5307,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5225,6 +5326,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5269,6 +5371,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5287,6 +5390,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the repository that was deleted.</p>\n@param repositoryId The ID of the repository that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5366,6 +5470,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5384,6 +5489,7 @@
           "variableSetterType" : "BlobMetadata"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>\n@param beforeBlob Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BlobMetadata",
@@ -5426,6 +5532,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5444,6 +5551,7 @@
           "variableSetterType" : "BlobMetadata"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>\n@param afterBlob Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BlobMetadata",
@@ -5486,6 +5594,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5504,6 +5613,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>\n@param changeType Whether the change type of the difference is an addition (A), deletion (D), or modification (M).\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeTypeEnum*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5548,6 +5658,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5566,6 +5677,7 @@
             "variableSetterType" : "BlobMetadata"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>\n@param afterBlob Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BlobMetadata",
@@ -5609,6 +5721,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5627,6 +5740,7 @@
             "variableSetterType" : "BlobMetadata"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>\n@param beforeBlob Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BlobMetadata",
@@ -5670,6 +5784,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -5688,6 +5803,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>\n@param changeType Whether the change type of the difference is an addition (A), deletion (D), or modification (M).\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeTypeEnum*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5978,6 +6094,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -5996,6 +6113,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository that contains the blob.</p>\n@param repositoryName The name of the repository that contains the blob.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6038,6 +6156,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6056,6 +6175,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the blob, which is its SHA-1 pointer.</p>\n@param blobId The ID of the blob, which is its SHA-1 pointer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6100,6 +6220,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6118,6 +6239,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the blob, which is its SHA-1 pointer.</p>\n@param blobId The ID of the blob, which is its SHA-1 pointer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6161,6 +6283,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6179,6 +6302,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository that contains the blob.</p>\n@param repositoryName The name of the repository that contains the blob.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6255,6 +6379,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6273,6 +6398,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the blob, usually a file.</p>\n@param content The content of the blob, usually a file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -6317,6 +6443,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6335,6 +6462,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the blob, usually a file.</p>\n@param content The content of the blob, usually a file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -6421,6 +6549,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6439,6 +6568,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branch for which you want to retrieve information.</p>\n@param repositoryName The name of the repository that contains the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6481,6 +6611,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6499,6 +6630,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6543,6 +6675,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6561,6 +6694,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the branch for which you want to retrieve information.</p>\n@param branchName The name of the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6604,6 +6738,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6622,6 +6757,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branch for which you want to retrieve information.</p>\n@param repositoryName The name of the repository that contains the branch for which you want to retrieve information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6698,6 +6834,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6716,6 +6853,7 @@
           "variableSetterType" : "BranchInfo"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BranchInfo",
@@ -6760,6 +6898,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -6778,6 +6917,7 @@
             "variableSetterType" : "BranchInfo"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the branch.</p>\n@param branch The name of the branch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BranchInfo",
@@ -6864,6 +7004,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6882,6 +7023,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository to which the commit was made.</p>\n@param repositoryName The name of the repository to which the commit was made.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6924,6 +7066,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -6942,6 +7085,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The commit ID.</p>\n@param commitId The commit ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -6986,6 +7130,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7004,6 +7149,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The commit ID.</p>\n@param commitId The commit ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7047,6 +7193,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7065,6 +7212,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository to which the commit was made.</p>\n@param repositoryName The name of the repository to which the commit was made.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7141,6 +7289,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7159,6 +7308,7 @@
           "variableSetterType" : "Commit"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A commit data type object that contains information about the specified commit.</p>\n@param commit A commit data type object that contains information about the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Commit",
@@ -7203,6 +7353,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7221,6 +7372,7 @@
             "variableSetterType" : "Commit"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A commit data type object that contains information about the specified commit.</p>\n@param commit A commit data type object that contains information about the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Commit",
@@ -7307,6 +7459,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7325,6 +7478,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository where you want to get differences.</p>\n@param repositoryName The name of the repository where you want to get differences.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7367,6 +7521,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7385,6 +7540,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>\n@param beforeCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7427,6 +7583,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7445,6 +7602,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>\n@param afterCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to identify a commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7487,6 +7645,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7505,6 +7664,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences will be shown for all paths.</p>\n@param beforePath The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences will be shown for all paths.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7547,6 +7707,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7565,6 +7726,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all paths.</p>\n@param afterPath The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all paths.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7607,6 +7769,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7625,6 +7788,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results.</p>\n@param maxResults A non-negative integer used to limit the number of returned results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -7667,6 +7831,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -7685,6 +7850,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7729,6 +7895,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7747,6 +7914,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>\n@param afterCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to identify a commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7790,6 +7958,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7808,6 +7977,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all paths.</p>\n@param afterPath The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all paths.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7851,6 +8021,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7869,6 +8040,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>\n@param beforeCommitSpecifier The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7912,6 +8084,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7930,6 +8103,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences will be shown for all paths.</p>\n@param beforePath The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences will be shown for all paths.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7973,6 +8147,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -7991,6 +8166,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results.</p>\n@param maxResults A non-negative integer used to limit the number of returned results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -8034,6 +8210,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8052,6 +8229,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8095,6 +8273,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8113,6 +8292,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository where you want to get differences.</p>\n@param repositoryName The name of the repository where you want to get differences.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8189,6 +8369,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -8225,6 +8406,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -8243,6 +8425,7 @@
               "variableSetterType" : "Difference"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Difference",
@@ -8282,6 +8465,7 @@
           "variableSetterType" : "java.util.Collection<Difference>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A differences data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDifferences(java.util.Collection)} or {@link #withDifferences(java.util.Collection)} if you want to override the existing values.</p>\n@param differences A differences data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Difference>",
@@ -8324,6 +8508,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -8342,6 +8527,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8386,6 +8572,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -8422,6 +8609,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -8440,6 +8628,7 @@
                 "variableSetterType" : "Difference"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Difference",
@@ -8479,6 +8668,7 @@
             "variableSetterType" : "java.util.Collection<Difference>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A differences data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDifferences(java.util.Collection)} or {@link #withDifferences(java.util.Collection)} if you want to override the existing values.</p>\n@param differences A differences data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Difference>",
@@ -8522,6 +8712,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8540,6 +8731,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8626,6 +8818,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -8644,6 +8837,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8688,6 +8882,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8706,6 +8901,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository to get information about.</p>\n@param repositoryName The name of the repository to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -8782,6 +8978,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -8800,6 +8997,7 @@
           "variableSetterType" : "RepositoryMetadata"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "RepositoryMetadata",
@@ -8844,6 +9042,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -8862,6 +9061,7 @@
             "variableSetterType" : "RepositoryMetadata"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the repository.</p>\n@param repositoryMetadata Information about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "RepositoryMetadata",
@@ -8948,6 +9148,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -8966,6 +9167,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository for which the trigger is configured.</p>\n@param repositoryName The name of the repository for which the trigger is configured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9010,6 +9212,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9028,6 +9231,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository for which the trigger is configured.</p>\n@param repositoryName The name of the repository for which the trigger is configured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9104,6 +9308,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -9122,6 +9327,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The system-generated unique ID for the trigger.</p>\n@param configurationId The system-generated unique ID for the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9164,6 +9370,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -9200,6 +9407,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -9218,6 +9426,7 @@
               "variableSetterType" : "RepositoryTrigger"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryTrigger",
@@ -9257,6 +9466,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON block of configuration information for each trigger.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The JSON block of configuration information for each trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -9301,6 +9511,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -9319,6 +9530,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The system-generated unique ID for the trigger.</p>\n@param configurationId The system-generated unique ID for the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9362,6 +9574,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -9398,6 +9611,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -9416,6 +9630,7 @@
                 "variableSetterType" : "RepositoryTrigger"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryTrigger",
@@ -9455,6 +9670,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON block of configuration information for each trigger.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The JSON block of configuration information for each trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -10119,6 +10335,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10137,6 +10354,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10179,6 +10397,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10197,6 +10416,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results.</p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10241,6 +10461,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10259,6 +10480,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results.</p>\n@param nextToken An enumeration token that allows the operation to batch the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10302,6 +10524,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10320,6 +10543,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository that contains the branches.</p>\n@param repositoryName The name of the repository that contains the branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10396,6 +10620,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -10432,6 +10657,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -10450,6 +10676,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -10489,6 +10716,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -10531,6 +10759,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10549,6 +10778,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results.</p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10593,6 +10823,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -10629,6 +10860,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -10647,6 +10879,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -10686,6 +10919,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of branch names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The list of branch names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -10729,6 +10963,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -10747,6 +10982,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that returns the batch of the results.</p>\n@param nextToken An enumeration token that returns the batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -10833,6 +11069,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10851,6 +11088,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10893,6 +11131,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10911,6 +11150,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -10953,6 +11193,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -10971,6 +11212,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11015,6 +11257,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11033,6 +11276,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11076,6 +11320,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11094,6 +11339,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The order in which to sort the results of a list repositories operation.</p>\n@param order The order in which to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OrderEnum*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11137,6 +11383,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11155,6 +11402,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The criteria used to sort the results of a list repositories operation.</p>\n@param sortBy The criteria used to sort the results of a list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortByEnum*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11231,6 +11479,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -11267,6 +11516,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -11285,6 +11535,7 @@
               "variableSetterType" : "RepositoryNameIdPair"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryNameIdPair",
@@ -11324,6 +11575,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryNameIdPair>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryNameIdPair>",
@@ -11366,6 +11618,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11384,6 +11637,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11428,6 +11682,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -11446,6 +11701,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>\n@param nextToken An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -11489,6 +11745,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -11525,6 +11782,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -11543,6 +11801,7 @@
                 "variableSetterType" : "RepositoryNameIdPair"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryNameIdPair",
@@ -11582,6 +11841,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryNameIdPair>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lists the repositories called by the list repositories operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRepositories(java.util.Collection)} or {@link #withRepositories(java.util.Collection)} if you want to override the existing values.</p>\n@param repositories Lists the repositories called by the list repositories operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryNameIdPair>",
@@ -11847,6 +12107,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -11865,6 +12126,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository where you want to create or update the trigger.</p>\n@param repositoryName The name of the repository where you want to create or update the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -11907,6 +12169,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -11943,6 +12206,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -11961,6 +12225,7 @@
               "variableSetterType" : "RepositoryTrigger"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryTrigger",
@@ -12000,6 +12265,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON block of configuration information for each trigger.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The JSON block of configuration information for each trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -12044,6 +12310,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12062,6 +12329,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository where you want to create or update the trigger.</p>\n@param repositoryName The name of the repository where you want to create or update the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12105,6 +12373,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -12141,6 +12410,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -12159,6 +12429,7 @@
                 "variableSetterType" : "RepositoryTrigger"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryTrigger",
@@ -12198,6 +12469,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON block of configuration information for each trigger.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The JSON block of configuration information for each trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -12274,6 +12546,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12292,6 +12565,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The system-generated unique ID for the create or update operation.</p>\n@param configurationId The system-generated unique ID for the create or update operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12336,6 +12610,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -12354,6 +12629,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The system-generated unique ID for the create or update operation.</p>\n@param configurationId The system-generated unique ID for the create or update operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -12501,6 +12777,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12519,6 +12796,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12561,6 +12839,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12579,6 +12858,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12621,6 +12901,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12639,6 +12920,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12681,6 +12963,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12699,6 +12982,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12741,6 +13025,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12759,6 +13044,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12801,6 +13087,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12819,6 +13106,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -12861,6 +13149,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12879,6 +13168,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -12921,6 +13211,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12939,6 +13230,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -12981,6 +13273,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -12999,6 +13292,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13041,6 +13335,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -13059,6 +13354,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13103,6 +13399,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13121,6 +13418,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS account associated with the repository.</p>\n@param accountId The ID of the AWS account associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13164,6 +13462,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13182,6 +13481,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the repository.</p>\n@param arn The Amazon Resource Name (ARN) of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13225,6 +13525,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13243,6 +13544,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over HTTPS.</p>\n@param cloneUrlHttp The URL to use for cloning the repository over HTTPS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13286,6 +13588,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13304,6 +13607,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL to use for cloning the repository over SSH.</p>\n@param cloneUrlSsh The URL to use for cloning the repository over SSH.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13347,6 +13651,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13365,6 +13670,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the repository was created, in timestamp format.</p>\n@param creationDate The date and time the repository was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -13408,6 +13714,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13426,6 +13733,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The repository's default branch name.</p>\n@param defaultBranch The repository's default branch name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13469,6 +13777,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13487,6 +13796,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the repository was last modified, in timestamp format.</p>\n@param lastModifiedDate The date and time the repository was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -13530,6 +13840,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13548,6 +13859,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A comment or description about the repository.</p>\n@param repositoryDescription A comment or description about the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13591,6 +13903,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13609,6 +13922,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the repository.</p>\n@param repositoryId The ID of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13652,6 +13966,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13670,6 +13985,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The repository's name.</p>\n@param repositoryName The repository's name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13783,6 +14099,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -13801,6 +14118,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name associated with the repository.</p>\n@param repositoryName The name associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13843,6 +14161,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -13861,6 +14180,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID associated with the repository.</p>\n@param repositoryId The ID associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -13905,6 +14225,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13923,6 +14244,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID associated with the repository.</p>\n@param repositoryId The ID associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -13966,6 +14288,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -13984,6 +14307,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name associated with the repository.</p>\n@param repositoryName The name associated with the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -14131,6 +14455,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -14149,6 +14474,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the trigger.</p>\n@param name The name of the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -14191,6 +14517,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -14209,6 +14536,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).</p>\n@param destinationArn The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -14251,6 +14579,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -14269,6 +14598,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.</p>\n@param customData Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -14311,6 +14641,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -14347,6 +14678,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -14365,6 +14697,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -14404,6 +14737,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -14446,6 +14780,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -14482,6 +14817,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -14500,6 +14836,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see RepositoryTriggerEventEnum*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -14539,6 +14876,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). </p> <note> <p>The valid value \"all\" cannot be used with any other values.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). </p> <note> <p>The valid value \"all\" cannot be used with any other values.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see RepositoryTriggerEventEnum*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -14583,6 +14921,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -14619,6 +14958,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -14637,6 +14977,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -14676,6 +15017,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override the existing values.</p>\n@param branches The branches that will be included in the trigger configuration. If no branches are specified, the trigger will apply to all branches.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -14719,6 +15061,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -14737,6 +15080,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.</p>\n@param customData Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -14780,6 +15124,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -14798,6 +15143,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).</p>\n@param destinationArn The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -14841,6 +15187,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -14877,6 +15224,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -14895,6 +15243,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see RepositoryTriggerEventEnum*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -14934,6 +15283,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). </p> <note> <p>The valid value \"all\" cannot be used with any other values.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). </p> <note> <p>The valid value \"all\" cannot be used with any other values.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see RepositoryTriggerEventEnum*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -14977,6 +15327,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -14995,6 +15346,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the trigger.</p>\n@param name The name of the trigger.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -15225,6 +15577,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -15243,6 +15596,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the trigger that did not run.</p>\n@param trigger The name of the trigger that did not run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -15285,6 +15639,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -15303,6 +15658,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Additional message information about the trigger that did not run.</p>\n@param failureMessage Additional message information about the trigger that did not run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -15347,6 +15703,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -15365,6 +15722,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Additional message information about the trigger that did not run.</p>\n@param failureMessage Additional message information about the trigger that did not run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -15408,6 +15766,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -15426,6 +15785,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the trigger that did not run.</p>\n@param trigger The name of the trigger that did not run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -15623,6 +15983,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -15641,6 +16002,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository in which to test the triggers.</p>\n@param repositoryName The name of the repository in which to test the triggers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -15683,6 +16045,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -15719,6 +16082,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -15737,6 +16101,7 @@
               "variableSetterType" : "RepositoryTrigger"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryTrigger",
@@ -15776,6 +16141,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of triggers to test.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The list of triggers to test.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -15820,6 +16186,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -15838,6 +16205,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository in which to test the triggers.</p>\n@param repositoryName The name of the repository in which to test the triggers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -15881,6 +16249,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -15917,6 +16286,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -15935,6 +16305,7 @@
                 "variableSetterType" : "RepositoryTrigger"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryTrigger",
@@ -15974,6 +16345,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryTrigger>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of triggers to test.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override the existing values.</p>\n@param triggers The list of triggers to test.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryTrigger>",
@@ -16050,6 +16422,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -16086,6 +16459,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -16104,6 +16478,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -16143,6 +16518,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSuccessfulExecutions(java.util.Collection)} or {@link #withSuccessfulExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param successfulExecutions The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -16185,6 +16561,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -16221,6 +16598,7 @@
             },
             "idempotencyToken" : false,
             "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
@@ -16239,6 +16617,7 @@
               "variableSetterType" : "RepositoryTriggerExecutionFailure"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "RepositoryTriggerExecutionFailure",
@@ -16278,6 +16657,7 @@
           "variableSetterType" : "java.util.Collection<RepositoryTriggerExecutionFailure>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedExecutions(java.util.Collection)} or {@link #withFailedExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param failedExecutions The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<RepositoryTriggerExecutionFailure>",
@@ -16322,6 +16702,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -16358,6 +16739,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -16376,6 +16758,7 @@
                 "variableSetterType" : "RepositoryTriggerExecutionFailure"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "RepositoryTriggerExecutionFailure",
@@ -16415,6 +16798,7 @@
             "variableSetterType" : "java.util.Collection<RepositoryTriggerExecutionFailure>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedExecutions(java.util.Collection)} or {@link #withFailedExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param failedExecutions The list of triggers that were not able to be tested. This list provides the names of the triggers that could not be tested, separated by commas.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<RepositoryTriggerExecutionFailure>",
@@ -16458,6 +16842,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -16494,6 +16879,7 @@
               },
               "idempotencyToken" : false,
               "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
@@ -16512,6 +16898,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -16551,6 +16938,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSuccessfulExecutions(java.util.Collection)} or {@link #withSuccessfulExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param successfulExecutions The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -16637,6 +17025,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -16655,6 +17044,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -16697,6 +17087,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -16715,6 +17106,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -16759,6 +17151,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -16777,6 +17170,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the branch to set as the default.</p>\n@param defaultBranchName The name of the branch to set as the default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -16820,6 +17214,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -16838,6 +17233,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the default branch for.</p>\n@param repositoryName The name of the repository to set or change the default branch for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -16958,6 +17354,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -16976,6 +17373,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17018,6 +17416,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17036,6 +17435,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>\n@param repositoryDescription The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17080,6 +17480,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17098,6 +17499,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>\n@param repositoryDescription The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17141,6 +17543,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17159,6 +17562,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the repository to set or change the comment or description for.</p>\n@param repositoryName The name of the repository to set or change the comment or description for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17279,6 +17683,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17297,6 +17702,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The existing name of the repository.</p>\n@param oldName The existing name of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17339,6 +17745,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17357,6 +17764,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new name for the repository.</p>\n@param newName The new name for the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17401,6 +17809,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17419,6 +17828,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new name for the repository.</p>\n@param newName The new name for the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17462,6 +17872,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17480,6 +17891,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The existing name of the repository.</p>\n@param oldName The existing name of the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17593,6 +18005,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17611,6 +18024,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the user who made the specified commit.</p>\n@param name The name of the user who made the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17653,6 +18067,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17671,6 +18086,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address associated with the user who made the commit, if any.</p>\n@param email The email address associated with the user who made the commit, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17713,6 +18129,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -17731,6 +18148,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the specified commit was pushed to the repository.</p>\n@param dateValue The date when the specified commit was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -17775,6 +18193,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17793,6 +18212,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the specified commit was pushed to the repository.</p>\n@param dateValue The date when the specified commit was pushed to the repository.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17836,6 +18256,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17854,6 +18275,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address associated with the user who made the commit, if any.</p>\n@param email The email address associated with the user who made the commit, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -17897,6 +18319,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -17915,6 +18338,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the user who made the specified commit.</p>\n@param name The name of the user who made the specified commit.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",

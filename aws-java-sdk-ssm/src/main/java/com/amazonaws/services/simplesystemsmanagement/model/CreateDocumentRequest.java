@@ -33,7 +33,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String content;
     /**
      * <p>
-     * A name for the SSM document.
+     * A name for the Systems Manager document.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the SSM document.
+     * A name for the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        A name for the SSM document.
+     *        A name for the Systems Manager document.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the SSM document.
+     * A name for the Systems Manager document.
      * </p>
      * 
-     * @return A name for the SSM document.
+     * @return A name for the Systems Manager document.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A name for the SSM document.
+     * A name for the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        A name for the SSM document.
+     *        A name for the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

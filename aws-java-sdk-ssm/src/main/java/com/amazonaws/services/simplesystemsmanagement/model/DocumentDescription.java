@@ -70,7 +70,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private String owner;
     /**
      * <p>
-     * The date when the SSM document was created.
+     * The date when the document was created.
      * </p>
      */
     private java.util.Date createdDate;
@@ -428,11 +428,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the SSM document was created.
+     * The date when the document was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the SSM document was created.
+     *        The date when the document was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -441,10 +441,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the SSM document was created.
+     * The date when the document was created.
      * </p>
      * 
-     * @return The date when the SSM document was created.
+     * @return The date when the document was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -453,11 +453,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the SSM document was created.
+     * The date when the document was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the SSM document was created.
+     *        The date when the document was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

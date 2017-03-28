@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code> combination that you
+ * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that you
  * specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
  * </p>
  * 
@@ -31,13 +31,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
-     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For example,
-     * <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how to send
-     * commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private String key;
@@ -45,12 +42,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of
-     * ServerRole;WebServer. For more information about how to send commands that target instances using
-     * <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * ServerRole,WebServer. For more information about how to send commands that target instances using
+     * <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -58,24 +53,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
-     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For example,
-     * <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how to send
-     * commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param key
      *        User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
-     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For
-     *        example, <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how
-     *        to send commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how
+     *        to send commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setKey(String key) {
@@ -85,23 +74,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
-     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For example,
-     * <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how to send
-     * commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
-     *         can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For
-     *         example, <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about
-     *         how to send commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about
+     *         how to send commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public String getKey() {
@@ -111,24 +94,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
-     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For example,
-     * <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how to send
-     * commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param key
      *        User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
-     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon EC2 instance ID&gt;</code>. For
-     *        example, <code>tag:ServerRole</code> or <code>name:0123456789012345</code>. For more information about how
-     *        to send commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how
+     *        to send commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,22 +118,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of
-     * ServerRole;WebServer. For more information about how to send commands that target instances using
-     * <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * ServerRole,WebServer. For more information about how to send commands that target instances using
+     * <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute a command on
-     *         instances that include Amazon EC2 tags of ServerRole;WebServer. For more information about how to send
-     *         commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
+     *         commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public java.util.List<String> getValues() {
@@ -170,23 +143,19 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of
-     * ServerRole;WebServer. For more information about how to send commands that target instances using
-     * <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * ServerRole,WebServer. For more information about how to send commands that target instances using
+     * <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute a command on
-     *        instances that include Amazon EC2 tags of ServerRole;WebServer. For more information about how to send
-     *        commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
+     *        commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -202,12 +171,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of
-     * ServerRole;WebServer. For more information about how to send commands that target instances using
-     * <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * ServerRole,WebServer. For more information about how to send commands that target instances using
+     * <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,12 +185,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute a command on
-     *        instances that include Amazon EC2 tags of ServerRole;WebServer. For more information about how to send
-     *        commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
+     *        commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,23 +206,19 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of
-     * ServerRole;WebServer. For more information about how to send commands that target instances using
-     * <code>Key</code>;<code>Value</code> parameters, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * ServerRole,WebServer. For more information about how to send commands that target instances using
+     * <code>Key</code>,<code>Value</code> parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute a command on
-     *        instances that include Amazon EC2 tags of ServerRole;WebServer. For more information about how to send
-     *        commands that target instances using <code>Key</code>;<code>Value</code> parameters, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send
+     *        commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

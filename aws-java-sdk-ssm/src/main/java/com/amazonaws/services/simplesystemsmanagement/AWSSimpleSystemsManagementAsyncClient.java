@@ -30,22 +30,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>Amazon EC2 Systems Manager</fullname>
  * <p>
  * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
  * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
- * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
- * configured for Systems Manager.
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
+ * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Systems Manager User Guide (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
+ * This reference is intended to be used with the <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
  * </p>
  * <p>
- * To get started, verify prerequisites and configure managed instances (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
+ * To get started, verify prerequisites and configure managed instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * Prerequisites</a>.
  * </p>
  */
 @ThreadSafe

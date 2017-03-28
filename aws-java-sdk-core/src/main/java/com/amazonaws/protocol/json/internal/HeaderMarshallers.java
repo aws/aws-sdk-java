@@ -15,7 +15,6 @@
 package com.amazonaws.protocol.json.internal;
 
 import com.amazonaws.annotation.SdkInternalApi;
-
 import java.util.Date;
 
 @SdkInternalApi
@@ -23,6 +22,9 @@ public class HeaderMarshallers {
 
     public static final JsonMarshaller<String> STRING = new SimpleHeaderMarshaller<String>(
             ValueToStringConverters.FROM_STRING);
+
+    public static final JsonMarshaller<String> JSON_VALUE = new SimpleHeaderMarshaller<String>(
+            ValueToStringConverters.FROM_JSON_VALUE_HEADER);
 
     public static final JsonMarshaller<Integer> INTEGER = new SimpleHeaderMarshaller<Integer>(
             ValueToStringConverters.FROM_INTEGER);

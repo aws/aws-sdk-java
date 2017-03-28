@@ -115,7 +115,7 @@ public class SimpleTypeIonUnmarshallersTest {
 
     private static JsonUnmarshallerContext context(String ion) throws Exception {
         JsonParser parser = new IonFactory(IonSystemBuilder.standard().build()).createParser(new StringInputStream(ion));
-        JsonUnmarshallerContext context = new JsonUnmarshallerContextImpl(parser, null, null);
+        JsonUnmarshallerContext context = new JsonUnmarshallerContextImpl(parser, null, null, null);
         context.nextToken();
         return context;
     }

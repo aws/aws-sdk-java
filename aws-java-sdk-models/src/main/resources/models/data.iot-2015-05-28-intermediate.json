@@ -393,6 +393,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -411,6 +412,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -455,6 +457,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -473,6 +476,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -549,6 +553,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -567,6 +572,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -611,6 +617,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -629,6 +636,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -715,6 +723,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -733,6 +742,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -777,6 +787,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -795,6 +806,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -871,6 +883,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -889,6 +902,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -933,6 +947,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -951,6 +966,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -1139,6 +1155,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1157,6 +1174,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1199,6 +1217,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1217,6 +1236,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -1259,6 +1279,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1277,6 +1298,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -1321,6 +1343,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1339,6 +1362,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -1382,6 +1406,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1400,6 +1425,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -1443,6 +1469,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1461,6 +1488,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1785,6 +1813,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1803,6 +1832,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1845,6 +1875,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -1863,6 +1894,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -1907,6 +1939,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1925,6 +1958,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -1968,6 +2002,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -1986,6 +2021,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2062,6 +2098,7 @@
         },
         "idempotencyToken" : false,
         "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
@@ -2080,6 +2117,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -2124,6 +2162,7 @@
           },
           "idempotencyToken" : false,
           "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
@@ -2142,6 +2181,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",

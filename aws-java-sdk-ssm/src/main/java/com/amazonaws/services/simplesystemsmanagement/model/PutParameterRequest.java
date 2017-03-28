@@ -57,7 +57,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String keyId;
     /**
      * <p>
-     * Overwrite an existing parameter.
+     * Overwrite an existing parameter. If not specified, will default to "false".
      * </p>
      */
     private Boolean overwrite;
@@ -297,11 +297,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter.
+     * Overwrite an existing parameter. If not specified, will default to "false".
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter.
+     *        Overwrite an existing parameter. If not specified, will default to "false".
      */
 
     public void setOverwrite(Boolean overwrite) {
@@ -310,10 +310,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter.
+     * Overwrite an existing parameter. If not specified, will default to "false".
      * </p>
      * 
-     * @return Overwrite an existing parameter.
+     * @return Overwrite an existing parameter. If not specified, will default to "false".
      */
 
     public Boolean getOverwrite() {
@@ -322,11 +322,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter.
+     * Overwrite an existing parameter. If not specified, will default to "false".
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter.
+     *        Overwrite an existing parameter. If not specified, will default to "false".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,10 +337,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter.
+     * Overwrite an existing parameter. If not specified, will default to "false".
      * </p>
      * 
-     * @return Overwrite an existing parameter.
+     * @return Overwrite an existing parameter. If not specified, will default to "false".
      */
 
     public Boolean isOverwrite() {
