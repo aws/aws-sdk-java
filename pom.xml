@@ -224,7 +224,7 @@
             <minmemory>128m</minmemory>
             <maxmemory>1024m</maxmemory>
             <header><![CDATA[<b>${project.name} ${project.version}</b>]]></header>
-                        <footer><![CDATA[<b>${project.name} ${project.version}</b>]]></footer>
+            <footer><![CDATA[<b>${project.name} ${project.version}</b>]]></footer>
               <archive>
                   <index>true</index>
                   <manifest>
