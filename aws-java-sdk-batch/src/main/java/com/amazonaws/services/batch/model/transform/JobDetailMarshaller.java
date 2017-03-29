@@ -37,10 +37,14 @@ public class JobDetailMarshaller {
             .marshallLocationName("jobQueue").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<List> ATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attempts").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<Long> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("createdAt").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
     private static final MarshallingInfo<Long> STARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("startedAt").build();
     private static final MarshallingInfo<Long> STOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,8 +78,10 @@ public class JobDetailMarshaller {
             protocolMarshaller.marshall(jobDetail.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobDetail.getJobQueue(), JOBQUEUE_BINDING);
             protocolMarshaller.marshall(jobDetail.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(jobDetail.getAttempts(), ATTEMPTS_BINDING);
             protocolMarshaller.marshall(jobDetail.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(jobDetail.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(jobDetail.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(jobDetail.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(jobDetail.getStoppedAt(), STOPPEDAT_BINDING);
             protocolMarshaller.marshall(jobDetail.getDependsOn(), DEPENDSON_BINDING);

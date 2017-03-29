@@ -73,7 +73,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String ramdiskId;
     /**
      * <p>
-     * The billing product codes.
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> billingProducts;
@@ -473,10 +474,12 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes.
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
      * </p>
      * 
-     * @return The billing product codes.
+     * @return The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *         you can use the AWS Marketplace to bill for the use of an AMI.
      */
 
     public java.util.List<String> getBillingProducts() {
@@ -488,11 +491,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes.
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes.
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
      */
 
     public void setBillingProducts(java.util.Collection<String> billingProducts) {
@@ -506,7 +511,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes.
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -515,7 +521,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes.
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -531,11 +538,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes.
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes.
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

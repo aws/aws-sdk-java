@@ -41,6 +41,8 @@ public class JobDefinitionMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINERPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerProperties").build();
 
@@ -66,6 +68,7 @@ public class JobDefinitionMarshaller {
             protocolMarshaller.marshall(jobDefinition.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(jobDefinition.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(jobDefinition.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(jobDefinition.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(jobDefinition.getContainerProperties(), CONTAINERPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

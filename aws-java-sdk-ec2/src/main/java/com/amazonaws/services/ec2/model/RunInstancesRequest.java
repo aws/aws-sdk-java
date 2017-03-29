@@ -260,6 +260,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Boolean ebsOptimized;
+    /**
+     * <p>
+     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
+     * applied to all instances or volumes that are created during launch.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2114,6 +2121,87 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
+     * applied to all instances or volumes that are created during launch.
+     * </p>
+     * 
+     * @return The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
+     *         are applied to all instances or volumes that are created during launch.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
+     * applied to all instances or volumes that are created during launch.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
+     *        are applied to all instances or volumes that are created during launch.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
+     * applied to all instances or volumes that are created during launch.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
+     *        are applied to all instances or volumes that are created during launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
+     * applied to all instances or volumes that are created during launch.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
+     *        are applied to all instances or volumes that are created during launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2182,7 +2270,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getIamInstanceProfile() != null)
             sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: ").append(getEbsOptimized());
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -2294,6 +2384,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -2326,6 +2420,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

@@ -853,9 +853,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Attaches a virtual private gateway to a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a Hardware Virtual Private
-     * Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a
+     * Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param attachVpnGatewayRequest
@@ -869,9 +871,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Attaches a virtual private gateway to a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a Hardware Virtual Private
-     * Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a
+     * Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param attachVpnGatewayRequest
@@ -2940,9 +2944,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
+     * You can tag your volumes during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating or Restoring an
-     * Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS
+     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -2972,9 +2980,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
+     * You can tag your volumes during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating or Restoring an
-     * Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS
+     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -10633,8 +10645,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root
      * device volume. You specify the snapshot using the block device mapping. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching an
-     * Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching a Linux
+     * Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
@@ -10677,8 +10689,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root
      * device volume. You specify the snapshot using the block device mapping. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching an
-     * Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching a Linux
+     * Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
@@ -11644,8 +11656,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
-     * instance using <a>DescribeInstances</a>. After launch, you can apply tags to your running instance (requires a
-     * resource ID). For more information, see <a>CreateTags</a> and <a
+     * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes during launch, after launch, or
+     * both. For more information, see <a>CreateTags</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
      * </p>
      * <p>
@@ -11728,8 +11740,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
-     * instance using <a>DescribeInstances</a>. After launch, you can apply tags to your running instance (requires a
-     * resource ID). For more information, see <a>CreateTags</a> and <a
+     * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes during launch, after launch, or
+     * both. For more information, see <a>CreateTags</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
      * </p>
      * <p>

@@ -27,7 +27,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the job. A name must be 1 to 128 characters in length.
+     * </p>
+     * <p>
+     * Pattern: ^[a-zA-Z0-9_]+$
      * </p>
      */
     private String jobName;
@@ -40,7 +43,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobQueue;
     /**
      * <p>
-     * A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * </p>
      */
     private java.util.List<JobDependency> dependsOn;
@@ -69,14 +72,26 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private ContainerOverrides containerOverrides;
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     * specified here, it overrides the retry strategy defined in the job definition.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the job. A name must be 1 to 128 characters in length.
+     * </p>
+     * <p>
+     * Pattern: ^[a-zA-Z0-9_]+$
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The name of the job. A name must be 1 to 128 characters in length.</p>
+     *        <p>
+     *        Pattern: ^[a-zA-Z0-9_]+$
      */
 
     public void setJobName(String jobName) {
@@ -85,10 +100,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the job. A name must be 1 to 128 characters in length.
+     * </p>
+     * <p>
+     * Pattern: ^[a-zA-Z0-9_]+$
      * </p>
      * 
-     * @return The name of the job.
+     * @return The name of the job. A name must be 1 to 128 characters in length.</p>
+     *         <p>
+     *         Pattern: ^[a-zA-Z0-9_]+$
      */
 
     public String getJobName() {
@@ -97,11 +117,16 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the job. A name must be 1 to 128 characters in length.
+     * </p>
+     * <p>
+     * Pattern: ^[a-zA-Z0-9_]+$
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The name of the job. A name must be 1 to 128 characters in length.</p>
+     *        <p>
+     *        Pattern: ^[a-zA-Z0-9_]+$
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,10 +183,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * </p>
      * 
-     * @return A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * @return A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      */
 
     public java.util.List<JobDependency> getDependsOn() {
@@ -170,11 +195,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      */
 
     public void setDependsOn(java.util.Collection<JobDependency> dependsOn) {
@@ -188,7 +213,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -197,7 +222,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +238,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,6 +435,52 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     * specified here, it overrides the retry strategy defined in the job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     *        specified here, it overrides the retry strategy defined in the job definition.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     * specified here, it overrides the retry strategy defined in the job definition.
+     * </p>
+     * 
+     * @return The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     *         specified here, it overrides the retry strategy defined in the job definition.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     * specified here, it overrides the retry strategy defined in the job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
+     *        specified here, it overrides the retry strategy defined in the job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobRequest withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -431,7 +502,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerOverrides() != null)
-            sb.append("ContainerOverrides: ").append(getContainerOverrides());
+            sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -470,6 +543,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getContainerOverrides() != null && other.getContainerOverrides().equals(this.getContainerOverrides()) == false)
             return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +561,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         return hashCode;
     }
 

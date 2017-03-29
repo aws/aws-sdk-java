@@ -73,6 +73,10 @@ public class JobDefinitionJsonUnmarshaller implements Unmarshaller<JobDefinition
                     jobDefinition.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("retryStrategy", targetDepth)) {
+                    context.nextToken();
+                    jobDefinition.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("containerProperties", targetDepth)) {
                     context.nextToken();
                     jobDefinition.setContainerProperties(ContainerPropertiesJsonUnmarshaller.getInstance().unmarshall(context));

@@ -68,6 +68,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> parameters;
     /**
      * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
      * An object with various properties specific to container-based jobs.
      * </p>
      */
@@ -348,6 +354,46 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @return The retry strategy to use for failed jobs that are submitted with this job definition.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
      * An object with various properties specific to container-based jobs.
      * </p>
      * 
@@ -409,6 +455,8 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             sb.append("Type: ").append(getType()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getContainerProperties() != null)
             sb.append("ContainerProperties: ").append(getContainerProperties());
         sb.append("}");
@@ -449,6 +497,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         if (other.getContainerProperties() == null ^ this.getContainerProperties() == null)
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
@@ -467,6 +519,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
         return hashCode;
     }

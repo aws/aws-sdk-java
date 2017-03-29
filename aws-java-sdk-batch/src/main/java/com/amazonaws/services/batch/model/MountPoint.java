@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details on a volume mount point that is used in a job's container properties.
+ * Details on a Docker volume mount point that is used in a job's container properties.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/MountPoint" target="_top">AWS API

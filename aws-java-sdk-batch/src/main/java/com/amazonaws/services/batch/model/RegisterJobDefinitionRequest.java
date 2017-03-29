@@ -52,6 +52,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ContainerProperties containerProperties;
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
 
     /**
      * <p>
@@ -286,6 +293,52 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * </p>
+     * 
+     * @return The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *         that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -303,7 +356,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: ").append(getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +389,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
             return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +405,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         return hashCode;
     }
 
