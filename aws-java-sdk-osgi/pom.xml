@@ -577,25 +577,55 @@
   </properties>
 
   <build>
-      <plugins>
-          <!-- Convert README.md to HTML to be used in ZIP creation -->
-          <plugin>
-              <groupId>com.ruleoftech</groupId>
-              <artifactId>markdown-page-generator-plugin</artifactId>
-              <version>0.8</version>
-              <executions>
-                  <execution>
-                      <phase>process-sources</phase>
-                      <goals>
-                          <goal>generate</goal>
-                      </goals>
-                  </execution>
-              </executions>
-              <configuration>
-                  <inputDirectory>${project.parent.basedir}/</inputDirectory>
-                  <outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
-              </configuration>
-          </plugin>
+    <plugins>
+      <!-- Convert README.md to HTML to be used in ZIP creation -->
+      <plugin>
+        <groupId>com.ruleoftech</groupId>
+        <artifactId>markdown-page-generator-plugin</artifactId>
+        <version>0.8</version>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <inputDirectory>${project.parent.basedir}/</inputDirectory>
+          <outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <index>true</index>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <archive>
+            <index>true</index>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <archive>
+            <index>true</index>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -664,6 +694,10 @@
                       </executions>
                       <!-- Note: excludePackageNames is inherited from Parent POM -->
                       <configuration>
+                          <archive>
+                              <index>true</index>
+                              <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                          </archive>
                           <minmemory>128m</minmemory>
                           <maxmemory>2g</maxmemory>
                           <includeDependencySources>true</includeDependencySources>

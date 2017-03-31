@@ -195,12 +195,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
-          <configuration>
-            <archive>
-              <index>true</index>
-              <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-            </archive>
-          </configuration>
         </plugin>
 
         <plugin>
@@ -213,10 +207,6 @@
             <maxmemory>1024m</maxmemory>
             <header><![CDATA[<b>${project.name} ${project.version}</b>]]></header>
             <footer><![CDATA[<b>${project.name} ${project.version}</b>]]></footer>
-            <archive>
-              <index>true</index>
-              <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-            </archive>
           </configuration>
         </plugin>
 
@@ -224,12 +214,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>3.0.1</version>
-          <configuration>
-            <archive>
-              <index>true</index>
-              <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-            </archive>
-          </configuration>
         </plugin>
 
         <plugin>
