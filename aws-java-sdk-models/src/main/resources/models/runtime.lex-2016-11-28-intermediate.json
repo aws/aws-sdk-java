@@ -161,6 +161,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BadGatewayException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BadGatewayException",
@@ -195,6 +197,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BadRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BadRequestException",
@@ -480,6 +484,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "text", "value" ],
       "shapeName" : "Button",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -517,6 +523,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConflictException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConflictException",
@@ -554,6 +562,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContentType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -591,6 +601,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DependencyFailedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DependencyFailedException",
@@ -643,6 +655,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DialogState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1460,6 +1474,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenericAttachment",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1497,6 +1513,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalFailureException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalFailureException",
@@ -1657,6 +1675,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -1691,6 +1711,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LoopDetectedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LoopDetectedException",
@@ -1725,6 +1747,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NotFoundException",
@@ -2546,6 +2570,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "botName", "botAlias", "userId", "inputText" ],
       "shapeName" : "PostTextRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PostTextRequest",
@@ -3764,6 +3790,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PostTextResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4331,6 +4359,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResponseCard",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

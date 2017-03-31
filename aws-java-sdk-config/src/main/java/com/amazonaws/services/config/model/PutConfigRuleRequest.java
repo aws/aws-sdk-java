@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule" target="_top">AWS API
  *      Documentation</a>
@@ -26,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The rule that you want to add to your account.
+     * </p>
+     */
     private ConfigRule configRule;
 
     /**
+     * <p>
+     * The rule that you want to add to your account.
+     * </p>
+     * 
      * @param configRule
+     *        The rule that you want to add to your account.
      */
 
     public void setConfigRule(ConfigRule configRule) {
@@ -37,7 +46,11 @@ public class PutConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The rule that you want to add to your account.
+     * </p>
+     * 
+     * @return The rule that you want to add to your account.
      */
 
     public ConfigRule getConfigRule() {
@@ -45,7 +58,12 @@ public class PutConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The rule that you want to add to your account.
+     * </p>
+     * 
      * @param configRule
+     *        The rule that you want to add to your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

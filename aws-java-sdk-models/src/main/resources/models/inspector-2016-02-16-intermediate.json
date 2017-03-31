@@ -1545,6 +1545,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessDeniedErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1833,6 +1835,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "errorCode", "canRetry" ],
       "shapeName" : "AccessDeniedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AccessDeniedException",
@@ -2433,6 +2437,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "findingArns", "attributes" ],
       "shapeName" : "AddAttributesToFindingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddAttributesToFindingsRequest",
@@ -2747,6 +2753,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "failedItems" ],
       "shapeName" : "AddAttributesToFindingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3035,6 +3043,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "agentId", "assessmentRunArn" ],
       "shapeName" : "AgentAlreadyRunningAssessment",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3631,6 +3641,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "agentHealths", "agentHealthCodes" ],
       "shapeName" : "AgentFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3674,6 +3686,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AgentHealth",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3729,6 +3743,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AgentHealthCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4017,6 +4033,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "agentId" ],
       "shapeName" : "AgentPreview",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4584,6 +4602,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "agents", "agentsTruncated", "canRetry" ],
       "shapeName" : "AgentsAlreadyRunningAssessmentException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AgentsAlreadyRunningAssessmentException",
@@ -6985,6 +7005,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "name", "assessmentTemplateArn", "state", "durationInSeconds", "rulesPackageArns", "userAttributesForFindings", "createdAt", "stateChangedAt", "dataCollected", "stateChanges", "notifications" ],
       "shapeName" : "AssessmentRun",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8052,6 +8074,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "agentId", "assessmentRunArn", "agentHealth", "agentHealthCode", "telemetryMetadata" ],
       "shapeName" : "AssessmentRunAgent",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9273,6 +9297,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssessmentRunFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9840,6 +9866,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "assessmentRunArns", "assessmentRunArnsTruncated", "canRetry" ],
       "shapeName" : "AssessmentRunInProgressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AssessmentRunInProgressException",
@@ -10625,6 +10653,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "date", "event", "error" ],
       "shapeName" : "AssessmentRunNotification",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10674,6 +10704,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssessmentRunNotificationSnsStatusCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10741,6 +10773,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssessmentRunState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11029,6 +11063,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "stateChangedAt", "state" ],
       "shapeName" : "AssessmentRunStateChange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11692,6 +11728,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "name", "resourceGroupArn", "createdAt", "updatedAt" ],
       "shapeName" : "AssessmentTarget",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11855,6 +11893,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssessmentTargetFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13076,6 +13116,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "name", "assessmentTargetArn", "durationInSeconds", "rulesPackageArns", "userAttributesForFindings", "createdAt" ],
       "shapeName" : "AssessmentTemplate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13643,6 +13685,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssessmentTemplateFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14585,6 +14629,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "schemaVersion" ],
       "shapeName" : "AssetAttributes",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14625,6 +14671,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14913,6 +14961,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "key" ],
       "shapeName" : "Attribute",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15208,6 +15258,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetName", "resourceGroupArn" ],
       "shapeName" : "CreateAssessmentTargetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateAssessmentTargetRequest",
@@ -15368,6 +15420,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArn" ],
       "shapeName" : "CreateAssessmentTargetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16346,6 +16400,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArn", "assessmentTemplateName", "durationInSeconds", "rulesPackageArns" ],
       "shapeName" : "CreateAssessmentTemplateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateAssessmentTemplateRequest",
@@ -16506,6 +16562,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplateArn" ],
       "shapeName" : "CreateAssessmentTemplateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16830,6 +16888,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceGroupTags" ],
       "shapeName" : "CreateResourceGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateResourceGroupRequest",
@@ -16990,6 +17050,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceGroupArn" ],
       "shapeName" : "CreateResourceGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17160,6 +17222,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArn" ],
       "shapeName" : "DeleteAssessmentRunRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteAssessmentRunRequest",
@@ -17194,6 +17258,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAssessmentRunResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17364,6 +17430,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArn" ],
       "shapeName" : "DeleteAssessmentTargetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteAssessmentTargetRequest",
@@ -17398,6 +17466,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAssessmentTargetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17568,6 +17638,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplateArn" ],
       "shapeName" : "DeleteAssessmentTemplateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteAssessmentTemplateRequest",
@@ -17602,6 +17674,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAssessmentTemplateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17926,6 +18000,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArns" ],
       "shapeName" : "DescribeAssessmentRunsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAssessmentRunsRequest",
@@ -18519,6 +18595,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRuns", "failedItems" ],
       "shapeName" : "DescribeAssessmentRunsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18843,6 +18921,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArns" ],
       "shapeName" : "DescribeAssessmentTargetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAssessmentTargetsRequest",
@@ -19436,6 +19516,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargets", "failedItems" ],
       "shapeName" : "DescribeAssessmentTargetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19760,6 +19842,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplateArns" ],
       "shapeName" : "DescribeAssessmentTemplatesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAssessmentTemplatesRequest",
@@ -20353,6 +20437,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplates", "failedItems" ],
       "shapeName" : "DescribeAssessmentTemplatesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20397,6 +20483,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCrossAccountAccessRoleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeCrossAccountAccessRoleRequest",
@@ -20807,6 +20895,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "roleArn", "valid", "registeredAt" ],
       "shapeName" : "DescribeCrossAccountAccessRoleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21256,6 +21346,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "findingArns" ],
       "shapeName" : "DescribeFindingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeFindingsRequest",
@@ -21849,6 +21941,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "findings", "failedItems" ],
       "shapeName" : "DescribeFindingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22173,6 +22267,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceGroupArns" ],
       "shapeName" : "DescribeResourceGroupsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeResourceGroupsRequest",
@@ -22766,6 +22862,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceGroups", "failedItems" ],
       "shapeName" : "DescribeResourceGroupsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23215,6 +23313,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "rulesPackageArns" ],
       "shapeName" : "DescribeRulesPackagesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeRulesPackagesRequest",
@@ -23808,6 +23908,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "rulesPackages", "failedItems" ],
       "shapeName" : "DescribeRulesPackagesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24096,6 +24198,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DurationRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24384,6 +24488,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "event", "subscribedAt" ],
       "shapeName" : "EventSubscription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24672,6 +24778,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "failureCode", "retryable" ],
       "shapeName" : "FailedItemDetails",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24727,6 +24835,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailedItemErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27323,6 +27433,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "attributes", "userAttributes", "createdAt", "updatedAt" ],
       "shapeName" : "Finding",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29439,6 +29551,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FindingFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29609,6 +29723,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArn" ],
       "shapeName" : "GetTelemetryMetadataRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetTelemetryMetadataRequest",
@@ -29923,6 +30039,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "telemetryMetadata" ],
       "shapeName" : "GetTelemetryMetadataResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29975,6 +30093,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InspectorEvent",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30388,6 +30508,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "schemaVersion" ],
       "shapeName" : "InspectorServiceAttributes",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30551,6 +30673,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "canRetry" ],
       "shapeName" : "InternalException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalException",
@@ -30591,6 +30715,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCrossAccountRoleErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30879,6 +31005,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "errorCode", "canRetry" ],
       "shapeName" : "InvalidCrossAccountRoleException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCrossAccountRoleException",
@@ -31075,6 +31203,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInputErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31363,6 +31493,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "errorCode", "canRetry" ],
       "shapeName" : "InvalidInputException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidInputException",
@@ -31412,6 +31544,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31700,6 +31834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "errorCode", "canRetry" ],
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -32242,6 +32378,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArn" ],
       "shapeName" : "ListAssessmentRunAgentsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListAssessmentRunAgentsRequest",
@@ -32681,6 +32819,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunAgents" ],
       "shapeName" : "ListAssessmentRunAgentsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -33380,6 +33520,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAssessmentRunsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListAssessmentRunsRequest",
@@ -33819,6 +33961,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArns" ],
       "shapeName" : "ListAssessmentRunsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34239,6 +34383,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAssessmentTargetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListAssessmentTargetsRequest",
@@ -34678,6 +34824,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArns" ],
       "shapeName" : "ListAssessmentTargetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35377,6 +35525,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAssessmentTemplatesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListAssessmentTemplatesRequest",
@@ -35816,6 +35966,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplateArns" ],
       "shapeName" : "ListAssessmentTemplatesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36236,6 +36388,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListEventSubscriptionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListEventSubscriptionsRequest",
@@ -36675,6 +36829,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "subscriptions" ],
       "shapeName" : "ListEventSubscriptionsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -37374,6 +37530,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFindingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListFindingsRequest",
@@ -37813,6 +37971,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "findingArns" ],
       "shapeName" : "ListFindingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38108,6 +38268,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRulesPackagesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListRulesPackagesRequest",
@@ -38547,6 +38709,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "rulesPackageArns" ],
       "shapeName" : "ListRulesPackagesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38717,6 +38881,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
       "shapeName" : "ListTagsForResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForResourceRequest",
@@ -39031,6 +39197,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "tags" ],
       "shapeName" : "ListTagsForResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -39071,6 +39239,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Locale",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -39132,6 +39302,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoSuchEntityErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -39420,6 +39592,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "message", "errorCode", "canRetry" ],
       "shapeName" : "NoSuchEntityException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NoSuchEntityException",
@@ -39837,6 +40011,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "previewAgentsArn" ],
       "shapeName" : "PreviewAgentsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PreviewAgentsRequest",
@@ -40276,6 +40452,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "agentPreviews" ],
       "shapeName" : "PreviewAgentsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -40446,6 +40624,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "roleArn" ],
       "shapeName" : "RegisterCrossAccountAccessRoleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RegisterCrossAccountAccessRoleRequest",
@@ -40480,6 +40660,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RegisterCrossAccountAccessRoleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -41083,6 +41265,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "findingArns", "attributeKeys" ],
       "shapeName" : "RemoveAttributesFromFindingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RemoveAttributesFromFindingsRequest",
@@ -41397,6 +41581,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "failedItems" ],
       "shapeName" : "RemoveAttributesFromFindingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -41964,6 +42150,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "tags", "createdAt" ],
       "shapeName" : "ResourceGroup",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -42252,6 +42440,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "key" ],
       "shapeName" : "ResourceGroupTag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -42915,6 +43105,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "arn", "name", "version", "provider" ],
       "shapeName" : "RulesPackage",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -43364,6 +43556,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
       "shapeName" : "SetTagsForResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetTagsForResourceRequest",
@@ -43398,6 +43592,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetTagsForResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -43450,6 +43646,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Severity",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -43745,6 +43943,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTemplateArn" ],
       "shapeName" : "StartAssessmentRunRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StartAssessmentRunRequest",
@@ -43905,6 +44105,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArn" ],
       "shapeName" : "StartAssessmentRunResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -44075,6 +44277,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentRunArn" ],
       "shapeName" : "StopAssessmentRunRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StopAssessmentRunRequest",
@@ -44109,6 +44313,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopAssessmentRunResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -44529,6 +44735,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "event", "topicArn" ],
       "shapeName" : "SubscribeToEventRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SubscribeToEventRequest",
@@ -44563,6 +44771,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscribeToEventResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -45130,6 +45340,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "topicArn", "eventSubscriptions" ],
       "shapeName" : "Subscription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -45418,6 +45630,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "key" ],
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -45831,6 +46045,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "messageType", "count" ],
       "shapeName" : "TelemetryMetadata",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -46119,6 +46335,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimestampRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -46539,6 +46757,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "event", "topicArn" ],
       "shapeName" : "UnsubscribeFromEventRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsubscribeFromEventRequest",
@@ -46573,6 +46793,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsubscribeFromEventResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -46993,6 +47215,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "assessmentTargetArn", "assessmentTargetName", "resourceGroupArn" ],
       "shapeName" : "UpdateAssessmentTargetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateAssessmentTargetRequest",
@@ -47027,6 +47251,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateAssessmentTargetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

@@ -1340,6 +1340,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagList" ],
       "shapeName" : "AddTagsToResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddTagsToResourceRequest",
@@ -1500,6 +1502,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "AddTagsToResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1543,6 +1547,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClientVersion",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1580,6 +1586,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmInternalException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CloudHsmInternalException",
@@ -1623,6 +1631,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmObjectState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1660,6 +1670,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmServiceException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CloudHsmServiceException",
@@ -1827,6 +1839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Label" ],
       "shapeName" : "CreateHapgRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateHapgRequest",
@@ -1987,6 +2001,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateHapgResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3032,6 +3048,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SubnetId", "SshKey", "IamRoleArn", "SubscriptionType" ],
       "shapeName" : "CreateHsmRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateHsmRequest",
@@ -3192,6 +3210,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateHsmResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3487,6 +3507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Certificate" ],
       "shapeName" : "CreateLunaClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateLunaClientRequest",
@@ -3647,6 +3669,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateLunaClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3817,6 +3841,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "DeleteHapgRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteHapgRequest",
@@ -3977,6 +4003,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteHapgResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4147,6 +4175,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
       "shapeName" : "DeleteHsmRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteHsmRequest",
@@ -4307,6 +4337,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteHsmResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4477,6 +4509,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn" ],
       "shapeName" : "DeleteLunaClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteLunaClientRequest",
@@ -4637,6 +4671,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteLunaClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4807,6 +4843,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "DescribeHapgRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeHapgRequest",
@@ -6583,6 +6621,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHapgResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6878,6 +6918,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHsmRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeHsmRequest",
@@ -9692,6 +9734,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHsmResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9987,6 +10031,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLunaClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeLunaClientRequest",
@@ -10647,6 +10693,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLunaClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11221,6 +11269,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "ClientVersion", "HapgList" ],
       "shapeName" : "GetConfigRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetConfigRequest",
@@ -11631,6 +11681,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetConfigResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11689,6 +11741,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HsmStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11726,6 +11780,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRequestException",
@@ -11767,6 +11823,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAvailableZonesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListAvailableZonesRequest",
@@ -12081,6 +12139,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAvailableZonesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12251,6 +12311,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHapgsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListHapgsRequest",
@@ -12690,6 +12752,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgList" ],
       "shapeName" : "ListHapgsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12860,6 +12924,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHsmsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListHsmsRequest",
@@ -13299,6 +13365,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHsmsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13469,6 +13537,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLunaClientsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListLunaClientsRequest",
@@ -13908,6 +13978,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientList" ],
       "shapeName" : "ListLunaClientsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14078,6 +14150,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
       "shapeName" : "ListTagsForResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForResourceRequest",
@@ -14392,6 +14466,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
       "shapeName" : "ListTagsForResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14966,6 +15042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "ModifyHapgRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ModifyHapgRequest",
@@ -15126,6 +15204,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyHapgResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15921,6 +16001,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
       "shapeName" : "ModifyHsmRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ModifyHsmRequest",
@@ -16081,6 +16163,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyHsmResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16376,6 +16460,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "Certificate" ],
       "shapeName" : "ModifyLunaClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ModifyLunaClientRequest",
@@ -16536,6 +16622,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyLunaClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16985,6 +17073,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagKeyList" ],
       "shapeName" : "RemoveTagsFromResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RemoveTagsFromResourceRequest",
@@ -17145,6 +17235,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "RemoveTagsFromResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17185,6 +17277,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscriptionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17473,6 +17567,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

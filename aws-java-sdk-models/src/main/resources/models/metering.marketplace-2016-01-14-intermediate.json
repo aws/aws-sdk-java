@@ -663,6 +663,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UsageRecords", "ProductCode" ],
       "shapeName" : "BatchMeterUsageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BatchMeterUsageRequest",
@@ -1256,6 +1258,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchMeterUsageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1293,6 +1297,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DuplicateRequestException",
@@ -1327,6 +1333,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredTokenException",
@@ -1361,6 +1369,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServiceErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalServiceErrorException",
@@ -1395,6 +1405,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCustomerIdentifierException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCustomerIdentifierException",
@@ -1429,6 +1441,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidEndpointRegionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidEndpointRegionException",
@@ -1463,6 +1477,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidProductCodeException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidProductCodeException",
@@ -1497,6 +1513,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidTokenException",
@@ -1531,6 +1549,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidUsageDimensionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidUsageDimensionException",
@@ -2198,6 +2218,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ProductCode", "Timestamp", "UsageDimension", "UsageQuantity", "DryRun" ],
       "shapeName" : "MeterUsageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MeterUsageRequest",
@@ -2358,6 +2380,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MeterUsageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2528,6 +2552,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RegistrationToken" ],
       "shapeName" : "ResolveCustomerRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResolveCustomerRequest",
@@ -2813,6 +2839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResolveCustomerResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2850,6 +2878,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottlingException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ThrottlingException",
@@ -2884,6 +2914,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimestampOutOfBoundsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TimestampOutOfBoundsException",
@@ -3419,6 +3451,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Timestamp", "CustomerIdentifier", "Dimension", "Quantity" ],
       "shapeName" : "UsageRecord",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3832,6 +3866,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsageRecordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3878,6 +3914,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsageRecordResultStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

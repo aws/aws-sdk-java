@@ -97,8 +97,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * </p>
      */
     private String gatewayRegion;
@@ -107,11 +107,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
      * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
      * </p>
+     * <p>
+     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * </p>
      */
     private String gatewayType;
     /**
      * <p>
-     * The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "IBM-ULT3580-TD5"
@@ -120,7 +123,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String tapeDriveType;
     /**
      * <p>
-     * The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "STK-L700", "AWS-Gateway-VTL"
@@ -287,8 +290,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
@@ -298,8 +301,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
-     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     *        "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
+     *        "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     *        "sa-east-1"
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -315,8 +319,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @return A value that indicates the region where you want to store the snapshot backups. The gateway region
@@ -325,8 +329,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *         <i>Amazon Web Services Glossary</i>.</p>
      *         <p>
-     *         Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     *         "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     *         Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
+     *         "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     *         "sa-east-1"
      */
 
     public String getGatewayRegion() {
@@ -342,8 +347,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
@@ -353,8 +358,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
-     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-northeast-1",
-     *        "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
+     *        "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     *        "sa-east-1"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,10 +374,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
      * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
      * </p>
+     * <p>
+     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * </p>
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
      *        functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     *        </p>
+     *        <p>
+     *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
      */
 
     public void setGatewayType(String gatewayType) {
@@ -383,10 +395,15 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
      * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
      * </p>
+     * <p>
+     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * </p>
      * 
      * @return A value that defines the type of gateway to activate. The type specified is critical to all later
      *         functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>
-     *         .
+     *         . </p>
+     *         <p>
+     *         Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
      */
 
     public String getGatewayType() {
@@ -398,10 +415,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
      * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
      * </p>
+     * <p>
+     * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+     * </p>
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
      *        functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     *        </p>
+     *        <p>
+     *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,14 +435,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
-     *        The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.</p>
+     *        The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *        <p>
      *        Valid Values: "IBM-ULT3580-TD5"
      */
@@ -430,13 +453,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
-     * @return The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.</p>
+     * @return The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *         <p>
      *         Valid Values: "IBM-ULT3580-TD5"
      */
@@ -447,14 +470,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of tape drive to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
-     *        The value that indicates the type of tape drive to use for gateway-VTL. This field is optional.</p>
+     *        The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
      *        <p>
      *        Valid Values: "IBM-ULT3580-TD5"
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -467,14 +490,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
-     *        The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.</p>
+     *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
      *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
@@ -485,13 +508,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
-     * @return The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.</p>
+     * @return The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *         <p>
      *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
@@ -502,14 +525,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.
+     * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
      * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
-     *        The value that indicates the type of medium changer to use for gateway-VTL. This field is optional.</p>
+     *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
      *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * @return Returns a reference to this object so that method calls can be chained together.

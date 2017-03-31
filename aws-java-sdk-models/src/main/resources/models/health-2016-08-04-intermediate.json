@@ -1326,6 +1326,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AffectedEntity",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1614,6 +1616,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DateTimeRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2159,6 +2163,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "filter" ],
       "shapeName" : "DescribeAffectedEntitiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAffectedEntitiesRequest",
@@ -2598,6 +2604,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAffectedEntitiesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2922,6 +2930,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEntityAggregatesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeEntityAggregatesRequest",
@@ -3236,6 +3246,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEntityAggregatesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3781,6 +3793,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "aggregateField" ],
       "shapeName" : "DescribeEventAggregatesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeEventAggregatesRequest",
@@ -4220,6 +4234,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventAggregatesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4669,6 +4685,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "eventArns" ],
       "shapeName" : "DescribeEventDetailsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeEventDetailsRequest",
@@ -5262,6 +5280,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventDetailsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5807,6 +5827,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventTypesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeEventTypesRequest",
@@ -6246,6 +6268,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventTypesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6791,6 +6815,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeEventsRequest",
@@ -7230,6 +7256,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEventsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7518,6 +7546,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EntityAggregate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9384,6 +9414,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "eventArns" ],
       "shapeName" : "EntityFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9430,6 +9462,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EntityStatusCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10718,6 +10752,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Event",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11006,6 +11042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventAggregate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11046,6 +11084,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventAggregateField",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11209,6 +11249,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11776,6 +11818,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventDetails",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12189,6 +12233,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventDetailsErrorItem",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16008,6 +16054,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16054,6 +16102,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventStatusCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16467,6 +16517,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16513,6 +16565,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventTypeCategory",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17388,6 +17442,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventTypeFilter",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17425,6 +17481,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPaginationTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidPaginationTokenException",
@@ -17459,6 +17517,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedLocaleException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedLocaleException",

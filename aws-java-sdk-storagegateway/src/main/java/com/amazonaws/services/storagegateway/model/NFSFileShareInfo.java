@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The Unix file permissions and ownership information assigned, by default, to native S3 objects when Storage Gateway
- * discovers them in S3 buckets.
+ * discovers them in S3 buckets. This operation is only supported in file gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo" target="_top">AWS
@@ -62,6 +62,10 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String defaultStorageClass;
 
     private com.amazonaws.internal.SdkInternalList<String> clientList;
+
+    private String squash;
+
+    private Boolean readOnly;
 
     /**
      * @param nFSFileShareDefaults
@@ -462,6 +466,66 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * @param squash
+     */
+
+    public void setSquash(String squash) {
+        this.squash = squash;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSquash() {
+        return this.squash;
+    }
+
+    /**
+     * @param squash
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withSquash(String squash) {
+        setSquash(squash);
+        return this;
+    }
+
+    /**
+     * @param readOnly
+     */
+
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
+     * @param readOnly
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withReadOnly(Boolean readOnly) {
+        setReadOnly(readOnly);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -495,7 +559,11 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         if (getDefaultStorageClass() != null)
             sb.append("DefaultStorageClass: ").append(getDefaultStorageClass()).append(",");
         if (getClientList() != null)
-            sb.append("ClientList: ").append(getClientList());
+            sb.append("ClientList: ").append(getClientList()).append(",");
+        if (getSquash() != null)
+            sb.append("Squash: ").append(getSquash()).append(",");
+        if (getReadOnly() != null)
+            sb.append("ReadOnly: ").append(getReadOnly());
         sb.append("}");
         return sb.toString();
     }
@@ -558,6 +626,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getClientList() != null && other.getClientList().equals(this.getClientList()) == false)
             return false;
+        if (other.getSquash() == null ^ this.getSquash() == null)
+            return false;
+        if (other.getSquash() != null && other.getSquash().equals(this.getSquash()) == false)
+            return false;
+        if (other.getReadOnly() == null ^ this.getReadOnly() == null)
+            return false;
+        if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
+            return false;
         return true;
     }
 
@@ -578,6 +654,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLocationARN() == null) ? 0 : getLocationARN().hashCode());
         hashCode = prime * hashCode + ((getDefaultStorageClass() == null) ? 0 : getDefaultStorageClass().hashCode());
         hashCode = prime * hashCode + ((getClientList() == null) ? 0 : getClientList().hashCode());
+        hashCode = prime * hashCode + ((getSquash() == null) ? 0 : getSquash().hashCode());
+        hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         return hashCode;
     }
 

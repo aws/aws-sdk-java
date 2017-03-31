@@ -68,6 +68,19 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clientList;
+    /**
+     * <p>
+     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
+     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     */
+    private String squash;
+    /**
+     * <p>
+     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * </p>
+     */
+    private Boolean readOnly;
 
     /**
      * <p>
@@ -386,6 +399,107 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
+     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * 
+     * @param squash
+     *        Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
+     *        anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
+     *        anonymous user.
+     */
+
+    public void setSquash(String squash) {
+        this.squash = squash;
+    }
+
+    /**
+     * <p>
+     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
+     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * 
+     * @return Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
+     *         anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
+     *         anonymous user.
+     */
+
+    public String getSquash() {
+        return this.squash;
+    }
+
+    /**
+     * <p>
+     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
+     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * 
+     * @param squash
+     *        Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
+     *        anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
+     *        anonymous user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withSquash(String squash) {
+        setSquash(squash);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * </p>
+     * 
+     * @param readOnly
+     *        Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     */
+
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    /**
+     * <p>
+     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * </p>
+     * 
+     * @return Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     */
+
+    public Boolean getReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
+     * <p>
+     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * </p>
+     * 
+     * @param readOnly
+     *        Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withReadOnly(Boolean readOnly) {
+        setReadOnly(readOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * </p>
+     * 
+     * @return Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     */
+
+    public Boolean isReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -407,7 +521,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDefaultStorageClass() != null)
             sb.append("DefaultStorageClass: ").append(getDefaultStorageClass()).append(",");
         if (getClientList() != null)
-            sb.append("ClientList: ").append(getClientList());
+            sb.append("ClientList: ").append(getClientList()).append(",");
+        if (getSquash() != null)
+            sb.append("Squash: ").append(getSquash()).append(",");
+        if (getReadOnly() != null)
+            sb.append("ReadOnly: ").append(getReadOnly());
         sb.append("}");
         return sb.toString();
     }
@@ -446,6 +564,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getClientList() != null && other.getClientList().equals(this.getClientList()) == false)
             return false;
+        if (other.getSquash() == null ^ this.getSquash() == null)
+            return false;
+        if (other.getSquash() != null && other.getSquash().equals(this.getSquash()) == false)
+            return false;
+        if (other.getReadOnly() == null ^ this.getReadOnly() == null)
+            return false;
+        if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
+            return false;
         return true;
     }
 
@@ -460,6 +586,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getNFSFileShareDefaults() == null) ? 0 : getNFSFileShareDefaults().hashCode());
         hashCode = prime * hashCode + ((getDefaultStorageClass() == null) ? 0 : getDefaultStorageClass().hashCode());
         hashCode = prime * hashCode + ((getClientList() == null) ? 0 : getClientList().hashCode());
+        hashCode = prime * hashCode + ((getSquash() == null) ? 0 : getSquash().hashCode());
+        hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         return hashCode;
     }
 

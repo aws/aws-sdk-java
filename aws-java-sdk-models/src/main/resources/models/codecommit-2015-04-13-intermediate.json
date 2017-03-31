@@ -1580,6 +1580,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryNames" ],
       "shapeName" : "BatchGetRepositoriesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BatchGetRepositoriesRequest",
@@ -2173,6 +2175,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetRepositoriesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2210,6 +2214,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BlobIdDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BlobIdDoesNotExistException",
@@ -2244,6 +2250,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BlobIdRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BlobIdRequiredException",
@@ -2654,6 +2662,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BlobMetadata",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2691,6 +2701,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BranchDoesNotExistException",
@@ -2976,6 +2988,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchInfo",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3013,6 +3027,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchNameExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BranchNameExistsException",
@@ -3047,6 +3063,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchNameRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BranchNameRequiredException",
@@ -3090,6 +3108,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangeTypeEnum",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4032,6 +4052,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Commit",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4069,6 +4091,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CommitDoesNotExistException",
@@ -4103,6 +4127,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitIdDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CommitIdDoesNotExistException",
@@ -4137,6 +4163,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitIdRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CommitIdRequiredException",
@@ -4171,6 +4199,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CommitRequiredException",
@@ -4588,6 +4618,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "branchName", "commitId" ],
       "shapeName" : "CreateBranchRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateBranchRequest",
@@ -4622,6 +4654,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBranchResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4917,6 +4951,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "CreateRepositoryRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateRepositoryRequest",
@@ -5077,6 +5113,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateRepositoryResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5247,6 +5285,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "DeleteRepositoryRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteRepositoryRequest",
@@ -5407,6 +5447,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRepositoryResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5820,6 +5862,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Difference",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5857,6 +5901,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionIntegrityChecksFailedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EncryptionIntegrityChecksFailedException",
@@ -5891,6 +5937,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyAccessDeniedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EncryptionKeyAccessDeniedException",
@@ -5925,6 +5973,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyDisabledException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EncryptionKeyDisabledException",
@@ -5959,6 +6009,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EncryptionKeyNotFoundException",
@@ -5993,6 +6045,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyUnavailableException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EncryptionKeyUnavailableException",
@@ -6027,6 +6081,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FileTooLargeException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "FileTooLargeException",
@@ -6319,6 +6375,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "blobId" ],
       "shapeName" : "GetBlobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetBlobRequest",
@@ -6479,6 +6537,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "content" ],
       "shapeName" : "GetBlobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6774,6 +6834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetBranchRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetBranchRequest",
@@ -6934,6 +6996,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetBranchResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7229,6 +7293,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "commitId" ],
       "shapeName" : "GetCommitRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetCommitRequest",
@@ -7389,6 +7455,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "commit" ],
       "shapeName" : "GetCommitResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8309,6 +8377,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "afterCommitSpecifier" ],
       "shapeName" : "GetDifferencesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetDifferencesRequest",
@@ -8748,6 +8818,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDifferencesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8918,6 +8990,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "GetRepositoryRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetRepositoryRequest",
@@ -9078,6 +9152,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9248,6 +9324,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "GetRepositoryTriggersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetRepositoryTriggersRequest",
@@ -9687,6 +9765,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryTriggersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9724,6 +9804,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBlobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidBlobIdException",
@@ -9758,6 +9840,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBranchNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidBranchNameException",
@@ -9792,6 +9876,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCommitException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCommitException",
@@ -9826,6 +9912,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCommitIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCommitIdException",
@@ -9860,6 +9948,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidContinuationTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidContinuationTokenException",
@@ -9894,6 +9984,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidMaxResultsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidMaxResultsException",
@@ -9928,6 +10020,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidOrderException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidOrderException",
@@ -9962,6 +10056,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPathException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidPathException",
@@ -9996,6 +10092,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryDescriptionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryDescriptionException",
@@ -10030,6 +10128,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryNameException",
@@ -10064,6 +10164,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerBranchNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerBranchNameException",
@@ -10098,6 +10200,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerCustomDataException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerCustomDataException",
@@ -10132,6 +10236,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerDestinationArnException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerDestinationArnException",
@@ -10166,6 +10272,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerEventsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerEventsException",
@@ -10200,6 +10308,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerNameException",
@@ -10234,6 +10344,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerRegionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidRepositoryTriggerRegionException",
@@ -10268,6 +10380,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSortByException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSortByException",
@@ -10560,6 +10674,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "ListBranchesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListBranchesRequest",
@@ -10999,6 +11115,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListBranchesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11419,6 +11537,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRepositoriesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListRepositoriesRequest",
@@ -11858,6 +11978,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRepositoriesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11895,6 +12017,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumBranchesExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaximumBranchesExceededException",
@@ -11929,6 +12053,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumRepositoryNamesExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaximumRepositoryNamesExceededException",
@@ -11963,6 +12089,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumRepositoryTriggersExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaximumRepositoryTriggersExceededException",
@@ -12003,6 +12131,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OrderEnum",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12040,6 +12170,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PathDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PathDoesNotExistException",
@@ -12486,6 +12618,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "triggers" ],
       "shapeName" : "PutRepositoryTriggersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutRepositoryTriggersRequest",
@@ -12646,6 +12780,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutRepositoryTriggersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12683,6 +12819,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryDoesNotExistException",
@@ -12717,6 +12855,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryLimitExceededException",
@@ -14002,6 +14142,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryMetadata",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14039,6 +14181,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryNameExistsException",
@@ -14324,6 +14468,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameIdPair",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14361,6 +14507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryNameRequiredException",
@@ -14395,6 +14543,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNamesRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryNamesRequiredException",
@@ -15363,6 +15513,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "name", "destinationArn", "events" ],
       "shapeName" : "RepositoryTrigger",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15400,6 +15552,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerBranchNameListRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryTriggerBranchNameListRequiredException",
@@ -15434,6 +15588,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerDestinationArnRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryTriggerDestinationArnRequiredException",
@@ -15480,6 +15636,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerEventEnum",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15517,6 +15675,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerEventsListRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryTriggerEventsListRequiredException",
@@ -15802,6 +15962,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerExecutionFailure",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15839,6 +16001,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerNameRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryTriggerNameRequiredException",
@@ -15873,6 +16037,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggersListRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RepositoryTriggersListRequiredException",
@@ -15913,6 +16079,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SortByEnum",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16362,6 +16530,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "triggers" ],
       "shapeName" : "TestRepositoryTriggersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TestRepositoryTriggersRequest",
@@ -16955,6 +17125,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TestRepositoryTriggersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17250,6 +17422,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "defaultBranchName" ],
       "shapeName" : "UpdateDefaultBranchRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateDefaultBranchRequest",
@@ -17284,6 +17458,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDefaultBranchResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17579,6 +17755,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "UpdateRepositoryDescriptionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateRepositoryDescriptionRequest",
@@ -17613,6 +17791,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRepositoryDescriptionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17908,6 +18088,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "oldName", "newName" ],
       "shapeName" : "UpdateRepositoryNameRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateRepositoryNameRequest",
@@ -17942,6 +18124,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRepositoryNameResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18355,6 +18539,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserInfo",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

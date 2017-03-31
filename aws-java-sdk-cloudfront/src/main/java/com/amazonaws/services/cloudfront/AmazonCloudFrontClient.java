@@ -264,6 +264,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
@@ -291,6 +292,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
@@ -343,7 +345,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -387,7 +389,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a new web distribution. Send a <code>GET</code> request to the
+     * Creates a new web distribution. Send a <code>POST</code> request to the
      * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
      * </p>
      * 
@@ -462,8 +464,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws InvalidOriginReadTimeoutException
+     * @throws InvalidOriginKeepaliveTimeoutException
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -580,8 +584,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws InvalidOriginReadTimeoutException
+     * @throws InvalidOriginKeepaliveTimeoutException
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -644,7 +650,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -742,7 +748,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -813,7 +819,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -873,7 +879,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -993,7 +999,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1112,7 +1118,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1165,7 +1171,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1221,7 +1227,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1276,7 +1282,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1329,7 +1335,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1384,7 +1390,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1437,7 +1443,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1490,7 +1496,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1541,7 +1547,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1594,7 +1600,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1646,7 +1652,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1701,7 +1707,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1752,7 +1758,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1807,7 +1813,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1862,7 +1868,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1916,7 +1922,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1980,7 +1986,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2096,8 +2102,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws InvalidOriginReadTimeoutException
+     * @throws InvalidOriginKeepaliveTimeoutException
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2170,7 +2178,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override

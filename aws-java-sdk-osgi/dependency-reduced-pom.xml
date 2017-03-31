@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.111</version>
+    <version>1.11.112</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -137,10 +137,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.111</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.112</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.111</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.112</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -154,6 +154,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Resource Groups Tagging API</title>
+                      <packages>com.amazonaws.services.resourcegroupstaggingapi*</packages>
+                    </group>
                     <group>
                       <title>Amazon S3</title>
                       <packages>com.amazonaws.services.s3*</packages>
@@ -626,10 +630,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.111</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.112</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.111</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.112</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -643,6 +647,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Resource Groups Tagging API</title>
+                      <packages>com.amazonaws.services.resourcegroupstaggingapi*</packages>
+                    </group>
                     <group>
                       <title>Amazon S3</title>
                       <packages>com.amazonaws.services.s3*</packages>
@@ -1111,10 +1119,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.111</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.112</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.111</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.112</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1128,6 +1136,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS Resource Groups Tagging API</title>
+                  <packages>com.amazonaws.services.resourcegroupstaggingapi*</packages>
+                </group>
                 <group>
                   <title>Amazon S3</title>
                   <packages>com.amazonaws.services.s3*</packages>
@@ -1793,7 +1805,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.111-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.112-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

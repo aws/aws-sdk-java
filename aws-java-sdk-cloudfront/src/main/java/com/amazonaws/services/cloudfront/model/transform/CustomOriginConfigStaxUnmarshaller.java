@@ -62,6 +62,16 @@ public class CustomOriginConfigStaxUnmarshaller implements Unmarshaller<CustomOr
                     customOriginConfig.setOriginSslProtocols(OriginSslProtocolsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OriginReadTimeout", targetDepth)) {
+                    customOriginConfig.setOriginReadTimeout(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginKeepaliveTimeout", targetDepth)) {
+                    customOriginConfig.setOriginKeepaliveTimeout(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return customOriginConfig;

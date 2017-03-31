@@ -874,4 +874,8 @@ public abstract class AmazonWebServiceClient {
     protected boolean calculateCRC32FromCompressedData() {
         return false;
     }
+
+    public String getSignerOverride() {
+        return clientConfiguration.getSignerOverride();
+    }
 }

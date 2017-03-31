@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A summary of the information for an Amazon CloudFront streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingDistributionSummary"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/StreamingDistributionSummary"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

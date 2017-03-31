@@ -59,7 +59,7 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date completionTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
@@ -276,14 +276,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -294,13 +294,13 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     * @return The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -311,14 +311,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      * @return Returns a reference to this object so that method calls can be chained together.

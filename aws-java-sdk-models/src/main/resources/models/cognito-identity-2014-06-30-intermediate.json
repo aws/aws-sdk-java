@@ -1030,6 +1030,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AmbiguousRoleResolutionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1443,6 +1445,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CognitoIdentityProvider",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1480,6 +1484,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConcurrentModificationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConcurrentModificationException",
@@ -3013,6 +3019,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolName", "AllowUnauthenticatedIdentities" ],
       "shapeName" : "CreateIdentityPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateIdentityPoolRequest",
@@ -4664,6 +4672,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityPoolName", "AllowUnauthenticatedIdentities" ],
       "shapeName" : "CreateIdentityPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5202,6 +5212,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Credentials",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5526,6 +5538,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityIdsToDelete" ],
       "shapeName" : "DeleteIdentitiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteIdentitiesRequest",
@@ -5840,6 +5854,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteIdentitiesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6010,6 +6026,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
       "shapeName" : "DeleteIdentityPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteIdentityPoolRequest",
@@ -6044,6 +6062,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteIdentityPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6214,6 +6234,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
       "shapeName" : "DescribeIdentityPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeIdentityPoolRequest",
@@ -7865,6 +7887,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityPoolName", "AllowUnauthenticatedIdentities" ],
       "shapeName" : "DescribeIdentityPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8035,6 +8059,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId" ],
       "shapeName" : "DescribeIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeIdentityRequest",
@@ -8724,6 +8750,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8761,6 +8789,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeveloperUserAlreadyRegisteredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeveloperUserAlreadyRegisteredException",
@@ -8801,6 +8831,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8838,6 +8870,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExternalServiceException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExternalServiceException",
@@ -9409,6 +9443,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId" ],
       "shapeName" : "GetCredentialsForIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetCredentialsForIdentityRequest",
@@ -9694,6 +9730,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetCredentialsForIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10268,6 +10306,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
       "shapeName" : "GetIdRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetIdRequest",
@@ -10428,6 +10468,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetIdResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10598,6 +10640,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
       "shapeName" : "GetIdentityPoolRolesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetIdentityPoolRolesRequest",
@@ -11316,6 +11360,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetIdentityPoolRolesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12015,6 +12061,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "Logins" ],
       "shapeName" : "GetOpenIdTokenForDeveloperIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetOpenIdTokenForDeveloperIdentityRequest",
@@ -12300,6 +12348,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetOpenIdTokenForDeveloperIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12749,6 +12799,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId" ],
       "shapeName" : "GetOpenIdTokenRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetOpenIdTokenRequest",
@@ -13034,6 +13086,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetOpenIdTokenResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13726,6 +13780,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IdentityDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14014,6 +14070,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IdentityPoolShortDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14051,6 +14109,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalErrorException",
@@ -14085,6 +14145,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidIdentityPoolConfigurationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidIdentityPoolConfigurationException",
@@ -14119,6 +14181,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -14153,6 +14217,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -14695,6 +14761,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "MaxResults" ],
       "shapeName" : "ListIdentitiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListIdentitiesRequest",
@@ -15259,6 +15327,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListIdentitiesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15554,6 +15624,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MaxResults" ],
       "shapeName" : "ListIdentityPoolsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListIdentityPoolsRequest",
@@ -15993,6 +16065,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListIdentityPoolsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16663,6 +16737,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
       "shapeName" : "LookupDeveloperIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LookupDeveloperIdentityRequest",
@@ -17227,6 +17303,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LookupDeveloperIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17765,6 +17843,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Claim", "MatchType", "Value", "RoleARN" ],
       "shapeName" : "MappingRule",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17814,6 +17894,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MappingRuleMatchType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18359,6 +18441,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SourceUserIdentifier", "DestinationUserIdentifier", "DeveloperProviderName", "IdentityPoolId" ],
       "shapeName" : "MergeDeveloperIdentitiesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MergeDeveloperIdentitiesRequest",
@@ -18519,6 +18603,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MergeDeveloperIdentitiesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18556,6 +18642,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotAuthorizedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NotAuthorizedException",
@@ -18590,6 +18678,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceConflictException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceConflictException",
@@ -18624,6 +18714,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -19034,6 +19126,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
       "shapeName" : "RoleMapping",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19077,6 +19171,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RoleMappingType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19394,6 +19490,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Rules" ],
       "shapeName" : "RulesConfigurationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20122,6 +20220,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "Roles" ],
       "shapeName" : "SetIdentityPoolRolesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetIdentityPoolRolesRequest",
@@ -20156,6 +20256,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetIdentityPoolRolesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20193,6 +20295,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyRequestsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TooManyRequestsException",
@@ -20735,6 +20839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId", "IdentityPoolId", "DeveloperProviderName", "DeveloperUserIdentifier" ],
       "shapeName" : "UnlinkDeveloperIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnlinkDeveloperIdentityRequest",
@@ -20769,6 +20875,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnlinkDeveloperIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21497,6 +21605,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId", "Logins", "LoginsToRemove" ],
       "shapeName" : "UnlinkIdentityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnlinkIdentityRequest",
@@ -21531,6 +21641,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnlinkIdentityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21819,6 +21931,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnprocessedIdentityId",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23480,6 +23594,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityPoolName", "AllowUnauthenticatedIdentities" ],
       "shapeName" : "UpdateIdentityPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateIdentityPoolRequest",
@@ -25131,6 +25247,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityPoolName", "AllowUnauthenticatedIdentities" ],
       "shapeName" : "UpdateIdentityPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

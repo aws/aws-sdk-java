@@ -1988,6 +1988,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Connector",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2028,6 +2030,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConnectorCapability",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2071,6 +2075,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConnectorStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2866,6 +2872,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "serverId", "seedReplicationTime", "frequency" ],
       "shapeName" : "CreateReplicationJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateReplicationJobRequest",
@@ -3026,6 +3034,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateReplicationJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3196,6 +3206,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "replicationJobId" ],
       "shapeName" : "DeleteReplicationJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteReplicationJobRequest",
@@ -3230,6 +3242,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteReplicationJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3274,6 +3288,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteServerCatalogRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteServerCatalogRequest",
@@ -3308,6 +3324,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteServerCatalogResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3478,6 +3496,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "connectorId" ],
       "shapeName" : "DisassociateConnectorRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DisassociateConnectorRequest",
@@ -3512,6 +3532,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisassociateConnectorResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3807,6 +3829,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetConnectorsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetConnectorsRequest",
@@ -4246,6 +4270,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetConnectorsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4666,6 +4692,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetReplicationJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetReplicationJobsRequest",
@@ -5105,6 +5133,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetReplicationJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5525,6 +5555,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "replicationJobId" ],
       "shapeName" : "GetReplicationRunsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetReplicationRunsRequest",
@@ -6089,6 +6121,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetReplicationRunsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6384,6 +6418,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetServersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetServersRequest",
@@ -7073,6 +7109,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetServersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7117,6 +7155,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImportServerCatalogRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ImportServerCatalogRequest",
@@ -7151,6 +7191,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImportServerCatalogResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7188,6 +7230,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalErrorException",
@@ -7222,6 +7266,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -7262,6 +7308,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LicenseType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7299,6 +7347,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingRequiredParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingRequiredParameterException",
@@ -7333,6 +7383,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoConnectorsAvailableException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NoConnectorsAvailableException",
@@ -7367,6 +7419,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationNotPermittedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "OperationNotPermittedException",
@@ -9306,6 +9360,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationJob",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9343,6 +9399,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationJobAlreadyExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ReplicationJobAlreadyExistsException",
@@ -9377,6 +9435,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationJobNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ReplicationJobNotFoundException",
@@ -9426,6 +9486,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationJobState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10464,6 +10526,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationRun",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10501,6 +10565,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationRunLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ReplicationRunLimitExceededException",
@@ -10556,6 +10622,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationRunState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10599,6 +10667,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReplicationRunType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11262,6 +11332,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Server",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11299,6 +11371,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServerCannotBeReplicatedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ServerCannotBeReplicatedException",
@@ -11348,6 +11422,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServerCatalogStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11388,6 +11464,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServerType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11683,6 +11761,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "replicationJobId" ],
       "shapeName" : "StartOnDemandReplicationRunRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StartOnDemandReplicationRunRequest",
@@ -11843,6 +11923,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartOnDemandReplicationRunResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11880,6 +11962,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnauthorizedOperationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnauthorizedOperationException",
@@ -12672,6 +12756,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "replicationJobId" ],
       "shapeName" : "UpdateReplicationJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateReplicationJobRequest",
@@ -12706,6 +12792,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateReplicationJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12746,6 +12834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VmManagerType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13409,6 +13499,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VmServer",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13697,6 +13789,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VmServerAddress",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

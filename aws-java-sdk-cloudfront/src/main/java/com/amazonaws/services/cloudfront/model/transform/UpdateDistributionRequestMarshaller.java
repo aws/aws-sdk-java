@@ -51,14 +51,14 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
             request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-11-25/distribution/{Id}/config";
+        String uriResourcePath = "/2017-03-25/distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-11-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-03-25/");
 
             DistributionConfig distributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -198,6 +198,14 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                         xmlWriter.endElement();
                                     }
                                     xmlWriter.endElement();
+                                }
+
+                                if (customOriginConfig.getOriginReadTimeout() != null) {
+                                    xmlWriter.startElement("OriginReadTimeout").value(customOriginConfig.getOriginReadTimeout()).endElement();
+                                }
+
+                                if (customOriginConfig.getOriginKeepaliveTimeout() != null) {
+                                    xmlWriter.startElement("OriginKeepaliveTimeout").value(customOriginConfig.getOriginKeepaliveTimeout()).endElement();
                                 }
                                 xmlWriter.endElement();
                             }

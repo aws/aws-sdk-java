@@ -43,7 +43,7 @@ import javax.annotation.Generated;
  * Connection to Access Your Objects</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ViewerCertificate" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ViewerCertificate" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -64,7 +64,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -380,7 +380,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -433,8 +433,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you must request permission to use this feature, and you incur
-     *        additional monthly charges.
+     *        requests from any viewer. However, you will incur additional monthly charges.
      *        </p>
      *        </li>
      *        <li>
@@ -494,7 +493,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -546,8 +545,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *         requests from any viewer. However, you must request permission to use this feature, and you incur
-     *         additional monthly charges.
+     *         requests from any viewer. However, you will incur additional monthly charges.
      *         </p>
      *         </li>
      *         <li>
@@ -607,7 +605,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -660,8 +658,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you must request permission to use this feature, and you incur
-     *        additional monthly charges.
+     *        requests from any viewer. However, you will incur additional monthly charges.
      *        </p>
      *        </li>
      *        <li>
@@ -723,7 +720,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -776,8 +773,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you must request permission to use this feature, and you incur
-     *        additional monthly charges.
+     *        requests from any viewer. However, you will incur additional monthly charges.
      *        </p>
      *        </li>
      *        <li>
@@ -837,7 +833,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.
+     * any viewer. However, you will incur additional monthly charges.
      * </p>
      * </li>
      * <li>
@@ -890,8 +886,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you must request permission to use this feature, and you incur
-     *        additional monthly charges.
+     *        requests from any viewer. However, you will incur additional monthly charges.
      *        </p>
      *        </li>
      *        <li>

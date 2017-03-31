@@ -227,6 +227,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataSetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1301,6 +1303,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "dataSetPublicationDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "GenerateDataSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GenerateDataSetRequest",
@@ -1461,6 +1465,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenerateDataSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1498,6 +1504,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MarketplaceCommerceAnalyticsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
@@ -2569,6 +2577,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "fromDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "StartSupportDataExportRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StartSupportDataExportRequest",
@@ -2729,6 +2739,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartSupportDataExportResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2772,6 +2784,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SupportDataSetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

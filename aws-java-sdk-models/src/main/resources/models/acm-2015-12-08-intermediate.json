@@ -884,6 +884,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Tags" ],
       "shapeName" : "AddTagsToCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddTagsToCertificateRequest",
@@ -918,6 +920,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4043,6 +4047,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4101,6 +4107,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4389,6 +4397,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4432,6 +4442,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4602,6 +4614,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "DeleteCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteCertificateRequest",
@@ -4636,6 +4650,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4806,6 +4822,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "DescribeCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeCertificateRequest",
@@ -4966,6 +4984,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5012,6 +5032,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5704,6 +5726,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DomainValidation",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5992,6 +6016,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ValidationDomain" ],
       "shapeName" : "DomainValidationOption",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6044,6 +6070,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailureReason",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6214,6 +6242,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "GetCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetCertificateRequest",
@@ -6499,6 +6529,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7044,6 +7076,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Certificate", "PrivateKey" ],
       "shapeName" : "ImportCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ImportCertificateRequest",
@@ -7204,6 +7238,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImportCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7241,6 +7277,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidArnException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidArnException",
@@ -7275,6 +7313,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDomainValidationOptionsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidDomainValidationOptionsException",
@@ -7309,6 +7349,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidStateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidStateException",
@@ -7343,6 +7385,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTagException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidTagException",
@@ -7386,6 +7430,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyAlgorithm",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7423,6 +7469,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -7994,6 +8042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCertificatesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListCertificatesRequest",
@@ -8433,6 +8483,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCertificatesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8603,6 +8655,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "ListTagsForCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForCertificateRequest",
@@ -8917,6 +8971,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTagsForCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9366,6 +9422,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Tags" ],
       "shapeName" : "RemoveTagsFromCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RemoveTagsFromCertificateRequest",
@@ -9400,6 +9458,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9449,6 +9509,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RenewalStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9891,6 +9953,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RenewalStatus", "DomainValidationOptions" ],
       "shapeName" : "RenewalSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10744,6 +10808,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "RequestCertificateRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RequestCertificateRequest",
@@ -10904,6 +10970,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestCertificateResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10941,6 +11009,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestInProgressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RequestInProgressException",
@@ -11358,6 +11428,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Domain", "ValidationDomain" ],
       "shapeName" : "ResendValidationEmailRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResendValidationEmailRequest",
@@ -11392,6 +11464,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendValidationEmailResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11429,6 +11503,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceInUseException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceInUseException",
@@ -11463,6 +11539,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -11527,6 +11605,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevocationReason",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11815,6 +11895,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Key" ],
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11852,6 +11934,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyTagsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TooManyTagsException",

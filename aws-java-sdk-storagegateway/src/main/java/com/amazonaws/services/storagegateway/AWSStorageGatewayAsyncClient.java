@@ -1907,6 +1907,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest request) {
+
+        return refreshCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(final RefreshCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RefreshCacheRequest, RefreshCacheResult> asyncHandler) {
+        final RefreshCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RefreshCacheResult>() {
+            @Override
+            public RefreshCacheResult call() throws Exception {
+                RefreshCacheResult result = null;
+
+                try {
+                    result = executeRefreshCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request) {
 
         return removeTagsFromResourceAsync(request, null);

@@ -2322,6 +2322,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttributeValue",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2742,6 +2744,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn" ],
       "shapeName" : "DescribeStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeStreamRequest",
@@ -2902,6 +2906,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2939,6 +2945,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredIteratorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredIteratorException",
@@ -3231,6 +3239,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardIterator" ],
       "shapeName" : "GetRecordsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetRecordsRequest",
@@ -3670,6 +3680,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRecordsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4215,6 +4227,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn", "ShardId", "ShardIteratorType" ],
       "shapeName" : "GetShardIteratorRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetShardIteratorRequest",
@@ -4375,6 +4389,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShardIteratorResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4663,6 +4679,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Identity",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4700,6 +4718,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalServerErrorException",
@@ -4985,6 +5005,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName", "KeyType" ],
       "shapeName" : "KeySchemaElement",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5028,6 +5050,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5065,6 +5089,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -5482,6 +5508,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStreamsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListStreamsRequest",
@@ -5921,6 +5949,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStreamsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5967,6 +5997,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6880,6 +6912,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Record",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6917,6 +6951,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -7202,6 +7238,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SequenceNumberRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7615,6 +7653,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Shard",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7664,6 +7704,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShardIteratorType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8077,6 +8119,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Stream",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9548,6 +9592,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10923,6 +10969,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamRecord",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10972,6 +11020,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11021,6 +11071,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamViewType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11058,6 +11110,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TrimmedDataAccessException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TrimmedDataAccessException",

@@ -69,7 +69,11 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String snsTopicARN;
-
+    /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     */
     private ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties;
 
     /**
@@ -329,7 +333,12 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
      * @param configSnapshotDeliveryProperties
+     *        The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      */
 
     public void setConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
@@ -337,7 +346,11 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
+     * @return The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      */
 
     public ConfigSnapshotDeliveryProperties getConfigSnapshotDeliveryProperties() {
@@ -345,7 +358,12 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
      * @param configSnapshotDeliveryProperties
+     *        The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

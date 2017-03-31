@@ -2092,6 +2092,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "AbortMultipartUploadRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AbortMultipartUploadRequest",
@@ -2126,6 +2128,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AbortMultipartUploadResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2421,6 +2425,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "AbortVaultLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AbortVaultLockRequest",
@@ -2455,6 +2461,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AbortVaultLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2498,6 +2506,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3072,6 +3082,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "AddTagsToVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddTagsToVaultRequest",
@@ -3106,6 +3118,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3776,6 +3790,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "CompleteMultipartUploadRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CompleteMultipartUploadRequest",
@@ -4186,6 +4202,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompleteMultipartUploadResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4606,6 +4624,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "lockId" ],
       "shapeName" : "CompleteVaultLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CompleteVaultLockRequest",
@@ -4640,6 +4660,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompleteVaultLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4935,6 +4957,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "CreateVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateVaultRequest",
@@ -5095,6 +5119,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5412,6 +5438,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataRetrievalPolicy",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5700,6 +5728,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataRetrievalRule",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6120,6 +6150,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "archiveId" ],
       "shapeName" : "DeleteArchiveRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteArchiveRequest",
@@ -6154,6 +6186,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteArchiveResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6449,6 +6483,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultAccessPolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteVaultAccessPolicyRequest",
@@ -6483,6 +6519,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultAccessPolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6778,6 +6816,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultNotificationsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteVaultNotificationsRequest",
@@ -6812,6 +6852,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultNotificationsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7107,6 +7149,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteVaultRequest",
@@ -7141,6 +7185,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7561,6 +7607,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "jobId" ],
       "shapeName" : "DescribeJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeJobRequest",
@@ -9846,6 +9894,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10634,6 +10684,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVaultOutput",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10929,6 +10981,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DescribeVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeVaultRequest",
@@ -11714,6 +11768,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11884,6 +11940,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "GetDataRetrievalPolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetDataRetrievalPolicyRequest",
@@ -12044,6 +12102,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDataRetrievalPolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12589,6 +12649,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "jobId" ],
       "shapeName" : "GetJobOutputRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetJobOutputRequest",
@@ -13499,6 +13561,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetJobOutputResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13794,6 +13858,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultAccessPolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetVaultAccessPolicyRequest",
@@ -13954,6 +14020,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultAccessPolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14249,6 +14317,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetVaultLockRequest",
@@ -14784,6 +14854,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15079,6 +15151,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultNotificationsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetVaultNotificationsRequest",
@@ -15239,6 +15313,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultNotificationsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17527,6 +17603,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlacierJobDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17947,6 +18025,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InitiateJobRequest",
@@ -18232,6 +18312,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18777,6 +18859,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateMultipartUploadRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InitiateMultipartUploadRequest",
@@ -19062,6 +19146,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateMultipartUploadResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19482,6 +19568,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateVaultLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InitiateVaultLockRequest",
@@ -19642,6 +19730,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateVaultLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19930,6 +20020,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InsufficientCapacityException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InsufficientCapacityException",
@@ -20215,6 +20307,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValueException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterValueException",
@@ -20875,6 +20969,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InventoryRetrievalJobDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21413,6 +21509,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InventoryRetrievalJobInput",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22451,6 +22549,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobParameters",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22739,6 +22839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -23531,6 +23633,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListJobsRequest",
@@ -23970,6 +24074,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24515,6 +24621,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListMultipartUploadsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListMultipartUploadsRequest",
@@ -24954,6 +25062,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListMultipartUploadsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25624,6 +25734,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "ListPartsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListPartsRequest",
@@ -26688,6 +26800,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPartsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -26858,6 +26972,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "ListProvisionedCapacityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListProvisionedCapacityRequest",
@@ -27172,6 +27288,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListProvisionedCapacityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27467,6 +27585,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListTagsForVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForVaultRequest",
@@ -27781,6 +27901,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTagsForVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -28201,6 +28323,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "ListVaultsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListVaultsRequest",
@@ -28640,6 +28764,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVaultsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -28928,6 +29054,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterValueException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingParameterValueException",
@@ -29213,6 +29341,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PartListElement",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29501,6 +29631,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PolicyEnforcedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PolicyEnforcedException",
@@ -29911,6 +30043,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedCapacityDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30081,6 +30215,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "PurchaseProvisionedCapacityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PurchaseProvisionedCapacityRequest",
@@ -30241,6 +30377,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PurchaseProvisionedCapacityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30815,6 +30953,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "RemoveTagsFromVaultRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RemoveTagsFromVaultRequest",
@@ -30849,6 +30989,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromVaultResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31137,6 +31279,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestTimeoutException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RequestTimeoutException",
@@ -31422,6 +31566,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -31707,6 +31853,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceUnavailableException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ServiceUnavailableException",
@@ -31999,6 +32147,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "SetDataRetrievalPolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetDataRetrievalPolicyRequest",
@@ -32033,6 +32183,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetDataRetrievalPolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32453,6 +32605,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "SetVaultAccessPolicyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetVaultAccessPolicyRequest",
@@ -32487,6 +32641,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetVaultAccessPolicyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32907,6 +33063,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "SetVaultNotificationsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetVaultNotificationsRequest",
@@ -32941,6 +33099,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetVaultNotificationsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32987,6 +33147,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StatusCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -33782,6 +33944,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "vaultName", "accountId" ],
       "shapeName" : "UploadArchiveRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UploadArchiveRequest",
@@ -34192,6 +34356,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadArchiveResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34855,6 +35021,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadListElement",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35650,6 +35818,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "UploadMultipartPartRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UploadMultipartPartRequest",
@@ -35810,6 +35980,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadMultipartPartResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35973,6 +36145,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultAccessPolicy",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36136,6 +36310,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultLockPolicy",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36578,6 +36754,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultNotificationConfig",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

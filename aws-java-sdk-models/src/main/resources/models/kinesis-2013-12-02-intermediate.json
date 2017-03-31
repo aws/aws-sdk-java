@@ -1299,6 +1299,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "Tags" ],
       "shapeName" : "AddTagsToStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddTagsToStreamRequest",
@@ -1333,6 +1335,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1628,6 +1632,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardCount" ],
       "shapeName" : "CreateStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateStreamRequest",
@@ -1662,6 +1668,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1957,6 +1965,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "RetentionPeriodHours" ],
       "shapeName" : "DecreaseStreamRetentionPeriodRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DecreaseStreamRetentionPeriodRequest",
@@ -1991,6 +2001,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DecreaseStreamRetentionPeriodResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2161,6 +2173,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName" ],
       "shapeName" : "DeleteStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteStreamRequest",
@@ -2195,6 +2209,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2239,6 +2255,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLimitsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeLimitsRequest",
@@ -2524,6 +2542,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardLimit", "OpenShardCount" ],
       "shapeName" : "DescribeLimitsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2944,6 +2964,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName" ],
       "shapeName" : "DescribeStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeStreamRequest",
@@ -3104,6 +3126,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamDescription" ],
       "shapeName" : "DescribeStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3553,6 +3577,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardLevelMetrics" ],
       "shapeName" : "DisableEnhancedMonitoringRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DisableEnhancedMonitoringRequest",
@@ -4271,6 +4297,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableEnhancedMonitoringResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4720,6 +4748,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardLevelMetrics" ],
       "shapeName" : "EnableEnhancedMonitoringRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EnableEnhancedMonitoringRequest",
@@ -5438,6 +5468,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnableEnhancedMonitoringResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5755,6 +5787,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnhancedMetrics",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5792,6 +5826,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredIteratorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredIteratorException",
@@ -6084,6 +6120,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardIterator" ],
       "shapeName" : "GetRecordsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetRecordsRequest",
@@ -6648,6 +6686,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Records" ],
       "shapeName" : "GetRecordsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7318,6 +7358,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardId", "ShardIteratorType" ],
       "shapeName" : "GetShardIteratorRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetShardIteratorRequest",
@@ -7478,6 +7520,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShardIteratorResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7766,6 +7810,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StartingHashKey", "EndingHashKey" ],
       "shapeName" : "HashKeyRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8061,6 +8107,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "RetentionPeriodHours" ],
       "shapeName" : "IncreaseStreamRetentionPeriodRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "IncreaseStreamRetentionPeriodRequest",
@@ -8095,6 +8143,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IncreaseStreamRetentionPeriodResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8132,6 +8182,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidArgumentException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidArgumentException",
@@ -8166,6 +8218,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -8458,6 +8512,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStreamsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListStreamsRequest",
@@ -8897,6 +8953,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamNames", "HasMoreStreams" ],
       "shapeName" : "ListStreamsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9317,6 +9375,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName" ],
       "shapeName" : "ListTagsForStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForStreamRequest",
@@ -9756,6 +9816,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Tags", "HasMoreTags" ],
       "shapeName" : "ListTagsForStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10176,6 +10238,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardToMerge", "AdjacentShardToMerge" ],
       "shapeName" : "MergeShardsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MergeShardsRequest",
@@ -10210,6 +10274,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MergeShardsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10271,6 +10337,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MetricsName",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10308,6 +10376,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedThroughputExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ProvisionedThroughputExceededException",
@@ -10975,6 +11045,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "Data", "PartitionKey" ],
       "shapeName" : "PutRecordRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutRecordRequest",
@@ -11260,6 +11332,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardId", "SequenceNumber" ],
       "shapeName" : "PutRecordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11709,6 +11783,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Records", "StreamName" ],
       "shapeName" : "PutRecordsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutRecordsRequest",
@@ -12119,6 +12195,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Data", "PartitionKey" ],
       "shapeName" : "PutRecordsRequestEntry",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12561,6 +12639,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Records" ],
       "shapeName" : "PutRecordsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13099,6 +13179,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutRecordsResultEntry",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13637,6 +13719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SequenceNumber", "Data", "PartitionKey" ],
       "shapeName" : "Record",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14086,6 +14170,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "TagKeys" ],
       "shapeName" : "RemoveTagsFromStreamRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RemoveTagsFromStreamRequest",
@@ -14120,6 +14206,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromStreamResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14157,6 +14245,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceInUseException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceInUseException",
@@ -14191,6 +14281,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -14228,6 +14320,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalingType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14516,6 +14610,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StartingSequenceNumber" ],
       "shapeName" : "SequenceNumberRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15179,6 +15275,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ShardId", "HashKeyRange", "SequenceNumberRange" ],
       "shapeName" : "Shard",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15231,6 +15329,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShardIteratorType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15651,6 +15751,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "ShardToSplit", "NewStartingHashKey" ],
       "shapeName" : "SplitShardRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SplitShardRequest",
@@ -15685,6 +15787,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SplitShardResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17031,6 +17135,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "StreamARN", "StreamStatus", "Shards", "HasMoreShards", "RetentionPeriodHours", "StreamCreationTimestamp", "EnhancedMonitoring" ],
       "shapeName" : "StreamDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17080,6 +17186,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17368,6 +17476,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Key" ],
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17788,6 +17898,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName", "TargetShardCount", "ScalingType" ],
       "shapeName" : "UpdateShardCountRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateShardCountRequest",
@@ -18198,6 +18310,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateShardCountResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

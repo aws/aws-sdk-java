@@ -1973,6 +1973,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "BudgetName", "BudgetLimit", "CostTypes", "TimeUnit", "TimePeriod", "BudgetType" ],
       "shapeName" : "Budget",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2016,6 +2018,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BudgetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2304,6 +2308,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ActualSpend" ],
       "shapeName" : "CalculatedSpend",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2350,6 +2356,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparisonOperator",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2763,6 +2771,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IncludeTax", "IncludeSubscription", "UseBlended" ],
       "shapeName" : "CostTypes",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3337,6 +3347,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "Budget" ],
       "shapeName" : "CreateBudgetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateBudgetRequest",
@@ -3371,6 +3383,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBudgetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4070,6 +4084,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscribers" ],
       "shapeName" : "CreateNotificationRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateNotificationRequest",
@@ -4104,6 +4120,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateNotificationResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4649,6 +4667,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
       "shapeName" : "CreateSubscriberRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateSubscriberRequest",
@@ -4683,6 +4703,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSubscriberResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4720,6 +4742,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreationLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreationLimitExceededException",
@@ -5012,6 +5036,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DeleteBudgetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteBudgetRequest",
@@ -5046,6 +5072,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBudgetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5466,6 +5494,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
       "shapeName" : "DeleteNotificationRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteNotificationRequest",
@@ -5500,6 +5530,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteNotificationResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6045,6 +6077,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
       "shapeName" : "DeleteSubscriberRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteSubscriberRequest",
@@ -6079,6 +6113,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteSubscriberResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6374,6 +6410,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DescribeBudgetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeBudgetRequest",
@@ -6534,6 +6572,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBudgetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6954,6 +6994,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId" ],
       "shapeName" : "DescribeBudgetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeBudgetsRequest",
@@ -7393,6 +7435,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBudgetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7938,6 +7982,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DescribeNotificationsForBudgetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeNotificationsForBudgetRequest",
@@ -8377,6 +8423,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeNotificationsForBudgetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9047,6 +9095,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
       "shapeName" : "DescribeSubscribersForNotificationRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeSubscribersForNotificationRequest",
@@ -9486,6 +9536,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeSubscribersForNotificationResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9523,6 +9575,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRecordException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DuplicateRecordException",
@@ -9557,6 +9611,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredNextTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredNextTokenException",
@@ -9591,6 +9647,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalErrorException",
@@ -9625,6 +9683,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidNextTokenException",
@@ -9659,6 +9719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -9693,6 +9755,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NotFoundException",
@@ -10103,6 +10167,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "NotificationType", "ComparisonOperator", "Threshold" ],
       "shapeName" : "Notification",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10146,6 +10212,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotificationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10588,6 +10656,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Notification", "Subscribers" ],
       "shapeName" : "NotificationWithSubscribers",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10876,6 +10946,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Amount", "Unit" ],
       "shapeName" : "Spend",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11164,6 +11236,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionType", "Address" ],
       "shapeName" : "Subscriber",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11207,6 +11281,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscriptionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11495,6 +11571,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Start", "End" ],
       "shapeName" : "TimePeriod",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11541,6 +11619,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimeUnit",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11836,6 +11916,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "NewBudget" ],
       "shapeName" : "UpdateBudgetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateBudgetRequest",
@@ -11870,6 +11952,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateBudgetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12415,6 +12499,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "OldNotification", "NewNotification" ],
       "shapeName" : "UpdateNotificationRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateNotificationRequest",
@@ -12449,6 +12535,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateNotificationResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13119,6 +13207,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "OldSubscriber", "NewSubscriber" ],
       "shapeName" : "UpdateSubscriberRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateSubscriberRequest",
@@ -13153,6 +13243,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateSubscriberResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

@@ -20,7 +20,17 @@ import java.util.Arrays;
 
 public enum AuthType {
 
-    NONE("none"), CUSTOM("custom"), IAM("iam");
+    NONE("none"),
+
+    // APIG specific
+    CUSTOM("custom"),
+    IAM("iam"),
+
+    // AWS protocol
+    V4("v4"),
+    V4_UNSIGNED_BODY("v4-unsigned-body"),
+
+    ;
 
     private final String value;
 
@@ -34,5 +44,9 @@ public enum AuthType {
                 .filter(authType -> authType.value.equals(value))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(String.format("Unknown AuthType '%s'", value)));
+    }
+
+    public String getValue() {
+        return value;
     }
 }

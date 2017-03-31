@@ -473,6 +473,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "DeleteLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteLexiconRequest",
@@ -507,6 +509,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -802,6 +806,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeVoicesRequest",
@@ -1241,6 +1247,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1284,6 +1292,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Gender",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1454,6 +1464,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "GetLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetLexiconRequest",
@@ -1739,6 +1751,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1776,6 +1790,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLexiconException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidLexiconException",
@@ -1810,6 +1826,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidNextTokenException",
@@ -1844,6 +1862,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSampleRateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSampleRateException",
@@ -1878,6 +1898,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSsmlException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSsmlException",
@@ -1984,6 +2006,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LanguageCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2272,6 +2296,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Lexicon",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3060,6 +3086,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconAttributes",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3348,6 +3376,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3385,6 +3415,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LexiconNotFoundException",
@@ -3419,6 +3451,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconSizeExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LexiconSizeExceededException",
@@ -3586,6 +3620,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListLexiconsRequest",
@@ -4025,6 +4061,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4062,6 +4100,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexemeLengthExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaxLexemeLengthExceededException",
@@ -4096,6 +4136,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexiconsNumberExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaxLexiconsNumberExceededException",
@@ -4139,6 +4181,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OutputFormat",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4434,6 +4478,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Content" ],
       "shapeName" : "PutLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutLexiconRequest",
@@ -4468,6 +4514,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4505,6 +4553,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceFailureException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ServiceFailureException",
@@ -5451,6 +5501,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OutputFormat", "Text", "VoiceId" ],
       "shapeName" : "SynthesizeSpeechRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SynthesizeSpeechRequest",
@@ -5861,6 +5913,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SynthesizeSpeechResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5898,6 +5952,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextLengthExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TextLengthExceededException",
@@ -5938,6 +5994,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5975,6 +6033,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsAlphabetException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedPlsAlphabetException",
@@ -6009,6 +6069,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsLanguageException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedPlsLanguageException",
@@ -6669,6 +6731,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Voice",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6847,6 +6911,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VoiceId",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
