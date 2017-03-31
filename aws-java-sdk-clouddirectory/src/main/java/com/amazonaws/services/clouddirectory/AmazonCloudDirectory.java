@@ -229,6 +229,8 @@ public interface AmazonCloudDirectory {
      *         has occurred. Rename the link or the schema and then try again.
      * @throws ValidationException
      *         Indicates your request is malformed in some manner. See the exception message.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AttachObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
      *      API Documentation</a>
@@ -1450,6 +1452,8 @@ public interface AmazonCloudDirectory {
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListObjectAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>

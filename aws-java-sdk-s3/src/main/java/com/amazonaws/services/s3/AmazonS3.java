@@ -4974,6 +4974,15 @@ public interface AmazonS3 extends S3DirectSpi {
             throws AmazonServiceException, SdkClientException;
 
     /**
+     * Shuts down this client object, releasing any resources that might be held
+     * open. This is an optional method, and callers are not expected to call
+     * it, but can if they want to explicitly release any open resources. Once a
+     * client has been shutdown, it should not be used to make any more
+     * requests.
+     */
+    void shutdown();
+
+    /**
      * Returns the region with which the client is configured.
      *
      * @return The region this client will communicate with.

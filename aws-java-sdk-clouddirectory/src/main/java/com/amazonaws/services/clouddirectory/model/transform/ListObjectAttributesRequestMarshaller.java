@@ -37,6 +37,8 @@ public class ListObjectAttributesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> CONSISTENCYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-consistency-level").build();
+    private static final MarshallingInfo<StructuredPojo> FACETFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FacetFilter").build();
 
     private static final ListObjectAttributesRequestMarshaller instance = new ListObjectAttributesRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListObjectAttributesRequestMarshaller {
             protocolMarshaller.marshall(listObjectAttributesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listObjectAttributesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listObjectAttributesRequest.getConsistencyLevel(), CONSISTENCYLEVEL_BINDING);
+            protocolMarshaller.marshall(listObjectAttributesRequest.getFacetFilter(), FACETFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

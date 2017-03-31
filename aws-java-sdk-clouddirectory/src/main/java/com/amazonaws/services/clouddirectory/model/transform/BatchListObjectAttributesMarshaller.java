@@ -33,6 +33,8 @@ public class BatchListObjectAttributesMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> FACETFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FacetFilter").build();
 
     private static final BatchListObjectAttributesMarshaller instance = new BatchListObjectAttributesMarshaller();
 
@@ -53,6 +55,7 @@ public class BatchListObjectAttributesMarshaller {
             protocolMarshaller.marshall(batchListObjectAttributes.getObjectReference(), OBJECTREFERENCE_BINDING);
             protocolMarshaller.marshall(batchListObjectAttributes.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(batchListObjectAttributes.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(batchListObjectAttributes.getFacetFilter(), FACETFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

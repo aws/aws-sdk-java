@@ -238,6 +238,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -2536,6 +2542,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -5099,6 +5111,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "FacetFilter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SchemaFacet",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "MaxResults" : {
           "deprecated" : false,
           "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
@@ -10619,6 +10645,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FacetFilter" : {
+          "deprecated" : false,
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SchemaFacet",
           "streaming" : false,
           "xmlNamespace" : null
         },

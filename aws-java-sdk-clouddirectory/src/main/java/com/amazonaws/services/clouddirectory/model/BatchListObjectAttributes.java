@@ -46,6 +46,12 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     */
+    private SchemaFacet facetFilter;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @param facetFilter
+     *        Used to filter the list of object attributes associated with a certain facet.
+     */
+
+    public void setFacetFilter(SchemaFacet facetFilter) {
+        this.facetFilter = facetFilter;
+    }
+
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @return Used to filter the list of object attributes associated with a certain facet.
+     */
+
+    public SchemaFacet getFacetFilter() {
+        return this.facetFilter;
+    }
+
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @param facetFilter
+     *        Used to filter the list of object attributes associated with a certain facet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchListObjectAttributes withFacetFilter(SchemaFacet facetFilter) {
+        setFacetFilter(facetFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -183,7 +229,9 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFacetFilter() != null)
+            sb.append("FacetFilter: ").append(getFacetFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +258,10 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFacetFilter() == null ^ this.getFacetFilter() == null)
+            return false;
+        if (other.getFacetFilter() != null && other.getFacetFilter().equals(this.getFacetFilter()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +273,7 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getObjectReference() == null) ? 0 : getObjectReference().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFacetFilter() == null) ? 0 : getFacetFilter().hashCode());
         return hashCode;
     }
 

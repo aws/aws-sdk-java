@@ -1,3 +1,8 @@
+# __1.11.113__ __2017-03-31__
+## __Amazon CloudDirectory__
+  - ### Features
+    - ListObjectAttributes now supports filtering by facet.
+
 # __1.11.112__ __2017-03-30__
 ## __AWS Cloud Formation__
   - ### Features

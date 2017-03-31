@@ -251,6 +251,10 @@
         "exceptionName" : "ValidationException",
         "documentation" : "<p>Indicates your request is malformed in some manner. See the exception message.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "FacetValidationException",
+        "documentation" : "<p>The <a>Facet</a> you provided was not well formed or could not be validated with the schema.</p>",
+        "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -2092,6 +2096,10 @@
       }, {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>Indicates that the <code>NextToken</code> value is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "FacetValidationException",
+        "documentation" : "<p>The <a>Facet</a> you provided was not well formed or could not be validated with the schema.</p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -10248,8 +10256,133 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FacetFilter",
+        "c2jShape" : "SchemaFacet",
+        "deprecated" : false,
+        "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFacetFilter",
+        "getterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@return Used to filter the list of object attributes associated with a certain facet.*/",
+        "getterMethodName" : "getFacetFilter",
+        "getterModel" : {
+          "returnType" : "SchemaFacet",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FacetFilter",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FacetFilter",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "FacetFilter",
+        "setterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.*/",
+        "setterMethodName" : "setFacetFilter",
+        "setterModel" : {
+          "variableDeclarationType" : "SchemaFacet",
+          "variableName" : "facetFilter",
+          "variableType" : "SchemaFacet",
+          "documentation" : "",
+          "simpleType" : "SchemaFacet",
+          "variableSetterType" : "SchemaFacet"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "SchemaFacet",
+          "variableName" : "facetFilter",
+          "variableType" : "SchemaFacet",
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "simpleType" : "SchemaFacet",
+          "variableSetterType" : "SchemaFacet"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "FacetFilter" : {
+          "c2jName" : "FacetFilter",
+          "c2jShape" : "SchemaFacet",
+          "deprecated" : false,
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFacetFilter",
+          "getterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@return Used to filter the list of object attributes associated with a certain facet.*/",
+          "getterMethodName" : "getFacetFilter",
+          "getterModel" : {
+            "returnType" : "SchemaFacet",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FacetFilter",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FacetFilter",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "FacetFilter",
+          "setterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.*/",
+          "setterMethodName" : "setFacetFilter",
+          "setterModel" : {
+            "variableDeclarationType" : "SchemaFacet",
+            "variableName" : "facetFilter",
+            "variableType" : "SchemaFacet",
+            "documentation" : "",
+            "simpleType" : "SchemaFacet",
+            "variableSetterType" : "SchemaFacet"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "SchemaFacet",
+            "variableName" : "facetFilter",
+            "variableType" : "SchemaFacet",
+            "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+            "simpleType" : "SchemaFacet",
+            "variableSetterType" : "SchemaFacet"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "MaxResults" : {
           "c2jName" : "MaxResults",
           "c2jShape" : "NumberResults",
@@ -38647,6 +38780,68 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FacetFilter",
+        "c2jShape" : "SchemaFacet",
+        "deprecated" : false,
+        "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFacetFilter",
+        "getterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@return Used to filter the list of object attributes associated with a certain facet.*/",
+        "getterMethodName" : "getFacetFilter",
+        "getterModel" : {
+          "returnType" : "SchemaFacet",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FacetFilter",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FacetFilter",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "FacetFilter",
+        "setterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.*/",
+        "setterMethodName" : "setFacetFilter",
+        "setterModel" : {
+          "variableDeclarationType" : "SchemaFacet",
+          "variableName" : "facetFilter",
+          "variableType" : "SchemaFacet",
+          "documentation" : "",
+          "simpleType" : "SchemaFacet",
+          "variableSetterType" : "SchemaFacet"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "SchemaFacet",
+          "variableName" : "facetFilter",
+          "variableType" : "SchemaFacet",
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "simpleType" : "SchemaFacet",
+          "variableSetterType" : "SchemaFacet"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ConsistencyLevel" : {
@@ -38772,6 +38967,69 @@
             "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "FacetFilter" : {
+          "c2jName" : "FacetFilter",
+          "c2jShape" : "SchemaFacet",
+          "deprecated" : false,
+          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFacetFilter",
+          "getterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@return Used to filter the list of object attributes associated with a certain facet.*/",
+          "getterMethodName" : "getFacetFilter",
+          "getterModel" : {
+            "returnType" : "SchemaFacet",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FacetFilter",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FacetFilter",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "FacetFilter",
+          "setterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.*/",
+          "setterMethodName" : "setFacetFilter",
+          "setterModel" : {
+            "variableDeclarationType" : "SchemaFacet",
+            "variableName" : "facetFilter",
+            "variableType" : "SchemaFacet",
+            "documentation" : "",
+            "simpleType" : "SchemaFacet",
+            "variableSetterType" : "SchemaFacet"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Used to filter the list of object attributes associated with a certain facet.</p>\n@param facetFilter Used to filter the list of object attributes associated with a certain facet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "SchemaFacet",
+            "variableName" : "facetFilter",
+            "variableType" : "SchemaFacet",
+            "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+            "simpleType" : "SchemaFacet",
+            "variableSetterType" : "SchemaFacet"
           },
           "xmlNameSpaceUri" : null
         },

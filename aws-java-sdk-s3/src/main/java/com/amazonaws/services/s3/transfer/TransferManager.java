@@ -1683,9 +1683,7 @@ public class TransferManager {
         }
 
         if (shutDownS3Client) {
-            if (s3 instanceof AmazonS3Client) {
-                ((AmazonS3Client)s3).shutdown();
-            }
+            s3.shutdown();
         }
     }
 
