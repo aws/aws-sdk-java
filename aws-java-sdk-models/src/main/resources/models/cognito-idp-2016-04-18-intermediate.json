@@ -4465,6 +4465,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "CustomAttributes" ],
       "shapeName" : "AddCustomAttributesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AddCustomAttributesRequest",
@@ -4499,6 +4501,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddCustomAttributesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4919,6 +4923,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "GroupName" ],
       "shapeName" : "AdminAddUserToGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminAddUserToGroupRequest",
@@ -4953,6 +4959,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminAddUserToGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5248,6 +5256,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminConfirmSignUpRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminConfirmSignUpRequest",
@@ -5282,6 +5292,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminConfirmSignUpResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5695,6 +5707,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminCreateUserConfigType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7202,6 +7216,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminCreateUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminCreateUserRequest",
@@ -7362,6 +7378,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminCreateUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7936,6 +7954,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "UserAttributeNames" ],
       "shapeName" : "AdminDeleteUserAttributesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminDeleteUserAttributesRequest",
@@ -7970,6 +7990,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDeleteUserAttributesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8265,6 +8287,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminDeleteUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminDeleteUserRequest",
@@ -8299,6 +8323,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDeleteUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8594,6 +8620,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminDisableUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminDisableUserRequest",
@@ -8628,6 +8656,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDisableUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8923,6 +8953,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminEnableUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminEnableUserRequest",
@@ -8957,6 +8989,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminEnableUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9377,6 +9411,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "DeviceKey" ],
       "shapeName" : "AdminForgetDeviceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminForgetDeviceRequest",
@@ -9411,6 +9447,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminForgetDeviceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9831,6 +9869,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey", "UserPoolId", "Username" ],
       "shapeName" : "AdminGetDeviceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminGetDeviceRequest",
@@ -9991,6 +10031,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Device" ],
       "shapeName" : "AdminGetDeviceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10286,6 +10328,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminGetUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminGetUserRequest",
@@ -11504,6 +11548,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Username" ],
       "shapeName" : "AdminGetUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12482,6 +12528,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId", "AuthFlow" ],
       "shapeName" : "AdminInitiateAuthRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminInitiateAuthRequest",
@@ -13171,6 +13219,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminInitiateAuthResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13716,6 +13766,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminListDevicesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminListDevicesRequest",
@@ -14155,6 +14207,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminListDevicesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14700,6 +14754,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Username", "UserPoolId" ],
       "shapeName" : "AdminListGroupsForUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminListGroupsForUserRequest",
@@ -15139,6 +15195,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminListGroupsForUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15559,6 +15617,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "GroupName" ],
       "shapeName" : "AdminRemoveUserFromGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminRemoveUserFromGroupRequest",
@@ -15593,6 +15653,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminRemoveUserFromGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15888,6 +15950,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminResetUserPasswordRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminResetUserPasswordRequest",
@@ -15922,6 +15986,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminResetUserPasswordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16746,6 +16812,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId", "ChallengeName" ],
       "shapeName" : "AdminRespondToAuthChallengeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminRespondToAuthChallengeRequest",
@@ -17435,6 +17503,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminRespondToAuthChallengeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18009,6 +18079,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "MFAOptions" ],
       "shapeName" : "AdminSetUserSettingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminSetUserSettingsRequest",
@@ -18043,6 +18115,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminSetUserSettingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18588,6 +18662,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "DeviceKey" ],
       "shapeName" : "AdminUpdateDeviceStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminUpdateDeviceStatusRequest",
@@ -18622,6 +18698,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUpdateDeviceStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19196,6 +19274,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "UserAttributes" ],
       "shapeName" : "AdminUpdateUserAttributesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminUpdateUserAttributesRequest",
@@ -19230,6 +19310,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUpdateUserAttributesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19525,6 +19607,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminUserGlobalSignOutRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AdminUserGlobalSignOutRequest",
@@ -19559,6 +19643,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUserGlobalSignOutResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19605,6 +19691,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AliasAttributeType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19642,6 +19730,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AliasExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AliasExistsException",
@@ -19688,6 +19778,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttributeDataType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19976,6 +20068,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "AttributeType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20028,6 +20122,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthFlowType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20816,6 +20912,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthenticationResultType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20874,6 +20972,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChallengeNameType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21294,6 +21394,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "PreviousPassword", "ProposedPassword" ],
       "shapeName" : "ChangePasswordRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ChangePasswordRequest",
@@ -21328,6 +21430,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangePasswordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21741,6 +21845,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeDeliveryDetailsType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21778,6 +21884,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeDeliveryFailureException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CodeDeliveryFailureException",
@@ -21812,6 +21920,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeMismatchException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CodeMismatchException",
@@ -21846,6 +21956,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConcurrentModificationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConcurrentModificationException",
@@ -22388,6 +22500,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "DeviceKey" ],
       "shapeName" : "ConfirmDeviceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConfirmDeviceRequest",
@@ -22548,6 +22662,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmDeviceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23218,6 +23334,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "ConfirmationCode", "Password" ],
       "shapeName" : "ConfirmForgotPasswordRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConfirmForgotPasswordRequest",
@@ -23252,6 +23370,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmForgotPasswordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23922,6 +24042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "ConfirmationCode" ],
       "shapeName" : "ConfirmSignUpRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ConfirmSignUpRequest",
@@ -23956,6 +24078,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmSignUpResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24626,6 +24750,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "CreateGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateGroupRequest",
@@ -24786,6 +24912,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25206,6 +25334,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobName", "UserPoolId", "CloudWatchLogsRoleArn" ],
       "shapeName" : "CreateUserImportJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateUserImportJobRequest",
@@ -25366,6 +25496,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserImportJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -26748,6 +26880,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientName" ],
       "shapeName" : "CreateUserPoolClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateUserPoolClientRequest",
@@ -26908,6 +27042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserPoolClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29569,6 +29705,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "PoolName" ],
       "shapeName" : "CreateUserPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateUserPoolRequest",
@@ -29729,6 +29867,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30024,6 +30164,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "DeleteGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteGroupRequest",
@@ -30058,6 +30200,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30507,6 +30651,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserAttributeNames" ],
       "shapeName" : "DeleteUserAttributesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteUserAttributesRequest",
@@ -30541,6 +30687,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserAttributesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30836,6 +30984,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "DeleteUserPoolClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteUserPoolClientRequest",
@@ -30870,6 +31020,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserPoolClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31040,6 +31192,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "DeleteUserPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteUserPoolRequest",
@@ -31074,6 +31228,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31244,6 +31400,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteUserRequest",
@@ -31278,6 +31436,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31321,6 +31481,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeliveryMediumType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31616,6 +31778,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "DescribeUserImportJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeUserImportJobRequest",
@@ -31776,6 +31940,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserImportJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32071,6 +32237,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "DescribeUserPoolClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeUserPoolClientRequest",
@@ -32231,6 +32399,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserPoolClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32401,6 +32571,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "DescribeUserPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeUserPoolRequest",
@@ -32561,6 +32733,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32849,6 +33023,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceConfigurationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32892,6 +33068,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceRememberedStatusType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -33180,6 +33358,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceSecretVerifierConfigType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -33997,6 +34177,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34285,6 +34467,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmailConfigurationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34322,6 +34506,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredCodeException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredCodeException",
@@ -34362,6 +34548,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExplicitAuthFlowsType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34657,6 +34845,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey" ],
       "shapeName" : "ForgetDeviceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ForgetDeviceRequest",
@@ -34691,6 +34881,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ForgetDeviceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35111,6 +35303,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username" ],
       "shapeName" : "ForgotPasswordRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ForgotPasswordRequest",
@@ -35271,6 +35465,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ForgotPasswordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35441,6 +35637,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "GetCSVHeaderRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetCSVHeaderRequest",
@@ -35880,6 +36078,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetCSVHeaderResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36175,6 +36375,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey" ],
       "shapeName" : "GetDeviceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetDeviceRequest",
@@ -36335,6 +36537,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Device" ],
       "shapeName" : "GetDeviceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36630,6 +36834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "GetGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetGroupRequest",
@@ -36790,6 +36996,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -37085,6 +37293,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName" ],
       "shapeName" : "GetUserAttributeVerificationCodeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetUserAttributeVerificationCodeRequest",
@@ -37245,6 +37455,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetUserAttributeVerificationCodeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -37415,6 +37627,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetUserRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetUserRequest",
@@ -38133,6 +38347,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Username", "UserAttributes" ],
       "shapeName" : "GetUserResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38303,6 +38519,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlobalSignOutRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GlobalSignOutRequest",
@@ -38337,6 +38555,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlobalSignOutResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38374,6 +38594,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GroupExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GroupExistsException",
@@ -39284,6 +39506,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GroupType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -40137,6 +40361,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AuthFlow", "ClientId" ],
       "shapeName" : "InitiateAuthRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InitiateAuthRequest",
@@ -40826,6 +41052,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateAuthResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -40863,6 +41091,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalErrorException",
@@ -40897,6 +41127,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidEmailRoleAccessPolicyException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidEmailRoleAccessPolicyException",
@@ -40931,6 +41163,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLambdaResponseException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidLambdaResponseException",
@@ -40965,6 +41199,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -40999,6 +41235,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPasswordException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidPasswordException",
@@ -41033,6 +41271,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSmsRoleAccessPolicyException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSmsRoleAccessPolicyException",
@@ -41067,6 +41307,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSmsRoleTrustRelationshipException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSmsRoleTrustRelationshipException",
@@ -41101,6 +41343,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidUserPoolConfigurationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidUserPoolConfigurationException",
@@ -42136,6 +42380,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaConfigType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -42173,6 +42419,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LimitExceededException",
@@ -42590,6 +42838,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken" ],
       "shapeName" : "ListDevicesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListDevicesRequest",
@@ -43029,6 +43279,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDevicesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -43449,6 +43701,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListGroupsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListGroupsRequest",
@@ -43888,6 +44142,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListGroupsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -44308,6 +44564,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "MaxResults" ],
       "shapeName" : "ListUserImportJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListUserImportJobsRequest",
@@ -44747,6 +45005,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserImportJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -45167,6 +45427,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListUserPoolClientsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListUserPoolClientsRequest",
@@ -45606,6 +45868,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserPoolClientsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -45901,6 +46165,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MaxResults" ],
       "shapeName" : "ListUserPoolsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListUserPoolsRequest",
@@ -46340,6 +46606,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserPoolsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -46885,6 +47153,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "GroupName" ],
       "shapeName" : "ListUsersInGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListUsersInGroupRequest",
@@ -47324,6 +47594,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUsersInGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -48148,6 +48420,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListUsersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListUsersRequest",
@@ -48587,6 +48861,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUsersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -48624,6 +48900,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MFAMethodNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MFAMethodNotFoundException",
@@ -48909,6 +49187,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MFAOptionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -48952,6 +49232,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageActionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -49365,6 +49647,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageTemplateType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -49653,6 +49937,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NewDeviceMetadataType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -49690,6 +49976,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotAuthorizedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NotAuthorizedException",
@@ -49975,6 +50263,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberAttributeConstraintsType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -50638,6 +50928,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PasswordPolicyType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -50675,6 +50967,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PasswordResetRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PasswordResetRequiredException",
@@ -50709,6 +51003,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PreconditionNotMetException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PreconditionNotMetException",
@@ -51126,6 +51422,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username" ],
       "shapeName" : "ResendConfirmationCodeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResendConfirmationCodeRequest",
@@ -51286,6 +51584,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendConfirmationCodeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -51323,6 +51623,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -52019,6 +52321,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "ChallengeName" ],
       "shapeName" : "RespondToAuthChallengeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RespondToAuthChallengeRequest",
@@ -52708,6 +53012,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RespondToAuthChallengeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -53621,6 +53927,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SchemaAttributeType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -54070,6 +54378,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "MFAOptions" ],
       "shapeName" : "SetUserSettingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SetUserSettingsRequest",
@@ -54104,6 +54414,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetUserSettingsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -55207,6 +55519,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "Password" ],
       "shapeName" : "SignUpRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SignUpRequest",
@@ -55492,6 +55806,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SignUpResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -55780,6 +56096,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SnsCallerArn" ],
       "shapeName" : "SmsConfigurationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -56075,6 +56393,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "StartUserImportJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StartUserImportJobRequest",
@@ -56235,6 +56555,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartUserImportJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -56278,6 +56600,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StatusType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -56573,6 +56897,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "StopUserImportJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StopUserImportJobRequest",
@@ -56733,6 +57059,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopUserImportJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -57021,6 +57349,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StringAttributeConstraintsType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -57058,6 +57388,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyFailedAttemptsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TooManyFailedAttemptsException",
@@ -57092,6 +57424,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyRequestsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TooManyRequestsException",
@@ -57126,6 +57460,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnexpectedLambdaException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnexpectedLambdaException",
@@ -57160,6 +57496,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedUserStateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedUserStateException",
@@ -57577,6 +57915,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "DeviceKey" ],
       "shapeName" : "UpdateDeviceStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateDeviceStatusRequest",
@@ -57611,6 +57951,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDeviceStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -58281,6 +58623,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "UpdateGroupRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateGroupRequest",
@@ -58441,6 +58785,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateGroupResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -58890,6 +59236,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserAttributes" ],
       "shapeName" : "UpdateUserAttributesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateUserAttributesRequest",
@@ -59204,6 +59552,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserAttributesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -60586,6 +60936,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "UpdateUserPoolClientRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateUserPoolClientRequest",
@@ -60746,6 +61098,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserPoolClientResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -62849,6 +63203,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "UpdateUserPoolRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateUserPoolRequest",
@@ -62883,6 +63239,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserPoolResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -62920,6 +63278,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportInProgressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UserImportInProgressException",
@@ -62978,6 +63338,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportJobStatusType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -64641,6 +65003,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportJobType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -64678,6 +65042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserLambdaValidationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UserLambdaValidationException",
@@ -64712,6 +65078,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserNotConfirmedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UserNotConfirmedException",
@@ -64746,6 +65114,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UserNotFoundException",
@@ -65156,6 +65526,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolClientDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -66906,6 +67278,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolClientType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -67694,6 +68068,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolDescriptionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -67740,6 +68116,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolMfaType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -67903,6 +68281,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolPolicyType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -67940,6 +68320,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolTaggingException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UserPoolTaggingException",
@@ -71466,6 +71848,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -71524,6 +71908,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserStatusType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -72745,6 +73131,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -72782,6 +73170,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsernameExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UsernameExistsException",
@@ -72822,6 +73212,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VerifiedAttributeType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -73242,6 +73634,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName", "Code" ],
       "shapeName" : "VerifyUserAttributeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "VerifyUserAttributeRequest",
@@ -73276,6 +73670,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VerifyUserAttributeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

@@ -719,6 +719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessDeniedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AccessDeniedException",
@@ -1004,6 +1006,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AgeRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1047,6 +1051,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Attribute",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1335,6 +1341,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Beard",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1873,6 +1881,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BoundingBox",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2161,6 +2171,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompareFacesMatch",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2581,6 +2593,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SourceImage", "TargetImage" ],
       "shapeName" : "CompareFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CompareFacesRequest",
@@ -3020,6 +3034,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompareFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3308,6 +3324,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparedFace",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3596,6 +3614,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparedSourceImageFace",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3766,6 +3786,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "CreateCollectionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateCollectionRequest",
@@ -4051,6 +4073,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateCollectionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4221,6 +4245,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "DeleteCollectionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteCollectionRequest",
@@ -4381,6 +4407,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteCollectionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4830,6 +4858,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "FaceIds" ],
       "shapeName" : "DeleteFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteFacesRequest",
@@ -5144,6 +5174,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5593,6 +5625,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Image" ],
       "shapeName" : "DetectFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DetectFacesRequest",
@@ -6032,6 +6066,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DetectFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6452,6 +6488,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Image" ],
       "shapeName" : "DetectLabelsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DetectLabelsRequest",
@@ -6891,6 +6929,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DetectLabelsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7179,6 +7219,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Emotion",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7240,6 +7282,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmotionName",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7528,6 +7572,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EyeOpen",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7816,6 +7862,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Eyeglasses",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8479,6 +8527,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Face",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10700,6 +10750,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10988,6 +11040,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceMatch",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11276,6 +11330,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceRecord",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11564,6 +11620,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Gender",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11607,6 +11665,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenderType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11895,6 +11955,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Image",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12183,6 +12245,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageQuality",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12220,6 +12284,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageTooLargeException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ImageTooLargeException",
@@ -12916,6 +12982,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "Image" ],
       "shapeName" : "IndexFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "IndexFacesRequest",
@@ -13355,6 +13423,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IndexFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13392,6 +13462,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalServerErrorException",
@@ -13426,6 +13498,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidImageFormatException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidImageFormatException",
@@ -13460,6 +13534,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPaginationTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidPaginationTokenException",
@@ -13494,6 +13570,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -13528,6 +13606,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidS3ObjectException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidS3ObjectException",
@@ -13813,6 +13893,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Label",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14226,6 +14308,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Landmark",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14338,6 +14422,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LandmarkType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14633,6 +14719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCollectionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListCollectionsRequest",
@@ -15072,6 +15160,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCollectionsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15492,6 +15582,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "ListFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListFacesRequest",
@@ -15931,6 +16023,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16219,6 +16313,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MouthOpen",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16507,6 +16603,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Mustache",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16556,6 +16654,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OrientationCorrection",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16969,6 +17069,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Pose",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17006,6 +17108,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedThroughputExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ProvisionedThroughputExceededException",
@@ -17040,6 +17144,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceAlreadyExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceAlreadyExistsException",
@@ -17074,6 +17180,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResourceNotFoundException",
@@ -17484,6 +17592,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3Object",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18029,6 +18139,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "Image" ],
       "shapeName" : "SearchFacesByImageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SearchFacesByImageRequest",
@@ -18593,6 +18705,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchFacesByImageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19138,6 +19252,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "FaceId" ],
       "shapeName" : "SearchFacesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SearchFacesRequest",
@@ -19577,6 +19693,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchFacesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19865,6 +19983,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Smile",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20153,6 +20273,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Sunglasses",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20190,6 +20312,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottlingException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ThrottlingException",

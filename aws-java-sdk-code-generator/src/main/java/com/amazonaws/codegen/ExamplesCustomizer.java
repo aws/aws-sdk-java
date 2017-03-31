@@ -71,6 +71,8 @@ public class ExamplesCustomizer {
     }
 
     private Example applyCustomizationsToExample(Example example, Operation operation) {
+        if (example == null) return null;
+
         System.out.println(String.format("Customizing operation example : %s", example.getId()));
 
         Input input = operation.getInput();

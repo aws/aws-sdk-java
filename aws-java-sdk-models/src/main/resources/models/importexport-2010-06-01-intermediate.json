@@ -740,6 +740,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Artifact",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -777,6 +779,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BucketPermissionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BucketPermissionException",
@@ -1069,6 +1073,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "CancelJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CancelJobRequest",
@@ -1229,6 +1235,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "CancelJobResult"
@@ -1266,6 +1274,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CanceledJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CanceledJobIdException",
@@ -1300,6 +1310,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobQuotaExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobQuotaExceededException",
@@ -1967,6 +1979,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobType", "Manifest", "ValidateOnly" ],
       "shapeName" : "CreateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobRequest",
@@ -2906,6 +2920,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "CreateJobResult"
@@ -2943,6 +2959,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredJobIdException",
@@ -4639,6 +4657,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobIds" ],
       "shapeName" : "GetShippingLabelRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetShippingLabelRequest",
@@ -4924,6 +4944,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShippingLabelResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "GetShippingLabelResult"
@@ -5219,6 +5241,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "GetStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetStatusRequest",
@@ -7408,6 +7432,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "GetStatusResult"
@@ -7445,6 +7471,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAccessKeyIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidAccessKeyIdException",
@@ -7479,6 +7507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAddressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidAddressException",
@@ -7513,6 +7543,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCustomsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCustomsException",
@@ -7547,6 +7579,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidFileSystemException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidFileSystemException",
@@ -7581,6 +7615,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidJobIdException",
@@ -7615,6 +7651,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidManifestFieldException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidManifestFieldException",
@@ -7649,6 +7687,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -7683,6 +7723,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidVersionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidVersionException",
@@ -8218,6 +8260,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Job",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8261,6 +8305,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8681,6 +8727,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListJobsRequest",
@@ -9120,6 +9168,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "ListJobsResult"
@@ -9157,6 +9207,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MalformedManifestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MalformedManifestException",
@@ -9191,6 +9243,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingCustomsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingCustomsException",
@@ -9225,6 +9279,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingManifestFieldException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingManifestFieldException",
@@ -9259,6 +9315,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingParameterException",
@@ -9293,6 +9351,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MultipleRegionsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MultipleRegionsException",
@@ -9327,6 +9387,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoSuchBucketException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NoSuchBucketException",
@@ -9361,6 +9423,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToCancelJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnableToCancelJobIdException",
@@ -9395,6 +9459,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToUpdateJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnableToUpdateJobIdException",
@@ -10062,6 +10128,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId", "Manifest", "JobType", "ValidateOnly" ],
       "shapeName" : "UpdateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateJobRequest",
@@ -10626,6 +10694,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "UpdateJobResult"

@@ -1,3 +1,20 @@
+# __1.11.112__ __2017-03-30__
+## __AWS Cloud Formation__
+  - ### Features
+    - Adding paginators for ListExports and ListImports
+
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - File gateway mode in AWS Storage gateway provides access to objects in S3 as files on a Network File System (NFS) mount point. Once a file share is created, any changes made externally to the S3 bucket will not be reflected by the gateway. Using the cache refresh feature in this update, the customer can trigger an on-demand scan of the keys in their S3 bucket and refresh the file namespace cached on the gateway. It takes as an input the fileShare ARN and refreshes the cache for only that file share. Additionally there is new functionality on file gateway that allows you configure what squash options they would like on their file share, this allows a customer to configure their gateway to not squash root permissions. This can be done by setting options in NfsOptions for CreateNfsFileShare and UpdateNfsFileShare APIs.
+
+## __Amazon CloudFront__
+  - ### Features
+    - Amazon CloudFront now supports user configurable HTTP Read and Keep-Alive Idle Timeouts for your Custom Origin Servers
+
 # __1.11.111__ __2017-03-28__
 ## __AWS Batch__
   - ### Features

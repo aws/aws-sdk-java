@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DistributionConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DistributionConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -174,12 +174,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private String priceClass;
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     * </p>
-     * <p>
-     * If you do not want to enable logging when you create a distribution, or if you want to disable logging for an
-     * existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
-     * and <code>Prefix</code> elements.
+     * From this field, you can enable or disable the selected distribution.
      * </p>
      * <p>
      * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
@@ -296,12 +291,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront
      *        returns a <code>DistributionAlreadyExists</code> error.
      * @param enabled
-     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     *        </p>
-     *        <p>
-     *        If you do not want to enable logging when you create a distribution, or if you want to disable logging for
-     *        an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
-     *        <code>Bucket</code> and <code>Prefix</code> elements.
+     *        From this field, you can enable or disable the selected distribution.
      *        </p>
      *        <p>
      *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
@@ -1310,12 +1300,7 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     * </p>
-     * <p>
-     * If you do not want to enable logging when you create a distribution, or if you want to disable logging for an
-     * existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
-     * and <code>Prefix</code> elements.
+     * From this field, you can enable or disable the selected distribution.
      * </p>
      * <p>
      * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
@@ -1323,12 +1308,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.</p>
-     *        <p>
-     *        If you do not want to enable logging when you create a distribution, or if you want to disable logging for
-     *        an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
-     *        <code>Bucket</code> and <code>Prefix</code> elements.
-     *        </p>
+     *        From this field, you can enable or disable the selected distribution.</p>
      *        <p>
      *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
      *        and <code>Prefix</code>, the values are automatically deleted.
@@ -1340,24 +1320,14 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     * </p>
-     * <p>
-     * If you do not want to enable logging when you create a distribution, or if you want to disable logging for an
-     * existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
-     * and <code>Prefix</code> elements.
+     * From this field, you can enable or disable the selected distribution.
      * </p>
      * <p>
      * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
      * <code>Prefix</code>, the values are automatically deleted.
      * </p>
      * 
-     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.</p>
-     *         <p>
-     *         If you do not want to enable logging when you create a distribution, or if you want to disable logging
-     *         for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
-     *         <code>Bucket</code> and <code>Prefix</code> elements.
-     *         </p>
+     * @return From this field, you can enable or disable the selected distribution.</p>
      *         <p>
      *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
      *         and <code>Prefix</code>, the values are automatically deleted.
@@ -1369,12 +1339,7 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     * </p>
-     * <p>
-     * If you do not want to enable logging when you create a distribution, or if you want to disable logging for an
-     * existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
-     * and <code>Prefix</code> elements.
+     * From this field, you can enable or disable the selected distribution.
      * </p>
      * <p>
      * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
@@ -1382,12 +1347,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.</p>
-     *        <p>
-     *        If you do not want to enable logging when you create a distribution, or if you want to disable logging for
-     *        an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
-     *        <code>Bucket</code> and <code>Prefix</code> elements.
-     *        </p>
+     *        From this field, you can enable or disable the selected distribution.</p>
      *        <p>
      *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
      *        and <code>Prefix</code>, the values are automatically deleted.
@@ -1401,24 +1361,14 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-     * </p>
-     * <p>
-     * If you do not want to enable logging when you create a distribution, or if you want to disable logging for an
-     * existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code>
-     * and <code>Prefix</code> elements.
+     * From this field, you can enable or disable the selected distribution.
      * </p>
      * <p>
      * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
      * <code>Prefix</code>, the values are automatically deleted.
      * </p>
      * 
-     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.</p>
-     *         <p>
-     *         If you do not want to enable logging when you create a distribution, or if you want to disable logging
-     *         for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
-     *         <code>Bucket</code> and <code>Prefix</code> elements.
-     *         </p>
+     * @return From this field, you can enable or disable the selected distribution.</p>
      *         <p>
      *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
      *         and <code>Prefix</code>, the values are automatically deleted.

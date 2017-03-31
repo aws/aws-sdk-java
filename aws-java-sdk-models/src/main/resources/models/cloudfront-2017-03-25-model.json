@@ -1,7 +1,7 @@
 {
   "authorizers" : { },
   "metadata" : {
-    "apiVersion" : "2016-11-25",
+    "apiVersion" : "2017-03-25",
     "endpointPrefix" : "cloudfront",
     "jsonVersion" : null,
     "protocol" : "rest-xml",
@@ -11,7 +11,7 @@
     "signatureVersion" : "v4",
     "signingName" : "cloudfront",
     "targetPrefix" : null,
-    "uid" : "cloudfront-2016-11-25",
+    "uid" : "cloudfront-2017-03-25",
     "xmlNamespace" : null
   },
   "operations" : {
@@ -53,7 +53,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront",
         "responseCode" : "201"
       },
       "input" : {
@@ -62,7 +62,7 @@
         "shape" : "CreateCloudFrontOriginAccessIdentityRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateCloudFrontOriginAccessIdentity2016_11_25",
+      "name" : "CreateCloudFrontOriginAccessIdentity2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -74,7 +74,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates a new web distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p>",
+      "documentation" : "<p>Creates a new web distribution. Send a <code>POST</code> request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -303,10 +303,22 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginReadTimeout"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginKeepaliveTimeout"
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/distribution",
+        "requestUri" : "/2017-03-25/distribution",
         "responseCode" : "201"
       },
       "input" : {
@@ -315,7 +327,7 @@
         "shape" : "CreateDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateDistribution2016_11_25",
+      "name" : "CreateDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -562,10 +574,22 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginReadTimeout"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginKeepaliveTimeout"
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/distribution?WithTags",
+        "requestUri" : "/2017-03-25/distribution?WithTags",
         "responseCode" : "201"
       },
       "input" : {
@@ -574,7 +598,7 @@
         "shape" : "CreateDistributionWithTagsRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateDistributionWithTags2016_11_25",
+      "name" : "CreateDistributionWithTags2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -632,7 +656,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/distribution/{DistributionId}/invalidation",
+        "requestUri" : "/2017-03-25/distribution/{DistributionId}/invalidation",
         "responseCode" : "201"
       },
       "input" : {
@@ -641,7 +665,7 @@
         "shape" : "CreateInvalidationRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateInvalidation2016_11_25",
+      "name" : "CreateInvalidation2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -729,7 +753,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/streaming-distribution",
+        "requestUri" : "/2017-03-25/streaming-distribution",
         "responseCode" : "201"
       },
       "input" : {
@@ -738,7 +762,7 @@
         "shape" : "CreateStreamingDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateStreamingDistribution2016_11_25",
+      "name" : "CreateStreamingDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -832,7 +856,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/streaming-distribution?WithTags",
+        "requestUri" : "/2017-03-25/streaming-distribution?WithTags",
         "responseCode" : "201"
       },
       "input" : {
@@ -841,7 +865,7 @@
         "shape" : "CreateStreamingDistributionWithTagsRequest",
         "xmlNamespace" : null
       },
-      "name" : "CreateStreamingDistributionWithTags2016_11_25",
+      "name" : "CreateStreamingDistributionWithTags2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -887,7 +911,7 @@
       } ],
       "http" : {
         "method" : "DELETE",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront/{Id}",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront/{Id}",
         "responseCode" : "204"
       },
       "input" : {
@@ -896,7 +920,7 @@
         "shape" : "DeleteCloudFrontOriginAccessIdentityRequest",
         "xmlNamespace" : null
       },
-      "name" : "DeleteCloudFrontOriginAccessIdentity2016_11_25",
+      "name" : "DeleteCloudFrontOriginAccessIdentity2017_03_25",
       "output" : null
     },
     "DeleteDistribution" : {
@@ -937,7 +961,7 @@
       } ],
       "http" : {
         "method" : "DELETE",
-        "requestUri" : "/2016-11-25/distribution/{Id}",
+        "requestUri" : "/2017-03-25/distribution/{Id}",
         "responseCode" : "204"
       },
       "input" : {
@@ -946,7 +970,7 @@
         "shape" : "DeleteDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "DeleteDistribution2016_11_25",
+      "name" : "DeleteDistribution2017_03_25",
       "output" : null
     },
     "DeleteStreamingDistribution" : {
@@ -987,7 +1011,7 @@
       } ],
       "http" : {
         "method" : "DELETE",
-        "requestUri" : "/2016-11-25/streaming-distribution/{Id}",
+        "requestUri" : "/2017-03-25/streaming-distribution/{Id}",
         "responseCode" : "204"
       },
       "input" : {
@@ -996,7 +1020,7 @@
         "shape" : "DeleteStreamingDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "DeleteStreamingDistribution2016_11_25",
+      "name" : "DeleteStreamingDistribution2017_03_25",
       "output" : null
     },
     "GetCloudFrontOriginAccessIdentity" : {
@@ -1019,7 +1043,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront/{Id}",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront/{Id}",
         "responseCode" : null
       },
       "input" : {
@@ -1028,7 +1052,7 @@
         "shape" : "GetCloudFrontOriginAccessIdentityRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetCloudFrontOriginAccessIdentity2016_11_25",
+      "name" : "GetCloudFrontOriginAccessIdentity2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1056,7 +1080,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront/{Id}/config",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1065,7 +1089,7 @@
         "shape" : "GetCloudFrontOriginAccessIdentityConfigRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetCloudFrontOriginAccessIdentityConfig2016_11_25",
+      "name" : "GetCloudFrontOriginAccessIdentityConfig2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1093,7 +1117,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distribution/{Id}",
+        "requestUri" : "/2017-03-25/distribution/{Id}",
         "responseCode" : null
       },
       "input" : {
@@ -1102,7 +1126,7 @@
         "shape" : "GetDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetDistribution2016_11_25",
+      "name" : "GetDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1130,7 +1154,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distribution/{Id}/config",
+        "requestUri" : "/2017-03-25/distribution/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1139,7 +1163,7 @@
         "shape" : "GetDistributionConfigRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetDistributionConfig2016_11_25",
+      "name" : "GetDistributionConfig2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1173,7 +1197,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distribution/{DistributionId}/invalidation/{Id}",
+        "requestUri" : "/2017-03-25/distribution/{DistributionId}/invalidation/{Id}",
         "responseCode" : null
       },
       "input" : {
@@ -1182,7 +1206,7 @@
         "shape" : "GetInvalidationRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetInvalidation2016_11_25",
+      "name" : "GetInvalidation2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1210,7 +1234,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/streaming-distribution/{Id}",
+        "requestUri" : "/2017-03-25/streaming-distribution/{Id}",
         "responseCode" : null
       },
       "input" : {
@@ -1219,7 +1243,7 @@
         "shape" : "GetStreamingDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetStreamingDistribution2016_11_25",
+      "name" : "GetStreamingDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1247,7 +1271,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/streaming-distribution/{Id}/config",
+        "requestUri" : "/2017-03-25/streaming-distribution/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1256,7 +1280,7 @@
         "shape" : "GetStreamingDistributionConfigRequest",
         "xmlNamespace" : null
       },
-      "name" : "GetStreamingDistributionConfig2016_11_25",
+      "name" : "GetStreamingDistributionConfig2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1278,7 +1302,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront",
         "responseCode" : null
       },
       "input" : {
@@ -1287,7 +1311,7 @@
         "shape" : "ListCloudFrontOriginAccessIdentitiesRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListCloudFrontOriginAccessIdentities2016_11_25",
+      "name" : "ListCloudFrontOriginAccessIdentities2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1309,7 +1333,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distribution",
+        "requestUri" : "/2017-03-25/distribution",
         "responseCode" : null
       },
       "input" : {
@@ -1318,7 +1342,7 @@
         "shape" : "ListDistributionsRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListDistributions2016_11_25",
+      "name" : "ListDistributions2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1346,7 +1370,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distributionsByWebACLId/{WebACLId}",
+        "requestUri" : "/2017-03-25/distributionsByWebACLId/{WebACLId}",
         "responseCode" : null
       },
       "input" : {
@@ -1355,7 +1379,7 @@
         "shape" : "ListDistributionsByWebACLIdRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListDistributionsByWebACLId2016_11_25",
+      "name" : "ListDistributionsByWebACLId2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1389,7 +1413,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/distribution/{DistributionId}/invalidation",
+        "requestUri" : "/2017-03-25/distribution/{DistributionId}/invalidation",
         "responseCode" : null
       },
       "input" : {
@@ -1398,7 +1422,7 @@
         "shape" : "ListInvalidationsRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListInvalidations2016_11_25",
+      "name" : "ListInvalidations2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1420,7 +1444,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/streaming-distribution",
+        "requestUri" : "/2017-03-25/streaming-distribution",
         "responseCode" : null
       },
       "input" : {
@@ -1429,7 +1453,7 @@
         "shape" : "ListStreamingDistributionsRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListStreamingDistributions2016_11_25",
+      "name" : "ListStreamingDistributions2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1469,7 +1493,7 @@
       } ],
       "http" : {
         "method" : "GET",
-        "requestUri" : "/2016-11-25/tagging",
+        "requestUri" : "/2017-03-25/tagging",
         "responseCode" : null
       },
       "input" : {
@@ -1478,7 +1502,7 @@
         "shape" : "ListTagsForResourceRequest",
         "xmlNamespace" : null
       },
-      "name" : "ListTagsForResource2016_11_25",
+      "name" : "ListTagsForResource2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1518,7 +1542,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/tagging?Operation=Tag",
+        "requestUri" : "/2017-03-25/tagging?Operation=Tag",
         "responseCode" : "204"
       },
       "input" : {
@@ -1527,7 +1551,7 @@
         "shape" : "TagResourceRequest",
         "xmlNamespace" : null
       },
-      "name" : "TagResource2016_11_25",
+      "name" : "TagResource2017_03_25",
       "output" : null
     },
     "UntagResource" : {
@@ -1562,7 +1586,7 @@
       } ],
       "http" : {
         "method" : "POST",
-        "requestUri" : "/2016-11-25/tagging?Operation=Untag",
+        "requestUri" : "/2017-03-25/tagging?Operation=Untag",
         "responseCode" : "204"
       },
       "input" : {
@@ -1571,7 +1595,7 @@
         "shape" : "UntagResourceRequest",
         "xmlNamespace" : null
       },
-      "name" : "UntagResource2016_11_25",
+      "name" : "UntagResource2017_03_25",
       "output" : null
     },
     "UpdateCloudFrontOriginAccessIdentity" : {
@@ -1630,7 +1654,7 @@
       } ],
       "http" : {
         "method" : "PUT",
-        "requestUri" : "/2016-11-25/origin-access-identity/cloudfront/{Id}/config",
+        "requestUri" : "/2017-03-25/origin-access-identity/cloudfront/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1639,7 +1663,7 @@
         "shape" : "UpdateCloudFrontOriginAccessIdentityRequest",
         "xmlNamespace" : null
       },
-      "name" : "UpdateCloudFrontOriginAccessIdentity2016_11_25",
+      "name" : "UpdateCloudFrontOriginAccessIdentity2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1880,10 +1904,22 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginReadTimeout"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOriginKeepaliveTimeout"
       } ],
       "http" : {
         "method" : "PUT",
-        "requestUri" : "/2016-11-25/distribution/{Id}/config",
+        "requestUri" : "/2017-03-25/distribution/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1892,7 +1928,7 @@
         "shape" : "UpdateDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "UpdateDistribution2016_11_25",
+      "name" : "UpdateDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -1986,7 +2022,7 @@
       } ],
       "http" : {
         "method" : "PUT",
-        "requestUri" : "/2016-11-25/streaming-distribution/{Id}/config",
+        "requestUri" : "/2017-03-25/streaming-distribution/{Id}/config",
         "responseCode" : null
       },
       "input" : {
@@ -1995,7 +2031,7 @@
         "shape" : "UpdateStreamingDistributionRequest",
         "xmlNamespace" : null
       },
-      "name" : "UpdateStreamingDistribution2016_11_25",
+      "name" : "UpdateStreamingDistribution2017_03_25",
       "output" : {
         "documentation" : null,
         "locationName" : null,
@@ -3268,7 +3304,7 @@
           "shape" : "CloudFrontOriginAccessIdentityConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -3370,7 +3406,7 @@
           "shape" : "DistributionConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -3472,7 +3508,7 @@
           "shape" : "DistributionConfigWithTags",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -3588,7 +3624,7 @@
           "shape" : "InvalidationBatch",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -3676,7 +3712,7 @@
           "shape" : "StreamingDistributionConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -3778,7 +3814,7 @@
           "shape" : "StreamingDistributionConfigWithTags",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -4107,6 +4143,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "OriginKeepaliveTimeout" : {
+          "deprecated" : false,
+          "documentation" : "<p>You can create a custom keep-alive timeout. All timeout units are in seconds. The default keep-alive timeout is 5 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 1 second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum time limit, contact the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "OriginProtocolPolicy" : {
           "deprecated" : false,
           "documentation" : "<p>The origin protocol policy to apply to your origin.</p>",
@@ -4118,6 +4168,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "OriginProtocolPolicy",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "OriginReadTimeout" : {
+          "deprecated" : false,
+          "documentation" : "<p>You can create a custom origin read timeout. All timeout units are in seconds. The default origin read timeout is 30 seconds, but you can configure custom timeout lengths using the CloudFront API. The minimum timeout length is 4 seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum time limit, contact the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "integer",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4756,7 +4820,7 @@
         },
         "Enabled" : {
           "deprecated" : false,
-          "documentation" : "<p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.</p> <p>If you do not want to enable logging when you create a distribution, or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements.</p> <p>If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>",
+          "documentation" : "<p>From this field, you can enable or disable the selected distribution.</p> <p>If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6794,6 +6858,84 @@
     "InvalidOriginAccessIdentity" : {
       "deprecated" : false,
       "documentation" : "<p>The origin access identity is not valid or doesn't exist.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 400
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidOriginKeepaliveTimeout" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 400
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidOriginReadTimeout" : {
+      "deprecated" : false,
+      "documentation" : null,
       "enum" : null,
       "error" : {
         "code" : null,
@@ -10595,7 +10737,7 @@
           "shape" : "Tags",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -11431,7 +11573,7 @@
           "shape" : "TagKeys",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -11469,7 +11611,7 @@
           "shape" : "CloudFrontOriginAccessIdentityConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         },
         "Id" : {
@@ -11585,7 +11727,7 @@
           "shape" : "DistributionConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         },
         "Id" : {
@@ -11729,7 +11871,7 @@
           "shape" : "StreamingDistributionConfig",
           "streaming" : false,
           "xmlNamespace" : {
-            "uri" : "http://cloudfront.amazonaws.com/doc/2016-11-25/"
+            "uri" : "http://cloudfront.amazonaws.com/doc/2017-03-25/"
           }
         }
       },
@@ -11890,7 +12032,7 @@
         },
         "SSLSupportMethod" : {
           "deprecated" : false,
-          "documentation" : "<p>If you specify a value for <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that works for all clients or one that works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from any viewer. However, you must request permission to use this feature, and you incur additional monthly charges.</p> </li> <li> <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users' browsers don't support SNI, we recommend that you do one of the following:</p> <ul> <li> <p>Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront domain name of your distribution in the URLs for your objects, for example, <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li> <p>If you can control which browser your users use, upgrade the browser to one that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul> </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you specified <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html\">Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+          "documentation" : "<p>If you specify a value for <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that works for all clients or one that works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from any viewer. However, you will incur additional monthly charges.</p> </li> <li> <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users' browsers don't support SNI, we recommend that you do one of the following:</p> <ul> <li> <p>Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront domain name of your distribution in the URLs for your objects, for example, <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li> <p>If you can control which browser your users use, upgrade the browser to one that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul> </li> </ul> <p>Do not specify a value for <code>SSLSupportMethod</code> if you specified <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html\">Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

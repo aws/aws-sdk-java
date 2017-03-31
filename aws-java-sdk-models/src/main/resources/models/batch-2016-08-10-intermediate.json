@@ -1163,6 +1163,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttemptContainerDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1701,6 +1703,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttemptDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1744,6 +1748,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CEState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1799,6 +1805,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CEStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1842,6 +1850,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CEType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1885,6 +1895,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CRType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2180,6 +2192,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "reason" ],
       "shapeName" : "CancelJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CancelJobRequest",
@@ -2214,6 +2228,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2251,6 +2267,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClientException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ClientException",
@@ -3411,6 +3429,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "computeEnvironmentName", "computeEnvironmentArn", "ecsClusterArn" ],
       "shapeName" : "ComputeEnvironmentDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3699,6 +3719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "order", "computeEnvironment" ],
       "shapeName" : "ComputeEnvironmentOrder",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5853,6 +5875,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "type", "minvCpus", "maxvCpus", "instanceTypes", "subnets", "securityGroupIds", "instanceRole" ],
       "shapeName" : "ComputeResource",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6266,6 +6290,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComputeResourceUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9074,6 +9100,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContainerDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9920,6 +9948,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContainerOverrides",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12228,6 +12258,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "image", "vcpus", "memory" ],
       "shapeName" : "ContainerProperties",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12898,6 +12930,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "computeEnvironmentName", "type", "serviceRole" ],
       "shapeName" : "CreateComputeEnvironmentRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateComputeEnvironmentRequest",
@@ -13183,6 +13217,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateComputeEnvironmentResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13882,6 +13918,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueueName", "priority", "computeEnvironmentOrder" ],
       "shapeName" : "CreateJobQueueRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobQueueRequest",
@@ -14167,6 +14205,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueueName", "jobQueueArn" ],
       "shapeName" : "CreateJobQueueResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14337,6 +14377,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "computeEnvironment" ],
       "shapeName" : "DeleteComputeEnvironmentRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteComputeEnvironmentRequest",
@@ -14371,6 +14413,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteComputeEnvironmentResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14541,6 +14585,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueue" ],
       "shapeName" : "DeleteJobQueueRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteJobQueueRequest",
@@ -14575,6 +14621,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteJobQueueResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14745,6 +14793,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobDefinition" ],
       "shapeName" : "DeregisterJobDefinitionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeregisterJobDefinitionRequest",
@@ -14779,6 +14829,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeregisterJobDefinitionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15353,6 +15405,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeComputeEnvironmentsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeComputeEnvironmentsRequest",
@@ -15792,6 +15846,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeComputeEnvironmentsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16616,6 +16672,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobDefinitionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeJobDefinitionsRequest",
@@ -17055,6 +17113,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobDefinitionsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17629,6 +17689,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobQueuesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeJobQueuesRequest",
@@ -18068,6 +18130,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobQueuesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18392,6 +18456,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobs" ],
       "shapeName" : "DescribeJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeJobsRequest",
@@ -18706,6 +18772,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18869,6 +18937,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Host",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18912,6 +18982,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JQState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18967,6 +19039,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JQStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20159,6 +20233,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobDefinitionName", "jobDefinitionArn", "revision", "type" ],
       "shapeName" : "JobDefinition",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20199,6 +20275,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobDefinitionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20362,6 +20440,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobDependency",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22612,6 +22692,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobName", "jobId", "jobQueue", "status", "startedAt", "jobDefinition" ],
       "shapeName" : "JobDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23679,6 +23761,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueueName", "jobQueueArn", "state", "priority", "computeEnvironmentOrder" ],
       "shapeName" : "JobQueueDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23737,6 +23821,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24025,6 +24111,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "jobName" ],
       "shapeName" : "JobSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24313,6 +24401,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyValuePair",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24858,6 +24948,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueue" ],
       "shapeName" : "ListJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListJobsRequest",
@@ -25297,6 +25389,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobSummaryList" ],
       "shapeName" : "ListJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25710,6 +25804,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MountPoint",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -26534,6 +26630,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobDefinitionName", "type" ],
       "shapeName" : "RegisterJobDefinitionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RegisterJobDefinitionRequest",
@@ -26944,6 +27042,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobDefinitionName", "jobDefinitionArn", "revision" ],
       "shapeName" : "RegisterJobDefinitionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27107,6 +27207,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RetryStrategy",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27144,6 +27246,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServerException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ServerException",
@@ -28369,6 +28473,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobName", "jobQueue", "jobDefinition" ],
       "shapeName" : "SubmitJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SubmitJobRequest",
@@ -28654,6 +28760,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobName", "jobId" ],
       "shapeName" : "SubmitJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -28949,6 +29057,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "reason" ],
       "shapeName" : "TerminateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TerminateJobRequest",
@@ -28983,6 +29093,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TerminateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29396,6 +29508,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "hardLimit", "name", "softLimit" ],
       "shapeName" : "Ulimit",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29941,6 +30055,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "computeEnvironment" ],
       "shapeName" : "UpdateComputeEnvironmentRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateComputeEnvironmentRequest",
@@ -30226,6 +30342,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateComputeEnvironmentResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30925,6 +31043,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobQueue" ],
       "shapeName" : "UpdateJobQueueRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateJobQueueRequest",
@@ -31210,6 +31330,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateJobQueueResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31498,6 +31620,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Volume",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

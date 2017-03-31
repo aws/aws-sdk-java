@@ -235,6 +235,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AWSRegion",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -278,6 +280,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdditionalArtifact",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -321,6 +325,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompressionFormat",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -491,6 +497,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteReportDefinitionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteReportDefinitionRequest",
@@ -651,6 +659,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteReportDefinitionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -946,6 +956,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeReportDefinitionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeReportDefinitionsRequest",
@@ -1385,6 +1397,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeReportDefinitionsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1422,6 +1436,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateReportNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DuplicateReportNameException",
@@ -1456,6 +1472,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalErrorException",
@@ -1623,6 +1641,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ReportDefinition" ],
       "shapeName" : "PutReportDefinitionRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutReportDefinitionRequest",
@@ -1657,6 +1677,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutReportDefinitionResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3128,6 +3150,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ReportName", "TimeUnit", "Format", "Compression", "AdditionalSchemaElements", "S3Bucket", "S3Prefix", "S3Region" ],
       "shapeName" : "ReportDefinition",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3168,6 +3192,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReportFormat",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3205,6 +3231,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReportLimitReachedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ReportLimitReachedException",
@@ -3242,6 +3270,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SchemaElement",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3285,6 +3315,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimeUnit",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3322,6 +3354,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ValidationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ValidationException",

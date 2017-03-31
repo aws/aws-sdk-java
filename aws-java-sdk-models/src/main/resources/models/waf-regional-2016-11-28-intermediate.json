@@ -2412,6 +2412,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Priority", "RuleId", "Action" ],
       "shapeName" : "ActivatedRule",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2707,6 +2709,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId", "ResourceArn" ],
       "shapeName" : "AssociateWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "AssociateWebACLRequest",
@@ -2741,6 +2745,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssociateWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3308,6 +3314,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ByteMatchSetId", "ByteMatchTuples" ],
       "shapeName" : "ByteMatchSet",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3596,6 +3604,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ByteMatchSetId", "Name" ],
       "shapeName" : "ByteMatchSetSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3884,6 +3894,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "ByteMatchTuple" ],
       "shapeName" : "ByteMatchSetUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4422,6 +4434,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FieldToMatch", "TargetString", "TextTransformation", "PositionalConstraint" ],
       "shapeName" : "ByteMatchTuple",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4465,6 +4479,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangeAction",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4511,6 +4527,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangeTokenStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4566,6 +4584,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparisonOperator",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4861,6 +4881,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ChangeToken" ],
       "shapeName" : "CreateByteMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateByteMatchSetRequest",
@@ -5146,6 +5168,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateByteMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5441,6 +5465,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ChangeToken" ],
       "shapeName" : "CreateIPSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateIPSetRequest",
@@ -5726,6 +5752,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateIPSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6146,6 +6174,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "MetricName", "ChangeToken" ],
       "shapeName" : "CreateRuleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateRuleRequest",
@@ -6431,6 +6461,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateRuleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6726,6 +6758,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ChangeToken" ],
       "shapeName" : "CreateSizeConstraintSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateSizeConstraintSetRequest",
@@ -7011,6 +7045,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSizeConstraintSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7306,6 +7342,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ChangeToken" ],
       "shapeName" : "CreateSqlInjectionMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateSqlInjectionMatchSetRequest",
@@ -7591,6 +7629,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSqlInjectionMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8136,6 +8176,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "MetricName", "DefaultAction", "ChangeToken" ],
       "shapeName" : "CreateWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateWebACLRequest",
@@ -8421,6 +8463,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8716,6 +8760,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "ChangeToken" ],
       "shapeName" : "CreateXssMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateXssMatchSetRequest",
@@ -9001,6 +9047,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateXssMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9296,6 +9344,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ByteMatchSetId", "ChangeToken" ],
       "shapeName" : "DeleteByteMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteByteMatchSetRequest",
@@ -9456,6 +9506,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteByteMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9751,6 +9803,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IPSetId", "ChangeToken" ],
       "shapeName" : "DeleteIPSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteIPSetRequest",
@@ -9911,6 +9965,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteIPSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10206,6 +10262,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RuleId", "ChangeToken" ],
       "shapeName" : "DeleteRuleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteRuleRequest",
@@ -10366,6 +10424,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRuleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10661,6 +10721,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SizeConstraintSetId", "ChangeToken" ],
       "shapeName" : "DeleteSizeConstraintSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteSizeConstraintSetRequest",
@@ -10821,6 +10883,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteSizeConstraintSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11116,6 +11180,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SqlInjectionMatchSetId", "ChangeToken" ],
       "shapeName" : "DeleteSqlInjectionMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteSqlInjectionMatchSetRequest",
@@ -11276,6 +11342,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteSqlInjectionMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11571,6 +11639,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId", "ChangeToken" ],
       "shapeName" : "DeleteWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteWebACLRequest",
@@ -11731,6 +11801,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12026,6 +12098,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "XssMatchSetId", "ChangeToken" ],
       "shapeName" : "DeleteXssMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteXssMatchSetRequest",
@@ -12186,6 +12260,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteXssMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12356,6 +12432,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
       "shapeName" : "DisassociateWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DisassociateWebACLRequest",
@@ -12390,6 +12468,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisassociateWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12678,6 +12758,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
       "shapeName" : "FieldToMatch",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12848,6 +12930,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ByteMatchSetId" ],
       "shapeName" : "GetByteMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetByteMatchSetRequest",
@@ -13008,6 +13092,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetByteMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13052,6 +13138,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetChangeTokenRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetChangeTokenRequest",
@@ -13212,6 +13300,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetChangeTokenResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13382,6 +13472,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ChangeToken" ],
       "shapeName" : "GetChangeTokenStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetChangeTokenStatusRequest",
@@ -13542,6 +13634,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetChangeTokenStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13712,6 +13806,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IPSetId" ],
       "shapeName" : "GetIPSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetIPSetRequest",
@@ -13872,6 +13968,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetIPSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14042,6 +14140,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RuleId" ],
       "shapeName" : "GetRuleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetRuleRequest",
@@ -14202,6 +14302,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRuleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14747,6 +14849,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebAclId", "RuleId", "TimeWindow", "MaxItems" ],
       "shapeName" : "GetSampledRequestsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetSampledRequestsRequest",
@@ -15311,6 +15415,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSampledRequestsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15481,6 +15587,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SizeConstraintSetId" ],
       "shapeName" : "GetSizeConstraintSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetSizeConstraintSetRequest",
@@ -15641,6 +15749,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSizeConstraintSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15811,6 +15921,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SqlInjectionMatchSetId" ],
       "shapeName" : "GetSqlInjectionMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetSqlInjectionMatchSetRequest",
@@ -15971,6 +16083,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSqlInjectionMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16141,6 +16255,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
       "shapeName" : "GetWebACLForResourceRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetWebACLForResourceRequest",
@@ -16301,6 +16417,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetWebACLForResourceResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16471,6 +16589,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId" ],
       "shapeName" : "GetWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetWebACLRequest",
@@ -16631,6 +16751,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16801,6 +16923,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "XssMatchSetId" ],
       "shapeName" : "GetXssMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetXssMatchSetRequest",
@@ -16961,6 +17085,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetXssMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17249,6 +17375,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HTTPHeader",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18191,6 +18319,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HTTPRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18758,6 +18888,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IPSetId", "IPSetDescriptors" ],
       "shapeName" : "IPSet",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19046,6 +19178,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Type", "Value" ],
       "shapeName" : "IPSetDescriptor",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19089,6 +19223,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IPSetDescriptorType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19377,6 +19513,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IPSetId", "Name" ],
       "shapeName" : "IPSetSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19665,6 +19803,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "IPSetDescriptor" ],
       "shapeName" : "IPSetUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19960,6 +20100,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListByteMatchSetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListByteMatchSetsRequest",
@@ -20399,6 +20541,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListByteMatchSetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20694,6 +20838,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListIPSetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListIPSetsRequest",
@@ -21133,6 +21279,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListIPSetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21303,6 +21451,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId" ],
       "shapeName" : "ListResourcesForWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListResourcesForWebACLRequest",
@@ -21617,6 +21767,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListResourcesForWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21912,6 +22064,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRulesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListRulesRequest",
@@ -22351,6 +22505,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRulesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22646,6 +22802,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSizeConstraintSetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListSizeConstraintSetsRequest",
@@ -23085,6 +23243,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSizeConstraintSetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23380,6 +23540,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSqlInjectionMatchSetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListSqlInjectionMatchSetsRequest",
@@ -23819,6 +23981,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSqlInjectionMatchSetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24114,6 +24278,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListWebACLsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListWebACLsRequest",
@@ -24553,6 +24719,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListWebACLsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24848,6 +25016,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListXssMatchSetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListXssMatchSetsRequest",
@@ -25287,6 +25457,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListXssMatchSetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25339,6 +25511,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MatchFieldType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25403,6 +25577,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ParameterExceptionField",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25446,6 +25622,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ParameterExceptionReason",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25498,6 +25676,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PositionalConstraint",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25911,6 +26091,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Negated", "Type", "DataId" ],
       "shapeName" : "Predicate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -25963,6 +26145,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PredicateType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -26655,6 +26839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RuleId", "Predicates" ],
       "shapeName" : "Rule",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -26943,6 +27129,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RuleId", "Name" ],
       "shapeName" : "RuleSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27231,6 +27419,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "Predicate" ],
       "shapeName" : "RuleUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -27769,6 +27959,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Request", "Weight" ],
       "shapeName" : "SampledHTTPRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -28307,6 +28499,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FieldToMatch", "TextTransformation", "ComparisonOperator", "Size" ],
       "shapeName" : "SizeConstraint",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -28874,6 +29068,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SizeConstraintSetId", "SizeConstraints" ],
       "shapeName" : "SizeConstraintSet",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29162,6 +29358,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SizeConstraintSetId", "Name" ],
       "shapeName" : "SizeConstraintSetSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -29450,6 +29648,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "SizeConstraint" ],
       "shapeName" : "SizeConstraintSetUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30017,6 +30217,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SqlInjectionMatchSetId", "SqlInjectionMatchTuples" ],
       "shapeName" : "SqlInjectionMatchSet",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30305,6 +30507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SqlInjectionMatchSetId", "Name" ],
       "shapeName" : "SqlInjectionMatchSetSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30593,6 +30797,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "SqlInjectionMatchTuple" ],
       "shapeName" : "SqlInjectionMatchSetUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30881,6 +31087,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FieldToMatch", "TextTransformation" ],
       "shapeName" : "SqlInjectionMatchTuple",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -30936,6 +31144,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextTransformation",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31224,6 +31434,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "StartTime", "EndTime" ],
       "shapeName" : "TimeWindow",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -31798,6 +32010,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ByteMatchSetId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateByteMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateByteMatchSetRequest",
@@ -31958,6 +32172,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateByteMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -32532,6 +32748,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "IPSetId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateIPSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateIPSetRequest",
@@ -32692,6 +32910,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateIPSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -33266,6 +33486,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RuleId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateRuleRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateRuleRequest",
@@ -33426,6 +33648,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRuleResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34000,6 +34224,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SizeConstraintSetId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateSizeConstraintSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateSizeConstraintSetRequest",
@@ -34160,6 +34386,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateSizeConstraintSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -34734,6 +34962,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SqlInjectionMatchSetId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateSqlInjectionMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateSqlInjectionMatchSetRequest",
@@ -34894,6 +35124,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateSqlInjectionMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -35593,6 +35825,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId", "ChangeToken" ],
       "shapeName" : "UpdateWebACLRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateWebACLRequest",
@@ -35753,6 +35987,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateWebACLResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36327,6 +36563,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "XssMatchSetId", "ChangeToken", "Updates" ],
       "shapeName" : "UpdateXssMatchSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateXssMatchSetRequest",
@@ -36487,6 +36725,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateXssMatchSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -36524,6 +36764,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFDisallowedNameException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFDisallowedNameException",
@@ -36558,6 +36800,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFInternalErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFInternalErrorException",
@@ -36592,6 +36836,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFInvalidAccountException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFInvalidAccountException",
@@ -36626,6 +36872,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFInvalidOperationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFInvalidOperationException",
@@ -37036,6 +37284,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFInvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFInvalidParameterException",
@@ -37070,6 +37320,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFLimitsExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFLimitsExceededException",
@@ -37104,6 +37356,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFNonEmptyEntityException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFNonEmptyEntityException",
@@ -37138,6 +37392,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFNonexistentContainerException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFNonexistentContainerException",
@@ -37172,6 +37428,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFNonexistentItemException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFNonexistentItemException",
@@ -37206,6 +37464,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFReferencedItemException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFReferencedItemException",
@@ -37240,6 +37500,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFStaleDataException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFStaleDataException",
@@ -37274,6 +37536,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WAFUnavailableEntityException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "WAFUnavailableEntityException",
@@ -37434,6 +37698,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
       "shapeName" : "WafAction",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -37480,6 +37746,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WafActionType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38297,6 +38565,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId", "DefaultAction", "Rules" ],
       "shapeName" : "WebACL",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38585,6 +38855,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "WebACLId", "Name" ],
       "shapeName" : "WebACLSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -38873,6 +39145,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "ActivatedRule" ],
       "shapeName" : "WebACLUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -39440,6 +39714,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "XssMatchSetId", "XssMatchTuples" ],
       "shapeName" : "XssMatchSet",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -39728,6 +40004,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "XssMatchSetId", "Name" ],
       "shapeName" : "XssMatchSetSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -40016,6 +40294,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Action", "XssMatchTuple" ],
       "shapeName" : "XssMatchSetUpdate",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -40304,6 +40584,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FieldToMatch", "TextTransformation" ],
       "shapeName" : "XssMatchTuple",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

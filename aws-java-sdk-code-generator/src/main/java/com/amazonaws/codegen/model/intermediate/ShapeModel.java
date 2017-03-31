@@ -43,7 +43,10 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
     private boolean wrapper;
+    // For APIG generated requests
     private String requestSignerClassFqcn;
+    // For AWS service requests
+    private String signerType;
 
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
@@ -440,8 +443,19 @@ public class ShapeModel extends DocumentationModel {
         return requestSignerClassFqcn;
     }
 
+    public boolean isSignerAware() {
+        return getSignerType() != null;
+    }
+
+    public String getSignerType() {
+        return signerType;
+    }
+
+    public void setSignerType(String signerType) {
+        this.signerType = signerType;
+    }
+
     public void setRequestSignerClassFqcn(String authorizerClass) {
         this.requestSignerClassFqcn = authorizerClass;
     }
-
 }

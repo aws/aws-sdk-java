@@ -47,7 +47,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-11-25/distribution?WithTags";
+        String uriResourcePath = "/2017-03-25/distribution?WithTags";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -55,7 +55,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-11-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-03-25/");
 
             DistributionConfigWithTags distributionConfigWithTags = createDistributionWithTagsRequest.getDistributionConfigWithTags();
             if (distributionConfigWithTags != null) {
@@ -199,6 +199,14 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                             xmlWriter.endElement();
                                         }
                                         xmlWriter.endElement();
+                                    }
+
+                                    if (customOriginConfig.getOriginReadTimeout() != null) {
+                                        xmlWriter.startElement("OriginReadTimeout").value(customOriginConfig.getOriginReadTimeout()).endElement();
+                                    }
+
+                                    if (customOriginConfig.getOriginKeepaliveTimeout() != null) {
+                                        xmlWriter.startElement("OriginKeepaliveTimeout").value(customOriginConfig.getOriginKeepaliveTimeout()).endElement();
                                     }
                                     xmlWriter.endElement();
                                 }

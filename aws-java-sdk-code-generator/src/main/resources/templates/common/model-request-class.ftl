@@ -8,6 +8,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 <#if shape.requestSignerAware>
 import com.amazonaws.auth.RequestSigner;
 import com.amazonaws.opensdk.protect.auth.RequestSignerAware;
+<#elseif shape.signerAware>
+import com.amazonaws.auth.SignerTypeAware;
 </#if>
 
 <#if shape.documentation?has_content || awsDocsUrl?has_content>
@@ -18,7 +20,7 @@ import com.amazonaws.opensdk.protect.auth.RequestSignerAware;
 </#if>
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} extends ${baseClassFqcn} implements Serializable, Cloneable
-        <#if shape.requestSignerAware>, RequestSignerAware</#if> {
+        <#if shape.requestSignerAware>, RequestSignerAware<#elseif shape.signerAware>, SignerTypeAware</#if> {
 
     <@VariableDeclarationMacro.content shape/>
 
@@ -57,6 +59,13 @@ public class ${shape.shapeName} extends ${baseClassFqcn} implements Serializable
     public ${shape.shapeName} sdkRequestConfig(com.amazonaws.opensdk.SdkRequestConfig sdkRequestConfig) {
         super.sdkRequestConfig(sdkRequestConfig);
         return this;
+    }
+    </#if>
+
+    <#if shape.signerAware>
+    @Override
+    public String getSignerType() {
+        return "${shape.signerType}";
     }
     </#if>
 

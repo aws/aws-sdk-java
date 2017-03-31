@@ -730,6 +730,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "BadRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BadRequestException",
@@ -1022,6 +1024,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "CreationToken" ],
       "shapeName" : "CreateFileSystemRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateFileSystemRequest",
@@ -2182,6 +2186,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OwnerId", "CreationToken", "FileSystemId", "CreationTime", "LifeCycleState", "NumberOfMountTargets", "SizeInBytes", "PerformanceMode" ],
       "shapeName" : "CreateFileSystemResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2881,6 +2887,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FileSystemId", "SubnetId" ],
       "shapeName" : "CreateMountTargetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateMountTargetRequest",
@@ -3791,6 +3799,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MountTargetId", "FileSystemId", "SubnetId", "LifeCycleState" ],
       "shapeName" : "CreateMountTargetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4240,6 +4250,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FileSystemId", "Tags" ],
       "shapeName" : "CreateTagsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateTagsRequest",
@@ -4274,6 +4286,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateTagsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4444,6 +4458,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FileSystemId" ],
       "shapeName" : "DeleteFileSystemRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteFileSystemRequest",
@@ -4478,6 +4494,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteFileSystemResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4648,6 +4666,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MountTargetId" ],
       "shapeName" : "DeleteMountTargetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteMountTargetRequest",
@@ -4682,6 +4702,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteMountTargetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5131,6 +5153,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FileSystemId", "TagKeys" ],
       "shapeName" : "DeleteTagsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteTagsRequest",
@@ -5165,6 +5189,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTagsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5328,6 +5354,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "DependencyTimeoutException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DependencyTimeoutException",
@@ -5870,6 +5898,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFileSystemsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeFileSystemsRequest",
@@ -6434,6 +6464,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFileSystemsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6604,6 +6636,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MountTargetId" ],
       "shapeName" : "DescribeMountTargetSecurityGroupsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeMountTargetSecurityGroupsRequest",
@@ -6918,6 +6952,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "SecurityGroups" ],
       "shapeName" : "DescribeMountTargetSecurityGroupsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7463,6 +7499,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeMountTargetsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeMountTargetsRequest",
@@ -8027,6 +8065,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeMountTargetsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8447,6 +8487,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "FileSystemId" ],
       "shapeName" : "DescribeTagsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeTagsRequest",
@@ -9011,6 +9053,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Tags" ],
       "shapeName" : "DescribeTagsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9299,6 +9343,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode", "FileSystemId" ],
       "shapeName" : "FileSystemAlreadyExistsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "FileSystemAlreadyExistsException",
@@ -10459,6 +10505,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OwnerId", "CreationToken", "FileSystemId", "CreationTime", "LifeCycleState", "NumberOfMountTargets", "SizeInBytes", "PerformanceMode" ],
       "shapeName" : "FileSystemDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10622,6 +10670,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "FileSystemInUseException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "FileSystemInUseException",
@@ -10782,6 +10832,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "FileSystemLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "FileSystemLimitExceededException",
@@ -10942,6 +10994,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "FileSystemNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "FileSystemNotFoundException",
@@ -11227,6 +11281,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Value" ],
       "shapeName" : "FileSystemSize",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11390,6 +11446,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "IncorrectFileSystemLifeCycleStateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "IncorrectFileSystemLifeCycleStateException",
@@ -11550,6 +11608,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "IncorrectMountTargetStateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "IncorrectMountTargetStateException",
@@ -11710,6 +11770,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "InternalServerErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalServerErrorException",
@@ -11870,6 +11932,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "IpAddressInUseException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "IpAddressInUseException",
@@ -11916,6 +11980,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LifeCycleState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12365,6 +12431,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MountTargetId" ],
       "shapeName" : "ModifyMountTargetSecurityGroupsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ModifyMountTargetSecurityGroupsRequest",
@@ -12399,6 +12467,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyMountTargetSecurityGroupsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12562,6 +12632,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "MountTargetConflictException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MountTargetConflictException",
@@ -13472,6 +13544,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "MountTargetId", "FileSystemId", "SubnetId", "LifeCycleState" ],
       "shapeName" : "MountTargetDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13635,6 +13709,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "MountTargetNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MountTargetNotFoundException",
@@ -13795,6 +13871,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "NetworkInterfaceLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NetworkInterfaceLimitExceededException",
@@ -13955,6 +14033,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "NoFreeAddressesInSubnetException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NoFreeAddressesInSubnetException",
@@ -13995,6 +14075,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PerformanceMode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14158,6 +14240,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "SecurityGroupLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SecurityGroupLimitExceededException",
@@ -14318,6 +14402,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "SecurityGroupNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SecurityGroupNotFoundException",
@@ -14478,6 +14564,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "SubnetNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SubnetNotFoundException",
@@ -14763,6 +14851,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14926,6 +15016,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ErrorCode" ],
       "shapeName" : "UnsupportedAvailabilityZoneException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedAvailabilityZoneException",

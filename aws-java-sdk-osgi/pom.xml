@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.112-SNAPSHOT</version>
+    <version>1.11.112</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-resourcegroupstaggingapi</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-pinpoint</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -704,6 +710,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Resource Groups Tagging API</title>
+                                  <packages>com.amazonaws.services.resourcegroupstaggingapi*</packages>
+                              </group>
                               <group>
                                   <title>Amazon S3</title>
                                   <packages>com.amazonaws.services.s3*</packages>

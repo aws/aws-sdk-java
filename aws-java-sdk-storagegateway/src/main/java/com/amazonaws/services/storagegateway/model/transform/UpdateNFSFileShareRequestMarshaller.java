@@ -40,6 +40,10 @@ public class UpdateNFSFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultStorageClass").build();
     private static final MarshallingInfo<List> CLIENTLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClientList").build();
+    private static final MarshallingInfo<String> SQUASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Squash").build();
+    private static final MarshallingInfo<Boolean> READONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadOnly").build();
 
     private static final UpdateNFSFileShareRequestMarshaller instance = new UpdateNFSFileShareRequestMarshaller();
 
@@ -63,6 +67,8 @@ public class UpdateNFSFileShareRequestMarshaller {
             protocolMarshaller.marshall(updateNFSFileShareRequest.getNFSFileShareDefaults(), NFSFILESHAREDEFAULTS_BINDING);
             protocolMarshaller.marshall(updateNFSFileShareRequest.getDefaultStorageClass(), DEFAULTSTORAGECLASS_BINDING);
             protocolMarshaller.marshall(updateNFSFileShareRequest.getClientList(), CLIENTLIST_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getSquash(), SQUASH_BINDING);
+            protocolMarshaller.marshall(updateNFSFileShareRequest.getReadOnly(), READONLY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

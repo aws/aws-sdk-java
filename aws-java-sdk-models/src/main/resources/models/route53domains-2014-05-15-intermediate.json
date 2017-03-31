@@ -1654,6 +1654,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BillingRecord",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1949,6 +1951,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "CheckDomainAvailabilityRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CheckDomainAvailabilityRequest",
@@ -2109,6 +2113,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Availability" ],
       "shapeName" : "CheckDomainAvailabilityResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4051,6 +4057,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContactDetail",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4103,6 +4111,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContactType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4827,6 +4837,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CountryCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5276,6 +5288,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "TagsToDelete" ],
       "shapeName" : "DeleteTagsForDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteTagsForDomainRequest",
@@ -5310,6 +5324,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTagsForDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5480,6 +5496,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DisableDomainAutoRenewRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DisableDomainAutoRenewRequest",
@@ -5514,6 +5532,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableDomainAutoRenewResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5684,6 +5704,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DisableDomainTransferLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DisableDomainTransferLockRequest",
@@ -5844,6 +5866,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "DisableDomainTransferLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5905,6 +5929,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainAvailability",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5942,6 +5968,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DomainLimitExceededException",
@@ -6227,6 +6255,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainSuggestion",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6765,6 +6795,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DomainSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6802,6 +6834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DuplicateRequestException",
@@ -6969,6 +7003,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "EnableDomainAutoRenewRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EnableDomainAutoRenewRequest",
@@ -7003,6 +7039,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnableDomainAutoRenewResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7173,6 +7211,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "EnableDomainTransferLockRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "EnableDomainTransferLockRequest",
@@ -7333,6 +7373,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "EnableDomainTransferLockResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7621,6 +7663,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
       "shapeName" : "ExtraParam",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7721,6 +7765,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExtraParamName",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7891,6 +7937,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetContactReachabilityStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetContactReachabilityStatusRequest",
@@ -8176,6 +8224,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetContactReachabilityStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8346,6 +8396,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "GetDomainDetailRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetDomainDetailRequest",
@@ -11314,6 +11366,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Nameservers", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "GetDomainDetailResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11734,6 +11788,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "SuggestionCount", "OnlyAvailable" ],
       "shapeName" : "GetDomainSuggestionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetDomainSuggestionsRequest",
@@ -12048,6 +12104,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDomainSuggestionsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -12218,6 +12276,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "GetOperationDetailRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetOperationDetailRequest",
@@ -13003,6 +13063,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetOperationDetailResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13040,6 +13102,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInputException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidInputException",
@@ -13332,6 +13396,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDomainsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListDomainsRequest",
@@ -13771,6 +13837,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Domains" ],
       "shapeName" : "ListDomainsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14066,6 +14134,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListOperationsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListOperationsRequest",
@@ -14505,6 +14575,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Operations" ],
       "shapeName" : "ListOperationsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -14675,6 +14747,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "ListTagsForDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListTagsForDomainRequest",
@@ -14989,6 +15063,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
       "shapeName" : "ListTagsForDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15431,6 +15507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "Nameserver",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15468,6 +15546,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "OperationLimitExceededException",
@@ -15517,6 +15597,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16055,6 +16137,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId", "Status", "Type", "SubmittedDate" ],
       "shapeName" : "OperationSummary",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16113,6 +16197,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16159,6 +16245,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReachabilityStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17454,6 +17542,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "DurationInYears", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "RegisterDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RegisterDomainRequest",
@@ -17614,6 +17704,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "RegisterDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18034,6 +18126,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "CurrentExpiryYear" ],
       "shapeName" : "RenewDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RenewDomainRequest",
@@ -18194,6 +18288,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "RenewDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18364,6 +18460,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendContactReachabilityEmailRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResendContactReachabilityEmailRequest",
@@ -18774,6 +18872,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendContactReachabilityEmailResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18944,6 +19044,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "RetrieveDomainAuthCodeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "RetrieveDomainAuthCodeRequest",
@@ -19104,6 +19206,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AuthCode" ],
       "shapeName" : "RetrieveDomainAuthCodeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19141,6 +19245,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TLDRulesViolationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TLDRulesViolationException",
@@ -19426,6 +19532,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Tag",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21125,6 +21233,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "DurationInYears", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "TransferDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TransferDomainRequest",
@@ -21285,6 +21395,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "TransferDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -21322,6 +21434,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedTLDException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedTLDException",
@@ -21864,6 +21978,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateDomainContactPrivacyRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateDomainContactPrivacyRequest",
@@ -22024,6 +22140,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainContactPrivacyResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22569,6 +22687,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateDomainContactRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateDomainContactRequest",
@@ -22729,6 +22849,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainContactResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23303,6 +23425,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Nameservers" ],
       "shapeName" : "UpdateDomainNameserversRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateDomainNameserversRequest",
@@ -23463,6 +23587,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainNameserversResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -23912,6 +24038,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateTagsForDomainRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateTagsForDomainRequest",
@@ -23946,6 +24074,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateTagsForDomainResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -24491,6 +24621,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ViewBillingRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ViewBillingRequest",
@@ -24930,6 +25062,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ViewBillingResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

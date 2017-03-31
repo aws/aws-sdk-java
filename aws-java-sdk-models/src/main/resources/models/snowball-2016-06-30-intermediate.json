@@ -2319,6 +2319,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Address",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2489,6 +2491,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
       "shapeName" : "CancelClusterRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CancelClusterRequest",
@@ -2523,6 +2527,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelClusterResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2693,6 +2699,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "CancelJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CancelJobRequest",
@@ -2727,6 +2735,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2764,6 +2774,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClusterLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ClusterLimitExceededException",
@@ -3299,6 +3311,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClusterListEntry",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4837,6 +4851,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClusterMetadata",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4889,6 +4905,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClusterState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5059,6 +5077,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Address" ],
       "shapeName" : "CreateAddressRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateAddressRequest",
@@ -5219,6 +5239,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateAddressResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6389,6 +6411,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobType", "Resources", "AddressId", "RoleARN", "ShippingOption" ],
       "shapeName" : "CreateClusterRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateClusterRequest",
@@ -6549,6 +6573,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateClusterResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7969,6 +7995,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobRequest",
@@ -8129,6 +8157,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8667,6 +8697,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataTransfer",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -8837,6 +8869,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "AddressId" ],
       "shapeName" : "DescribeAddressRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAddressRequest",
@@ -8997,6 +9031,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAddressResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9292,6 +9328,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAddressesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeAddressesRequest",
@@ -9731,6 +9769,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAddressesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -9901,6 +9941,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
       "shapeName" : "DescribeClusterRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeClusterRequest",
@@ -10061,6 +10103,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeClusterResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10231,6 +10275,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "DescribeJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeJobRequest",
@@ -10670,6 +10716,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -10833,6 +10881,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventTriggerDefinition",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11003,6 +11053,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "GetJobManifestRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetJobManifestRequest",
@@ -11163,6 +11215,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetJobManifestResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11333,6 +11387,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "GetJobUnlockCodeRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetJobUnlockCodeRequest",
@@ -11493,6 +11549,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetJobUnlockCodeResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11537,6 +11595,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSnowballUsageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetSnowballUsageRequest",
@@ -11822,6 +11882,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSnowballUsageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -11859,6 +11921,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAddressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidAddressException",
@@ -11893,6 +11957,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInputCombinationException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidInputCombinationException",
@@ -11927,6 +11993,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobStateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidJobStateException",
@@ -11961,6 +12029,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidResourceException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidResourceException",
@@ -12871,6 +12941,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobListEntry",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -13284,6 +13356,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobLogs",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15322,6 +15396,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobMetadata",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15918,6 +15994,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobResource",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -15991,6 +16069,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobState",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16037,6 +16117,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16074,6 +16156,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KMSRequestFailedException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "KMSRequestFailedException",
@@ -16359,6 +16443,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyRange",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -16801,6 +16887,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaResource",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17221,6 +17309,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
       "shapeName" : "ListClusterJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListClusterJobsRequest",
@@ -17660,6 +17750,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListClusterJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -17955,6 +18047,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListClustersRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListClustersRequest",
@@ -18394,6 +18488,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListClustersResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -18689,6 +18785,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListJobsRequest",
@@ -19128,6 +19226,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19695,6 +19795,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Notification",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -19983,6 +20085,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3Resource",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20271,6 +20375,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Shipment",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20684,6 +20790,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShippingDetails",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20733,6 +20841,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShippingOption",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20782,6 +20892,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SnowballCapacity",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20825,6 +20937,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SnowballType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -20862,6 +20976,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedAddressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedAddressException",
@@ -21779,6 +21895,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ClusterId" ],
       "shapeName" : "UpdateClusterRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateClusterRequest",
@@ -21813,6 +21931,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateClusterResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -22858,6 +22978,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "UpdateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateJobRequest",
@@ -22892,6 +23014,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
