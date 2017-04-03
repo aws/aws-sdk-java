@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * One of the downstream dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, if Amazon
- * Lex does not have sufficient permissions to call a Lambda function which results in AWS Lambda throwing an exception.
+ * Lex does not have sufficient permissions to call a Lambda function, it results in Lambda throwing an exception.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

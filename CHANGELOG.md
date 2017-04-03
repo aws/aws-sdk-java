@@ -1,3 +1,8 @@
+# __1.11.114__ __2017-04-03__
+## __Amazon Lex__
+  - ### Features
+    - Adds support to PostContent for speech input
+
 # __1.11.113__ __2017-03-31__
 ## __Amazon CloudDirectory__
   - ### Features

@@ -16,20 +16,20 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
+ * The input speech is too long.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotFoundException extends com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException {
+public class RequestTimeoutException extends com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Constructs a new NotFoundException with the specified error message.
+     * Constructs a new RequestTimeoutException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
      */
-    public NotFoundException(String message) {
+    public RequestTimeoutException(String message) {
         super(message);
     }
 

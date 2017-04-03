@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot
- * values available, and then returns it. The response card can also come from a Lambda function (
+ * values that are available, and then returns it. The response card can also come from a Lambda function (
  * <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).
  * </p>
  * 
@@ -32,13 +32,13 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version of response card format.
+     * The version of the response card format.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      */
     private String contentType;
@@ -51,11 +51,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version of response card format.
+     * The version of the response card format.
      * </p>
      * 
      * @param version
-     *        Version of response card format.
+     *        The version of the response card format.
      */
 
     public void setVersion(String version) {
@@ -64,10 +64,10 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version of response card format.
+     * The version of the response card format.
      * </p>
      * 
-     * @return Version of response card format.
+     * @return The version of the response card format.
      */
 
     public String getVersion() {
@@ -76,11 +76,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version of response card format.
+     * The version of the response card format.
      * </p>
      * 
      * @param version
-     *        Version of response card format.
+     *        The version of the response card format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      * 
      * @param contentType
-     *        Content type of the response.
+     *        The content type of the response.
      * @see ContentType
      */
 
@@ -105,10 +105,10 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      * 
-     * @return Content type of the response.
+     * @return The content type of the response.
      * @see ContentType
      */
 
@@ -118,11 +118,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      * 
      * @param contentType
-     *        Content type of the response.
+     *        The content type of the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */
@@ -134,11 +134,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      * 
      * @param contentType
-     *        Content type of the response.
+     *        The content type of the response.
      * @see ContentType
      */
 
@@ -148,11 +148,11 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Content type of the response.
+     * The content type of the response.
      * </p>
      * 
      * @param contentType
-     *        Content type of the response.
+     *        The content type of the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */

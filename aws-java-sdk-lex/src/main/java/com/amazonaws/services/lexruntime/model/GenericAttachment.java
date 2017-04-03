@@ -30,38 +30,42 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Title of the option.
+     * The title of the option.
      * </p>
      */
     private String title;
     /**
      * <p>
-     * Subtitle shown below the title.
+     * The subtitle shown below the title.
      * </p>
      */
     private String subTitle;
-
+    /**
+     * <p>
+     * The URL of an attachment to the response card.
+     * </p>
+     */
     private String attachmentLinkUrl;
     /**
      * <p>
-     * URL of an image that is displayed to the user.
+     * The URL of an image that is displayed to the user.
      * </p>
      */
     private String imageUrl;
     /**
      * <p>
-     * List of options to show to the user.
+     * The list of options to show to the user.
      * </p>
      */
     private java.util.List<Button> buttons;
 
     /**
      * <p>
-     * Title of the option.
+     * The title of the option.
      * </p>
      * 
      * @param title
-     *        Title of the option.
+     *        The title of the option.
      */
 
     public void setTitle(String title) {
@@ -70,10 +74,10 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Title of the option.
+     * The title of the option.
      * </p>
      * 
-     * @return Title of the option.
+     * @return The title of the option.
      */
 
     public String getTitle() {
@@ -82,11 +86,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Title of the option.
+     * The title of the option.
      * </p>
      * 
      * @param title
-     *        Title of the option.
+     *        The title of the option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +101,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subtitle shown below the title.
+     * The subtitle shown below the title.
      * </p>
      * 
      * @param subTitle
-     *        Subtitle shown below the title.
+     *        The subtitle shown below the title.
      */
 
     public void setSubTitle(String subTitle) {
@@ -110,10 +114,10 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subtitle shown below the title.
+     * The subtitle shown below the title.
      * </p>
      * 
-     * @return Subtitle shown below the title.
+     * @return The subtitle shown below the title.
      */
 
     public String getSubTitle() {
@@ -122,11 +126,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Subtitle shown below the title.
+     * The subtitle shown below the title.
      * </p>
      * 
      * @param subTitle
-     *        Subtitle shown below the title.
+     *        The subtitle shown below the title.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +140,12 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The URL of an attachment to the response card.
+     * </p>
+     * 
      * @param attachmentLinkUrl
+     *        The URL of an attachment to the response card.
      */
 
     public void setAttachmentLinkUrl(String attachmentLinkUrl) {
@@ -144,7 +153,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The URL of an attachment to the response card.
+     * </p>
+     * 
+     * @return The URL of an attachment to the response card.
      */
 
     public String getAttachmentLinkUrl() {
@@ -152,7 +165,12 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The URL of an attachment to the response card.
+     * </p>
+     * 
      * @param attachmentLinkUrl
+     *        The URL of an attachment to the response card.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +181,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * URL of an image that is displayed to the user.
+     * The URL of an image that is displayed to the user.
      * </p>
      * 
      * @param imageUrl
-     *        URL of an image that is displayed to the user.
+     *        The URL of an image that is displayed to the user.
      */
 
     public void setImageUrl(String imageUrl) {
@@ -176,10 +194,10 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * URL of an image that is displayed to the user.
+     * The URL of an image that is displayed to the user.
      * </p>
      * 
-     * @return URL of an image that is displayed to the user.
+     * @return The URL of an image that is displayed to the user.
      */
 
     public String getImageUrl() {
@@ -188,11 +206,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * URL of an image that is displayed to the user.
+     * The URL of an image that is displayed to the user.
      * </p>
      * 
      * @param imageUrl
-     *        URL of an image that is displayed to the user.
+     *        The URL of an image that is displayed to the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,10 +221,10 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of options to show to the user.
+     * The list of options to show to the user.
      * </p>
      * 
-     * @return List of options to show to the user.
+     * @return The list of options to show to the user.
      */
 
     public java.util.List<Button> getButtons() {
@@ -215,11 +233,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of options to show to the user.
+     * The list of options to show to the user.
      * </p>
      * 
      * @param buttons
-     *        List of options to show to the user.
+     *        The list of options to show to the user.
      */
 
     public void setButtons(java.util.Collection<Button> buttons) {
@@ -233,7 +251,7 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of options to show to the user.
+     * The list of options to show to the user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -242,7 +260,7 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param buttons
-     *        List of options to show to the user.
+     *        The list of options to show to the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +276,11 @@ public class GenericAttachment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of options to show to the user.
+     * The list of options to show to the user.
      * </p>
      * 
      * @param buttons
-     *        List of options to show to the user.
+     *        The list of options to show to the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

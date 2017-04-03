@@ -28,6 +28,19 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     }
 
     @Override
+    public java.util.concurrent.Future<PostContentResult> postContentAsync(PostContentRequest request) {
+
+        return postContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostContentResult> postContentAsync(PostContentRequest request,
+            com.amazonaws.handlers.AsyncHandler<PostContentRequest, PostContentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PostTextResult> postTextAsync(PostTextRequest request) {
 
         return postTextAsync(request, null);

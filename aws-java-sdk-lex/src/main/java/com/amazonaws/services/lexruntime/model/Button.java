@@ -30,25 +30,25 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Text visible to the user on the button.
+     * Text that is visible to the user on the button.
      * </p>
      */
     private String text;
     /**
      * <p>
-     * Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the user
-     * clicks the button, the value sent can be "New York City".
+     * The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the
+     * user chooses the button, the value sent can be "New York City."
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Text visible to the user on the button.
+     * Text that is visible to the user on the button.
      * </p>
      * 
      * @param text
-     *        Text visible to the user on the button.
+     *        Text that is visible to the user on the button.
      */
 
     public void setText(String text) {
@@ -57,10 +57,10 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Text visible to the user on the button.
+     * Text that is visible to the user on the button.
      * </p>
      * 
-     * @return Text visible to the user on the button.
+     * @return Text that is visible to the user on the button.
      */
 
     public String getText() {
@@ -69,11 +69,11 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Text visible to the user on the button.
+     * Text that is visible to the user on the button.
      * </p>
      * 
      * @param text
-     *        Text visible to the user on the button.
+     *        Text that is visible to the user on the button.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +84,13 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the user
-     * clicks the button, the value sent can be "New York City".
+     * The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the
+     * user chooses the button, the value sent can be "New York City."
      * </p>
      * 
      * @param value
-     *        Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the
-     *        user clicks the button, the value sent can be "New York City".
+     *        The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When
+     *        the user chooses the button, the value sent can be "New York City."
      */
 
     public void setValue(String value) {
@@ -99,12 +99,12 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the user
-     * clicks the button, the value sent can be "New York City".
+     * The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the
+     * user chooses the button, the value sent can be "New York City."
      * </p>
      * 
-     * @return Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the
-     *         user clicks the button, the value sent can be "New York City".
+     * @return The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC."
+     *         When the user chooses the button, the value sent can be "New York City."
      */
 
     public String getValue() {
@@ -113,13 +113,13 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the user
-     * clicks the button, the value sent can be "New York City".
+     * The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the
+     * user chooses the button, the value sent can be "New York City."
      * </p>
      * 
      * @param value
-     *        Value sent to Amazon Lex when user clicks the button. For example, consider button text "NYC". When the
-     *        user clicks the button, the value sent can be "New York City".
+     *        The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When
+     *        the user chooses the button, the value sent can be "New York City."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

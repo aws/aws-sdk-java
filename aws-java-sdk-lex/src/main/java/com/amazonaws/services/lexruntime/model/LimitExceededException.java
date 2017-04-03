@@ -15,7 +15,9 @@ package com.amazonaws.services.lexruntime.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Exceeded a limit.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException {

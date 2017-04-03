@@ -28,6 +28,11 @@ public class AbstractAmazonLexRuntime implements AmazonLexRuntime {
     }
 
     @Override
+    public PostContentResult postContent(PostContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PostTextResult postText(PostTextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
