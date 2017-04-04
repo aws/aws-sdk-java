@@ -164,6 +164,10 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
     private String comparisonOperator;
 
+    private String treatMissingData;
+
+    private String evaluateLowSampleCountPercentile;
+
     /**
      * <p>
      * The name of the alarm.
@@ -1365,6 +1369,58 @@ public class MetricAlarm implements Serializable, Cloneable {
     }
 
     /**
+     * @param treatMissingData
+     */
+
+    public void setTreatMissingData(String treatMissingData) {
+        this.treatMissingData = treatMissingData;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getTreatMissingData() {
+        return this.treatMissingData;
+    }
+
+    /**
+     * @param treatMissingData
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withTreatMissingData(String treatMissingData) {
+        setTreatMissingData(treatMissingData);
+        return this;
+    }
+
+    /**
+     * @param evaluateLowSampleCountPercentile
+     */
+
+    public void setEvaluateLowSampleCountPercentile(String evaluateLowSampleCountPercentile) {
+        this.evaluateLowSampleCountPercentile = evaluateLowSampleCountPercentile;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getEvaluateLowSampleCountPercentile() {
+        return this.evaluateLowSampleCountPercentile;
+    }
+
+    /**
+     * @param evaluateLowSampleCountPercentile
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withEvaluateLowSampleCountPercentile(String evaluateLowSampleCountPercentile) {
+        setEvaluateLowSampleCountPercentile(evaluateLowSampleCountPercentile);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1418,7 +1474,11 @@ public class MetricAlarm implements Serializable, Cloneable {
         if (getThreshold() != null)
             sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: ").append(getComparisonOperator());
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
+        if (getTreatMissingData() != null)
+            sb.append("TreatMissingData: ").append(getTreatMissingData()).append(",");
+        if (getEvaluateLowSampleCountPercentile() != null)
+            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile());
         sb.append("}");
         return sb.toString();
     }
@@ -1522,6 +1582,15 @@ public class MetricAlarm implements Serializable, Cloneable {
             return false;
         if (other.getComparisonOperator() != null && other.getComparisonOperator().equals(this.getComparisonOperator()) == false)
             return false;
+        if (other.getTreatMissingData() == null ^ this.getTreatMissingData() == null)
+            return false;
+        if (other.getTreatMissingData() != null && other.getTreatMissingData().equals(this.getTreatMissingData()) == false)
+            return false;
+        if (other.getEvaluateLowSampleCountPercentile() == null ^ this.getEvaluateLowSampleCountPercentile() == null)
+            return false;
+        if (other.getEvaluateLowSampleCountPercentile() != null
+                && other.getEvaluateLowSampleCountPercentile().equals(this.getEvaluateLowSampleCountPercentile()) == false)
+            return false;
         return true;
     }
 
@@ -1552,6 +1621,8 @@ public class MetricAlarm implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode());
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
+        hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
         return hashCode;
     }
 

@@ -174,6 +174,16 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     metricAlarm.setComparisonOperator(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TreatMissingData", targetDepth)) {
+                    metricAlarm.setTreatMissingData(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EvaluateLowSampleCountPercentile", targetDepth)) {
+                    metricAlarm.setEvaluateLowSampleCountPercentile(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricAlarm;

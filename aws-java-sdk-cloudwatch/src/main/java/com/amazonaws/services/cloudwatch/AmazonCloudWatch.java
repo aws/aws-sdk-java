@@ -250,6 +250,22 @@ public interface AmazonCloudWatch {
      * number of data points returned.
      * </p>
      * <p>
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you cannot retrieve percentile statistics for this data unless one of the following conditions is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The SampleCount of the statistic set is 1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Min and the Max of the statistic set are equal
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * For a list of metrics and dimensions supported by AWS services, see the <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch
      * Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -383,8 +399,7 @@ public interface AmazonCloudWatch {
      * <a>ListMetrics</a>.
      * </p>
      * <p>
-     * Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests and is limited to 40 KB
-     * in size for HTTP POST requests.
+     * Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests.
      * </p>
      * <p>
      * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
@@ -393,9 +408,31 @@ public interface AmazonCloudWatch {
      * supported.
      * </p>
      * <p>
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
+     * on specifying dimensions, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
      * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for
      * <a>GetMetricStatistics</a> from the time they are submitted.
      * </p>
+     * <p>
+     * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
+     * instead, you cannot retrieve percentile statistics for this data unless one of the following conditions is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The SampleCount of the statistic set is 1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Min and the Max of the statistic set are equal
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putMetricDataRequest
      * @return Result of the PutMetricData operation returned by the service.
