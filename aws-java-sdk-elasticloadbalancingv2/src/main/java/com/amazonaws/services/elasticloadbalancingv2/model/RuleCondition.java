@@ -28,17 +28,45 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The only possible value is <code>path-pattern</code>.
+     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      * </p>
      */
     private String field;
     /**
      * <p>
-     * The path pattern. You can specify a single path pattern.
+     * The condition value.
      * </p>
      * <p>
-     * A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
+     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * - .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
+     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -72,11 +100,11 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The only possible value is <code>path-pattern</code>.
+     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      * </p>
      * 
      * @param field
-     *        The only possible value is <code>path-pattern</code>.
+     *        The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      */
 
     public void setField(String field) {
@@ -85,10 +113,10 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The only possible value is <code>path-pattern</code>.
+     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      * </p>
      * 
-     * @return The only possible value is <code>path-pattern</code>.
+     * @return The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      */
 
     public String getField() {
@@ -97,11 +125,11 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The only possible value is <code>path-pattern</code>.
+     * The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      * </p>
      * 
      * @param field
-     *        The only possible value is <code>path-pattern</code>.
+     *        The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +140,39 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path pattern. You can specify a single path pattern.
+     * The condition value.
      * </p>
      * <p>
-     * A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
+     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * - .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
+     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -146,10 +202,38 @@ public class RuleCondition implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The path pattern. You can specify a single path pattern.</p>
+     * @return The condition value.</p>
      *         <p>
-     *         A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
-     *         following characters. Note that you can include up to three wildcard characters in a path pattern.
+     *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
+     *         any of the following characters. Note that you can include up to three wildcard characters.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A-Z, a-z, 0-9
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         - .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         (matches 0 or more characters)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ? (matches exactly 1 character)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *         /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
+     *         the following characters. Note that you can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -185,11 +269,39 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path pattern. You can specify a single path pattern.
+     * The condition value.
      * </p>
      * <p>
-     * A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
+     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * - .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
+     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -220,10 +332,38 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The path pattern. You can specify a single path pattern.</p>
+     *        The condition value.</p>
      *        <p>
-     *        A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
-     *        following characters. Note that you can include up to three wildcard characters in a path pattern.
+     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
+     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        - .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. Note that you can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -264,11 +404,39 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path pattern. You can specify a single path pattern.
+     * The condition value.
      * </p>
      * <p>
-     * A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
+     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * - .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
+     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -304,10 +472,38 @@ public class RuleCondition implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        The path pattern. You can specify a single path pattern.</p>
+     *        The condition value.</p>
      *        <p>
-     *        A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
-     *        following characters. Note that you can include up to three wildcard characters in a path pattern.
+     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
+     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        - .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. Note that you can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -350,11 +546,39 @@ public class RuleCondition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The path pattern. You can specify a single path pattern.
+     * The condition value.
      * </p>
      * <p>
-     * A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
+     * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A-Z, a-z, 0-9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * - .
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * * (matches 0 or more characters)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ? (matches exactly 1 character)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
+     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. Note that you can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -385,10 +609,38 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * 
      * @param values
-     *        The path pattern. You can specify a single path pattern.</p>
+     *        The condition value.</p>
      *        <p>
-     *        A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
-     *        following characters. Note that you can include up to three wildcard characters in a path pattern.
+     *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
+     *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
+     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A-Z, a-z, 0-9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        - .
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        (matches 0 or more characters)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ? (matches exactly 1 character)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
+     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. Note that you can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>

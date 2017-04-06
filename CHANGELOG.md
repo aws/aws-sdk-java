@@ -1,3 +1,8 @@
+# __1.11.117__ __2017-04-06__
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds support for a new host-header condition in CreateRule and ModifyRule
+
 # __1.11.116__ __2017-04-05__
 ## __Amazon ElastiCache__
   - ### Features

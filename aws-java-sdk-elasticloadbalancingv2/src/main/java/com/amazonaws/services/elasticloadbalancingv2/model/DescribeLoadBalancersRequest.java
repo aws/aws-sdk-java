@@ -27,7 +27,7 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers.
+     * The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.
      * </p>
      */
     private java.util.List<String> loadBalancerArns;
@@ -52,10 +52,11 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers.
+     * The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the load balancers.
+     * @return The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a
+     *         single call.
      */
 
     public java.util.List<String> getLoadBalancerArns() {
@@ -64,11 +65,12 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers.
+     * The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers.
+     *        The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single
+     *        call.
      */
 
     public void setLoadBalancerArns(java.util.Collection<String> loadBalancerArns) {
@@ -82,7 +84,7 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers.
+     * The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +93,8 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers.
+     *        The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single
+     *        call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +110,12 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers.
+     * The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers.
+     *        The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single
+     *        call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

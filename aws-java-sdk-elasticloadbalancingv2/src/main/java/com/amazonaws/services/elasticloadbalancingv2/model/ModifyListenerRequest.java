@@ -45,7 +45,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String protocol;
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported.
+     * The security policy that defines which protocols and ciphers are supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      */
     private String sslPolicy;
@@ -217,11 +219,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported.
+     * The security policy that defines which protocols and ciphers are supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported.
+     *        The security policy that defines which protocols and ciphers are supported. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -230,10 +237,15 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported.
+     * The security policy that defines which protocols and ciphers are supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
-     * @return The security policy that defines which ciphers and protocols are supported.
+     * @return The security policy that defines which protocols and ciphers are supported. For more information, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *         >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      */
 
     public String getSslPolicy() {
@@ -242,11 +254,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported.
+     * The security policy that defines which protocols and ciphers are supported. For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported.
+     *        The security policy that defines which protocols and ciphers are supported. For more information, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

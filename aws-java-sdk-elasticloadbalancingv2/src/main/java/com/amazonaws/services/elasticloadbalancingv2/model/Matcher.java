@@ -28,21 +28,21 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify multiple
+     * values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      */
     private String httpCode;
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify multiple
+     * values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *        range of values (for example, "200-299").
+     *        The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify
+     *        multiple values (for example, "200,202") or a range of values (for example, "200-299").
      */
 
     public void setHttpCode(String httpCode) {
@@ -51,12 +51,12 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify multiple
+     * values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * 
-     * @return The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *         range of values (for example, "200-299").
+     * @return The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify
+     *         multiple values (for example, "200,202") or a range of values (for example, "200-299").
      */
 
     public String getHttpCode() {
@@ -65,13 +65,13 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify multiple
+     * values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *        range of values (for example, "200-299").
+     *        The HTTP codes. You can specify values between 200 and 499. The default value is 200. You can specify
+     *        multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

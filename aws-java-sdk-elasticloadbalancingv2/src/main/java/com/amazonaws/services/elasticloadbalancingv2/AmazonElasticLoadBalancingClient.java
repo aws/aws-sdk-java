@@ -539,7 +539,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @param createLoadBalancerRequest
      * @return Result of the CreateLoadBalancer operation returned by the service.
      * @throws DuplicateLoadBalancerNameException
-     *         A load balancer with the specified name already exists for this account.
+     *         A load balancer with the specified name already exists.
      * @throws TooManyLoadBalancersException
      *         You've reached the limit on the number of load balancers for your AWS account.
      * @throws InvalidConfigurationRequestException
@@ -1228,7 +1228,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the specified policies or all policies used for SSL negotiation.
      * </p>
      * <p>
-     * Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -1278,7 +1280,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the tags for the specified resources.
+     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
+     * Balancers and target groups.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1501,7 +1504,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
      * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy.
+     * you must add the security policy and server certificate.
      * </p>
      * 
      * @param modifyListenerRequest

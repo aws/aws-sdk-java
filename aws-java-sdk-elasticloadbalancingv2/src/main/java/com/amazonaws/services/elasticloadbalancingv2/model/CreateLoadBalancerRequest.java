@@ -30,7 +30,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * </p>
      */
@@ -84,14 +84,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      */
 
@@ -104,13 +104,13 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * </p>
      * 
      * @return The name of the load balancer.</p>
      *         <p>
-     *         This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     *         This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      *         alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      */
 
@@ -123,14 +123,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
      *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

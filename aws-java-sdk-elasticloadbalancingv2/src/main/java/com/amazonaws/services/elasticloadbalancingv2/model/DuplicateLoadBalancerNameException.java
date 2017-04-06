@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A load balancer with the specified name already exists for this account.
+ * A load balancer with the specified name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
