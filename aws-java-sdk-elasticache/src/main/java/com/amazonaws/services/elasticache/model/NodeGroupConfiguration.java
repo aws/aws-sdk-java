@@ -28,8 +28,8 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383. The
-     * string is in the format <code>startkey-endkey</code>.
+     * A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is
+     * in the format <code>startkey-endkey</code>.
      * </p>
      * <p>
      * Example: <code>"0-3999"</code>
@@ -58,16 +58,16 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383. The
-     * string is in the format <code>startkey-endkey</code>.
+     * A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is
+     * in the format <code>startkey-endkey</code>.
      * </p>
      * <p>
      * Example: <code>"0-3999"</code>
      * </p>
      * 
      * @param slots
-     *        A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383.
-     *        The string is in the format <code>startkey-endkey</code>.</p>
+     *        A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The
+     *        string is in the format <code>startkey-endkey</code>.</p>
      *        <p>
      *        Example: <code>"0-3999"</code>
      */
@@ -78,15 +78,15 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383. The
-     * string is in the format <code>startkey-endkey</code>.
+     * A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is
+     * in the format <code>startkey-endkey</code>.
      * </p>
      * <p>
      * Example: <code>"0-3999"</code>
      * </p>
      * 
-     * @return A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383.
-     *         The string is in the format <code>startkey-endkey</code>.</p>
+     * @return A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The
+     *         string is in the format <code>startkey-endkey</code>.</p>
      *         <p>
      *         Example: <code>"0-3999"</code>
      */
@@ -97,16 +97,16 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383. The
-     * string is in the format <code>startkey-endkey</code>.
+     * A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is
+     * in the format <code>startkey-endkey</code>.
      * </p>
      * <p>
      * Example: <code>"0-3999"</code>
      * </p>
      * 
      * @param slots
-     *        A string that specifies the keyspaces as a series of comma separated values. Keyspaces are 0 to 16,383.
-     *        The string is in the format <code>startkey-endkey</code>.</p>
+     *        A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The
+     *        string is in the format <code>startkey-endkey</code>.</p>
      *        <p>
      *        Example: <code>"0-3999"</code>
      * @return Returns a reference to this object so that method calls can be chained together.

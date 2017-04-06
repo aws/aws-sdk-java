@@ -39,6 +39,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     private final long contentLength;
     private long bytesRead;
     private long markedBytes;
+    private boolean eofReached = false;
 
     public S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
         super(in);
@@ -93,7 +94,8 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @Override
     public int read() throws IOException {
         int value = super.read();
-        if (value != -1) {
+        eofReached = value == -1;
+        if (!eofReached) {
             bytesRead++;
         }
         return value;
@@ -113,7 +115,8 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
         int value = super.read(b, off, len);
-        if (value != -1) {
+        eofReached = value == -1;
+        if (!eofReached) {
             bytesRead += value;
         }
         return value;
@@ -132,6 +135,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     public synchronized void reset() throws IOException {
         super.reset();
         bytesRead = markedBytes;
+        eofReached = false;
     }
 
     @Override
@@ -153,7 +157,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public void close() throws IOException {
-        if (bytesRead >= contentLength) {
+        if (bytesRead >= contentLength || eofReached) {
             super.close();
         } else {
             LOG.warn(
@@ -173,5 +177,10 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @SdkTestInternalApi
     long getBytesRead() {
         return this.bytesRead;
+    }
+
+    @SdkTestInternalApi
+    boolean isEofReached() {
+        return this.eofReached;
     }
 }

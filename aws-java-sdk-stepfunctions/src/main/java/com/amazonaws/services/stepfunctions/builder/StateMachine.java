@@ -38,7 +38,6 @@ public final class StateMachine {
 
     private static final ObjectMapper MAPPER = new ObjectMapper()
             .setSerializationInclusion(JsonInclude.Include.NON_NULL)
-            .setSerializationInclusion(JsonInclude.Include.NON_EMPTY)
             .registerModule(DateModule.INSTANCE);
 
     @JsonProperty(PropertyNames.COMMENT)

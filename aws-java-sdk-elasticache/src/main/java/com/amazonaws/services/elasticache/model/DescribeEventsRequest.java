@@ -45,17 +45,23 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * The end of the time interval for which to retrieve events, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * The number of minutes' worth of events to retrieve.
+     * The number of minutes worth of events to retrieve.
      * </p>
      */
     private Integer duration;
@@ -205,9 +211,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
      * @param startTime
-     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+     *        <p>
+     *        <b>Example:</b> 2017-03-30T07:03:49.555Z
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -218,8 +229,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
-     * @return The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+     * @return The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+     *         <p>
+     *         <b>Example:</b> 2017-03-30T07:03:49.555Z
      */
 
     public java.util.Date getStartTime() {
@@ -230,9 +246,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
      * @param startTime
-     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+     *        The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+     *        <p>
+     *        <b>Example:</b> 2017-03-30T07:03:49.555Z
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,9 +266,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The end of the time interval for which to retrieve events, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
      * @param endTime
-     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+     *        <p>
+     *        <b>Example:</b> 2017-03-30T07:03:49.555Z
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -258,8 +284,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The end of the time interval for which to retrieve events, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
-     * @return The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+     * @return The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+     *         <p>
+     *         <b>Example:</b> 2017-03-30T07:03:49.555Z
      */
 
     public java.util.Date getEndTime() {
@@ -270,9 +301,14 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The end of the time interval for which to retrieve events, specified in ISO 8601 format.
      * </p>
+     * <p>
+     * <b>Example:</b> 2017-03-30T07:03:49.555Z
+     * </p>
      * 
      * @param endTime
-     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+     *        The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+     *        <p>
+     *        <b>Example:</b> 2017-03-30T07:03:49.555Z
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +319,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of minutes' worth of events to retrieve.
+     * The number of minutes worth of events to retrieve.
      * </p>
      * 
      * @param duration
-     *        The number of minutes' worth of events to retrieve.
+     *        The number of minutes worth of events to retrieve.
      */
 
     public void setDuration(Integer duration) {
@@ -296,10 +332,10 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of minutes' worth of events to retrieve.
+     * The number of minutes worth of events to retrieve.
      * </p>
      * 
-     * @return The number of minutes' worth of events to retrieve.
+     * @return The number of minutes worth of events to retrieve.
      */
 
     public Integer getDuration() {
@@ -308,11 +344,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of minutes' worth of events to retrieve.
+     * The number of minutes worth of events to retrieve.
      * </p>
      * 
      * @param duration
-     *        The number of minutes' worth of events to retrieve.
+     *        The number of minutes worth of events to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

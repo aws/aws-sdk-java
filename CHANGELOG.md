@@ -1,3 +1,8 @@
+# __1.11.116__ __2017-04-05__
+## __Amazon ElastiCache__
+  - ### Features
+    - ElastiCache added support for testing the Elasticache Multi-AZ feature with Automatic Failover.
+
 # __1.11.115__ __2017-04-04__
 ## __Amazon CloudWatch__
   - ### Features

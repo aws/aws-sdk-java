@@ -255,6 +255,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String cacheNodeType;
+    /**
+     * <p>
+     * The name of the Node Group (called shard in the console).
+     * </p>
+     */
+    private String nodeGroupId;
 
     /**
      * <p>
@@ -1851,6 +1857,46 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The name of the Node Group (called shard in the console).
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        The name of the Node Group (called shard in the console).
+     */
+
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * The name of the Node Group (called shard in the console).
+     * </p>
+     * 
+     * @return The name of the Node Group (called shard in the console).
+     */
+
+    public String getNodeGroupId() {
+        return this.nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * The name of the Node Group (called shard in the console).
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        The name of the Node Group (called shard in the console).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withNodeGroupId(String nodeGroupId) {
+        setNodeGroupId(nodeGroupId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1894,7 +1940,9 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: ").append(getCacheNodeType());
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
+        if (getNodeGroupId() != null)
+            sb.append("NodeGroupId: ").append(getNodeGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -1977,6 +2025,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
+        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
+            return false;
+        if (other.getNodeGroupId() != null && other.getNodeGroupId().equals(this.getNodeGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -2002,6 +2054,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         return hashCode;
     }
 

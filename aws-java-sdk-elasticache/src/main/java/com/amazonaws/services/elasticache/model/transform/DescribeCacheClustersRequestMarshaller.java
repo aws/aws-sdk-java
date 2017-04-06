@@ -56,6 +56,11 @@ public class DescribeCacheClustersRequestMarshaller implements Marshaller<Reques
             request.addParameter("ShowCacheNodeInfo", StringUtils.fromBoolean(describeCacheClustersRequest.getShowCacheNodeInfo()));
         }
 
+        if (describeCacheClustersRequest.getShowCacheClustersNotInReplicationGroups() != null) {
+            request.addParameter("ShowCacheClustersNotInReplicationGroups",
+                    StringUtils.fromBoolean(describeCacheClustersRequest.getShowCacheClustersNotInReplicationGroups()));
+        }
+
         return request;
     }
 

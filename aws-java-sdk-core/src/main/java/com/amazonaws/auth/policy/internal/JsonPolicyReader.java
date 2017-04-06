@@ -14,16 +14,11 @@
  */
 package com.amazonaws.auth.policy.internal;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
+import com.amazonaws.auth.policy.PolicyReaderOptions;
 import com.amazonaws.auth.policy.Principal;
 import com.amazonaws.auth.policy.Principal.WebIdentityProviders;
 import com.amazonaws.auth.policy.Resource;
@@ -31,6 +26,11 @@ import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.auth.policy.Statement.Effect;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Generate an AWS policy object by parsing the given JSON string.
@@ -41,7 +41,18 @@ public class JsonPolicyReader {
 
     private static final String PRINCIPAL_SCHEMA_SERVICE = "Service";
 
-    private static final String PRINICIPAL_SCHEMA_FEDERATED = "Federated";
+    private static final String PRINCIPAL_SCHEMA_FEDERATED = "Federated";
+
+    private final PolicyReaderOptions options;
+
+    public JsonPolicyReader() {
+        this(new PolicyReaderOptions());
+    }
+
+    public JsonPolicyReader(PolicyReaderOptions options) {
+        this.options = options;
+    }
+
     /**
      * Converts the specified JSON string to an AWS policy object.
      *
@@ -60,7 +71,6 @@ public class JsonPolicyReader {
      *             converted to an AWS policy object.
      */
     public Policy createPolicyFromJsonString(String jsonString) {
-
         if (jsonString == null) {
             throw new IllegalArgumentException("JSON string cannot be null");
         }
@@ -239,15 +249,14 @@ public class JsonPolicyReader {
      */
     private Principal createPrincipal(String schema, JsonNode principalNode) {
         if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_USER)) {
-            return new Principal(principalNode.asText());
+            return new Principal(PRINCIPAL_SCHEMA_USER, principalNode.asText(), options.isStripAwsPrincipalIdHyphensEnabled());
         } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_SERVICE)) {
-            return new Principal(schema,principalNode.asText());
-        } else if (schema.equalsIgnoreCase(PRINICIPAL_SCHEMA_FEDERATED)) {
+            return new Principal(schema, principalNode.asText());
+        } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_FEDERATED)) {
             if (WebIdentityProviders.fromString(principalNode.asText()) != null) {
-                return new Principal(
-                        WebIdentityProviders.fromString(principalNode.asText()));
+                return new Principal(WebIdentityProviders.fromString(principalNode.asText()));
             } else {
-                return new Principal(PRINICIPAL_SCHEMA_FEDERATED, principalNode.asText());
+                return new Principal(PRINCIPAL_SCHEMA_FEDERATED, principalNode.asText());
             }
         }
         throw new SdkClientException("Schema " + schema + " is not a valid value for the principal.");
@@ -342,5 +351,4 @@ public class JsonPolicyReader {
     private boolean isNotNull(Object object) {
         return null != object;
     }
-
 }

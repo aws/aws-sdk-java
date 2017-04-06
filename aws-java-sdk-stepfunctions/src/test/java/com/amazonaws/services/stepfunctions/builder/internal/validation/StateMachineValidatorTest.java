@@ -422,26 +422,6 @@ public class StateMachineValidatorTest {
     }
 
     @Test(expected = ValidationException.class)
-    public void waitForTimestampPath_InvalidJsonPath_IsNotValid() {
-        stateMachine()
-                .startAt("Initial")
-                .state("Initial", waitState()
-                        .waitFor(timestampPath("$."))
-                        .transition(end()))
-                .build();
-    }
-
-    @Test(expected = ValidationException.class)
-    public void waitForTimestampPath_InvalidReferencePath_IsNotValid() {
-        stateMachine()
-                .startAt("Initial")
-                .state("Initial", waitState()
-                        .waitFor(timestampPath("$.foo[*]"))
-                        .transition(end()))
-                .build();
-    }
-
-    @Test(expected = ValidationException.class)
     public void waitForSecondsPath_MissingPath_IsNotValid() {
         stateMachine()
                 .startAt("Initial")
@@ -457,26 +437,6 @@ public class StateMachineValidatorTest {
                 .startAt("Initial")
                 .state("Initial", waitState()
                         .waitFor(secondsPath(""))
-                        .transition(end()))
-                .build();
-    }
-
-    @Test(expected = ValidationException.class)
-    public void waitForSecondsPath_InvalidJsonPath_IsNotValid() {
-        stateMachine()
-                .startAt("Initial")
-                .state("Initial", waitState()
-                        .waitFor(secondsPath("$."))
-                        .transition(end()))
-                .build();
-    }
-
-    @Test(expected = ValidationException.class)
-    public void waitForSecondsPath_InvalidReferencePath_IsNotValid() {
-        stateMachine()
-                .startAt("Initial")
-                .state("Initial", waitState()
-                        .waitFor(secondsPath("$.foo[*]"))
                         .transition(end()))
                 .build();
     }
