@@ -1675,6 +1675,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationFault"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DependentServiceUnavailableFault"
       } ],
       "http" : {
         "method" : "POST",
@@ -1706,6 +1712,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedNodeNotFoundFault"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DependentServiceUnavailableFault"
       } ],
       "http" : {
         "method" : "POST",
@@ -2094,6 +2106,43 @@
         "shape" : "EnableSnapshotCopyResult"
       }
     },
+    "GetClusterCredentials" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or more database user groups that the user will join at log in. By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see Generating IAM Database User Credentials in the Amazon Redshift Cluster Management Guide.</p> <p>The IAM user or role that executes GetClusterCredentials must have an IAM policy attached that allows the <code>redshift:GetClusterCredentials</code> action with access to the <code>dbuser</code> resource on the cluster. The user name specified for <code>dbuser</code> in the IAM policy and the user name specified for the <code>DbUser</code> parameter must match.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include the <code>redshift:CreateClusterUser</code> privilege.</p> <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ClusterNotFoundFault"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedOperationFault"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetClusterCredentialsMessage",
+        "xmlNamespace" : null
+      },
+      "name" : "GetClusterCredentials",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : "GetClusterCredentialsResult",
+        "shape" : "ClusterCredentials"
+      }
+    },
     "ModifyCluster" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2123,6 +2172,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "NumberOfNodesQuotaExceededFault"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NumberOfNodesPerClusterLimitExceededFault"
       }, {
         "documentation" : null,
         "error" : null,
@@ -2980,6 +3035,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AccountAlias" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "AccountId" : {
           "deprecated" : false,
           "documentation" : "<p>The identifier of an AWS customer account authorized to restore a snapshot.</p>",
@@ -3238,7 +3307,7 @@
       "members" : {
         "AccountWithRestoreAccess" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the AWS customer account authorized to restore the specified snapshot.</p>",
+          "documentation" : "<p>The identifier of the AWS customer account authorized to restore the specified snapshot.</p> <p>To share a snapshot with AWS support, specify amazon-redshift-support.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3959,6 +4028,70 @@
       "max" : 0,
       "member" : null,
       "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ClusterCredentials" : {
+      "deprecated" : false,
+      "documentation" : "<p>Temporary credentials with authorization to log in to an Amazon Redshift database. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DbPassword" : {
+          "deprecated" : false,
+          "documentation" : "<p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SensitiveString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DbUser" : {
+          "deprecated" : false,
+          "documentation" : "<p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user was auto-created. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Expiration" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time <code>DbPassword</code> expires.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TStamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7264,6 +7397,40 @@
       "value" : null,
       "wrapper" : false
     },
+    "DbGroupList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : "DbGroup",
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "DefaultClusterParameters" : {
       "deprecated" : false,
       "documentation" : "<p>Describes the default cluster parameters for a parameter group family.</p>",
@@ -7822,6 +7989,30 @@
       "enum" : null,
       "error" : {
         "code" : "DependentServiceRequestThrottlingFault",
+        "httpStatusCode" : 400
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DependentServiceUnavailableFault" : {
+      "deprecated" : false,
+      "documentation" : "<p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : "DependentServiceUnavailableFault",
         "httpStatusCode" : 400
       },
       "exception" : true,
@@ -10873,6 +11064,112 @@
       "pattern" : null,
       "payload" : null,
       "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetClusterCredentialsMessage" : {
+      "deprecated" : false,
+      "documentation" : "<p>The request parameters to get cluster credentials.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AutoCreate" : {
+          "deprecated" : false,
+          "documentation" : "<p>Create a database user with the name specified for <code>DbUser</code> if one does not exist.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanOptional",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ClusterIdentifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DbGroups" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If not specified, the new user is added only to PUBLIC.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DbGroupList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DbName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log in to any existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters.</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DbUser" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html\">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 128 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DurationSeconds" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of seconds until the returned temporary password expires.</p> <p>Constraint: minimum 900, maximum 3600.</p> <p>Default: 900</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IntegerOptional",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DbUser", "ClusterIdentifier" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -15946,6 +16243,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SensitiveString" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },

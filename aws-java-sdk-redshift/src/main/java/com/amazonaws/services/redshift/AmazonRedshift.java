@@ -1291,6 +1291,9 @@ public interface AmazonRedshift {
      *         Specified offering does not exist.
      * @throws UnsupportedOperationException
      *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
      * @sample AmazonRedshift.DescribeReservedNodeOfferings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings"
      *      target="_top">AWS API Documentation</a>
@@ -1313,6 +1316,9 @@ public interface AmazonRedshift {
      * @return Result of the DescribeReservedNodes operation returned by the service.
      * @throws ReservedNodeNotFoundException
      *         The specified reserved compute node not found.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
      * @sample AmazonRedshift.DescribeReservedNodes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes" target="_top">AWS
      *      API Documentation</a>
@@ -1567,6 +1573,48 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift
+     * database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
+     * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally
+     * specify one or more database user groups that the user will join at log in. By default, the temporary credentials
+     * expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds
+     * (60 minutes). For more information, see Generating IAM Database User Credentials in the Amazon Redshift Cluster
+     * Management Guide.
+     * </p>
+     * <p>
+     * The IAM user or role that executes GetClusterCredentials must have an IAM policy attached that allows the
+     * <code>redshift:GetClusterCredentials</code> action with access to the <code>dbuser</code> resource on the
+     * cluster. The user name specified for <code>dbuser</code> in the IAM policy and the user name specified for the
+     * <code>DbUser</code> parameter must match.
+     * </p>
+     * <p>
+     * If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the
+     * <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>.
+     * </p>
+     * <p>
+     * In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>, then the policy must include
+     * the <code>redshift:CreateClusterUser</code> privilege.
+     * </p>
+     * <p>
+     * If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource
+     * <code>dbname</code> for the specified database name.
+     * </p>
+     * 
+     * @param getClusterCredentialsRequest
+     *        The request parameters to get cluster credentials.
+     * @return Result of the GetClusterCredentials operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.GetClusterCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetClusterCredentialsResult getClusterCredentials(GetClusterCredentialsRequest getClusterCredentialsRequest);
+
+    /**
+     * <p>
      * Modifies the settings for a cluster. For example, you can add another security or parameter group, update the
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
@@ -1592,6 +1640,8 @@ public interface AmazonRedshift {
      *         your quota, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @throws NumberOfNodesPerClusterLimitExceededException
+     *         The operation would exceed the number of nodes allowed for a cluster.
      * @throws ClusterSecurityGroupNotFoundException
      *         The cluster security group name does not refer to an existing cluster security group.
      * @throws ClusterParameterGroupNotFoundException

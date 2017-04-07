@@ -2256,6 +2256,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(GetClusterCredentialsRequest request) {
+
+        return getClusterCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(final GetClusterCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsRequest, GetClusterCredentialsResult> asyncHandler) {
+        final GetClusterCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetClusterCredentialsResult>() {
+            @Override
+            public GetClusterCredentialsResult call() throws Exception {
+                GetClusterCredentialsResult result = null;
+
+                try {
+                    result = executeGetClusterCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);

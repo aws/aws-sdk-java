@@ -121,6 +121,8 @@ public enum RedshiftActions implements Action {
     EnableLogging("redshift:EnableLogging"),
     /** Action for the EnableSnapshotCopy operation. */
     EnableSnapshotCopy("redshift:EnableSnapshotCopy"),
+    /** Action for the GetClusterCredentials operation. */
+    GetClusterCredentials("redshift:GetClusterCredentials"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("redshift:ModifyCluster"),
     /** Action for the ModifyClusterIamRoles operation. */
