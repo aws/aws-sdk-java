@@ -17,21 +17,23 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
@@ -98,7 +100,7 @@ public class XmlResponsesSaxParser {
 
     private XMLReader xr = null;
 
-    private boolean sanitizeXmlDocument = true;
+    private static final Pattern pattern = Pattern.compile("\r");
 
     /**
      * Constructs the XML SAX parser.
@@ -157,63 +159,73 @@ public class XmlResponsesSaxParser {
         }
     }
 
-    protected InputStream sanitizeXmlDocument(DefaultHandler handler, InputStream inputStream)
-            throws IOException {
+    protected StringReader sanitizeXmlDocument(DefaultHandler handler, InputStream inputStream)
+        throws IOException {
+        if (log.isDebugEnabled()) {
+            log.debug("Sanitizing XML document destined for handler " + handler.getClass());
+        }
+        try {
 
-        if (!sanitizeXmlDocument) {
-            // No sanitizing will be performed, return the original input stream unchanged.
-            return inputStream;
-        } else {
-            if (log.isDebugEnabled()) {
-                log.debug("Sanitizing XML document destined for handler " + handler.getClass());
+             /*
+              * Read object listing XML document from input stream provided into a
+              * string buffer, so we can replace troublesome characters before
+              * sending the document to the XML parser.
+              */
+            StringBuilder listingDocBuffer = new StringBuilder();
+            BufferedReader br = new BufferedReader(
+                new InputStreamReader(inputStream, Constants.DEFAULT_ENCODING));
+
+            char[] buf = new char[8192];
+            int read = -1;
+            while ((read = br.read(buf)) != -1) {
+                listingDocBuffer.append(buf, 0, read);
             }
+            br.close();
 
-            InputStream sanitizedInputStream = null;
+             /*
+              * Replace any carriage return (\r) characters with explicit XML
+              * character entities, to prevent the SAX parser from
+              * misinterpreting 0x0D characters as 0x0A and being unable to
+              * parse the XML.
+              */
+            String listingDoc = pattern.matcher(listingDocBuffer).replaceAll("&#013;");
+            return new StringReader(listingDoc);
+        } catch (IOException e) {
+            throw e;
 
+        } catch (Throwable t) {
             try {
-
-                /*
-                 * Read object listing XML document from input stream provided into a
-                 * string buffer, so we can replace troublesome characters before
-                 * sending the document to the XML parser.
-                 */
-                StringBuilder listingDocBuffer = new StringBuilder();
-                BufferedReader br = new BufferedReader(
-                    new InputStreamReader(inputStream, Constants.DEFAULT_ENCODING));
-
-                char[] buf = new char[8192];
-                int read = -1;
-                while ((read = br.read(buf)) != -1) {
-                    listingDocBuffer.append(buf, 0, read);
-                }
-                br.close();
-
-                /*
-                 * Replace any carriage return (\r) characters with explicit XML
-                 * character entities, to prevent the SAX parser from
-                 * misinterpreting 0x0D characters as 0x0A and being unable to
-                 * parse the XML.
-                 */
-                String listingDoc = listingDocBuffer.toString().replaceAll("\r", "&#013;");
-
-                sanitizedInputStream = new ByteArrayInputStream(
-                    listingDoc.getBytes(UTF8));
-
+                inputStream.close();
             } catch (IOException e) {
-                throw e;
-
-            } catch (Throwable t) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    if (log.isErrorEnabled()) {
-                        log.error("Unable to close response InputStream after failure sanitizing XML document", e);
-                    }
+                if (log.isErrorEnabled()) {
+                    log.error("Unable to close response InputStream after failure sanitizing XML document", e);
                 }
-                throw new SdkClientException("Failed to sanitize XML document destined for handler "
-                    + handler.getClass(), t);
             }
-            return sanitizedInputStream;
+            throw new AmazonClientException("Failed to sanitize XML document destined for handler "
+                + handler.getClass(), t);
+        }
+    }
+
+    protected void parseXmlInputStream(DefaultHandler handler, StringReader reader)
+        throws IOException {
+        try {
+            if (log.isDebugEnabled()) {
+                log.debug("Parsing XML response document with handler: " + handler.getClass());
+            }
+
+            xr.setContentHandler(handler);
+            xr.setErrorHandler(handler);
+            xr.parse(new InputSource(reader));
+
+        } catch (IOException e) {
+            throw e;
+
+        } catch (Throwable t) {
+            if (reader != null) {
+                reader.close();
+            }
+            throw new AmazonClientException("Failed to parse XML document with handler "
+                + handler.getClass(), t);
         }
     }
 
