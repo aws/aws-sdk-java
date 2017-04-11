@@ -40,6 +40,8 @@ public class GameSessionPlacementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumPlayerSessionCount").build();
     private static final MarshallingInfo<String> GAMESESSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionName").build();
+    private static final MarshallingInfo<String> GAMESESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<String> GAMESESSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionArn").build();
     private static final MarshallingInfo<String> GAMESESSIONREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,12 @@ public class GameSessionPlacementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").build();
+    private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpAddress").build();
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Port").build();
+    private static final MarshallingInfo<List> PLACEDPLAYERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacedPlayerSessions").build();
 
     private static final GameSessionPlacementMarshaller instance = new GameSessionPlacementMarshaller();
 
@@ -73,11 +81,15 @@ public class GameSessionPlacementMarshaller {
             protocolMarshaller.marshall(gameSessionPlacement.getGameProperties(), GAMEPROPERTIES_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getMaximumPlayerSessionCount(), MAXIMUMPLAYERSESSIONCOUNT_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getGameSessionName(), GAMESESSIONNAME_BINDING);
+            protocolMarshaller.marshall(gameSessionPlacement.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getGameSessionArn(), GAMESESSIONARN_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getGameSessionRegion(), GAMESESSIONREGION_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getPlayerLatencies(), PLAYERLATENCIES_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(gameSessionPlacement.getIpAddress(), IPADDRESS_BINDING);
+            protocolMarshaller.marshall(gameSessionPlacement.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(gameSessionPlacement.getPlacedPlayerSessions(), PLACEDPLAYERSESSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

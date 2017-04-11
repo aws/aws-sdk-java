@@ -32,6 +32,8 @@ public class CreateGameSessionQueueRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<Integer> TIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutInSeconds").build();
+    private static final MarshallingInfo<List> PLAYERLATENCYPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlayerLatencyPolicies").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Destinations").build();
 
@@ -53,6 +55,7 @@ public class CreateGameSessionQueueRequestMarshaller {
         try {
             protocolMarshaller.marshall(createGameSessionQueueRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createGameSessionQueueRequest.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(createGameSessionQueueRequest.getPlayerLatencyPolicies(), PLAYERLATENCYPOLICIES_BINDING);
             protocolMarshaller.marshall(createGameSessionQueueRequest.getDestinations(), DESTINATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

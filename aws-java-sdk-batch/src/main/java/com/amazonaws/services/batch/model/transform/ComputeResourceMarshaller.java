@@ -39,6 +39,8 @@ public class ComputeResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredvCpus").build();
     private static final MarshallingInfo<List> INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("instanceTypes").build();
+    private static final MarshallingInfo<String> IMAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("imageId").build();
     private static final MarshallingInfo<List> SUBNETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subnets").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -75,6 +77,7 @@ public class ComputeResourceMarshaller {
             protocolMarshaller.marshall(computeResource.getMaxvCpus(), MAXVCPUS_BINDING);
             protocolMarshaller.marshall(computeResource.getDesiredvCpus(), DESIREDVCPUS_BINDING);
             protocolMarshaller.marshall(computeResource.getInstanceTypes(), INSTANCETYPES_BINDING);
+            protocolMarshaller.marshall(computeResource.getImageId(), IMAGEID_BINDING);
             protocolMarshaller.marshall(computeResource.getSubnets(), SUBNETS_BINDING);
             protocolMarshaller.marshall(computeResource.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(computeResource.getEc2KeyPair(), EC2KEYPAIR_BINDING);

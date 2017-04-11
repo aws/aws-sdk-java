@@ -33,8 +33,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will provide
-     * the correct device name.
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * provide the correct device name.
      * </p>
      */
     private String deviceName;
@@ -61,14 +61,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will provide
-     * the correct device name.
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * provide the correct device name.
      * </p>
      * 
      * @param deviceName
      *        The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
      *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *        OpsWorks will provide the correct device name.
+     *        OpsWorks Stacks will provide the correct device name.
      */
 
     public void setDeviceName(String deviceName) {
@@ -78,13 +78,13 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will provide
-     * the correct device name.
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * provide the correct device name.
      * </p>
      * 
      * @return The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
      *         can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *         OpsWorks will provide the correct device name.
+     *         OpsWorks Stacks will provide the correct device name.
      */
 
     public String getDeviceName() {
@@ -94,14 +94,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will provide
-     * the correct device name.
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * provide the correct device name.
      * </p>
      * 
      * @param deviceName
      *        The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
      *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *        OpsWorks will provide the correct device name.
+     *        OpsWorks Stacks will provide the correct device name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

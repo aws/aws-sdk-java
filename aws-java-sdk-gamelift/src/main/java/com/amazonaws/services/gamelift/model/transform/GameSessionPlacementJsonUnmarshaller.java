@@ -72,6 +72,10 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                     context.nextToken();
                     gameSessionPlacement.setGameSessionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GameSessionId", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setGameSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GameSessionArn", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setGameSessionArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -92,6 +96,19 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("IpAddress", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Port", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("PlacedPlayerSessions", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setPlacedPlayerSessions(new ListUnmarshaller<PlacedPlayerSession>(PlacedPlayerSessionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

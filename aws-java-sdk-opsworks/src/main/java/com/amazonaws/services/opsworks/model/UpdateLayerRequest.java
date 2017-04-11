@@ -40,11 +40,11 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
-     * OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are
+     * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
      * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      * </p>
      */
@@ -55,6 +55,13 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     */
+    private CloudWatchLogsConfiguration cloudWatchLogsConfiguration;
     /**
      * <p>
      * The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs,
@@ -227,21 +234,21 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
-     * OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are
+     * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
      * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files
-     *        are installed. It can have a maximum of 200 characters and must be in the following format:
+     *        AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *        files are installed. It can have a maximum of 200 characters and must be in the following format:
      *        /\A[a-z0-9\-\_\.]+\Z/.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      */
 
@@ -252,20 +259,20 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
-     * OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are
+     * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
      * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      * </p>
      * 
      * @return For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *         AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files
-     *         are installed. It can have a maximum of 200 characters and must be in the following format:
+     *         AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *         files are installed. It can have a maximum of 200 characters and must be in the following format:
      *         /\A[a-z0-9\-\_\.]+\Z/.</p>
      *         <p>
-     *         The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     *         The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      */
 
@@ -276,21 +283,21 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
-     * OpsWorksand by Chef. The short name is also used as the name for the directory where your app files are
+     * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
      * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorksand by Chef. The short name is also used as the name for the directory where your app files
-     *        are installed. It can have a maximum of 200 characters and must be in the following format:
+     *        AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *        files are installed. It can have a maximum of 200 characters and must be in the following format:
      *        /\A[a-z0-9\-\_\.]+\Z/.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks. For more information, see the <a
+     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -361,6 +368,52 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateLayerRequest clearAttributesEntries() {
         this.attributes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *        <a>CloudWatchLogsLogStream</a>.
+     */
+
+    public void setCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        this.cloudWatchLogsConfiguration = cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @return Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *         <a>CloudWatchLogsLogStream</a>.
+     */
+
+    public CloudWatchLogsConfiguration getCloudWatchLogsConfiguration() {
+        return this.cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     * <a>CloudWatchLogsLogStream</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        Specifies CloudWatch Logs configuration options for the layer. For more information, see
+     *        <a>CloudWatchLogsLogStream</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLayerRequest withCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        setCloudWatchLogsConfiguration(cloudWatchLogsConfiguration);
         return this;
     }
 
@@ -1165,6 +1218,8 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Shortname: ").append(getShortname()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCloudWatchLogsConfiguration() != null)
+            sb.append("CloudWatchLogsConfiguration: ").append(getCloudWatchLogsConfiguration()).append(",");
         if (getCustomInstanceProfileArn() != null)
             sb.append("CustomInstanceProfileArn: ").append(getCustomInstanceProfileArn()).append(",");
         if (getCustomJson() != null)
@@ -1218,6 +1273,10 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() == null ^ this.getCloudWatchLogsConfiguration() == null)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() != null && other.getCloudWatchLogsConfiguration().equals(this.getCloudWatchLogsConfiguration()) == false)
             return false;
         if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null)
             return false;
@@ -1279,6 +1338,7 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogsConfiguration() == null) ? 0 : getCloudWatchLogsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode());
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
         hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode());

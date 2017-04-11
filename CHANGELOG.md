@@ -1,3 +1,26 @@
+# __1.11.119__ __2017-04-11__
+## __AWS Batch__
+  - ### Features
+    - API Update for AWS Batch: Customer provided AMI for MANAGED Compute Environment 
+
+## __AWS OpsWorks__
+  - ### Features
+    - Cloudwatch Logs agent configuration can now be attached to OpsWorks Layers using CreateLayer and UpdateLayer. OpsWorks will then automatically install and manage the CloudWatch Logs agent on the instances part of the OpsWorks Layer.
+
+## __Amazon API Gateway__
+  - ### Features
+    - API Gateway request validators
+
+## __Amazon GameLift__
+  - ### Features
+    - Allows developers to utilize an improved workflow when calling our Queues API and introduces a new feature that allows developers to specify a maximum allowable latency per Queue.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a race condition that can occur with multiple calls to `CopyMonitor#setFuture` and `UploadMonitor#setFuture` that can cause an infinite loop in `AbstractTransfer#waitForCompletion`.
+
+      This fixes [#1102](https://github.com/aws/aws-sdk-java/issues/1102)
+
 # __1.11.118__ __2017-04-07__
 ## __Amazon Redshift__
   - ### Features

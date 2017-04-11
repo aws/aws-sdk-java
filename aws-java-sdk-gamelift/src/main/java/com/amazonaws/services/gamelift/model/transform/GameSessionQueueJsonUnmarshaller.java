@@ -52,9 +52,18 @@ public class GameSessionQueueJsonUnmarshaller implements Unmarshaller<GameSessio
                     context.nextToken();
                     gameSessionQueue.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GameSessionQueueArn", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setGameSessionQueueArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TimeoutInSeconds", targetDepth)) {
                     context.nextToken();
                     gameSessionQueue.setTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("PlayerLatencyPolicies", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setPlayerLatencyPolicies(new ListUnmarshaller<PlayerLatencyPolicy>(PlayerLatencyPolicyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
                     context.nextToken();

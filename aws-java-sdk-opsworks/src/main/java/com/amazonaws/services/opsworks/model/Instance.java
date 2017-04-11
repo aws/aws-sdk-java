@@ -206,7 +206,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String registeredBy;
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      */
     private String reportedAgentVersion;
@@ -1702,11 +1702,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public void setReportedAgentVersion(String reportedAgentVersion) {
@@ -1715,10 +1715,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
-     * @return The instance's reported AWS OpsWorks agent version.
+     * @return The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public String getReportedAgentVersion() {
@@ -1727,11 +1727,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

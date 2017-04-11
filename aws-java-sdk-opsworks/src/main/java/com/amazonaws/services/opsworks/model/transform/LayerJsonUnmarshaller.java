@@ -73,6 +73,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     layer.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLogsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    layer.setCloudWatchLogsConfiguration(CloudWatchLogsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CustomInstanceProfileArn", targetDepth)) {
                     context.nextToken();
                     layer.setCustomInstanceProfileArn(context.getUnmarshaller(String.class).unmarshall(context));

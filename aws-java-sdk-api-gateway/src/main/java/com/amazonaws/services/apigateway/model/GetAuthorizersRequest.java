@@ -33,14 +33,13 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
     private String restApiId;
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
@@ -87,13 +86,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *        start the next page of results.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -102,12 +99,10 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *         start the next page of results.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -116,13 +111,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *        start the next page of results.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +126,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        Limit the number of <a>Authorizer</a> resources in the response.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -146,10 +139,10 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return Limit the number of <a>Authorizer</a> resources in the response.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -158,11 +151,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        Limit the number of <a>Authorizer</a> resources in the response.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

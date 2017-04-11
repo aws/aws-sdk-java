@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Represents the input for a request action.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement" target="_top">AWS
  *      API Documentation</a>
@@ -28,7 +31,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a cancelled or timed-out placement
+     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      */
@@ -60,9 +63,9 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     private String gameSessionName;
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players experience when connected
-     * to AWS regions. This information is relevant when requesting player sessions. Latency information provided for
-     * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players.
      * </p>
      */
     private java.util.List<PlayerLatency> playerLatencies;
@@ -76,14 +79,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a cancelled or timed-out placement
+     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
      * @param placementId
      *        Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *        must be unique across all regions and cannot be reused unless you are resubmitting a cancelled or
-     *        timed-out placement request.
+     *        must be unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out
+     *        placement request.
      */
 
     public void setPlacementId(String placementId) {
@@ -93,12 +96,12 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a cancelled or timed-out placement
+     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
      * @return Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *         must be unique across all regions and cannot be reused unless you are resubmitting a cancelled or
+     *         must be unique across all regions and cannot be reused unless you are resubmitting a canceled or
      *         timed-out placement request.
      */
 
@@ -109,14 +112,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a cancelled or timed-out placement
+     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
      * @param placementId
      *        Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *        must be unique across all regions and cannot be reused unless you are resubmitting a cancelled or
-     *        timed-out placement request.
+     *        must be unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out
+     *        placement request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,14 +328,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players experience when connected
-     * to AWS regions. This information is relevant when requesting player sessions. Latency information provided for
-     * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players.
      * </p>
      * 
-     * @return Set of values, expressed in milliseconds, indicating the amount of latency that players experience when
-     *         connected to AWS regions. This information is relevant when requesting player sessions. Latency
-     *         information provided for player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * @return Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
+     *         when connected to AWS regions. This information is used to try to place the new game session where it can
+     *         offer the best possible gameplay experience for the players.
      */
 
     public java.util.List<PlayerLatency> getPlayerLatencies() {
@@ -341,15 +344,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players experience when connected
-     * to AWS regions. This information is relevant when requesting player sessions. Latency information provided for
-     * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players experience when
-     *        connected to AWS regions. This information is relevant when requesting player sessions. Latency
-     *        information provided for player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
+     *        when connected to AWS regions. This information is used to try to place the new game session where it can
+     *        offer the best possible gameplay experience for the players.
      */
 
     public void setPlayerLatencies(java.util.Collection<PlayerLatency> playerLatencies) {
@@ -363,9 +366,9 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players experience when connected
-     * to AWS regions. This information is relevant when requesting player sessions. Latency information provided for
-     * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -374,9 +377,9 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players experience when
-     *        connected to AWS regions. This information is relevant when requesting player sessions. Latency
-     *        information provided for player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
+     *        when connected to AWS regions. This information is used to try to place the new game session where it can
+     *        offer the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,15 +395,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players experience when connected
-     * to AWS regions. This information is relevant when requesting player sessions. Latency information provided for
-     * player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players experience when
-     *        connected to AWS regions. This information is relevant when requesting player sessions. Latency
-     *        information provided for player IDs not included in <i>DesiredPlayerSessions</i> are ignored.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
+     *        when connected to AWS regions. This information is used to try to place the new game session where it can
+     *        offer the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

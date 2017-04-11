@@ -43,14 +43,14 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      */
     private AutoScalingThresholds upScaling;
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      */
     private AutoScalingThresholds downScaling;
@@ -150,12 +150,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @param upScaling
      *        An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how
-     *        and when AWS OpsWorks increases the number of instances.
+     *        and when AWS OpsWorks Stacks increases the number of instances.
      */
 
     public void setUpScaling(AutoScalingThresholds upScaling) {
@@ -165,11 +165,11 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @return An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines
-     *         how and when AWS OpsWorks increases the number of instances.
+     *         how and when AWS OpsWorks Stacks increases the number of instances.
      */
 
     public AutoScalingThresholds getUpScaling() {
@@ -179,12 +179,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @param upScaling
      *        An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how
-     *        and when AWS OpsWorks increases the number of instances.
+     *        and when AWS OpsWorks Stacks increases the number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,12 +196,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @param downScaling
      *        An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *        how and when AWS OpsWorks reduces the number of instances.
+     *        how and when AWS OpsWorks Stacks reduces the number of instances.
      */
 
     public void setDownScaling(AutoScalingThresholds downScaling) {
@@ -211,11 +211,11 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @return An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *         how and when AWS OpsWorks reduces the number of instances.
+     *         how and when AWS OpsWorks Stacks reduces the number of instances.
      */
 
     public AutoScalingThresholds getDownScaling() {
@@ -225,12 +225,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @param downScaling
      *        An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *        how and when AWS OpsWorks reduces the number of instances.
+     *        how and when AWS OpsWorks Stacks reduces the number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,14 +34,13 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String restApiId;
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      * </p>
      */
     private Integer limit;
@@ -94,11 +93,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>Deployment</a> resource in the collection to get information about.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -107,10 +106,10 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -119,11 +118,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>Deployment</a> resource in the collection to get information about.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +133,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      */
 
     public void setLimit(Integer limit) {
@@ -149,12 +146,10 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      * </p>
      * 
-     * @return The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *         limit is 25. It should be an integer between 1 - 500.
+     * @return The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      */
 
     public Integer getLimit() {
@@ -163,13 +158,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

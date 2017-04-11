@@ -268,36 +268,9 @@ public class MemberModel extends DocumentationModel {
     public String getSetterDocumentation() {
         StringBuilder docBuilder = new StringBuilder("/**");
 
-        docBuilder.append(getSetterDoc());
-
-        if ("java.nio.ByteBuffer".equals(
-                this.getGetterModel().getReturnType())) {
-
-            docBuilder.append("<p>")
-                    .append(LINE_SEPARATOR)
-                    .append("AWS SDK for Java performs a Base64 " +
-                            "encoding on this field before sending this request to AWS " +
-                            "service by default. " +
-                            "Users of the SDK should not perform Base64 " +
-                            "encoding on this field.")
-                    .append(LINE_SEPARATOR)
-                    .append("</p>")
-                    .append(LINE_SEPARATOR);
-
-            docBuilder.append("<p>")
-                    .append(LINE_SEPARATOR)
-                    .append("Warning: ByteBuffers returned by the SDK are mutable. " +
-                            "Changes to the content or position of the byte buffer will be " +
-                            "seen by all objects that have a reference to this object. " +
-                            "It is recommended to call ByteBuffer.duplicate() or " +
-                            "ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. " +
-                            "This behavior will be changed in a future major version of the SDK.")
-                    .append(LINE_SEPARATOR)
-                    .append("</p>")
-                    .append(LINE_SEPARATOR);
-        }
-
-        docBuilder.append(getParamDoc())
+        docBuilder.append(getSetterDoc())
+                  .append(getSetterGuidanceDoc())
+                  .append(getParamDoc())
                   .append(getEnumDoc())
                   .append("*/");
 
@@ -309,6 +282,16 @@ public class MemberModel extends DocumentationModel {
 
         docBuilder.append(documentation != null ? documentation : DEFAULT_GETTER.replace("%s", name))
                   .append(LINE_SEPARATOR);
+
+        if (isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("This field's value will be valid JSON according to RFC 7159, including the opening and closing ")
+                      .append("braces. For example: '{\"key\": \"value\"}'.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
 
         if ("java.nio.ByteBuffer".equals(
                 this.getGetterModel().getReturnType())) {
@@ -344,6 +327,7 @@ public class MemberModel extends DocumentationModel {
         StringBuilder docBuilder = new StringBuilder("/**");
 
         docBuilder.append(getSetterDoc())
+                  .append(getSetterGuidanceDoc())
                   .append(getParamDoc())
                   .append(LINE_SEPARATOR)
                   .append("@return " + stripHTMLTags(DEFAULT_FLUENT_RETURN))
@@ -378,6 +362,53 @@ public class MemberModel extends DocumentationModel {
         return documentation != null
                 ? documentation
                 : DEFAULT_SETTER.replace("%s", name);
+    }
+
+    /**
+     * Get the documentation that should be shared between the "with" and "set"-style methods that pertains to the type of data in
+     * the message. This usually instructs customers on how to properly format the data that they write to the message based on
+     * its type.
+     */
+    private String getSetterGuidanceDoc() {
+        StringBuilder docBuilder = new StringBuilder();
+
+        if (isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("This field's value must be valid JSON according to RFC 7159, including the opening and closing ")
+                      .append("braces. For example: '{\"key\": \"value\"}'.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
+
+        boolean isByteBuffer = "java.nio.ByteBuffer".equals(this.getGetterModel().getReturnType());
+
+        if (isByteBuffer || isJsonValue()) {
+            docBuilder.append("<p>")
+                      .append(LINE_SEPARATOR)
+                      .append("The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the ")
+                      .append("AWS service. Users of the SDK should not perform Base64 encoding on this field.")
+                      .append(LINE_SEPARATOR)
+                      .append("</p>")
+                      .append(LINE_SEPARATOR);
+        }
+
+        if (isByteBuffer) {
+            docBuilder.append("<p>")
+                    .append(LINE_SEPARATOR)
+                    .append("Warning: ByteBuffers returned by the SDK are mutable. " +
+                            "Changes to the content or position of the byte buffer will be " +
+                            "seen by all objects that have a reference to this object. " +
+                            "It is recommended to call ByteBuffer.duplicate() or " +
+                            "ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. " +
+                            "This behavior will be changed in a future major version of the SDK.")
+                    .append(LINE_SEPARATOR)
+                    .append("</p>")
+                    .append(LINE_SEPARATOR);
+        }
+
+        return docBuilder.toString();
     }
 
     private String getParamDoc() {

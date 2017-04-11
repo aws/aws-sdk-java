@@ -108,7 +108,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -153,6 +153,16 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param base32StringSeed
      *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
@@ -174,7 +184,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <code>Base32String</code> value is Base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -230,6 +240,16 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the user name
      * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param qRCodePNG

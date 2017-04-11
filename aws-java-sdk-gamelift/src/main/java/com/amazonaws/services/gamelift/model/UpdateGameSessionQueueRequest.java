@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Represents the input for a request action.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue" target="_top">AWS
  *      API Documentation</a>
@@ -40,8 +43,20 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     private Integer timeoutInSeconds;
     /**
      * <p>
+     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
+     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
+     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
+     * the placement. When updating policies, provide a complete collection of policies.
+     * </p>
+     */
+    private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
+    /**
+     * <p>
      * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
+     * list, provide a complete list of destinations.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
@@ -134,13 +149,128 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
+     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
+     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
+     * the placement. When updating policies, provide a complete collection of policies.
+     * </p>
+     * 
+     * @return Collection of latency policies to apply when processing game sessions placement requests with player
+     *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
+     *         the lowest latency values. With just one policy, it is enforced at the start of the game session
+     *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *         and then no policy for the remainder of the placement. When updating policies, provide a complete
+     *         collection of policies.
+     */
+
+    public java.util.List<PlayerLatencyPolicy> getPlayerLatencyPolicies() {
+        return playerLatencyPolicies;
+    }
+
+    /**
+     * <p>
+     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
+     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
+     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
+     * the placement. When updating policies, provide a complete collection of policies.
+     * </p>
+     * 
+     * @param playerLatencyPolicies
+     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
+     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
+     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
+     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
+     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
+     *        policies.
+     */
+
+    public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
+        if (playerLatencyPolicies == null) {
+            this.playerLatencyPolicies = null;
+            return;
+        }
+
+        this.playerLatencyPolicies = new java.util.ArrayList<PlayerLatencyPolicy>(playerLatencyPolicies);
+    }
+
+    /**
+     * <p>
+     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
+     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
+     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
+     * the placement. When updating policies, provide a complete collection of policies.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlayerLatencyPolicies(java.util.Collection)} or
+     * {@link #withPlayerLatencyPolicies(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param playerLatencyPolicies
+     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
+     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
+     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
+     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
+     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
+     *        policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withPlayerLatencyPolicies(PlayerLatencyPolicy... playerLatencyPolicies) {
+        if (this.playerLatencyPolicies == null) {
+            setPlayerLatencyPolicies(new java.util.ArrayList<PlayerLatencyPolicy>(playerLatencyPolicies.length));
+        }
+        for (PlayerLatencyPolicy ele : playerLatencyPolicies) {
+            this.playerLatencyPolicies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
+     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
+     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
+     * the placement. When updating policies, provide a complete collection of policies.
+     * </p>
+     * 
+     * @param playerLatencyPolicies
+     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
+     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
+     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
+     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
+     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
+     *        policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
+        setPlayerLatencyPolicies(playerLatencyPolicies);
+        return this;
+    }
+
+    /**
+     * <p>
      * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
+     * list, provide a complete list of destinations.
      * </p>
      * 
      * @return List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *         order.
+     *         order. When updating this list, provide a complete list of destinations.
      */
 
     public java.util.List<GameSessionQueueDestination> getDestinations() {
@@ -150,13 +280,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
+     * list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
      *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        order. When updating this list, provide a complete list of destinations.
      */
 
     public void setDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
@@ -171,7 +302,8 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
+     * list, provide a complete list of destinations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -182,7 +314,7 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * @param destinations
      *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        order. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,13 +331,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
+     * list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
      *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        order. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,6 +362,8 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             sb.append("Name: ").append(getName()).append(",");
         if (getTimeoutInSeconds() != null)
             sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
+        if (getPlayerLatencyPolicies() != null)
+            sb.append("PlayerLatencyPolicies: ").append(getPlayerLatencyPolicies()).append(",");
         if (getDestinations() != null)
             sb.append("Destinations: ").append(getDestinations());
         sb.append("}");
@@ -253,6 +388,10 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
             return false;
+        if (other.getPlayerLatencyPolicies() == null ^ this.getPlayerLatencyPolicies() == null)
+            return false;
+        if (other.getPlayerLatencyPolicies() != null && other.getPlayerLatencyPolicies().equals(this.getPlayerLatencyPolicies()) == false)
+            return false;
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
@@ -267,6 +406,7 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getPlayerLatencyPolicies() == null) ? 0 : getPlayerLatencyPolicies().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         return hashCode;
     }

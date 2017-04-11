@@ -705,6 +705,59 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param createRequestValidatorRequest
+     *        Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the CreateRequestValidator operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateRequestValidator
+     */
+    @Override
+    public CreateRequestValidatorResult createRequestValidator(CreateRequestValidatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRequestValidator(request);
+    }
+
+    @SdkInternalApi
+    final CreateRequestValidatorResult executeCreateRequestValidator(CreateRequestValidatorRequest createRequestValidatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRequestValidatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRequestValidatorRequest> request = null;
+        Response<CreateRequestValidatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRequestValidatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRequestValidatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRequestValidatorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRequestValidatorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a <a>Resource</a> resource.
      * </p>
      * 
@@ -1627,6 +1680,59 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteModelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param deleteRequestValidatorRequest
+     *        Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the DeleteRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteRequestValidator
+     */
+    @Override
+    public DeleteRequestValidatorResult deleteRequestValidator(DeleteRequestValidatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRequestValidator(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRequestValidatorResult executeDeleteRequestValidator(DeleteRequestValidatorRequest deleteRequestValidatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRequestValidatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRequestValidatorRequest> request = null;
+        Response<DeleteRequestValidatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRequestValidatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRequestValidatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRequestValidatorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRequestValidatorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3296,6 +3402,107 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<GetModelsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorRequest
+     *        Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the GetRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRequestValidator
+     */
+    @Override
+    public GetRequestValidatorResult getRequestValidator(GetRequestValidatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRequestValidator(request);
+    }
+
+    @SdkInternalApi
+    final GetRequestValidatorResult executeGetRequestValidator(GetRequestValidatorRequest getRequestValidatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRequestValidatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRequestValidatorRequest> request = null;
+        Response<GetRequestValidatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRequestValidatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRequestValidatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRequestValidatorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRequestValidatorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorsRequest
+     *        Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * @return Result of the GetRequestValidators operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRequestValidators
+     */
+    @Override
+    public GetRequestValidatorsResult getRequestValidators(GetRequestValidatorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRequestValidators(request);
+    }
+
+    @SdkInternalApi
+    final GetRequestValidatorsResult executeGetRequestValidators(GetRequestValidatorsRequest getRequestValidatorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRequestValidatorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRequestValidatorsRequest> request = null;
+        Response<GetRequestValidatorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRequestValidatorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRequestValidatorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRequestValidatorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRequestValidatorsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5254,6 +5461,58 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateModelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateRequestValidatorRequest
+     *        Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the UpdateRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateRequestValidator
+     */
+    @Override
+    public UpdateRequestValidatorResult updateRequestValidator(UpdateRequestValidatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRequestValidator(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRequestValidatorResult executeUpdateRequestValidator(UpdateRequestValidatorRequest updateRequestValidatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRequestValidatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRequestValidatorRequest> request = null;
+        Response<UpdateRequestValidatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRequestValidatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRequestValidatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRequestValidatorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateRequestValidatorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

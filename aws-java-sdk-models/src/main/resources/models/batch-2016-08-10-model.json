@@ -1334,6 +1334,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "imageId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "instanceRole" : {
           "deprecated" : false,
           "documentation" : "<p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.</p>",

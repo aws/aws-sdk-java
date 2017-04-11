@@ -36,7 +36,8 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for the game session to retrieve.
+     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     * <code>GameSessionArn</code> value.
      * </p>
      */
     private String gameSessionId;
@@ -110,11 +111,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve.
+     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     * <code>GameSessionArn</code> value.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve.
+     *        Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     *        <code>GameSessionArn</code> value.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -123,10 +126,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve.
+     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     * <code>GameSessionArn</code> value.
      * </p>
      * 
-     * @return Unique identifier for the game session to retrieve.
+     * @return Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     *         <code>GameSessionArn</code> value.
      */
 
     public String getGameSessionId() {
@@ -135,11 +140,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve.
+     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     * <code>GameSessionArn</code> value.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve.
+     *        Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
+     *        <code>GameSessionArn</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

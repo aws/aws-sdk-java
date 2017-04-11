@@ -47,6 +47,8 @@ public class PutMethodRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
     private static final MarshallingInfo<Map> REQUESTMODELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("requestModels").build();
+    private static final MarshallingInfo<String> REQUESTVALIDATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestValidatorId").build();
 
     private static final PutMethodRequestMarshaller instance = new PutMethodRequestMarshaller();
 
@@ -73,6 +75,7 @@ public class PutMethodRequestMarshaller {
             protocolMarshaller.marshall(putMethodRequest.getOperationName(), OPERATIONNAME_BINDING);
             protocolMarshaller.marshall(putMethodRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(putMethodRequest.getRequestModels(), REQUESTMODELS_BINDING);
+            protocolMarshaller.marshall(putMethodRequest.getRequestValidatorId(), REQUESTVALIDATORID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

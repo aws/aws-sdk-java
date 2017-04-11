@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Represents the returned data in response to a request action.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement" target="_top">AWS
  *      API Documentation</a>
@@ -25,18 +28,18 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      * </p>
      */
     private GameSessionPlacement gameSessionPlacement;
 
     /**
      * <p>
-     * Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      * </p>
      * 
      * @param gameSessionPlacement
-     *        Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     *        Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      */
 
     public void setGameSessionPlacement(GameSessionPlacement gameSessionPlacement) {
@@ -45,10 +48,10 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      * </p>
      * 
-     * @return Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     * @return Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      */
 
     public GameSessionPlacement getGameSessionPlacement() {
@@ -57,11 +60,11 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      * </p>
      * 
      * @param gameSessionPlacement
-     *        Object that describes the cancelled game session placement, with cancelled status and an end time stamp.
+     *        Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

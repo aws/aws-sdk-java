@@ -229,6 +229,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
      * conversation.
      * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
      * 
      * @param slots
      *        Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
@@ -244,6 +252,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
      * conversation.
      * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
      * 
      * @return Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
      *         conversation.
@@ -257,6 +269,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
      * conversation.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * 
      * @param slots
@@ -274,6 +294,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Map of key/value pairs representing the session-specific context information.
      * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
      * 
      * @param sessionAttributes
      *        Map of key/value pairs representing the session-specific context information.
@@ -287,6 +315,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Map of key/value pairs representing the session-specific context information.
      * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
      * 
      * @return Map of key/value pairs representing the session-specific context information.
      */
@@ -298,6 +330,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * Map of key/value pairs representing the session-specific context information.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * 
      * @param sessionAttributes

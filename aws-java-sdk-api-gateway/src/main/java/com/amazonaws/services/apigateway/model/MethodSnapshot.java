@@ -27,7 +27,9 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      */
     private String authorizationType;
@@ -40,11 +42,15 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        Specifies the type of authorization used for the method.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public void setAuthorizationType(String authorizationType) {
@@ -53,10 +59,14 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
-     * @return Specifies the type of authorization used for the method.
+     * @return The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *         for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *         <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public String getAuthorizationType() {
@@ -65,11 +75,15 @@ public class MethodSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        Specifies the type of authorization used for the method.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

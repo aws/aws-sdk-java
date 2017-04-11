@@ -33,13 +33,13 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
     private String restApiId;
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
@@ -86,12 +86,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *        collection.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -100,11 +99,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *         collection.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -113,12 +111,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *        collection.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +126,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The page size of the returned documentation versions.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -142,10 +139,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return The page size of the returned documentation versions.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -154,11 +151,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The page size of the returned documentation versions.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

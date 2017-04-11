@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Represents the returned data in response to a request action.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues" target="_top">AWS
  *      API Documentation</a>

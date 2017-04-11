@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS
- * OpsWorks starts or stops load-based instances.
+ * OpsWorks Stacks starts or stops load-based instances.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds" target="_top">AWS API
@@ -43,12 +43,12 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
     private Integer thresholdsWaitTime;
     /**
      * <p>
-     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and suppress
-     * additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and configured. There is no point in raising
-     * additional scaling events during that operation, which typically takes several minutes.
-     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.
+     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and
+     * suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling
+     * event but the instances won't start reducing the load until they have been booted and configured. There is no
+     * point in raising additional scaling events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to
+     * get the new instances online.
      * </p>
      */
     private Integer ignoreMetricsTime;
@@ -79,10 +79,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * <note>
      * <p>
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
-     * either have AWS OpsWorks update the role for you when you first use this feature or you can edit the role
+     * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
-     * OpsWorks to Act on Your Behalf</a>.
+     * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
      */
@@ -173,21 +173,21 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and suppress
-     * additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and configured. There is no point in raising
-     * additional scaling events during that operation, which typically takes several minutes.
-     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.
+     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and
+     * suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling
+     * event but the instances won't start reducing the load until they have been booted and configured. There is no
+     * point in raising additional scaling events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to
+     * get the new instances online.
      * </p>
      * 
      * @param ignoreMetricsTime
-     *        The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and
-     *        suppress additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling
-     *        event but the instances won't start reducing the load until they have been booted and configured. There is
-     *        no point in raising additional scaling events during that operation, which typically takes several
-     *        minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long
-     *        enough to get the new instances online.
+     *        The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore
+     *        metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances
+     *        following an upscaling event but the instances won't start reducing the load until they have been booted
+     *        and configured. There is no point in raising additional scaling events during that operation, which
+     *        typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks
+     *        to suppress scaling events long enough to get the new instances online.
      */
 
     public void setIgnoreMetricsTime(Integer ignoreMetricsTime) {
@@ -196,20 +196,20 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and suppress
-     * additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and configured. There is no point in raising
-     * additional scaling events during that operation, which typically takes several minutes.
-     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.
+     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and
+     * suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling
+     * event but the instances won't start reducing the load until they have been booted and configured. There is no
+     * point in raising additional scaling events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to
+     * get the new instances online.
      * </p>
      * 
-     * @return The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and
-     *         suppress additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling
-     *         event but the instances won't start reducing the load until they have been booted and configured. There
-     *         is no point in raising additional scaling events during that operation, which typically takes several
-     *         minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long
-     *         enough to get the new instances online.
+     * @return The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore
+     *         metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances
+     *         following an upscaling event but the instances won't start reducing the load until they have been booted
+     *         and configured. There is no point in raising additional scaling events during that operation, which
+     *         typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks
+     *         to suppress scaling events long enough to get the new instances online.
      */
 
     public Integer getIgnoreMetricsTime() {
@@ -218,21 +218,21 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and suppress
-     * additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling event but the
-     * instances won't start reducing the load until they have been booted and configured. There is no point in raising
-     * additional scaling events during that operation, which typically takes several minutes.
-     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long enough to get
-     * the new instances online.
+     * The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and
+     * suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling
+     * event but the instances won't start reducing the load until they have been booted and configured. There is no
+     * point in raising additional scaling events during that operation, which typically takes several minutes.
+     * <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to
+     * get the new instances online.
      * </p>
      * 
      * @param ignoreMetricsTime
-     *        The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks should ignore metrics and
-     *        suppress additional scaling events. For example, AWS OpsWorks adds new instances following an upscaling
-     *        event but the instances won't start reducing the load until they have been booted and configured. There is
-     *        no point in raising additional scaling events during that operation, which typically takes several
-     *        minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks to suppress scaling events long
-     *        enough to get the new instances online.
+     *        The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore
+     *        metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances
+     *        following an upscaling event but the instances won't start reducing the load until they have been booted
+     *        and configured. There is no point in raising additional scaling events during that operation, which
+     *        typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks
+     *        to suppress scaling events long enough to get the new instances online.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,10 +378,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * <note>
      * <p>
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
-     * either have AWS OpsWorks update the role for you when you first use this feature or you can edit the role
+     * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
-     * OpsWorks to Act on Your Behalf</a>.
+     * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
      * 
@@ -389,10 +389,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *         five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
      *         <p>
      *         To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     *         You can either have AWS OpsWorks update the role for you when you first use this feature or you can edit
-     *         the role manually. For more information, see <a
+     *         You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you
+     *         can edit the role manually. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *         AWS OpsWorks to Act on Your Behalf</a>.
+     *         AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *         </p>
      */
 
@@ -411,10 +411,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * <note>
      * <p>
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
-     * either have AWS OpsWorks update the role for you when you first use this feature or you can edit the role
+     * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
-     * OpsWorks to Act on Your Behalf</a>.
+     * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
      * 
@@ -423,10 +423,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
      *        <p>
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     *        You can either have AWS OpsWorks update the role for you when you first use this feature or you can edit
-     *        the role manually. For more information, see <a
+     *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
+     *        edit the role manually. For more information, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *        AWS OpsWorks to Act on Your Behalf</a>.
+     *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      */
 
@@ -447,10 +447,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * <note>
      * <p>
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
-     * either have AWS OpsWorks update the role for you when you first use this feature or you can edit the role
+     * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
-     * OpsWorks to Act on Your Behalf</a>.
+     * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
      * <p>
@@ -464,10 +464,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
      *        <p>
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     *        You can either have AWS OpsWorks update the role for you when you first use this feature or you can edit
-     *        the role manually. For more information, see <a
+     *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
+     *        edit the role manually. For more information, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *        AWS OpsWorks to Act on Your Behalf</a>.
+     *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -490,10 +490,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      * <note>
      * <p>
      * To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can
-     * either have AWS OpsWorks update the role for you when you first use this feature or you can edit the role
+     * either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role
      * manually. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS
-     * OpsWorks to Act on Your Behalf</a>.
+     * OpsWorks Stacks to Act on Your Behalf</a>.
      * </p>
      * </note>
      * 
@@ -502,10 +502,10 @@ public class AutoScalingThresholds implements Serializable, Cloneable, Structure
      *        alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
      *        <p>
      *        To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
-     *        You can either have AWS OpsWorks update the role for you when you first use this feature or you can edit
-     *        the role manually. For more information, see <a
+     *        You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can
+     *        edit the role manually. For more information, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
-     *        AWS OpsWorks to Act on Your Behalf</a>.
+     *        AWS OpsWorks Stacks to Act on Your Behalf</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

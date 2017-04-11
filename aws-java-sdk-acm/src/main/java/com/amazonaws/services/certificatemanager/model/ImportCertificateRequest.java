@@ -150,7 +150,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -263,6 +263,16 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param certificate
      *        The certificate to import. It must meet the following requirements:</p>
@@ -309,7 +319,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -398,6 +408,16 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param privateKey
      *        The private key that matches the public key in the certificate. It must meet the following
@@ -426,7 +446,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * The certificate chain. It must be PEM-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -466,6 +486,16 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The certificate chain. It must be PEM-encoded.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param certificateChain

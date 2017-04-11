@@ -27,7 +27,7 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
@@ -42,11 +42,11 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks ID.
+     *        The instance's AWS OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -55,10 +55,10 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The instance's AWS OpsWorks ID.
+     * @return The instance's AWS OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -67,11 +67,11 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks ID.
+     *        The instance's AWS OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

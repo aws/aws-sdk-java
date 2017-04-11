@@ -52,13 +52,13 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     private String path;
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
@@ -258,11 +258,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -271,10 +271,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -283,11 +283,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +298,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The size of the paged results.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -311,10 +311,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return The size of the paged results.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -323,11 +323,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The size of the paged results.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

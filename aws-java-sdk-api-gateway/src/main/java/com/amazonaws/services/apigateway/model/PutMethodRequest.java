@@ -45,7 +45,9 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String httpMethod;
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      */
     private String authorizationType;
@@ -88,6 +90,12 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.Map<String, String> requestModels;
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for validating the method request.
+     * </p>
+     */
+    private String requestValidatorId;
 
     /**
      * <p>
@@ -211,11 +219,15 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        Specifies the type of authorization used for the method.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public void setAuthorizationType(String authorizationType) {
@@ -224,10 +236,14 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
-     * @return Specifies the type of authorization used for the method.
+     * @return The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *         for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *         <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public String getAuthorizationType() {
@@ -236,11 +252,15 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the type of authorization used for the method.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        Specifies the type of authorization used for the method.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,6 +578,46 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for validating the method request.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for validating the method request.
+     */
+
+    public void setRequestValidatorId(String requestValidatorId) {
+        this.requestValidatorId = requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for validating the method request.
+     * </p>
+     * 
+     * @return The identifier of a <a>RequestValidator</a> for validating the method request.
+     */
+
+    public String getRequestValidatorId() {
+        return this.requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for validating the method request.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for validating the method request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMethodRequest withRequestValidatorId(String requestValidatorId) {
+        setRequestValidatorId(requestValidatorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -585,7 +645,9 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getRequestParameters() != null)
             sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestModels() != null)
-            sb.append("RequestModels: ").append(getRequestModels());
+            sb.append("RequestModels: ").append(getRequestModels()).append(",");
+        if (getRequestValidatorId() != null)
+            sb.append("RequestValidatorId: ").append(getRequestValidatorId());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +698,10 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getRequestModels() != null && other.getRequestModels().equals(this.getRequestModels()) == false)
             return false;
+        if (other.getRequestValidatorId() == null ^ this.getRequestValidatorId() == null)
+            return false;
+        if (other.getRequestValidatorId() != null && other.getRequestValidatorId().equals(this.getRequestValidatorId()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +719,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getOperationName() == null) ? 0 : getOperationName().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
+        hashCode = prime * hashCode + ((getRequestValidatorId() == null) ? 0 : getRequestValidatorId().hashCode());
         return hashCode;
     }
 

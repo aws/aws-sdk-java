@@ -52,10 +52,10 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <p>
  * Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their
  * multiplayer games. Amazon GameLift provides tools to acquire computing resources and deploy game servers, scale game
- * server capacity to meed player demand, and track in-depth metrics on player usage and server performance.
+ * server capacity to meet player demand, and track in-depth metrics on player usage and server performance.
  * </p>
  * <p>
- * The Amazon GameLift service API includes important functionality to:
+ * The Amazon GameLift service API includes important features:
  * </p>
  * <ul>
  * <li>
@@ -78,6 +78,14 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * with the low-level service API. In addition, you can use the <a
  * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift for many
  * administrative actions.
+ * </p>
+ * <p>
+ * You can use some API actions with Amazon GameLift Local, a testing tool that lets you test your game integration
+ * locally before deploying on Amazon GameLift. You can call these APIs from the AWS CLI or programmatically; API calls
+ * to Amazon GameLift Local servers perform exactly as they do when calling Amazon GameLift web servers. For more
+ * information on using Amazon GameLift Local, see <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
+ * Integration</a>.
  * </p>
  * <p>
  * <b>MORE RESOURCES</b>
@@ -136,6 +144,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <li>
  * <p>
  * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
+ * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -170,7 +179,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Start a new game session on a specific fleet.
+ * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -182,8 +191,14 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeGameSessionDetails</a> – Retrieve metadata and protection policies associated with one or more game
- * sessions, including length of time active and current player count.
+ * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including length of time active and
+ * current player count. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection setting for one or more game
+ * sessions.
  * </p>
  * </li>
  * <li>
@@ -205,17 +220,20 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
+ * <a>CreatePlayerSession</a> – Send a request for a player to join a game session. <i>Available in Amazon GameLift
+ * Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session.
+ * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session. <i>Available in Amazon
+ * GameLift Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>DescribePlayerSessions</a> – Get details on player activity, including status, playing time, and player data.
+ * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -388,7 +406,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance on a fleet.
+ * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance in a fleet.
  * </p>
  * </li>
  * </ul>
@@ -1005,15 +1023,28 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * <code>ACTIVE</code> status before a game session can be created in it.
      * </p>
      * <p>
-     * To create a game session, specify either fleet ID or alias ID, and indicate a maximum number of players to allow
+     * To create a game session, specify either fleet ID or alias ID and indicate a maximum number of players to allow
      * in the game session. You can also provide a name and game-specific properties for this game session. If
-     * successful, a <a>GameSession</a> object is returned containing session properties, including an IP address. By
-     * default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the game
-     * session's player session creation policy.
+     * successful, a <a>GameSession</a> object is returned containing game session properties, including a game session
+     * ID with the custom string you provided.
      * </p>
      * <p>
-     * When creating a game session on a fleet with a resource limit creation policy, the request should include a
-     * creator ID. If none is provided, Amazon GameLift does not evaluate the fleet's resource limit creation policy.
+     * <b>Idempotency tokens.</b> You can add a token that uniquely identifies game session requests. This is useful for
+     * ensuring that game session requests are idempotent. Multiple requests with the same idempotency token are
+     * processed only once; subsequent requests return the original result. All response values are the same with the
+     * exception of game session status, which may change.
+     * </p>
+     * <p>
+     * <b>Resource creation limits.</b> If you are creating a game session on a fleet with a resource creation limit
+     * policy in force, then you must specify a creator ID. Without this ID, Amazon GameLift has no way to evaluate the
+     * policy for this new game session request.
+     * </p>
+     * <p>
+     * By default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the
+     * game session's player session creation policy.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createGameSessionRequest
@@ -1093,22 +1124,36 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Establishes a new queue for processing requests for new game sessions. A queue identifies where new game sessions
-     * can be hosted--by specifying a list of fleet destinations--and how long a request can remain in the queue waiting
-     * to be placed before timing out. Requests for new game sessions are added to a queue by calling
-     * <a>StartGameSessionPlacement</a> and referencing the queue name.
+     * Establishes a new queue for processing requests to place new game sessions. A queue identifies where new game
+     * sessions can be hosted -- by specifying a list of destinations (fleets or aliases) -- and how long requests can
+     * wait in the queue before timing out. You can set up a queue to try to place game sessions on fleets in multiple
+     * regions. To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference the queue
+     * name.
      * </p>
      * <p>
-     * When processing a request for a game session, Amazon GameLift tries each destination in order until it finds one
-     * with available resources to host the new game session. A queue's default order is determined by how destinations
-     * are listed. This default order can be overridden in a game session placement request.
+     * <b>Destination order.</b> When processing a request for a game session, Amazon GameLift tries each destination in
+     * order until it finds one with available resources to host the new game session. A queue's default order is
+     * determined by how destinations are listed. The default order is overridden when a game session placement request
+     * provides player latency information. Player latency information enables Amazon GameLift to prioritize
+     * destinations where players report the lowest average latency, as a result placing the new game session where the
+     * majority of players will have the best possible gameplay experience.
      * </p>
      * <p>
-     * To create a new queue, provide a name, timeout value, and a list of destinations. If successful, a new queue
-     * object is returned.
+     * <b>Player latency policies.</b> For placement requests containing player latency information, use player latency
+     * policies to protect individual players from very high latencies. With a latency cap, even when a destination can
+     * deliver a low latency for most players, the game is not placed where any individual player is reporting latency
+     * higher than a policy's maximum. A queue can have multiple latency policies, which are enforced consecutively
+     * starting with the policy with the lowest latency cap. Use multiple policies to gradually relax latency controls;
+     * for example, you might set a policy with a low latency cap for the first 60 seconds, a second policy with a
+     * higher cap for the next 60 seconds, etc.
+     * </p>
+     * <p>
+     * To create a new queue, provide a name, timeout value, a list of destinations and, if desired, a set of latency
+     * policies. If successful, a new queue object is returned.
      * </p>
      * 
      * @param createGameSessionQueueRequest
+     *        Represents the input for a request action.
      * @return Result of the CreateGameSessionQueue operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -1170,6 +1215,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * To create a player session, specify a game session ID, player ID, and optionally a string of player data. If
      * successful, the player is added to the game session and a new <a>PlayerSession</a> object is returned. Player
      * sessions cannot be updated.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createPlayerSessionRequest
@@ -1249,6 +1297,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * To create player sessions, specify a game session ID, a list of player IDs, and optionally a set of player data
      * strings. If successful, the players are added to the game session and a set of new <a>PlayerSession</a> objects
      * is returned. Player sessions cannot be updated.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createPlayerSessionsRequest
@@ -1517,6 +1568,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param deleteGameSessionQueueRequest
+     *        Represents the input for a request action.
      * @return Result of the DeleteGameSessionQueue operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -2178,9 +2230,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Retrieves properties, including the protection policy in force, for one or more game sessions. This action can be
-     * used in several ways: (1) provide a <code>GameSessionId</code> to request details for a specific game session;
-     * (2) provide either a <code>FleetId</code> or an <code>AliasId</code> to request properties for all game sessions
-     * running on a fleet.
+     * used in several ways: (1) provide a <code>GameSessionId</code> or <code>GameSessionArn</code> to request details
+     * for a specific game session; (2) provide either a <code>FleetId</code> or an <code>AliasId</code> to request
+     * properties for all game sessions running on a fleet.
      * </p>
      * <p>
      * To get game session record(s), specify just one of the following: game session ID, fleet ID, or alias ID. You can
@@ -2258,6 +2310,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param describeGameSessionPlacementRequest
+     *        Represents the input for a request action.
      * @return Result of the DescribeGameSessionPlacement operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -2322,6 +2375,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param describeGameSessionQueuesRequest
+     *        Represents the input for a request action.
      * @return Result of the DescribeGameSessionQueues operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -2388,6 +2442,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * To get game sessions, specify one of the following: game session ID, fleet ID, or alias ID. You can filter this
      * request by game session status. Use the pagination parameters to retrieve results as a set of sequential pages.
      * If successful, a <a>GameSession</a> object is returned for each game session matching the request.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param describeGameSessionsRequest
@@ -2519,16 +2576,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Retrieves properties for one or more player sessions. This action can be used in several ways: (1) provide a
-     * <code>PlayerSessionId</code> parameter to request properties for a specific player session; (2) provide a
-     * <code>GameSessionId</code> parameter to request properties for all player sessions in the specified game session;
-     * (3) provide a <code>PlayerId</code> parameter to request properties for all player sessions of a specified
-     * player.
+     * <code>PlayerSessionId</code> to request properties for a specific player session; (2) provide a
+     * <code>GameSessionId</code> to request properties for all player sessions in the specified game session; (3)
+     * provide a <code>PlayerId</code> to request properties for all player sessions of a specified player.
      * </p>
      * <p>
      * To get game session record(s), specify only one of the following: a player session ID, a game session ID, or a
      * player ID. You can filter this request by player session status. Use the pagination parameters to retrieve
      * results as a set of sequential pages. If successful, a <a>PlayerSession</a> object is returned for each session
      * matching the request.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param describePlayerSessionsRequest
@@ -2806,6 +2865,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param getInstanceAccessRequest
+     *        Represents the input for a request action.
      * @return Result of the GetInstanceAccess operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
@@ -3278,8 +3338,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * <ul>
      * <li>
      * <p>
-     * <b>gameSessionId</b> -- ID value assigned to a game session. This unique value is returned in a
-     * <a>GameSession</a> object when a new game session is created.
+     * <b>gameSessionId</b> -- Unique identifier for the game session. You can use either a <code>GameSessionId</code>
+     * or <code>GameSessionArn</code> value.
      * </p>
      * </li>
      * <li>
@@ -3328,6 +3388,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * search results often, and handle sessions that fill up before a player can join.
      * </p>
      * </note>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
+     * </p>
      * 
      * @param searchGameSessionsRequest
      *        Represents the input for a request action.
@@ -3392,11 +3455,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>). When processing a
-     * placement request, Amazon GameLift attempts to create a new game session on one of the fleets associated with the
-     * queue. If no resources are available, Amazon GameLift tries again with another and so on until resources are
-     * found or the placement request times out. A game session placement request can also request player sessions. When
-     * a new game session is successfully created, Amazon GameLift creates a player session for each player included in
-     * the request.
+     * placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each
+     * until it finds resources or the placement request times out. A game session placement request can also request
+     * player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for
+     * each player included in the request.
      * </p>
      * <p>
      * When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the
@@ -3419,6 +3481,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param startGameSessionPlacementRequest
+     *        Represents the input for a request action.
      * @return Result of the StartGameSessionPlacement operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -3481,6 +3544,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param stopGameSessionPlacementRequest
+     *        Represents the input for a request action.
      * @return Result of the StopGameSessionPlacement operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
@@ -3967,6 +4031,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param updateGameSessionQueueRequest
+     *        Represents the input for a request action.
      * @return Result of the UpdateGameSessionQueue operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry

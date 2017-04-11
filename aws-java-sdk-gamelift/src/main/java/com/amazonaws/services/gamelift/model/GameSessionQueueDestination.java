@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new
- * game session on any destination listed for a queue.
+ * game session on any destination configured for a queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueueDestination"

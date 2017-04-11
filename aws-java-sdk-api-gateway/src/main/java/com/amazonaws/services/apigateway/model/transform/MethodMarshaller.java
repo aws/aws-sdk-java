@@ -37,6 +37,8 @@ public class MethodMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerId").build();
     private static final MarshallingInfo<Boolean> APIKEYREQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeyRequired").build();
+    private static final MarshallingInfo<String> REQUESTVALIDATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestValidatorId").build();
     private static final MarshallingInfo<String> OPERATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operationName").build();
     private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -68,6 +70,7 @@ public class MethodMarshaller {
             protocolMarshaller.marshall(method.getAuthorizationType(), AUTHORIZATIONTYPE_BINDING);
             protocolMarshaller.marshall(method.getAuthorizerId(), AUTHORIZERID_BINDING);
             protocolMarshaller.marshall(method.getApiKeyRequired(), APIKEYREQUIRED_BINDING);
+            protocolMarshaller.marshall(method.getRequestValidatorId(), REQUESTVALIDATORID_BINDING);
             protocolMarshaller.marshall(method.getOperationName(), OPERATIONNAME_BINDING);
             protocolMarshaller.marshall(method.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(method.getRequestModels(), REQUESTMODELS_BINDING);

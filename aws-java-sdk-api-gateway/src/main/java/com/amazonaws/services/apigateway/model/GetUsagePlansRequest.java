@@ -27,7 +27,7 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
@@ -39,18 +39,18 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String keyId;
     /**
      * <p>
-     * The number of <a>UsagePlan</a> resources to be returned as the result.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -59,10 +59,10 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -71,11 +71,11 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The zero-based array index specifying the position of the to-be-retrieved <a>UsagePlan</a> resource.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of <a>UsagePlan</a> resources to be returned as the result.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The number of <a>UsagePlan</a> resources to be returned as the result.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -139,10 +139,10 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of <a>UsagePlan</a> resources to be returned as the result.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return The number of <a>UsagePlan</a> resources to be returned as the result.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -151,11 +151,11 @@ public class GetUsagePlansRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of <a>UsagePlan</a> resources to be returned as the result.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The number of <a>UsagePlan</a> resources to be returned as the result.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

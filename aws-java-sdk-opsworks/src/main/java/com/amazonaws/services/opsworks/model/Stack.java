@@ -142,7 +142,8 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private Boolean useCustomCookbooks;
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      */
     private Boolean useOpsworksSecurityGroups;
@@ -952,12 +953,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      */
 
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -966,11 +968,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean getUseOpsworksSecurityGroups() {
@@ -979,12 +982,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -995,11 +999,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean isUseOpsworksSecurityGroups() {

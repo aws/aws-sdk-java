@@ -123,7 +123,8 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Game session IP address. All player sessions reference the game session location.
+     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      */
     private String ipAddress;
@@ -734,11 +735,13 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game session IP address. All player sessions reference the game session location.
+     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param ipAddress
-     *        Game session IP address. All player sessions reference the game session location.
+     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -747,10 +750,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game session IP address. All player sessions reference the game session location.
+     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
-     * @return Game session IP address. All player sessions reference the game session location.
+     * @return IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *         address and port number.
      */
 
     public String getIpAddress() {
@@ -759,11 +764,13 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game session IP address. All player sessions reference the game session location.
+     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param ipAddress
-     *        Game session IP address. All player sessions reference the game session location.
+     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

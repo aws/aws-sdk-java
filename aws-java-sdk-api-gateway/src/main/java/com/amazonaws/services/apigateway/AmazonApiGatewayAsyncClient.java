@@ -512,6 +512,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(CreateRequestValidatorRequest request) {
+
+        return createRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(final CreateRequestValidatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRequestValidatorRequest, CreateRequestValidatorResult> asyncHandler) {
+        final CreateRequestValidatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRequestValidatorResult>() {
+            @Override
+            public CreateRequestValidatorResult call() throws Exception {
+                CreateRequestValidatorResult result = null;
+
+                try {
+                    result = executeCreateRequestValidator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceResult> createResourceAsync(CreateResourceRequest request) {
 
         return createResourceAsync(request, null);
@@ -1090,6 +1123,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = executeDeleteModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(DeleteRequestValidatorRequest request) {
+
+        return deleteRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(final DeleteRequestValidatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRequestValidatorRequest, DeleteRequestValidatorResult> asyncHandler) {
+        final DeleteRequestValidatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRequestValidatorResult>() {
+            @Override
+            public DeleteRequestValidatorResult call() throws Exception {
+                DeleteRequestValidatorResult result = null;
+
+                try {
+                    result = executeDeleteRequestValidator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2179,6 +2245,72 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = executeGetModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(GetRequestValidatorRequest request) {
+
+        return getRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(final GetRequestValidatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRequestValidatorRequest, GetRequestValidatorResult> asyncHandler) {
+        final GetRequestValidatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRequestValidatorResult>() {
+            @Override
+            public GetRequestValidatorResult call() throws Exception {
+                GetRequestValidatorResult result = null;
+
+                try {
+                    result = executeGetRequestValidator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(GetRequestValidatorsRequest request) {
+
+        return getRequestValidatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(final GetRequestValidatorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRequestValidatorsRequest, GetRequestValidatorsResult> asyncHandler) {
+        final GetRequestValidatorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRequestValidatorsResult>() {
+            @Override
+            public GetRequestValidatorsResult call() throws Exception {
+                GetRequestValidatorsResult result = null;
+
+                try {
+                    result = executeGetRequestValidators(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3433,6 +3565,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = executeUpdateModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(UpdateRequestValidatorRequest request) {
+
+        return updateRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(final UpdateRequestValidatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRequestValidatorRequest, UpdateRequestValidatorResult> asyncHandler) {
+        final UpdateRequestValidatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRequestValidatorResult>() {
+            @Override
+            public UpdateRequestValidatorResult call() throws Exception {
+                UpdateRequestValidatorResult result = null;
+
+                try {
+                    result = executeUpdateRequestValidator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -27,7 +27,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
@@ -58,11 +58,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>ApiKeys</a> resource to get information about.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -71,10 +71,10 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the current <a>ApiKeys</a> resource to get information about.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -83,11 +83,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The position of the current <a>ApiKeys</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>ApiKeys</a> resource to get information about.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

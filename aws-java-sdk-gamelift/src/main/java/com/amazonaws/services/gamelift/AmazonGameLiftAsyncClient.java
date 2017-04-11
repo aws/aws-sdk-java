@@ -34,10 +34,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their
  * multiplayer games. Amazon GameLift provides tools to acquire computing resources and deploy game servers, scale game
- * server capacity to meed player demand, and track in-depth metrics on player usage and server performance.
+ * server capacity to meet player demand, and track in-depth metrics on player usage and server performance.
  * </p>
  * <p>
- * The Amazon GameLift service API includes important functionality to:
+ * The Amazon GameLift service API includes important features:
  * </p>
  * <ul>
  * <li>
@@ -60,6 +60,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * with the low-level service API. In addition, you can use the <a
  * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift for many
  * administrative actions.
+ * </p>
+ * <p>
+ * You can use some API actions with Amazon GameLift Local, a testing tool that lets you test your game integration
+ * locally before deploying on Amazon GameLift. You can call these APIs from the AWS CLI or programmatically; API calls
+ * to Amazon GameLift Local servers perform exactly as they do when calling Amazon GameLift web servers. For more
+ * information on using Amazon GameLift Local, see <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
+ * Integration</a>.
  * </p>
  * <p>
  * <b>MORE RESOURCES</b>
@@ -118,6 +126,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
+ * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -152,7 +161,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Start a new game session on a specific fleet.
+ * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -164,8 +173,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeGameSessionDetails</a> – Retrieve metadata and protection policies associated with one or more game
- * sessions, including length of time active and current player count.
+ * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including length of time active and
+ * current player count. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection setting for one or more game
+ * sessions.
  * </p>
  * </li>
  * <li>
@@ -187,17 +202,20 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
+ * <a>CreatePlayerSession</a> – Send a request for a player to join a game session. <i>Available in Amazon GameLift
+ * Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session.
+ * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session. <i>Available in Amazon
+ * GameLift Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>DescribePlayerSessions</a> – Get details on player activity, including status, playing time, and player data.
+ * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -370,7 +388,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance on a fleet.
+ * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance in a fleet.
  * </p>
  * </li>
  * </ul>

@@ -39,6 +39,8 @@ public class CreateLayerRequestMarshaller {
             .marshallLocationName("Shortname").build();
     private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsConfiguration").build();
     private static final MarshallingInfo<String> CUSTOMINSTANCEPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomInstanceProfileArn").build();
     private static final MarshallingInfo<String> CUSTOMJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -85,6 +87,7 @@ public class CreateLayerRequestMarshaller {
             protocolMarshaller.marshall(createLayerRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createLayerRequest.getShortname(), SHORTNAME_BINDING);
             protocolMarshaller.marshall(createLayerRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createLayerRequest.getCloudWatchLogsConfiguration(), CLOUDWATCHLOGSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createLayerRequest.getCustomInstanceProfileArn(), CUSTOMINSTANCEPROFILEARN_BINDING);
             protocolMarshaller.marshall(createLayerRequest.getCustomJson(), CUSTOMJSON_BINDING);
             protocolMarshaller.marshall(createLayerRequest.getCustomSecurityGroupIds(), CUSTOMSECURITYGROUPIDS_BINDING);

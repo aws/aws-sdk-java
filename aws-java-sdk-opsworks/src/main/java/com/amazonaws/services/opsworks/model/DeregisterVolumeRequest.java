@@ -27,21 +27,21 @@ public class DeregisterVolumeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the
-     * volume with the stack, not the Amazon EC2 volume ID.
+     * The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you
+     * registered the volume with the stack, not the Amazon EC2 volume ID.
      * </p>
      */
     private String volumeId;
 
     /**
      * <p>
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the
-     * volume with the stack, not the Amazon EC2 volume ID.
+     * The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you
+     * registered the volume with the stack, not the Amazon EC2 volume ID.
      * </p>
      * 
      * @param volumeId
-     *        The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you
-     *        registered the volume with the stack, not the Amazon EC2 volume ID.
+     *        The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance
+     *        when you registered the volume with the stack, not the Amazon EC2 volume ID.
      */
 
     public void setVolumeId(String volumeId) {
@@ -50,12 +50,12 @@ public class DeregisterVolumeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the
-     * volume with the stack, not the Amazon EC2 volume ID.
+     * The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you
+     * registered the volume with the stack, not the Amazon EC2 volume ID.
      * </p>
      * 
-     * @return The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you
-     *         registered the volume with the stack, not the Amazon EC2 volume ID.
+     * @return The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance
+     *         when you registered the volume with the stack, not the Amazon EC2 volume ID.
      */
 
     public String getVolumeId() {
@@ -64,13 +64,13 @@ public class DeregisterVolumeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you registered the
-     * volume with the stack, not the Amazon EC2 volume ID.
+     * The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you
+     * registered the volume with the stack, not the Amazon EC2 volume ID.
      * </p>
      * 
      * @param volumeId
-     *        The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to the instance when you
-     *        registered the volume with the stack, not the Amazon EC2 volume ID.
+     *        The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance
+     *        when you registered the volume with the stack, not the Amazon EC2 volume ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

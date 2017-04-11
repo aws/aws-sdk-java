@@ -28,18 +28,18 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks ID.
+     * The registered instance's AWS OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks ID.
+     * The registered instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The registered instance's AWS OpsWorks ID.
+     *        The registered instance's AWS OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -48,10 +48,10 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks ID.
+     * The registered instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The registered instance's AWS OpsWorks ID.
+     * @return The registered instance's AWS OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -60,11 +60,11 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks ID.
+     * The registered instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The registered instance's AWS OpsWorks ID.
+     *        The registered instance's AWS OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

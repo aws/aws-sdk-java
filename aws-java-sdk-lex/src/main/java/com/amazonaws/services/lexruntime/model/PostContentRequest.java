@@ -525,6 +525,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * application.
      * </p>
      * </note>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
      * 
      * @param sessionAttributes
      *        You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP header. The value must be map
@@ -661,6 +669,10 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * application.
      * </p>
      * </note>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
      * 
      * @return You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP header. The value must be map
      *         (keys and values must be strings) that is JSON serialized and then base64 encoded.</p>
@@ -796,6 +808,14 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * application.
      * </p>
      * </note>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
      * 
      * @param sessionAttributes
      *        You pass this value in the <code>x-amz-lex-session-attributes</code> HTTP header. The value must be map

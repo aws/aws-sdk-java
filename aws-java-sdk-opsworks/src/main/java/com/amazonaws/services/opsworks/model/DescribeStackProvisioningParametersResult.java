@@ -29,7 +29,7 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      */
     private String agentInstallerUrl;
@@ -42,11 +42,11 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
      * @param agentInstallerUrl
-     *        The AWS OpsWorks agent installer's URL.
+     *        The AWS OpsWorks Stacks agent installer's URL.
      */
 
     public void setAgentInstallerUrl(String agentInstallerUrl) {
@@ -55,10 +55,10 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
-     * @return The AWS OpsWorks agent installer's URL.
+     * @return The AWS OpsWorks Stacks agent installer's URL.
      */
 
     public String getAgentInstallerUrl() {
@@ -67,11 +67,11 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
      * @param agentInstallerUrl
-     *        The AWS OpsWorks agent installer's URL.
+     *        The AWS OpsWorks Stacks agent installer's URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

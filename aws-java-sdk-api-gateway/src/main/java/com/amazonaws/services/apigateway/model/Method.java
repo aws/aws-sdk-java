@@ -71,7 +71,9 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
     private String httpMethod;
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      */
     private String authorizationType;
@@ -88,6 +90,12 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean apiKeyRequired;
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     */
+    private String requestValidatorId;
     /**
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
@@ -216,11 +224,15 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        The method's authorization type.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public void setAuthorizationType(String authorizationType) {
@@ -229,10 +241,14 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
-     * @return The method's authorization type.
+     * @return The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *         for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *         <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public String getAuthorizationType() {
@@ -241,11 +257,15 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        The method's authorization type.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,6 +370,46 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isApiKeyRequired() {
         return this.apiKeyRequired;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for request validation.
+     */
+
+    public void setRequestValidatorId(String requestValidatorId) {
+        this.requestValidatorId = requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @return The identifier of a <a>RequestValidator</a> for request validation.
+     */
+
+    public String getRequestValidatorId() {
+        return this.requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for request validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Method withRequestValidatorId(String requestValidatorId) {
+        setRequestValidatorId(requestValidatorId);
+        return this;
     }
 
     /**
@@ -970,6 +1030,8 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
             sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getApiKeyRequired() != null)
             sb.append("ApiKeyRequired: ").append(getApiKeyRequired()).append(",");
+        if (getRequestValidatorId() != null)
+            sb.append("RequestValidatorId: ").append(getRequestValidatorId()).append(",");
         if (getOperationName() != null)
             sb.append("OperationName: ").append(getOperationName()).append(",");
         if (getRequestParameters() != null)
@@ -1010,6 +1072,10 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApiKeyRequired() != null && other.getApiKeyRequired().equals(this.getApiKeyRequired()) == false)
             return false;
+        if (other.getRequestValidatorId() == null ^ this.getRequestValidatorId() == null)
+            return false;
+        if (other.getRequestValidatorId() != null && other.getRequestValidatorId().equals(this.getRequestValidatorId()) == false)
+            return false;
         if (other.getOperationName() == null ^ this.getOperationName() == null)
             return false;
         if (other.getOperationName() != null && other.getOperationName().equals(this.getOperationName()) == false)
@@ -1042,6 +1108,7 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAuthorizationType() == null) ? 0 : getAuthorizationType().hashCode());
         hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
         hashCode = prime * hashCode + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired().hashCode());
+        hashCode = prime * hashCode + ((getRequestValidatorId() == null) ? 0 : getRequestValidatorId().hashCode());
         hashCode = prime * hashCode + ((getOperationName() == null) ? 0 : getOperationName().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());

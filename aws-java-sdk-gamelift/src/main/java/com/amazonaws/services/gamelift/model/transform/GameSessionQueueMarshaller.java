@@ -30,8 +30,12 @@ public class GameSessionQueueMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> GAMESESSIONQUEUEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionQueueArn").build();
     private static final MarshallingInfo<Integer> TIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutInSeconds").build();
+    private static final MarshallingInfo<List> PLAYERLATENCYPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlayerLatencyPolicies").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Destinations").build();
 
@@ -52,7 +56,9 @@ public class GameSessionQueueMarshaller {
 
         try {
             protocolMarshaller.marshall(gameSessionQueue.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(gameSessionQueue.getGameSessionQueueArn(), GAMESESSIONQUEUEARN_BINDING);
             protocolMarshaller.marshall(gameSessionQueue.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(gameSessionQueue.getPlayerLatencyPolicies(), PLAYERLATENCYPOLICIES_BINDING);
             protocolMarshaller.marshall(gameSessionQueue.getDestinations(), DESTINATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

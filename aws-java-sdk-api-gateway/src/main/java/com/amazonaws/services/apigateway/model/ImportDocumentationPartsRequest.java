@@ -253,7 +253,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * this is a JSON object.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -297,6 +297,16 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
      * this is a JSON object.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param body
