@@ -1,1006 +1,1003 @@
 <?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.amazonaws</groupId>
-		<artifactId>aws-java-sdk-pom</artifactId>
-		<version>1.11.86-SNAPSHOT</version>
-	</parent>
-	<groupId>com.amazonaws</groupId>
-	<artifactId>aws-java-sdk-osgi</artifactId>
-	<name>AWS SDK For Java for OSGi</name>
-	<description>The AWS SDK for Java with support for OSGi. The AWS SDK for Java provides Java APIs for building software on AWS' cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
-	<url>https://aws.amazon.com/sdkforjava</url>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-pom</artifactId>
+    <version>1.11.86-SNAPSHOT</version>
+  </parent>
+  <groupId>com.amazonaws</groupId>
+  <artifactId>aws-java-sdk-osgi</artifactId>
+  <name>AWS SDK For Java for OSGi</name>
+  <description>The AWS SDK for Java with support for OSGi. The AWS SDK for Java provides Java APIs for building software on AWS' cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
+  <url>https://aws.amazon.com/sdkforjava</url>
 
-	<!-- The dependencies section in pom.xml is auto generated. No manual changes 
-		are allowed -->
-	<dependencies>
-		<dependency>
-			<artifactId>aws-java-sdk-pinpoint</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-xray</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-opsworkscm</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-support</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-simpledb</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-servicecatalog</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-servermigration</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-simpleworkflow</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-storagegateway</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-route53</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-s3</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-importexport</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-sts</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-sqs</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-rds</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-redshift</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elasticbeanstalk</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-glacier</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-iam</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-datapipeline</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elasticloadbalancing</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elasticloadbalancingv2</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-emr</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elasticache</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elastictranscoder</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-ec2</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-dynamodb</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-sns</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-budgets</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudtrail</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudwatch</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-logs</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-events</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cognitoidentity</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cognitosync</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-directconnect</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudformation</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudfront</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-kinesis</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-opsworks</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-ses</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-autoscaling</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudsearch</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudwatchmetrics</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-codedeploy</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-codepipeline</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-kms</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-config</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-lambda</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-ecs</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-ecr</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cloudhsm</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-ssm</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-workspaces</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-machinelearning</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-directory</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-efs</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-codecommit</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-devicefarm</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-elasticsearch</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-waf</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-marketplacecommerceanalytics</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-inspector</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-iot</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-api-gateway</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-acm</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-gamelift</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-dms</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-marketplacemeteringservice</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-cognitoidp</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-discovery</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-applicationautoscaling</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-snowball</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-rekognition</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-polly</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-lightsail</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-stepfunctions</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-health</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-costandusagereport</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-codebuild</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-appstream</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-shield</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-batch</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-core</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-models</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>${awsjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>aws-java-sdk-swf-libraries</artifactId>
-			<groupId>com.amazonaws</groupId>
-			<optional>false</optional>
-			<version>1.11.22</version>
-		</dependency>
-	</dependencies>
+  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
+  <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-pinpoint</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-xray</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-opsworkscm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-support</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-simpledb</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-servicecatalog</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-servermigration</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-simpleworkflow</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-storagegateway</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-route53</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-s3</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-importexport</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sts</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sqs</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-rds</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-redshift</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elasticbeanstalk</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-glacier</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iam</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-datapipeline</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elasticloadbalancing</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elasticloadbalancingv2</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-emr</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elasticache</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elastictranscoder</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ec2</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-dynamodb</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sns</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-budgets</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudtrail</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudwatch</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-logs</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-events</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cognitoidentity</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cognitosync</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-directconnect</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudformation</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudfront</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-kinesis</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-opsworks</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ses</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-autoscaling</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudsearch</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudwatchmetrics</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codedeploy</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codepipeline</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-kms</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-config</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-lambda</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ecs</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ecr</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cloudhsm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ssm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-workspaces</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-machinelearning</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-directory</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-efs</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codecommit</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-devicefarm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-elasticsearch</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-waf</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-marketplacecommerceanalytics</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-inspector</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iot</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-api-gateway</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-acm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-gamelift</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-dms</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-marketplacemeteringservice</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-cognitoidp</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-discovery</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-applicationautoscaling</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-snowball</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-rekognition</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-polly</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-lightsail</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-stepfunctions</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-health</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-costandusagereport</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codebuild</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-appstream</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-shield</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-batch</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-core</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-models</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-swf-libraries</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>1.11.22</version>
+    </dependency>
+</dependencies>
 
-	<properties>
-		<zip.assembly.id>sdk-zip-archive-assembly</zip.assembly.id>
-		<zip.artifact.name>aws-java-sdk.zip</zip.artifact.name>
-		<zip.generation.additional.files>${project.build.directory}/zip-additional-files</zip.generation.additional.files>
-		<zip.generation.additional.files.third-party.lib>${zip.generation.additional.files}/third-party/lib </zip.generation.additional.files.third-party.lib>
-	</properties>
+  <properties>
+      <zip.assembly.id>sdk-zip-archive-assembly</zip.assembly.id>
+      <zip.artifact.name>aws-java-sdk.zip</zip.artifact.name>
+      <zip.generation.additional.files>${project.build.directory}/zip-additional-files</zip.generation.additional.files>
+      <zip.generation.additional.files.third-party.lib>${zip.generation.additional.files}/third-party/lib </zip.generation.additional.files.third-party.lib>
+  </properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<!-- Convert README.md to HTML to be used in ZIP creation -->
-				<plugin>
-					<groupId>com.ruleoftech</groupId>
-					<artifactId>markdown-page-generator-plugin</artifactId>
-					<version>0.8</version>
-					<executions>
-						<execution>
-							<phase>process-sources</phase>
-							<goals>
-								<goal>generate</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<inputDirectory>${project.parent.basedir}/</inputDirectory>
-						<outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<archive>
-						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.5.3</version>
-				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<id>bundle-manifest</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<instructions>
-						<Export-Package>com.amazonaws.*</Export-Package>
-						<Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,com.sun.org.apache.xerces.internal.jaxp.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.ref.*;resolution:=optional,com.sun.org.apache.xpath.internal.*;resolution:=optional,*</Import-Package>
-						<Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
-						<Embed-Transitive>false</Embed-Transitive>
-					</instructions>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.3</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<artifactSet>
-								<includes>
-									<include>com.amazonaws:*</include>
-								</includes>
-							</artifactSet>
-							<promoteTransitiveDependencies>true</promoteTransitiveDependencies>
-							<createSourcesJar>true</createSourcesJar>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	<profiles>
-		<profile>
-			<id>publishing</id>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>javadoc-jar</id>
-								<phase>package</phase>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-						<!-- Note: excludePackageNames is inherited from Parent POM -->
-						<configuration>
-							<minmemory>128m</minmemory>
-							<maxmemory>2g</maxmemory>
-							<includeDependencySources>true</includeDependencySources>
-							<show>public</show>
-							<defaultexcludes>yes</defaultexcludes>
-							<stylesheetfile>com/amazonaws/JavaDoc.css</stylesheetfile>
-							<author>false</author>
-							<version>true</version>
-							<use>false</use>
-							<notree>true</notree>
-							<nodeprecatedlist>true</nodeprecatedlist>
-							<windowtitle>AWS SDK for Java - ${project.version}</windowtitle>
-							<encoding>UTF-8</encoding>
-							<docencoding>UTF-8</docencoding>
-							<doctitle>AWS SDK for Java API Reference - ${project.version}</doctitle>
-							<packagesheader>AWS SDK for Java</packagesheader>
-							<!-- Required for src/main/javadoc/resources/ to be copied over correctly -->
-							<docfilessubdirs>true</docfilessubdirs>
-							<taglets>
-								<taglet>
-									<tagletClass>com.amazonaws.codesamples.SampleCodeTaglet</tagletClass>
-									<tagletArtifact>
-										<groupId>com.amazonaws</groupId>
-										<artifactId>aws-java-sdk-samples</artifactId>
-										<version>LATEST</version>
-									</tagletArtifact>
-								</taglet>
-							</taglets>
-							<groups>
-								<group>
-									<title>Amazon S3</title>
-									<packages>com.amazonaws.services.s3*</packages>
-								</group>
-								<group>
-									<title>Amazon Glacier</title>
-									<packages>com.amazonaws.services.glacier*</packages>
-								</group>
-								<group>
-									<title>Amazon DynamoDB</title>
-									<packages>com.amazonaws.services.dynamo*</packages>
-								</group>
-								<group>
-									<title>Amazon EC2</title>
-									<packages>com.amazonaws.services.ec2*</packages>
-								</group>
-								<group>
-									<title>Amazon SimpleDB</title>
-									<packages>com.amazonaws.services.simpledb*</packages>
-								</group>
-								<group>
-									<title>Amazon SQS</title>
-									<packages>com.amazonaws.services.sqs*</packages>
-								</group>
-								<group>
-									<title>Amazon SNS</title>
-									<packages>com.amazonaws.services.sns*</packages>
-								</group>
-								<group>
-									<title>Amazon Relational Database Service</title>
-									<packages>com.amazonaws.services.rds*</packages>
-								</group>
-								<group>
-									<title>Amazon Route 53</title>
-									<packages>com.amazonaws.services.route53*</packages>
-								</group>
-								<group>
-									<title>Amazon Simple Workflow Service</title>
-									<packages>com.amazonaws.services.simplework*</packages>
-								</group>
-								<group>
-									<title>Amazon Elastic MapReduce</title>
-									<packages>com.amazonaws.services.elasticmapreduce*</packages>
-								</group>
-								<group>
-									<title>Amazon Simple Email Service</title>
-									<packages>com.amazonaws.services.simpleemail*</packages>
-								</group>
-								<group>
-									<title>Amazon Elastic Load Balancing</title>
-									<packages>com.amazonaws.services.elasticloadbalancing*</packages>
-								</group>
-								<group>
-									<title>Amazon CloudSearch</title>
-									<packages>com.amazonaws.services.cloudsearch*</packages>
-								</group>
-								<group>
-									<title>Amazon CloudWatch</title>
-									<packages>com.amazonaws.services.cloudwatch*</packages>
-								</group>
-								<group>
-									<title>Amazon CloudWatch Logs</title>
-									<packages>com.amazonaws.services.logs*</packages>
-								</group>
-								<group>
-									<title>Amazon CloudWatch Events</title>
-									<packages>com.amazonaws.services.cloudwatchevents*</packages>
-								</group>
-								<group>
-									<title>Amazon CloudFront</title>
-									<packages>com.amazonaws.services.cloudfront*</packages>
-								</group>
-								<group>
-									<title>Amazon Cognito</title>
-									<packages>com.amazonaws.services.cognito*</packages>
-								</group>
-								<group>
-									<title>Amazon AutoScaling</title>
-									<packages>com.amazonaws.services.autoscaling*</packages>
-								</group>
-								<group>
-									<title>Amazon Kinesis</title>
-									<packages>com.amazonaws.services.kinesis*</packages>
-								</group>
-								<group>
-									<title>Amazon Redshift</title>
-									<packages>com.amazonaws.services.redshift*</packages>
-								</group>
-								<group>
-									<title>Amazon ElastiCache</title>
-									<packages>com.amazonaws.services.elasticache*</packages>
-								</group>
-								<group>
-									<title>Amazon Elastic Transcoder</title>
-									<packages>com.amazonaws.services.elastictranscoder*</packages>
-								</group>
-								<group>
-									<title>AWS OpsWorks</title>
-									<packages>com.amazonaws.services.opsworks*</packages>
-								</group>
-								<group>
-									<title>AWS CloudFormation</title>
-									<packages>com.amazonaws.services.cloudformation*</packages>
-								</group>
-								<group>
-									<title>AWS Data Pipeline</title>
-									<packages>com.amazonaws.services.datapipeline*</packages>
-								</group>
-								<group>
-									<title>AWS Direct Connect</title>
-									<packages>com.amazonaws.services.directconnect*</packages>
-								</group>
-								<group>
-									<title>AWS Elastic Beanstalk</title>
-									<packages>com.amazonaws.services.elasticbeanstalk*</packages>
-								</group>
-								<group>
-									<title>AWS Identity and Access Management</title>
-									<packages>com.amazonaws.services.identity*</packages>
-								</group>
-								<group>
-									<title>AWS ImportExport</title>
-									<packages>com.amazonaws.services.importexport*</packages>
-								</group>
-								<group>
-									<title>AWS Security Token Service</title>
-									<packages>com.amazonaws.services.securitytoken*</packages>
-								</group>
-								<group>
-									<title>AWS Storage Gateway Service</title>
-									<packages>com.amazonaws.services.storagegateway*</packages>
-								</group>
-								<group>
-									<title>AWS Support</title>
-									<packages>com.amazonaws.services.support*</packages>
-								</group>
-								<group>
-									<title>AWS CloudTrail</title>
-									<packages>com.amazonaws.services.cloudtrail*</packages>
-								</group>
-								<group>
-									<title>AWS Config</title>
-									<packages>com.amazonaws.services.config*</packages>
-								</group>
-								<group>
-									<title>AWS Certificate Manager</title>
-									<packages>com.amazonaws.services.certificatemanager*</packages>
-								</group>
-								<group>
-									<title>AWS Key Management</title>
-									<packages>com.amazonaws.services.kms*</packages>
-								</group>
-								<group>
-									<title>AWS CodeDeploy</title>
-									<packages>com.amazonaws.services.codedeploy*</packages>
-								</group>
-								<group>
-									<title>AWS Lambda</title>
-									<packages>com.amazonaws.services.lambda*</packages>
-								</group>
-								<group>
-									<title>Amazon EC2 Container Service</title>
-									<packages>com.amazonaws.services.ecs*</packages>
-								</group>
-								<group>
-									<title>AWS CloudHSM</title>
-									<packages>com.amazonaws.services.cloudhsm*</packages>
-								</group>
-								<group>
-									<title>AWS Simple Systems Management Service</title>
-									<packages>com.amazonaws.services.simplesystemsmanagement*</packages>
-								</group>
-								<group>
-									<title>Amazon WorkSpaces</title>
-									<packages>com.amazonaws.services.workspaces*</packages>
-								</group>
-								<group>
-									<title>Amazon Machine Learning</title>
-									<packages>com.amazonaws.services.machinelearning*</packages>
-								</group>
-								<group>
-									<title>AWS Directory Service</title>
-									<packages>com.amazonaws.services.directory*</packages>
-								</group>
-								<group>
-									<title>Amazon Elastic File System</title>
-									<packages>com.amazonaws.services.elasticfilesystem*</packages>
-								</group>
-								<group>
-									<title>AWS CodePipeline</title>
-									<packages>com.amazonaws.services.codepipeline*</packages>
-								</group>
-								<group>
-									<title>AWS CodeCommit</title>
-									<packages>com.amazonaws.services.codecommit*</packages>
-								</group>
-								<group>
-									<title>AWS Device Farm</title>
-									<packages>com.amazonaws.services.devicefarm*</packages>
-								</group>
-								<group>
-									<title>Amazon Elasticsearch Service</title>
-									<packages>com.amazonaws.services.elasticsearch*</packages>
-								</group>
-								<group>
-									<title>AWS Marketplace Commerce Analytics</title>
-									<packages>com.amazonaws.services.marketplacecommerceanalytics*</packages>
-								</group>
-								<group>
-									<title>AWS WAF</title>
-									<packages>com.amazonaws.services.waf*</packages>
-								</group>
-								<group>
-									<title>Amazon Inspector Service</title>
-									<packages>com.amazonaws.services.inspector*</packages>
-								</group>
-								<group>
-									<title>AWS IoT</title>
-									<packages>com.amazonaws.services.iot*</packages>
-								</group>
-								<group>
-									<title>Amazon API Gateway</title>
-									<packages>com.amazonaws.services.apigateway*</packages>
-								</group>
-								<group>
-									<title>Amazon EC2 Container Registry</title>
-									<packages>com.amazonaws.services.ecr*</packages>
-								</group>
-								<group>
-									<title>Amazon GameLift</title>
-									<packages>com.amazonaws.services.gamelift*</packages>
-								</group>
-								<group>
-									<title>AWS Database Migration Service</title>
-									<packages>com.amazonaws.services.databasemigrationservice*</packages>
-								</group>
-								<group>
-									<title>AWS Marketplace Metering Service</title>
-									<packages>com.amazonaws.services.marketplacemetering*</packages>
-								</group>
-								<group>
-									<title>Amazon Cognito Identity Provider</title>
-									<packages>com.amazonaws.services.cognitoidp*</packages>
-								</group>
-								<group>
-									<title>AWS Application Discovery Service</title>
-									<packages>com.amazonaws.services.applicationdiscovery*</packages>
-								</group>
-								<group>
-									<title>AWS Application Auto Scaling</title>
-									<packages>com.amazonaws.services.applicationautoscaling*</packages>
-								</group>
-								<group>
-									<title>Amazon Snowball</title>
-									<packages>com.amazonaws.services.snowball*</packages>
-								</group>
-								<group>
-									<title>AWS Service Catalog</title>
-									<packages>com.amazonaws.services.servicecatalog*</packages>
-								</group>
-								<group>
-									<title>AWS Budgets</title>
-									<packages>com.amazonaws.services.budgets*</packages>
-								</group>
-								<group>
-									<title>AWS Server Migration</title>
-									<packages>com.amazonaws.services.servermigration*</packages>
-								</group>
-								<group>
-									<title>Amazon Rekognition</title>
-									<packages>com.amazonaws.services.rekognition*</packages>
-								</group>
-								<group>
-									<title>Amazon Polly</title>
-									<packages>com.amazonaws.services.polly*</packages>
-								</group>
-								<group>
-									<title>Amazon Lightsail</title>
-									<packages>com.amazonaws.services.lightsail*</packages>
-								</group>
-								<group>
-									<title>Amazon AppStream</title>
-									<packages>com.amazonaws.services.appstream*</packages>
-								</group>
-								<group>
-									<title>AWS X-Ray</title>
-									<packages>com.amazonaws.services.xray*</packages>
-								</group>
-								<group>
-									<title>AWS OpsWorks for Chef Automate</title>
-									<packages>com.amazonaws.services.opsworkscm*</packages>
-								</group>
-								<group>
-									<title>Amazon Pinpoint</title>
-									<packages>com.amazonaws.services.pinpoint*</packages>
-								</group>
-								<group>
-									<title>AWS Step Functions</title>
-									<packages>com.amazonaws.services.stepfunctions*</packages>
-								</group>
-								<group>
-									<title>AWS Shield</title>
-									<packages>com.amazonaws.services.shield*</packages>
-								</group>
-								<group>
-									<title>AWS Health APIs and Notifications</title>
-									<packages>com.amazonaws.services.health*</packages>
-								</group>
-								<group>
-									<title>AWS Cost and Usage Report</title>
-									<packages>com.amazonaws.services.costandusagereport*</packages>
-								</group>
-								<group>
-									<title>AWS Code Build</title>
-									<packages>com.amazonaws.services.codebuild*</packages>
-								</group>
-								<group>
-									<title>AWS Batch</title>
-									<packages>com.amazonaws.services.batch*</packages>
-								</group>
-								<group>
-									<title>Common</title>
-									<packages>com.amazonaws*</packages>
-								</group>
-							</groups>
-							<header>
+  <build>
+  		<pluginManagement>
+  			<plugins>
+  				  <!-- Convert README.md to HTML to be used in ZIP creation -->
+		          <plugin>
+		              <groupId>com.ruleoftech</groupId>
+		              <artifactId>markdown-page-generator-plugin</artifactId>
+		              <version>0.8</version>
+		              <executions>
+		                  <execution>
+		                      <phase>process-sources</phase>
+		                      <goals>
+		                          <goal>generate</goal>
+		                      </goals>
+		                  </execution>
+		              </executions>
+		              <configuration>
+		                  <inputDirectory>${project.parent.basedir}/</inputDirectory>
+		                  <outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
+		              </configuration>
+		          </plugin>
+  			</plugins>
+  		</pluginManagement>
+      <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.5.3</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <instructions>
+            <Export-Package>com.amazonaws.*</Export-Package>
+            <Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,com.sun.org.apache.xerces.internal.jaxp.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.ref.*;resolution:=optional,com.sun.org.apache.xpath.internal.*;resolution:=optional,*</Import-Package>
+            <Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
+            <Embed-Transitive>false</Embed-Transitive>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <includes>
+                  <include>com.amazonaws:*</include>
+                </includes>
+              </artifactSet>
+              <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+              <createSourcesJar>true</createSourcesJar>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+      <profile>
+          <id>publishing</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <artifactId>maven-javadoc-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>javadoc-jar</id>
+                              <phase>package</phase>
+                              <goals>
+                                  <goal>jar</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                      <!-- Note: excludePackageNames is inherited from Parent POM -->
+                      <configuration>
+                          <minmemory>128m</minmemory>
+                          <maxmemory>2g</maxmemory>
+                          <includeDependencySources>true</includeDependencySources>
+                          <show>public</show>
+                          <defaultexcludes>yes</defaultexcludes>
+                          <stylesheetfile>com/amazonaws/JavaDoc.css</stylesheetfile>
+                          <author>false</author>
+                          <version>true</version>
+                          <use>false</use>
+                          <notree>true</notree>
+                          <nodeprecatedlist>true</nodeprecatedlist>
+                          <windowtitle>AWS SDK for Java - ${project.version}</windowtitle>
+                          <encoding>UTF-8</encoding>
+                          <docencoding>UTF-8</docencoding>
+                          <doctitle>AWS SDK for Java API Reference - ${project.version}</doctitle>
+                          <packagesheader>AWS SDK for Java</packagesheader>
+                          <!-- Required for src/main/javadoc/resources/ to be copied over correctly -->
+                          <docfilessubdirs>true</docfilessubdirs>
+                          <taglets>
+                              <taglet>
+                                  <tagletClass>com.amazonaws.codesamples.SampleCodeTaglet</tagletClass>
+                                  <tagletArtifact>
+                                      <groupId>com.amazonaws</groupId>
+                                      <artifactId>aws-java-sdk-samples</artifactId>
+                                      <version>LATEST</version>
+                                  </tagletArtifact>
+                              </taglet>
+                          </taglets>
+                          <groups>
+                              <group>
+                                  <title>Amazon S3</title>
+                                  <packages>com.amazonaws.services.s3*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Glacier</title>
+                                  <packages>com.amazonaws.services.glacier*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon DynamoDB</title>
+                                  <packages>com.amazonaws.services.dynamo*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon EC2</title>
+                                  <packages>com.amazonaws.services.ec2*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SimpleDB</title>
+                                  <packages>com.amazonaws.services.simpledb*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SQS</title>
+                                  <packages>com.amazonaws.services.sqs*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SNS</title>
+                                  <packages>com.amazonaws.services.sns*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Relational Database Service</title>
+                                  <packages>com.amazonaws.services.rds*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Route 53</title>
+                                  <packages>com.amazonaws.services.route53*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Simple Workflow Service</title>
+                                  <packages>com.amazonaws.services.simplework*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elastic MapReduce</title>
+                                  <packages>com.amazonaws.services.elasticmapreduce*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Simple Email Service</title>
+                                  <packages>com.amazonaws.services.simpleemail*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elastic Load Balancing</title>
+                                  <packages>com.amazonaws.services.elasticloadbalancing*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CloudSearch</title>
+                                  <packages>com.amazonaws.services.cloudsearch*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CloudWatch</title>
+                                  <packages>com.amazonaws.services.cloudwatch*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CloudWatch Logs</title>
+                                  <packages>com.amazonaws.services.logs*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CloudWatch Events</title>
+                                  <packages>com.amazonaws.services.cloudwatchevents*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon CloudFront</title>
+                                  <packages>com.amazonaws.services.cloudfront*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Cognito</title>
+                                  <packages>com.amazonaws.services.cognito*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon AutoScaling</title>
+                                  <packages>com.amazonaws.services.autoscaling*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Kinesis</title>
+                                  <packages>com.amazonaws.services.kinesis*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Redshift</title>
+                                  <packages>com.amazonaws.services.redshift*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon ElastiCache</title>
+                                  <packages>com.amazonaws.services.elasticache*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elastic Transcoder</title>
+                                  <packages>com.amazonaws.services.elastictranscoder*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS OpsWorks</title>
+                                  <packages>com.amazonaws.services.opsworks*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CloudFormation</title>
+                                  <packages>com.amazonaws.services.cloudformation*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Data Pipeline</title>
+                                  <packages>com.amazonaws.services.datapipeline*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Direct Connect</title>
+                                  <packages>com.amazonaws.services.directconnect*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Elastic Beanstalk</title>
+                                  <packages>com.amazonaws.services.elasticbeanstalk*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Identity and Access Management</title>
+                                  <packages>com.amazonaws.services.identity*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS ImportExport</title>
+                                  <packages>com.amazonaws.services.importexport*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Security Token Service</title>
+                                  <packages>com.amazonaws.services.securitytoken*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Storage Gateway Service</title>
+                                  <packages>com.amazonaws.services.storagegateway*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Support</title>
+                                  <packages>com.amazonaws.services.support*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CloudTrail</title>
+                                  <packages>com.amazonaws.services.cloudtrail*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Config</title>
+                                  <packages>com.amazonaws.services.config*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Certificate Manager</title>
+                                  <packages>com.amazonaws.services.certificatemanager*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Key Management</title>
+                                  <packages>com.amazonaws.services.kms*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CodeDeploy</title>
+                                  <packages>com.amazonaws.services.codedeploy*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Lambda</title>
+                                  <packages>com.amazonaws.services.lambda*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon EC2 Container Service</title>
+                                  <packages>com.amazonaws.services.ecs*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CloudHSM</title>
+                                  <packages>com.amazonaws.services.cloudhsm*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Simple Systems Management Service</title>
+                                  <packages>com.amazonaws.services.simplesystemsmanagement*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon WorkSpaces</title>
+                                  <packages>com.amazonaws.services.workspaces*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Machine Learning</title>
+                                  <packages>com.amazonaws.services.machinelearning*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Directory Service</title>
+                                  <packages>com.amazonaws.services.directory*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elastic File System</title>
+                                  <packages>com.amazonaws.services.elasticfilesystem*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CodePipeline</title>
+                                  <packages>com.amazonaws.services.codepipeline*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CodeCommit</title>
+                                  <packages>com.amazonaws.services.codecommit*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Device Farm</title>
+                                  <packages>com.amazonaws.services.devicefarm*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elasticsearch Service</title>
+                                  <packages>com.amazonaws.services.elasticsearch*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Marketplace Commerce Analytics</title>
+                                  <packages>com.amazonaws.services.marketplacecommerceanalytics*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS WAF</title>
+                                  <packages>com.amazonaws.services.waf*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Inspector Service</title>
+                                  <packages>com.amazonaws.services.inspector*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT</title>
+                                  <packages>com.amazonaws.services.iot*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon API Gateway</title>
+                                  <packages>com.amazonaws.services.apigateway*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon EC2 Container Registry</title>
+                                  <packages>com.amazonaws.services.ecr*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon GameLift</title>
+                                  <packages>com.amazonaws.services.gamelift*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Database Migration Service</title>
+                                  <packages>com.amazonaws.services.databasemigrationservice*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Marketplace Metering Service</title>
+                                  <packages>com.amazonaws.services.marketplacemetering*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Cognito Identity Provider</title>
+                                  <packages>com.amazonaws.services.cognitoidp*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Application Discovery Service</title>
+                                  <packages>com.amazonaws.services.applicationdiscovery*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Application Auto Scaling</title>
+                                  <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Snowball</title>
+                                  <packages>com.amazonaws.services.snowball*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Service Catalog</title>
+                                  <packages>com.amazonaws.services.servicecatalog*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Budgets</title>
+                                  <packages>com.amazonaws.services.budgets*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Server Migration</title>
+                                  <packages>com.amazonaws.services.servermigration*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Rekognition</title>
+                                  <packages>com.amazonaws.services.rekognition*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Polly</title>
+                                  <packages>com.amazonaws.services.polly*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Lightsail</title>
+                                  <packages>com.amazonaws.services.lightsail*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon AppStream</title>
+                                  <packages>com.amazonaws.services.appstream*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS X-Ray</title>
+                                  <packages>com.amazonaws.services.xray*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS OpsWorks for Chef Automate</title>
+                                  <packages>com.amazonaws.services.opsworkscm*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Pinpoint</title>
+                                  <packages>com.amazonaws.services.pinpoint*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Step Functions</title>
+                                  <packages>com.amazonaws.services.stepfunctions*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Shield</title>
+                                  <packages>com.amazonaws.services.shield*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Health APIs and Notifications</title>
+                                  <packages>com.amazonaws.services.health*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Cost and Usage Report</title>
+                                  <packages>com.amazonaws.services.costandusagereport*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Code Build</title>
+                                  <packages>com.amazonaws.services.codebuild*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Batch</title>
+                                  <packages>com.amazonaws.services.batch*</packages>
+                              </group>
+                              <group>
+                                  <title>Common</title>
+                                  <packages>com.amazonaws*</packages>
+                              </group>
+                          </groups>
+                          <header>
                   <![CDATA[
                   <!-- Scripts for Syntax Highlighter START-->
                   <script id="syntaxhighlight_script_core" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shCore.js">
@@ -1069,8 +1066,8 @@
 
                           </div>
                           ]]>
-							</header>
-							<footer>
+                      </header>
+                      <footer>
                           <![CDATA[
                           <div>
                               <!-- Script for Syntax Highlighter START -->
@@ -1080,210 +1077,190 @@
                               <!-- Script for Syntax Highlighter END -->
                           </div>
                           ]]>
-								&lt;script
-								src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js"
-								type="text/javascript">&lt;/script>
-								&lt;script>
-								jQuery(function
-								($) {
-								$("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE-->');
-								});
-								&lt;/script>
-								&lt;!-- BEGIN-URCHIN-TRACKER -->
-								&lt;script
-								src="http://l0.awsstatic.com/js/urchin.js"
-								type="text/javascript">&lt;/script>
-								&lt;script
-								type="text/javascript">urchinTracker();&lt;/script>
-								&lt;!--
-								END-URCHIN-TRACKER -->
+                          &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript">&lt;/script>
+                          &lt;script>
+                          jQuery(function ($) {
+                          $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE-->');
+                          });
+                          &lt;/script>
+                          &lt;!-- BEGIN-URCHIN-TRACKER -->
+                          &lt;script src="http://l0.awsstatic.com/js/urchin.js" type="text/javascript">&lt;/script>
+                          &lt;script type="text/javascript">urchinTracker();&lt;/script>
+                          &lt;!-- END-URCHIN-TRACKER -->
 
-								&lt;!-- SiteCatalyst code version: H.25.2.
-								Copyright 1996-2012 Adobe,
-								Inc. All Rights Reserved.
-								More info
-								available at http://www.omniture.com -->
-								&lt;script
-								type="text/javascript"
-								src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"
-								/>
-								&lt;script type="text/javascript">
-								s.prop66='AWS SDK for Java';
-								s.eVar66='D=c66';
-								s.prop65='API Reference';
-								s.eVar65='D=c65';
-								var
-								s_code=s.t();
-								if (s_code) document.write(s_code);
-								&lt;/script>
-								&lt;script language="JavaScript" type="text/javascript">
-								&lt;!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-								//-->
-								&lt;/script>
-								&lt;noscript>
-								&lt;img
-								src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0"
-								height="1" width="1" border="0" alt="" />
-								&lt;/noscript>
-								&lt;!--/DO NOT REMOVE/-->
-								&lt;!-- End SiteCatalyst code version:
-								H.25.2. -->
-							</footer>
-							<bottom><![CDATA[Copyright &#169; 2013 Amazon Web Services, Inc. All Rights Reserved.]]></bottom>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>staging</id>
-			<build>
-				<plugins>
-					<!-- This shouldn't be necessary but the Maven assembly plugin seems 
-						to have an issue with symlinks. This copies the additional files from the 
-						environment into the local target directory so the assembly plugin can reference 
-						them. TODO Remove this when the symlink issue is resolved -->
-					<plugin>
-						<artifactId>maven-resources-plugin</artifactId>
-						<version>2.7</version>
-						<executions>
-							<execution>
-								<id>copy-resources</id>
-								<phase>process-resources</phase>
-								<goals>
-									<goal>copy-resources</goal>
-								</goals>
-								<configuration>
-									<outputDirectory>${zip.generation.additional.files}</outputDirectory>
-									<resources>
-										<resource>
-											<directory>${zip.generation.additional.files.sources}</directory>
-										</resource>
-									</resources>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- Some of the SDK's dependencies are optional so we have to explicitly 
-						copy them over for the Assembly plugin -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<version>2.10</version>
-						<executions>
-							<execution>
-								<id>copy-optional-third-party-jars</id>
-								<phase>process-resources</phase>
-								<goals>
-									<goal>copy</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>javax.mail</groupId>
-									<artifactId>javax.mail-api</artifactId>
-									<version>${javax.mail.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.freemarker</groupId>
-									<artifactId>freemarker</artifactId>
-									<version>${freemarker.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.aspectj</groupId>
-									<artifactId>aspectjrt</artifactId>
-									<version>${aspectj.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.springframework</groupId>
-									<artifactId>spring-beans</artifactId>
-									<version>${spring.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.springframework</groupId>
-									<artifactId>spring-core</artifactId>
-									<version>${spring.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.springframework</groupId>
-									<artifactId>spring-context</artifactId>
-									<version>${spring.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-								<artifactItem>
-									<groupId>org.springframework</groupId>
-									<artifactId>spring-test</artifactId>
-									<version>${spring.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</plugin>
-					<!-- Invoke the Assembly plugin to create the ZIP archive -->
-					<plugin>
-						<artifactId>maven-assembly-plugin</artifactId>
-						<version>2.6</version>
-						<configuration>
-							<descriptors>
-								<descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>
-							</descriptors>
-							<tarLongFileMode>gnu</tarLongFileMode>
-						</configuration>
-						<executions>
-							<execution>
-								<id>make-assembly</id> <!-- this is used for inheritance merges -->
-								<phase>package</phase>
-								<goals>
-									<goal>single</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<!-- We use the normal ZIP utility as the Assembly plugin adds entries 
-						in a non-deterministic order which can break the Toolkit as it relies on 
-						directories coming before the files within the directory -->
-					<plugin>
-						<artifactId>exec-maven-plugin</artifactId>
-						<groupId>org.codehaus.mojo</groupId>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>exec</goal>
-								</goals>
-								<configuration>
-									<workingDirectory>target/${project.build.finalName}-${zip.assembly.id}/</workingDirectory>
-									<executable>zip</executable>
-									<commandlineArgs>
-										-r ../${zip.artifact.name} .
-									</commandlineArgs>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+                          &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+                          More info available at http://www.omniture.com -->
+                          &lt;script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js" />
+                      &lt;script type="text/javascript">
+                      s.prop66='AWS SDK for Java';
+                      s.eVar66='D=c66';
+                      s.prop65='API Reference';
+                      s.eVar65='D=c65';
+                      var s_code=s.t();
+                      if (s_code) document.write(s_code);
+                      &lt;/script>
+                      &lt;script language="JavaScript" type="text/javascript">
+                      &lt;!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+                      //-->
+                      &lt;/script>
+                      &lt;noscript>
+                      &lt;img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="" />
+                  &lt;/noscript>
+                  &lt;!--/DO NOT REMOVE/-->
+                  &lt;!-- End SiteCatalyst code version: H.25.2. -->
+                          </footer>
+                          <bottom><![CDATA[Copyright &#169; 2013 Amazon Web Services, Inc. All Rights Reserved.]]></bottom>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>staging</id>
+          <build>
+              <plugins>
+                  <!-- This shouldn't be necessary but the Maven assembly plugin seems to have an issue with symlinks. This copies the additional
+                    files from the environment into the local target directory so the assembly plugin can reference them.
+                    TODO Remove this when the symlink issue is resolved -->
+                  <plugin>
+                      <artifactId>maven-resources-plugin</artifactId>
+                      <version>2.7</version>
+                      <executions>
+                          <execution>
+                              <id>copy-resources</id>
+                              <phase>process-resources</phase>
+                              <goals>
+                                  <goal>copy-resources</goal>
+                              </goals>
+                              <configuration>
+                                  <outputDirectory>${zip.generation.additional.files}</outputDirectory>
+                                  <resources>
+                                      <resource>
+                                          <directory>${zip.generation.additional.files.sources}</directory>
+                                      </resource>
+                                  </resources>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+                  <!-- Some of the SDK's dependencies are optional so we have to explicitly copy them over for the Assembly plugin -->
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-dependency-plugin</artifactId>
+                      <version>2.10</version>
+                      <executions>
+                          <execution>
+                              <id>copy-optional-third-party-jars</id>
+                              <phase>process-resources</phase>
+                              <goals>
+                                  <goal>copy</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                      <configuration>
+                          <artifactItems>
+                              <artifactItem>
+                                  <groupId>javax.mail</groupId>
+                                  <artifactId>javax.mail-api</artifactId>
+                                  <version>${javax.mail.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.freemarker</groupId>
+                                  <artifactId>freemarker</artifactId>
+                                  <version>${freemarker.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.aspectj</groupId>
+                                  <artifactId>aspectjrt</artifactId>
+                                  <version>${aspectj.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.springframework</groupId>
+                                  <artifactId>spring-beans</artifactId>
+                                  <version>${spring.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.springframework</groupId>
+                                  <artifactId>spring-core</artifactId>
+                                  <version>${spring.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.springframework</groupId>
+                                  <artifactId>spring-context</artifactId>
+                                  <version>${spring.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                              <artifactItem>
+                                  <groupId>org.springframework</groupId>
+                                  <artifactId>spring-test</artifactId>
+                                  <version>${spring.version}</version>
+                                  <type>jar</type>
+                                  <overWrite>true</overWrite>
+                                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                              </artifactItem>
+                          </artifactItems>
+                      </configuration>
+                  </plugin>
+                  <!-- Invoke the Assembly plugin to create the ZIP archive -->
+                  <plugin>
+                      <artifactId>maven-assembly-plugin</artifactId>
+                      <version>2.6</version>
+                      <configuration>
+                          <descriptors>
+                              <descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>
+                          </descriptors>
+                          <tarLongFileMode>gnu</tarLongFileMode>
+                      </configuration>
+                      <executions>
+                          <execution>
+                              <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                              <phase>package</phase>
+                              <goals>
+                                  <goal>single</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+                  <!-- We use the normal ZIP utility as the Assembly plugin adds entries in a non-deterministic order which can
+                       break the Toolkit as it relies on directories coming before the files within the directory -->
+                  <plugin>
+                      <artifactId>exec-maven-plugin</artifactId>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <executions>
+                          <execution>
+                              <phase>package</phase>
+                              <goals>
+                                  <goal>exec</goal>
+                              </goals>
+                              <configuration>
+                                  <workingDirectory>target/${project.build.finalName}-${zip.assembly.id}/</workingDirectory>
+                                  <executable>zip</executable>
+                                  <commandlineArgs>
+                                      -r ../${zip.artifact.name} .
+                                  </commandlineArgs>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+  </profiles>
 </project>
