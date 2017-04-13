@@ -20,8 +20,6 @@ package com.amazonaws.services.s3.model.transform;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.model.*;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -62,6 +60,7 @@ import com.amazonaws.services.s3.model.inventory.InventoryFilter;
 import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
 import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
 import com.amazonaws.services.s3.model.inventory.InventorySchedule;
+import com.amazonaws.util.IOUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -164,6 +163,7 @@ public class XmlResponsesSaxParser {
         if (log.isDebugEnabled()) {
             log.debug("Sanitizing XML document destined for handler " + handler.getClass());
         }
+        BufferedReader br = null;
         try {
 
              /*
@@ -172,11 +172,13 @@ public class XmlResponsesSaxParser {
               * sending the document to the XML parser.
               */
             StringBuilder listingDocBuffer = new StringBuilder();
-            BufferedReader br = new BufferedReader(
+            br = new BufferedReader(
                 new InputStreamReader(inputStream, Constants.DEFAULT_ENCODING));
 
             char[] buf = new char[8192];
             int read = -1;
+            br = new BufferedReader(
+                new InputStreamReader(inputStream, Constants.DEFAULT_ENCODING));
             while ((read = br.read(buf)) != -1) {
                 listingDocBuffer.append(buf, 0, read);
             }
@@ -203,6 +205,8 @@ public class XmlResponsesSaxParser {
             }
             throw new AmazonClientException("Failed to sanitize XML document destined for handler "
                 + handler.getClass(), t);
+        } finally {
+            IOUtils.closeQuietly(br, log);
         }
     }
 
