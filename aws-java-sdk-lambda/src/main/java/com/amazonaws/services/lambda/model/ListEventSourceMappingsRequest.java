@@ -42,7 +42,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -111,7 +111,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -123,7 +123,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *        suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *        example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *        you specify only the function name, it is limited to 64 character in length.
+     *        you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -140,7 +140,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return The name of the Lambda function.</p>
@@ -151,7 +151,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         can also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *         suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *         example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *         you specify only the function name, it is limited to 64 character in length.
+     *         you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -168,7 +168,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -180,7 +180,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *        suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *        example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *        you specify only the function name, it is limited to 64 character in length.
+     *        you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

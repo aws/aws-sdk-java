@@ -30,7 +30,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
      * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
-     * operations, such as <a>Invoke</a>.
+     * operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN. If you specify only
+     * the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -39,14 +40,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      */
@@ -128,18 +130,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String kMSKeyArn;
+    /**
+     * <p>
+     * The list of tags (key-value pairs) assigned to the new function.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
      * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
-     * operations, such as <a>Invoke</a>.
+     * operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN. If you specify only
+     * the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        The name you want to assign to the function you are uploading. The function names appear in the console
      *        and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *        AWS Lambda API operations, such as <a>Invoke</a>.
+     *        AWS Lambda API operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     *        If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -150,12 +160,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
      * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
-     * operations, such as <a>Invoke</a>.
+     * operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN. If you specify only
+     * the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return The name you want to assign to the function you are uploading. The function names appear in the console
      *         and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *         AWS Lambda API operations, such as <a>Invoke</a>.
+     *         AWS Lambda API operations, such as <a>Invoke</a>. Note that the length constraint applies only to the
+     *         ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -166,13 +178,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name you want to assign to the function you are uploading. The function names appear in the console and are
      * returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda API
-     * operations, such as <a>Invoke</a>.
+     * operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN. If you specify only
+     * the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        The name you want to assign to the function you are uploading. The function names appear in the console
      *        and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other
-     *        AWS Lambda API operations, such as <a>Invoke</a>.
+     *        AWS Lambda API operations, such as <a>Invoke</a>. Note that the length constraint applies only to the ARN.
+     *        If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,28 +200,30 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3".
      *        </p>
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
-     *        version as soon as possible.
+     *        functions will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or
+     *        nodejs4.3 runtime version as soon as possible.
      *        </p>
      * @see Runtime
      */
@@ -221,27 +237,29 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      * 
      * @return The runtime environment for the Lambda function you are uploading.</p>
      *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
+     *         To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *         value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *         runtime v4.3, set the value to "nodejs4.3".
      *         </p>
      *         <note>
      *         <p>
      *         You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *         functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
-     *         version as soon as possible.
+     *         functions will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or
+     *         nodejs4.3 runtime version as soon as possible.
      *         </p>
      * @see Runtime
      */
@@ -255,28 +273,30 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3".
      *        </p>
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
-     *        version as soon as possible.
+     *        functions will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or
+     *        nodejs4.3 runtime version as soon as possible.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -292,28 +312,30 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3".
      *        </p>
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
-     *        version as soon as possible.
+     *        functions will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or
+     *        nodejs4.3 runtime version as soon as possible.
      *        </p>
      * @see Runtime
      */
@@ -327,28 +349,30 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * The runtime environment for the Lambda function you are uploading.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3".
      * </p>
      * <note>
      * <p>
      * You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing functions
-     * will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime version as soon as
-     * possible.
+     * will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or nodejs4.3 runtime
+     * version as soon as possible.
      * </p>
      * </note>
      * 
      * @param runtime
      *        The runtime environment for the Lambda function you are uploading.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3".
      *        </p>
      *        <note>
      *        <p>
      *        You can no longer create functions using the v0.10.42 runtime version as of November, 2016. Existing
-     *        functions will be supported until early 2017, but we recommend you migrate them to nodejs4.3 runtime
-     *        version as soon as possible.
+     *        functions will be supported until early 2017, but we recommend you migrate them to either nodejs6.10 or
+     *        nodejs4.3 runtime version as soon as possible.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -896,6 +920,70 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The list of tags (key-value pairs) assigned to the new function.
+     * </p>
+     * 
+     * @return The list of tags (key-value pairs) assigned to the new function.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of tags (key-value pairs) assigned to the new function.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags (key-value pairs) assigned to the new function.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
+    }
+
+    /**
+     * <p>
+     * The list of tags (key-value pairs) assigned to the new function.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags (key-value pairs) assigned to the new function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateFunctionRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -931,7 +1019,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -998,6 +1088,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1019,6 +1113,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -30,7 +30,7 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      */
     private Long totalCodeSize;
@@ -60,11 +60,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      */
 
     public void setTotalCodeSize(Long totalCodeSize) {
@@ -73,10 +73,10 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
-     * @return Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * @return Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      */
 
     public Long getTotalCodeSize() {
@@ -85,11 +85,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

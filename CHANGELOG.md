@@ -1,3 +1,8 @@
+# __1.11.120__ __2017-04-18__
+## __AWS Lambda__
+  - ### Features
+    - You can use tags to group and filter your Lambda functions, making it easier to analyze them for billing allocation purposes. For more information, see Tagging Lambda Functions.  You can now write or upgrade your Lambda functions using Python version 3.6. For more information, see Programming Model for Authoring Lambda Functions in Python. Note: Features will be rolled out in the US regions on 4/19.
+
 # __1.11.119__ __2017-04-11__
 ## __AWS Batch__
   - ### Features

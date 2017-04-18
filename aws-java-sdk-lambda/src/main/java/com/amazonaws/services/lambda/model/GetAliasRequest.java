@@ -28,7 +28,8 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
-     * existing Lambda function so you must specify the function name.
+     * existing Lambda function so you must specify the function name. Note that the length constraint applies only to
+     * the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -42,12 +43,14 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
-     * existing Lambda function so you must specify the function name.
+     * existing Lambda function so you must specify the function name. Note that the length constraint applies only to
+     * the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        Function name for which the alias is created. An alias is a subresource that exists only in the context of
-     *        an existing Lambda function so you must specify the function name.
+     *        an existing Lambda function so you must specify the function name. Note that the length constraint applies
+     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -57,11 +60,13 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
-     * existing Lambda function so you must specify the function name.
+     * existing Lambda function so you must specify the function name. Note that the length constraint applies only to
+     * the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return Function name for which the alias is created. An alias is a subresource that exists only in the context
-     *         of an existing Lambda function so you must specify the function name.
+     *         of an existing Lambda function so you must specify the function name. Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -71,12 +76,14 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Function name for which the alias is created. An alias is a subresource that exists only in the context of an
-     * existing Lambda function so you must specify the function name.
+     * existing Lambda function so you must specify the function name. Note that the length constraint applies only to
+     * the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        Function name for which the alias is created. An alias is a subresource that exists only in the context of
-     *        an existing Lambda function so you must specify the function name.
+     *        an existing Lambda function so you must specify the function name. Note that the length constraint applies
+     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,8 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -41,10 +42,6 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
      * </p>
      */
     private String runtime;
@@ -132,11 +129,13 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function.
+     *        The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     *        function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -145,10 +144,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the function.
+     * @return The name of the function. Note that the length constraint applies only to the ARN. If you specify only
+     *         the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -157,11 +158,13 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function.
+     *        The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     *        function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,16 +217,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -235,15 +231,8 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
-     * @return The runtime environment for the Lambda function.</p>
-     *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
+     * @return The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -255,16 +244,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -278,16 +260,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -299,16 +274,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */

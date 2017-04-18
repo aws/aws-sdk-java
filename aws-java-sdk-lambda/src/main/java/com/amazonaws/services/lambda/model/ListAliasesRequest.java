@@ -27,7 +27,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function name for which the alias is created.
+     * Lambda function name for which the alias is created. Note that the length constraint applies only to the ARN. If
+     * you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -55,11 +56,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function name for which the alias is created.
+     * Lambda function name for which the alias is created. Note that the length constraint applies only to the ARN. If
+     * you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Lambda function name for which the alias is created.
+     *        Lambda function name for which the alias is created. Note that the length constraint applies only to the
+     *        ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -68,10 +71,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function name for which the alias is created.
+     * Lambda function name for which the alias is created. Note that the length constraint applies only to the ARN. If
+     * you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return Lambda function name for which the alias is created.
+     * @return Lambda function name for which the alias is created. Note that the length constraint applies only to the
+     *         ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -80,11 +85,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function name for which the alias is created.
+     * Lambda function name for which the alias is created. Note that the length constraint applies only to the ARN. If
+     * you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Lambda function name for which the alias is created.
+     *        Lambda function name for which the alias is created. Note that the length constraint applies only to the
+     *        ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

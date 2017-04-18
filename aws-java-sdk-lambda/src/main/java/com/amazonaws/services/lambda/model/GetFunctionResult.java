@@ -29,6 +29,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     private FunctionConfiguration configuration;
 
     private FunctionCodeLocation code;
+    /**
+     * <p>
+     * Returns the list of tags associated with the function.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * @param configuration
@@ -83,6 +89,70 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Returns the list of tags associated with the function.
+     * </p>
+     * 
+     * @return Returns the list of tags associated with the function.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Returns the list of tags associated with the function.
+     * </p>
+     * 
+     * @param tags
+     *        Returns the list of tags associated with the function.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
+    }
+
+    /**
+     * <p>
+     * Returns the list of tags associated with the function.
+     * </p>
+     * 
+     * @param tags
+     *        Returns the list of tags associated with the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFunctionResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetFunctionResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFunctionResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -96,7 +166,9 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getCode() != null)
-            sb.append("Code: ").append(getCode());
+            sb.append("Code: ").append(getCode()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +191,10 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -129,6 +205,7 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

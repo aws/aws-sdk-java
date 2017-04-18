@@ -28,7 +28,8 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
-     * to which it is pointing.
+     * to which it is pointing. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -42,12 +43,14 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
-     * to which it is pointing.
+     * to which it is pointing. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        The Lambda function name for which the alias is created. Deleting an alias does not delete the function
-     *        version to which it is pointing.
+     *        version to which it is pointing. Note that the length constraint applies only to the ARN. If you specify
+     *        only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -57,11 +60,13 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
-     * to which it is pointing.
+     * to which it is pointing. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return The Lambda function name for which the alias is created. Deleting an alias does not delete the function
-     *         version to which it is pointing.
+     *         version to which it is pointing. Note that the length constraint applies only to the ARN. If you specify
+     *         only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -71,12 +76,14 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Lambda function name for which the alias is created. Deleting an alias does not delete the function version
-     * to which it is pointing.
+     * to which it is pointing. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
      *        The Lambda function name for which the alias is created. Deleting an alias does not delete the function
-     *        version to which it is pointing.
+     *        version to which it is pointing. Note that the length constraint applies only to the ARN. If you specify
+     *        only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

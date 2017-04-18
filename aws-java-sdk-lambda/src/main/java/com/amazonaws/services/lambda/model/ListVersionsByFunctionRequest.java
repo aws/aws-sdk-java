@@ -32,7 +32,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * you can specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
      * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -57,7 +57,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * you can specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
      * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -65,7 +65,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      *        ) or you can specify Amazon Resource Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -78,14 +78,14 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * you can specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
      * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return Function name whose versions to list. You can specify a function name (for example,
      *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example,
      *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -98,7 +98,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * you can specify Amazon Resource Name (ARN) of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
      * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -106,7 +106,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      *        ) or you can specify Amazon Resource Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

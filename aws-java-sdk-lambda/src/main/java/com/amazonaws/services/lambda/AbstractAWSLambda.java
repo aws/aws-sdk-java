@@ -139,6 +139,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +155,16 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
