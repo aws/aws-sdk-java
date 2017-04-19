@@ -51,7 +51,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     private java.nio.ByteBuffer qRCodePNG;
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      */
     private User user;
@@ -268,11 +268,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      */
 
     public void setUser(User user) {
@@ -281,10 +281,10 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
-     * @return The user to whom the MFA device is assigned.
+     * @return The IAM user associated with this virtual MFA device.
      */
 
     public User getUser() {
@@ -293,11 +293,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

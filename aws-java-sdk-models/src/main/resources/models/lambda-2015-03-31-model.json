@@ -1725,7 +1725,7 @@
         },
         "SourceArn" : {
           "deprecated" : false,
-          "documentation" : "<p>This is optional; however, when granting a source permission to invoke your function, you should specify this field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source can invoke the function.</p> <important> <p>If you add a permission for the source without providing the source ARN, any AWS account that creates a mapping to your function ARN can send events to invoke your Lambda function from that source.</p> </important>",
+          "documentation" : "<p>This is optional; however, when granting permission to invoke your function, you should specify this field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source can invoke the function.</p> <important> <p>If you add a permission without providing the source ARN, any AWS account that creates a mapping to your function ARN can send events to invoke your Lambda function.</p> </important>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2300,7 +2300,7 @@
         },
         "DeadLetterConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic. </p>",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2466,6 +2466,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "TracingConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains your function's tracing settings.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TracingConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "VpcConfig" : {
           "deprecated" : false,
           "documentation" : "<p>If your Lambda function accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>",
@@ -2513,7 +2527,7 @@
     },
     "DeadLetterConfig" : {
       "deprecated" : false,
-      "documentation" : "<p>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>",
+      "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3577,7 +3591,7 @@
         },
         "DeadLetterConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3740,6 +3754,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Timeout",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TracingConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains your function's tracing settings.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TracingConfigResponse",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -6846,6 +6874,99 @@
       "value" : null,
       "wrapper" : false
     },
+    "TracingConfig" : {
+      "deprecated" : false,
+      "documentation" : "<p>The parent object that contains your function's tracing settings.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Mode" : {
+          "deprecated" : false,
+          "documentation" : "<p>Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service if it contains a tracing header with \"sampled=1\". If Active, Lambda will respect any tracing header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TracingMode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TracingConfigResponse" : {
+      "deprecated" : false,
+      "documentation" : "<p>Parent object of the tracing information associated with your Lambda function.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Mode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The tracing mode associated with your Lambda function.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TracingMode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TracingMode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "Active", "PassThrough" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "UnsupportedMediaTypeException" : {
       "deprecated" : false,
       "documentation" : "<p>The content type of the <code>Invoke</code> request body is not JSON.</p>",
@@ -7225,7 +7346,7 @@
       "members" : {
         "DeadLetterConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>",
+          "documentation" : "<p>The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7360,6 +7481,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Timeout",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TracingConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The parent object that contains your function's tracing settings.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TracingConfig",
           "streaming" : false,
           "xmlNamespace" : null
         },

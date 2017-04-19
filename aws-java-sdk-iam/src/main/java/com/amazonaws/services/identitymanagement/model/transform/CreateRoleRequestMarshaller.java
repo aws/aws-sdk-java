@@ -52,6 +52,10 @@ public class CreateRoleRequestMarshaller implements Marshaller<Request<CreateRol
             request.addParameter("AssumeRolePolicyDocument", StringUtils.fromString(createRoleRequest.getAssumeRolePolicyDocument()));
         }
 
+        if (createRoleRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createRoleRequest.getDescription()));
+        }
+
         return request;
     }
 

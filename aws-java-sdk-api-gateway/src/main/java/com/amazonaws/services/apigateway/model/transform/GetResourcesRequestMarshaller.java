@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class GetResourcesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
+    private static final MarshallingInfo<List> EMBED_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("embed").build();
 
     private static final GetResourcesRequestMarshaller instance = new GetResourcesRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class GetResourcesRequestMarshaller {
             protocolMarshaller.marshall(getResourcesRequest.getRestApiId(), RESTAPIID_BINDING);
             protocolMarshaller.marshall(getResourcesRequest.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(getResourcesRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getResourcesRequest.getEmbed(), EMBED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

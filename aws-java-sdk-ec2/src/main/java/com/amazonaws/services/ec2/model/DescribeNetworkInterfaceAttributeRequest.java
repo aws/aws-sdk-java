@@ -36,7 +36,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
     private String networkInterfaceId;
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      */
     private String attribute;
@@ -83,11 +83,11 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The attribute of the network interface.
+     *        The attribute of the network interface. This parameter is required.
      * @see NetworkInterfaceAttribute
      */
 
@@ -97,10 +97,10 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      * 
-     * @return The attribute of the network interface.
+     * @return The attribute of the network interface. This parameter is required.
      * @see NetworkInterfaceAttribute
      */
 
@@ -110,11 +110,11 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The attribute of the network interface.
+     *        The attribute of the network interface. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceAttribute
      */
@@ -126,11 +126,11 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The attribute of the network interface.
+     *        The attribute of the network interface. This parameter is required.
      * @see NetworkInterfaceAttribute
      */
 
@@ -140,11 +140,11 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The attribute of the network interface.
+     * The attribute of the network interface. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The attribute of the network interface.
+     *        The attribute of the network interface. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceAttribute
      */

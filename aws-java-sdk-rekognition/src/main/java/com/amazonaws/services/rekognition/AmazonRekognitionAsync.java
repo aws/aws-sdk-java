@@ -442,6 +442,45 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
+     * <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might
+     * want to filter images that contain nudity, but not images containing suggestive content.
+     * </p>
+     * <p>
+     * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
+     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * </p>
+     * 
+     * @param detectModerationLabelsRequest
+     * @return A Java Future containing the result of the DetectModerationLabels operation returned by the service.
+     * @sample AmazonRekognitionAsync.DetectModerationLabels
+     */
+    java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest detectModerationLabelsRequest);
+
+    /**
+     * <p>
+     * Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
+     * <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might
+     * want to filter images that contain nudity, but not images containing suggestive content.
+     * </p>
+     * <p>
+     * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
+     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * </p>
+     * 
+     * @param detectModerationLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectModerationLabels operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DetectModerationLabels
+     */
+    java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest detectModerationLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler);
+
+    /**
+     * <p>
      * Detects faces in the input image and adds them to the specified collection.
      * </p>
      * <p>

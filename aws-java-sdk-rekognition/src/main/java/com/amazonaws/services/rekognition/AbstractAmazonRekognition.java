@@ -68,6 +68,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DetectModerationLabelsResult detectModerationLabels(DetectModerationLabelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public IndexFacesResult indexFaces(IndexFacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

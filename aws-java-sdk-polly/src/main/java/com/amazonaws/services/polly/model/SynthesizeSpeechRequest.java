@@ -35,7 +35,8 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<String> lexiconNames;
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      */
     private String outputFormat;
@@ -52,6 +53,12 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String sampleRate;
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     */
+    private java.util.List<String> speechMarkTypes;
     /**
      * <p>
      * Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format
@@ -166,11 +173,13 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      * 
      * @param outputFormat
-     *        The audio format in which the resulting stream will be encoded.
+     *        The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis,
+     *        or pcm. For speech marks, this will be json.
      * @see OutputFormat
      */
 
@@ -180,10 +189,12 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      * 
-     * @return The audio format in which the resulting stream will be encoded.
+     * @return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis,
+     *         or pcm. For speech marks, this will be json.
      * @see OutputFormat
      */
 
@@ -193,11 +204,13 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      * 
      * @param outputFormat
-     *        The audio format in which the resulting stream will be encoded.
+     *        The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis,
+     *        or pcm. For speech marks, this will be json.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */
@@ -209,11 +222,13 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      * 
      * @param outputFormat
-     *        The audio format in which the resulting stream will be encoded.
+     *        The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis,
+     *        or pcm. For speech marks, this will be json.
      * @see OutputFormat
      */
 
@@ -223,11 +238,13 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The audio format in which the resulting stream will be encoded.
+     * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm.
+     * For speech marks, this will be json.
      * </p>
      * 
      * @param outputFormat
-     *        The audio format in which the resulting stream will be encoded.
+     *        The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis,
+     *        or pcm. For speech marks, this will be json.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */
@@ -313,6 +330,104 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
 
     public SynthesizeSpeechRequest withSampleRate(String sampleRate) {
         setSampleRate(sampleRate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     * 
+     * @return The type of speech marks returned for the input text.
+     * @see SpeechMarkType
+     */
+
+    public java.util.List<String> getSpeechMarkTypes() {
+        return speechMarkTypes;
+    }
+
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     * 
+     * @param speechMarkTypes
+     *        The type of speech marks returned for the input text.
+     * @see SpeechMarkType
+     */
+
+    public void setSpeechMarkTypes(java.util.Collection<String> speechMarkTypes) {
+        if (speechMarkTypes == null) {
+            this.speechMarkTypes = null;
+            return;
+        }
+
+        this.speechMarkTypes = new java.util.ArrayList<String>(speechMarkTypes);
+    }
+
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param speechMarkTypes
+     *        The type of speech marks returned for the input text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpeechMarkType
+     */
+
+    public SynthesizeSpeechRequest withSpeechMarkTypes(String... speechMarkTypes) {
+        if (this.speechMarkTypes == null) {
+            setSpeechMarkTypes(new java.util.ArrayList<String>(speechMarkTypes.length));
+        }
+        for (String ele : speechMarkTypes) {
+            this.speechMarkTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     * 
+     * @param speechMarkTypes
+     *        The type of speech marks returned for the input text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpeechMarkType
+     */
+
+    public SynthesizeSpeechRequest withSpeechMarkTypes(java.util.Collection<String> speechMarkTypes) {
+        setSpeechMarkTypes(speechMarkTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of speech marks returned for the input text.
+     * </p>
+     * 
+     * @param speechMarkTypes
+     *        The type of speech marks returned for the input text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpeechMarkType
+     */
+
+    public SynthesizeSpeechRequest withSpeechMarkTypes(SpeechMarkType... speechMarkTypes) {
+        java.util.ArrayList<String> speechMarkTypesCopy = new java.util.ArrayList<String>(speechMarkTypes.length);
+        for (SpeechMarkType value : speechMarkTypes) {
+            speechMarkTypesCopy.add(value.toString());
+        }
+        if (getSpeechMarkTypes() == null) {
+            setSpeechMarkTypes(speechMarkTypesCopy);
+        } else {
+            getSpeechMarkTypes().addAll(speechMarkTypesCopy);
+        }
         return this;
     }
 
@@ -545,6 +660,8 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("OutputFormat: ").append(getOutputFormat()).append(",");
         if (getSampleRate() != null)
             sb.append("SampleRate: ").append(getSampleRate()).append(",");
+        if (getSpeechMarkTypes() != null)
+            sb.append("SpeechMarkTypes: ").append(getSpeechMarkTypes()).append(",");
         if (getText() != null)
             sb.append("Text: ").append(getText()).append(",");
         if (getTextType() != null)
@@ -577,6 +694,10 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getSampleRate() != null && other.getSampleRate().equals(this.getSampleRate()) == false)
             return false;
+        if (other.getSpeechMarkTypes() == null ^ this.getSpeechMarkTypes() == null)
+            return false;
+        if (other.getSpeechMarkTypes() != null && other.getSpeechMarkTypes().equals(this.getSpeechMarkTypes()) == false)
+            return false;
         if (other.getText() == null ^ this.getText() == null)
             return false;
         if (other.getText() != null && other.getText().equals(this.getText()) == false)
@@ -600,6 +721,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getLexiconNames() == null) ? 0 : getLexiconNames().hashCode());
         hashCode = prime * hashCode + ((getOutputFormat() == null) ? 0 : getOutputFormat().hashCode());
         hashCode = prime * hashCode + ((getSampleRate() == null) ? 0 : getSampleRate().hashCode());
+        hashCode = prime * hashCode + ((getSpeechMarkTypes() == null) ? 0 : getSpeechMarkTypes().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
         hashCode = prime * hashCode + ((getTextType() == null) ? 0 : getTextType().hashCode());
         hashCode = prime * hashCode + ((getVoiceId() == null) ? 0 : getVoiceId().hashCode());

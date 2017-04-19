@@ -16,10 +16,12 @@ package com.amazonaws.services.polly.presign;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.polly.model.OutputFormat;
+import com.amazonaws.services.polly.model.SpeechMarkType;
+import com.amazonaws.services.polly.model.SynthesizeSpeechRequest;
 import com.amazonaws.services.polly.model.TextType;
 import com.amazonaws.services.polly.model.VoiceId;
-
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -42,6 +44,8 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     private String textType;
 
     private String voiceId;
+
+    private java.util.List<String> speechMarkTypes;
 
 
     /**
@@ -94,10 +98,16 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
         return this;
     }
 
+    /**
+     * @see SynthesizeSpeechRequest#getLexiconNames()
+     */
     public java.util.List<String> getLexiconNames() {
         return lexiconNames;
     }
 
+    /**
+     * @see SynthesizeSpeechRequest#setLexiconNames(Collection)
+     */
     public void setLexiconNames(java.util.Collection<String> lexiconNames) {
         if (lexiconNames == null) {
             this.lexiconNames = null;
@@ -112,7 +122,7 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
      * #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the
      * existing values. </p>
      *
-     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SynthesizeSpeechRequest#withLexiconNames(String...)
      */
     public SynthesizeSpeechPresignRequest withLexiconNames(String... lexiconNames) {
         if (this.lexiconNames == null) {
@@ -125,7 +135,7 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SynthesizeSpeechRequest#withLexiconNames(Collection)
      */
     public SynthesizeSpeechPresignRequest withLexiconNames(java.util.Collection<String> lexiconNames) {
         setLexiconNames(lexiconNames);
@@ -133,22 +143,21 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see OutputFormat
+     * @see SynthesizeSpeechRequest#setOutputFormat(String)
      */
     public void setOutputFormat(String outputFormat) {
         this.outputFormat = outputFormat;
     }
 
     /**
-     * @see OutputFormat
+     * @see SynthesizeSpeechRequest#getOutputFormat()
      */
     public String getOutputFormat() {
         return this.outputFormat;
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OutputFormat
+     * @see SynthesizeSpeechRequest#withOutputFormat(String)
      */
     public SynthesizeSpeechPresignRequest withOutputFormat(String outputFormat) {
         setOutputFormat(outputFormat);
@@ -156,15 +165,14 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see OutputFormat
+     * @see SynthesizeSpeechRequest#setOutputFormat(OutputFormat)
      */
     public void setOutputFormat(OutputFormat outputFormat) {
         this.outputFormat = outputFormat.toString();
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see com.amazonaws.services.polly.model.OutputFormat
+     * @see SynthesizeSpeechRequest#withOutputFormat(OutputFormat)
      */
     public SynthesizeSpeechPresignRequest withOutputFormat(OutputFormat outputFormat) {
         setOutputFormat(outputFormat);
@@ -172,21 +180,21 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @param sampleRate
+     * @see SynthesizeSpeechRequest#setSampleRate(String)
      */
     public void setSampleRate(String sampleRate) {
         this.sampleRate = sampleRate;
     }
 
     /**
-     * @return
+     * @see SynthesizeSpeechRequest#getSampleRate()
      */
     public String getSampleRate() {
         return this.sampleRate;
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SynthesizeSpeechRequest#withSampleRate(String)
      */
     public SynthesizeSpeechPresignRequest withSampleRate(String sampleRate) {
         setSampleRate(sampleRate);
@@ -194,21 +202,21 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @param text
+     * @see SynthesizeSpeechRequest#setText(String)
      */
     public void setText(String text) {
         this.text = text;
     }
 
     /**
-     * @return
+     * @see SynthesizeSpeechRequest#getText()
      */
     public String getText() {
         return this.text;
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SynthesizeSpeechRequest#withText(String)
      */
     public SynthesizeSpeechPresignRequest withText(String text) {
         setText(text);
@@ -216,22 +224,21 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see TextType
+     * @see SynthesizeSpeechRequest#setTextType(String)
      */
     public void setTextType(String textType) {
         this.textType = textType;
     }
 
     /**
-     * @see TextType
+     * @see SynthesizeSpeechRequest#getTextType()
      */
     public String getTextType() {
         return this.textType;
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TextType
+     * @see SynthesizeSpeechRequest#withTextType(String)
      */
     public SynthesizeSpeechPresignRequest withTextType(String textType) {
         setTextType(textType);
@@ -239,15 +246,14 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see TextType
+     * @see SynthesizeSpeechRequest#setTextType(TextType)
      */
     public void setTextType(TextType textType) {
         this.textType = textType.toString();
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TextType
+     * @see SynthesizeSpeechRequest#withTextType(TextType)
      */
     public SynthesizeSpeechPresignRequest withTextType(TextType textType) {
         setTextType(textType);
@@ -255,22 +261,21 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see VoiceId
+     * @see SynthesizeSpeechRequest#setVoiceId(String)
      */
     public void setVoiceId(String voiceId) {
         this.voiceId = voiceId;
     }
 
     /**
-     * @see VoiceId
+     * @see SynthesizeSpeechRequest#getVoiceId()
      */
     public String getVoiceId() {
         return this.voiceId;
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VoiceId
+     * @see SynthesizeSpeechRequest#withVoiceId(String)
      */
     public SynthesizeSpeechPresignRequest withVoiceId(String voiceId) {
         setVoiceId(voiceId);
@@ -278,18 +283,81 @@ public class SynthesizeSpeechPresignRequest implements Serializable {
     }
 
     /**
-     * @see VoiceId
+     * @see SynthesizeSpeechRequest#setVoiceId(VoiceId)
      */
     public void setVoiceId(VoiceId voiceId) {
         this.voiceId = voiceId.toString();
     }
 
     /**
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VoiceId
+     * @see SynthesizeSpeechRequest#withVoiceId(VoiceId)
      */
     public SynthesizeSpeechPresignRequest withVoiceId(VoiceId voiceId) {
         setVoiceId(voiceId);
+        return this;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#getSpeechMarkTypes()
+     */
+    public java.util.List<String> getSpeechMarkTypes() {
+        return speechMarkTypes;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#setSpeechMarkTypes(Collection)
+     */
+    public void setSpeechMarkTypes(java.util.Collection<String> speechMarkTypes) {
+        if (speechMarkTypes == null) {
+            this.speechMarkTypes = null;
+            return;
+        }
+
+        this.speechMarkTypes = new java.util.ArrayList<String>(speechMarkTypes);
+    }
+
+    /**
+     * <p> <b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link
+     * #setSpeechMarkTypes(Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the
+     * existing values. </p>
+     *
+     *  @see SynthesizeSpeechRequest#withSpeechMarkTypes(String...)
+     */
+    public SynthesizeSpeechPresignRequest withSpeechMarkTypes(String... speechMarkTypes) {
+        if (this.speechMarkTypes == null) {
+            setSpeechMarkTypes(new java.util.ArrayList<String>(speechMarkTypes.length));
+        }
+        for (String ele : speechMarkTypes) {
+            this.speechMarkTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @see SynthesizeSpeechRequest#withSpeechMarkTypes(Collection)
+     */
+    public SynthesizeSpeechPresignRequest withSpeechMarkTypes(java.util.Collection<String> speechMarkTypes) {
+        setSpeechMarkTypes(speechMarkTypes);
+        return this;
+    }
+
+    /**
+     * <p> <b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link
+     * #setSpeechMarkTypes(Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the
+     * existing values. </p>
+     *
+     * @see SynthesizeSpeechRequest#withSpeechMarkTypes(SpeechMarkType...)
+     */
+    public SynthesizeSpeechPresignRequest withSpeechMarkTypes(SpeechMarkType... speechMarkTypes) {
+        java.util.ArrayList<String> speechMarkTypesCopy = new java.util.ArrayList<String>(speechMarkTypes.length);
+        for (SpeechMarkType value : speechMarkTypes) {
+            speechMarkTypesCopy.add(value.toString());
+        }
+        if (getSpeechMarkTypes() == null) {
+            setSpeechMarkTypes(speechMarkTypesCopy);
+        } else {
+            getSpeechMarkTypes().addAll(speechMarkTypesCopy);
+        }
         return this;
     }
 }

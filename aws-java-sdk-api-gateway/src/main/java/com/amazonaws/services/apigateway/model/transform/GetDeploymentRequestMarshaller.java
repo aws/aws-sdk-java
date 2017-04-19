@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class GetDeploymentRequestMarshaller {
             .marshallLocationName("restapi_id").build();
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("deployment_id").build();
+    private static final MarshallingInfo<List> EMBED_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("embed").build();
 
     private static final GetDeploymentRequestMarshaller instance = new GetDeploymentRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class GetDeploymentRequestMarshaller {
         try {
             protocolMarshaller.marshall(getDeploymentRequest.getRestApiId(), RESTAPIID_BINDING);
             protocolMarshaller.marshall(getDeploymentRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(getDeploymentRequest.getEmbed(), EMBED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

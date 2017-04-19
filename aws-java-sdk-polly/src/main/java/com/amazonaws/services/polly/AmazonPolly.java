@@ -261,6 +261,11 @@ public interface AmazonPolly {
      *         is spelled correctly. Then try again.
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
+     * @throws MarksNotSupportedForFormatException
+     *         Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only
+     *         available for content in <code>json</code> format.
+     * @throws SsmlMarksNotSupportedForTextTypeException
+     *         SSML speech marks are not supported for plain text-type input.
      * @sample AmazonPolly.SynthesizeSpeech
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>

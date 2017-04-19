@@ -125,6 +125,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      */
@@ -1023,6 +1027,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      * 
@@ -1030,6 +1038,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of
      *        <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e.,
      *        Dedicated Instances).</p>
+     *        <p>
+     *        <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the
+     *        <code>default</code> or <code>dedicated</code> values only.
+     *        </p>
      *        <p>
      *        Default: <code>default</code>
      * @see Tenancy
@@ -1046,12 +1058,20 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      * 
      * @return The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of
      *         <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e.,
      *         Dedicated Instances).</p>
+     *         <p>
+     *         <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the
+     *         <code>default</code> or <code>dedicated</code> values only.
+     *         </p>
      *         <p>
      *         Default: <code>default</code>
      * @see Tenancy
@@ -1068,6 +1088,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      * 
@@ -1075,6 +1099,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of
      *        <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e.,
      *        Dedicated Instances).</p>
+     *        <p>
+     *        <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the
+     *        <code>default</code> or <code>dedicated</code> values only.
+     *        </p>
      *        <p>
      *        Default: <code>default</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1093,6 +1121,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      * 
@@ -1100,6 +1132,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of
      *        <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e.,
      *        Dedicated Instances).</p>
+     *        <p>
+     *        <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the
+     *        <code>default</code> or <code>dedicated</code> values only.
+     *        </p>
      *        <p>
      *        Default: <code>default</code>
      * @see Tenancy
@@ -1116,6 +1152,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Instances).
      * </p>
      * <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or
+     * <code>dedicated</code> values only.
+     * </p>
+     * <p>
      * Default: <code>default</code>
      * </p>
      * 
@@ -1123,6 +1163,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of
      *        <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e.,
      *        Dedicated Instances).</p>
+     *        <p>
+     *        <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the
+     *        <code>default</code> or <code>dedicated</code> values only.
+     *        </p>
      *        <p>
      *        Default: <code>default</code>
      * @return Returns a reference to this object so that method calls can be chained together.

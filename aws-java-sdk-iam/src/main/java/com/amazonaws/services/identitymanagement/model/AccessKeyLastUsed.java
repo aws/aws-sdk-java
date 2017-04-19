@@ -56,7 +56,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     private java.util.Date lastUsedDate;
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field is null when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -80,7 +80,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is null when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -261,7 +261,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field is null when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -283,7 +283,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * 
      * @param serviceName
-     *        The name of the AWS service with which this access key was most recently used. This field is null
+     *        The name of the AWS service with which this access key was most recently used. This field displays "N/A"
      *        when:</p>
      *        <ul>
      *        <li>
@@ -310,7 +310,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field is null when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -331,7 +331,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The name of the AWS service with which this access key was most recently used. This field is null
+     * @return The name of the AWS service with which this access key was most recently used. This field displays "N/A"
      *         when:</p>
      *         <ul>
      *         <li>
@@ -358,7 +358,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field is null when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -380,7 +380,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * 
      * @param serviceName
-     *        The name of the AWS service with which this access key was most recently used. This field is null
+     *        The name of the AWS service with which this access key was most recently used. This field displays "N/A"
      *        when:</p>
      *        <ul>
      *        <li>
@@ -409,7 +409,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is null when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -436,7 +436,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. This field is null when:</p>
+     *        The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -467,7 +467,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is null when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -493,7 +493,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * Services General Reference.
      * </p>
      * 
-     * @return The AWS region where this access key was most recently used. This field is null when:</p>
+     * @return The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -524,7 +524,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is null when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
      * </p>
      * <ul>
      * <li>
@@ -551,7 +551,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. This field is null when:</p>
+     *        The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
      *        <ul>
      *        <li>
      *        <p>

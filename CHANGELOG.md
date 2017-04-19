@@ -1,3 +1,36 @@
+# __1.11.121__ __2017-04-19__
+## __AWS CodeStar__
+  - ### Features
+    - AWS CodeStar is a cloud-based service for creating, managing, and working with software development projects on AWS. An AWS CodeStar project creates and integrates AWS services for your project development toolchain. AWS CodeStar also manages the permissions required for project users.
+
+## __AWS Identity and Access Management (IAM)__
+  - ### Features
+    - This changes introduces a new IAM role type, Service Linked Role, which works like a normal role but must be managed via services' control. 
+
+## __AWS Lambda__
+  - ### Features
+    - Lambda integration with CloudDebugger service to enable customers to enable tracing for the Lambda functions and send trace information to the CloudDebugger service.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Add support for "embed" property.
+
+## __Amazon EC2__
+  - ### Features
+    - Adds support for creating an Amazon FPGA Image (AFI) from a specified design checkpoint (DCP).
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex is a service for building conversational interfaces into any application using voice and text.
+
+## __Amazon Polly__
+  - ### Features
+    - API Update for Amazon Polly: Add support for speech marks
+
+## __Amazon Rekognition__
+  - ### Features
+    - Given an image, the API detects explicit or suggestive adult content in the image and returns a list of corresponding labels with confidence scores, as well as a taxonomy (parent-child relation) for each label.
+
 # __1.11.120__ __2017-04-18__
 ## __AWS Lambda__
   - ### Features

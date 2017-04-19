@@ -224,6 +224,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateFpgaImageResult createFpgaImage(CreateFpgaImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateImageResult createImage(CreateImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -443,6 +443,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest request) {
+
+        return detectModerationLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(final DetectModerationLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler) {
+        final DetectModerationLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectModerationLabelsResult>() {
+            @Override
+            public DetectModerationLabelsResult call() throws Exception {
+                DetectModerationLabelsResult result = null;
+
+                try {
+                    result = executeDetectModerationLabels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(IndexFacesRequest request) {
 
         return indexFacesAsync(request, null);

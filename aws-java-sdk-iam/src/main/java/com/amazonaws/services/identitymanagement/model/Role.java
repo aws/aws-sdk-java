@@ -17,28 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about an IAM role.
+ * Contains information about an IAM role. This structure is returned as a response element in several APIs that
+ * interact with roles.
  * </p>
- * <p>
- * This data type is used as a response element in the following actions:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateRole</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>GetRole</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListRoles</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role" target="_top">AWS API Documentation</a>
  */
@@ -71,7 +52,7 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      */
     private String arn;
@@ -88,6 +69,12 @@ public class Role implements Serializable, Cloneable {
      * </p>
      */
     private String assumeRolePolicyDocument;
+    /**
+     * <p>
+     * A description of the role that you provide.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -237,13 +224,13 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      *        policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>Using IAM</i> guide.
+     *        Identifiers</a> in the <i>IAM User Guide</i> guide.
      */
 
     public void setArn(String arn) {
@@ -254,12 +241,12 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them
      *         in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>Using IAM</i> guide.
+     *         Identifiers</a> in the <i>IAM User Guide</i> guide.
      */
 
     public String getArn() {
@@ -270,13 +257,13 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      *        policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>Using IAM</i> guide.
+     *        Identifiers</a> in the <i>IAM User Guide</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,6 +359,46 @@ public class Role implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A description of the role that you provide.
+     * </p>
+     * 
+     * @param description
+     *        A description of the role that you provide.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the role that you provide.
+     * </p>
+     * 
+     * @return A description of the role that you provide.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the role that you provide.
+     * </p>
+     * 
+     * @param description
+     *        A description of the role that you provide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -393,7 +420,9 @@ public class Role implements Serializable, Cloneable {
         if (getCreateDate() != null)
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getAssumeRolePolicyDocument() != null)
-            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument());
+            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +461,10 @@ public class Role implements Serializable, Cloneable {
             return false;
         if (other.getAssumeRolePolicyDocument() != null && other.getAssumeRolePolicyDocument().equals(this.getAssumeRolePolicyDocument()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -446,6 +479,7 @@ public class Role implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

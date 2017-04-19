@@ -315,8 +315,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the
-     * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use the
-     * <code>DescribeVpcPeeringConnections</code> request to view your outstanding VPC peering connection requests.
+     * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
+     * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
@@ -599,12 +599,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already associated with a different
-     * instance, it is disassociated from that instance and associated with the specified instance.
+     * instance, it is disassociated from that instance and associated with the specified instance. If you associate an
+     * Elastic IP address with an instance that has an existing Elastic IP address, the existing address is
+     * disassociated from the instance, but remains allocated to your account.
      * </p>
      * <p>
      * [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic IP address is associated
      * with the primary IP address. If the Elastic IP address is already associated with a different instance or a
-     * network interface, you get an error unless you allow reassociation.
+     * network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address
+     * with an instance or network interface that has an existing Elastic IP address.
      * </p>
      * <important>
      * <p>
@@ -2073,13 +2076,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're
-     * using AmazonProvidedDNS in another region, specify "region.compute.internal" (for example,
-     * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for example, "MyCompany.com"). This value
-     * is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating systems accept multiple
-     * domain names separated by spaces. However, Windows and other Linux operating systems treat the value as a single
-     * domain, which results in unexpected behavior. If your DHCP options set is associated with a VPC that has
-     * instances with multiple operating systems, specify only one domain name.
+     * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
+     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another region, specify
+     * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
+     * specify a domain name (for example, <code>MyCompany.com</code>). This value is used to complete unqualified DNS
+     * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
+     * However, Windows and other Linux operating systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC that has instances with multiple operating
+     * systems, specify only one domain name.
      * </p>
      * </li>
      * <li>
@@ -2250,6 +2254,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateFlowLogsResult> responseHandler = new StaxResponseHandler<CreateFlowLogsResult>(
                     new CreateFlowLogsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).
+     * </p>
+     * <p>
+     * The create operation is asynchronous. To verify that the AFI is ready for use, check the output logs.
+     * </p>
+     * <p>
+     * An AFI contains the FPGA bitstream that is ready to download to an FPGA. You can securely deploy an AFI on one or
+     * more FPGA-accelerated instances. For more information, see the <a href="https://github.com/aws/aws-fpga/">AWS
+     * FPGA Hardware Development Kit</a>.
+     * </p>
+     * 
+     * @param createFpgaImageRequest
+     * @return Result of the CreateFpgaImage operation returned by the service.
+     * @sample AmazonEC2.CreateFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFpgaImageResult createFpgaImage(CreateFpgaImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFpgaImage(request);
+    }
+
+    @SdkInternalApi
+    final CreateFpgaImageResult executeCreateFpgaImage(CreateFpgaImageRequest createFpgaImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFpgaImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFpgaImageRequest> request = null;
+        Response<CreateFpgaImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(createFpgaImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateFpgaImageResult> responseHandler = new StaxResponseHandler<CreateFpgaImageResult>(
+                    new CreateFpgaImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3211,7 +3271,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <important>
      * <p>
-     * AWS reserves both the first four and the last IP address in each subnet's CIDR block. They're not available for
+     * AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block. They're not available for
      * use.
      * </p>
      * </important>
@@ -3533,8 +3593,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
-     * A <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping CIDR blocks results in the VPC
-     * peering connection having a status of <code>failed</code>.
+     * If you try to create a VPC peering connection between VPCs that have overlapping CIDR blocks, the VPC peering
+     * connection status goes to <code>failed</code>.
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
@@ -8698,9 +8758,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the DNS hostname of a linked
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
-     * from a linked EC2-Classic instance. For more information about ClassicLink, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the Amazon
-     * Elastic Compute Cloud User Guide.
+     * from a linked EC2-Classic instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
@@ -9135,7 +9195,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must
-     * not contain any running instances with Elastic IP addresses.
+     * not contain any running instances with Elastic IP addresses or public IPv4 addresses.
      * </p>
      * 
      * @param detachInternetGatewayRequest
@@ -9452,8 +9512,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP addresses when
      * addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked. For more
      * information about ClassicLink, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the Amazon
-     * Elastic Compute Cloud User Guide.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
@@ -9869,8 +9929,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * tables have existing routes for address ranges within the <code>10.0.0.0/8</code> IP address range, excluding
      * local routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the Amazon
-     * Elastic Compute Cloud User Guide.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableVpcClassicLinkRequest

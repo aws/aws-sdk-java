@@ -1444,6 +1444,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFpgaImageResult> createFpgaImageAsync(CreateFpgaImageRequest request) {
+
+        return createFpgaImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFpgaImageResult> createFpgaImageAsync(final CreateFpgaImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFpgaImageRequest, CreateFpgaImageResult> asyncHandler) {
+        final CreateFpgaImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFpgaImageResult>() {
+            @Override
+            public CreateFpgaImageResult call() throws Exception {
+                CreateFpgaImageResult result = null;
+
+                try {
+                    result = executeCreateFpgaImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest request) {
 
         return createImageAsync(request, null);

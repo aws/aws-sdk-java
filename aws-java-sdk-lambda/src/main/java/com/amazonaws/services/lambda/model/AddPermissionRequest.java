@@ -65,14 +65,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String principal;
     /**
      * <p>
-     * This is optional; however, when granting a source permission to invoke your function, you should specify this
-     * field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
-     * specified source can invoke the function.
+     * This is optional; however, when granting permission to invoke your function, you should specify this field with
+     * the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source
+     * can invoke the function.
      * </p>
      * <important>
      * <p>
-     * If you add a permission for the source without providing the source ARN, any AWS account that creates a mapping
-     * to your function ARN can send events to invoke your Lambda function from that source.
+     * If you add a permission without providing the source ARN, any AWS account that creates a mapping to your function
+     * ARN can send events to invoke your Lambda function.
      * </p>
      * </important>
      */
@@ -357,24 +357,24 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is optional; however, when granting a source permission to invoke your function, you should specify this
-     * field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
-     * specified source can invoke the function.
+     * This is optional; however, when granting permission to invoke your function, you should specify this field with
+     * the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source
+     * can invoke the function.
      * </p>
      * <important>
      * <p>
-     * If you add a permission for the source without providing the source ARN, any AWS account that creates a mapping
-     * to your function ARN can send events to invoke your Lambda function from that source.
+     * If you add a permission without providing the source ARN, any AWS account that creates a mapping to your function
+     * ARN can send events to invoke your Lambda function.
      * </p>
      * </important>
      * 
      * @param sourceArn
-     *        This is optional; however, when granting a source permission to invoke your function, you should specify
-     *        this field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from
-     *        the specified source can invoke the function.</p> <important>
+     *        This is optional; however, when granting permission to invoke your function, you should specify this field
+     *        with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
+     *        specified source can invoke the function.</p> <important>
      *        <p>
-     *        If you add a permission for the source without providing the source ARN, any AWS account that creates a
-     *        mapping to your function ARN can send events to invoke your Lambda function from that source.
+     *        If you add a permission without providing the source ARN, any AWS account that creates a mapping to your
+     *        function ARN can send events to invoke your Lambda function.
      *        </p>
      */
 
@@ -384,23 +384,23 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is optional; however, when granting a source permission to invoke your function, you should specify this
-     * field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
-     * specified source can invoke the function.
+     * This is optional; however, when granting permission to invoke your function, you should specify this field with
+     * the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source
+     * can invoke the function.
      * </p>
      * <important>
      * <p>
-     * If you add a permission for the source without providing the source ARN, any AWS account that creates a mapping
-     * to your function ARN can send events to invoke your Lambda function from that source.
+     * If you add a permission without providing the source ARN, any AWS account that creates a mapping to your function
+     * ARN can send events to invoke your Lambda function.
      * </p>
      * </important>
      * 
-     * @return This is optional; however, when granting a source permission to invoke your function, you should specify
-     *         this field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from
-     *         the specified source can invoke the function.</p> <important>
+     * @return This is optional; however, when granting permission to invoke your function, you should specify this
+     *         field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
+     *         specified source can invoke the function.</p> <important>
      *         <p>
-     *         If you add a permission for the source without providing the source ARN, any AWS account that creates a
-     *         mapping to your function ARN can send events to invoke your Lambda function from that source.
+     *         If you add a permission without providing the source ARN, any AWS account that creates a mapping to your
+     *         function ARN can send events to invoke your Lambda function.
      *         </p>
      */
 
@@ -410,24 +410,24 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is optional; however, when granting a source permission to invoke your function, you should specify this
-     * field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
-     * specified source can invoke the function.
+     * This is optional; however, when granting permission to invoke your function, you should specify this field with
+     * the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the specified source
+     * can invoke the function.
      * </p>
      * <important>
      * <p>
-     * If you add a permission for the source without providing the source ARN, any AWS account that creates a mapping
-     * to your function ARN can send events to invoke your Lambda function from that source.
+     * If you add a permission without providing the source ARN, any AWS account that creates a mapping to your function
+     * ARN can send events to invoke your Lambda function.
      * </p>
      * </important>
      * 
      * @param sourceArn
-     *        This is optional; however, when granting a source permission to invoke your function, you should specify
-     *        this field with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from
-     *        the specified source can invoke the function.</p> <important>
+     *        This is optional; however, when granting permission to invoke your function, you should specify this field
+     *        with the Amazon Resource Name (ARN) as its value. This ensures that only events generated from the
+     *        specified source can invoke the function.</p> <important>
      *        <p>
-     *        If you add a permission for the source without providing the source ARN, any AWS account that creates a
-     *        mapping to your function ARN can send events to invoke your Lambda function from that source.
+     *        If you add a permission without providing the source ARN, any AWS account that creates a mapping to your
+     *        function ARN can send events to invoke your Lambda function.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

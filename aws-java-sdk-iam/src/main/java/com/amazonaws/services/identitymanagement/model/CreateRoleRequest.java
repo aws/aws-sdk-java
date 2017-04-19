@@ -49,8 +49,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
-     * named both "PRODROLE" and "prodrole".
+     * the following characters: _+=,.@-
+     * </p>
+     * <p>
+     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      */
     private String roleName;
@@ -66,6 +69,12 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String assumeRolePolicyDocument;
+    /**
+     * <p>
+     * A customer-provided description of the role.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -177,8 +186,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
-     * named both "PRODROLE" and "prodrole".
+     * the following characters: _+=,.@-
+     * </p>
+     * <p>
+     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @param roleName
@@ -186,8 +198,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
-     *        create roles named both "PRODROLE" and "prodrole".
+     *        any of the following characters: _+=,.@-
+     *        </p>
+     *        <p>
+     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     *        "prodrole".
      */
 
     public void setRoleName(String roleName) {
@@ -201,16 +216,22 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
-     * named both "PRODROLE" and "prodrole".
+     * the following characters: _+=,.@-
+     * </p>
+     * <p>
+     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @return The name of the role to create.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
-     *         create roles named both "PRODROLE" and "prodrole".
+     *         any of the following characters: _+=,.@-
+     *         </p>
+     *         <p>
+     *         Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     *         "prodrole".
      */
 
     public String getRoleName() {
@@ -224,8 +245,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
-     * named both "PRODROLE" and "prodrole".
+     * the following characters: _+=,.@-
+     * </p>
+     * <p>
+     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @param roleName
@@ -233,8 +257,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
-     *        create roles named both "PRODROLE" and "prodrole".
+     *        any of the following characters: _+=,.@-
+     *        </p>
+     *        <p>
+     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
+     *        "prodrole".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,6 +347,46 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A customer-provided description of the role.
+     * </p>
+     * 
+     * @param description
+     *        A customer-provided description of the role.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A customer-provided description of the role.
+     * </p>
+     * 
+     * @return A customer-provided description of the role.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A customer-provided description of the role.
+     * </p>
+     * 
+     * @param description
+     *        A customer-provided description of the role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -335,7 +402,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getAssumeRolePolicyDocument() != null)
-            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument());
+            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -362,6 +431,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getAssumeRolePolicyDocument() != null && other.getAssumeRolePolicyDocument().equals(this.getAssumeRolePolicyDocument()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -373,6 +446,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

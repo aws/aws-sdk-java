@@ -894,6 +894,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceLinkedRoleResult> createServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request) {
+
+        return createServiceLinkedRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceLinkedRoleResult> createServiceLinkedRoleAsync(final CreateServiceLinkedRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateServiceLinkedRoleRequest, CreateServiceLinkedRoleResult> asyncHandler) {
+        final CreateServiceLinkedRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateServiceLinkedRoleResult>() {
+            @Override
+            public CreateServiceLinkedRoleResult call() throws Exception {
+                CreateServiceLinkedRoleResult result = null;
+
+                try {
+                    result = executeCreateServiceLinkedRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
             CreateServiceSpecificCredentialRequest request) {
 
@@ -4409,6 +4442,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeUpdateOpenIDConnectProviderThumbprint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(UpdateRoleDescriptionRequest request) {
+
+        return updateRoleDescriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(final UpdateRoleDescriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoleDescriptionRequest, UpdateRoleDescriptionResult> asyncHandler) {
+        final UpdateRoleDescriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoleDescriptionResult>() {
+            @Override
+            public UpdateRoleDescriptionResult call() throws Exception {
+                UpdateRoleDescriptionResult result = null;
+
+                try {
+                    result = executeUpdateRoleDescription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

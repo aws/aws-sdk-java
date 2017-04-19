@@ -34,6 +34,8 @@ public class SynthesizeSpeechRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputFormat").build();
     private static final MarshallingInfo<String> SAMPLERATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SampleRate").build();
+    private static final MarshallingInfo<List> SPEECHMARKTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpeechMarkTypes").build();
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Text").build();
     private static final MarshallingInfo<String> TEXTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class SynthesizeSpeechRequestMarshaller {
             protocolMarshaller.marshall(synthesizeSpeechRequest.getLexiconNames(), LEXICONNAMES_BINDING);
             protocolMarshaller.marshall(synthesizeSpeechRequest.getOutputFormat(), OUTPUTFORMAT_BINDING);
             protocolMarshaller.marshall(synthesizeSpeechRequest.getSampleRate(), SAMPLERATE_BINDING);
+            protocolMarshaller.marshall(synthesizeSpeechRequest.getSpeechMarkTypes(), SPEECHMARKTYPES_BINDING);
             protocolMarshaller.marshall(synthesizeSpeechRequest.getText(), TEXT_BINDING);
             protocolMarshaller.marshall(synthesizeSpeechRequest.getTextType(), TEXTTYPE_BINDING);
             protocolMarshaller.marshall(synthesizeSpeechRequest.getVoiceId(), VOICEID_BINDING);

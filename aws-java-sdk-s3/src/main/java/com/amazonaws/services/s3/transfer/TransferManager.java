@@ -1748,6 +1748,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param sourceBucketName
      *            The name of the bucket from where the object is to be copied.
@@ -1768,6 +1773,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *            If any errors occurred in Amazon S3 while processing the
      *            request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
 
     public Copy copy(String sourceBucketName, String sourceKey,
@@ -1796,6 +1803,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param copyObjectRequest
      *            The request containing all the parameters for the copy.
@@ -1809,6 +1821,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
     public Copy copy(final CopyObjectRequest copyObjectRequest){
         return copy(copyObjectRequest,null);
@@ -1833,6 +1847,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param copyObjectRequest
      *            The request containing all the parameters for the copy.
@@ -1847,6 +1866,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
     public Copy copy(final CopyObjectRequest copyObjectRequest,
                      final TransferStateChangeListener stateChangeListener) throws
@@ -1860,6 +1881,10 @@ public class TransferManager {
      * Schedules a new transfer to copy data from one Amazon S3 location to
      * another Amazon S3 location. This method is non-blocking and returns
      * immediately (i.e. before the copy has finished).
+     * </p>
+     * <p>
+     * Note: You need to use this method if the {@link TransferManager} is created with
+     * a regional S3 client and the source & destination buckets are in different regions.
      * </p>
      * <p>
      * <code>TransferManager</code> doesn't support copying of encrypted objects

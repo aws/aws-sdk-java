@@ -112,6 +112,10 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateFunctionCodeResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TracingConfig", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionCodeResult.setTracingConfig(TracingConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

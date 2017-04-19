@@ -109,7 +109,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private VpcConfigResponse vpcConfig;
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -126,6 +126,12 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String kMSKeyArn;
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     */
+    private TracingConfigResponse tracingConfig;
 
     /**
      * <p>
@@ -703,11 +709,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      */
 
@@ -717,10 +723,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
      *         SNS topic.
      */
 
@@ -730,11 +736,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -831,6 +837,46 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     */
+
+    public void setTracingConfig(TracingConfigResponse tracingConfig) {
+        this.tracingConfig = tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @return The parent object that contains your function's tracing settings.
+     */
+
+    public TracingConfigResponse getTracingConfig() {
+        return this.tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFunctionConfigurationResult withTracingConfig(TracingConfigResponse tracingConfig) {
+        setTracingConfig(tracingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -872,7 +918,9 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
+        if (getTracingConfig() != null)
+            sb.append("TracingConfig: ").append(getTracingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -951,6 +999,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
+        if (other.getTracingConfig() == null ^ this.getTracingConfig() == null)
+            return false;
+        if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -975,6 +1027,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         return hashCode;
     }
 

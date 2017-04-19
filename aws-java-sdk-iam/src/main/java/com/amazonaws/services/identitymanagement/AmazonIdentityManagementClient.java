@@ -310,6 +310,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     private void init() {
         exceptionUnmarshallers.add(new MalformedPolicyDocumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnmodifiableEntityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PasswordPolicyViolationExceptionUnmarshaller());
@@ -410,7 +411,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds the specified IAM role to the specified instance profile.
+     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
+     * this limit cannot be increased.
      * </p>
      * <note>
      * <p>
@@ -435,6 +437,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddRoleToInstanceProfile
@@ -603,14 +609,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Attaches the specified managed policy to the specified IAM role.
+     * Attaches the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the
+     * managed policy becomes part of the role's permission (access) policy.
      * </p>
+     * <note>
      * <p>
-     * When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access)
-     * policy. You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the
-     * same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using
-     * <a>UpdateAssumeRolePolicy</a>.
+     * You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time
+     * as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
      * </p>
+     * </note>
      * <p>
      * Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy in a role, use
      * <a>PutRolePolicy</a>. For more information about policies, see <a
@@ -628,6 +635,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachRolePolicy
@@ -1362,6 +1373,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws MalformedPolicyDocumentException
@@ -1481,6 +1494,76 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateSAMLProviderResult> responseHandler = new StaxResponseHandler<CreateSAMLProviderResult>(
                     new CreateSAMLProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and when
+     * the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted
+     * role, which could put your AWS resources into an unknown state. Allowing the service to control the role helps
+     * improve service stability and proper cleanup when a service and its role are no longer needed.
+     * </p>
+     * <p>
+     * The name of the role is autogenerated by combining the string that you specify for the
+     * <code>AWSServiceName</code> parameter with the string that you specify for the <code>CustomSuffix</code>
+     * parameter. The resulting name must be unique in your account or the request fails.
+     * </p>
+     * <p>
+     * To attach a policy to this service-linked role, you must make the request using the AWS service that depends on
+     * this role.
+     * </p>
+     * 
+     * @param createServiceLinkedRoleRequest
+     * @return Result of the CreateServiceLinkedRole operation returned by the service.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error message describes the limit exceeded.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.CreateServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateServiceLinkedRoleResult createServiceLinkedRole(CreateServiceLinkedRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateServiceLinkedRole(request);
+    }
+
+    @SdkInternalApi
+    final CreateServiceLinkedRoleResult executeCreateServiceLinkedRole(CreateServiceLinkedRoleRequest createServiceLinkedRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createServiceLinkedRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateServiceLinkedRoleRequest> request = null;
+        Response<CreateServiceLinkedRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(createServiceLinkedRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<CreateServiceLinkedRoleResult>(
+                    new CreateServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2448,6 +2531,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRole
@@ -2509,6 +2596,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRolePolicy
@@ -3138,6 +3229,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DetachRolePolicy
@@ -6365,6 +6460,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutRolePolicy
@@ -6553,8 +6652,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the
-     * instance profile. Removing a role from an instance profile that is associated with a running instance break any
-     * applications running on the instance.
+     * instance profile. Removing a role from an instance profile that is associated with a running instance might break
+     * any applications running on the instance.
      * </p>
      * </important>
      * <p>
@@ -6572,6 +6671,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveRoleFromInstanceProfile
@@ -7169,6 +7272,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAssumeRolePolicy
@@ -7415,6 +7522,63 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult> responseHandler = new StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult>(
                     new UpdateOpenIDConnectProviderThumbprintResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the description of a role.
+     * </p>
+     * 
+     * @param updateRoleDescriptionRequest
+     * @return Result of the UpdateRoleDescription operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.UpdateRoleDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateRoleDescriptionResult updateRoleDescription(UpdateRoleDescriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRoleDescription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRoleDescriptionResult executeUpdateRoleDescription(UpdateRoleDescriptionRequest updateRoleDescriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRoleDescriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRoleDescriptionRequest> request = null;
+        Response<UpdateRoleDescriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRoleDescriptionRequestMarshaller().marshall(super.beforeMarshalling(updateRoleDescriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateRoleDescriptionResult> responseHandler = new StaxResponseHandler<UpdateRoleDescriptionResult>(
+                    new UpdateRoleDescriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

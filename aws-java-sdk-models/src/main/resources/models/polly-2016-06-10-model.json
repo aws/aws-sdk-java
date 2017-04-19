@@ -265,6 +265,18 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ServiceFailureException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MarksNotSupportedForFormatException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "SsmlMarksNotSupportedForTextTypeException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1376,6 +1388,45 @@
       "value" : null,
       "wrapper" : false
     },
+    "MarksNotSupportedForFormatException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 400
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "MaxLexemeLengthExceededException" : {
       "deprecated" : false,
       "documentation" : "<p>The maximum size of the lexeme would be exceeded by this operation.</p>",
@@ -1478,7 +1529,7 @@
     "OutputFormat" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "mp3", "ogg_vorbis", "pcm" ],
+      "enum" : [ "json", "mp3", "ogg_vorbis", "pcm" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -1669,6 +1720,100 @@
       "value" : null,
       "wrapper" : false
     },
+    "SpeechMarkType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "sentence", "ssml", "viseme", "word" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SpeechMarkTypeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 4,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SpeechMarkType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SsmlMarksNotSupportedForTextTypeException" : {
+      "deprecated" : false,
+      "documentation" : "<p>SSML speech marks are not supported for plain text-type input.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 400
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SynthesizeSpeechInput" : {
       "deprecated" : false,
       "documentation" : null,
@@ -1697,7 +1842,7 @@
         },
         "OutputFormat" : {
           "deprecated" : false,
-          "documentation" : "<p> The audio format in which the resulting stream will be encoded. </p>",
+          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1720,6 +1865,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "SampleRate",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SpeechMarkTypes" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of speech marks returned for the input text.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SpeechMarkTypeList",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -1803,7 +1962,7 @@
         },
         "ContentType" : {
           "deprecated" : false,
-          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>",
+          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

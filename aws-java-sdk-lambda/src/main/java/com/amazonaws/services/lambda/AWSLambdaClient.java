@@ -84,17 +84,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2UnexpectedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EC2AccessDeniedException").withModeledClass(
                                     com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecurityGroupIDException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
                                     com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
@@ -102,20 +93,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withModeledClass(
                                     com.amazonaws.services.lambda.model.KMSAccessDeniedException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ResourceConflictException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
                                     com.amazonaws.services.lambda.model.ServiceException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EC2ThrottledException").withModeledClass(
                                     com.amazonaws.services.lambda.model.EC2ThrottledException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ENILimitReachedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
                                     com.amazonaws.services.lambda.model.KMSInvalidStateException.class))
@@ -126,6 +108,27 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withModeledClass(
                                     com.amazonaws.services.lambda.model.KMSDisabledException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EC2UnexpectedException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecurityGroupIDException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.ResourceConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.ENILimitReachedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withModeledClass(
                                     com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
                     .addErrorMetadata(
@@ -134,9 +137,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withModeledClass(
                                     com.amazonaws.services.lambda.model.RequestTooLargeException.class))

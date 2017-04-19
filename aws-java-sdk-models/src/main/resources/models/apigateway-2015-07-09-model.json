@@ -10144,6 +10144,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "embed" : {
+          "deprecated" : false,
+          "documentation" : "<p>A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>\"apisummary\"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "embed",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListOfString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "restApiId" : {
           "deprecated" : false,
           "documentation" : "<p>The identifier of the <a>RestApi</a> resource for the <a>Deployment</a> resource to get information about.</p>",
@@ -11268,6 +11282,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "embed" : {
+          "deprecated" : false,
+          "documentation" : "<p>A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>\"methods\"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "embed",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListOfString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "resourceId" : {
           "deprecated" : false,
           "documentation" : "<p>The identifier for the <a>Resource</a> resource.</p>",
@@ -11318,6 +11346,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "embed" : {
+          "deprecated" : false,
+          "documentation" : "<p>A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must be a single-valued list and contain the <code>\"methods\"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "embed",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListOfString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "limit" : {
           "deprecated" : false,
           "documentation" : "<p>The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.</p>",
