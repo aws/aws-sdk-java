@@ -229,15 +229,13 @@ public interface AmazonDirectConnect {
      * fails.
      * </p>
      * <p>
-     * Virtual interfaces that are directly associated with the connection are not automatically migrated. You can
-     * delete them or associate them with the target LAG using <a>AssociateVirtualInterface</a>. If the connection was
-     * originally associated with a different LAG, the virtual interfaces remain associated with the original LAG.
+     * Any virtual interfaces that are directly associated with the connection are automatically re-associated with the
+     * LAG. If the connection was originally associated with a different LAG, the virtual interfaces remain associated
+     * with the original LAG.
      * </p>
      * <p>
-     * For interconnects, hosted connections are not automatically migrated. You can delete them, or the owner of the
-     * physical connection can associate them with the target LAG using <a>AssociateHostedConnection</a>. After all
-     * hosted connections have been migrated, the interconnect can be migrated into the LAG. If the interconnect is
-     * already associated with a LAG, the hosted connections remain associated with the original LAG.
+     * For interconnects, any hosted connections are automatically re-associated with the LAG. If the interconnect was
+     * originally associated with a different LAG, the hosted connections remain associated with the original LAG.
      * </p>
      * 
      * @param associateConnectionWithLagRequest

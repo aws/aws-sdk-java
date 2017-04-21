@@ -29,6 +29,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Client for accessing Amazon Route 53 Domains asynchronously. Each asynchronous method will return a Java Future
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <p>
+ * Amazon Route 53 API actions let you register domain names and perform related operations.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

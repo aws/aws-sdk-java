@@ -24,7 +24,8 @@ public enum RuleOperator {
     LESS_THAN("LESS_THAN"),
     GREATER_THAN("GREATER_THAN"),
     IN("IN"),
-    NOT_IN("NOT_IN");
+    NOT_IN("NOT_IN"),
+    CONTAINS("CONTAINS");
 
     private String value;
 

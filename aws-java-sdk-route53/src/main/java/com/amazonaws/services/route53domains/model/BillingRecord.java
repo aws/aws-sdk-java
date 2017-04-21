@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information for one billing record.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/BillingRecord" target="_top">AWS API
  *      Documentation</a>
@@ -27,10 +30,10 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the billing record applies to. If the domain name contains characters other than a-z,
+     * 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more
+     * information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      * </p>
      */
     private String domainName;
@@ -38,26 +41,11 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      */
     private String operation;
     /**
      * <p>
      * The ID of the invoice that is associated with the billing record.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String invoiceId;
@@ -65,17 +53,11 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The date that the operation was billed, in Unix format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
      */
     private java.util.Date billDate;
     /**
      * <p>
      * The price that you were charged for the operation, in US dollars.
-     * </p>
-     * <p>
-     * Type: Double
      * </p>
      * <p>
      * Example value: 12.0
@@ -85,16 +67,18 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the billing record applies to. If the domain name contains characters other than a-z,
+     * 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more
+     * information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain that the billing record applies to. If the domain name contains characters other
+     *        than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      */
 
     public void setDomainName(String domainName) {
@@ -103,15 +87,17 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the billing record applies to. If the domain name contains characters other than a-z,
+     * 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more
+     * information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of the domain that the billing record applies to. If the domain name contains characters other
+     *         than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *         Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      */
 
     public String getDomainName() {
@@ -120,16 +106,18 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the billing record applies to. If the domain name contains characters other than a-z,
+     * 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more
+     * information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain that the billing record applies to. If the domain name contains characters other
+     *        than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,32 +130,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      * 
      * @param operation
-     *        The operation that you were charged for.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values:
-     *        <ul>
-     *        <li><code>REGISTER_DOMAIN</code></li>
-     *        <li><code>TRANSFER_IN_DOMAIN</code></li>
-     *        <li><code>RENEW_DOMAIN</code></li>
-     *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     *        </ul>
+     *        The operation that you were charged for.
      * @see OperationType
      */
 
@@ -179,31 +144,8 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      * 
-     * @return The operation that you were charged for.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Valid values:
-     *         <ul>
-     *         <li><code>REGISTER_DOMAIN</code></li>
-     *         <li><code>TRANSFER_IN_DOMAIN</code></li>
-     *         <li><code>RENEW_DOMAIN</code></li>
-     *         <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     *         </ul>
+     * @return The operation that you were charged for.
      * @see OperationType
      */
 
@@ -215,32 +157,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      * 
      * @param operation
-     *        The operation that you were charged for.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values:
-     *        <ul>
-     *        <li><code>REGISTER_DOMAIN</code></li>
-     *        <li><code>TRANSFER_IN_DOMAIN</code></li>
-     *        <li><code>RENEW_DOMAIN</code></li>
-     *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     *        </ul>
+     *        The operation that you were charged for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -254,32 +173,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      * 
      * @param operation
-     *        The operation that you were charged for.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values:
-     *        <ul>
-     *        <li><code>REGISTER_DOMAIN</code></li>
-     *        <li><code>TRANSFER_IN_DOMAIN</code></li>
-     *        <li><code>RENEW_DOMAIN</code></li>
-     *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     *        </ul>
+     *        The operation that you were charged for.
      * @see OperationType
      */
 
@@ -291,32 +187,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operation that you were charged for.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values:
-     * <ul>
-     * <li><code>REGISTER_DOMAIN</code></li>
-     * <li><code>TRANSFER_IN_DOMAIN</code></li>
-     * <li><code>RENEW_DOMAIN</code></li>
-     * <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     * </ul>
-     * </p>
      * 
      * @param operation
-     *        The operation that you were charged for.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values:
-     *        <ul>
-     *        <li><code>REGISTER_DOMAIN</code></li>
-     *        <li><code>TRANSFER_IN_DOMAIN</code></li>
-     *        <li><code>RENEW_DOMAIN</code></li>
-     *        <li><code>CHANGE_DOMAIN_OWNER</code></li>
-     *        </ul>
+     *        The operation that you were charged for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -330,14 +203,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the invoice that is associated with the billing record.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param invoiceId
-     *        The ID of the invoice that is associated with the billing record.</p>
-     *        <p>
-     *        Type: String
+     *        The ID of the invoice that is associated with the billing record.
      */
 
     public void setInvoiceId(String invoiceId) {
@@ -348,13 +216,8 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the invoice that is associated with the billing record.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The ID of the invoice that is associated with the billing record.</p>
-     *         <p>
-     *         Type: String
+     * @return The ID of the invoice that is associated with the billing record.
      */
 
     public String getInvoiceId() {
@@ -365,14 +228,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the invoice that is associated with the billing record.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param invoiceId
-     *        The ID of the invoice that is associated with the billing record.</p>
-     *        <p>
-     *        Type: String
+     *        The ID of the invoice that is associated with the billing record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,14 +243,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The date that the operation was billed, in Unix format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
      * 
      * @param billDate
-     *        The date that the operation was billed, in Unix format.</p>
-     *        <p>
-     *        Type: Double
+     *        The date that the operation was billed, in Unix format.
      */
 
     public void setBillDate(java.util.Date billDate) {
@@ -403,13 +256,8 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The date that the operation was billed, in Unix format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
      * 
-     * @return The date that the operation was billed, in Unix format.</p>
-     *         <p>
-     *         Type: Double
+     * @return The date that the operation was billed, in Unix format.
      */
 
     public java.util.Date getBillDate() {
@@ -420,14 +268,9 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The date that the operation was billed, in Unix format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
      * 
      * @param billDate
-     *        The date that the operation was billed, in Unix format.</p>
-     *        <p>
-     *        Type: Double
+     *        The date that the operation was billed, in Unix format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,17 +284,11 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * The price that you were charged for the operation, in US dollars.
      * </p>
      * <p>
-     * Type: Double
-     * </p>
-     * <p>
      * Example value: 12.0
      * </p>
      * 
      * @param price
      *        The price that you were charged for the operation, in US dollars.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
      *        <p>
      *        Example value: 12.0
      */
@@ -465,16 +302,10 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * The price that you were charged for the operation, in US dollars.
      * </p>
      * <p>
-     * Type: Double
-     * </p>
-     * <p>
      * Example value: 12.0
      * </p>
      * 
      * @return The price that you were charged for the operation, in US dollars.</p>
-     *         <p>
-     *         Type: Double
-     *         </p>
      *         <p>
      *         Example value: 12.0
      */
@@ -488,17 +319,11 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * The price that you were charged for the operation, in US dollars.
      * </p>
      * <p>
-     * Type: Double
-     * </p>
-     * <p>
      * Example value: 12.0
      * </p>
      * 
      * @param price
      *        The price that you were charged for the operation, in US dollars.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
      *        <p>
      *        Example value: 12.0
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -188,6 +188,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListOfferingPromotionsResult listOfferingPromotions(ListOfferingPromotionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOfferingTransactionsResult listOfferingTransactions(ListOfferingTransactionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

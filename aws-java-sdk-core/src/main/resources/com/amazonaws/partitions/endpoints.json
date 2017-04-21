@@ -935,6 +935,16 @@
             "us-east-1": {}
           }
         },
+        "models.lex": {
+          "defaults": {
+            "credentialScope": {
+              "service": "lex"
+            }
+          },
+          "endpoints": {
+            "us-east-1": {}
+          }
+        },
         "monitoring": {
           "defaults": {
             "protocols": [

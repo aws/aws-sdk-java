@@ -31,15 +31,6 @@ public class EnableDomainTransferLockResult extends com.amazonaws.AmazonWebServi
      * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
      * GetOperationDetail.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
      */
     private String operationId;
 
@@ -48,27 +39,10 @@ public class EnableDomainTransferLockResult extends com.amazonaws.AmazonWebServi
      * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
      * GetOperationDetail.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
      * 
      * @param operationId
      *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *        GetOperationDetail.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
+     *        GetOperationDetail.
      */
 
     public void setOperationId(String operationId) {
@@ -80,26 +54,9 @@ public class EnableDomainTransferLockResult extends com.amazonaws.AmazonWebServi
      * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
      * GetOperationDetail.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
      * 
      * @return Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *         GetOperationDetail.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
+     *         GetOperationDetail.
      */
 
     public String getOperationId() {
@@ -111,27 +68,10 @@ public class EnableDomainTransferLockResult extends com.amazonaws.AmazonWebServi
      * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
      * GetOperationDetail.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
      * 
      * @param operationId
      *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *        GetOperationDetail.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
+     *        GetOperationDetail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

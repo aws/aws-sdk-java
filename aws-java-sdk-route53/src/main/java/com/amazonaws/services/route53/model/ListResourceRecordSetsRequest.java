@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a ListResourceRecordSets request.
+ * A request for the resource record sets that are associated with a specified hosted zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets" target="_top">AWS API
@@ -30,14 +30,13 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the hosted zone that contains the resource record sets that you want to get.
+     * The ID of the hosted zone that contains the resource record sets that you want to list.
      * </p>
      */
     private String hostedZoneId;
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you want the
-     * <code>ListResourceRecordSets</code> request to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list.
      * </p>
      */
     private String startRecordName;
@@ -117,7 +116,7 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * methods to initialize any additional object members.
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone that contains the resource record sets that you want to get.
+     *        The ID of the hosted zone that contains the resource record sets that you want to list.
      */
     public ListResourceRecordSetsRequest(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -125,11 +124,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the hosted zone that contains the resource record sets that you want to get.
+     * The ID of the hosted zone that contains the resource record sets that you want to list.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone that contains the resource record sets that you want to get.
+     *        The ID of the hosted zone that contains the resource record sets that you want to list.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -138,10 +137,10 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the hosted zone that contains the resource record sets that you want to get.
+     * The ID of the hosted zone that contains the resource record sets that you want to list.
      * </p>
      * 
-     * @return The ID of the hosted zone that contains the resource record sets that you want to get.
+     * @return The ID of the hosted zone that contains the resource record sets that you want to list.
      */
 
     public String getHostedZoneId() {
@@ -150,11 +149,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the hosted zone that contains the resource record sets that you want to get.
+     * The ID of the hosted zone that contains the resource record sets that you want to list.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone that contains the resource record sets that you want to get.
+     *        The ID of the hosted zone that contains the resource record sets that you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,13 +164,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you want the
-     * <code>ListResourceRecordSets</code> request to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list.
      * </p>
      * 
      * @param startRecordName
-     *        The first name in the lexicographic ordering of domain names that you want the
-     *        <code>ListResourceRecordSets</code> request to list.
+     *        The first name in the lexicographic ordering of resource record sets that you want to list.
      */
 
     public void setStartRecordName(String startRecordName) {
@@ -180,12 +177,10 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you want the
-     * <code>ListResourceRecordSets</code> request to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list.
      * </p>
      * 
-     * @return The first name in the lexicographic ordering of domain names that you want the
-     *         <code>ListResourceRecordSets</code> request to list.
+     * @return The first name in the lexicographic ordering of resource record sets that you want to list.
      */
 
     public String getStartRecordName() {
@@ -194,13 +189,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of domain names that you want the
-     * <code>ListResourceRecordSets</code> request to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list.
      * </p>
      * 
      * @param startRecordName
-     *        The first name in the lexicographic ordering of domain names that you want the
-     *        <code>ListResourceRecordSets</code> request to list.
+     *        The first name in the lexicographic ordering of resource record sets that you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

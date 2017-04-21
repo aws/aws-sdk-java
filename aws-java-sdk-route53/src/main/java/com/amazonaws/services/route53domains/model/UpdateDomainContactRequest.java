@@ -30,20 +30,7 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update contact information for.
      * </p>
      */
     private String domainName;
@@ -51,35 +38,11 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private ContactDetail adminContact;
     /**
      * <p>
      * Provides detailed contact information.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private ContactDetail registrantContact;
@@ -87,53 +50,16 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private ContactDetail techContact;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update contact information for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to update contact information for.
      */
 
     public void setDomainName(String domainName) {
@@ -142,35 +68,10 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update contact information for.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
-     *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The name of the domain that you want to update contact information for.
      */
 
     public String getDomainName() {
@@ -179,36 +80,11 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update contact information for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to update contact information for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,31 +97,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param adminContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setAdminContact(ContactDetail adminContact) {
@@ -256,32 +110,8 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getAdminContact() {
@@ -292,31 +122,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param adminContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,31 +137,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param registrantContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setRegistrantContact(ContactDetail registrantContact) {
@@ -364,32 +150,8 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getRegistrantContact() {
@@ -400,31 +162,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param registrantContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,31 +177,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param techContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setTechContact(ContactDetail techContact) {
@@ -472,32 +190,8 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getTechContact() {
@@ -508,31 +202,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param techContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

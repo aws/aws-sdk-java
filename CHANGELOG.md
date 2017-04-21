@@ -1,3 +1,29 @@
+# __1.11.122__ __2017-04-20__
+## __AWS Device Farm__
+  - ### Features
+    - API Update for AWS Device Farm: Support for Deals and Promotions 
+
+## __AWS Direct Connect__
+  - ### Features
+    - Documentation updates for AWS Direct Connect.
+
+## __AWS Key Management Service (KMS)__
+  - ### Features
+    - Doc-only update for Key Management Service (KMS): Update docs for GrantConstraints and GenerateRandom
+
+## __Amazon Route 53__
+  - ### Features
+    - Release notes: SDK documentation now includes examples for ChangeResourceRecordSets for all types of resource record set, such as weighted, alias, and failover.
+
+
+## __Amazon Route 53 Domains__
+  - ### Features
+    - Adding examples and other documentation updates.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adding LoadBalancersDeleted waiter for Elasticloadbalancingv2
+
 # __1.11.121__ __2017-04-19__
 ## __AWS CodeStar__
   - ### Features

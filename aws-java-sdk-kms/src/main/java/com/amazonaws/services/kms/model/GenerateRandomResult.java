@@ -25,14 +25,14 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -46,7 +46,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The unpredictable byte string.
+     *        The random byte string.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -55,7 +55,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -65,7 +65,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return The unpredictable byte string.
+     * @return The random byte string.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -74,7 +74,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -88,7 +88,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The unpredictable byte string.
+     *        The random byte string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

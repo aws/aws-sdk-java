@@ -33,6 +33,8 @@ public class GetDevicePoolCompatibilityRequestMarshaller {
             .marshallLocationName("appArn").build();
     private static final MarshallingInfo<String> TESTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("testType").build();
+    private static final MarshallingInfo<StructuredPojo> TEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("test").build();
 
     private static final GetDevicePoolCompatibilityRequestMarshaller instance = new GetDevicePoolCompatibilityRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetDevicePoolCompatibilityRequestMarshaller {
             protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getDevicePoolArn(), DEVICEPOOLARN_BINDING);
             protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getAppArn(), APPARN_BINDING);
             protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getTestType(), TESTTYPE_BINDING);
+            protocolMarshaller.marshall(getDevicePoolCompatibilityRequest.getTest(), TEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

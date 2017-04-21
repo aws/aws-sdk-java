@@ -48,7 +48,9 @@ import com.amazonaws.services.route53domains.model.transform.*;
  * Client for accessing Amazon Route 53 Domains. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * 
+ * <p>
+ * Amazon Route 53 API actions let you register domain names and perform related operations.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -587,7 +589,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param enableDomainTransferLockRequest
-     *        The EnableDomainTransferLock request includes the following element.
+     *        A request to set the transfer lock for the specified domain.
      * @return Result of the EnableDomainTransferLock operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -708,8 +710,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns detailed information about the domain. The domain's contact information is also returned
-     * as part of the output.
+     * This operation returns detailed information about a specified domain that is associated with the current AWS
+     * account. Contact information for the domain is also returned as part of the output.
      * </p>
      * 
      * @param getDomainDetailRequest
@@ -767,18 +769,6 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * The GetDomainSuggestions operation returns a list of suggested domain names given a string, which can either be a
      * domain name or simply a word or phrase (without spaces).
      * </p>
-     * <p>
-     * Parameters:
-     * <ul>
-     * <li>DomainName (string): The basis for your domain suggestion search, a string with (or without) top-level domain
-     * specified.</li>
-     * <li>SuggestionCount (int): The number of domain suggestions to be returned, maximum 50, minimum 1.</li>
-     * <li>OnlyAvailable (bool): If true, availability check will be performed on suggestion results, and only available
-     * domains will be returned. If false, suggestions will be returned without checking whether the domain is actually
-     * available, and caller will have to call checkDomainAvailability for each suggestion to determine availability for
-     * registration.</li>
-     * </ul>
-     * </p>
      * 
      * @param getDomainSuggestionsRequest
      * @return Result of the GetDomainSuggestions operation returned by the service.
@@ -835,7 +825,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param getOperationDetailRequest
-     *        The GetOperationDetail request includes the following element.
+     *        The <a>GetOperationDetail</a> request includes the following element.
      * @return Result of the GetOperationDetail operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -1068,17 +1058,37 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * When you register a domain, Amazon Route 53 does the following:
      * </p>
      * <ul>
-     * <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name
+     * <li>
+     * <p>
+     * Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name
      * servers to your hosted zone and automatically updates your domain registration with the names of these name
-     * servers.</li>
-     * <li>Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in
-     * advance of the renewal date so you can choose whether to renew the registration.</li>
-     * <li>Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner,
-     * Gandi, instead of the information you entered for registrant, admin, and tech contacts.</li>
-     * <li>If registration is successful, returns an operation ID that you can use to track the progress and completion
-     * of the action. If the request is not completed successfully, the domain registrant is notified by email.</li>
-     * <li>Charges your AWS account an amount based on the top-level domain. For more information, see <a
-     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</li>
+     * servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
+     * the renewal date so you can choose whether to renew the registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner,
+     * Gandi, instead of the information you entered for registrant, admin, and tech contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If registration is successful, returns an operation ID that you can use to track the progress and completion of
+     * the action. If the request is not completed successfully, the domain registrant is notified by email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Charges your AWS account an amount based on the top-level domain. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registerDomainRequest
@@ -1147,8 +1157,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * <p>
      * We recommend that you renew your domain several weeks before the expiration date. Some TLD registries delete
      * domains before the expiration date if you haven't renewed far enough in advance. For more information about
-     * renewing domain registration, see <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
-     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing Registration for a
+     * Domain</a> in the Amazon Route 53 Developer Guide.
      * </p>
      * 
      * @param renewDomainRequest
@@ -1275,7 +1286,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
-     *        The RetrieveDomainAuthCode request includes the following element.
+     *        A request for the authorization code for the specified domain. To transfer a domain to another registrar,
+     *        you provide this value to the new registrar.
      * @return Result of the RetrieveDomainAuthCode operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -1334,7 +1346,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * For transfer requirements, a detailed procedure, and information about viewing the status of a domain transfer,
      * see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
-     * Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer Guide.
+     * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you
@@ -1343,9 +1355,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * transfer the registration, the previous registrar will not renew your domain registration and could end your DNS
      * service at any time.
      * </p>
-     * <note>Caution! If the registrar for your domain is also the DNS service provider for the domain and you don't
-     * transfer DNS service to another provider, your website, email, and the web applications associated with the
-     * domain might become unavailable.</note>
+     * <important>
+     * <p>
+     * If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS
+     * service to another provider, your website, email, and the web applications associated with the domain might
+     * become unavailable.
+     * </p>
+     * </important>
      * <p>
      * If the transfer is successful, this method returns an operation ID that you can use to track the progress and
      * completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified
@@ -1486,9 +1502,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * This operation only affects the privacy of the specified contact type (registrant, administrator, or tech).
-     * Successful acceptance returns an operation ID that you can use with GetOperationDetail to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * Successful acceptance returns an operation ID that you can use with <a>GetOperationDetail</a> to track the
+     * progress and completion of the action. If the request is not completed successfully, the domain registrant will
+     * be notified by email.
      * </p>
      * 
      * @param updateDomainContactPrivacyRequest
@@ -1561,7 +1577,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param updateDomainNameserversRequest
-     *        The UpdateDomainNameserver request includes the following elements.
+     *        Replaces the current set of name servers for the domain with the specified set of name servers. If you use
+     *        Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted
+     *        zone for the domain.</p>
+     *        <p>
+     *        If successful, this operation returns an operation ID that you can use to track the progress and
+     *        completion of the action. If the request is not completed successfully, the domain registrant will be
+     *        notified by email.
      * @return Result of the UpdateDomainNameservers operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -1681,7 +1703,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns all the domain-related billing records for the current AWS account for a specified period
+     * Returns all the domain-related billing records for the current AWS account for a specified period
      * </p>
      * 
      * @param viewBillingRequest

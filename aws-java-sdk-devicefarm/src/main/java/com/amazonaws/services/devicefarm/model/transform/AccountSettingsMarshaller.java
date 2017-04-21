@@ -37,6 +37,10 @@ public class AccountSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unmeteredRemoteAccessDevices").build();
     private static final MarshallingInfo<Integer> MAXJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxJobTimeoutMinutes").build();
+    private static final MarshallingInfo<StructuredPojo> TRIALMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trialMinutes").build();
+    private static final MarshallingInfo<Map> MAXSLOTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxSlots").build();
     private static final MarshallingInfo<Integer> DEFAULTJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultJobTimeoutMinutes").build();
 
@@ -60,6 +64,8 @@ public class AccountSettingsMarshaller {
             protocolMarshaller.marshall(accountSettings.getUnmeteredDevices(), UNMETEREDDEVICES_BINDING);
             protocolMarshaller.marshall(accountSettings.getUnmeteredRemoteAccessDevices(), UNMETEREDREMOTEACCESSDEVICES_BINDING);
             protocolMarshaller.marshall(accountSettings.getMaxJobTimeoutMinutes(), MAXJOBTIMEOUTMINUTES_BINDING);
+            protocolMarshaller.marshall(accountSettings.getTrialMinutes(), TRIALMINUTES_BINDING);
+            protocolMarshaller.marshall(accountSettings.getMaxSlots(), MAXSLOTS_BINDING);
             protocolMarshaller.marshall(accountSettings.getDefaultJobTimeoutMinutes(), DEFAULTJOBTIMEOUTMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

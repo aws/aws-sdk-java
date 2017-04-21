@@ -23,10 +23,22 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDomainSuggestionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     * request, the list contains only domains that are available for registration.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<DomainSuggestion> suggestionsList;
 
     /**
-     * @return
+     * <p>
+     * A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     * request, the list contains only domains that are available for registration.
+     * </p>
+     * 
+     * @return A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     *         request, the list contains only domains that are available for registration.
      */
 
     public java.util.List<DomainSuggestion> getSuggestionsList() {
@@ -37,7 +49,14 @@ public class GetDomainSuggestionsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     * request, the list contains only domains that are available for registration.
+     * </p>
+     * 
      * @param suggestionsList
+     *        A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     *        request, the list contains only domains that are available for registration.
      */
 
     public void setSuggestionsList(java.util.Collection<DomainSuggestion> suggestionsList) {
@@ -51,12 +70,18 @@ public class GetDomainSuggestionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     * request, the list contains only domains that are available for registration.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSuggestionsList(java.util.Collection)} or {@link #withSuggestionsList(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param suggestionsList
+     *        A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     *        request, the list contains only domains that are available for registration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +96,14 @@ public class GetDomainSuggestionsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     * request, the list contains only domains that are available for registration.
+     * </p>
+     * 
      * @param suggestionsList
+     *        A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the
+     *        request, the list contains only domains that are available for registration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

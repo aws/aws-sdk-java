@@ -36,26 +36,23 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the previous request.
+     * specified for the <code>marker</code> parameter in the previous request.
      * </p>
      */
     private String marker;
     /**
      * <p>
      * A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can
-     * get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code> again and
-     * specifying the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * health check in the next group of <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.
+     * health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      */
     private String nextMarker;
@@ -151,12 +148,12 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the previous request.
+     * specified for the <code>marker</code> parameter in the previous request.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value
-     *        that you specified for the marker parameter in the previous request.
+     *        that you specified for the <code>marker</code> parameter in the previous request.
      */
 
     public void setMarker(String marker) {
@@ -166,11 +163,11 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the previous request.
+     * specified for the <code>marker</code> parameter in the previous request.
      * </p>
      * 
      * @return For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value
-     *         that you specified for the marker parameter in the previous request.
+     *         that you specified for the <code>marker</code> parameter in the previous request.
      */
 
     public String getMarker() {
@@ -180,12 +177,12 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the previous request.
+     * specified for the <code>marker</code> parameter in the previous request.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value
-     *        that you specified for the marker parameter in the previous request.
+     *        that you specified for the <code>marker</code> parameter in the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,19 +194,14 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can
-     * get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code> again and
-     * specifying the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more health checks to be listed. If the response was truncated,
-     *        you can get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code>
-     *        again and specifying the value of the <code>NextMarker</code> element in the marker parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request
+     *        and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -219,19 +211,13 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can
-     * get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code> again and
-     * specifying the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more health checks to be listed. If the response was truncated,
-     *         you can get the next group of <code>maxitems</code> health checks by calling
-     *         <code>ListHealthChecks</code> again and specifying the value of the <code>NextMarker</code> element in
-     *         the marker parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request
+     *         and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -241,19 +227,14 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can
-     * get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code> again and
-     * specifying the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more health checks to be listed. If the response was truncated,
-     *        you can get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code>
-     *        again and specifying the value of the <code>NextMarker</code> element in the marker parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request
+     *        and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,19 +246,13 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can
-     * get the next group of <code>maxitems</code> health checks by calling <code>ListHealthChecks</code> again and
-     * specifying the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more health checks to be listed. If the response was truncated,
-     *         you can get the next group of <code>maxitems</code> health checks by calling
-     *         <code>ListHealthChecks</code> again and specifying the value of the <code>NextMarker</code> element in
-     *         the marker parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request
+     *         and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public Boolean isTruncated() {
@@ -287,15 +262,14 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * health check in the next group of <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.
+     * health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first health check in the next group of <code>maxitems</code> health checks. Call
-     *        <code>ListHealthChecks</code> again and specify the value of <code>NextMarker</code> in the marker
-     *        parameter.
+     *        first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code>
+     *        request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -305,14 +279,13 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * health check in the next group of <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.
+     * health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *         first health check in the next group of <code>maxitems</code> health checks. Call
-     *         <code>ListHealthChecks</code> again and specify the value of <code>NextMarker</code> in the marker
-     *         parameter.
+     *         first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code>
+     *         request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public String getNextMarker() {
@@ -322,15 +295,14 @@ public class ListHealthChecksResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * health check in the next group of <code>maxitems</code> health checks. Call <code>ListHealthChecks</code> again
-     * and specify the value of <code>NextMarker</code> in the marker parameter.
+     * health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify
+     * the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first health check in the next group of <code>maxitems</code> health checks. Call
-     *        <code>ListHealthChecks</code> again and specify the value of <code>NextMarker</code> in the marker
-     *        parameter.
+     *        first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code>
+     *        request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

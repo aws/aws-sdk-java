@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the traffic policy for which you want to update the comment.
+ * A complex type that contains information about the traffic policy that you want to update the comment for.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment" target="_top">AWS
@@ -30,13 +30,13 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      */
     private Integer version;
@@ -49,11 +49,11 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     *        The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
-     * @return The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * @return The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The value of <code>Id</code> for the traffic policy for which you want to update the comment.
+     *        The value of <code>Id</code> for the traffic policy that you want to update the comment for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     *        The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      */
 
     public void setVersion(Integer version) {
@@ -102,10 +102,10 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
-     * @return The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * @return The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      */
 
     public Integer getVersion() {
@@ -114,11 +114,11 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     * The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * </p>
      * 
      * @param version
-     *        The value of <code>Version</code> for the traffic policy for which you want to update the comment.
+     *        The value of <code>Version</code> for the traffic policy that you want to update the comment for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

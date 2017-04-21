@@ -19,49 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * To retrieve a list of your public and private hosted zones, send a <code>GET</code> request to the
- * <code>/2013-04-01/hostedzone</code> resource. The response to this request includes a HostedZone child element for
- * each hosted zone that was created by the current AWS account.
+ * A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account.
  * </p>
- * <p>
- * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you can use the
- * maxitems parameter to list them in groups of up to 100. The response includes four values that help you navigate from
- * one group of maxitems hosted zones to the next:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>MaxItems</code> is the value that you specified for the <code>maxitems</code> parameter in the request that
- * produced the current response.
- * </p>
- * </li>
- * <li>
- * <p>
- * If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more hosted zones associated
- * with the current AWS account.
- * </p>
- * <p>
- * If <code>IsTruncated</code> is <code>false</code>, this response includes the last hosted zone that is associated
- * with the current account.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated with the current AWS
- * account. If you want to list more hosted zones, make another call to <code>ListHostedZones</code>, and specify the
- * value of the <code>NextMarker</code> element in the marker parameter.
- * </p>
- * <p>
- * If <code>IsTruncated</code> is <code>false</code>, the <code>NextMarker</code> element is omitted from the response.
- * </p>
- * </li>
- * <li>
- * <p>
- * If you're making the second or subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element
- * matches the value that you specified in the <code>marker</code> parameter in the previous request.
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones" target="_top">AWS API
  *      Documentation</a>
@@ -71,22 +30,25 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZones</code>
-     * returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted
-     * zones, submit another request to <code>ListHostedZones</code>. For the value of marker, specify the value of the
-     * <code>NextMarker</code> element that was returned in the previous response.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
      * </p>
      * <p>
-     * Hosted zones are listed in the order in which they were created.
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * (Optional) The maximum number of hosted zones to be included in the response body for this request. If you have
-     * more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in the response
-     * is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone ID of the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      */
     private String maxItems;
@@ -100,23 +62,29 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZones</code>
-     * returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted
-     * zones, submit another request to <code>ListHostedZones</code>. For the value of marker, specify the value of the
-     * <code>NextMarker</code> element that was returned in the previous response.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
      * </p>
      * <p>
-     * Hosted zones are listed in the order in which they were created.
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
      * @param marker
-     *        (Optional) If you have more hosted zones than the value of <code>maxitems</code>,
-     *        <code>ListHostedZones</code> returns only the first <code>maxitems</code> hosted zones. To get the next
-     *        group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZones</code>. For
-     *        the value of marker, specify the value of the <code>NextMarker</code> element that was returned in the
-     *        previous response.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
      *        <p>
-     *        Hosted zones are listed in the order in which they were created.
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *        request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more hosted zones to get.
      */
 
     public void setMarker(String marker) {
@@ -125,22 +93,28 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZones</code>
-     * returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted
-     * zones, submit another request to <code>ListHostedZones</code>. For the value of marker, specify the value of the
-     * <code>NextMarker</code> element that was returned in the previous response.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
      * </p>
      * <p>
-     * Hosted zones are listed in the order in which they were created.
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
-     * @return (Optional) If you have more hosted zones than the value of <code>maxitems</code>,
-     *         <code>ListHostedZones</code> returns only the first <code>maxitems</code> hosted zones. To get the next
-     *         group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZones</code>. For
-     *         the value of marker, specify the value of the <code>NextMarker</code> element that was returned in the
-     *         previous response.</p>
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
      *         <p>
-     *         Hosted zones are listed in the order in which they were created.
+     *         For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *         response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *         request.
+     *         </p>
+     *         <p>
+     *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *         more hosted zones to get.
      */
 
     public String getMarker() {
@@ -149,23 +123,29 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZones</code>
-     * returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted
-     * zones, submit another request to <code>ListHostedZones</code>. For the value of marker, specify the value of the
-     * <code>NextMarker</code> element that was returned in the previous response.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted
+     * zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.
      * </p>
      * <p>
-     * Hosted zones are listed in the order in which they were created.
+     * For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
+     * which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.
+     * </p>
+     * <p>
+     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
+     * hosted zones to get.
      * </p>
      * 
      * @param marker
-     *        (Optional) If you have more hosted zones than the value of <code>maxitems</code>,
-     *        <code>ListHostedZones</code> returns only the first <code>maxitems</code> hosted zones. To get the next
-     *        group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZones</code>. For
-     *        the value of marker, specify the value of the <code>NextMarker</code> element that was returned in the
-     *        previous response.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
      *        <p>
-     *        Hosted zones are listed in the order in which they were created.
+     *        For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous
+     *        response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another
+     *        request.
+     *        </p>
+     *        <p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
+     *        more hosted zones to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,17 +156,17 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) The maximum number of hosted zones to be included in the response body for this request. If you have
-     * more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in the response
-     * is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone ID of the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) The maximum number of hosted zones to be included in the response body for this request. If you
-     *        have more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in
-     *        the response is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone
-     *        ID of the first hosted zone in the next group of <code>maxitems</code> hosted zones.
+     *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *        than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *        <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone
+     *        that Amazon Route 53 will return if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -195,16 +175,16 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) The maximum number of hosted zones to be included in the response body for this request. If you have
-     * more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in the response
-     * is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone ID of the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * 
-     * @return (Optional) The maximum number of hosted zones to be included in the response body for this request. If
-     *         you have more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element
-     *         in the response is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted
-     *         zone ID of the first hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * @return (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *         than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *         <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted
+     *         zone that Amazon Route 53 will return if you submit another request.
      */
 
     public String getMaxItems() {
@@ -213,17 +193,17 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) The maximum number of hosted zones to be included in the response body for this request. If you have
-     * more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in the response
-     * is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone ID of the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones.
+     * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than
+     * <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>,
+     * and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) The maximum number of hosted zones to be included in the response body for this request. If you
-     *        have more than <code>maxitems</code> hosted zones, the value of the <code>IsTruncated</code> element in
-     *        the response is <code>true</code>, and the value of the <code>NextMarker</code> element is the hosted zone
-     *        ID of the first hosted zone in the next group of <code>maxitems</code> hosted zones.
+     *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more
+     *        than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is
+     *        <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone
+     *        that Amazon Route 53 will return if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

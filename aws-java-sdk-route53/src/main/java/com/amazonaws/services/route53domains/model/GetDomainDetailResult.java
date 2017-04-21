@@ -30,17 +30,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String domainName;
     /**
      * <p>
      * The name of the domain.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Nameserver> nameservers;
@@ -48,23 +42,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      */
     private Boolean autoRenew;
     /**
      * <p>
      * Provides details about the domain administrative contact.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      */
     private ContactDetail adminContact;
@@ -72,29 +54,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      */
     private ContactDetail registrantContact;
     /**
      * <p>
      * Provides details about the domain technical contact.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
      * </p>
      */
     private ContactDetail techContact;
@@ -104,9 +68,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      */
     private Boolean adminPrivacy;
     /**
@@ -114,9 +75,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
-     * </p>
-     * <p>
-     * Type: Boolean
      * </p>
      */
     private Boolean registrantPrivacy;
@@ -126,9 +84,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      */
     private Boolean techPrivacy;
     /**
@@ -136,26 +91,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
      * registrar Gandi. The value is <code>"GANDI SAS"</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String registrarName;
     /**
      * <p>
      * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String whoIsServer;
     /**
      * <p>
      * Web address of the registrar.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String registrarUrl;
@@ -164,17 +110,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
      * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String abuseContactEmail;
     /**
      * <p>
      * Phone number for reporting abuse.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String abuseContactPhone;
@@ -207,9 +147,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
      * <code>"Amazon"</code> as the reseller.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String reseller;
     /**
@@ -233,9 +170,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
      * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
-     * <p>
-     * Type: Array of String
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> statusList;
 
@@ -243,14 +177,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of a domain.
      */
 
     public void setDomainName(String domainName) {
@@ -261,13 +190,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of a domain.
      */
 
     public String getDomainName() {
@@ -278,14 +202,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,13 +217,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The name of the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of the domain.
      */
 
     public java.util.List<Nameserver> getNameservers() {
@@ -318,14 +232,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain.
      */
 
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
@@ -342,18 +251,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * The name of the domain.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNameservers(java.util.Collection)} or {@link #withNameservers(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,14 +275,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The name of the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param nameservers
-     *        The name of the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,14 +290,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param autoRenew
-     *        Specifies whether the domain registration is set to renew automatically.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether the domain registration is set to renew automatically.
      */
 
     public void setAutoRenew(Boolean autoRenew) {
@@ -409,13 +303,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
-     * @return Specifies whether the domain registration is set to renew automatically.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether the domain registration is set to renew automatically.
      */
 
     public Boolean getAutoRenew() {
@@ -426,14 +315,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param autoRenew
-     *        Specifies whether the domain registration is set to renew automatically.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Specifies whether the domain registration is set to renew automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,13 +330,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Specifies whether the domain registration is set to renew automatically.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
-     * @return Specifies whether the domain registration is set to renew automatically.</p>
-     *         <p>
-     *         Type: Boolean
+     * @return Specifies whether the domain registration is set to renew automatically.
      */
 
     public Boolean isAutoRenew() {
@@ -463,25 +342,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param adminContact
-     *        Provides details about the domain administrative contact. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain administrative contact.
      */
 
     public void setAdminContact(ContactDetail adminContact) {
@@ -492,26 +355,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain administrative contact. </p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain administrative contact.
      */
 
     public ContactDetail getAdminContact() {
@@ -522,25 +367,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain administrative contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param adminContact
-     *        Provides details about the domain administrative contact. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain administrative contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,25 +382,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param registrantContact
-     *        Provides details about the domain registrant. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain registrant.
      */
 
     public void setRegistrantContact(ContactDetail registrantContact) {
@@ -582,26 +395,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain registrant. </p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain registrant.
      */
 
     public ContactDetail getRegistrantContact() {
@@ -612,25 +407,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain registrant.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param registrantContact
-     *        Provides details about the domain registrant. </p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain registrant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -643,25 +422,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param techContact
-     *        Provides details about the domain technical contact.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain technical contact.
      */
 
     public void setTechContact(ContactDetail techContact) {
@@ -672,26 +435,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
-     * @return Provides details about the domain technical contact.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
+     * @return Provides details about the domain technical contact.
      */
 
     public ContactDetail getTechContact() {
@@ -702,25 +447,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Provides details about the domain technical contact.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
      * 
      * @param techContact
-     *        Provides details about the domain technical contact.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
+     *        Provides details about the domain technical contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,16 +464,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param adminPrivacy
      *        Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
      *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Gandi, instead of the contact information that you enter.
      */
 
     public void setAdminPrivacy(Boolean adminPrivacy) {
@@ -757,15 +481,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
      *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         Gandi, instead of the contact information that you enter.
      */
 
     public Boolean getAdminPrivacy() {
@@ -778,16 +497,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param adminPrivacy
      *        Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
      *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Gandi, instead of the contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,15 +516,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
      *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         Gandi, instead of the contact information that you enter.
      */
 
     public Boolean isAdminPrivacy() {
@@ -823,16 +532,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param registrantPrivacy
      *        Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
      *        value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *        partner, Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        partner, Gandi, instead of the contact information that you enter.
      */
 
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
@@ -845,15 +549,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
      *         value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *         partner, Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         partner, Gandi, instead of the contact information that you enter.
      */
 
     public Boolean getRegistrantPrivacy() {
@@ -866,16 +565,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param registrantPrivacy
      *        Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
      *        value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *        partner, Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        partner, Gandi, instead of the contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -890,15 +584,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
      *         value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *         partner, Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         partner, Gandi, instead of the contact information that you enter.
      */
 
     public Boolean isRegistrantPrivacy() {
@@ -911,16 +600,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param techPrivacy
      *        Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
      *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Gandi, instead of the contact information that you enter.
      */
 
     public void setTechPrivacy(Boolean techPrivacy) {
@@ -933,15 +617,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
      *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         Gandi, instead of the contact information that you enter.
      */
 
     public Boolean getTechPrivacy() {
@@ -954,16 +633,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @param techPrivacy
      *        Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
      *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
+     *        Gandi, instead of the contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -978,15 +652,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
      * instead of the contact information that you enter.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
      * 
      * @return Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
      *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
+     *         Gandi, instead of the contact information that you enter.
      */
 
     public Boolean isTechPrivacy() {
@@ -998,15 +667,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
      * registrar Gandi. The value is <code>"GANDI SAS"</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarName
      *        Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>. </p>
-     *        <p>
-     *        Type: String
+     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>.
      */
 
     public void setRegistrarName(String registrarName) {
@@ -1018,14 +682,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
      * registrar Gandi. The value is <code>"GANDI SAS"</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @return Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *         by registrar Gandi. The value is <code>"GANDI SAS"</code>. </p>
-     *         <p>
-     *         Type: String
+     *         by registrar Gandi. The value is <code>"GANDI SAS"</code>.
      */
 
     public String getRegistrarName() {
@@ -1037,15 +696,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
      * registrar Gandi. The value is <code>"GANDI SAS"</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarName
      *        Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>. </p>
-     *        <p>
-     *        Type: String
+     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1058,14 +712,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param whoIsServer
-     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      */
 
     public void setWhoIsServer(String whoIsServer) {
@@ -1076,13 +725,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      */
 
     public String getWhoIsServer() {
@@ -1093,14 +737,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param whoIsServer
-     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1113,14 +752,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarUrl
-     *        Web address of the registrar.</p>
-     *        <p>
-     *        Type: String
+     *        Web address of the registrar.
      */
 
     public void setRegistrarUrl(String registrarUrl) {
@@ -1131,13 +765,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Web address of the registrar.</p>
-     *         <p>
-     *         Type: String
+     * @return Web address of the registrar.
      */
 
     public String getRegistrarUrl() {
@@ -1148,14 +777,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Web address of the registrar.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param registrarUrl
-     *        Web address of the registrar.</p>
-     *        <p>
-     *        Type: String
+     *        Web address of the registrar.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1169,16 +793,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
      * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactEmail
      *        Email address to contact to report incorrect contact information for a domain, to report that the domain
      *        is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
-     *        other type of abuse. </p>
-     *        <p>
-     *        Type: String
+     *        other type of abuse.
      */
 
     public void setAbuseContactEmail(String abuseContactEmail) {
@@ -1190,15 +809,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
      * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @return Email address to contact to report incorrect contact information for a domain, to report that the domain
      *         is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
-     *         other type of abuse. </p>
-     *         <p>
-     *         Type: String
+     *         other type of abuse.
      */
 
     public String getAbuseContactEmail() {
@@ -1210,16 +824,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Email address to contact to report incorrect contact information for a domain, to report that the domain is being
      * used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactEmail
      *        Email address to contact to report incorrect contact information for a domain, to report that the domain
      *        is being used to send spam, to report that someone is cybersquatting on a domain name, or report some
-     *        other type of abuse. </p>
-     *        <p>
-     *        Type: String
+     *        other type of abuse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1232,14 +841,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactPhone
-     *        Phone number for reporting abuse. </p>
-     *        <p>
-     *        Type: String
+     *        Phone number for reporting abuse.
      */
 
     public void setAbuseContactPhone(String abuseContactPhone) {
@@ -1250,13 +854,8 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Phone number for reporting abuse. </p>
-     *         <p>
-     *         Type: String
+     * @return Phone number for reporting abuse.
      */
 
     public String getAbuseContactPhone() {
@@ -1267,14 +866,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Phone number for reporting abuse.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param abuseContactPhone
-     *        Phone number for reporting abuse. </p>
-     *        <p>
-     *        Type: String
+     *        Phone number for reporting abuse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1454,15 +1048,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
      * <code>"Amazon"</code> as the reseller.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param reseller
      *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     *        <code>"Amazon"</code> as the reseller. </p>
-     *        <p>
-     *        Type: String
+     *        <code>"Amazon"</code> as the reseller.
      */
 
     public void setReseller(String reseller) {
@@ -1474,14 +1063,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
      * <code>"Amazon"</code> as the reseller.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @return Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     *         <code>"Amazon"</code> as the reseller. </p>
-     *         <p>
-     *         Type: String
+     *         <code>"Amazon"</code> as the reseller.
      */
 
     public String getReseller() {
@@ -1493,15 +1077,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
      * <code>"Amazon"</code> as the reseller.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param reseller
      *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     *        <code>"Amazon"</code> as the reseller. </p>
-     *        <p>
-     *        Type: String
+     *        <code>"Amazon"</code> as the reseller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1565,9 +1144,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
      * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
-     * <p>
-     * Type: Array of String
-     * </p>
      * 
      * @return An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
      *         codes.</p>
@@ -1581,9 +1157,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      *         For a current list of domain name status codes and an explanation of what each code means, go to the <a
      *         href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
      *         the ICANN website; web searches sometimes return an old version of the document.)
-     *         </p>
-     *         <p>
-     *         Type: Array of String
      */
 
     public java.util.List<String> getStatusList() {
@@ -1608,9 +1181,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
      * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
-     * <p>
-     * Type: Array of String
-     * </p>
      * 
      * @param statusList
      *        An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
@@ -1625,9 +1195,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
      *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
      *        the ICANN website; web searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
      */
 
     public void setStatusList(java.util.Collection<String> statusList) {
@@ -1655,9 +1222,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
      * <p>
-     * Type: Array of String
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStatusList(java.util.Collection)} or {@link #withStatusList(java.util.Collection)} if you want to
      * override the existing values.
@@ -1676,9 +1240,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
      *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
      *        the ICANN website; web searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1707,9 +1268,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the
      * ICANN website; web searches sometimes return an old version of the document.)
      * </p>
-     * <p>
-     * Type: Array of String
-     * </p>
      * 
      * @param statusList
      *        An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status
@@ -1724,9 +1282,6 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      *        For a current list of domain name status codes and an explanation of what each code means, go to the <a
      *        href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on
      *        the ICANN website; web searches sometimes return an old version of the document.)
-     *        </p>
-     *        <p>
-     *        Type: Array of String
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

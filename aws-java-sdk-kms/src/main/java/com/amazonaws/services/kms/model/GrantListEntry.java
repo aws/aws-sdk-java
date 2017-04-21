@@ -79,7 +79,8 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> operations;
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      */
     private GrantConstraints constraints;
@@ -473,11 +474,13 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the grant's operations are allowed.
+     *        A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *        that the grant allows.
      */
 
     public void setConstraints(GrantConstraints constraints) {
@@ -486,10 +489,12 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
-     * @return The conditions under which the grant's operations are allowed.
+     * @return A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *         that the grant allows.
      */
 
     public GrantConstraints getConstraints() {
@@ -498,11 +503,13 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the grant's operations are allowed.
+     *        A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *        that the grant allows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

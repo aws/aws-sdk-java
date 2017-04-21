@@ -31,6 +31,8 @@ public class PurchaseOfferingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringId").build();
     private static final MarshallingInfo<Integer> QUANTITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quantity").build();
+    private static final MarshallingInfo<String> OFFERINGPROMOTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringPromotionId").build();
 
     private static final PurchaseOfferingRequestMarshaller instance = new PurchaseOfferingRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class PurchaseOfferingRequestMarshaller {
         try {
             protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingId(), OFFERINGID_BINDING);
             protocolMarshaller.marshall(purchaseOfferingRequest.getQuantity(), QUANTITY_BINDING);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingPromotionId(), OFFERINGPROMOTIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

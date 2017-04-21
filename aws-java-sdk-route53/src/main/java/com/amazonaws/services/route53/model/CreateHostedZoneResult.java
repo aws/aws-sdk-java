@@ -34,7 +34,7 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     private HostedZone hostedZone;
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      */
     private ChangeInfo changeInfo;
@@ -99,11 +99,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that contains information about the <code>CreateHostedZone</code> request.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -112,10 +112,10 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
-     * @return A complex type that describes the changes made to your hosted zone.
+     * @return A complex type that contains information about the <code>CreateHostedZone</code> request.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -124,11 +124,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that contains information about the <code>CreateHostedZone</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

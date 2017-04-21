@@ -43,52 +43,52 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
     private Integer trafficPolicyVersion;
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     * previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      */
     private String hostedZoneIdMarker;
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group
-     * of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     * <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      */
     private String trafficPolicyInstanceNameMarker;
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      */
     private String trafficPolicyInstanceTypeMarker;
@@ -98,7 +98,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      */
     private String maxItems;
@@ -191,34 +191,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     * previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param hostedZoneIdMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     *        previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53
+     *        will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
-     *        </p>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     *        more traffic policy instances to get.
      */
 
     public void setHostedZoneIdMarker(String hostedZoneIdMarker) {
@@ -227,34 +225,31 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     * previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
-     * @return For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         traffic policy instances. To get more traffic policy instances, submit another
+     *         <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
      *         <p>
-     *         If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *         <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the
-     *         next group of <code>MaxItems</code> traffic policy instances.
+     *         For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     *         previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53
+     *         will return if you submit another request.
      *         </p>
      *         <p>
      *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *         more traffic policy instances to get for this hosted zone.
-     *         </p>
-     *         <p>
-     *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this
-     *         value.
+     *         more traffic policy instances to get.
      */
 
     public String getHostedZoneIdMarker() {
@@ -263,34 +258,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     * previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param hostedZoneIdMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the
+     *        previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53
+     *        will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
-     *        </p>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     *        more traffic policy instances to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,34 +294,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group
-     * of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     * <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     *        <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
-     *        </p>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     *        more traffic policy instances to get.
      */
 
     public void setTrafficPolicyInstanceNameMarker(String trafficPolicyInstanceNameMarker) {
@@ -337,34 +328,31 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group
-     * of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     * <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
-     * @return For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         traffic policy instances. To get more traffic policy instances, submit another
+     *         <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *         <p>
-     *         If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *         <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next
-     *         group of <code>MaxItems</code> traffic policy instances.
+     *         For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     *         <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first
+     *         traffic policy instance that Amazon Route 53 will return if you submit another request.
      *         </p>
      *         <p>
      *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *         more traffic policy instances to get for this hosted zone.
-     *         </p>
-     *         <p>
-     *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this
-     *         value.
+     *         more traffic policy instances to get.
      */
 
     public String getTrafficPolicyInstanceNameMarker() {
@@ -373,34 +361,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group
-     * of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     * <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancename</code>, specify the value of
+     *        <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
-     *        </p>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, omit this value.
+     *        more traffic policy instances to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -411,28 +397,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     *        <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
+     *        more traffic policy instances to get.
      * @see RRType
      */
 
@@ -442,27 +432,31 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      * 
-     * @return For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     * @return If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *         traffic policy instances. To get more traffic policy instances, submit another
+     *         <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *         <p>
-     *         If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *         <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the
-     *         next group of <code>MaxItems</code> traffic policy instances.
+     *         For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     *         <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first
+     *         traffic policy instance that Amazon Route 53 will return if you submit another request.
      *         </p>
      *         <p>
      *         If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *         more traffic policy instances to get for this hosted zone.
+     *         more traffic policy instances to get.
      * @see RRType
      */
 
@@ -472,28 +466,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     *        <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
+     *        more traffic policy instances to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -505,28 +503,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     *        <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
+     *        more traffic policy instances to get.
      * @see RRType
      */
 
@@ -536,28 +538,32 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.
+     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic
+     * policy instances. To get more traffic policy instances, submit another
+     * <code>ListTrafficPolicyInstancesByPolicy</code> request.
      * </p>
      * <p>
-     * If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the next
-     * group of <code>MaxItems</code> traffic policy instances.
+     * For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * <p>
      * If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more
-     * traffic policy instances to get for this hosted zone.
+     * traffic policy instances to get.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
-     *        For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this value.</p>
+     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more
+     *        traffic policy instances. To get more traffic policy instances, submit another
+     *        <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
      *        <p>
-     *        If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-     *        <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic policy instance in the
-     *        next group of <code>MaxItems</code> traffic policy instances.
+     *        For the value of <code>trafficpolicyinstancetype</code>, specify the value of
+     *        <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first
+     *        traffic policy instance that Amazon Route 53 will return if you submit another request.
      *        </p>
      *        <p>
      *        If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no
-     *        more traffic policy instances to get for this hosted zone.
+     *        more traffic policy instances to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -573,7 +579,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
@@ -581,8 +587,8 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      *        you have more than <code>MaxItems</code> traffic policy instances, the value of the
      *        <code>IsTruncated</code> element in the response is <code>true</code>, and the values of
      *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *        <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group
-     *        of <code>MaxItems</code> traffic policy instances.
+     *        <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route
+     *        53 will return if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -595,15 +601,15 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
      * @return The maximum number of traffic policy instances to be included in the response body for this request. If
      *         you have more than <code>MaxItems</code> traffic policy instances, the value of the
      *         <code>IsTruncated</code> element in the response is <code>true</code>, and the values of
      *         <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *         <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next
-     *         group of <code>MaxItems</code> traffic policy instances.
+     *         <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon
+     *         Route 53 will return if you submit another request.
      */
 
     public String getMaxItems() {
@@ -616,7 +622,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>,
      * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
@@ -624,8 +630,8 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      *        you have more than <code>MaxItems</code> traffic policy instances, the value of the
      *        <code>IsTruncated</code> element in the response is <code>true</code>, and the values of
      *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *        <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group
-     *        of <code>MaxItems</code> traffic policy instances.
+     *        <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route
+     *        53 will return if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

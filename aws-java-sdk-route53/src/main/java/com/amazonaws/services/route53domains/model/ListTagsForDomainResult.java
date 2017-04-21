@@ -30,36 +30,6 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of the tags that are associated with the specified domain.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Each tag includes the following elements.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
 
@@ -67,67 +37,8 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of the tags that are associated with the specified domain.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Each tag includes the following elements.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A list of the tags that are associated with the specified domain.</p>
-     *         <p>
-     *         Type: A complex type containing a list of tags
-     *         </p>
-     *         <p>
-     *         Each tag includes the following elements.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Key
-     *         </p>
-     *         <p>
-     *         The key (name) of a tag.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Value
-     *         </p>
-     *         <p>
-     *         The value of a tag.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         </li>
+     * @return A list of the tags that are associated with the specified domain.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -141,68 +52,9 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of the tags that are associated with the specified domain.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Each tag includes the following elements.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tagList
-     *        A list of the tags that are associated with the specified domain.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Each tag includes the following elements.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
+     *        A list of the tags that are associated with the specified domain.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -219,72 +71,13 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the tags that are associated with the specified domain.
      * </p>
      * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Each tag includes the following elements.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagList
-     *        A list of the tags that are associated with the specified domain.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Each tag includes the following elements.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
+     *        A list of the tags that are associated with the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,68 +95,9 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of the tags that are associated with the specified domain.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Each tag includes the following elements.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tagList
-     *        A list of the tags that are associated with the specified domain.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Each tag includes the following elements.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        </li>
+     *        A list of the tags that are associated with the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

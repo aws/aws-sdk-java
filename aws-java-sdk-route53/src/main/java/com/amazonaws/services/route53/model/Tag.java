@@ -39,7 +39,7 @@ public class Tag implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to remove.
+     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.
      * </p>
      * </li>
      * <li>
@@ -90,7 +90,7 @@ public class Tag implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to remove.
+     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.
      * </p>
      * </li>
      * <li>
@@ -118,8 +118,8 @@ public class Tag implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to
-     *        remove.
+     *        <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code>
+     *        for.
      *        </p>
      *        </li>
      *        <li>
@@ -153,7 +153,7 @@ public class Tag implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to remove.
+     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.
      * </p>
      * </li>
      * <li>
@@ -180,8 +180,8 @@ public class Tag implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to
-     *         remove.
+     *         <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code>
+     *         for.
      *         </p>
      *         </li>
      *         <li>
@@ -215,7 +215,7 @@ public class Tag implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to remove.
+     * <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.
      * </p>
      * </li>
      * <li>
@@ -243,8 +243,8 @@ public class Tag implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code> element you want to
-     *        remove.
+     *        <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code>
+     *        for.
      *        </p>
      *        </li>
      *        <li>

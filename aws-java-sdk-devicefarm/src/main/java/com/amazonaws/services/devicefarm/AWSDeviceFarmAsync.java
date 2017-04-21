@@ -1051,6 +1051,43 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @return A Java Future containing the result of the ListOfferingPromotions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest listOfferingPromotionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOfferingPromotions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest listOfferingPromotionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingPromotionsRequest, ListOfferingPromotionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The
      * list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a
      * <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a

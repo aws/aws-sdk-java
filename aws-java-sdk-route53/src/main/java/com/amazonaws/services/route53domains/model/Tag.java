@@ -33,19 +33,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String key;
@@ -54,19 +45,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String value;
@@ -76,37 +58,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param key
      *        The key (name) of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setKey(String key) {
@@ -118,36 +82,18 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The key (name) of a tag.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
      *         <p>
      *         Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *         </p>
      *         <p>
      *         Constraints: Each key can be 1-128 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getKey() {
@@ -159,37 +105,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param key
      *        The key (name) of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,37 +131,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
      *        The value of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setValue(String value) {
@@ -245,36 +155,18 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The value of a tag.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
      *         <p>
      *         Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *         </p>
      *         <p>
      *         Constraints: Each value can be 0-256 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getValue() {
@@ -286,37 +178,19 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
      *        The value of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

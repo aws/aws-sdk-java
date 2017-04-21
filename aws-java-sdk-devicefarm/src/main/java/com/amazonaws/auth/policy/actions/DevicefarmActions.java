@@ -85,6 +85,8 @@ public enum DevicefarmActions implements Action {
     ListJobs("devicefarm:ListJobs"),
     /** Action for the ListNetworkProfiles operation. */
     ListNetworkProfiles("devicefarm:ListNetworkProfiles"),
+    /** Action for the ListOfferingPromotions operation. */
+    ListOfferingPromotions("devicefarm:ListOfferingPromotions"),
     /** Action for the ListOfferingTransactions operation. */
     ListOfferingTransactions("devicefarm:ListOfferingTransactions"),
     /** Action for the ListOfferings operation. */

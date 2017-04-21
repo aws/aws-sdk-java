@@ -30,24 +30,12 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of domains.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of domain summaries.
-     * </p>
-     * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DomainSummary> domains;
     /**
      * <p>
      * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
      * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
      * </p>
      */
     private String nextPageMarker;
@@ -56,19 +44,8 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of domains.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of domain summaries.
-     * </p>
-     * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-     * </p>
      * 
-     * @return A summary of domains.</p>
-     *         <p>
-     *         Type: Complex type containing a list of domain summaries.
-     *         </p>
-     *         <p>
-     *         Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     * @return A summary of domains.
      */
 
     public java.util.List<DomainSummary> getDomains() {
@@ -82,20 +59,9 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of domains.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of domain summaries.
-     * </p>
-     * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-     * </p>
      * 
      * @param domains
-     *        A summary of domains.</p>
-     *        <p>
-     *        Type: Complex type containing a list of domain summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     *        A summary of domains.
      */
 
     public void setDomains(java.util.Collection<DomainSummary> domains) {
@@ -112,24 +78,13 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * A summary of domains.
      * </p>
      * <p>
-     * Type: Complex type containing a list of domain summaries.
-     * </p>
-     * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param domains
-     *        A summary of domains.</p>
-     *        <p>
-     *        Type: Complex type containing a list of domain summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     *        A summary of domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,20 +102,9 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of domains.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of domain summaries.
-     * </p>
-     * <p>
-     * Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-     * </p>
      * 
      * @param domains
-     *        A summary of domains.</p>
-     *        <p>
-     *        Type: Complex type containing a list of domain summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
+     *        A summary of domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,21 +118,10 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
      * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
-     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>Operations</code>
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public void setNextPageMarker(String nextPageMarker) {
@@ -200,20 +133,9 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
      * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @return If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
-     *         request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Parent: <code>Operations</code>
+     *         request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public String getNextPageMarker() {
@@ -225,21 +147,10 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and
      * include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
-     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>Operations</code>
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

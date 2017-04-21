@@ -32,23 +32,23 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the request that produced the current response.
+     * specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      */
     private String marker;
     /**
      * <p>
      * A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get
-     * the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and specifying
-     * the value of the <code>NextMarker</code> element in the marker parameter.
+     * more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZones</code> again and
-     * specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
+     * hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify
+     * the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.
      * </p>
      * <p>
      * This element is present only if <code>IsTruncated</code> is <code>true</code>.
@@ -139,12 +139,12 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the request that produced the current response.
+     * specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that
-     *        you specified for the marker parameter in the request that produced the current response.
+     *        you specified for the <code>marker</code> parameter in the request that produced the current response.
      */
 
     public void setMarker(String marker) {
@@ -154,11 +154,12 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the request that produced the current response.
+     * specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @return For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value
-     *         that you specified for the marker parameter in the request that produced the current response.
+     *         that you specified for the <code>marker</code> parameter in the request that produced the current
+     *         response.
      */
 
     public String getMarker() {
@@ -168,12 +169,12 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you
-     * specified for the marker parameter in the request that produced the current response.
+     * specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that
-     *        you specified for the marker parameter in the request that produced the current response.
+     *        you specified for the <code>marker</code> parameter in the request that produced the current response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,14 +186,14 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get
-     * the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and specifying
-     * the value of the <code>NextMarker</code> element in the marker parameter.
+     * more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can
-     *        get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and
-     *        specifying the value of the <code>NextMarker</code> element in the marker parameter.
+     *        get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value
+     *        of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -202,13 +203,13 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get
-     * the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and specifying
-     * the value of the <code>NextMarker</code> element in the marker parameter.
+     * more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you
-     *         can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code>
-     *         again and specifying the value of the <code>NextMarker</code> element in the marker parameter.
+     *         can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the
+     *         value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -218,14 +219,14 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get
-     * the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and specifying
-     * the value of the <code>NextMarker</code> element in the marker parameter.
+     * more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can
-     *        get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and
-     *        specifying the value of the <code>NextMarker</code> element in the marker parameter.
+     *        get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value
+     *        of <code>NextMarker</code> in the <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,13 +238,13 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get
-     * the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code> again and specifying
-     * the value of the <code>NextMarker</code> element in the marker parameter.
+     * more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of
+     * <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you
-     *         can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZones</code>
-     *         again and specifying the value of the <code>NextMarker</code> element in the marker parameter.
+     *         can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the
+     *         value of <code>NextMarker</code> in the <code>marker</code> parameter.
      */
 
     public Boolean isTruncated() {
@@ -253,8 +254,8 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZones</code> again and
-     * specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
+     * hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify
+     * the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.
      * </p>
      * <p>
      * This element is present only if <code>IsTruncated</code> is <code>true</code>.
@@ -262,9 +263,9 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param nextMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first hosted zone in the next group of <code>maxitems</code> hosted zones. Call
-     *        <code>ListHostedZones</code> again and specify the value of <code>NextMarker</code> in the
-     *        <code>marker</code> parameter.</p>
+     *        first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request,
+     *        and specify the value of <code>NextMarker</code> from the response in the <code>marker</code>
+     *        parameter.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is <code>true</code>.
      */
@@ -276,17 +277,17 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZones</code> again and
-     * specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
+     * hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify
+     * the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.
      * </p>
      * <p>
      * This element is present only if <code>IsTruncated</code> is <code>true</code>.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *         first hosted zone in the next group of <code>maxitems</code> hosted zones. Call
-     *         <code>ListHostedZones</code> again and specify the value of <code>NextMarker</code> in the
-     *         <code>marker</code> parameter.</p>
+     *         first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request,
+     *         and specify the value of <code>NextMarker</code> from the response in the <code>marker</code>
+     *         parameter.</p>
      *         <p>
      *         This element is present only if <code>IsTruncated</code> is <code>true</code>.
      */
@@ -298,8 +299,8 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZones</code> again and
-     * specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.
+     * hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify
+     * the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.
      * </p>
      * <p>
      * This element is present only if <code>IsTruncated</code> is <code>true</code>.
@@ -307,9 +308,9 @@ public class ListHostedZonesResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param nextMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first hosted zone in the next group of <code>maxitems</code> hosted zones. Call
-     *        <code>ListHostedZones</code> again and specify the value of <code>NextMarker</code> in the
-     *        <code>marker</code> parameter.</p>
+     *        first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request,
+     *        and specify the value of <code>NextMarker</code> from the response in the <code>marker</code>
+     *        parameter.</p>
      *        <p>
      *        This element is present only if <code>IsTruncated</code> is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

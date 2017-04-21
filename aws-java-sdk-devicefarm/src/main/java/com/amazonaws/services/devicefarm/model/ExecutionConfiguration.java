@@ -34,6 +34,18 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private Integer jobTimeoutMinutes;
+    /**
+     * <p>
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     */
+    private Boolean accountsCleanup;
+    /**
+     * <p>
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     */
+    private Boolean appPackagesCleanup;
 
     /**
      * <p>
@@ -76,6 +88,110 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @param accountsCleanup
+     *        True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public void setAccountsCleanup(Boolean accountsCleanup) {
+        this.accountsCleanup = accountsCleanup;
+    }
+
+    /**
+     * <p>
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @return True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public Boolean getAccountsCleanup() {
+        return this.accountsCleanup;
+    }
+
+    /**
+     * <p>
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @param accountsCleanup
+     *        True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionConfiguration withAccountsCleanup(Boolean accountsCleanup) {
+        setAccountsCleanup(accountsCleanup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @return True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public Boolean isAccountsCleanup() {
+        return this.accountsCleanup;
+    }
+
+    /**
+     * <p>
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @param appPackagesCleanup
+     *        True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public void setAppPackagesCleanup(Boolean appPackagesCleanup) {
+        this.appPackagesCleanup = appPackagesCleanup;
+    }
+
+    /**
+     * <p>
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @return True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public Boolean getAppPackagesCleanup() {
+        return this.appPackagesCleanup;
+    }
+
+    /**
+     * <p>
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @param appPackagesCleanup
+     *        True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionConfiguration withAppPackagesCleanup(Boolean appPackagesCleanup) {
+        setAppPackagesCleanup(appPackagesCleanup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * </p>
+     * 
+     * @return True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     */
+
+    public Boolean isAppPackagesCleanup() {
+        return this.appPackagesCleanup;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +203,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobTimeoutMinutes() != null)
-            sb.append("JobTimeoutMinutes: ").append(getJobTimeoutMinutes());
+            sb.append("JobTimeoutMinutes: ").append(getJobTimeoutMinutes()).append(",");
+        if (getAccountsCleanup() != null)
+            sb.append("AccountsCleanup: ").append(getAccountsCleanup()).append(",");
+        if (getAppPackagesCleanup() != null)
+            sb.append("AppPackagesCleanup: ").append(getAppPackagesCleanup());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +226,14 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getJobTimeoutMinutes() != null && other.getJobTimeoutMinutes().equals(this.getJobTimeoutMinutes()) == false)
             return false;
+        if (other.getAccountsCleanup() == null ^ this.getAccountsCleanup() == null)
+            return false;
+        if (other.getAccountsCleanup() != null && other.getAccountsCleanup().equals(this.getAccountsCleanup()) == false)
+            return false;
+        if (other.getAppPackagesCleanup() == null ^ this.getAppPackagesCleanup() == null)
+            return false;
+        if (other.getAppPackagesCleanup() != null && other.getAppPackagesCleanup().equals(this.getAppPackagesCleanup()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +243,8 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobTimeoutMinutes() == null) ? 0 : getJobTimeoutMinutes().hashCode());
+        hashCode = prime * hashCode + ((getAccountsCleanup() == null) ? 0 : getAccountsCleanup().hashCode());
+        hashCode = prime * hashCode + ((getAppPackagesCleanup() == null) ? 0 : getAppPackagesCleanup().hashCode());
         return hashCode;
     }
 

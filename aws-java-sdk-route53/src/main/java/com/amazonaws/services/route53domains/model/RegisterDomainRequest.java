@@ -30,20 +30,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The domain name that you want to register.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String domainName;
@@ -55,20 +46,13 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     private String idnLangCode;
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
-     * period depends on the top-level domain.
-     * </p>
-     * <p>
-     * Type: Integer
+     * The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+     * The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
-     * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private Integer durationInYears;
@@ -78,16 +62,7 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Boolean autoRenew;
@@ -95,35 +70,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private ContactDetail adminContact;
     /**
      * <p>
      * Provides detailed contact information.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private ContactDetail registrantContact;
@@ -131,113 +82,56 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private ContactDetail techContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Boolean privacyProtectAdminContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Boolean privacyProtectRegistrantContact;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Boolean privacyProtectTechContact;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The domain name that you want to register.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
+     *        The domain name that you want to register.</p>
      *        <p>
      *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
      *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setDomainName(String domainName) {
@@ -246,35 +140,17 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The domain name that you want to register.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
+     * @return The domain name that you want to register.</p>
      *         <p>
      *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
      *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getDomainName() {
@@ -283,36 +159,18 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The domain name that you want to register.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
+     *        The domain name that you want to register.</p>
      *        <p>
      *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
      *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,36 +221,22 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
-     * period depends on the top-level domain.
-     * </p>
-     * <p>
-     * Type: Integer
+     * The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+     * The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param durationInYears
-     *        The number of years the domain will be registered. Domains are registered for a minimum of one year. The
-     *        maximum period depends on the top-level domain.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
+     *        The number of years that you want to register the domain for. Domains are registered for a minimum of one
+     *        year. The maximum period depends on the top-level domain. For the range of valid values for your domain,
+     *        see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     *        that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Valid values: Integer from 1 to 10
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setDurationInYears(Integer durationInYears) {
@@ -401,35 +245,21 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
-     * period depends on the top-level domain.
-     * </p>
-     * <p>
-     * Type: Integer
+     * The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+     * The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return The number of years the domain will be registered. Domains are registered for a minimum of one year. The
-     *         maximum period depends on the top-level domain.</p>
-     *         <p>
-     *         Type: Integer
-     *         </p>
+     * @return The number of years that you want to register the domain for. Domains are registered for a minimum of one
+     *         year. The maximum period depends on the top-level domain. For the range of valid values for your domain,
+     *         see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     *         that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *         <p>
      *         Default: 1
-     *         </p>
-     *         <p>
-     *         Valid values: Integer from 1 to 10
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public Integer getDurationInYears() {
@@ -438,36 +268,22 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of years the domain will be registered. Domains are registered for a minimum of one year. The maximum
-     * period depends on the top-level domain.
-     * </p>
-     * <p>
-     * Type: Integer
+     * The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+     * The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param durationInYears
-     *        The number of years the domain will be registered. Domains are registered for a minimum of one year. The
-     *        maximum period depends on the top-level domain.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
+     *        The number of years that you want to register the domain for. Domains are registered for a minimum of one
+     *        year. The maximum period depends on the top-level domain. For the range of valid values for your domain,
+     *        see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     *        that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Valid values: Integer from 1 to 10
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,32 +298,14 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param autoRenew
      *        Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
      *        ). Autorenewal only takes effect after the account is charged.</p>
      *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setAutoRenew(Boolean autoRenew) {
@@ -520,31 +318,13 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
      *         ). Autorenewal only takes effect after the account is charged.</p>
      *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean getAutoRenew() {
@@ -557,32 +337,14 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param autoRenew
      *        Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
      *        ). Autorenewal only takes effect after the account is charged.</p>
      *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,31 +359,13 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * Autorenewal only takes effect after the account is charged.
      * </p>
      * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
      * Default: <code>true</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>
      *         ). Autorenewal only takes effect after the account is charged.</p>
      *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean isAutoRenew() {
@@ -632,31 +376,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param adminContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setAdminContact(ContactDetail adminContact) {
@@ -667,32 +389,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getAdminContact() {
@@ -703,31 +401,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param adminContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -740,31 +416,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param registrantContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setRegistrantContact(ContactDetail registrantContact) {
@@ -775,32 +429,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getRegistrantContact() {
@@ -811,31 +441,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param registrantContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -848,31 +456,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param techContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      */
 
     public void setTechContact(ContactDetail techContact) {
@@ -883,32 +469,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Provides detailed contact information.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-     *         <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-     *         <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-     *         <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-     *         <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Provides detailed contact information.
      */
 
     public ContactDetail getTechContact() {
@@ -919,31 +481,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides detailed contact information.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>,
-     * <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     * <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>,
-     * <code>Fax</code>, <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param techContact
-     *        Provides detailed contact information.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>, <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>,
-     *        <code>State</code>, <code>CountryCode</code>, <code>ZipCode</code>, <code>PhoneNumber</code>,
-     *        <code>Email</code>, <code>Fax</code>, <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Provides detailed contact information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,38 +494,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectAdminContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setPrivacyProtectAdminContact(Boolean privacyProtectAdminContact) {
@@ -994,37 +516,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean getPrivacyProtectAdminContact() {
@@ -1033,38 +537,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectAdminContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1075,37 +561,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean isPrivacyProtectAdminContact() {
@@ -1114,38 +582,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectRegistrantContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setPrivacyProtectRegistrantContact(Boolean privacyProtectRegistrantContact) {
@@ -1154,37 +604,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean getPrivacyProtectRegistrantContact() {
@@ -1193,38 +625,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectRegistrantContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1235,37 +649,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean isPrivacyProtectRegistrantContact() {
@@ -1274,38 +670,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectTechContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setPrivacyProtectTechContact(Boolean privacyProtectTechContact) {
@@ -1314,37 +692,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean getPrivacyProtectTechContact() {
@@ -1353,38 +713,20 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param privacyProtectTechContact
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.</p>
      *        <p>
      *        Default: <code>true</code>
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,37 +737,19 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.</p>
      *         <p>
      *         Default: <code>true</code>
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Boolean isPrivacyProtectTechContact() {

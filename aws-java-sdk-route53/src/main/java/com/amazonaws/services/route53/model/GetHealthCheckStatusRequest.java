@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to get health check status for a health check.
+ * A request to get the status for a health check.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus" target="_top">AWS API
@@ -30,7 +30,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the health check for which you want the current status. When you created the health check,
+     * The ID for the health check that you want the current status for. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * <note>
@@ -45,7 +45,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the health check for which you want the current status. When you created the health check,
+     * The ID for the health check that you want the current status for. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * <note>
@@ -57,7 +57,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param healthCheckId
-     *        The ID for the health check for which you want the current status. When you created the health check,
+     *        The ID for the health check that you want the current status for. When you created the health check,
      *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
      *        element.</p> <note>
      *        <p>
@@ -73,7 +73,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the health check for which you want the current status. When you created the health check,
+     * The ID for the health check that you want the current status for. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * <note>
@@ -84,7 +84,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </note>
      * 
-     * @return The ID for the health check for which you want the current status. When you created the health check,
+     * @return The ID for the health check that you want the current status for. When you created the health check,
      *         <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
      *         element.</p> <note>
      *         <p>
@@ -100,7 +100,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the health check for which you want the current status. When you created the health check,
+     * The ID for the health check that you want the current status for. When you created the health check,
      * <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.
      * </p>
      * <note>
@@ -112,7 +112,7 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param healthCheckId
-     *        The ID for the health check for which you want the current status. When you created the health check,
+     *        The ID for the health check that you want the current status for. When you created the health check,
      *        <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code>
      *        element.</p> <note>
      *        <p>

@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisableDomainAutoRenewRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the domain that you want to disable automatic renewal for.
+     * </p>
+     */
     private String domainName;
 
     /**
+     * <p>
+     * The name of the domain that you want to disable automatic renewal for.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that you want to disable automatic renewal for.
      */
 
     public void setDomainName(String domainName) {
@@ -36,7 +46,11 @@ public class DisableDomainAutoRenewRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the domain that you want to disable automatic renewal for.
+     * </p>
+     * 
+     * @return The name of the domain that you want to disable automatic renewal for.
      */
 
     public String getDomainName() {
@@ -44,7 +58,12 @@ public class DisableDomainAutoRenewRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The name of the domain that you want to disable automatic renewal for.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that you want to disable automatic renewal for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

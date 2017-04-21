@@ -29,6 +29,10 @@ public class ExecutionConfigurationMarshaller {
 
     private static final MarshallingInfo<Integer> JOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobTimeoutMinutes").build();
+    private static final MarshallingInfo<Boolean> ACCOUNTSCLEANUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountsCleanup").build();
+    private static final MarshallingInfo<Boolean> APPPACKAGESCLEANUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appPackagesCleanup").build();
 
     private static final ExecutionConfigurationMarshaller instance = new ExecutionConfigurationMarshaller();
 
@@ -47,6 +51,8 @@ public class ExecutionConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(executionConfiguration.getJobTimeoutMinutes(), JOBTIMEOUTMINUTES_BINDING);
+            protocolMarshaller.marshall(executionConfiguration.getAccountsCleanup(), ACCOUNTSCLEANUP_BINDING);
+            protocolMarshaller.marshall(executionConfiguration.getAppPackagesCleanup(), APPPACKAGESCLEANUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -784,7 +784,7 @@
       "asyncReturnType" : "GenerateDataKeyResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns a data encryption key that you can use in your application to encrypt data locally.</p> <p>You must specify the customer master key (CMK) under which to generate the data key. You must also specify the length of the data key using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field. You must specify one field or the other, but not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use <code>KeySpec</code>.</p> <p>This operation returns a plaintext copy of the data key in the <code>Plaintext</code> field of the response, and an encrypted copy of the data key in the <code>CiphertextBlob</code> field. The data key is encrypted under the CMK specified in the <code>KeyId</code> field of the request.</p> <p>We recommend that you use the following pattern to encrypt data locally in your application:</p> <ol> <li> <p>Use this operation (<code>GenerateDataKey</code>) to retrieve a data encryption key.</p> </li> <li> <p>Use the plaintext data encryption key (returned in the <code>Plaintext</code> field of the response) to encrypt data locally, then erase the plaintext data key from memory.</p> </li> <li> <p>Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of the response) alongside the locally encrypted data.</p> </li> </ol> <p>To decrypt data locally:</p> <ol> <li> <p>Use the <a>Decrypt</a> operation to decrypt the encrypted data key into a plaintext copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt data locally, then erase the plaintext data key from memory.</p> </li> </ol> <p>To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return an arbitrary unpredictable byte string, use <a>GenerateRandom</a>.</p> <p>If you use the optional <code>EncryptionContext</code> field, you must store at least enough information to be able to reconstruct the full encryption context when you later send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an encryption context that you can reconstruct on the fly to better secure the ciphertext. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+      "documentation" : "<p>Returns a data encryption key that you can use in your application to encrypt data locally.</p> <p>You must specify the customer master key (CMK) under which to generate the data key. You must also specify the length of the data key using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field. You must specify one field or the other, but not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use <code>KeySpec</code>.</p> <p>This operation returns a plaintext copy of the data key in the <code>Plaintext</code> field of the response, and an encrypted copy of the data key in the <code>CiphertextBlob</code> field. The data key is encrypted under the CMK specified in the <code>KeyId</code> field of the request.</p> <p>We recommend that you use the following pattern to encrypt data locally in your application:</p> <ol> <li> <p>Use this operation (<code>GenerateDataKey</code>) to retrieve a data encryption key.</p> </li> <li> <p>Use the plaintext data encryption key (returned in the <code>Plaintext</code> field of the response) to encrypt data locally, then erase the plaintext data key from memory.</p> </li> <li> <p>Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of the response) alongside the locally encrypted data.</p> </li> </ol> <p>To decrypt data locally:</p> <ol> <li> <p>Use the <a>Decrypt</a> operation to decrypt the encrypted data key into a plaintext copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt data locally, then erase the plaintext data key from memory.</p> </li> </ol> <p>To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return a random byte string that is cryptographically secure, use <a>GenerateRandom</a>.</p> <p>If you use the optional <code>EncryptionContext</code> field, you must store at least enough information to be able to reconstruct the full encryption context when you later send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an encryption context that you can reconstruct on the fly to better secure the ciphertext. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The request was rejected because the specified entity or resource could not be found.</p>",
@@ -902,7 +902,7 @@
       "asyncReturnType" : "GenerateRandomResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Generates an unpredictable byte string.</p>",
+      "documentation" : "<p>Returns a random byte string that is cryptographically secure.</p> <p>For more information about entropy and random number generation, see the <a href=\"https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf\">AWS Key Management Service Cryptographic Details</a> whitepaper.</p>",
       "exceptions" : [ {
         "exceptionName" : "DependencyTimeoutException",
         "documentation" : "<p>The system timed out while trying to fulfill the request. The request can be retried.</p>",
@@ -3392,11 +3392,11 @@
         "c2jName" : "Constraints",
         "c2jShape" : "GrantConstraints",
         "deprecated" : false,
-        "documentation" : "<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+        "documentation" : "<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConstraints",
-        "getterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
+        "getterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
         "getterMethodName" : "getConstraints",
         "getterModel" : {
           "returnType" : "GrantConstraints",
@@ -3428,7 +3428,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Constraints",
-        "setterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
+        "setterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
         "setterMethodName" : "setConstraints",
         "setterModel" : {
           "variableDeclarationType" : "GrantConstraints",
@@ -3440,12 +3440,12 @@
         },
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "GrantConstraints",
           "variableName" : "constraints",
           "variableType" : "GrantConstraints",
-          "documentation" : "<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+          "documentation" : "<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
           "simpleType" : "GrantConstraints",
           "variableSetterType" : "GrantConstraints"
         },
@@ -3657,11 +3657,11 @@
           "c2jName" : "Constraints",
           "c2jShape" : "GrantConstraints",
           "deprecated" : false,
-          "documentation" : "<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+          "documentation" : "<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConstraints",
-          "getterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
+          "getterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
           "getterMethodName" : "getConstraints",
           "getterModel" : {
             "returnType" : "GrantConstraints",
@@ -3693,7 +3693,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Constraints",
-          "setterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
+          "setterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.*/",
           "setterMethodName" : "setConstraints",
           "setterModel" : {
             "variableDeclarationType" : "GrantConstraints",
@@ -3705,12 +3705,12 @@
           },
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "GrantConstraints",
             "variableName" : "constraints",
             "variableType" : "GrantConstraints",
-            "documentation" : "<p>The conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this value to allow the operations permitted by the grant only when a specified encryption context is present. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+            "documentation" : "<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
             "simpleType" : "GrantConstraints",
             "variableSetterType" : "GrantConstraints"
           },
@@ -12736,11 +12736,11 @@
         "c2jName" : "Plaintext",
         "c2jShape" : "PlaintextType",
         "deprecated" : false,
-        "documentation" : "<p>The unpredictable byte string.</p>",
+        "documentation" : "<p>The random byte string.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The unpredictable byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The unpredictable byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The random byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The random byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withPlaintext",
-        "getterDocumentation" : "/**<p>The unpredictable byte string.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The unpredictable byte string.*/",
+        "getterDocumentation" : "/**<p>The random byte string.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The random byte string.*/",
         "getterMethodName" : "getPlaintext",
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -12772,7 +12772,7 @@
         "marshallingTargetClass" : "java.nio.ByteBuffer",
         "marshallingType" : "BYTE_BUFFER",
         "name" : "Plaintext",
-        "setterDocumentation" : "/**<p>The unpredictable byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The unpredictable byte string.*/",
+        "setterDocumentation" : "/**<p>The random byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The random byte string.*/",
         "setterMethodName" : "setPlaintext",
         "setterModel" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -12784,12 +12784,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The unpredictable byte string.</p>\n@param plaintext The unpredictable byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The random byte string.</p>\n@param plaintext The random byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "plaintext",
           "variableType" : "java.nio.ByteBuffer",
-          "documentation" : "<p>The unpredictable byte string.</p>",
+          "documentation" : "<p>The random byte string.</p>",
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
@@ -12800,11 +12800,11 @@
           "c2jName" : "Plaintext",
           "c2jShape" : "PlaintextType",
           "deprecated" : false,
-          "documentation" : "<p>The unpredictable byte string.</p>",
+          "documentation" : "<p>The random byte string.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The unpredictable byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The unpredictable byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The random byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The random byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withPlaintext",
-          "getterDocumentation" : "/**<p>The unpredictable byte string.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The unpredictable byte string.*/",
+          "getterDocumentation" : "/**<p>The random byte string.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The random byte string.*/",
           "getterMethodName" : "getPlaintext",
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -12836,7 +12836,7 @@
           "marshallingTargetClass" : "java.nio.ByteBuffer",
           "marshallingType" : "BYTE_BUFFER",
           "name" : "Plaintext",
-          "setterDocumentation" : "/**<p>The unpredictable byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The unpredictable byte string.*/",
+          "setterDocumentation" : "/**<p>The random byte string.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param plaintext The random byte string.*/",
           "setterMethodName" : "setPlaintext",
           "setterModel" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
@@ -12848,12 +12848,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The unpredictable byte string.</p>\n@param plaintext The unpredictable byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The random byte string.</p>\n@param plaintext The random byte string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "plaintext",
             "variableType" : "java.nio.ByteBuffer",
-            "documentation" : "<p>The unpredictable byte string.</p>",
+            "documentation" : "<p>The random byte string.</p>",
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
@@ -14641,7 +14641,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A structure for specifying the conditions under which the operations permitted by the grant are allowed.</p> <p>You can use this structure to allow the operations permitted by the grant only when a specified encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+      "documentation" : "<p>A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14653,11 +14653,11 @@
         "c2jName" : "EncryptionContextSubset",
         "c2jShape" : "EncryptionContextType",
         "deprecated" : false,
-        "documentation" : "<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+        "documentation" : "<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEncryptionContextSubset",
-        "getterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@return Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+        "getterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@return A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
         "getterMethodName" : "getEncryptionContextSubset",
         "getterModel" : {
           "returnType" : "java.util.Map<String,String>",
@@ -14766,7 +14766,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EncryptionContextSubset",
-        "setterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+        "setterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
         "setterMethodName" : "setEncryptionContextSubset",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -14778,12 +14778,12 @@
         },
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "variableName" : "encryptionContextSubset",
           "variableType" : "java.util.Map<String,String>",
-          "documentation" : "<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -14792,11 +14792,11 @@
         "c2jName" : "EncryptionContextEquals",
         "c2jShape" : "EncryptionContextType",
         "deprecated" : false,
-        "documentation" : "<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+        "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEncryptionContextEquals",
-        "getterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@return Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+        "getterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@return A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
         "getterMethodName" : "getEncryptionContextEquals",
         "getterModel" : {
           "returnType" : "java.util.Map<String,String>",
@@ -14905,7 +14905,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "EncryptionContextEquals",
-        "setterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+        "setterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
         "setterMethodName" : "setEncryptionContextEquals",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -14917,12 +14917,12 @@
         },
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "variableName" : "encryptionContextEquals",
           "variableType" : "java.util.Map<String,String>",
-          "documentation" : "<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -14933,11 +14933,11 @@
           "c2jName" : "EncryptionContextEquals",
           "c2jShape" : "EncryptionContextType",
           "deprecated" : false,
-          "documentation" : "<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEncryptionContextEquals",
-          "getterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@return Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+          "getterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@return A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
           "getterMethodName" : "getEncryptionContextEquals",
           "getterModel" : {
             "returnType" : "java.util.Map<String,String>",
@@ -15046,7 +15046,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EncryptionContextEquals",
-          "setterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+          "setterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
           "setterMethodName" : "setEncryptionContextEquals",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -15058,12 +15058,12 @@
           },
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextEquals Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextEquals A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "variableName" : "encryptionContextEquals",
             "variableType" : "java.util.Map<String,String>",
-            "documentation" : "<p>Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+            "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
@@ -15073,11 +15073,11 @@
           "c2jName" : "EncryptionContextSubset",
           "c2jShape" : "EncryptionContextType",
           "deprecated" : false,
-          "documentation" : "<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEncryptionContextSubset",
-          "getterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@return Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+          "getterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@return A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
           "getterMethodName" : "getEncryptionContextSubset",
           "getterModel" : {
             "returnType" : "java.util.Map<String,String>",
@@ -15186,7 +15186,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "EncryptionContextSubset",
-          "setterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.*/",
+          "setterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.*/",
           "setterMethodName" : "setEncryptionContextSubset",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -15198,12 +15198,12 @@
           },
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>\n@param encryptionContextSubset Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>\n@param encryptionContextSubset A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "variableName" : "encryptionContextSubset",
             "variableType" : "java.util.Map<String,String>",
-            "documentation" : "<p>Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the operation is not allowed.</p>",
+            "documentation" : "<p>A list of key-value pairs, all of which must be present in the encryption context of certain subsequent operations that the grant allows. When certain subsequent operations allowed by the grant include encryption context that matches this list or is a superset of this list, the grant allows the operation. Otherwise, the grant does not allow the operation.</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
@@ -15824,11 +15824,11 @@
         "c2jName" : "Constraints",
         "c2jShape" : "GrantConstraints",
         "deprecated" : false,
-        "documentation" : "<p>The conditions under which the grant's operations are allowed.</p>",
+        "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConstraints",
-        "getterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@return The conditions under which the grant's operations are allowed.*/",
+        "getterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@return A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.*/",
         "getterMethodName" : "getConstraints",
         "getterModel" : {
           "returnType" : "GrantConstraints",
@@ -15860,7 +15860,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Constraints",
-        "setterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.*/",
+        "setterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.*/",
         "setterMethodName" : "setConstraints",
         "setterModel" : {
           "variableDeclarationType" : "GrantConstraints",
@@ -15872,12 +15872,12 @@
         },
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "GrantConstraints",
           "variableName" : "constraints",
           "variableType" : "GrantConstraints",
-          "documentation" : "<p>The conditions under which the grant's operations are allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>",
           "simpleType" : "GrantConstraints",
           "variableSetterType" : "GrantConstraints"
         },
@@ -15888,11 +15888,11 @@
           "c2jName" : "Constraints",
           "c2jShape" : "GrantConstraints",
           "deprecated" : false,
-          "documentation" : "<p>The conditions under which the grant's operations are allowed.</p>",
+          "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConstraints",
-          "getterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@return The conditions under which the grant's operations are allowed.*/",
+          "getterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@return A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.*/",
           "getterMethodName" : "getConstraints",
           "getterModel" : {
             "returnType" : "GrantConstraints",
@@ -15924,7 +15924,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Constraints",
-          "setterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.*/",
+          "setterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.*/",
           "setterMethodName" : "setConstraints",
           "setterModel" : {
             "variableDeclarationType" : "GrantConstraints",
@@ -15936,12 +15936,12 @@
           },
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The conditions under which the grant's operations are allowed.</p>\n@param constraints The conditions under which the grant's operations are allowed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>\n@param constraints A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "GrantConstraints",
             "variableName" : "constraints",
             "variableType" : "GrantConstraints",
-            "documentation" : "<p>The conditions under which the grant's operations are allowed.</p>",
+            "documentation" : "<p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>",
             "simpleType" : "GrantConstraints",
             "variableSetterType" : "GrantConstraints"
           },
@@ -31795,6 +31795,43 @@
           "DeletionDate" : "2016-12-17T16:00:00-08:00"
         },
         "title" : "To schedule a customer master key (CMK) for deletion"
+      } ],
+      "TagResource" : [ {
+        "comments" : {
+          "input" : {
+            "KeyId" : "The identifier of the CMK you are tagging. You can use the key ID or the Amazon Resource Name (ARN) of the CMK.",
+            "Tags" : "A list of tags."
+          },
+          "output" : null
+        },
+        "description" : "The following example tags a CMK.",
+        "id" : "to-tag-a-cmk-1483997246518",
+        "input" : {
+          "KeyId" : "1234abcd-12ab-34cd-56ef-1234567890ab",
+          "Tags" : [ {
+            "TagKey" : "Purpose",
+            "TagValue" : "Test"
+          } ]
+        },
+        "output" : null,
+        "title" : "To tag a customer master key (CMK)"
+      } ],
+      "UntagResource" : [ {
+        "comments" : {
+          "input" : {
+            "KeyId" : "The identifier of the CMK whose tags you are removing.",
+            "TagKeys" : "A list of tag keys. Provide only the tag keys, not the tag values."
+          },
+          "output" : null
+        },
+        "description" : "The following example removes tags from a CMK.",
+        "id" : "to-remove-tags-from-a-cmk-1483997590962",
+        "input" : {
+          "KeyId" : "1234abcd-12ab-34cd-56ef-1234567890ab",
+          "TagKeys" : [ "Purpose", "CostCenter" ]
+        },
+        "output" : null,
+        "title" : "To remove tags from a customer master key (CMK)"
       } ],
       "UpdateAlias" : [ {
         "comments" : {

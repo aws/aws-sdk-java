@@ -32,46 +32,11 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String name;
     /**
      * <p>
      * Values corresponding to the additional parameter names required by some top-level domains.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 2048 characters.
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String value;
@@ -80,49 +45,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     *        <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     *        <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *        <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Name of the additional parameter required by the top-level domain.
      * @see ExtraParamName
      */
 
@@ -134,48 +59,8 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Name of the additional parameter required by the top-level domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     *         <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *         <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     *         <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     *         <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *         <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     *         </p>
-     *         <p>
-     *         Parent: <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Name of the additional parameter required by the top-level domain.
      * @see ExtraParamName
      */
 
@@ -187,49 +72,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     *        <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     *        <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *        <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Name of the additional parameter required by the top-level domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExtraParamName
      */
@@ -243,49 +88,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     *        <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     *        <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *        <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Name of the additional parameter required by the top-level domain.
      * @see ExtraParamName
      */
 
@@ -297,49 +102,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the additional parameter required by the top-level domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> |
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
-     *        <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
-     *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     *        <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
-     *        <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Name of the additional parameter required by the top-level domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExtraParamName
      */
@@ -353,38 +118,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Values corresponding to the additional parameter names required by some top-level domains.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 2048 characters.
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
-     *        Values corresponding to the additional parameter names required by some top-level domains.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 2048 characters.
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Values corresponding to the additional parameter names required by some top-level domains.
      */
 
     public void setValue(String value) {
@@ -395,37 +131,8 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Values corresponding to the additional parameter names required by some top-level domains.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 2048 characters.
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Values corresponding to the additional parameter names required by some top-level domains.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 2048 characters.
-     *         </p>
-     *         <p>
-     *         Parent: <code>ExtraParams</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Values corresponding to the additional parameter names required by some top-level domains.
      */
 
     public String getValue() {
@@ -436,38 +143,9 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Values corresponding to the additional parameter names required by some top-level domains.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 2048 characters.
-     * </p>
-     * <p>
-     * Parent: <code>ExtraParams</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
-     *        Values corresponding to the additional parameter names required by some top-level domains.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 2048 characters.
-     *        </p>
-     *        <p>
-     *        Parent: <code>ExtraParams</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Values corresponding to the additional parameter names required by some top-level domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

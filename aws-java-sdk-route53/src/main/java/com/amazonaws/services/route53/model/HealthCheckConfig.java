@@ -90,8 +90,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private String iPAddress;
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for Port
-     * only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
+     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      * </p>
      */
     private Integer port;
@@ -164,8 +164,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String type;
@@ -412,9 +413,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -799,13 +800,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for Port
-     * only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
+     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      * </p>
      * 
      * @param port
      *        The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *        Port only when you specify a value for <code>IPAddress</code>.
+     *        <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      */
 
     public void setPort(Integer port) {
@@ -814,12 +815,12 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for Port
-     * only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
+     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      * </p>
      * 
      * @return The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *         Port only when you specify a value for <code>IPAddress</code>.
+     *         <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      */
 
     public Integer getPort() {
@@ -828,13 +829,13 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for Port
-     * only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
+     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      * </p>
      * 
      * @param port
      *        The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *        Port only when you specify a value for <code>IPAddress</code>.
+     *        <code>Port</code> only when you specify a value for <code>IPAddress</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -912,8 +913,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param type
@@ -982,8 +984,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the
-     *        introduction to this topic.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+     *        Guide</i>.
      * @see HealthCheckType
      */
 
@@ -1060,8 +1064,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return The type of health check that you want to create, which indicates how Amazon Route 53 determines whether
@@ -1129,8 +1134,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the
-     *         introduction to this topic.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      * @see HealthCheckType
      */
 
@@ -1207,8 +1214,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param type
@@ -1277,8 +1285,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the
-     *        introduction to this topic.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
      */
@@ -1357,8 +1367,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param type
@@ -1427,8 +1438,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the
-     *        introduction to this topic.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+     *        Guide</i>.
      * @see HealthCheckType
      */
 
@@ -1505,8 +1518,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the introduction to
-     * this topic.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param type
@@ -1575,8 +1589,10 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about how Amazon Route 53 determines whether an endpoint is healthy, see the
-     *        introduction to this topic.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
      */
@@ -3213,9 +3229,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -3236,7 +3252,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
      *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
      *        status, the default status for the health check is healthy.
      *        </p>
@@ -3266,9 +3282,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -3288,7 +3304,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time
+     *         <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
      *         CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last
      *         known status, the default status for the health check is healthy.
      *         </p>
@@ -3318,9 +3334,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -3341,7 +3357,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
      *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
      *        status, the default status for the health check is healthy.
      *        </p>
@@ -3373,9 +3389,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -3396,7 +3412,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
      *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
      *        status, the default status for the health check is healthy.
      *        </p>
@@ -3426,9 +3442,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time CloudWatch
-     * had sufficient data to determine the alarm state. For new health checks that have no last known status, the
-     * default status for the health check is healthy.
+     * <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
+     * CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
+     * status, the default status for the health check is healthy.
      * </p>
      * </li>
      * </ul>
@@ -3449,7 +3465,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check from the last time
+     *        <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check from the last time that
      *        CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known
      *        status, the default status for the health check is healthy.
      *        </p>

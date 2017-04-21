@@ -56,6 +56,10 @@ public class OfferingTransactionJsonUnmarshaller implements Unmarshaller<Offerin
                     context.nextToken();
                     offeringTransaction.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("offeringPromotionId", targetDepth)) {
+                    context.nextToken();
+                    offeringTransaction.setOfferingPromotionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdOn", targetDepth)) {
                     context.nextToken();
                     offeringTransaction.setCreatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

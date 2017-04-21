@@ -32,67 +32,19 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * First name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String firstName;
     /**
      * <p>
      * Last name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String lastName;
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      */
     private String contactType;
@@ -100,146 +52,41 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      */
     private String organizationName;
     /**
      * <p>
-     * First line of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * First line of the contact's address.
      * </p>
      */
     private String addressLine1;
     /**
      * <p>
-     * Second line of contact&apos;s address, if any.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Second line of contact's address, if any.
      * </p>
      */
     private String addressLine2;
     /**
      * <p>
-     * The city of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * The city of the contact's address.
      * </p>
      */
     private String city;
     /**
      * <p>
-     * The state or province of the contact&apos;s city.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The state or province of the contact's city.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * The zip or postal code of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The zip or postal code of the contact's address.
      * </p>
      */
     private String zipCode;
@@ -248,42 +95,15 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * The phone number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String phoneNumber;
     /**
      * <p>
      * Email address of the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 254 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String email;
@@ -292,42 +112,15 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * Fax number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
      * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private String fax;
     /**
      * <p>
      * A list of name-value pairs for parameters required by certain top-level domains.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>Value</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ExtraParam> extraParams;
@@ -336,38 +129,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * First name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param firstName
-     *        First name of contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        First name of contact.
      */
 
     public void setFirstName(String firstName) {
@@ -378,37 +142,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * First name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return First name of contact.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return First name of contact.
      */
 
     public String getFirstName() {
@@ -419,38 +154,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * First name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param firstName
-     *        First name of contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        First name of contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,38 +169,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Last name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param lastName
-     *        Last name of contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Last name of contact.
      */
 
     public void setLastName(String lastName) {
@@ -505,37 +182,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Last name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Last name of contact.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Last name of contact.
      */
 
     public String getLastName() {
@@ -546,38 +194,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Last name of contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param lastName
-     *        Last name of contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Last name of contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -589,50 +208,14 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      * 
      * @param contactType
      *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
-     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
-     *        privacy protection for the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
-     *        <code>PUBLIC_BODY</code>
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy
+     *        protection for the contact.
      * @see ContactType
      */
 
@@ -643,49 +226,13 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      * 
      * @return Indicates whether the contact is a person, company, association, or public organization. If you choose an
-     *         option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
-     *         privacy protection for the contact.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
-     *         <code>PUBLIC_BODY</code>
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         option other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy
+     *         protection for the contact.
      * @see ContactType
      */
 
@@ -696,50 +243,14 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      * 
      * @param contactType
      *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
-     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
-     *        privacy protection for the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
-     *        <code>PUBLIC_BODY</code>
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy
+     *        protection for the contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactType
      */
@@ -752,50 +263,14 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      * 
      * @param contactType
      *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
-     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
-     *        privacy protection for the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
-     *        <code>PUBLIC_BODY</code>
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy
+     *        protection for the contact.
      * @see ContactType
      */
 
@@ -806,50 +281,14 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the contact is a person, company, association, or public organization. If you choose an option
-     * other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable privacy protection
-     * for the contact.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code>
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy protection for
+     * the contact.
      * </p>
      * 
      * @param contactType
      *        Indicates whether the contact is a person, company, association, or public organization. If you choose an
-     *        option other than <code>PERSON</code>, you must enter an organization name, and you can&apos;t enable
-     *        privacy protection for the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code> |
-     *        <code>PUBLIC_BODY</code>
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        option other than <code>PERSON</code>, you must enter an organization name, and you can't enable privacy
+     *        protection for the contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContactType
      */
@@ -863,38 +302,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param organizationName
-     *        Name of the organization for contact types other than <code>PERSON</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Name of the organization for contact types other than <code>PERSON</code>.
      */
 
     public void setOrganizationName(String organizationName) {
@@ -905,37 +315,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return Name of the organization for contact types other than <code>PERSON</code>.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Name of the organization for contact types other than <code>PERSON</code>.
      */
 
     public String getOrganizationName() {
@@ -946,38 +327,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Name of the organization for contact types other than <code>PERSON</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param organizationName
-     *        Name of the organization for contact types other than <code>PERSON</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Name of the organization for contact types other than <code>PERSON</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -988,40 +340,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First line of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * First line of the contact's address.
      * </p>
      * 
      * @param addressLine1
-     *        First line of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        First line of the contact's address.
      */
 
     public void setAddressLine1(String addressLine1) {
@@ -1030,39 +353,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First line of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * First line of the contact's address.
      * </p>
      * 
-     * @return First line of the contact&apos;s address.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return First line of the contact's address.
      */
 
     public String getAddressLine1() {
@@ -1071,40 +365,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First line of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * First line of the contact's address.
      * </p>
      * 
      * @param addressLine1
-     *        First line of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        First line of the contact's address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1115,40 +380,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Second line of contact&apos;s address, if any.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Second line of contact's address, if any.
      * </p>
      * 
      * @param addressLine2
-     *        Second line of contact&apos;s address, if any.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Second line of contact's address, if any.
      */
 
     public void setAddressLine2(String addressLine2) {
@@ -1157,39 +393,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Second line of contact&apos;s address, if any.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Second line of contact's address, if any.
      * </p>
      * 
-     * @return Second line of contact&apos;s address, if any.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Second line of contact's address, if any.
      */
 
     public String getAddressLine2() {
@@ -1198,40 +405,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Second line of contact&apos;s address, if any.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Second line of contact's address, if any.
      * </p>
      * 
      * @param addressLine2
-     *        Second line of contact&apos;s address, if any.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Second line of contact's address, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1242,40 +420,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * The city of the contact's address.
      * </p>
      * 
      * @param city
-     *        The city of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The city of the contact's address.
      */
 
     public void setCity(String city) {
@@ -1284,39 +433,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * The city of the contact's address.
      * </p>
      * 
-     * @return The city of the contact&apos;s address.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The city of the contact's address.
      */
 
     public String getCity() {
@@ -1325,40 +445,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * The city of the contact's address.
      * </p>
      * 
      * @param city
-     *        The city of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The city of the contact's address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1369,40 +460,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province of the contact&apos;s city.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The state or province of the contact's city.
      * </p>
      * 
      * @param state
-     *        The state or province of the contact&apos;s city.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        The state or province of the contact's city.
      */
 
     public void setState(String state) {
@@ -1411,39 +473,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province of the contact&apos;s city.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The state or province of the contact's city.
      * </p>
      * 
-     * @return The state or province of the contact&apos;s city.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return The state or province of the contact's city.
      */
 
     public String getState() {
@@ -1452,40 +485,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province of the contact&apos;s city.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The state or province of the contact's city.
      * </p>
      * 
      * @param state
-     *        The state or province of the contact&apos;s city.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        The state or province of the contact's city.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1496,40 +500,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Code for the country of the contact's address.
      * @see CountryCode
      */
 
@@ -1539,39 +514,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      * 
-     * @return Code for the country of the contact&apos;s address.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Code for the country of the contact's address.
      * @see CountryCode
      */
 
@@ -1581,40 +527,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Code for the country of the contact's address.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
@@ -1626,40 +543,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Code for the country of the contact's address.
      * @see CountryCode
      */
 
@@ -1669,40 +557,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Code for the country of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
+     * Code for the country of the contact's address.
      * </p>
      * 
      * @param countryCode
-     *        Code for the country of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Code for the country of the contact's address.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
@@ -1714,40 +573,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip or postal code of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The zip or postal code of the contact's address.
      * </p>
      * 
      * @param zipCode
-     *        The zip or postal code of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        The zip or postal code of the contact's address.
      */
 
     public void setZipCode(String zipCode) {
@@ -1756,39 +586,10 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip or postal code of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The zip or postal code of the contact's address.
      * </p>
      * 
-     * @return The zip or postal code of the contact&apos;s address.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 255 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return The zip or postal code of the contact's address.
      */
 
     public String getZipCode() {
@@ -1797,40 +598,11 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip or postal code of the contact&apos;s address.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 255 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
+     * The zip or postal code of the contact's address.
      * </p>
      * 
      * @param zipCode
-     *        The zip or postal code of the contact&apos;s address.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 255 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        The zip or postal code of the contact's address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1844,41 +616,17 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * The phone number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      * 
      * @param phoneNumber
      *        The phone number of the contact.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
-     *        as <code>"+1.1234567890"</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might
+     *        appear as <code>"+1.1234567890"</code>.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -1890,40 +638,16 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * The phone number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      * 
      * @return The phone number of the contact.</p>
      *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
      *         Constraints: Phone number must be specified in the format
-     *         "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
-     *         as <code>"+1.1234567890"</code>.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might
+     *         appear as <code>"+1.1234567890"</code>.
      */
 
     public String getPhoneNumber() {
@@ -1935,41 +659,17 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * The phone number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
-     * "+[country dialing code].[number including any area code>]". For example, a US phone number might appear as
+     * "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      * 
      * @param phoneNumber
      *        The phone number of the contact.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: Phone number must be specified in the format
-     *        "+[country dialing code].[number including any area code>]". For example, a US phone number might appear
-     *        as <code>"+1.1234567890"</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might
+     *        appear as <code>"+1.1234567890"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1982,38 +682,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Email address of the contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 254 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param email
-     *        Email address of the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 254 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Email address of the contact.
      */
 
     public void setEmail(String email) {
@@ -2024,37 +695,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Email address of the contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 254 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return Email address of the contact.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 254 characters.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return Email address of the contact.
      */
 
     public String getEmail() {
@@ -2065,38 +707,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Email address of the contact.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: Maximum 254 characters.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param email
-     *        Email address of the contact.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 254 characters.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        Email address of the contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2110,41 +723,17 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * Fax number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
      * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param fax
      *        Fax number of the contact.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: Phone number must be specified in the format
      *        "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setFax(String fax) {
@@ -2156,40 +745,16 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * Fax number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
      * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
      * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @return Fax number of the contact.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
      *         <p>
      *         Constraints: Phone number must be specified in the format
      *         "+[country dialing code].[number including any area code]". For example, a US phone number might appear
      *         as <code>"+1.1234567890"</code>.
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public String getFax() {
@@ -2201,41 +766,17 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * Fax number of the contact.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: Phone number must be specified in the format
      * "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      * <code>"+1.1234567890"</code>.
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param fax
      *        Fax number of the contact.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: Phone number must be specified in the format
      *        "+[country dialing code].[number including any area code]". For example, a US phone number might appear as
      *        <code>"+1.1234567890"</code>.
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2248,37 +789,8 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>Value</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
-     * @return A list of name-value pairs for parameters required by certain top-level domains.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *         </p>
-     *         <p>
-     *         Children: <code>Name</code>, <code>Value</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return A list of name-value pairs for parameters required by certain top-level domains.
      */
 
     public java.util.List<ExtraParam> getExtraParams() {
@@ -2292,38 +804,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>Value</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>Value</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        A list of name-value pairs for parameters required by certain top-level domains.
      */
 
     public void setExtraParams(java.util.Collection<ExtraParam> extraParams) {
@@ -2340,42 +823,13 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
      * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>Value</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExtraParams(java.util.Collection)} or {@link #withExtraParams(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>Value</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        A list of name-value pairs for parameters required by certain top-level domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2393,38 +847,9 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of name-value pairs for parameters required by certain top-level domains.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>Value</code>
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param extraParams
-     *        A list of name-value pairs for parameters required by certain top-level domains.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>Value</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        A list of name-value pairs for parameters required by certain top-level domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

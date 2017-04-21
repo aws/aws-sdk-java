@@ -35,15 +35,6 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      */
     private String marker;
     /**
@@ -51,16 +42,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Integer maxItems;
@@ -72,30 +54,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param marker
      *        For an initial request for a list of operations, omit this element. If the number of operations that are
      *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
      *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
-     *        the <code>Marker</code> element.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        the <code>Marker</code> element.
      */
 
     public void setMarker(String marker) {
@@ -109,29 +74,12 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @return For an initial request for a list of operations, omit this element. If the number of operations that are
      *         not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *         <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from
      *         the previous response, and submit another request that includes the value of <code>NextPageMarker</code>
-     *         in the <code>Marker</code> element.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: No
+     *         in the <code>Marker</code> element.
      */
 
     public String getMarker() {
@@ -145,30 +93,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param marker
      *        For an initial request for a list of operations, omit this element. If the number of operations that are
      *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
      *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
-     *        the <code>Marker</code> element.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        the <code>Marker</code> element.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,31 +113,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -218,30 +131,12 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return Number of domains to be returned.</p>
      *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
      *         Default: 20
-     *         </p>
-     *         <p>
-     *         Constraints: A value between 1 and 100.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Integer getMaxItems() {
@@ -253,31 +148,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

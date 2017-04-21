@@ -55,7 +55,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone
-     * and/or the tags for which you want to edit the <code>Value</code> element.
+     * and/or the tags that you want to edit <code>Value</code> for.
      * </p>
      * <p>
      * You can add a maximum of 10 tags to a health check or a hosted zone.
@@ -301,14 +301,14 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone
-     * and/or the tags for which you want to edit the <code>Value</code> element.
+     * and/or the tags that you want to edit <code>Value</code> for.
      * </p>
      * <p>
      * You can add a maximum of 10 tags to a health check or a hosted zone.
      * </p>
      * 
      * @return A complex type that contains a list of the tags that you want to add to the specified health check or
-     *         hosted zone and/or the tags for which you want to edit the <code>Value</code> element.</p>
+     *         hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
      *         <p>
      *         You can add a maximum of 10 tags to a health check or a hosted zone.
      */
@@ -323,7 +323,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone
-     * and/or the tags for which you want to edit the <code>Value</code> element.
+     * and/or the tags that you want to edit <code>Value</code> for.
      * </p>
      * <p>
      * You can add a maximum of 10 tags to a health check or a hosted zone.
@@ -331,7 +331,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * 
      * @param addTags
      *        A complex type that contains a list of the tags that you want to add to the specified health check or
-     *        hosted zone and/or the tags for which you want to edit the <code>Value</code> element.</p>
+     *        hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
      *        <p>
      *        You can add a maximum of 10 tags to a health check or a hosted zone.
      */
@@ -348,7 +348,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone
-     * and/or the tags for which you want to edit the <code>Value</code> element.
+     * and/or the tags that you want to edit <code>Value</code> for.
      * </p>
      * <p>
      * You can add a maximum of 10 tags to a health check or a hosted zone.
@@ -361,7 +361,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * 
      * @param addTags
      *        A complex type that contains a list of the tags that you want to add to the specified health check or
-     *        hosted zone and/or the tags for which you want to edit the <code>Value</code> element.</p>
+     *        hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
      *        <p>
      *        You can add a maximum of 10 tags to a health check or a hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -380,7 +380,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone
-     * and/or the tags for which you want to edit the <code>Value</code> element.
+     * and/or the tags that you want to edit <code>Value</code> for.
      * </p>
      * <p>
      * You can add a maximum of 10 tags to a health check or a hosted zone.
@@ -388,7 +388,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * 
      * @param addTags
      *        A complex type that contains a list of the tags that you want to add to the specified health check or
-     *        hosted zone and/or the tags for which you want to edit the <code>Value</code> element.</p>
+     *        hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
      *        <p>
      *        You can add a maximum of 10 tags to a health check or a hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.

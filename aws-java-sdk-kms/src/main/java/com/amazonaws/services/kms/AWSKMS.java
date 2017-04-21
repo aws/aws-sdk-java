@@ -748,8 +748,8 @@ public interface AWSKMS {
      * </li>
      * </ol>
      * <p>
-     * To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return an
-     * arbitrary unpredictable byte string, use <a>GenerateRandom</a>.
+     * To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return a random
+     * byte string that is cryptographically secure, use <a>GenerateRandom</a>.
      * </p>
      * <p>
      * If you use the optional <code>EncryptionContext</code> field, you must store at least enough information to be
@@ -834,7 +834,12 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Generates an unpredictable byte string.
+     * Returns a random byte string that is cryptographically secure.
+     * </p>
+     * <p>
+     * For more information about entropy and random number generation, see the <a
+     * href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS Key Management Service
+     * Cryptographic Details</a> whitepaper.
      * </p>
      * 
      * @param generateRandomRequest

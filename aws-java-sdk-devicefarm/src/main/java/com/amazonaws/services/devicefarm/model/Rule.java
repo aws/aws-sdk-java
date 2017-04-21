@@ -56,6 +56,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      */
     private String attribute;
@@ -87,6 +97,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * NOT_IN: The not-in operator.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
      * </p>
      * </li>
      * </ul>
@@ -127,6 +142,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -153,6 +178,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -190,6 +225,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
@@ -215,6 +260,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         PLATFORM: The platform (for example, Android or iOS).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_VERSION: The Appium version for the test.
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -252,6 +307,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -278,6 +343,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -317,6 +392,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -343,6 +428,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -380,6 +475,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -406,6 +511,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -447,6 +562,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -475,6 +595,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @see RuleOperator
@@ -514,6 +639,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The rule's operator.</p>
@@ -541,6 +671,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         NOT_IN: The not-in operator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CONTAINS: The contains operator.
      *         </p>
      *         </li>
      * @see RuleOperator
@@ -580,6 +715,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -608,6 +748,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -649,6 +794,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -677,6 +827,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @see RuleOperator
@@ -716,6 +871,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -744,6 +904,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

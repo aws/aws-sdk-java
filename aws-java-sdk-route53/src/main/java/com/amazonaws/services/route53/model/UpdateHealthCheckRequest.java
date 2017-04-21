@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains the health check request information.
+ * A complex type that contains information about a request to update a health check.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck" target="_top">AWS API
@@ -38,7 +38,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by
-     * <code>1</code> each time you update settings for the health check.
+     * 1 each time you update settings for the health check.
      * </p>
      * <p>
      * We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value
@@ -49,8 +49,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * f the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in
-     * the health check, Amazon Route 53 updates the health check with the new settings.
+     * If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
+     * in the health check, Amazon Route 53 updates the health check with the new settings.
      * </p>
      * </li>
      * <li>
@@ -92,10 +92,22 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
-     * your instance never changes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses
-     * (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * your instance never changes. For more information, see the applicable documentation:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't
@@ -180,14 +192,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     * <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
      * Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in the
-     * Host header.
+     * <code>Host</code> header.
      * </p>
      * </li>
      * </ul>
@@ -318,8 +330,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean enableSNI;
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
@@ -402,7 +414,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by
-     * <code>1</code> each time you update settings for the health check.
+     * 1 each time you update settings for the health check.
      * </p>
      * <p>
      * We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value
@@ -413,8 +425,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * f the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in
-     * the health check, Amazon Route 53 updates the health check with the new settings.
+     * If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
+     * in the health check, Amazon Route 53 updates the health check with the new settings.
      * </p>
      * </li>
      * <li>
@@ -428,7 +440,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckVersion
      *        A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and
-     *        increments by <code>1</code> each time you update settings for the health check.</p>
+     *        increments by 1 each time you update settings for the health check.</p>
      *        <p>
      *        We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
      *        value of <code>HealthCheckVersion</code> for the health check that you want to update, and that you
@@ -438,7 +450,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        f the value in the <code>UpdateHealthCheck</code> request matches the value of
+     *        If the value in the <code>UpdateHealthCheck</code> request matches the value of
      *        <code>HealthCheckVersion</code> in the health check, Amazon Route 53 updates the health check with the new
      *        settings.
      *        </p>
@@ -459,7 +471,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by
-     * <code>1</code> each time you update settings for the health check.
+     * 1 each time you update settings for the health check.
      * </p>
      * <p>
      * We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value
@@ -470,8 +482,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * f the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in
-     * the health check, Amazon Route 53 updates the health check with the new settings.
+     * If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
+     * in the health check, Amazon Route 53 updates the health check with the new settings.
      * </p>
      * </li>
      * <li>
@@ -484,7 +496,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @return A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and
-     *         increments by <code>1</code> each time you update settings for the health check.</p>
+     *         increments by 1 each time you update settings for the health check.</p>
      *         <p>
      *         We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
      *         value of <code>HealthCheckVersion</code> for the health check that you want to update, and that you
@@ -494,7 +506,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         f the value in the <code>UpdateHealthCheck</code> request matches the value of
+     *         If the value in the <code>UpdateHealthCheck</code> request matches the value of
      *         <code>HealthCheckVersion</code> in the health check, Amazon Route 53 updates the health check with the
      *         new settings.
      *         </p>
@@ -515,7 +527,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by
-     * <code>1</code> each time you update settings for the health check.
+     * 1 each time you update settings for the health check.
      * </p>
      * <p>
      * We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value
@@ -526,8 +538,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * f the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in
-     * the health check, Amazon Route 53 updates the health check with the new settings.
+     * If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
+     * in the health check, Amazon Route 53 updates the health check with the new settings.
      * </p>
      * </li>
      * <li>
@@ -541,7 +553,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckVersion
      *        A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and
-     *        increments by <code>1</code> each time you update settings for the health check.</p>
+     *        increments by 1 each time you update settings for the health check.</p>
      *        <p>
      *        We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current
      *        value of <code>HealthCheckVersion</code> for the health check that you want to update, and that you
@@ -551,7 +563,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        f the value in the <code>UpdateHealthCheck</code> request matches the value of
+     *        If the value in the <code>UpdateHealthCheck</code> request matches the value of
      *        <code>HealthCheckVersion</code> in the health check, Amazon Route 53 updates the health check with the new
      *        settings.
      *        </p>
@@ -600,10 +612,22 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
-     * your instance never changes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses
-     * (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * your instance never changes. For more information, see the applicable documentation:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't
@@ -663,10 +687,23 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     *        address of your instance never changes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *        Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        address of your instance never changes. For more information, see the applicable documentation:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *        IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows: <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <note>
      *        <p>
      *        If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you
@@ -733,10 +770,22 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
-     * your instance never changes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses
-     * (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * your instance never changes. For more information, see the applicable documentation:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't
@@ -795,10 +844,23 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *         your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the
-     *         IP address of your instance never changes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *         Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *         IP address of your instance never changes. For more information, see the applicable documentation:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Windows: <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <note>
      *         <p>
      *         If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you
@@ -865,10 +927,22 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your
      * EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of
-     * your instance never changes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses
-     * (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * your instance never changes. For more information, see the applicable documentation:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     * Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't
@@ -928,10 +1002,23 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with
      *        your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP
-     *        address of your instance never changes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *        Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        address of your instance never changes. For more information, see the applicable documentation:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *        IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows: <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <note>
      *        <p>
      *        If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you
@@ -1112,14 +1199,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     * <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
      * Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in the
-     * Host header.
+     * <code>Host</code> header.
      * </p>
      * </li>
      * </ul>
@@ -1196,14 +1283,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      *        <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     *        <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify another value for <code>Port</code> and any value except <code>TCP</code> for
      *        <code>Type</code>, Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i>
-     *        to the endpoint in the Host header.
+     *        to the endpoint in the <code>Host</code> header.
      *        </p>
      *        </li>
      *        </ul>
@@ -1288,14 +1375,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     * <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
      * Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in the
-     * Host header.
+     * <code>Host</code> header.
      * </p>
      * </li>
      * </ul>
@@ -1371,14 +1458,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      *         <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     *         <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If you specify another value for <code>Port</code> and any value except <code>TCP</code> for
      *         <code>Type</code>, Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code>
-     *         </i> to the endpoint in the Host header.
+     *         </i> to the endpoint in the <code>Host</code> header.
      *         </p>
      *         </li>
      *         </ul>
@@ -1463,14 +1550,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      * <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     * <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>,
      * Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in the
-     * Host header.
+     * <code>Host</code> header.
      * </p>
      * </li>
      * </ul>
@@ -1547,14 +1634,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or
      *        <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value of
-     *        <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you specify another value for <code>Port</code> and any value except <code>TCP</code> for
      *        <code>Type</code>, Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i>
-     *        to the endpoint in the Host header.
+     *        to the endpoint in the <code>Host</code> header.
      *        </p>
      *        </li>
      *        </ul>
@@ -2228,12 +2315,12 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      * 
-     * @return A complex type that contains one Region element for each region from which you want Amazon Route 53
-     *         health checkers to check the specified endpoint.
+     * @return A complex type that contains one <code>Region</code> element for each region that you want Amazon Route
+     *         53 health checkers to check the specified endpoint from.
      * @see HealthCheckRegion
      */
 
@@ -2246,13 +2333,13 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53
+     *        health checkers to check the specified endpoint from.
      * @see HealthCheckRegion
      */
 
@@ -2267,8 +2354,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2277,8 +2364,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53
+     *        health checkers to check the specified endpoint from.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
@@ -2295,13 +2382,13 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53
+     *        health checkers to check the specified endpoint from.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
@@ -2313,13 +2400,13 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     * checkers to check the specified endpoint.
+     * A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health
+     * checkers to check the specified endpoint from.
      * </p>
      * 
      * @param regions
-     *        A complex type that contains one Region element for each region from which you want Amazon Route 53 health
-     *        checkers to check the specified endpoint.
+     *        A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53
+     *        health checkers to check the specified endpoint from.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */

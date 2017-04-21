@@ -47,7 +47,7 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextContinentCode;
@@ -55,7 +55,7 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextCountryCode;
@@ -63,7 +63,7 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      */
     private String nextSubdivisionCode;
@@ -243,13 +243,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        parameter in another <code>ListGeoLocations</code> request.
      */
 
     public void setNextContinentCode(String nextContinentCode) {
@@ -260,12 +260,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *         locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     *         parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *         parameter in another <code>ListGeoLocations</code> request.
      */
 
     public String getNextContinentCode() {
@@ -276,13 +276,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
-     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        parameter in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,13 +295,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
-     *        in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        in another <code>ListGeoLocations</code> request.
      */
 
     public void setNextCountryCode(String nextCountryCode) {
@@ -312,12 +312,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *         locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
-     *         in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *         in another <code>ListGeoLocations</code> request.
      */
 
     public String getNextCountryCode() {
@@ -328,13 +328,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
-     *        in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,13 +347,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        parameter in another <code>ListGeoLocations</code> request.
      */
 
     public void setNextSubdivisionCode(String nextSubdivisionCode) {
@@ -364,12 +364,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *         locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     *         parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *         parameter in another <code>ListGeoLocations</code> request.
      */
 
     public String getNextSubdivisionCode() {
@@ -380,13 +380,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
      * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
-     * <code>GET</code> <code>ListGeoLocations</code> request.
+     * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
      *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
-     *        parameter in another <code>GET</code> <code>ListGeoLocations</code> request.
+     *        parameter in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

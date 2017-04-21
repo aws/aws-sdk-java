@@ -30,116 +30,42 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update the privacy setting for.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      */
     private Boolean adminPrivacy;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      */
     private Boolean registrantPrivacy;
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      */
     private Boolean techPrivacy;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update the privacy setting for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to update the privacy setting for.
      */
 
     public void setDomainName(String domainName) {
@@ -148,35 +74,10 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update the privacy setting for.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
-     *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The name of the domain that you want to update the privacy setting for.
      */
 
     public String getDomainName() {
@@ -185,36 +86,11 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to update the privacy setting for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to update the privacy setting for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,38 +101,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param adminPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      */
 
     public void setAdminPrivacy(Boolean adminPrivacy) {
@@ -265,37 +118,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean getAdminPrivacy() {
@@ -304,38 +134,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param adminPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,37 +153,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean isAdminPrivacy() {
@@ -385,38 +169,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param registrantPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      */
 
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
@@ -425,37 +186,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean getRegistrantPrivacy() {
@@ -464,38 +202,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param registrantPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,37 +221,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean isRegistrantPrivacy() {
@@ -545,38 +237,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param techPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      */
 
     public void setTechPrivacy(Boolean techPrivacy) {
@@ -585,37 +254,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean getTechPrivacy() {
@@ -624,38 +270,15 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
      * @param techPrivacy
-     *        Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *        queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *        information that you enter.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *        WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *        contact information that you enter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,37 +289,14 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the contact information that you
-     * enter.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: <code>true</code> | <code>false</code>
-     * </p>
-     * <p>
-     * Required: No
+     * Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS
+     * ("who is") queries will return contact information for our registrar partner, Gandi, instead of the contact
+     * information that you enter.
      * </p>
      * 
-     * @return Whether you want to conceal contact information from WHOIS queries. If you specify true, WHOIS ("who is")
-     *         queries will return contact information for our registrar partner, Gandi, instead of the contact
-     *         information that you enter.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Required: No
+     * @return Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+     *         WHOIS ("who is") queries will return contact information for our registrar partner, Gandi, instead of the
+     *         contact information that you enter.
      */
 
     public Boolean isTechPrivacy() {

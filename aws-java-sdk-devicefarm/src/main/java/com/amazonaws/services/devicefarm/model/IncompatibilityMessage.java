@@ -62,6 +62,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -134,6 +144,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -160,6 +180,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -197,6 +227,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of incompatibility.</p>
@@ -222,6 +262,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *         <li>
      *         <p>
      *         PLATFORM: The platform (for example, Android or iOS).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_VERSION: The Appium version for the test.
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -259,6 +309,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -285,6 +345,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -324,6 +394,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -350,6 +430,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -387,6 +477,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -413,6 +513,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

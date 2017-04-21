@@ -1235,6 +1235,39 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest request) {
+
+        return listOfferingPromotionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(final ListOfferingPromotionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOfferingPromotionsRequest, ListOfferingPromotionsResult> asyncHandler) {
+        final ListOfferingPromotionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOfferingPromotionsResult>() {
+            @Override
+            public ListOfferingPromotionsResult call() throws Exception {
+                ListOfferingPromotionsResult result = null;
+
+                try {
+                    result = executeListOfferingPromotions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(ListOfferingTransactionsRequest request) {
 
         return listOfferingTransactionsAsync(request, null);

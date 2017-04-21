@@ -71,6 +71,19 @@ public class AmazonElasticLoadBalancingWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a LoadBalancersDeleted waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeLoadBalancersRequest> loadBalancersDeleted() {
+
+        return new WaiterBuilder<DescribeLoadBalancersRequest, DescribeLoadBalancersResult>().withSdkFunction(new DescribeLoadBalancersFunction(client))
+                .withAcceptors(new LoadBalancersDeleted.IsActiveMatcher(), new LoadBalancersDeleted.IsLoadBalancerNotFoundMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }

@@ -31,6 +31,8 @@ public class OfferingTransactionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringStatus").build();
     private static final MarshallingInfo<String> TRANSACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transactionId").build();
+    private static final MarshallingInfo<String> OFFERINGPROMOTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringPromotionId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdOn").build();
     private static final MarshallingInfo<StructuredPojo> COST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class OfferingTransactionMarshaller {
         try {
             protocolMarshaller.marshall(offeringTransaction.getOfferingStatus(), OFFERINGSTATUS_BINDING);
             protocolMarshaller.marshall(offeringTransaction.getTransactionId(), TRANSACTIONID_BINDING);
+            protocolMarshaller.marshall(offeringTransaction.getOfferingPromotionId(), OFFERINGPROMOTIONID_BINDING);
             protocolMarshaller.marshall(offeringTransaction.getCreatedOn(), CREATEDON_BINDING);
             protocolMarshaller.marshall(offeringTransaction.getCost(), COST_BINDING);
         } catch (Exception e) {
