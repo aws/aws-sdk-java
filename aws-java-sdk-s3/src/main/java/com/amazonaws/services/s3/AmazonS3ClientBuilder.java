@@ -43,11 +43,11 @@ public final class AmazonS3ClientBuilder extends AmazonS3Builder<AmazonS3ClientB
      * @return Create new instance of builder with all defaults set.
      */
     public static AmazonS3ClientBuilder standard() {
-        return new AmazonS3ClientBuilder();
+        return new AmazonS3ClientBuilder().withCredentials(new S3CredentialsProviderChain());
     }
 
     /**
-     * @return Default client using the {@link com.amazonaws.auth.DefaultAWSCredentialsProviderChain}
+     * @return Default client using the {@link com.amazonaws.services.s3.S3CredentialsProviderChain}
      * and {@link com.amazonaws.regions.DefaultAwsRegionProviderChain} chain
      */
     public static AmazonS3 defaultClient() {

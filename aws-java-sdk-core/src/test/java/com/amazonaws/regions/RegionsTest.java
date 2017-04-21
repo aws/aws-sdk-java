@@ -67,6 +67,11 @@ public class RegionsTest {
         Regions.fromName("northpole");
     }
 
+    @Test
+    public void fromName_whenRegionNameIsValid_returnsCorrectValue() {
+        Assert.assertEquals(Regions.EU_CENTRAL_1, Regions.fromName("eu-central-1"));
+    }
+
     private static class AmazonServiceClient extends AmazonWebServiceClient {
         
         public AmazonServiceClient() {

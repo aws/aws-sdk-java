@@ -105,6 +105,8 @@ public interface AmazonAppStream {
      *         The requested limit exceeds the permitted limit for an account.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.AssociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -129,6 +131,8 @@ public interface AmazonAppStream {
      *         The requested limit exceeds the permitted limit for an account.
      * @throws InvalidRoleException
      *         The specified role is invalid.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -146,6 +150,8 @@ public interface AmazonAppStream {
      *         The requested limit exceeds the permitted limit for an account.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.CreateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
      *      Documentation</a>
@@ -166,6 +172,8 @@ public interface AmazonAppStream {
      *         The specified resource exists and is not in use, but isn't available.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @sample AmazonAppStream.CreateStreamingURL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL" target="_top">AWS
      *      API Documentation</a>
@@ -183,6 +191,8 @@ public interface AmazonAppStream {
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DeleteFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
      *      Documentation</a>
@@ -201,6 +211,8 @@ public interface AmazonAppStream {
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DeleteStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
      *      Documentation</a>
@@ -243,11 +255,14 @@ public interface AmazonAppStream {
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items.
+     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
+     * operation defaults to users authenticated using a streaming url.
      * </p>
      * 
      * @param describeSessionsRequest
      * @return Result of the DescribeSessions operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @sample AmazonAppStream.DescribeSessions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions" target="_top">AWS API
      *      Documentation</a>
@@ -282,6 +297,8 @@ public interface AmazonAppStream {
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DisassociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
      *      API Documentation</a>
@@ -336,8 +353,12 @@ public interface AmazonAppStream {
      * @return Result of the StartFleet operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.StartFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
      *      Documentation</a>
@@ -353,6 +374,8 @@ public interface AmazonAppStream {
      * @return Result of the StopFleet operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.StopFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
      *      Documentation</a>
@@ -362,7 +385,8 @@ public interface AmazonAppStream {
     /**
      * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
-     * Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state.
+     * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
+     * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
      * </p>
      * 
      * @param updateFleetRequest
@@ -375,6 +399,12 @@ public interface AmazonAppStream {
      *         The specified role is invalid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.UpdateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
      *      Documentation</a>

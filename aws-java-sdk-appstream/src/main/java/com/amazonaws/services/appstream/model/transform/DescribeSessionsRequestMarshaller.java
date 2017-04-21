@@ -37,6 +37,8 @@ public class DescribeSessionsRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
     private static final DescribeSessionsRequestMarshaller instance = new DescribeSessionsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class DescribeSessionsRequestMarshaller {
             protocolMarshaller.marshall(describeSessionsRequest.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(describeSessionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeSessionsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

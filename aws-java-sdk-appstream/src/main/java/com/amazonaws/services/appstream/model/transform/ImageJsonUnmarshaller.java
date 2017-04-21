@@ -72,6 +72,10 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                     context.nextToken();
                     image.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageBuilderSupported", targetDepth)) {
+                    context.nextToken();
+                    image.setImageBuilderSupported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Platform", targetDepth)) {
                     context.nextToken();
                     image.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));

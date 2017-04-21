@@ -93,6 +93,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -140,6 +144,10 @@
         "exceptionName" : "InvalidRoleException",
         "documentation" : "<p>The specified role is invalid.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -174,6 +182,10 @@
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
         "documentation" : "<p>The specified resource already exists.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -214,6 +226,10 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>The attempted operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterCombinationException",
+        "documentation" : "<p>Indicates an incorrect combination of parameters, or a missing parameter.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -249,6 +265,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -283,6 +303,10 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -372,8 +396,12 @@
       "asyncReturnType" : "DescribeSessionsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>",
-      "exceptions" : null,
+      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterCombinationException",
+        "documentation" : "<p>Indicates an incorrect combination of parameters, or a missing parameter.</p>",
+        "httpStatusCode" : null
+      } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
         "variableDeclarationType" : "DescribeSessionsRequest",
@@ -438,6 +466,10 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -552,8 +584,16 @@
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "OperationNotPermittedException",
+        "documentation" : "<p>The attempted operation is not permitted.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -586,6 +626,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -612,7 +656,7 @@
       "asyncReturnType" : "UpdateFleetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state. </p>",
+      "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>The specified resource is in use.</p>",
@@ -628,6 +672,18 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotAvailableException",
+        "documentation" : "<p>The specified resource exists and is not in use, but isn't available.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterCombinationException",
+        "documentation" : "<p>Indicates an incorrect combination of parameters, or a missing parameter.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>An API error occurred, please try again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2087,6 +2143,51 @@
       },
       "wrapper" : false
     },
+    "AuthenticationType" : {
+      "c2jName" : "AuthenticationType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "API",
+        "value" : "API"
+      }, {
+        "name" : "SAML",
+        "value" : "SAML"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AuthenticationType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "AuthenticationType",
+        "variableName" : "authenticationType",
+        "variableType" : "AuthenticationType",
+        "documentation" : null,
+        "simpleType" : "AuthenticationType",
+        "variableSetterType" : "AuthenticationType"
+      },
+      "wrapper" : false
+    },
     "ComputeCapacity" : {
       "c2jName" : "ComputeCapacity",
       "customization" : {
@@ -2792,6 +2893,42 @@
       },
       "wrapper" : false
     },
+    "ConcurrentModificationException" : {
+      "c2jName" : "ConcurrentModificationException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>An API error occurred, please try again.</p>",
+      "enums" : null,
+      "errorCode" : "ConcurrentModificationException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ConcurrentModificationException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ConcurrentModificationException",
+        "variableName" : "concurrentModificationException",
+        "variableType" : "ConcurrentModificationException",
+        "documentation" : null,
+        "simpleType" : "ConcurrentModificationException",
+        "variableSetterType" : "ConcurrentModificationException"
+      },
+      "wrapper" : false
+    },
     "CreateFleetRequest" : {
       "c2jName" : "CreateFleetRequest",
       "customization" : {
@@ -3374,6 +3511,68 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "EnableDefaultInternetAccess",
+        "c2jShape" : "BooleanObject",
+        "deprecated" : false,
+        "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+        "getterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@return Enable/Disable default Internet access from fleet.*/",
+        "getterMethodName" : "getEnableDefaultInternetAccess",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EnableDefaultInternetAccess",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EnableDefaultInternetAccess",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "EnableDefaultInternetAccess",
+        "setterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.*/",
+        "setterMethodName" : "setEnableDefaultInternetAccess",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ComputeCapacity" : {
@@ -3625,6 +3824,69 @@
             "documentation" : "<p>The display name of the fleet.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EnableDefaultInternetAccess" : {
+          "c2jName" : "EnableDefaultInternetAccess",
+          "c2jShape" : "BooleanObject",
+          "deprecated" : false,
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+          "getterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@return Enable/Disable default Internet access from fleet.*/",
+          "getterMethodName" : "getEnableDefaultInternetAccess",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EnableDefaultInternetAccess",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EnableDefaultInternetAccess",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "EnableDefaultInternetAccess",
+          "setterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.*/",
+          "setterMethodName" : "setEnableDefaultInternetAccess",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -8078,8 +8340,133 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AuthenticationType",
+        "c2jShape" : "AuthenticationType",
+        "deprecated" : false,
+        "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+        "enumType" : "AuthenticationType",
+        "fluentSetterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+        "fluentSetterMethodName" : "withAuthenticationType",
+        "getterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@return The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@see AuthenticationType*/",
+        "getterMethodName" : "getAuthenticationType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AuthenticationType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AuthenticationType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AuthenticationType",
+        "setterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@see AuthenticationType*/",
+        "setterMethodName" : "setAuthenticationType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationType",
+          "variableType" : "String",
+          "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AuthenticationType" : {
+          "c2jName" : "AuthenticationType",
+          "c2jShape" : "AuthenticationType",
+          "deprecated" : false,
+          "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+          "enumType" : "AuthenticationType",
+          "fluentSetterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+          "fluentSetterMethodName" : "withAuthenticationType",
+          "getterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@return The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@see AuthenticationType*/",
+          "getterMethodName" : "getAuthenticationType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AuthenticationType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AuthenticationType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AuthenticationType",
+          "setterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@see AuthenticationType*/",
+          "setterMethodName" : "setAuthenticationType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>\n@param authenticationType The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationType",
+            "variableType" : "String",
+            "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "FleetName" : {
           "c2jName" : "FleetName",
           "c2jShape" : "String",
@@ -11190,6 +11577,68 @@
           "variableSetterType" : "java.util.Collection<FleetError>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "EnableDefaultInternetAccess",
+        "c2jShape" : "BooleanObject",
+        "deprecated" : false,
+        "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+        "getterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@return Default Internet access from the fleet. True (Enabled), False (Disabled).*/",
+        "getterMethodName" : "getEnableDefaultInternetAccess",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EnableDefaultInternetAccess",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EnableDefaultInternetAccess",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "EnableDefaultInternetAccess",
+        "setterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).*/",
+        "setterMethodName" : "setEnableDefaultInternetAccess",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Arn" : {
@@ -11567,6 +12016,69 @@
             "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EnableDefaultInternetAccess" : {
+          "c2jName" : "EnableDefaultInternetAccess",
+          "c2jShape" : "BooleanObject",
+          "deprecated" : false,
+          "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+          "getterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@return Default Internet access from the fleet. True (Enabled), False (Disabled).*/",
+          "getterMethodName" : "getEnableDefaultInternetAccess",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EnableDefaultInternetAccess",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EnableDefaultInternetAccess",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "EnableDefaultInternetAccess",
+          "setterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).*/",
+          "setterMethodName" : "setEnableDefaultInternetAccess",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>\n@param enableDefaultInternetAccess Default Internet access from the fleet. True (Enabled), False (Disabled).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -12912,6 +13424,68 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "ImageBuilderSupported",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withImageBuilderSupported",
+        "getterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@return Indicates whether an image builder can be launched from this image.*/",
+        "getterMethodName" : "getImageBuilderSupported",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ImageBuilderSupported",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ImageBuilderSupported",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "ImageBuilderSupported",
+        "setterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.*/",
+        "setterMethodName" : "setImageBuilderSupported",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "imageBuilderSupported",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "imageBuilderSupported",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Platform",
         "c2jShape" : "PlatformType",
         "deprecated" : false,
@@ -13755,6 +14329,69 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "ImageBuilderSupported" : {
+          "c2jName" : "ImageBuilderSupported",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withImageBuilderSupported",
+          "getterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@return Indicates whether an image builder can be launched from this image.*/",
+          "getterMethodName" : "getImageBuilderSupported",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ImageBuilderSupported",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ImageBuilderSupported",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "ImageBuilderSupported",
+          "setterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.*/",
+          "setterMethodName" : "setImageBuilderSupported",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "imageBuilderSupported",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Indicates whether an image builder can be launched from this image.</p>\n@param imageBuilderSupported Indicates whether an image builder can be launched from this image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "imageBuilderSupported",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Name" : {
           "c2jName" : "Name",
           "c2jShape" : "String",
@@ -14474,6 +15111,42 @@
         "documentation" : null,
         "simpleType" : "ImageStateChangeReasonCode",
         "variableSetterType" : "ImageStateChangeReasonCode"
+      },
+      "wrapper" : false
+    },
+    "InvalidParameterCombinationException" : {
+      "c2jName" : "InvalidParameterCombinationException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Indicates an incorrect combination of parameters, or a missing parameter.</p>",
+      "enums" : null,
+      "errorCode" : "InvalidParameterCombinationException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InvalidParameterCombinationException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "InvalidParameterCombinationException",
+        "variableName" : "invalidParameterCombinationException",
+        "variableType" : "InvalidParameterCombinationException",
+        "documentation" : null,
+        "simpleType" : "InvalidParameterCombinationException",
+        "variableSetterType" : "InvalidParameterCombinationException"
       },
       "wrapper" : false
     },
@@ -16574,8 +17247,133 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AuthenticationType",
+        "c2jShape" : "AuthenticationType",
+        "deprecated" : false,
+        "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+        "enumType" : "AuthenticationType",
+        "fluentSetterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+        "fluentSetterMethodName" : "withAuthenticationType",
+        "getterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@return The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@see AuthenticationType*/",
+        "getterMethodName" : "getAuthenticationType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AuthenticationType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AuthenticationType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AuthenticationType",
+        "setterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@see AuthenticationType*/",
+        "setterMethodName" : "setAuthenticationType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationType",
+          "variableType" : "String",
+          "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AuthenticationType" : {
+          "c2jName" : "AuthenticationType",
+          "c2jShape" : "AuthenticationType",
+          "deprecated" : false,
+          "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+          "enumType" : "AuthenticationType",
+          "fluentSetterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+          "fluentSetterMethodName" : "withAuthenticationType",
+          "getterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@return The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@see AuthenticationType*/",
+          "getterMethodName" : "getAuthenticationType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AuthenticationType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AuthenticationType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AuthenticationType",
+          "setterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@see AuthenticationType*/",
+          "setterMethodName" : "setAuthenticationType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>\n@param authenticationType The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AuthenticationType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationType",
+            "variableType" : "String",
+            "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "FleetName" : {
           "c2jName" : "FleetName",
           "c2jShape" : "String",
@@ -18685,6 +19483,68 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "EnableDefaultInternetAccess",
+        "c2jShape" : "BooleanObject",
+        "deprecated" : false,
+        "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+        "getterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@return Enable/Disable default Internet access from fleet.*/",
+        "getterMethodName" : "getEnableDefaultInternetAccess",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EnableDefaultInternetAccess",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EnableDefaultInternetAccess",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "EnableDefaultInternetAccess",
+        "setterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.*/",
+        "setterMethodName" : "setEnableDefaultInternetAccess",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableDefaultInternetAccess",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ComputeCapacity" : {
@@ -18999,6 +19859,69 @@
             "documentation" : "<p>The name displayed to end users on the AppStream 2.0 portal.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EnableDefaultInternetAccess" : {
+          "c2jName" : "EnableDefaultInternetAccess",
+          "c2jShape" : "BooleanObject",
+          "deprecated" : false,
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnableDefaultInternetAccess",
+          "getterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@return Enable/Disable default Internet access from fleet.*/",
+          "getterMethodName" : "getEnableDefaultInternetAccess",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EnableDefaultInternetAccess",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EnableDefaultInternetAccess",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "EnableDefaultInternetAccess",
+          "setterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.*/",
+          "setterMethodName" : "setEnableDefaultInternetAccess",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Enable/Disable default Internet access from fleet.</p>\n@param enableDefaultInternetAccess Enable/Disable default Internet access from fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableDefaultInternetAccess",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },
@@ -20138,7 +21061,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The VPC in which the fleet is launched.</p>",
+      "documentation" : "<p>VPC configuration information.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

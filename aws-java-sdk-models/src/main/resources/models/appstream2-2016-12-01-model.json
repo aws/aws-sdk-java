@@ -32,6 +32,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -87,6 +93,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRoleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -124,6 +136,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceAlreadyExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -167,6 +185,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "OperationNotPermittedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterCombinationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -204,6 +228,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -241,6 +271,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -327,8 +363,14 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>",
-      "errors" : null,
+      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterCombinationException"
+      } ],
       "http" : {
         "method" : "POST",
         "requestUri" : "/",
@@ -396,6 +438,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -507,7 +555,19 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "OperationNotPermittedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -539,6 +599,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -563,7 +629,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state. </p>",
+      "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -588,6 +654,24 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotAvailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterCombinationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -893,7 +977,49 @@
       "value" : null,
       "wrapper" : false
     },
+    "AuthenticationType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "API", "SAML" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "Boolean" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BooleanObject" : {
       "deprecated" : false,
       "documentation" : null,
       "enum" : null,
@@ -1028,6 +1154,42 @@
       "value" : null,
       "wrapper" : false
     },
+    "ConcurrentModificationException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An API error occurred, please try again.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateFleetRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Contains the parameters for the new fleet to create.</p>",
@@ -1093,6 +1255,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DisplayName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "EnableDefaultInternetAccess" : {
+          "deprecated" : false,
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanObject",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -1766,6 +1942,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FleetName" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the fleet for which to list sessions.</p>",
@@ -2111,7 +2301,7 @@
     },
     "ErrorMessage" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "<p>The error message in the exception.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2280,6 +2470,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "EnableDefaultInternetAccess" : {
+          "deprecated" : false,
+          "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanObject",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -2647,6 +2851,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ImageBuilderSupported" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Name" : {
           "deprecated" : false,
           "documentation" : "<p>The unique identifier for the image.</p>",
@@ -2871,6 +3089,42 @@
       "required" : null,
       "streaming" : false,
       "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidParameterCombinationException" : {
+      "deprecated" : false,
+      "documentation" : "<p>Indicates an incorrect combination of parameters, or a missing parameter.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -3448,6 +3702,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FleetName" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the fleet for which the streaming session was created.</p>",
@@ -4015,6 +4283,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "EnableDefaultInternetAccess" : {
+          "deprecated" : false,
+          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanObject",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ImageName" : {
           "deprecated" : false,
           "documentation" : "<p>The image name from which a fleet is created.</p>",
@@ -4275,7 +4557,7 @@
     },
     "VpcConfig" : {
       "deprecated" : false,
-      "documentation" : "<p>The VPC in which the fleet is launched.</p>",
+      "documentation" : "<p>VPC configuration information.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,

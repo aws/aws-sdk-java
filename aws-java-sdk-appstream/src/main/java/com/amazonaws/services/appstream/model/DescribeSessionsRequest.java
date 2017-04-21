@@ -56,6 +56,14 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     */
+    private String authenticationType;
 
     /**
      * <p>
@@ -264,6 +272,99 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
+     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming url.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     * 
+     * @return The authentication method of the user. It can be <code>API</code> for a user authenticated using a
+     *         streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *         the operation defaults to users authenticated using a streaming url.
+     * @see AuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
+     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming url.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public DescribeSessionsRequest withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
+     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming url.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(AuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
+     * to users authenticated using a streaming url.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
+     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming url.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public DescribeSessionsRequest withAuthenticationType(AuthenticationType authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -283,7 +384,9 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit());
+            sb.append("Limit: ").append(getLimit()).append(",");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +421,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
         return true;
     }
 
@@ -331,6 +438,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,8 @@ public class ImageMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<String> VISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Visibility").build();
+    private static final MarshallingInfo<Boolean> IMAGEBUILDERSUPPORTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageBuilderSupported").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Platform").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -73,6 +75,7 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(image.getState(), STATE_BINDING);
             protocolMarshaller.marshall(image.getVisibility(), VISIBILITY_BINDING);
+            protocolMarshaller.marshall(image.getImageBuilderSupported(), IMAGEBUILDERSUPPORTED_BINDING);
             protocolMarshaller.marshall(image.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(image.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(image.getStateChangeReason(), STATECHANGEREASON_BINDING);

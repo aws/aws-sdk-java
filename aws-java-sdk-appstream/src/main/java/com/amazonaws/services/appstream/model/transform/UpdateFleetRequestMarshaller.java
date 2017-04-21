@@ -47,6 +47,8 @@ public class UpdateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<Boolean> ENABLEDEFAULTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
 
     private static final UpdateFleetRequestMarshaller instance = new UpdateFleetRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class UpdateFleetRequestMarshaller {
             protocolMarshaller.marshall(updateFleetRequest.getDeleteVpcConfig(), DELETEVPCCONFIG_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

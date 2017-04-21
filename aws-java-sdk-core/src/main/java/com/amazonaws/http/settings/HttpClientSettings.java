@@ -14,6 +14,7 @@
  */
 package com.amazonaws.http.settings;
 
+import com.amazonaws.ProxyAuthenticationMethod;
 import java.net.InetAddress;
 import java.security.SecureRandom;
 
@@ -22,6 +23,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DnsResolver;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
+import java.util.List;
 
 /**
  * A convienient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
@@ -95,6 +97,10 @@ public class HttpClientSettings {
         return config.getNonProxyHosts();
     }
 
+    public List<ProxyAuthenticationMethod> getProxyAuthenticationMethods() {
+        return config.getProxyAuthenticationMethods();
+    }
+
     public boolean useReaper() {
         return config.useReaper();
     }
@@ -163,4 +169,11 @@ public class HttpClientSettings {
         return config.isUseExpectContinue();
     }
 
+    public boolean isProxyEnabled() {
+        return getProxyHost() != null && getProxyPort() > 0;
+    }
+
+    public boolean isAuthenticatedProxy() {
+        return getProxyUsername() != null && getProxyPassword() != null;
+    }
 }

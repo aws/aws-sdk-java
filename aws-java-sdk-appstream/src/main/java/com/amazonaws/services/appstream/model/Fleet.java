@@ -107,6 +107,12 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<FleetError> fleetErrors;
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     */
+    private Boolean enableDefaultInternetAccess;
 
     /**
      * <p>
@@ -701,6 +707,58 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        this.enableDefaultInternetAccess = enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @return Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public Boolean getEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        setEnableDefaultInternetAccess(enableDefaultInternetAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @return Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public Boolean isEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -736,7 +794,9 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getFleetErrors() != null)
-            sb.append("FleetErrors: ").append(getFleetErrors());
+            sb.append("FleetErrors: ").append(getFleetErrors()).append(",");
+        if (getEnableDefaultInternetAccess() != null)
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +863,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFleetErrors() != null && other.getFleetErrors().equals(this.getFleetErrors()) == false)
             return false;
+        if (other.getEnableDefaultInternetAccess() == null ^ this.getEnableDefaultInternetAccess() == null)
+            return false;
+        if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
+            return false;
         return true;
     }
 
@@ -824,6 +888,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getFleetErrors() == null) ? 0 : getFleetErrors().hashCode());
+        hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         return hashCode;
     }
 

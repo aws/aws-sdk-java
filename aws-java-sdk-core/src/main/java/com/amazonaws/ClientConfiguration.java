@@ -20,11 +20,12 @@ import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
-
 import java.net.InetAddress;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -168,6 +169,9 @@ public class ClientConfiguration {
 
     /** Optional specifies the hosts that should be accessed without going through the proxy. */
     private String nonProxyHosts = null;
+
+    /** Specifies the proxy authentication methods that should be used, in priority order. */
+    private List<ProxyAuthenticationMethod> proxyAuthenticationMethods = null;
 
     /**
      * Whether to pre-emptively authenticate against a proxy server using basic authentication
@@ -338,6 +342,7 @@ public class ClientConfiguration {
         this.proxyUsername = other.proxyUsername;
         this.proxyWorkstation = other.proxyWorkstation;
         this.nonProxyHosts = other.nonProxyHosts;
+        this.proxyAuthenticationMethods = other.proxyAuthenticationMethods;
         this.preemptiveBasicProxyAuth = other.preemptiveBasicProxyAuth;
         this.socketTimeout = other.socketTimeout;
         this.requestTimeout = other.requestTimeout;
@@ -893,6 +898,52 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withNonProxyHosts(String nonProxyHosts) {
         setNonProxyHosts(nonProxyHosts);
+        return this;
+    }
+
+    /**
+     * Returns the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order they
+     * should be attempted.
+     *
+     * @return An unmodifiable view of the proxy authentication methods that should be attempted, in order.
+     */
+    public List<ProxyAuthenticationMethod> getProxyAuthenticationMethods() {
+        return this.proxyAuthenticationMethods;
+    }
+
+    /**
+     * Configure the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order
+     * they should be attempted. Any methods not included in this list will not be attempted. If one authentication method fails,
+     * the next method will be attempted, until a working method is found (or all methods have been attempted).
+     *
+     * <p>Setting this value to null indicates using the default behavior, which is to try all authentication methods in an
+     * unspecified order.</p>
+     *
+     * @param proxyAuthenticationMethods The proxy authentication methods to be attempted, in the order they should be attempted.
+     */
+    public void setProxyAuthenticationMethods(List<ProxyAuthenticationMethod> proxyAuthenticationMethods) {
+        if(proxyAuthenticationMethods == null) {
+            this.proxyAuthenticationMethods = null;
+        } else {
+            ValidationUtils.assertNotEmpty(proxyAuthenticationMethods, "proxyAuthenticationMethods");
+            this.proxyAuthenticationMethods =
+                    Collections.unmodifiableList(new ArrayList<ProxyAuthenticationMethod>(proxyAuthenticationMethods));
+        }
+    }
+
+    /**
+     * Configure the list of authentication methods that should be used when authenticating against an HTTP proxy, in the order
+     * they should be attempted. Any methods not included in this list will not be attempted. If one authentication method fails,
+     * the next method will be attempted, until a working method is found (or all methods have been attempted).
+     *
+     * <p>Setting this value to null indicates using the default behavior, which is to try all authentication methods in an
+     * unspecified order.</p>
+     *
+     * @param proxyAuthenticationMethods The proxy authentication methods to be attempted, in the order they should be attempted.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyAuthenticationMethods(List<ProxyAuthenticationMethod> proxyAuthenticationMethods) {
+        setProxyAuthenticationMethods(proxyAuthenticationMethods);
         return this;
     }
 

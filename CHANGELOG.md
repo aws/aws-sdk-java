@@ -1,3 +1,16 @@
+# __1.11.123__ __2017-04-21__
+## __Amazon AppStream__
+  - ### Features
+    - The new feature named "Default Internet Access" will enable Internet access from AppStream 2.0 instances - image builders and fleet instances. Admins will check a flag either through AWS management console for AppStream 2.0 or through API while creating an image builder or while creating/updating a fleet.
+
+## __Amazon Kinesis__
+  - ### Features
+    - Adds a new waiter, StreamNotExists, to Kinesis.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix bug to make standard AmazonS3ClientBuilder use S3CredentialsProviderChain instead of DefaultAWSCredentialsProviderChain.
+
 # __1.11.122__ __2017-04-20__
 ## __AWS Device Farm__
   - ### Features
@@ -13,8 +26,7 @@
 
 ## __Amazon Route 53__
   - ### Features
-    - Release notes: SDK documentation now includes examples for ChangeResourceRecordSets for all types of resource record set, such as weighted, alias, and failover.
-
+    - SDK documentation now includes examples for ChangeResourceRecordSets for all types of resource record set, such as weighted, alias, and failover.
 
 ## __Amazon Route 53 Domains__
   - ### Features

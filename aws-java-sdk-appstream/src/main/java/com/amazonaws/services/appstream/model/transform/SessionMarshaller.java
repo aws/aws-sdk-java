@@ -37,6 +37,8 @@ public class SessionMarshaller {
             .marshallLocationName("FleetName").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
     private static final SessionMarshaller instance = new SessionMarshaller();
 
@@ -59,6 +61,7 @@ public class SessionMarshaller {
             protocolMarshaller.marshall(session.getStackName(), STACKNAME_BINDING);
             protocolMarshaller.marshall(session.getFleetName(), FLEETNAME_BINDING);
             protocolMarshaller.marshall(session.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(session.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
