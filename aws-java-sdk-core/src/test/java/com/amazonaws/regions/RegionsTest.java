@@ -52,6 +52,21 @@ public class RegionsTest {
                             unknown.getEndpoint());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameNull_throwsIllegalArgumentException() {
+        Regions.fromName(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameEmpty_throwsIllegalArgumentException() {
+        Regions.fromName("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fromName_whenRegionNameInvalid_throwsIllegalArgumentException() {
+        Regions.fromName("northpole");
+    }
+
     private static class AmazonServiceClient extends AmazonWebServiceClient {
         
         public AmazonServiceClient() {

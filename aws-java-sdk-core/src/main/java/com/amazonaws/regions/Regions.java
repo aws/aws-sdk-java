@@ -71,7 +71,7 @@ public enum Regions {
      */
     public static Regions fromName(String regionName) {
         for (Regions region : Regions.values()) {
-            if (regionName.equals(region.getName())) {
+            if (region.getName().equals(regionName)) {
                 return region;
             }
         }
