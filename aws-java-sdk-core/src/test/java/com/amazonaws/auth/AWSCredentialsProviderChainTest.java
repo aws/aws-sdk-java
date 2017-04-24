@@ -81,6 +81,29 @@ public class AWSCredentialsProviderChainTest {
         assertEquals(2, provider2.getCredentialsCallCount);
     }
 
+    /**
+     * Tests that after refreshing the chain, the last used provider will not
+     * be the only provider used.
+     */
+    @Test
+    public void testRefreshClearsLastProvider() throws Exception {
+        MockCredentialsProvider provider1 = new MockCredentialsProvider();
+        provider1.throwException = true;
+        MockCredentialsProvider provider2 = new MockCredentialsProvider();
+        AWSCredentialsProviderChain chain = new AWSCredentialsProviderChain(provider1, provider2);
+
+        assertEquals(0, provider1.getCredentialsCallCount);
+        assertEquals(0, provider2.getCredentialsCallCount);
+
+        chain.getCredentials();
+        assertEquals(1, provider1.getCredentialsCallCount);
+        assertEquals(1, provider2.getCredentialsCallCount);
+
+        chain.refresh(true);
+        chain.getCredentials();
+        assertEquals(2, provider1.getCredentialsCallCount);
+        assertEquals(2, provider2.getCredentialsCallCount);
+    }
 
     private static final class MockCredentialsProvider extends StaticCredentialsProvider {
         public int getCredentialsCallCount = 0;

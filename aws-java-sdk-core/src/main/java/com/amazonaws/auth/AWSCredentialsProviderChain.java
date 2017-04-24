@@ -131,9 +131,35 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
         throw new SdkClientException("Unable to load AWS credentials from any provider in the chain");
     }
 
+    /**
+     * Forces this credentials provider to refresh the credentials of all
+     * credential providers in its chain.
+     *
+     * If configured to reuse the last successful credential provider, the
+     * cache of the last successful credential provider will be retained.
+     */
     public void refresh() {
+        refresh(false);
+    }
+
+    /**
+     * Forces this credentials provider to refresh the credentials of all
+     * credential providers in its chain.
+     *
+     * If configured to reuse the last successful credential provider, the
+     * cache of the last successful credential provider may be cleared by
+     * providing the resetLastUsedProviderCache flag.
+     *
+     * @param resetLastUsedProviderCache
+     *            Whether or not to clear the last successful credential
+     *            provider; a true value will clear it.
+     */
+    public void refresh(boolean resetLastUsedProviderCache) {
         for (AWSCredentialsProvider provider : credentialsProviders) {
             provider.refresh();
+        }
+        if (resetLastUsedProviderCache) {
+            lastUsedProvider = null;
         }
     }
 }
