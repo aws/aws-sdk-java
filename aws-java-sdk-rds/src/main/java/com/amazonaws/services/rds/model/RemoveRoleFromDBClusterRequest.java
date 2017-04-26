@@ -27,7 +27,7 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      */
     private String dBClusterIdentifier;
@@ -41,11 +41,11 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to disassociate the IAM role rom.
+     *        The name of the DB cluster to disassociate the IAM role from.
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -54,10 +54,10 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
-     * @return The name of the DB cluster to disassociate the IAM role rom.
+     * @return The name of the DB cluster to disassociate the IAM role from.
      */
 
     public String getDBClusterIdentifier() {
@@ -66,11 +66,11 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to disassociate the IAM role rom.
+     *        The name of the DB cluster to disassociate the IAM role from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

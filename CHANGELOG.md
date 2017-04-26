@@ -1,4 +1,13 @@
+# __1.11.124__ __2017-04-26__
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - With Amazon Relational Database Service (Amazon RDS) running MySQL or Amazon Aurora, you can now authenticate to your DB instance using IAM database authentication.
+
 # __1.11.123__ __2017-04-21__
+## __AWS SDK for Java__
+  - ### Features
+    - Added the ability to override the proxy authentication methods used for requests.
+
 ## __Amazon AppStream__
   - ### Features
     - The new feature named "Default Internet Access" will enable Internet access from AppStream 2.0 instances - image builders and fleet instances. Admins will check a flag either through AWS management console for AppStream 2.0 or through API while creating an image builder or while creating/updating a fleet.
@@ -47,7 +56,7 @@
 
 ## __AWS Lambda__
   - ### Features
-    - Lambda integration with CloudDebugger service to enable customers to enable tracing for the Lambda functions and send trace information to the CloudDebugger service.
+    - Lambda integration with AWS X-Ray service to enable customers to enable tracing for the Lambda functions and send trace information to the AWS X-Ray service.
 
 ## __Amazon API Gateway__
   - ### Features

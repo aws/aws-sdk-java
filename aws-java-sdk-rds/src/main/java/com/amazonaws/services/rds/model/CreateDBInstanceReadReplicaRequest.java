@@ -339,6 +339,36 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String preSignedUrl;
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean enableIAMDatabaseAuthentication;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -2472,6 +2502,246 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        otherwise false.</p>
+     *        <p>
+     *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        this.enableIAMDatabaseAuthentication = enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *         otherwise false.</p>
+     *         <p>
+     *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        otherwise false.</p>
+     *        <p>
+     *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        setEnableIAMDatabaseAuthentication(enableIAMDatabaseAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *         otherwise false.</p>
+     *         <p>
+     *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -2550,6 +2820,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPreSignedUrl() != null)
             sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
+        if (getEnableIAMDatabaseAuthentication() != null)
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -2634,6 +2906,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
             return false;
+        if (other.getEnableIAMDatabaseAuthentication() == null ^ this.getEnableIAMDatabaseAuthentication() == null)
+            return false;
+        if (other.getEnableIAMDatabaseAuthentication() != null
+                && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -2663,6 +2940,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
+        hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

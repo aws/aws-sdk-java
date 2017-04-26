@@ -122,6 +122,11 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getKmsKeyId()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

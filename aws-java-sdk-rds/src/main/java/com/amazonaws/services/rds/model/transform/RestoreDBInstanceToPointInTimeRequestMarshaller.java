@@ -147,6 +147,11 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

@@ -301,6 +301,16 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean enableIAMDatabaseAuthentication;
+    /**
+     * <p>
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
@@ -2145,6 +2155,86 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts, and otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        this.enableIAMDatabaseAuthentication = enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts, and otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts, and otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        setEnableIAMDatabaseAuthentication(enableIAMDatabaseAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts, and otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
@@ -2461,6 +2551,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
             sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getEnableIAMDatabaseAuthentication() != null)
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
         if (getSourceEngine() != null)
             sb.append("SourceEngine: ").append(getSourceEngine()).append(",");
         if (getSourceEngineVersion() != null)
@@ -2561,6 +2653,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getEnableIAMDatabaseAuthentication() == null ^ this.getEnableIAMDatabaseAuthentication() == null)
+            return false;
+        if (other.getEnableIAMDatabaseAuthentication() != null
+                && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
+            return false;
         if (other.getSourceEngine() == null ^ this.getSourceEngine() == null)
             return false;
         if (other.getSourceEngine() != null && other.getSourceEngine().equals(this.getSourceEngine()) == false)
@@ -2608,6 +2705,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getSourceEngine() == null) ? 0 : getSourceEngine().hashCode());
         hashCode = prime * hashCode + ((getSourceEngineVersion() == null) ? 0 : getSourceEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode());

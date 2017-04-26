@@ -63,7 +63,9 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
+     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      */
     private Integer allocatedStorage;
@@ -145,7 +147,7 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
      * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then recoonect to the reader endpoint.
+     * you can then reconnect to the reader endpoint.
      * </p>
      */
     private String readerEndpoint;
@@ -269,6 +271,13 @@ public class DBCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
     /**
      * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     */
+    private Boolean iAMDatabaseAuthenticationEnabled;
+    /**
+     * <p>
      * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      */
@@ -276,11 +285,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
+     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
+     *        storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
+     *        DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -289,10 +302,14 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
+     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
-     * @return Specifies the allocated storage size in gigabytes (GB).
+     * @return For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
+     *         storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because
+     *         Aurora DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      */
 
     public Integer getAllocatedStorage() {
@@ -301,11 +318,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
+     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
+     *        storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
+     *        DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -812,7 +833,7 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
      * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then recoonect to the reader endpoint.
+     * you can then reconnect to the reader endpoint.
      * </p>
      * 
      * @param readerEndpoint
@@ -824,7 +845,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        <p>
      *        If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
      *        instance, your connection will be dropped. To continue sending your read workload to other Aurora Replicas
-     *        in the cluster, you can then recoonect to the reader endpoint.
+     *        in the cluster, you can then reconnect to the reader endpoint.
      */
 
     public void setReaderEndpoint(String readerEndpoint) {
@@ -841,7 +862,7 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
      * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then recoonect to the reader endpoint.
+     * you can then reconnect to the reader endpoint.
      * </p>
      * 
      * @return The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections
@@ -852,7 +873,7 @@ public class DBCluster implements Serializable, Cloneable {
      *         <p>
      *         If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
      *         instance, your connection will be dropped. To continue sending your read workload to other Aurora
-     *         Replicas in the cluster, you can then recoonect to the reader endpoint.
+     *         Replicas in the cluster, you can then reconnect to the reader endpoint.
      */
 
     public String getReaderEndpoint() {
@@ -869,7 +890,7 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
      * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then recoonect to the reader endpoint.
+     * you can then reconnect to the reader endpoint.
      * </p>
      * 
      * @param readerEndpoint
@@ -881,7 +902,7 @@ public class DBCluster implements Serializable, Cloneable {
      *        <p>
      *        If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
      *        instance, your connection will be dropped. To continue sending your read workload to other Aurora Replicas
-     *        in the cluster, you can then recoonect to the reader endpoint.
+     *        in the cluster, you can then reconnect to the reader endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1872,6 +1893,66 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     */
+
+    public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        this.iAMDatabaseAuthenticationEnabled = iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean getIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        setIAMDatabaseAuthenticationEnabled(iAMDatabaseAuthenticationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean isIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
      * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
@@ -1985,6 +2066,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("DBClusterArn: ").append(getDBClusterArn()).append(",");
         if (getAssociatedRoles() != null)
             sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
+        if (getIAMDatabaseAuthenticationEnabled() != null)
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime());
         sb.append("}");
@@ -2130,6 +2213,11 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
             return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() == null ^ this.getIAMDatabaseAuthenticationEnabled() == null)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() != null
+                && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
+            return false;
         if (other.getClusterCreateTime() == null ^ this.getClusterCreateTime() == null)
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
@@ -2174,6 +2262,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
+        hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         return hashCode;
     }

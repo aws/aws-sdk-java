@@ -54,7 +54,7 @@ import com.amazonaws.services.rds.model.transform.*;
  * </p>
  * <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a
- * relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational
+ * relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
  * database and manages common database administration tasks, freeing up developers to focus on what makes their
  * applications and businesses unique.
  * </p>
@@ -953,7 +953,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Amazon Resource Name (ARN) of the shared DB snapshot.
      * </p>
      * <p>
-     * You can copy an encrypted DB snapshot from another AWS Region. In that case, the region where you call the
+     * You can copy an encrypted DB snapshot from another AWS region. In that case, the region where you call the
      * <code>CopyDBSnapshot</code> action is the destination region for the encrypted DB snapshot to be copied to. To
      * copy an encrypted DB snapshot from another region, you must provide the following values:
      * </p>
@@ -1026,9 +1026,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </li>
      * </ul>
      * <p>
-     * For more information on copying encrypted snapshots from one region to another, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion"
-     * > Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
+     * For more information on copying encrypted snapshots from one region to another, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot"> Copying
+     * a DB Snapshot</a> in the Amazon RDS User Guide.
      * </p>
      * 
      * @param copyDBSnapshotRequest
@@ -1457,6 +1457,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that acts as a Read Replica of a
      * source DB instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * instance for an Aurora DB cluster.
+     * </p>
+     * </note>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
      * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
@@ -2070,7 +2076,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param deleteDBClusterParameterGroupRequest
      * @return Result of the DeleteDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBClusterParameterGroup
@@ -2274,7 +2281,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param deleteDBParameterGroupRequest
      * @return Result of the DeleteDBParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBParameterGroup
@@ -4437,7 +4445,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @sample AmazonRDS.ModifyDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -4489,14 +4498,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
      * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
      * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts.
+     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
+     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+     * <code>all</code> as a value for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
      * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -4659,7 +4667,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @sample AmazonRDS.ModifyDBParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
@@ -4764,14 +4773,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
      * manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private information that you don't want available
-     * to all AWS accounts.
+     * to all AWS accounts. If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of
+     * authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+     * for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
      * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If the manual DB snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -5417,7 +5425,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param resetDBClusterParameterGroupRequest
      * @return Result of the ResetDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBClusterParameterGroup
@@ -5463,8 +5472,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters
-     * submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters,
+     * provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
      * parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
      * When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to
      * <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code>
@@ -5474,7 +5483,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param resetDBParameterGroupRequest
      * @return Result of the ResetDBParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group cannot be deleted because it is in use.
+     *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
+     *         group, you cannot delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBParameterGroup
@@ -5522,8 +5532,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
      * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating Data from MySQL by
-     * Using an Amazon S3 Bucket</a>.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">
+     * Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.
      * </p>
      * 
      * @param restoreDBClusterFromS3Request
@@ -5705,40 +5715,38 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @return Result of the RestoreDBClusterToPointInTime operation returned by the service.
      * @throws DBClusterAlreadyExistsException
      *         User already has a DB cluster with the given identifier.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @throws DBClusterQuotaExceededException
      *         User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster
      *         quota.
-     * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
-     * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-     * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @throws DBClusterSnapshotNotFoundException
      *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     * @throws DBSubnetGroupNotFoundException
+     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
      * @throws InsufficientDBClusterCapacityException
      *         The DB cluster does not have enough capacity for the current operation.
      * @throws InsufficientStorageClusterCapacityException
      *         There is insufficient storage available for the current action. You may be able to resolve this error by
      *         updating your subnet group to use different Availability Zones that have more storage available.
-     * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value is not a valid DB cluster snapshot state.
-     * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
-     * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBSnapshotStateException
+     *         The state of the DB snapshot does not allow deletion.
      * @throws InvalidRestoreException
      *         Cannot restore from vpc backup to non-vpc DB instance.
-     * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
-     * @throws OptionGroupNotFoundException
-     *         The specified option group could not be found.
+     * @throws InvalidVPCNetworkStateException
+     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
+     * @throws OptionGroupNotFoundException
+     *         The specified option group could not be found.
+     * @throws StorageQuotaExceededException
+     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>

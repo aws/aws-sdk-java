@@ -139,6 +139,11 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDomainIAMRoleName()));
         }
 
+        if (restoreDBInstanceFromDBSnapshotRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

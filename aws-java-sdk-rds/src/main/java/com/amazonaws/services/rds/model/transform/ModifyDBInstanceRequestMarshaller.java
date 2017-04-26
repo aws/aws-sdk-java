@@ -187,6 +187,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("PromotionTier", StringUtils.fromInteger(modifyDBInstanceRequest.getPromotionTier()));
         }
 
+        if (modifyDBInstanceRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(modifyDBInstanceRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

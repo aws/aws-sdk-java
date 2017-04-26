@@ -31,6 +31,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
+     * You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -47,6 +50,23 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -155,7 +175,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String preSignedUrl;
-
+    /**
+     * <p>
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise false. The
+     * default is false.
+     * </p>
+     */
     private Boolean copyTags;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -165,6 +190,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
+     * </p>
+     * <p>
+     * You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
      * </p>
      * <p>
      * Constraints:
@@ -185,6 +213,23 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster-snapshot1</code>
@@ -192,6 +237,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * 
      * @param sourceDBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+     *        <p>
+     *        You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -211,6 +259,24 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Must specify a valid system snapshot in the "available" state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN.
+     *        For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
+     *        or DB Cluster Snapshot</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-cluster-snapshot1</code>
@@ -223,6 +289,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
+     * </p>
+     * <p>
+     * You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
      * </p>
      * <p>
      * Constraints:
@@ -243,12 +312,32 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster-snapshot1</code>
      * </p>
      * 
      * @return The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+     *         <p>
+     *         You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -268,6 +357,24 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         Cannot end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Must specify a valid system snapshot in the "available" state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN.
+     *         For more information, go to <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB
+     *         Snapshot or DB Cluster Snapshot</a>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>my-cluster-snapshot1</code>
@@ -280,6 +387,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
+     * </p>
+     * <p>
+     * You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
      * </p>
      * <p>
      * Constraints:
@@ -300,6 +410,23 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Must specify a valid system snapshot in the "available" state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN. For more
+     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>my-cluster-snapshot1</code>
@@ -307,6 +434,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * 
      * @param sourceDBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+     *        <p>
+     *        You cannot copy an encrypted, shared DB cluster snapshot from one AWS region to another.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -324,6 +454,24 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must specify a valid system snapshot in the "available" state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source snapshot is in a different region than the copy, specify a valid DB cluster snapshot ARN.
+     *        For more information, go to <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
+     *        or DB Cluster Snapshot</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -947,7 +1095,14 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise false. The
+     * default is false.
+     * </p>
+     * 
      * @param copyTags
+     *        True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise
+     *        false. The default is false.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -955,7 +1110,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise false. The
+     * default is false.
+     * </p>
+     * 
+     * @return True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise
+     *         false. The default is false.
      */
 
     public Boolean getCopyTags() {
@@ -963,7 +1124,14 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise false. The
+     * default is false.
+     * </p>
+     * 
      * @param copyTags
+     *        True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise
+     *        false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -973,7 +1141,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise false. The
+     * default is false.
+     * </p>
+     * 
+     * @return True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot; otherwise
+     *         false. The default is false.
      */
 
     public Boolean isCopyTags() {

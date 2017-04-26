@@ -224,6 +224,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("Timezone", StringUtils.fromString(createDBInstanceRequest.getTimezone()));
         }
 
+        if (createDBInstanceRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBInstanceRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

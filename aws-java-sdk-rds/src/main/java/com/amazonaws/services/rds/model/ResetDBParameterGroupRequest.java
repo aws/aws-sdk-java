@@ -64,9 +64,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
     private Boolean resetAllParameters;
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -373,9 +374,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -404,9 +406,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * Valid Values (for Apply method): <code>pending-reboot</code>
      * </p>
      * 
-     * @return An array of parameter names, values, and the apply method for the parameter update. At least one
-     *         parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of
-     *         20 parameters can be modified in a single request.</p>
+     * @return To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *         <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the
+     *         following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be
+     *         modified in a single request.</p>
      *         <p>
      *         <b>MySQL</b>
      *         </p>
@@ -443,9 +446,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -475,9 +479,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -516,9 +521,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -553,9 +559,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -596,9 +603,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -628,9 +636,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>

@@ -30,7 +30,7 @@ import com.amazonaws.services.rds.model.*;
  * </p>
  * <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a
- * relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational
+ * relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
  * database and manages common database administration tasks, freeing up developers to focus on what makes their
  * applications and businesses unique.
  * </p>
@@ -591,7 +591,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Amazon Resource Name (ARN) of the shared DB snapshot.
      * </p>
      * <p>
-     * You can copy an encrypted DB snapshot from another AWS Region. In that case, the region where you call the
+     * You can copy an encrypted DB snapshot from another AWS region. In that case, the region where you call the
      * <code>CopyDBSnapshot</code> action is the destination region for the encrypted DB snapshot to be copied to. To
      * copy an encrypted DB snapshot from another region, you must provide the following values:
      * </p>
@@ -664,9 +664,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * For more information on copying encrypted snapshots from one region to another, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion"
-     * > Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
+     * For more information on copying encrypted snapshots from one region to another, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot"> Copying
+     * a DB Snapshot</a> in the Amazon RDS User Guide.
      * </p>
      * 
      * @param copyDBSnapshotRequest
@@ -686,7 +686,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Amazon Resource Name (ARN) of the shared DB snapshot.
      * </p>
      * <p>
-     * You can copy an encrypted DB snapshot from another AWS Region. In that case, the region where you call the
+     * You can copy an encrypted DB snapshot from another AWS region. In that case, the region where you call the
      * <code>CopyDBSnapshot</code> action is the destination region for the encrypted DB snapshot to be copied to. To
      * copy an encrypted DB snapshot from another region, you must provide the following values:
      * </p>
@@ -759,9 +759,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * For more information on copying encrypted snapshots from one region to another, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion"
-     * > Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
+     * For more information on copying encrypted snapshots from one region to another, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot"> Copying
+     * a DB Snapshot</a> in the Amazon RDS User Guide.
      * </p>
      * 
      * @param copyDBSnapshotRequest
@@ -1023,6 +1023,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that acts as a Read Replica of a
      * source DB instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * instance for an Aurora DB cluster.
+     * </p>
+     * </note>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
      * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
@@ -1125,6 +1131,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that acts as a Read Replica of a
      * source DB instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * instance for an Aurora DB cluster.
+     * </p>
+     * </note>
      * <p>
      * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
      * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
@@ -3560,14 +3572,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
      * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
      * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts.
+     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
+     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+     * <code>all</code> as a value for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
      * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -3590,14 +3601,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
      * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
      * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts.
+     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
+     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+     * <code>all</code> as a value for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
      * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If a manual DB cluster snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -3764,14 +3774,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
      * manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private information that you don't want available
-     * to all AWS accounts.
+     * to all AWS accounts. If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of
+     * authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+     * for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
      * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If the manual DB snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -3792,14 +3801,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
      * manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the
      * <code>all</code> value for any manual DB snapshots that contain private information that you don't want available
-     * to all AWS accounts.
+     * to all AWS accounts. If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of
+     * authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+     * for that parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
      * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action.
-     * </p>
-     * <p>
-     * If the manual DB snapshot is encrypted, it cannot be shared.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -4270,8 +4278,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters
-     * submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters,
+     * provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
      * parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
      * When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to
      * <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code>
@@ -4288,8 +4296,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters
-     * submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+     * Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters,
+     * provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
      * parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
      * When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to
      * <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code>
@@ -4313,8 +4321,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
      * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating Data from MySQL by
-     * Using an Amazon S3 Bucket</a>.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">
+     * Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.
      * </p>
      * 
      * @param restoreDBClusterFromS3Request
@@ -4329,8 +4337,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
      * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating Data from MySQL by
-     * Using an Amazon S3 Bucket</a>.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">
+     * Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.
      * </p>
      * 
      * @param restoreDBClusterFromS3Request
