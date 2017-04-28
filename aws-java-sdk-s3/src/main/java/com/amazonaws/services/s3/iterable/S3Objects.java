@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.s3.iterable;
 
-import java.util.Iterator;
-
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+
+import java.util.Iterator;
 
 /**
  * Provides an easy way to iterate Amazon S3 objects in a "foreach" statement.
@@ -39,6 +39,7 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
 
     private AmazonS3 s3;
     private String prefix = null;
+    private String delimiter = null;
     private String bucketName;
     private Integer batchSize = null;
 
@@ -91,12 +92,27 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
         return this;
     }
 
+    /**
+     * Sets the delimiter.
+     *
+     * @param delimiter
+     *            The delimiter.
+     */
+    public S3Objects withDelimiter(String delimiter) {
+        this.delimiter = delimiter;
+        return this;
+    }
+
     public Integer getBatchSize() {
         return batchSize;
     }
 
     public String getPrefix() {
         return prefix;
+    }
+
+    public String getDelimiter() {
+        return delimiter;
     }
 
     public String getBucketName() {
@@ -137,6 +153,7 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
                     ListObjectsRequest req = new ListObjectsRequest();
                     req.setBucketName(getBucketName());
                     req.setPrefix(getPrefix());
+                    req.setDelimiter(getDelimiter());
                     req.setMaxKeys(getBatchSize());
                     currentListing = getS3().listObjects(req);
                 } else {
