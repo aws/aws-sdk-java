@@ -51,7 +51,7 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
         if (StringUtils.isNullOrEmpty(sessionToken)) {
             return new BasicAWSCredentials(accessKey, secretKey);
         } else {
-            return new BasicAWSSessionCredentials(accessKey, secretKey, sessionToken);
+            return new BasicSessionCredentials(accessKey, secretKey, sessionToken);
         }
     }
 
