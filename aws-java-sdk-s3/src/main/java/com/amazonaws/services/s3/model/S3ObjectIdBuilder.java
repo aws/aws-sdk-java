@@ -76,4 +76,29 @@ public final class S3ObjectIdBuilder implements Serializable {
     public S3ObjectId build() {
         return new S3ObjectId(bucket, key, versionId);
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || object instanceof S3ObjectIdBuilder == false) return false;
+        if (!super.equals(object)) return false;
+
+        S3ObjectIdBuilder that = (S3ObjectIdBuilder) object;
+
+        if (getBucket() != null ? !getBucket().equals(that.getBucket()) : that.getBucket() != null) return false;
+        if (getKey() != null ? !getKey().equals(that.getKey()) : that.getKey() != null) return false;
+        if (getVersionId() != null ? !getVersionId().equals(that.getVersionId()) : that.getVersionId() != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getBucket() != null ? getBucket().hashCode() : 0);
+        result = 31 * result + (getKey() != null ? getKey().hashCode() : 0);
+        result = 31 * result + (getVersionId() != null ? getVersionId().hashCode() : 0);
+        return result;
+    }
 }

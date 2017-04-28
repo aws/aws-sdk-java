@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -1007,5 +1008,50 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     public GetObjectRequest withS3ObjectId(S3ObjectId s3ObjectId) {
         setS3ObjectId(s3ObjectId);
         return this;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || object instanceof GetObjectRequest == false) return false;
+        if (!super.equals(object)) return false;
+
+        GetObjectRequest that = (GetObjectRequest) object;
+
+        if (isRequesterPays() != that.isRequesterPays()) return false;
+        if (!s3ObjectIdBuilder.equals(that.s3ObjectIdBuilder)) return false;
+        if (!java.util.Arrays.equals(getRange(), that.getRange())) return false;
+        if (getMatchingETagConstraints() != null ? !getMatchingETagConstraints().equals(that.getMatchingETagConstraints()) : that.getMatchingETagConstraints() != null)
+            return false;
+        if (getNonmatchingETagConstraints() != null ? !getNonmatchingETagConstraints().equals(that.getNonmatchingETagConstraints()) : that.getNonmatchingETagConstraints() != null)
+            return false;
+        if (getUnmodifiedSinceConstraint() != null ? !getUnmodifiedSinceConstraint().equals(that.getUnmodifiedSinceConstraint()) : that.getUnmodifiedSinceConstraint() != null)
+            return false;
+        if (getModifiedSinceConstraint() != null ? !getModifiedSinceConstraint().equals(that.getModifiedSinceConstraint()) : that.getModifiedSinceConstraint() != null)
+            return false;
+        if (getResponseHeaders() != null ? !getResponseHeaders().equals(that.getResponseHeaders()) : that.getResponseHeaders() != null)
+            return false;
+        if (getSSECustomerKey() != null ? !getSSECustomerKey().equals(that.getSSECustomerKey()) : that.getSSECustomerKey() != null)
+            return false;
+        if (getPartNumber() != null ? !getPartNumber().equals(that.getPartNumber()) : that.getPartNumber() != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + s3ObjectIdBuilder.hashCode();
+        result = 31 * result + Arrays.hashCode(getRange());
+        result = 31 * result + (getMatchingETagConstraints() != null ? getMatchingETagConstraints().hashCode() : 0);
+        result = 31 * result + (getNonmatchingETagConstraints() != null ? getNonmatchingETagConstraints().hashCode() : 0);
+        result = 31 * result + (getUnmodifiedSinceConstraint() != null ? getUnmodifiedSinceConstraint().hashCode() : 0);
+        result = 31 * result + (getModifiedSinceConstraint() != null ? getModifiedSinceConstraint().hashCode() : 0);
+        result = 31 * result + (getResponseHeaders() != null ? getResponseHeaders().hashCode() : 0);
+        result = 31 * result + (isRequesterPays() ? 1 : 0);
+        result = 31 * result + (getSSECustomerKey() != null ? getSSECustomerKey().hashCode() : 0);
+        result = 31 * result + (getPartNumber() != null ? getPartNumber().hashCode() : 0);
+        return result;
     }
 }
