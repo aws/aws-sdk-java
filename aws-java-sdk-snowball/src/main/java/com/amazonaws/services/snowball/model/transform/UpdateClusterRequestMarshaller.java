@@ -41,6 +41,8 @@ public class UpdateClusterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShippingOption").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Notification").build();
+    private static final MarshallingInfo<String> FORWARDINGADDRESSID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardingAddressId").build();
 
     private static final UpdateClusterRequestMarshaller instance = new UpdateClusterRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateClusterRequestMarshaller {
             protocolMarshaller.marshall(updateClusterRequest.getAddressId(), ADDRESSID_BINDING);
             protocolMarshaller.marshall(updateClusterRequest.getShippingOption(), SHIPPINGOPTION_BINDING);
             protocolMarshaller.marshall(updateClusterRequest.getNotification(), NOTIFICATION_BINDING);
+            protocolMarshaller.marshall(updateClusterRequest.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

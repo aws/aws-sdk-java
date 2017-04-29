@@ -65,6 +65,10 @@ public class ContinueUpdateRollbackRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (continueUpdateRollbackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(continueUpdateRollbackRequest.getClientRequestToken()));
+        }
+
         return request;
     }
 

@@ -9596,6 +9596,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "SourceDBClusterSnapshotArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null value.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Status" : {
           "deprecated" : false,
           "documentation" : "<p>Specifies the status of this DB cluster snapshot.</p>",

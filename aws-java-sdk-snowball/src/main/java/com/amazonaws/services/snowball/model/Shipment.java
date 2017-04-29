@@ -30,8 +30,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     * <code>DELIVERED</code>.
+     * Status information for a shipment.
      * </p>
      */
     private String status;
@@ -48,13 +47,11 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     * <code>DELIVERED</code>.
+     * Status information for a shipment.
      * </p>
      * 
      * @param status
-     *        Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     *        <code>DELIVERED</code>.
+     *        Status information for a shipment.
      */
 
     public void setStatus(String status) {
@@ -63,12 +60,10 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     * <code>DELIVERED</code>.
+     * Status information for a shipment.
      * </p>
      * 
-     * @return Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     *         <code>DELIVERED</code>.
+     * @return Status information for a shipment.
      */
 
     public String getStatus() {
@@ -77,13 +72,11 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     * <code>DELIVERED</code>.
+     * Status information for a shipment.
      * </p>
      * 
      * @param status
-     *        Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and
-     *        <code>DELIVERED</code>.
+     *        Status information for a shipment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

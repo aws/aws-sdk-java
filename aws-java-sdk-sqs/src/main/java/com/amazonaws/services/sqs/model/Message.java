@@ -64,7 +64,7 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon
      * SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For
-     * information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      */
     private String mD5OfMessageAttributes;
@@ -339,13 +339,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon
      * SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For
-     * information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that
      *        Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5
-     *        digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     *        digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
@@ -356,12 +356,12 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon
      * SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For
-     * information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @return An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that
      *         Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5
-     *         digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     *         digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      */
 
     public String getMD5OfMessageAttributes() {
@@ -372,13 +372,13 @@ public class Message implements Serializable, Cloneable {
      * <p>
      * An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon
      * SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For
-     * information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     * information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * 
      * @param mD5OfMessageAttributes
      *        An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that
      *        Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5
-     *        digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+     *        digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

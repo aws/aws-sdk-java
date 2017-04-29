@@ -464,6 +464,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedThroughputExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidImageFormatException"
       } ],
       "http" : {
         "method" : "POST",

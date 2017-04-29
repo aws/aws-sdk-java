@@ -140,6 +140,11 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                     continue;
                 }
 
+                if (context.testExpression("SourceDBClusterSnapshotArn", targetDepth)) {
+                    dBClusterSnapshot.setSourceDBClusterSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
                     dBClusterSnapshot.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -95,6 +95,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withModeledClass(
                                     com.amazonaws.services.snowball.model.InvalidInputCombinationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withModeledClass(
                                     com.amazonaws.services.snowball.model.InvalidAddressException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.snowball.model.AmazonSnowballException.class));
@@ -398,11 +401,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates an address for a Snowball to be shipped to.
-     * </p>
-     * <p>
-     * Addresses are validated at the time of creation. The address you provide must be located within the serviceable
-     * area of your region. If the address is invalid or unsupported, then an exception is thrown.
+     * Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of
+     * creation. The address you provide must be located within the serviceable area of your region. If the address is
+     * invalid or unsupported, then an exception is thrown.
      * </p>
      * 
      * @param createAddressRequest
@@ -514,7 +515,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster. .
+     * Creates a job to the other job attributes are inherited from the cluster.
      * </p>
      * 
      * @param createJobRequest
@@ -637,6 +638,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidResourceException
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.DescribeAddresses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses" target="_top">AWS API
      *      Documentation</a>
@@ -733,7 +737,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns information about a specific job including shipping information, job status, and other important
-     * metadata. .
+     * metadata.
      * </p>
      * 
      * @param describeJobRequest
@@ -980,6 +984,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidResourceException
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListClusterJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs" target="_top">AWS API
      *      Documentation</a>
@@ -1030,6 +1037,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * 
      * @param listClustersRequest
      * @return Result of the ListClusters operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters" target="_top">AWS API
      *      Documentation</a>
@@ -1081,6 +1091,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * 
      * @param listJobsRequest
      * @return Result of the ListJobs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs" target="_top">AWS API
      *      Documentation</a>

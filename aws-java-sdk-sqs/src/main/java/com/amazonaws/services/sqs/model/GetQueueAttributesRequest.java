@@ -101,7 +101,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -116,7 +117,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -138,6 +139,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -149,7 +171,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -255,8 +283,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *        message.
+     *        <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains
+     *        a message.
      *        </p>
      *        </li>
      *        <li>
@@ -271,7 +299,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
@@ -293,6 +321,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
+     *        The following attributes apply only to <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
+     *        a custom CMK. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *        >Key Terms</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        The following attributes apply only to <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *        (first-in-first-out) queues</a>:
@@ -304,7 +353,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        To determine whether a queue is <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *        >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
@@ -440,7 +495,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -455,7 +511,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -477,6 +533,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -488,7 +565,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -561,8 +644,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *         message.
+     *         <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *         retains a message.
      *         </p>
      *         </li>
      *         <li>
@@ -577,7 +660,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *         <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *         <code>ReceiveMessage</code> action waits for a message to arrive.
      *         </p>
      *         </li>
@@ -599,6 +682,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
+     *         The following attributes apply only to <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *         >server-side-encryption</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS
+     *         or a custom CMK. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *         >Key Terms</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *         can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
      *         The following attributes apply only to <a
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *         (first-in-first-out) queues</a>:
@@ -610,7 +714,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *         >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         To determine whether a queue is <a
+     *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *         >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
@@ -695,7 +805,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -710,7 +821,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -732,6 +843,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -743,7 +875,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -817,8 +955,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *        message.
+     *        <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains
+     *        a message.
      *        </p>
      *        </li>
      *        <li>
@@ -833,7 +971,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
@@ -855,6 +993,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
+     *        The following attributes apply only to <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
+     *        a custom CMK. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *        >Key Terms</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        The following attributes apply only to <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *        (first-in-first-out) queues</a>:
@@ -866,7 +1025,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        To determine whether a queue is <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *        >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
@@ -953,7 +1118,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -968,7 +1134,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -990,6 +1156,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -1001,7 +1188,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -1080,8 +1273,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *        message.
+     *        <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains
+     *        a message.
      *        </p>
      *        </li>
      *        <li>
@@ -1096,7 +1289,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
@@ -1118,6 +1311,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
+     *        The following attributes apply only to <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
+     *        a custom CMK. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *        >Key Terms</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        The following attributes apply only to <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *        (first-in-first-out) queues</a>:
@@ -1129,7 +1343,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        To determine whether a queue is <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *        >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
@@ -1218,7 +1438,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -1233,7 +1454,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -1255,6 +1476,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -1266,7 +1508,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -1340,8 +1588,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *        message.
+     *        <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains
+     *        a message.
      *        </p>
      *        </li>
      *        <li>
@@ -1356,7 +1604,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
@@ -1378,6 +1626,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
+     *        The following attributes apply only to <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
+     *        a custom CMK. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *        >Key Terms</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        The following attributes apply only to <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *        (first-in-first-out) queues</a>:
@@ -1389,7 +1658,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        To determine whether a queue is <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *        >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
@@ -1473,7 +1748,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message.
+     * <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a
+     * message.
      * </p>
      * </li>
      * <li>
@@ -1488,7 +1764,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
@@ -1510,6 +1786,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
+     * The following attributes apply only to <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     * >server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
+     * custom CMK. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     * >Key Terms</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can
+     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:
@@ -1521,7 +1818,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
@@ -1595,8 +1898,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a
-     *        message.
+     *        <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains
+     *        a message.
      *        </p>
      *        </li>
      *        <li>
@@ -1611,7 +1914,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the
      *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
@@ -1633,6 +1936,27 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
+     *        The following attributes apply only to <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
+     *        a custom CMK. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
+     *        >Key Terms</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS
+     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        The following attributes apply only to <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      *        (first-in-first-out) queues</a>:
@@ -1644,7 +1968,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
      *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        To determine whether a queue is <a
+     *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html"
+     *        >FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the

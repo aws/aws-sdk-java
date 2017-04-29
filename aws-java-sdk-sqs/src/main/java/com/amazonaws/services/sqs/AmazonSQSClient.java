@@ -534,7 +534,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     /**
      * <p>
      * Changes the visibility timeout of multiple messages. This is a batch version of
-     * <code> <a>ChangeMessageVisibility</a> </code>. The result of the action on each message is reported individually
+     * <code> <a>ChangeMessageVisibility</a>.</code> The result of the action on each message is reported individually
      * in the response. You can send up to 10 <code> <a>ChangeMessageVisibility</a> </code> requests with each
      * <code>ChangeMessageVisibilityBatch</code> action.
      * </p>
@@ -614,8 +614,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Creates a new standard or FIFO queue or returns the URL of an existing queue. You can pass one or more attributes
-     * in the request. Keep the following caveats in mind:
+     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following
+     * caveats in mind:
      * </p>
      * <ul>
      * <li>
@@ -746,7 +746,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * request succeeds, but the message might not be deleted.
      * </p>
      * <p>
-     * For standard queues, it is possible to receive a message even after you deleting it. This might happen on rare
+     * For standard queues, it is possible to receive a message even after you delete it. This might happen on rare
      * occasions if one of the servers storing a copy of the message is unavailable when you send the request to delete
      * the message. The copy remains on the server and might be returned to you on a subsequent receive request. You
      * should ensure that your application is idempotent, so that receiving a message more than once does not cause
@@ -808,7 +808,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     /**
      * <p>
      * Deletes up to ten messages from the specified queue. This is a batch version of
-     * <code> <a>DeleteMessage</a> </code>. The result of the action on each message is reported individually in the
+     * <code> <a>DeleteMessage</a>.</code> The result of the action on each message is reported individually in the
      * response.
      * </p>
      * <important>
@@ -957,6 +957,12 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * Gets attributes for the specified queue.
      * </p>
      * <note>
+     * <p>
+     * To determine whether a queue is <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you
+     * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+     * </p>
+     * </note> <note>
      * <p>
      * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
@@ -1284,7 +1290,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </li>
      * <li>
      * <p>
-     * An MD5 digest of the message body. For information on MD5, see <a
+     * An MD5 digest of the message body. For information about MD5, see <a
      * href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
      * </p>
      * </li>
@@ -1446,44 +1452,15 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      * 
@@ -1540,7 +1517,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Delivers up to ten messages to the specified queue. This is a batch version of <code> <a>SendMessage</a> </code>.
+     * Delivers up to ten messages to the specified queue. This is a batch version of <code> <a>SendMessage</a>.</code>
      * For a FIFO queue, multiple messages within a single batch are enqueued in the order they are sent.
      * </p>
      * <p>
@@ -1554,44 +1531,15 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      * <p>

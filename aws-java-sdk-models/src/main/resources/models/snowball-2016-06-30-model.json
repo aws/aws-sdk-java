@@ -105,7 +105,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.</p>",
+      "documentation" : "<p>Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -185,7 +185,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. .</p>",
+      "documentation" : "<p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -272,6 +272,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidResourceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
       } ],
       "http" : {
         "method" : "POST",
@@ -327,7 +333,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns information about a specific job including shipping information, job status, and other important metadata. .</p>",
+      "documentation" : "<p>Returns information about a specific job including shipping information, job status, and other important metadata. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -464,6 +470,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidResourceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
       } ],
       "http" : {
         "method" : "POST",
@@ -489,7 +501,13 @@
       "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>",
-      "errors" : null,
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      } ],
       "http" : {
         "method" : "POST",
         "requestUri" : "/",
@@ -514,7 +532,13 @@
       "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.</p>",
-      "errors" : null,
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      } ],
       "http" : {
         "method" : "POST",
         "requestUri" : "/",
@@ -708,9 +732,23 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "IsRestricted" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Landmark" : {
           "deprecated" : false,
-          "documentation" : "<p>The landmark identifying the address that the appliance will be shipped to.</p>",
+          "documentation" : "<p>This field is no longer used and the value is ignored.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -766,7 +804,7 @@
         },
         "PrefectureOrDistrict" : {
           "deprecated" : false,
-          "documentation" : "<p>The prefecture or district that the appliance will be shipped to.</p>",
+          "documentation" : "<p>This field is no longer used and the value is ignored.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1285,6 +1323,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "JobType" : {
           "deprecated" : false,
           "documentation" : "<p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>",
@@ -1526,6 +1578,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "JobType" : {
           "deprecated" : false,
           "documentation" : "<p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>",
@@ -1721,6 +1787,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The forwarding address ID for a job. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -2704,6 +2784,42 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidNextTokenException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidResourceException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>",
@@ -3061,6 +3177,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "JobId" : {
           "deprecated" : false,
           "documentation" : "<p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>",
@@ -3119,7 +3249,7 @@
         },
         "KmsKeyARN" : {
           "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This ARN was created using the <code>CreateKey</code> API action in AWS KMS.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This ARN was created using the <a href=\"http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html\">CreateKey</a> API action in AWS KMS.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3161,7 +3291,7 @@
         },
         "RoleARN" : {
           "deprecated" : false,
-          "documentation" : "<p>The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS Identity and Access Management (IAM).</p>",
+          "documentation" : "<p>The role ARN associated with this job. This ARN was created using the <a href=\"http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html\">CreateRole</a> API action in AWS Identity and Access Management (IAM).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3484,7 +3614,7 @@
       "member" : null,
       "members" : { },
       "min" : 0,
-      "pattern" : "arn:(aws|aws-us-gov):kms:.*:[0-9]{12}:key/.*",
+      "pattern" : "arn:aws.*:kms:.*:[0-9]{12}:key/.*",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -4030,7 +4160,7 @@
       "member" : null,
       "members" : { },
       "min" : 0,
-      "pattern" : "arn:(aws|aws-us-gov):iam::[0-9]{12}:role/.*",
+      "pattern" : "arn:aws.*:iam::[0-9]{12}:role/.*",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -4136,7 +4266,7 @@
       "members" : {
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>, and <code>DELIVERED</code>.</p>",
+          "documentation" : "<p>Status information for a shipment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4312,7 +4442,7 @@
       "member" : null,
       "members" : { },
       "min" : 0,
-      "pattern" : "arn:(aws|aws-us-gov):sns:.*:[0-9]{12}:.*",
+      "pattern" : "arn:aws.*:sns:.*:[0-9]{12}:.*",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -4329,7 +4459,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 255,
+      "max" : 0,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -4449,6 +4579,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4579,6 +4723,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ForwardingAddressId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AddressId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "JobId" : {
           "deprecated" : false,
           "documentation" : "<p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>",
@@ -4623,7 +4781,7 @@
         },
         "RoleARN" : {
           "deprecated" : false,
-          "documentation" : "<p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href=\"http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html\">CreateRole</a> AWS Identity and Access Management (IAM) API action.</p>",
+          "documentation" : "<p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href=\"http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html\">CreateRole</a>AWS Identity and Access Management (IAM) API action.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

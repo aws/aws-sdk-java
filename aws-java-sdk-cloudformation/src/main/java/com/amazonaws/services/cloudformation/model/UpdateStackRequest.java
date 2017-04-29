@@ -42,8 +42,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      */
     private String templateBody;
@@ -55,14 +55,18 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      */
     private String templateURL;
     /**
      * <p>
      * Reuse the existing template that is associated with the stack that you are updating.
+     * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      */
     private Boolean usePreviousTemplate;
@@ -207,6 +211,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -256,8 +268,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @param templateBody
@@ -266,8 +278,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *        <p>
-     *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *        parameter, but not both.
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -282,8 +294,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
@@ -291,8 +303,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *         <p>
-     *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *         parameter, but not both.
+     *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *         <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public String getTemplateBody() {
@@ -307,8 +319,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @param templateBody
@@ -317,8 +329,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *        <p>
-     *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *        parameter, but not both.
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,8 +347,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @param templateURL
@@ -345,8 +357,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *        parameter, but not both.
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public void setTemplateURL(String templateURL) {
@@ -361,8 +373,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @return Location of file containing the template body. The URL must point to a template that is located in an
@@ -370,8 +382,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
-     *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *         parameter, but not both.
+     *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *         <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public String getTemplateURL() {
@@ -386,8 +398,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
-     * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
-     * not both.
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * </p>
      * 
      * @param templateURL
@@ -396,8 +408,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
-     *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     *        parameter, but not both.
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,9 +422,16 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Reuse the existing template that is associated with the stack that you are updating.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
+     * </p>
      * 
      * @param usePreviousTemplate
-     *        Reuse the existing template that is associated with the stack that you are updating.
+     *        Reuse the existing template that is associated with the stack that you are updating.</p>
+     *        <p>
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public void setUsePreviousTemplate(Boolean usePreviousTemplate) {
@@ -423,8 +442,15 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Reuse the existing template that is associated with the stack that you are updating.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
+     * </p>
      * 
-     * @return Reuse the existing template that is associated with the stack that you are updating.
+     * @return Reuse the existing template that is associated with the stack that you are updating.</p>
+     *         <p>
+     *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *         <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public Boolean getUsePreviousTemplate() {
@@ -435,9 +461,16 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Reuse the existing template that is associated with the stack that you are updating.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
+     * </p>
      * 
      * @param usePreviousTemplate
-     *        Reuse the existing template that is associated with the stack that you are updating.
+     *        Reuse the existing template that is associated with the stack that you are updating.</p>
+     *        <p>
+     *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *        <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,8 +483,15 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Reuse the existing template that is associated with the stack that you are updating.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
+     * </p>
      * 
-     * @return Reuse the existing template that is associated with the stack that you are updating.
+     * @return Reuse the existing template that is associated with the stack that you are updating.</p>
+     *         <p>
+     *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+     *         <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
      */
 
     public Boolean isUsePreviousTemplate() {
@@ -1687,6 +1727,61 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to update a stack with the same name.
+     *        You might retry <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry
+     *         requests so that AWS CloudFormation knows that you're not attempting to update a stack with the same
+     *         name. You might retry <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     *         received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>UpdateStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to update a stack with the same name.
+     *        You might retry <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1724,7 +1819,9 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getNotificationARNs() != null)
             sb.append("NotificationARNs: ").append(getNotificationARNs()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -1795,6 +1892,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -1817,6 +1918,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode());
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

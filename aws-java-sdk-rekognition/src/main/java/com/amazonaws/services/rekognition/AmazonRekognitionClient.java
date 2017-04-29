@@ -806,6 +806,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
      * @sample AmazonRekognition.DetectModerationLabels
      */
     @Override

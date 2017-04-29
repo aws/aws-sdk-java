@@ -71,6 +71,12 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Notification notification;
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -413,6 +419,46 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     * </p>
+     * 
+     * @return The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The updated ID for the forwarding address for a cluster. This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClusterRequest withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -436,7 +482,9 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getShippingOption() != null)
             sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: ").append(getNotification());
+            sb.append("Notification: ").append(getNotification()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -479,6 +527,10 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNotification() != null && other.getNotification().equals(this.getNotification()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -494,6 +546,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAddressId() == null) ? 0 : getAddressId().hashCode());
         hashCode = prime * hashCode + ((getShippingOption() == null) ? 0 : getShippingOption().hashCode());
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 

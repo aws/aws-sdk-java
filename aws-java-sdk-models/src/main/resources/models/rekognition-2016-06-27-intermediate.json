@@ -443,6 +443,10 @@
         "exceptionName" : "ProvisionedThroughputExceededException",
         "documentation" : "<p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidImageFormatException",
+        "documentation" : "<p>The provided image format is not supported. </p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {

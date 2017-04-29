@@ -41,53 +41,24 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      */
     private String messageBody;
     /**
      * <p>
-     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
-     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
-     * you don't specify a value, the default value for the queue applies.
+     * The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -158,12 +129,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -228,6 +193,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      */
     private String messageGroupId;
 
@@ -251,44 +221,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <important>
      *        <p>
-     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
-     *        W3C XML specification:
+     *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        <code>#x9</code>
+     *        <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     *        <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      *        </p>
-     *        </li>
-     *        <li>
      *        <p>
-     *        <code>#xA</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x20</code> to <code>#xD7FF</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xE000</code> to <code>#xFFFD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x10000</code> to <code>#x10FFFF</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
-     *        characters that aren't included in this list, your request is rejected.
+     *        Any characters not included in this list will be rejected. For more information, see the <a
+     *        href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      *        </p>
      */
     public SendMessageRequest(String queueUrl, String messageBody) {
@@ -357,88 +298,30 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      * 
      * @param messageBody
      *        The message to send. The maximum string size is 256 KB.</p> <important>
      *        <p>
-     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
-     *        W3C XML specification:
+     *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        <code>#x9</code>
+     *        <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     *        <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      *        </p>
-     *        </li>
-     *        <li>
      *        <p>
-     *        <code>#xA</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x20</code> to <code>#xD7FF</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xE000</code> to <code>#xFFFD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x10000</code> to <code>#x10FFFF</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
-     *        characters that aren't included in this list, your request is rejected.
+     *        Any characters not included in this list will be rejected. For more information, see the <a
+     *        href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      *        </p>
      */
 
@@ -452,87 +335,29 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      * 
      * @return The message to send. The maximum string size is 256 KB.</p> <important>
      *         <p>
-     *         The following list shows the characters (in Unicode) that are allowed in your message, according to the
-     *         W3C XML specification:
+     *         A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *         </p>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         <code>#x9</code>
+     *         <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     *         <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      *         </p>
-     *         </li>
-     *         <li>
      *         <p>
-     *         <code>#xA</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>#xD</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>#x20</code> to <code>#xD7FF</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>#xE000</code> to <code>#xFFFD</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>#x10000</code> to <code>#x10FFFF</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
-     *         characters that aren't included in this list, your request is rejected.
+     *         Any characters not included in this list will be rejected. For more information, see the <a
+     *         href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      *         </p>
      */
 
@@ -546,88 +371,30 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <important>
      * <p>
-     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
-     * specification:
+     * A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>#x9</code>
+     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>#xA</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x20</code> to <code>#xD7FF</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#xE000</code> to <code>#xFFFD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>#x10000</code> to <code>#x10FFFF</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
-     * that aren't included in this list, your request is rejected.
+     * Any characters not included in this list will be rejected. For more information, see the <a
+     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      * </p>
      * </important>
      * 
      * @param messageBody
      *        The message to send. The maximum string size is 256 KB.</p> <important>
      *        <p>
-     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
-     *        W3C XML specification:
+     *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        <code>#x9</code>
+     *        <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     *        <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
      *        </p>
-     *        </li>
-     *        <li>
      *        <p>
-     *        <code>#xA</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x20</code> to <code>#xD7FF</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#xE000</code> to <code>#xFFFD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>#x10000</code> to <code>#x10FFFF</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
-     *        characters that aren't included in this list, your request is rejected.
+     *        Any characters not included in this list will be rejected. For more information, see the <a
+     *        href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -639,9 +406,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
-     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
-     * you don't specify a value, the default value for the queue applies.
+     * The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -651,9 +418,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
-     *        with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
-     *        finished. If you don't specify a value, the default value for the queue applies. </p> <note>
+     *        The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        the delay period is finished. If you don't specify a value, the default value for the queue applies. </p>
+     *        <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -666,9 +434,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
-     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
-     * you don't specify a value, the default value for the queue applies.
+     * The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -677,9 +445,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * 
-     * @return The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
-     *         with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
-     *         finished. If you don't specify a value, the default value for the queue applies. </p> <note>
+     * @return The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum:
+     *         15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing
+     *         after the delay period is finished. If you don't specify a value, the default value for the queue
+     *         applies. </p> <note>
      *         <p>
      *         When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set
      *         this parameter only on a queue level.
@@ -692,9 +461,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
-     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
-     * you don't specify a value, the default value for the queue applies.
+     * The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -704,9 +473,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
-     *        with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
-     *        finished. If you don't specify a value, the default value for the queue applies. </p> <note>
+     *        The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15
+     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        the delay period is finished. If you don't specify a value, the default value for the queue applies. </p>
+     *        <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -853,12 +623,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -933,12 +697,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
      *        deduplication interval are treated as duplicates and only one copy of the message is delivered.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *        as duplicates.
      *        </p>
      *        </li>
      *        <li>
@@ -1028,12 +786,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -1108,12 +860,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
      *         deduplication interval are treated as duplicates and only one copy of the message is delivered.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *         as duplicates.
      *         </p>
      *         </li>
      *         <li>
@@ -1203,12 +949,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -1287,12 +1027,6 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *        as duplicates.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with
      *        a <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      *        <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the
@@ -1363,6 +1097,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @param messageGroupId
      *        This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1396,6 +1135,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *        </p>
      */
 
     public void setMessageGroupId(String messageGroupId) {
@@ -1437,6 +1181,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @return This parameter applies only to FIFO (first-in-first-out) queues.</p>
      *         <p>
@@ -1469,6 +1218,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *         >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *         </p>
      */
 
     public String getMessageGroupId() {
@@ -1510,6 +1264,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @param messageGroupId
      *        This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1543,6 +1302,11 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

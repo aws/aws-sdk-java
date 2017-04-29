@@ -49,6 +49,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocationName("ClusterId").build();
     private static final MarshallingInfo<String> SNOWBALLTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowballType").build();
+    private static final MarshallingInfo<String> FORWARDINGADDRESSID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardingAddressId").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -77,6 +79,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getNotification(), NOTIFICATION_BINDING);
             protocolMarshaller.marshall(createJobRequest.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSnowballType(), SNOWBALLTYPE_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

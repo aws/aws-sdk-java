@@ -44,6 +44,10 @@ public class CancelUpdateStackRequestMarshaller implements Marshaller<Request<Ca
             request.addParameter("StackName", StringUtils.fromString(cancelUpdateStackRequest.getStackName()));
         }
 
+        if (cancelUpdateStackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(cancelUpdateStackRequest.getClientRequestToken()));
+        }
+
         return request;
     }
 

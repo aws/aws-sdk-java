@@ -59,6 +59,8 @@ public class JobMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobLogInfo").build();
     private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClusterId").build();
+    private static final MarshallingInfo<String> FORWARDINGADDRESSID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardingAddressId").build();
 
     private static final JobMetadataMarshaller instance = new JobMetadataMarshaller();
 
@@ -92,6 +94,7 @@ public class JobMetadataMarshaller {
             protocolMarshaller.marshall(jobMetadata.getDataTransferProgress(), DATATRANSFERPROGRESS_BINDING);
             protocolMarshaller.marshall(jobMetadata.getJobLogInfo(), JOBLOGINFO_BINDING);
             protocolMarshaller.marshall(jobMetadata.getClusterId(), CLUSTERID_BINDING);
+            protocolMarshaller.marshall(jobMetadata.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

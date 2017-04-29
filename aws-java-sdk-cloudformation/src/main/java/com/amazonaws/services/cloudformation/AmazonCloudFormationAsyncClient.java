@@ -47,8 +47,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * CloudFormation Product Page</a>.
  * </p>
  * <p>
- * Amazon CloudFormation makes use of other AWS products. For additional technical information about a specific AWS
- * product, see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.
+ * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
+ * AWS product, you can find the product's technical documentation at <a
+ * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 @ThreadSafe

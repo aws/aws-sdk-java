@@ -1,3 +1,24 @@
+# __1.11.125__ __2017-04-28__
+## __AWS Cloud Formation__
+  - ### Features
+    - API update for CloudFormation: New optional parameter ClientRequestToken which can be used as an idempotency token to safely retry certain operations as well as tagging StackEvents.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - The Snowball API has a new exception that can be thrown for list operation requests.
+
+## __Amazon Rekognition__
+  - ### Features
+    - Fix for missing file type check
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - The DescribeDBClusterSnapshots API now returns a SourceDBClusterSnapshotArn field which identifies the source DB cluster snapshot of a copied snapshot.
+
+## __Amazon Simple Queue Service (SQS)__
+  - ### Features
+    - Adding server-side encryption (SSE) support to SQS by integrating with AWS KMS; adding new queue attributes to SQS CreateQueue, SetQueueAttributes and GetQueueAttributes APIs to support SSE.
+
 # __1.11.124__ __2017-04-26__
 ## __Amazon Relational Database Service (RDS)__
   - ### Features

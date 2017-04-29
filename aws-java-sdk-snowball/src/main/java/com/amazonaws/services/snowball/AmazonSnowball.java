@@ -144,11 +144,9 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates an address for a Snowball to be shipped to.
-     * </p>
-     * <p>
-     * Addresses are validated at the time of creation. The address you provide must be located within the serviceable
-     * area of your region. If the address is invalid or unsupported, then an exception is thrown.
+     * Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of
+     * creation. The address you provide must be located within the serviceable area of your region. If the address is
+     * invalid or unsupported, then an exception is thrown.
      * </p>
      * 
      * @param createAddressRequest
@@ -190,7 +188,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster. .
+     * Creates a job to the other job attributes are inherited from the cluster.
      * </p>
      * 
      * @param createJobRequest
@@ -243,6 +241,9 @@ public interface AmazonSnowball {
      * @throws InvalidResourceException
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.DescribeAddresses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses" target="_top">AWS API
      *      Documentation</a>
@@ -269,7 +270,7 @@ public interface AmazonSnowball {
     /**
      * <p>
      * Returns information about a specific job including shipping information, job status, and other important
-     * metadata. .
+     * metadata.
      * </p>
      * 
      * @param describeJobRequest
@@ -376,6 +377,9 @@ public interface AmazonSnowball {
      * @throws InvalidResourceException
      *         The specified resource can't be found. Check the information you provided in your last request, and try
      *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListClusterJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs" target="_top">AWS API
      *      Documentation</a>
@@ -391,6 +395,9 @@ public interface AmazonSnowball {
      * 
      * @param listClustersRequest
      * @return Result of the ListClusters operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters" target="_top">AWS API
      *      Documentation</a>
@@ -407,6 +414,9 @@ public interface AmazonSnowball {
      * 
      * @param listJobsRequest
      * @return Result of the ListJobs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
      * @sample AmazonSnowball.ListJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs" target="_top">AWS API
      *      Documentation</a>

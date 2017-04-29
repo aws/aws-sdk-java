@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a> </code>.
+ * Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
  * </p>
  * <important>
  * <p>

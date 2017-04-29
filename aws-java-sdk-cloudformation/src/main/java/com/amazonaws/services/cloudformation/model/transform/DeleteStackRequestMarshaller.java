@@ -64,6 +64,10 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
             request.addParameter("RoleARN", StringUtils.fromString(deleteStackRequest.getRoleARN()));
         }
 
+        if (deleteStackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(deleteStackRequest.getClientRequestToken()));
+        }
+
         return request;
     }
 
