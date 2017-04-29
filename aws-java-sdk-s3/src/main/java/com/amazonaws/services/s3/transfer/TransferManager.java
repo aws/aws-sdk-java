@@ -79,6 +79,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
 
 import static com.amazonaws.services.s3.internal.ServiceUtils.APPEND_MODE;
 import static com.amazonaws.services.s3.internal.ServiceUtils.OVERWRITE_MODE;
@@ -1146,8 +1147,19 @@ public class TransferManager {
         return lastModifiedTimeRecordedDuringResume != lastModifiedTimeRecordedDuringPause;
     }
 
+    /**
+     * @see TransferManager#downloadDirectory(String, String, File, boolean, Pattern)
+     */
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+            boolean resumeOnRetry) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null);
+    }
+
+    /**
+     * @see TransferManager#downloadDirectory(String, String, File, boolean, Pattern)
+     */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
-        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false);
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, null);
     }
     /**
      * Downloads all objects in the virtual directory designated by the
@@ -1175,9 +1187,12 @@ public class TransferManager {
      *            If set to true, upon an immediate retry of a failed object
      *            download, the <code>TransferManager</code> will resume the
      *            download from the current end of the file on disk.
+     * @param blacklistRegex
+     *            If not null, keys matching the blacklist regex will not be
+     *            downloaded.
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
-            boolean resumeOnRetry) {
+            boolean resumeOnRetry, Pattern blacklistRegex) {
         if ( keyPrefix == null )
             keyPrefix = "";
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
@@ -1202,9 +1217,10 @@ public class TransferManager {
                 for ( S3ObjectSummary s : listObjectsResponse.getObjectSummaries() ) {
                     // Skip any files that are also virtual directories, since
                     // we can't save both a directory and a file of the same
-                    // name.
+                    // name. Also skip files that match the blacklist regex.
                     if ( !s.getKey().equals(prefix)
-                            && !listObjectsResponse.getCommonPrefixes().contains(s.getKey() + DEFAULT_DELIMITER) ) {
+                            && !listObjectsResponse.getCommonPrefixes().contains(s.getKey() + DEFAULT_DELIMITER)
+                            && (blacklistRegex == null || !blacklistRegex.matcher(s.getKey()).matches())) {
                         objectSummaries.add(s);
                         totalSize += s.getSize();
                     } else {
